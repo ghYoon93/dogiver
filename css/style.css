@@ -1,0 +1,178 @@
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.top_header {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f2f4f5;
+}
+.top_header_content {
+  z-index: 1;
+  height: 40px;
+  background-color: #f2f4f5;
+  margin-right: 40px;
+}
+.top_header_menu {
+  float: right;
+  margin: 10px 20px 0 40px;
+}
+.header {
+  width: 100%;
+  margin: 0px auto;
+  height: 100px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #bcbcbc;
+  background-color: #ffffff;
+}
+.header_logo {
+  margin-left: 320px;
+  width: 150px;
+  height: 100px;
+  border: 1px solid red;
+  display: block;
+  float: left;
+}
+.section_nav {
+  position: absolute;
+  margin-left: 800px;
+  width: 700px;
+  height: 100px;
+  display: block;
+  float: left;
+}
+
+.section_nav li ul {
+  font-size: 14pt;
+  display: none; /* 평상시에는 서브메뉴가 안보이게 하기 */
+  height: auto;
+  padding: 0px;
+  margin-left: 10px;
+
+  border: 0px;
+  position: absolute;
+  width: 150px;
+  text-align: center;
+  z-index: 300;
+  text-align: center;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+}
+.section_nav li:hover ul {
+  display: block; /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
+}
+.menuDiv {
+  text-align: center;
+  width: 110px;
+  font-size: 14pt;
+}
+.menuDiv:hover {
+  cursor: pointer;
+}
+.menuDiv ul li {
+  line-height: 0.5em;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin: 40px 20px 0 0;
+  padding: 0;
+  float: left;
+}
+.topFixed {
+  position: fixed;
+  top: 0px;
+}
+.frame {
+  margin: 0px auto;
+  width: 1100px;
+  height: 1200px;
+}
+
+.container {
+  margin-bottom: 20px;
+  border: 1px solid #bcbcbc;
+}
+.image_slider {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+.image_slider ul {
+  width: calc(100% * 3);
+  height: 500px;
+  display: flex;
+  animation: image_slider 8s infinite;
+}
+.image_slider li {
+  margin: 0;
+  width: calc(100% / 3);
+  height: 500px;
+}
+
+@keyframes image_slider {
+  0% {
+    margin-left: 0;
+  }
+  10% {
+    margin-left: 0;
+  }
+  33% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -100%;
+  }
+  66% {
+    margin-left: -200%;
+  }
+  85% {
+    margin-left: -200%;
+  }
+  99% {
+    margin-left: 0;
+  }
+}
+
+.content {
+  width: 100%;
+  height: 600px;
+}
+.content1 {
+  background-color: beige;
+  width: 50%;
+  float: left;
+  height: 100%;
+}
+.content2 {
+  width: 50%;
+  float: right;
+  height: 100%;
+}
+.content2_1 {
+  height: 200px;
+}
+.content2_2 {
+  background-color: aquamarine;
+  height: 200px;
+}
+.content2_3 {
+  height: 200px;
+}
+
+.section_footer {
+  clear: both;
+  padding: 20px;
+  border: 1px solid #bcbcbc;
+  height: 150px;
+}
