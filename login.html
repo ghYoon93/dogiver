@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-signin-client_id"
+      content="YOUR_CLIENT_ID.apps.googleusercontent.com"
+    />
+    <title>로그인</title>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <section class="login">
+      <h2>로그인</h2>
+      <div class="loginMessage"></div>
+      <ul>
+        <li><input type="text" placeholder="아이디" title="아이디입력" /></li>
+        <li>
+          <input type="password" placeholder="비밀번호" title="비밀번호입력" />
+        </li>
+        <li>
+          <input type="checkbox" id="chk_id" /><label for="chk_id"
+            >아이디저장</label
+          >
+        </li>
+        <li><button>로그인</button></li>
+        <li><div id="my-signin2"></div></li>
+        <li><div id="naverIdLogin"></div></li>
+        <li><button>로그인</button></li>
+      </ul>
+      <div class="bottomDiv">
+        <ul>
+          <li><a href="">회원가입</a></li>
+          <li><a href="">아이디 찾기</a></li>
+          <li><a href="">비밀번호 찾기</a></li>
+        </ul>
+      </div>
+    </section>
+  </body>
+  <!-- 구글 로그인 커스텀 버튼 -->
+  <script>
+    function onSuccess(googleUser) {
+      console.log("Logged in as: " + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render("my-signin2", {
+        scope: "profile email",
+        width: 410,
+        height: 56,
+        longtitle: true,
+        theme: "dark",
+        onsuccess: onSuccess,
+        onfailure: onFailure
+      });
+    }
+  </script>
+
+  <script
+    src="https://apis.google.com/js/platform.js?onload=renderButton"
+    async
+    defer
+  ></script>
+  <!-- //구글 로그인 커스텀 버튼 -->
+  <script src="js/naveridlogin_js_sdk_2.0.0.js"></script>
+  <script type="text/javascript">
+    var naverLogin = new naver.LoginWithNaverId({
+      clientId: "{YOUR_CLIENT_ID}",
+      callbackUrl: "{YOUR_REDIRECT_URL}",
+      loginButton: {
+        color: "green",
+        type: 3,
+        height: 56,
+        width: 410
+      } /* 로그인 버튼의 타입을 지정 */
+    });
+
+    /* 설정정보를 초기화하고 연동을 준비 */
+    naverLogin.init();
+  </script>
+</html>
