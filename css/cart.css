@@ -1,0 +1,112 @@
+.goods_info{
+    display:table;
+    position: relative;
+    width: 100%;
+}
+.goods_info .goods_thumbnail{
+    display:table-cell;
+    padding: 0px;
+    text-align: left;
+    vertical-align: middle;
+    word-break: break-all;
+}
+.goods_info .goods_title{
+    display:table-cell;
+    padding: 0px;
+    text-align: left;
+    vertical-align: middle;
+    word-break: break-all;
+}
+.price_sum{
+    width: 100%;
+    margin: 30px 0 0 0;
+    padding: 20px 40px 25px 40px;
+    border: 2px solid #d6d6d6;
+}
+
+.price_sum_cont {
+    display: table;
+    float: right;
+    text-align: right;
+    color: black;
+}
+.price_sum_cont .price_sum_list {
+    position: relative;
+}
+
+.price_sum_cont .price_sum_list dl {
+    display: table-cell;
+    padding: 5px 10px 5px 10px;
+    font-size: 16px;
+    text-align: right;
+}
+
+.btn_order_box {
+    width:100%;
+    text-align: left;
+    overflow: hidden;
+    clear: both;
+    padding-bottom: 0px;
+}
+
+.btn_order_box {
+    overflow: hidden;
+    padding: 30px 0 0 0;
+    text-align: right;
+}
+
+.btn_order_box .btn_left_box {
+    float: left;
+}
+
+.btn_left_box {
+    text-align: left;
+}
+
+.btn_order_box .btn_right_box {
+    text-align: right;
+}
+
+.btn_order_box .btn_right_box {
+    text-align: right;
+}
+.btn_order_box .btn_right_box {
+    float: right;
+}
+
+.btn_order_choice_del, .btn_order_shop_go_link, .btn_order_choice_wish {
+    display: inline-block;
+    min-width: 120px;
+    height: 38px;
+    padding: 0 15px 0 15px;
+    color: #333333;
+    border: 1px solid #e6e6e6;
+    background: #f2f2f2;
+    text-align: center;
+    line-height: 36px;
+    font-size: 16px;
+}
+
+.btn_order_choice_buy {
+    min-width: 210px;
+    height: 60px;
+    padding: 0 20px 0 20px;
+    color: #333333;
+    font-weight: normal;
+    font-size: 19px;
+    border: 1px solid #f44a4b;
+    background: #fff;
+    cursor: pointer;
+}
+
+.btn_order_whole_buy {
+    min-width: 210px;
+    height: 60px;
+    padding: 0 20px 0 20px;
+    color: #fff;
+    font-size: 19px;
+    border: 1px solid #f44a4b;
+    background: #f44a4b;
+    cursor: pointer;
+    font-weight: normal;
+}
