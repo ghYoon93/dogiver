@@ -3,12 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <title>장바구니</title>
-  <script src="http://kit.fontawesome.com/ac74ac3dba.js"></script>
-  <link rel="stylesheet" href="css/cart.css">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/cart.css">
   <link rel="stylesheet" href="css/bootstrap-theme.css">
-  <script src="js/bootstrap.js"></script>
+  <title>DOgNOR</title>
 </head>
 
 <body>
@@ -20,21 +18,38 @@
   </nav>
   <div class="container">
     <div class="row">
+      <div class="col-12">
+        <ol class="order_process">
+          <li class="page_on"><span class="dot">01</span> 장바구니 <span>></span></li>
+          <li><span class="dot">02</span> 주문서작성/결제<span>></span></li>
+          <li><span class="dot">03</span> 주문완료</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
       <table class="table">
+        <colgroup>
+          <col style="width:3%"> <!-- 체크박스 -->
+          <col> <!-- 상품명/옵션 -->
+          <col style="width:10%"> <!-- 수량 -->
+          <col style="width:10%"> <!-- 상품금액 -->
+          <col style="width:14%"> <!-- 합계금액 -->
+          <col style="width:10%"> <!-- 배송비 -->
+        </colgroup>
         <thead>
           <tr>
-            <th><input type="checkbox" id="" value=""/></th>
+            <th><input type="checkbox" id="" value="" /></th>
             <th>상품/옵션 정보</th>
             <th>수량</th>
-            <th class="text-center">상품금액</th>
-            <th class="text-center">합계금액</th>
+            <th>상품금액</th>
+            <th>합계금액</th>
             <th>배송비</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><input type="checkbox" id="" value=""/></td>
-            <td class="col-xs-8">
+            <td><input type="checkbox" id="" value="" /></td>
+            <td>
               <div class="media">
                 <a class="thumbnail" href="#"> <img class="" src="/image/no-image-icon.png"
                     style="width:122px; height:122px"> </a>
@@ -42,19 +57,19 @@
                 </div>
               </div>
             </td>
-            <td class="col-xs-1" style="text-align: center">1개
+            <td style="text-align: center">1개
             </td>
-            <td class="col-xs-1">
+            <td>
               <button type="button" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
               <strong>8,000원</strong></td>
-            <td class="col-xs-1"><strong>8,000원</strong></td>
-            <td class="col-xs-1"></td>
+            <td><strong>8,000원</strong></td>
+            <td></td>
           </tr>
           <tr>
-            <td><input type="checkbox" id="" value=""/></td>
-            <td class="col-xs-8">
+            <td><input type="checkbox" id="" value="" /></td>
+            <td>
               <div class="media">
                 <a class="thumbnail" href="#"> <img class="" src="/image/no-image-icon.png"
                     style="width:122px; height:122px"> </a>
@@ -62,35 +77,12 @@
                 </div>
               </div>
             </td>
-            <td class="col-xs-1" style="text-align: center">1개
+            <td style="text-align: center">1개
             </td>
-            <td class="col-xs-1"><strong>8,000원</strong></td>
-            <td class="col-xs-1"><strong>8,000원</strong></td>
-            <td class="col-xs-1"></td>
+            <td><strong>8,000원</strong></td>
+            <td><strong>8,000원</strong></td>
+            <td></td>
           </tr>
-          <!-- <tr>
-              <td></td>
-              <td>   </td>
-              <td>   </td>
-              <td>   </td>
-              <td>
-                <h5>합계</h5>
-              </td>
-              <td class="text-right">
-                <h5><strong>$24.59</strong></h5>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>   </td>
-              <td>   </td>
-              <td>   </td>
-              <td>
-                <button type="button" class="btn btn-default">선택상품 주문</button>
-              </td>
-              <td>
-                <button type="button" class="btn btn-default">전체상품 주문</button></td>
-            </tr> -->
         </tbody>
       </table>
       <div class="price_sum">
@@ -123,17 +115,20 @@
 
       <div class="btn_order_box">
         <span class="btn_left_box">
-            <button type="button" class="btn_order_choice_del" onclick="gd_cart_process('cartDelete');">선택 상품 삭제</button>
-            <button type="button" class="btn_order_shop_go_link" onclick="location.href='#'">쇼핑 계속하기</button>
+          <button type="button" class="btn_order_choice_del" onclick="gd_cart_process('cartDelete');">선택 상품 삭제</button>
+          <button type="button" class="btn_order_shop_go_link" onclick="location.href='#'">쇼핑 계속하기</button>
         </span>
         <span class="btn_right_box">
-            <button type="button" class="btn_order_choice_buy" onclick="gd_cart_process('orderSelect');">선택 상품 주문</button>
-            <button type="button" class="btn_order_whole_buy" onclick="gd_order_all();">전체 상품 주문</button>
+          <button type="button" class="btn_order_choice_buy" onclick="gd_cart_process('orderSelect');">선택 상품 주문</button>
+          <button type="button" class="btn_order_whole_buy" onclick="gd_order_all();">전체 상품 주문</button>
         </span>
-    </div>
-
+      </div>
     </div>
   </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="http://kit.fontawesome.com/ac74ac3dba.js"></script>
 </body>
 
 </html>

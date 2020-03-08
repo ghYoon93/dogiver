@@ -1,21 +1,42 @@
-.goods_info{
-    display:table;
-    position: relative;
-    width: 100%;
+.order_process {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    line-height: 22px;
+    height: 26px;
+    margin-top: 60px;
+    margin-bottom: 10px;
 }
-.goods_info .goods_thumbnail{
-    display:table-cell;
-    padding: 0px;
-    text-align: left;
-    vertical-align: middle;
-    word-break: break-all;
+.order_process li{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    float: left;
 }
-.goods_info .goods_title{
-    display:table-cell;
-    padding: 0px;
-    text-align: left;
-    vertical-align: middle;
-    word-break: break-all;
+.order_process li span{
+    display: inline-block;
+    width: 37px;
+    text-align: center;
+}
+.order_process .page_on {
+    color: #333333;
+    font-weight: 500;
+}
+.order_process li.page_on span.dot {
+    background: #f44a4b;
+}
+.order_process li span.dot {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    line-height: 22px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background: #bebebe;
 }
 .price_sum{
     width: 100%;
@@ -61,6 +82,9 @@
 
 .btn_left_box {
     text-align: left;
+}
+.btn_center_box {
+    text-align: center;
 }
 
 .btn_order_box .btn_right_box {
@@ -109,4 +133,114 @@
     background: #f44a4b;
     cursor: pointer;
     font-weight: normal;
+}
+
+.order_title, .delivery_title {
+    margin: 0 0 0 0;
+    padding: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.order_title h4, .delivery_title h4 {
+    margin: 50px 0 0 0;
+    font-size: 16px;
+}
+
+.order_table th, .shipping_table th, .payment_table th, .payment_progress_table th{
+    text-align: left;
+    background: #f7f7f7;
+}
+.order_table td, .shipping_table td, .payment_table td, .payment_progress_table td{
+    text-align: left;
+    
+}
+.order_table input, .shipping_table input, .payment_progress_table_table input{
+    margin-right: 5px;
+    margin-left: 5px;
+    float:left;
+
+}
+.order_table input[type="text"], .shipping_table input[type="text"], .payment_progress_table input[type="text"]{
+    width: 220px;
+    padding-right: 20px;
+}
+.memo input[type="text"]{
+    width: 90%;
+}
+.order_table select{
+    width: 122px;
+}
+.address_postcode .btn-outline-dark{
+    height:30px;
+    padding: 3px 6px;
+}
+
+.address_input{
+    width: 100%;
+}
+.address_input input{
+    margin-top: 10px;
+}
+.pay_noBook_box{
+    margin-top: 10px;
+}
+.pay_noBook_box ul{
+    list-style: none;
+}
+.pay_noBook_box li{
+    margin-bottom: 10px;
+}
+.pay_noBook_box strong{
+    margin: 15px;
+}
+.pay_noBook_box input{
+    display: inline-block;
+}
+.pay_noBook_box select{
+    display: inline-block;
+    width: 324px;
+}
+.payment_check{
+    padding-left:55px;
+}
+
+.final_payment{
+    margin-top: 30px;
+}
+
+.final_total_payment {
+    padding: 13px 46px 0px 0;
+    border: 2px solid #d6d6d6;
+    text-align: right;
+}
+.final_total_payment dl{
+    display: inline-block;
+}
+.final_total_payment dt {
+    display: inline-block;
+    padding: 0 15px 0 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+.final_total_payment dd {
+    display: inline-block;
+    font-size: 30px;
+    color: #ab3e55;
+}
+
+.final_payment_check {
+    padding: 30px 0 20px 0;
+    text-align: center;
+}
+
+.btn_order_buy {
+    display: inline-block;
+    width: 300px;
+    height: 61px;
+    line-height: 59px;
+    color: #fff;
+    font-size: 20px;
+    border: 1px solid #333;
+    background: #333;
+    text-align: center;
 }
