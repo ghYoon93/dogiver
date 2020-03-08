@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.css">
+  <title>DOgNOR</title>
+</head>
+
+<body>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">장바구니</li>
+    </ol>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ol class="order_process">
+          <li class="page_on"><span class="dot">01</span> 장바구니 <span>></span></li>
+          <li><span class="dot">02</span> 주문서작성/결제<span>></span></li>
+          <li><span class="dot">03</span> 주문완료</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <table class="table">
+        <colgroup>
+          <col style="width:3%"> <!-- 체크박스 -->
+          <col> <!-- 상품명/옵션 -->
+          <col style="width:10%"> <!-- 수량 -->
+          <col style="width:10%"> <!-- 상품금액 -->
+          <col style="width:14%"> <!-- 합계금액 -->
+          <col style="width:10%"> <!-- 배송비 -->
+        </colgroup>
+        <thead>
+          <tr>
+            <th><input type="checkbox" id="" value="" /></th>
+            <th>상품/옵션 정보</th>
+            <th>수량</th>
+            <th>상품금액</th>
+            <th>합계금액</th>
+            <th>배송비</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" id="" value="" /></td>
+            <td>
+              <div class="media">
+                <a class="thumbnail" href="#"> <img class="" src="/image/no-image-icon.png"
+                    style="width:122px; height:122px"> </a>
+                <div class="media-body align-self-center">상품 명</a>
+                </div>
+              </div>
+            </td>
+            <td style="text-align: center">1개
+            </td>
+            <td>
+              <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>8,000원</strong></td>
+            <td><strong>8,000원</strong></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="" value="" /></td>
+            <td>
+              <div class="media">
+                <a class="thumbnail" href="#"> <img class="" src="/image/no-image-icon.png"
+                    style="width:122px; height:122px"> </a>
+                <div class="media-body align-self-center">상품 명</a>
+                </div>
+              </div>
+            </td>
+            <td style="text-align: center">1개
+            </td>
+            <td><strong>8,000원</strong></td>
+            <td><strong>8,000원</strong></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="price_sum">
+        <div class="price_sum_cont">
+          <div class="price_sum_list">
+            <dl>
+              <dt>총 <strong id="totalGoodsCnt">2</strong> 개의 상품금액 </dt>
+              <dd><strong id="totalGoodsPrice">31,900</strong>원</dd>
+            </dl>
+            <dl>
+              <dt>&emsp;</dt>
+              <dd><strong>+</strong></dd>
+            </dl>
+            <dl>
+              <dt>배송비</dt>
+              <dd><strong id="totalDeliveryCharge">2,500</strong>원</dd>
+            </dl>
+            <dl>
+              <dt>&emsp;</dt>
+              <dd><strong>=</strong></dd>
+            </dl>
+            <dl class="price_total">
+              <dt>합계</dt>
+              <dd><strong id="totalSettlePrice">34,400</strong>원
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn_order_box">
+        <span class="btn_left_box">
+          <button type="button" class="btn_order_choice_del" onclick="gd_cart_process('cartDelete');">선택 상품 삭제</button>
+          <button type="button" class="btn_order_shop_go_link" onclick="location.href='#'">쇼핑 계속하기</button>
+        </span>
+        <span class="btn_right_box">
+          <button type="button" class="btn_order_choice_buy" onclick="gd_cart_process('orderSelect');">선택 상품 주문</button>
+          <button type="button" class="btn_order_whole_buy" onclick="gd_order_all();">전체 상품 주문</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="http://kit.fontawesome.com/ac74ac3dba.js"></script>
+</body>
+
+</html>
