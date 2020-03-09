@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/* *{
+	border: 1px solid black;
+} */
+body {
+  padding: 0;
+  margin: 0;
+}
+.frame {
+	border: 1px solid black;
+  	margin: 0px auto;
+ 	width: 1100px;
+}
+.overview{
+	border: 1px solid red;
+	width: ;
+	height: 600px;
+	display: block;
+	overflow: hidden; 
+
+}
+.overview-image{
+	border: 1px solid green;
+	width: 55%;
+	height: inherit;
+	display: inline-block;
+}
+.overview-content{
+	border: 1px solid green;
+	width: 42%;
+	height: inherit;
+	padding: 10px;
+	display: inline-block;
+	overflow: hidden;
+}
+
+/* .overview-content div{
+	display: block;
+}  */
+
+/* 가격 테이블영역 */
+.goods-price-rate{
+	display: table-cell;
+    padding-right: 5px;
+    color: #35c5f0;
+    font-weight: 900;
+    vertical-align: bottom; 
+}
+.price-row{display: table-row;}
+.goods-price-rate{
+	display: table-cell;
+    padding-right: 5px;
+    color: #35c5f0;
+    font-size: 44px;
+    font-weight: 900;
+    vertical-align: bottom;
+}
+.product-price-wrap{display: table-cell;}
+.goods-price{
+	display: block;
+    margin: 0 0 2px;
+    font-size: 15px;
+    color: #757575;
+}
+.discount-price{
+	font-size: 32px;
+    font-weight: 900;
+}
+
+/* 옵션, 수량, 총합계금액  */
+.option-wrap{background-color: #e6e6e6; padding: 10px 0;}
+.goods-name{
+	display: block;
+}
+.amount-warp{
+	 display: block; 
+	text-align: center;
+}
+.count{
+	display:inline-block;
+}
+.tot-price{
+	 display: inline-block; 
+	 margin: 20px 0 20px 250px;
+}
+
+
+/* 버튼(장바구니, 구매하기) */
+.btn_form{text-align: center; margin: 50px 0;}
+#btn-cart{
+	width:200px;
+    background-color: #fff;
+    border: 1px solid #f8585b;
+    color:#f8585b;
+    border-radius:5px;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px;
+    cursor: pointer;	
+}
+
+#btn-order{
+	width:200px;
+    background-color: #f8585b;
+    border: none;
+    color:#fff;
+    border-radius:5px;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+/* --------------------------------------------------- */
+.discription{
+	border: 1px solid blue;
+	width: ;
+	height: 1000px;
+	display: block;
+	margin: 10px;
+}
+.navigationBar{
+	width: 100%;
+	height: 50px;
+}
+.navigationBar ul li{
+	list-style: none; /* <li>태그의 점을 없앤다  */
+	color: white;
+	background-color: #2d2d2d; 
+	float: left; /* <li>태그들이 왼쪽에 흐르게 설정(그러면 아래있는 내용은 오른쪽으로 옴) */ 
+	line-height: 30px; /* 글씨가 가운데로 오도록 설정하기 위해 한줄의 높이를 30px로 설정 */ 
+	vertical-align: middle; /* 세로 정렬을 가운데로 설정(위의 line-height와 같이 설정 필요함) */ 
+	text-align: center; 
+}
+.navigationBar .menuLink { 
+	text-decoration:none;  /* 링크(<a> 태그)가 가지는 기본 꾸밈 효과(밑줄 등)을 없앰  */
+	color: white; 
+	display: block; /* 링크를 글씨가 있는 부분 뿐만아니라 전체 영역을 클릭해도 링크가 걸리게 설정 */
+	width: 150px;  
+	font-size: 12px;
+	font-weight: bold; 	
+} 
+.navigationBar .menuLink:hover { 
+	color: red;
+	background-color: #4d4d4d; 
+}
+
