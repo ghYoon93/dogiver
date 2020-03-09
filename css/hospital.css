@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.hospitalframe{
+	border: 1px solid;
+	width: 1100px;
+	display: inline-block;
+}
+
+.hospitallist{
+	float: left;
+	padding: 0px;
+}
+
+.hospitalmap{
+	margin-left:10px;
+	float: left;
+}

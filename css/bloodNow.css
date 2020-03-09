@@ -1,0 +1,42 @@
+@charset "UTF-8";
+.blooddog{
+	width: 150px;
+	height: 150px;
+}
+.blooddog1{
+	width:100%;
+	display: inline-block;
+}
+.blooddogimg{
+	width: 50%;
+	float: left;
+}
+.blooddogcontent{
+	margin-top: 37px; 
+}
+
+.blooddog2{
+	display: inline-block;
+	width: 100%;
+	margin-left: 40px;
+	margin-top: 100px;
+}
+.blooddogcontent2{
+	margin-top: 37px;
+	float: left;
+	margin-right: 40px;
+}
+.blooddogimg2{
+	width: 50%;
+	display: inline-block;	
+}
+.blooddog3{
+	display: inline-block;
+	width: 100%;
+	margin-top: 100px;
+}
+.blooddog4{
+	display: inline-block;
+	width: 100%;	
+	margin-top: 100px;
+}
