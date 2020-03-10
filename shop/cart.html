@@ -30,30 +30,89 @@
     <!-- //header -->
     
     <div id="contents">
-        <div id="cont-nav">
-            <div class="container">cont_nav</div>
-        </div>
         <!-- //cont_nav -->
         <div id="cont-tit">
             <div class="container">con_tit</div>
         </div>
         <!-- //con_tit -->
-        <div id="cont-ban">
-            <div class="container">con_ban</div>
-        </div>
         <!-- //con_ban -->
-        <div id="cont-cont">
-            <div class="order_wrap">
-              <div class="order_process">
-                <ol>
-                  <li class="page_on"><span class="dot">01</span> 장바구니 <span>></span></li>
-                  <li><span class="dot">02</span> 주문서작성/결제<span>></span></li>
-                  <li><span class="dot">03</span> 주문완료</li>
-                </ol>
-              </div>  
-            </div>
+        
+        <div class="order_wrap">
+          <div class="order_process">
+            <ol>
+              <li class="page_on"><span class="dot">01</span> 장바구니 <span>></span></li>
+              <li><span class="dot">02</span> 주문서작성/결제<span>></span></li>
+              <li><span class="dot">03</span> 주문완료</li>
+            </ol>
+          </div>
+          <!-- //order_process -->  
+          <div class="cart_cont">
+            <form id="form-cart" name="formCart" method="post" target="">
+              <!-- <input type="hidden" name="mode" value="">
+              <input type="hidden" name="cart[cartSno]" value="">
+              <input type="hidden" name="cart[goodsNo]" value="">
+              <input type="hidden" name="cart[goodsCnt]" value="">
+              <input type="hidden" name="cart[addGoodsNo]" value="">
+              <input type="hidden" name="cart[addGoodsCnt]" value="">
+              <input type="hidden" name="cart[couponApplyNo]" value="">
+              <input type="hidden" name="useBundleGoods" value="1"> -->
+              <div class="cart_cont_list">
+                <div class="order_table_type">
+                  <table>
+                    <colgroup>
+                      <col style="width:3%"> <!-- 체크박스 -->
+                      <col> <!-- 상품명/옵션 -->
+                      <col style="width:10%"> <!-- 수량 -->
+                      <col style="width:10%"> <!-- 상품금액 -->
+                      <col style="width:14%"> <!-- 합계금액 -->
+                      <col style="width:10%"> <!-- 배송비 -->
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th><input type="checkbox" id="" value="" /></th>
+                        <th>상품/옵션 정보</th>
+                        <th>수량</th>
+                        <th>상품금액</th>
+                        <th>합계금액</th>
+                        <th>배송비</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="td_check"><input type="checkbox" id="" value="" /></td>
+                        <td class="td_left">
+                          <div class="cart_goods_cont">
+                            <span class="cart_goods_image">
+                              <a href="#">
+                                <img src="/image/no-image-icon.jpg" class="middle" width="40" alt="" title="">
+                              </a>
+                            </span>
+                            <div class="cart_goods_info">
+                              <em><a href="#">같이 구하기 되는 있는 뿐이다. 되려니와, 인생의 고동을 이것이다. 있으며, 되려니와, 피고 철환하였는가?</a></em>
+                            </div>
+                          </div>
+                        </td>
+                        <td class=td_order_amount>
+                          <div class="cart_goods_num">
+                            <strong>1</strong><font>개</font>
+                          </div>
+                        </td>
+                        <td>
+                          <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          <strong>8,000원</strong></td>
+                        <td><strong>8,000원</strong></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-        <!-- //cont_cont -->
+        <!-- //order_wrap -->
     </div>
     <!-- //contents -->
 
@@ -71,73 +130,7 @@
   </nav>
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <ol class="order_process">
-          <li class="page_on"><span class="dot">01</span> 장바구니 <span>></span></li>
-          <li><span class="dot">02</span> 주문서작성/결제<span>></span></li>
-          <li><span class="dot">03</span> 주문완료</li>
-        </ol>
-      </div>
-    </div>
-    <div class="row">
-      <table class="table">
-        <colgroup>
-          <col style="width:3%"> <!-- 체크박스 -->
-          <col> <!-- 상품명/옵션 -->
-          <col style="width:10%"> <!-- 수량 -->
-          <col style="width:10%"> <!-- 상품금액 -->
-          <col style="width:14%"> <!-- 합계금액 -->
-          <col style="width:10%"> <!-- 배송비 -->
-        </colgroup>
-        <thead>
-          <tr>
-            <th><input type="checkbox" id="" value="" /></th>
-            <th>상품/옵션 정보</th>
-            <th>수량</th>
-            <th>상품금액</th>
-            <th>합계금액</th>
-            <th>배송비</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="checkbox" id="" value="" /></td>
-            <td>
-              <div class="media">
-                <a class="thumbnail" href="#"> <img class="" src="/image/no-image-icon.png"
-                    style="width:122px; height:122px"> </a>
-                <div class="media-body align-self-center">상품 명</a>
-                </div>
-              </div>
-            </td>
-            <td style="text-align: center">1개
-            </td>
-            <td>
-              <button type="button" class="close" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <strong>8,000원</strong></td>
-            <td><strong>8,000원</strong></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" id="" value="" /></td>
-            <td>
-              <div class="media">
-                <a class="thumbnail" href="#"> <img class="" src="/image/no-image-icon.png"
-                    style="width:122px; height:122px"> </a>
-                <div class="media-body align-self-center">상품 명</a>
-                </div>
-              </div>
-            </td>
-            <td style="text-align: center">1개
-            </td>
-            <td><strong>8,000원</strong></td>
-            <td><strong>8,000원</strong></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      
       <div class="price_sum">
         <div class="price_sum_cont">
           <div class="price_sum_list">
