@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+/* 레이아웃 */
+#wrap {width: 100%;}
+#header {width: 100%; height: 180px; background: url(../img/header_bg.jpg)center top repeat-x;}
+#contents {width: 100%; height: 800px; background: #222;}
+#footer {width: 100%; height: 200px; background: #333;}
+
+/* 컨텐츠 레이아웃 */
+#cont-nav {width: 100%; height: 200px; background: #333;}
+#cont-tit {width: 100%; height: 200px; background: #444;}
+#cont-ban {width: 100%; height: 200px; background: #555;}
+#cont-cont {width: 100%; height: 200px; background: #666;}
+
+/* 컨테이너 */
+.container {width: 1100px; margin: 0 auto; height: inherit; /* background: rgba(255,255,255,0.3);*/}
+
+/* 헤더 */
+.header {}
+.header .header_menu {text-align: right;}
+.header .header_menu a {color: #000000; padding: 10px 0px 10px 13px; display: inline-block;}
+.header .header_menu a:hover {color: #666;}
+.header .header_menu .cart-ico {padding-bottom: 0px;}
+.header .header_tit {}
+.header .header_icon {}
