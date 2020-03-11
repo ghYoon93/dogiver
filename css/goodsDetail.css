@@ -125,29 +125,33 @@ body {
 	display: block;
 	margin: 10px;
 }
-.navigationBar{
-	width: 100%;
+nav{
+	border: 1px solid green;
 	height: 50px;
-}
-.navigationBar ul li{
-	list-style: none; /* <li>태그의 점을 없앤다  */
-	color: white;
-	background-color: #2d2d2d; 
+} 
+nav ul{margin:0; padding: 0; height: 50px; width: 100%;}
+nav ul li{
+	list-style: none; /* <li>태그의 점을 없앤다  */	 
+	
+	display: block ; 
+	width: 33.3333%; 
+	height: 50px; 
 	float: left; /* <li>태그들이 왼쪽에 흐르게 설정(그러면 아래있는 내용은 오른쪽으로 옴) */ 
-	line-height: 30px; /* 글씨가 가운데로 오도록 설정하기 위해 한줄의 높이를 30px로 설정 */ 
+	line-height: 50px; /* 글씨가 가운데로 오도록 설정하기 위해 한줄의 높이를 30px로 설정 */ 
 	vertical-align: middle; /* 세로 정렬을 가운데로 설정(위의 line-height와 같이 설정 필요함) */ 
 	text-align: center; 
-}
-.navigationBar .menuLink { 
-	text-decoration:none;  /* 링크(<a> 태그)가 가지는 기본 꾸밈 효과(밑줄 등)을 없앰  */
-	color: white; 
-	display: block; /* 링크를 글씨가 있는 부분 뿐만아니라 전체 영역을 클릭해도 링크가 걸리게 설정 */
-	width: 150px;  
-	font-size: 12px;
 	font-weight: bold; 	
-} 
-.navigationBar .menuLink:hover { 
-	color: red;
-	background-color: #4d4d4d; 
+	color: white;
+	background-color: #2d2d2d;
+}
+
+.navigationBar ul li:hover { 
+	color: white;
+	background-color: #f8585b; 
+	cursor: pointer;
+}
+
+.discription div{
+	padding: 20px 30px;
 }
 
