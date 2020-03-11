@@ -23,14 +23,22 @@ body {
 	border: 1px solid green;
 	width: 55%;
 	height: inherit;
-	display: inline-block;
+	display: block;
+	float: left;
+}
+.overview-image img{ 
+	border: 1px solid black;
+	width: 500px; 
+	height: 500px;
+	margin: 50px;
 }
 .overview-content{
 	border: 1px solid green;
 	width: 42%;
 	height: inherit;
 	padding: 10px;
-	display: inline-block;
+	display: block;
+	float: right;
 	overflow: hidden;
 }
 
@@ -56,13 +64,13 @@ body {
     vertical-align: bottom;
 }
 .product-price-wrap{display: table-cell;}
-.goods-price{
+#goods_price{
 	display: block;
     margin: 0 0 2px;
     font-size: 15px;
     color: #757575;
 }
-.discount-price{
+#discount-price{
 	font-size: 32px;
     font-weight: 900;
 }
@@ -79,7 +87,7 @@ body {
 .count{
 	display:inline-block;
 }
-.tot-price{
+#tot_price{
 	 display: inline-block; 
 	 margin: 20px 0 20px 250px;
 }
@@ -132,7 +140,6 @@ nav{
 nav ul{margin:0; padding: 0; height: 50px; width: 100%;}
 nav ul li{
 	list-style: none; /* <li>태그의 점을 없앤다  */	 
-	
 	display: block ; 
 	width: 33.3333%; 
 	height: 50px; 
@@ -155,3 +162,27 @@ nav ul li{
 	padding: 20px 30px;
 }
 
+/* --------------------------------------------------- */
+
+table {
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+	margin : 20px 10px;
+	width: 90%
+	
+}
+table th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+table td {
+    width: 40%;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
