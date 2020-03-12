@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-<title>Insert title here</title>
-<link rel="stylesheet" href="../css/hospital.css">
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=clbhwdl70e"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="../css/hospital.css">
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=clbhwdl70e"></script>
 </head>
+
 <body>
 	<div class="hospitalframe">
 		<div class="hospitallist">
-				<table border="1" cellspacing="0" cellpadding="5" frame="hsides" rules="rows">
+			<table border="1" cellspacing="0" cellpadding="5" frame="hsides" rules="rows">
 				<tr>
 					<th width="250">병원명</th>
 					<th width="250">전화번호</th>
@@ -44,7 +46,7 @@
 				</tr>
 				<tr>
 					<td>충남대학교부속동물병원</td>
-					<td >042-821-6704</td>
+					<td>042-821-6704</td>
 					<td>대전 유성구 대학로 99</td>
 				</tr>
 				<tr>
@@ -61,13 +63,119 @@
 		</div>
 		<div class="hospitalmap" id="map" style="width: 100%; height: 400px;"></div>
 		<script>
-			var mapOptions = {
-				center : new naver.maps.LatLng(37.3595704, 127.105399),
-				zoom : 10
+			var HOME_PATH = window.HOME_PATH || '.';
+			var MARKER_SPRITE_POSITION = {
+				"의정부서정동물메디컬센터": [37.753016, 127.070478],
+				"광주동물메디컬센터": [35.190166, 126.857920],
+				"제주대학교부속동물병원": [33.455327, 126.561618],
+				"노원24시N동물의료센터": [37.657406, 127.066727],
+				"일산동물의료원": [37.682394, 126.753808],
+				"충남대학교부속동물병원": [36.377199, 127.342904],
+				"부산다솜동물메디컬센터": [35.137420, 129.069288],
+				"대구탑스동물메디컬센터": [35.819407, 128.536173],
 			};
 
-			var map = new naver.maps.Map('map', mapOptions);
+			var map = new naver.maps.Map('map', {
+				center: new naver.maps.LatLng(36.377199, 127.342904),
+				zoom: 6
+			});
+
+			var bounds = map.getBounds(),
+				southWest = bounds.getSW(),
+				northEast = bounds.getNE(),
+				lngSpan = northEast.lng() - southWest.lng(),
+				latSpan = northEast.lat() - southWest.lat();
+
+			var markers = [],
+				infoWindows = [];
+
+			for (var key in MARKER_SPRITE_POSITION) {
+
+				var position = new naver.maps.LatLng(
+					MARKER_SPRITE_POSITION[key][0],
+					MARKER_SPRITE_POSITION[key][1]);
+
+				var marker = new naver.maps.Marker({
+					map: map,
+					position: position,
+					title: key,
+					icon: {
+						url: HOME_PATH + '/img/example/sp_pins_spot_v3.png',
+						size: new naver.maps.Size(24, 37),
+						anchor: new naver.maps.Point(12, 37),
+						origin: new naver.maps.Point(
+							MARKER_SPRITE_POSITION[key][0],
+							MARKER_SPRITE_POSITION[key][1])
+					},
+					zIndex: 100
+				});
+
+
+				var infoWindow = new naver.maps.InfoWindow({
+					content: '<div style="width:150px;text-align:center;padding:10px;">' +
+						key + '</div>'
+				});
+
+				markers.push(marker);
+				infoWindows.push(infoWindow);
+			};
+
+			naver.maps.Event.addListener(map, 'idle', function() {
+				updateMarkers(map, markers);
+			});
+
+			function updateMarkers(map, markers) {
+
+				var mapBounds = map.getBounds();
+				var marker, position;
+
+				for (var i = 0; i < markers.length; i++) {
+
+					marker = markers[i]
+					position = marker.getPosition();
+
+					if (mapBounds.hasLatLng(position)) {
+						showMarker(map, marker);
+					} else {
+						hideMarker(map, marker);
+					}
+				}
+			}
+
+			function showMarker(map, marker) {
+
+				if (marker.setMap())
+					return;
+				marker.setMap(map);
+			}
+
+			function hideMarker(map, marker) {
+
+				if (!marker.setMap())
+					return;
+				marker.setMap(null);
+			}
+
+			// 해당 마커의 인덱스를 seq라는 클로저 변수로 저장하는 이벤트 핸들러를 반환합니다.
+			function getClickHandler(seq) {
+				return function(e) {
+					var marker = markers[seq],
+						infoWindow = infoWindows[seq];
+
+					if (infoWindow.getMap()) {
+						infoWindow.close();
+					} else {
+						infoWindow.open(map, marker);
+					}
+				}
+			}
+
+			for (var i = 0, ii = markers.length; i < ii; i++) {
+				naver.maps.Event.addListener(markers[i], 'click',
+					getClickHandler(i));
+			}
 		</script>
 	</div>
 </body>
+
 </html>
