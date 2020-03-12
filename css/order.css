@@ -40,3 +40,101 @@
 .btn_order_box {text-align: left; overflow: hidden; clear: both; padding: 30px 0 0 0;}
 .btn_order_box .btn_left_box {float: left; text-align: left;}
 .btn_order_box .btn_right_box {text-align: right; float: right;}
+
+.cart_cont_list .order_cart_tit {
+  padding: 0 0 10px 0;
+  font-size: 16px;
+}
+.cart_cont_list .order_cart_tit h3 {
+  font-weight: 400;
+  padding-top: 40px;
+}
+
+.cart_cont_list .order_cart_tit {
+  padding: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.order_zone_tit {
+  margin: 0 0 0 0;
+  padding: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.order_view_info h4 {
+  margin: 50px 0 0 0;
+}
+
+.order_zone_tit h4 {
+  font-size: 16px;
+}
+
+.order_cont .order_table_type {margin: 25px 0 0 0;}
+
+.order_view_info .order_table_type .table_left {
+  border-top: 1px solid #999999;
+  
+}
+.order_view_info .order_table_type .table_left th {
+  padding: 15px 10px 14px 20px;
+  border-top: none 0;
+  background: #f7f7f7;
+  text-align: left;
+}
+
+.order_view_info .order_table_type .table_left tbody tr:first-child td:last-child {
+  border-left: none;
+}
+
+.order_view_info .order_table_type .table_left td {
+  height: 31px;
+  padding: 12px 10px 11px 15px;
+  text-align: left;
+}
+.order_cont input[type="text"] {
+  width: 220px;
+  height: 31px;
+  color: #333333;
+  border: 1px solid #d6d6d6;
+  line-height: 31px;
+  padding: 0 10px;
+  outline: none;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.member_address .address_postcode {
+  overflow: hidden;
+  position: relative;
+}
+
+.member_address .address_input {
+  float: left;
+  width: 98%;
+}
+.member_address .address_input input:first-child {
+  width: 400px;
+  margin: 10px 0 0 0;
+}
+.member_address .address_postcode input {
+  float: left;
+}
+.member_address .address_postcode .btn_post_search {
+  
+  margin: 0 0 0 5px;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid #989898;
+}
+
+.member_email select{
+  height: 31px;
+  line-height: 30px;
+}
+.order_message input[type="text"]{
+  width: 90%;
+}
+.address_input .btn_post_setting{
+  margin: 10px 0 0 0;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid #989898;
+}
