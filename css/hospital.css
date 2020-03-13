@@ -29,3 +29,11 @@
 .hospitalmap{
 	margin: 0px;
 }
+
+.marker_inner{
+	padding: 10px;
+}
+
+.name{
+	cursor: pointer;
+}
