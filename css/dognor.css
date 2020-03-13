@@ -24,6 +24,7 @@ body{
   margin: 10px;
   width: 80px;
   height: 80px;
-  border: dotted 1px;
   display: inline-block;
+  background: url(../image/dognor.jpg);
+  border-radius: 40px;
 }
