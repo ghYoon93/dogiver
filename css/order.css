@@ -40,6 +40,23 @@
 .btn_order_box {text-align: left; overflow: hidden; clear: both; padding: 30px 0 0 0;}
 .btn_order_box .btn_left_box {float: left; text-align: left;}
 .btn_order_box .btn_right_box {text-align: right; float: right;}
+.btn_center_box {
+  text-align: center;
+}
+.btn_order_buy {
+  display: inline-block;
+  width: 300px;
+  height: 61px;
+  line-height: 59px;
+  color: #fff;
+  font-size: 20px;
+  border: 1px solid #333;
+  background: #333;
+  text-align: center;
+}
+.btn_order_buy em {
+  font-weight: bold;
+}
 
 .cart_cont_list .order_cart_tit {
   padding: 0 0 10px 0;
@@ -137,4 +154,74 @@
   margin: 10px 0 0 0;
   padding: 5px 10px 5px 10px;
   border: 1px solid #989898;
+}
+
+.payment_progress{}
+.payment_progress .pay_noBook_box ul{
+  list-style: none;
+}
+.payment_progress .pay_noBook_box li{
+  margin: 10px 0 0 0;
+}
+.payment_progress .pay_noBook_box select{
+  height: 30px;
+}
+.payment_progress .select_payment{
+  float:left;
+}
+.payment_progress .select_payment input[type="radio"]{
+  padding: 0 10px 0 0;
+}
+.payment_progress .pay_noBook_box{
+  clear: both;
+}
+
+.final_payment {
+  margin: 30px 0 0 0;
+}
+
+.final_total_payment {
+  padding: 13px 46px 20px 0;
+  border: 2px solid #d6d6d6;
+  text-align: right;
+}
+.final_total_payment dl {
+  display: inline-block;
+  font-size: 0;
+}
+
+.final_total_payment dt {
+  display: inline-block;
+  padding: 0 15px 0 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+
+.final_total_payment dd {
+  display: inline-block;
+  font-size: 30px;
+  color: #ab3e55;
+}
+
+.final_payment .final_payment_check {
+  padding: 30px 0 20px 0;
+  text-align: center;
+}
+
+.form_element {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+.form_element {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+.final_payment .form_element label  em b {
+  color: #ab3e55;
 }

@@ -178,16 +178,112 @@
                       </tr>
                       <tr>
                         <th scope="row">배송메세지</th>
-                        <td class="order_message"><input type="text" name="orderMessage"></td>
-
+                        <td class="order_message">
+                          <input type="text" name="orderMessage">
                         </td>
                       </tr>
                       </tbody>
                     </table>
                   </div>
                 </div>
+                <div class="payment_info">
+                  <div class="order_zone_tit">
+                    <h4>결제 정보</h4>
+                  </div>
+                  <div class="order_table_type">
+                    <table class="table_left">
+                      <colgroup>
+                        <col style="width:15%;">
+                        <col style="width:85%;">
+                      <tbody>
+                        <tr>
+                          <th scope="row">상품 합계금액</th>
+                          <td>
+                            <strong id="totalGoodsPrice" class="order_payment_sum">31,900원</strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">배송비</th>
+                          <td>
+                            <span id="totalDeliveryCharge">2,500</span>원
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">최종 결제 금액</th>
+                          <td>
+                            <input type="hidden" name="settlePrice" value="34400">
+                            <strong id="totalSettlePrice" class="order_payment_sum">34,400</strong>원
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--//payment_info-->
+                  <div class="payment_progress">
+                    <div class="order_zone_tit">
+                      <h4>결제수단 선택 / 결제</h4>
+                    </div>
+                    <div class="order_table_type">
+                      <table class="table_left">
+                        <colgroup>
+                          <col style="width:15%;">
+                          <col style="width:85%;">
+                        <tbody>
+                          <tr>
+                            <th>결제수단 선택</th>
+                            <td>
+                              <div class="select_payment">
+                                <input  type="radio" class="form-check-input" name="payment" id="payment_noBook">
+                                <label for="payment_noBook">무통장 입금</label>
+                                <input type="radio" name="payment" id="payment_kakao">
+                                <label for="payment_kakao">카카오 페이</label>
+                              </div>
+                              <div class="pay_noBook_box">
+                                <ul>
+                                  <li>
+                                    <strong>입금자명</strong>
+                                    <input type="text" class="form-control" name="bankSender">
+                                  </li>
+                                  <li>
+                                    <strong>입금은행</strong>
+                                    <select id="inputState" class="form-control">
+                                      <option value="">은행 선택</option>
+                                      <option value="1">국민은행 536801-04-008887 윤건희</option>
+                                    </select>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="final_payment">
+                      <div class="final_total_payment">
+                        <dl>
+                          <dt>최종 결제 금액</dt>
+                          <dd><span><strong id="totalSettlePriceView">34,400</strong>원</span></dd>
+                        </dl>
+                      </div>
+                      <div class="final_payment_check">
+                        <div class="form_element">
+                          <input type="checkbox" id="termAgree_orderCheck" class="require">
+                          <label for="termAgree_orderCheck" class="check_s"><em><b>(필수)</b> 구매하실 상품의 결제정보를 확인하였으며, 구매진행에
+                              동의합니다.</em></label>
+                        </div>
+                      </div>
+                      <div class="btn_center_box">
+                        <button class="btn_order_buy order-buy"><em>결제하기</em></button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--결제수단 선택 / 결제 끝-->
+                </div>
+                <!-- //payment_info -->
               </div>
+              <!-- //order_view_info -->
             </div>
+            <!-- //cart_cont_list -->
           </div>
         </div>
         <!--//order_cont -->
@@ -195,108 +291,6 @@
       <!-- //order_wrap -->
     </div>
     <!-- //contents -->
-    
-      <!--배송지 정보 끝-->
-      <!--결제정보 시작-->
-      <div class="payment_info">
-        <div class="order_title">
-          <h4>결제 정보</h4>
-        </div>
-      </div>
-      <div class="payment_table">
-        <table class="table">
-          <colgroup>
-            <col style="width:15%;">
-            <col style="width:85%;">
-          <tbody>
-            <tr>
-              <th scope="row">상품 합계금액</th>
-              <td>
-                <strong id="totalGoodsPrice" class="order_payment_sum">31,900원</strong>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">배송비</th>
-              <td>
-                <span id="totalDeliveryCharge">2,500</span>원
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">최종 결제 금액</th>
-              <td>
-                <input type="hidden" name="settlePrice" value="34400">
-                <strong id="totalSettlePrice" class="order_payment_sum">34,400</strong>원
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!--결제정보 끝-->
-      <!--결제수단 선택 / 결제 시작-->
-      <div class="payment_progress">
-        <div class="order_title">
-          <h4>결제수단 선택 / 결제</h4>
-        </div>
-        <div class="payment_progress_table">
-          <table class="table">
-            <colgroup>
-              <col style="width:15%;">
-              <col style="width:85%;">
-            <tbody>
-              <tr>
-                <th>결제수단 선택</th>
-                <td>
-                  <div class="form-check form-check-inline payment_check">
-                    <input class="form-check-input" type="radio" name="payment" id="payment_noBook">
-                    <label class="form-check-label" for="payment_noBook">무통장 입금</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="payment" id="payment_kakao">
-                    <label class="form-check-label" for="payment_kakao">카카오 페이</label>
-                  </div>
-                  <div class="pay_noBook_box">
-                    <ul>
-                      <li>
-                        <strong>입금자명</strong>
-                        <input type="text" class="form-control" name="bankSender">
-                      </li>
-                      <li>
-                        <strong>입금은행</strong>
-                        <select id="inputState" class="form-control">
-                          <option value="">은행 선택</option>
-                          <option value="1">국민은행 536801-04-008887 윤건희</option>
-                        </select>
-                      </li>
-                    </ul>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="final_payment">
-          <div class="final_total_payment">
-            <dl>
-              <dt>최종 결제 금액</dt>
-              <dd><span><strong id="totalSettlePriceView">34,400</strong>원</span></dd>
-            </dl>
-          </div>
-          <div class="final_payment_check">
-            <div class="form_element">
-              <input type="checkbox" id="termAgree_orderCheck" class="require">
-              <label for="termAgree_orderCheck" class="check_s"><em><b>(필수)</b> 구매하실 상품의 결제정보를 확인하였으며, 구매진행에
-                  동의합니다.</em></label>
-            </div>
-            <div class="btn_center_box">
-              <button class="btn_order_buy order-buy"><em>결제하기</em></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--결제수단 선택 / 결제 끝-->
-    </div>
-    <!--주문 정보 끝-->
-
   </div>
 </body>
 
