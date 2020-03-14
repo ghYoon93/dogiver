@@ -41,6 +41,10 @@ body {
 	float: right;
 	overflow: hidden;
 }
+.overview-content h1{
+	font-size: 20px; 
+	margin:50px 0 30px 0;
+}
 
 /* .overview-content div{
 	display: block;
@@ -54,7 +58,7 @@ body {
     font-weight: 900;
     vertical-align: bottom; 
 }
-.price-row{display: table-row;}
+
 .goods-price-rate{
 	display: table-cell;
     padding-right: 5px;
@@ -64,14 +68,14 @@ body {
     vertical-align: bottom;
 }
 .product-price-wrap{display: table-cell;}
-#goods_price{
+/* {
 	display: block;
     margin: 0 0 2px;
     font-size: 15px;
     color: #757575;
-}
-#discount-price{
-	font-size: 32px;
+} */
+#goods_price{
+	font-size: 25px;
     font-weight: 900;
 }
 

@@ -7,6 +7,19 @@ body {
   padding: 0;
   margin: 0;
 }
+a{
+	text-decoration: none;
+	color: #000;
+    outline: none;
+}
+
+ul{
+	list-style: none; 
+	margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
 .container-header{
 	height: 200px;
 }
@@ -16,7 +29,7 @@ body {
 }
 
 .frame {
-	border: 1px solid black;
+	/* border: 1px solid black; */
   	margin: 0px auto;
  	width: 1100px;
   	height: 1200px;
@@ -28,17 +41,99 @@ body {
     padding-top: 48px;
     padding-bottom: 48px;
 }
+
+/* 상품 카테고리 */
+.goods_category ul{ 
+	padding: 20px 0; 
+}
+.goods_category li{
+	list-style: none; 
+	display: inline-block;
+	/* float: left; */
+	margin: 5px 20px 5px 0;
+	padding: 0 10px 10px 0;
+	font-size: 13px;
+	vertical-align: top;
+    text-align: center;
+    white-space: nowrap;
+}
+/* 상품 정렬 */
+.goods_top{
+	padding: 20px 0; 
+	text-align: right;
+}
+.good_top ul{
+	display: table;
+	width: 100%;
+}
+.list_qty{
+	font-size: 12px;
+    float: left;
+    padding: 0;
+    color: #999;
+	/* list-style: none;
+	display: inline-block;
+    width: 30%;
+    text-align: left;
+    vertical-align: bottom;
+    font-size: 14px;
+    color: #111;
+    letter-spacing: 0px;
+    font-weight: 400;
+	line-height: 15px; */
+}
+.right_box{
+	position: relative;
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+	font-size: 0;
+	text-align: right;
+}
+.sort_box{
+	overflow: hidden;
+	display: inline-block;
+    font-size: 0;
+    vertical-align: top;
+    border: 1px solid #ddd;
+}
+.sort_box select{
+	overflow: visible;
+	padding: 7px 20px 7px 11px;
+    width: 144px;
+    background: none;
+    border-radius: unset;
+    font-size: 13px;
+    letter-spacing: -0.16px;
+	font-weight: 400;
+	
+}
+.select_box select option{
+	font-weight: normal;
+    display: block;
+    white-space: pre;
+}
+.top_right_box .select_box:after{
+	position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 12px;
+    height: 8px;
+    margin: -4px 0 0 -12px;
+    background: url(../image/btn_dropdown.png) no-repeat center;
+}
 /* 드롭다운 */
 .dropdown {
     display: inline-block;
     right: 10px;
-    float: right; 
-    margin: 0 20px;	
+    /* float: right;  */
+	margin: 0 20px;	
+	clear: both;
 }
 .dropdown-sort {
 	background-color: #FFDAB9;
 	padding: 8px;
-	font-size: 11px;
+	font-size: 13px;
 	border: none;
 }
 .dropdown-content {
@@ -64,38 +159,44 @@ body {
 
 .goods-frame{
 	border: 1px solid red;
-	display: flex;
-	width: -webkit-fill-available;
-	height: 100%;
+	/* display: flex; */
+	width: 1100px;
+	height: fit-content; 
 	float: left;
+	/* 그리드 속성 */
+	display: grid;
+	grid-template-columns: 275px 275px 275px 275px;
+	grid-template-rows: 400px 400px 400px 400px;
 }
 .goods-boxs{
-	border: 1px solid silver;	
+	/* border: 1px solid silver;	 */
 	/* flex: 0 0 25%; */
 	height: fit-content; 
-	width: -webkit-fill-available;
-	padding: 10px;
+	/* width: 275px; */
+	
+	
 }
 .goods-image{
-	border: 1px solid silver; 
+	/* border: 1px solid silver;  */
 	display: block;
 	position: relative;
-	width: 100%;
-	height: 200px;
+	width: 255px;
+	height: 250px;
 	border-radius: 4px;
 	overflow: hidden;
 	box-sizing: border-box;
+	margin: 10px;
 }
 .goods-content{
-	background-color: silver;
+	/* background-color: silver; */
 	display: block;
 	position: relative;
 	height: 100px;
-    margin-top: 10px;
+	margin: 30px 10px 10px 10px;
 }
 
 .goods-name{
-	margin-top: 5px;
+	margin-top: 10px;
 	font-size: 13px;
 	line-height: 17px;
 	overflow: hidden; 		
@@ -117,7 +218,7 @@ body {
 	/* visibility: hidden;
 	z-index: 1; */
 	width: 100%;
-	height: 200px;
+	height: 100%;
 	transform: scale(1);
 	transition: all 0.3s ease-in-out; /* 부드러운 모션을 위해 추가*/
 }
