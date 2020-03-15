@@ -48,3 +48,16 @@
 	margin-top: 100px;
 	text-align: center;
 }
+
+.bloodNowBtn{
+	text-align: center;
+
+}
+.bloodNowBtn button{
+	color: white;
+	font-size: 15pt;
+	font-weight: bold;
+	background-color: #F8585B;
+	height: 50px;
+	width: 300px;
+}
