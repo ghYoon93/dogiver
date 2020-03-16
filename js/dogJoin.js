@@ -23,7 +23,7 @@ $(function() {
   });
 });
 
-$('#dogJoinBtn').click(function( ){
+$('.dogJoinBtn').click(function( ){
   //로그인이 되어있을대 등록
   $('#dogNameDiv').empty();
   $('#dogAgeDiv').empty();
