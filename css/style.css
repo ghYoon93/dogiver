@@ -102,6 +102,7 @@ a:focus {
   width: 20px;
   height: 20px;
   font-size: 15px;
+  text-decoration: none;
 }
 .top-header div a img {
   width: 20px;
@@ -229,11 +230,102 @@ header .header {
 }
 /* content */
 .wrap {
+  margin: 0 auto;
 }
-.image-slider {
+/* 페이지 타이틀 */
+.page-title {
+  height: 300px;
+  background: #c46177;
+  text-align: center;
+}
+.page-title h2 {
+  font-size: 35px;
+  color: #fff;
+  line-height: 1;
+  position: relative;
+  padding-top: 130px;
+  text-align: center;
+}
+.page-title h2:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 50px;
+  height: 1px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+/* main */
+.slider {
+  position: relative;
+}
+.slider img {
+  object-fit: scale-down;
   width: 100%;
+  height: 100%;
 }
-.image-slider ul {
+
+.slider button {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  margin: 0 auto;
 }
-.image-slider ul li {
+.slider button:before {
+  font-family: "xeicon";
+  color: #fff;
+  font-size: 45px;
 }
+.slider button.slick-prev {
+  left: 50px;
+  color: transparent;
+  font-size: 0;
+}
+.slider button.slick-prev:before {
+  content: "\e93d";
+}
+.slider button.slick-next {
+  right: 50px;
+  color: transparent;
+  font-size: 0;
+}
+.slider button.slick-next:before {
+  content: "\e940";
+}
+.slider div {
+  width: 100%;
+  height: 800px;
+}
+/* card-box */
+.card-box {
+  position: relative;
+  width: 1100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.card-box > div:first-child {
+  height: 600px;
+  background: #d67074;
+}
+.card-box > div {
+  flex: 2;
+}
+.card-box > div div {
+  height: 200px;
+  background: #ffe3e4;
+}
+.card-box > div div:first-child {
+  background: #ffc8fc;
+}
+.card-box > div div:last-child {
+  background: #fff1f2;
+}
+/* footer */
