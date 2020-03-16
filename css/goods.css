@@ -172,9 +172,7 @@ ul{
 	/* border: 1px solid silver;	 */
 	/* flex: 0 0 25%; */
 	height: fit-content; 
-	/* width: 275px; */
-	
-	
+	/* width: 275px; */	
 }
 .goods-image{
 	/* border: 1px solid silver;  */
@@ -194,19 +192,74 @@ ul{
 	height: 100px;
 	margin: 30px 10px 10px 10px;
 }
-
 .goods-name{
 	margin-top: 10px;
 	font-size: 13px;
 	line-height: 17px;
 	overflow: hidden; 		
 }
-.goods-price-rate{color: #35c5f0; margin-right: 2px;}
+.goods-image > .goods_cart{
+	position: absolute;
+	background-color: white;
+	box-shadow: 0 4px 4px 0;
+	padding: 3px;
+	border-radius: 4px;
+	width: 35px;
+	height: 35px;
+	left: 50%;
+	top: 50%;
+	margin-left: 75px;
+	margin-top: 70px;
+	opacity: 0;
+}
+.icon{
+	/* background-color: #7c7c7c; */
+	width: 255px;
+	height: 30px;
+	position: absolute;
+	display: none;
+	z-index: 10;
+	bottom: 0;
+}
+.btn_basket_cart{
+	width:50%;
+	height:30px;
+	background:#5b5b5b;
+	display: block;
+	float: left; 
+	border: none;
+}
+.btn_basket_cart:hover{background:#ffc71d; border-color:#ffc71d;cursor: pointer;}
+.btn_basket_cart > img{	width: 20px; height: 20px;
+	/* -webkit-filter: opacity(1) drop-shadow(0 0 0 white);
+	filter: opacity(.5) drop-shadow(0 0 0 white); */
+}
+.btn_basket_link{
+	width:50%; 
+	height:30px; 
+	background:#5b5b5b;
+	display: block;
+	float: left; 
+	border: none;
+}
+.btn_basket_link:hover {background:#ffc71d; border-color:#ffc71d; cursor: pointer;}
+.btn_basket_link > img{ width: 20px; height: 20px;}
+/* .goods-price{
+	display: block;
+	float: left;
+
+}
+.goods_cart {
+	display: block;
+	width: 25px;
+	height: 25px;
+} */
+/* .goods-price-rate{color: #35c5f0; margin-right: 2px;}
 .goods-price-rate, .goods-price{
 	font-size: 17px;
     line-height: 23px;
     font-weight: 700;
-}
+} */
 
 /* .tooltip{
 	flex: 0 0 30%;
@@ -214,7 +267,7 @@ ul{
 } */
 
 /* 이미지 확대  */
-.goods-image img{
+.goods-image > img{
 	/* visibility: hidden;
 	z-index: 1; */
 	width: 100%;
@@ -222,7 +275,13 @@ ul{
 	transform: scale(1);
 	transition: all 0.3s ease-in-out; /* 부드러운 모션을 위해 추가*/
 }
-.goods-boxs:hover img{
+.goods-boxs:hover .goods-image .image{
 	/* visibility: visible; */
 	transform: scale(1.2);
+} 
+/* .goods-boxs:hover .goods-image > .goods_cart{
+	opacity: 1;
+} */
+.goods-boxs:hover .icon{
+	display: block;
 } 

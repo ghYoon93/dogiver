@@ -39,9 +39,9 @@ $('#plus').click(function(){
 });
 $('#minus').click(function(){
 	var num = $('#quantity').val();
-	num--;
-	if(num<0)
-		$('#quantity').attr('value', '0');	
+	num=num-1;
+	if(num<1)
+		$('#quantity').attr('value', '1');	
 		//return;
 	else 
 		$('#quantity').val(num);
@@ -50,6 +50,12 @@ $('#minus').click(function(){
 	var num = $('#quantity').val();
 	var totalPrice = numberFormat(price*num);
 	$('#tot_price').html(totalPrice).append(' 원');
+
+});
+
+$(document).ready(function(){
+	var num = $('#goods-price').val();
+	numberFormat(num).html($('#goods-price'));
 
 });
 
