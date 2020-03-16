@@ -1,17 +1,20 @@
-$(function() {
-  var top_header = $(".top_header"),
-    header = $(".header");
+var currentScrollTop = 0;
 
-  var yPosition = top_header.offset().top;
+window.onload = function() {
+  scrollController();
 
-  $(window).scroll(function(e) {
-    var top = $(document).scrollTop();
-    if (yPosition < top) {
-      $(".frame").css({ marginTop: header.outerHeight(true) });
-      header.addClass("topFixed");
-    } else {
-      $(".frame").css({ marginTop: "0" });
-      header.removeClass("topFixed");
-    }
+  $(window).on("scroll", function() {
+    scrollController();
   });
-});
+};
+
+// 영역의 위치를 설정한 위치에서 부드럽게 고정시킴 - 시작
+function scrollController() {
+  currentScrollTop = $(window).scrollTop();
+
+  if ($(this).scrollTop() > 50) {
+    $("header").addClass("sticky");
+  } else {
+    $("header").removeClass("sticky");
+  }
+}
