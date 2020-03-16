@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-signin-client_id"
+      content="YOUR_CLIENT_ID.apps.googleusercontent.com"
+    />
+    <title>로그인</title>
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+  <body>
+    <section class="login">
+      <h2>로그인</h2>
+      <div class="loginMessage"></div>
+      <ul>
+        <li><input type="text" placeholder="아이디" title="아이디입력" /></li>
+        <li>
+          <input type="password" placeholder="비밀번호" title="비밀번호입력" />
+        </li>
+        <li>
+          <input type="checkbox" id="chk_id" /><label for="chk_id">
+            아이디저장
+          </label>
+        </li>
+        <div id="logins">
+          <li><div id="login_btn"></div></li>
+          <li><div id="my-signin2"></div></li>
+          <li><div id="naverIdLogin"></div></li>
+          <li><div id="kakao-login"></div></li>
+        </div>
+      </ul>
+      <div class="bottomDiv">
+        <ul>
+          <li><a href="">회원가입</a></li>
+          <li><a href="">아이디/비밀번호입력 찾기</a></li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

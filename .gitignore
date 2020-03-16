@@ -2,3 +2,18 @@
 .settings/.jsdtscope
 .settings/org.eclipse.wst.jsdt.ui.superType.container
 .settings/org.eclipse.wst.jsdt.ui.superType.name
+/.metadata/
+dogner/.project
+dogner/.settings/.jsdtscope
+dogner/.settings/org.eclipse.jdt.core.prefs
+dogner/.settings/org.eclipse.wst.common.component
+dogner/.settings/org.eclipse.wst.common.project.facet.core.xml
+dogner/.settings/org.eclipse.wst.jsdt.ui.superType.container
+dogner/.settings/org.eclipse.wst.jsdt.ui.superType.name
+Servers/Tomcat v9.0 Server at localhost-config/catalina.policy
+Servers/Tomcat v9.0 Server at localhost-config/catalina.properties
+Servers/Tomcat v9.0 Server at localhost-config/context.xml
+Servers/Tomcat v9.0 Server at localhost-config/server.xml
+Servers/Tomcat v9.0 Server at localhost-config/tomcat-users.xml
+Servers/Tomcat v9.0 Server at localhost-config/web.xml
+>>>>>>> loginpage
