@@ -45,7 +45,6 @@ $('input:checkbox[name=checkGoods]').click(function(){
 });
 function calcTot(checkedGoods){
   let total = 0;
-  let charge = 2500;
   checkedGoods.each(function(i){
     let tr = checkedGoods.parent().parent().eq(i);
     let td = tr.children();
