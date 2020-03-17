@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/board.css">
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<style>
+.fr-box.fr-basic .fr-element {
+	min-height: 600px !important;
+}
+
+#writer-info {
+	text-align: center;
+}
+</style>
+
+</head>
+<body>
+	<div class="boardMain">
+		<div class="board_category">
+			<div id="board_category_select">
+				<select style="font-size: 13px; padding: 5px; height: 40px; text-align-last: center; ">
+					<option label="글의 종류를 선택하세요" selected="selected"
+						style="text-align: center;"></option>
+					<option label="헌혈받았어요."></option>
+					<option label="고민이에요."></option>
+					<option label="자랑합니다."></option>
+				</select>
+			</div>
+		</div>
+
+		<div class="board_name">
+			<input type="text" id="writer-info" placeholder="이름을 입력하세요">
+		</div>
+
+		<div class="board_title">
+			<input type="text" id="writer-info" placeholder="제목을 입력하세요">
+		</div>
+
+
+		<div class="board_write"></div>
+
+		<div class="board_writeBtn">
+			<input type="button" value="작성하기">
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$("#file").on('change', function() {
+		var fileName = $("#file").val();
+		$(".upload-name").val(fileName);
+	});
+</script>
+<link
+	href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.6/css/froala_editor.pkgd.min.css"
+	rel="stylesheet" type="text/css" />
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.6/js/froala_editor.pkgd.min.js">
+	
+</script>
+<script type="text/javascript">
+	var editor = new FroalaEditor('.board_write')
+</script>
+</html>
+
