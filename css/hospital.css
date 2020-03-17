@@ -1,0 +1,39 @@
+@charset "utf-8";
+.body{
+	margin: 0;
+	padding: 0;
+}
+
+.hospitalframe{
+	border: 0px solid;
+	width: 1100px;
+	position: absolute;
+	left: 50%;
+	height: 800px;
+	transform: translate( -50%, 0 );
+}
+
+.hospitallist{
+	margin: 0 auto;
+	width: 1000px;
+	height: 300px;
+	padding: 0px;
+}
+
+.hospitallist table{
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	text-align: center;
+}
+
+.hospitalmap{
+	margin: 0px;
+}
+
+.marker_inner{
+	padding: 10px;
+}
+
+.name{
+	cursor: pointer;
+}

@@ -12,7 +12,7 @@ li {
   width: 410px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 45%;
   transform: translate(-50%, -50%);
 }
 .login h2 {
@@ -40,15 +40,15 @@ li {
   font-size: 16px;
   color: #9fa19f;
 }
-.login > ul li input[type="checkbox"] {
+input[type="checkbox"] {
   position: absolute;
   left: -3000%;
 }
-.login > ul li input[type="checkbox"] + label {
+input[type="checkbox"] + label {
   height: 36px;
   line-height: 36px;
 }
-.login > ul li input[type="checkbox"] + label:before {
+input[type="checkbox"] + label:before {
   content: "";
   width: 18px;
   height: 18px;
@@ -58,6 +58,11 @@ li {
   vertical-align: middle;
   margin: 0 10px 0 0;
 }
+input[type="checkbox"]:checked + label:before {
+  background: url(../image/checkbox.png) no-repeat #fff center;
+  border-color: #333;
+}
+
 .login > li input[type="checkbox"]:checked + label:before {
   background: url(../image/checkbox.png) no-repeat #fff center;
   border-color: #333;
@@ -80,4 +85,39 @@ li {
   font-size: 14px;
   color: #111;
   text-decoration: none;
+}
+#login_btn {
+  background: url(../image/login_email.png) no-repeat;
+  width: 100%;
+  height: 56px;
+  cursor: pointer;
+}
+#my-signin2 {
+  background: url(../image/login_google.png) no-repeat;
+  width: 100%;
+  height: 56px;
+  cursor: pointer;
+}
+#naverIdLogin {
+  background: url(../image/login_naver.png) no-repeat;
+  width: 100%;
+  height: 56px;
+  cursor: pointer;
+}
+#kakao-login {
+  background: url(../image/login_kakao.png) no-repeat;
+  width: 100%;
+  height: 56px;
+  cursor: pointer;
+}
+#logins li {
+  width: 410px;
+  height: 58px;
+}
+#logins li div:hover {
+  border: 1px solid #c4fbff;
+  border-radius: 10px;
+}
+.bottomDiv li:hover a {
+  color: #ff0000;
 }

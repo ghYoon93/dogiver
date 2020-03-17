@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="../css/sign.css" />
+  </head>
+  <body>
+    <section class="sign_up">
+      <div class="contents">
+        <h2 class="h2">회원가입</h2>
+        <p>회원이 되셔서 Dogner를 이용하세요</p>
+      </div>
+      <ol class="step">
+        <li>
+          STEP1
+          <div>이메일인증</div>
+        </li>
+        <li>
+          STEP2
+          <div>약관동의</div>
+        </li>
+        <li class="on">
+          STEP3
+          <div>회원정보입력</div>
+        </li>
+        <li>
+          STEP4
+          <div>가입완료</div>
+        </li>
+      </ol>
+      <form action="">
+        <div class="sign_insert">
+          <h3>회원정보입력</h3>
+          <ul>
+            <li>
+              <label
+                >이름<br />
+                <input type="text" placeholder="이름" title="이름" />
+              </label>
+            </li>
+            <li>
+              <label
+                >닉네임<br />
+                <input type="text" placeholder="닉네임" title="닉네임" />
+                <a class="btn_2" href="#" onclick="">중복확인</a>
+              </label>
+            </li>
+            <li>
+              <label
+                >비밀번호<br />
+                <input
+                  type="password"
+                  placeholder="비밀번호"
+                  title="비밀번호"
+                />
+              </label>
+            </li>
+            <li>
+              <label
+                >비밀번호재확인<br />
+                <input
+                  type="password"
+                  placeholder="비밀번호재확인"
+                  title="비밀번호재확인"
+                />
+              </label>
+            </li>
+            <li>
+              <label
+                >전화번호 (선택)<br />
+                <select>
+                  <option>선택</option>
+                  <option>010</option>
+                  <option>011</option>
+                  <option>017</option>
+                </select>
+                <input type="tel" />
+                <input type="tel" />
+              </label>
+            </li>
+            <li>
+              <label
+                >주소 (선택)<br />
+                <input
+                  type="text"
+                  name="zipcode"
+                  id="zipcode"
+                  placeholder="우편번호"
+                  readonly
+                />
+                <a class="btn_2" href="#" onclick="">우편번호검색</a>
+                <br />
+                <input
+                  type="text"
+                  name="addr1"
+                  id="addr1"
+                  placeholder="주소"
+                  readonly
+                />
+                <br />
+                <input
+                  type="text"
+                  name="addr2"
+                  id="addr2"
+                  placeholder="상세 주소"
+                />
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="btn_center"><a class="btn_1" href="sign_up_step4.html">회원가입</a></div>
+      </form>
+    </section>
+  </body>
+</html>
