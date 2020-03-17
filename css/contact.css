@@ -1,0 +1,107 @@
+@charset "EUC-KR";
+input:focus{
+	outline:none;
+}
+textarea{
+	resize: none;
+	border: none;
+}
+textarea:focus{
+	outline:none;
+}
+.contact-image{
+	height: 400px;
+}
+.contact-first{
+	margin: 0 auto;
+	overflow: none;
+	position: relative;
+}
+.contact-second{
+	margin: 0px auto;
+	width:1000px;	
+}
+.contact-third{
+	margin: 0 auto;
+	width:1000px;
+}
+.contact-fourth{
+	margin: 2px auto;
+	width:1000px;
+}
+.contact-first-text{
+	color:white;
+	font-size:25pt;
+	font-family:monospace;
+	width:600px;
+	position: absolute;
+	top: 20%;
+	left: 50%;	
+	transform: translate( -50%, -50% );
+}
+.contact-second-text{
+	margin: 0 auto;
+	width:600px;	
+}
+.contact-third-textarea{
+	border: 1px solid black;
+	margin: 3px auto;
+	width:600px;
+	border-radius: 12px;
+}
+.contact-third-textarea-btn{
+	margin: 3px auto;
+	width:600px;
+}
+.contact-fourth-image1{
+	width:170px;
+	height:50px;
+	display:inline-block;
+	margin: 5px auto;
+	margin-left: 195px;
+}
+.contact-fourth-image2{
+	width:170px;
+	height:50px;
+	display:inline-block;
+	margin: 5px auto;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+.contact-fourth-image3{
+	width:170px;
+	height:50px;
+	display:inline-block;
+	margin: 5px auto;
+}
+
+#name{
+	width: 600px;
+	height: 40px;
+	border-radius: 12px;
+}
+#email{
+	width: 600px;
+	height: 40px;
+	border-radius: 12px;
+}
+#title{
+	width: 600px;
+	height: 40px;
+	border-radius: 12px;
+}
+#contactBtn{
+  width: 180px;
+  height: 50px;
+  font-size:30px;
+  font-family: 'Nanum Gothic';
+  color: gray;
+  line-height: 50px;
+  text-align: center;
+  border: solid 2px grey;
+  border-radius: 12px;
+}
+#contactBtn:hover {
+	cursor: pointer;
+}
+

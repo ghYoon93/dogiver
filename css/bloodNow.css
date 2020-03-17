@@ -1,0 +1,63 @@
+@charset "UTF-8";
+.container{
+	margin: auto;
+	width: 1100px;
+}
+.blooddog{
+	width: 150px;
+	height: 150px;
+}
+.blooddog1{
+	width:100%;
+	display: inline-block;
+}
+.blooddogimg{
+	width: 50%;
+	float: left;
+}
+.blooddogcontent{
+	margin-top: 37px;
+}
+
+.blooddog2{
+	display: inline-block;
+	width: 100%;
+	margin-left: 40px;
+	margin-top: 100px;
+}
+.blooddogcontent2{
+	margin-top: 37px;
+	float: left;
+	margin-right: 40px;
+}
+.blooddogimg2{
+	width: 50%;
+	display: inline-block;
+}
+.blooddog3{
+	display: inline-block;
+	width: 100%;
+	margin: 100px 0 0 0;
+	text-align: center;
+	background-color: #F8585B;
+}
+
+.blooddog4{
+	display: inline-block;
+	width: 100%;
+	margin-top: 100px;
+	text-align: center;
+}
+
+.bloodNowBtn{
+	text-align: center;
+
+}
+.bloodNowBtn button{
+	color: white;
+	font-size: 15pt;
+	font-weight: bold;
+	background-color: #F8585B;
+	height: 50px;
+	width: 300px;
+}
