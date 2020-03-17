@@ -112,7 +112,7 @@ li {
   font-size: 14px;
   color: #888;
 }
-.email_confirm a {
+.email_confirm button {
   display: inline-block;
   width: 120px;
   height: 45px;
