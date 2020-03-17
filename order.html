@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.css">
+  <title>DogNOR</title>
+</head>
+
+<body>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">주문서작성/결제</li>
+    </ol>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ol class="order_process">
+          <li><span class="dot">01</span> 장바구니 <span>></span></li>
+          <li class="page_on"><span class="dot">02</span>주문서작성/결제<span>></span></li>
+          <li><span class="dot">03</span> 주문완료</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="row">
+      <table class="table">
+        <colgroup>
+          <col> <!-- 상품명/옵션 -->
+          <col style="width:10%"> <!-- 수량 -->
+          <col style="width:10%"> <!-- 상품금액 -->
+          <col style="width:10%"> <!-- 합계금액 -->
+          <col style="width:10%"> <!-- 배송비 -->
+        </colgroup>
+        <thead>
+          <tr>
+            <th>상품/옵션 정보</th>
+            <th>수량</th>
+            <th>상품금액</th>
+            <th>합계금액</th>
+            <th>배송비</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="media">
+                <a class="thumbnail" href="#"> <img class="" src="/image/no-image-icon.png"
+                    style="width:122px; height:122px"> </a>
+                <div class="media-body align-self-center">상품 명</a>
+                </div>
+              </div>
+            </td>
+            <td style="text-align: center">1개
+            </td>
+            <td>
+              <strong>8,000원</strong></td>
+            <td><strong>8,000원</strong></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="media">
+                <a class="thumbnail" href="#"> <img class="" src="/image/no-image-icon.png"
+                    style="width:122px; height:122px"> </a>
+                <div class="media-body align-self-center">상품 명</a>
+                </div>
+              </div>
+            </td>
+            <td style="text-align: center">1개
+            </td>
+            <td><strong>8,000원</strong></td>
+            <td><strong>8,000원</strong></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="price_sum">
+        <div class="price_sum_cont">
+          <div class="price_sum_list">
+            <dl>
+              <dt>총 <strong id="totalGoodsCnt">2</strong> 개의 상품금액 </dt>
+              <dd><strong id="totalGoodsPrice">31,900</strong>원</dd>
+            </dl>
+            <dl>
+              <dt>&emsp;</dt>
+              <dd><strong>+</strong></dd>
+            </dl>
+            <dl>
+              <dt>배송비</dt>
+              <dd><strong id="totalDeliveryCharge">2,500</strong>원</dd>
+            </dl>
+            <dl>
+              <dt>&emsp;</dt>
+              <dd><strong>=</strong></dd>
+            </dl>
+            <dl class="price_total">
+              <dt>합계</dt>
+              <dd><strong id="totalSettlePrice">34,400</strong>원
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--주문 상품 끝-->
+    <!--주문 정보 시작-->
+    <div class="order_container">
+      <div class="order_info">
+        <!--주문자 정보 시작-->
+        <div class="order_title">
+          <h4>주문자 정보</h4>
+        </div>
+      </div>
+      <div class="order_table">
+        <table class="table">
+          <colgroup>
+            <col style="width:15%;">
+            <col style="width:85%;">
+          <tbody>
+            <tr>
+              <th scope="row">주문하시는 분</th>
+              <td>
+                <input type="text" class="form-control" name="orderName" value="ㅇㅇㅇ" maxlength="20">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">주소</th>
+              <td>
+                [06611] 서울특별시 강남구 강남대로 459 백암빌딩
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">휴대폰 번호</th>
+              <td>
+                <input type="text" id="phoneNum" class="form-control" name="orderPhone" value="010-1234-5678"
+                  maxlength="20">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">이메일</th>
+              <td>
+                <input type="text" class="form-control" name="orderEmail" value="" maxlength="20">
+                <select id="inputState" class="form-control">
+                  <option value="self">직접입력</option>
+                  <option value="naver.com">naver.com</option>
+                  <option value="hanmail.net">hanmail.net</option>
+                  <option value="daum.net">daum.net</option>
+                  <option value="gmail.com">gmail.com</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--주문자 정보 끝-->
+      <!--배송지 정보 시작-->
+      <div class="delivery_info">
+        <div class="delivery_title">
+          <h4>배송 정보</h4>
+        </div>
+      </div>
+      <div class="shipping_table">
+        <table class="table">
+          <colgroup>
+            <col style="width:15%;">
+            <col style="width:85%;">
+          <tbody>
+            <tr>
+              <th>배송지 확인</th>
+              <td>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shipping" id="shippingBasic">
+                  <label class="form-check-label" for="shippingBasic">기본 배송지</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shipping" id="shippingRecently">
+                  <label class="form-check-label" for="shippingRecently">최근 배송지</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shipping" id="shippingNew">
+                  <label class="form-check-label" for="shippingNew">직접 입력</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shipping" id="shippingSameCheck">
+                  <label class="form-check-label" for="shippingSameCheck">최근 배송지</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">받으실 분</th>
+              <td>
+                <input type="text" class="form-control" name="receiverName" value="ㅇㅇㅇ" maxlength="20">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">받으실 곳</th>
+              <td>
+                <div class="address_postcode">
+                  <input type="text" name="receiverPostcode" readonly="readonly">
+                  <input type="hidden" name="receiverZipcode">
+                  <button type="button" class="btn btn-outline-dark">우편번호 검색</button>
+                </div>
+                <div class="address_input">
+                  <input type="text" name="receiverAddress" readonly="readonly">
+                  <input type="text" name="receiverAddressSub">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">휴대폰 번호</th>
+              <td>
+                <input type="text" id="phoneNum" class="form-control" name="orderPhone" value="010-1234-5678"
+                  maxlength="20">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">남기실 말씀</th>
+              <td class="memo"><input type="text" name="orderMemo"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--배송지 정보 끝-->
+      <!--결제정보 시작-->
+      <div class="payment_info">
+        <div class="order_title">
+          <h4>결제 정보</h4>
+        </div>
+      </div>
+      <div class="payment_table">
+        <table class="table">
+          <colgroup>
+            <col style="width:15%;">
+            <col style="width:85%;">
+          <tbody>
+            <tr>
+              <th scope="row">상품 합계금액</th>
+              <td>
+                <strong id="totalGoodsPrice" class="order_payment_sum">31,900원</strong>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">배송비</th>
+              <td>
+                <span id="totalDeliveryCharge">2,500</span>원
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">최종 결제 금액</th>
+              <td>
+                <input type="hidden" name="settlePrice" value="34400">
+                <strong id="totalSettlePrice" class="order_payment_sum">34,400</strong>원
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--결제정보 끝-->
+      <!--결제수단 선택 / 결제 시작-->
+      <div class="payment_progress">
+        <div class="order_title">
+          <h4>결제수단 선택 / 결제</h4>
+        </div>
+        <div class="payment_progress_table">
+          <table class="table">
+            <colgroup>
+              <col style="width:15%;">
+              <col style="width:85%;">
+            <tbody>
+              <tr>
+                <th>결제수단 선택</th>
+                <td>
+                  <div class="form-check form-check-inline payment_check">
+                    <input class="form-check-input" type="radio" name="payment" id="payment_noBook">
+                    <label class="form-check-label" for="payment_noBook">무통장 입금</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="payment" id="payment_kakao">
+                    <label class="form-check-label" for="payment_kakao">카카오 페이</label>
+                  </div>
+                  <div class="pay_noBook_box">
+                    <ul>
+                      <li>
+                        <strong>입금자명</strong>
+                        <input type="text" class="form-control" name="bankSender">
+                      </li>
+                      <li>
+                        <strong>입금은행</strong>
+                        <select id="inputState" class="form-control">
+                          <option value="">은행 선택</option>
+                          <option value="1">국민은행 536801-04-008887 윤건희</option>
+                        </select>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="final_payment">
+          <div class="final_total_payment">
+            <dl>
+              <dt>최종 결제 금액</dt>
+              <dd><span><strong id="totalSettlePriceView">34,400</strong>원</span></dd>
+            </dl>
+          </div>
+          <div class="final_payment_check">
+            <div class="form_element">
+              <input type="checkbox" id="termAgree_orderCheck" class="require">
+              <label for="termAgree_orderCheck" class="check_s"><em><b>(필수)</b> 구매하실 상품의 결제정보를 확인하였으며, 구매진행에
+                  동의합니다.</em></label>
+            </div>
+            <div class="btn_center_box">
+              <button class="btn_order_buy order-buy"><em>결제하기</em></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--결제수단 선택 / 결제 끝-->
+    </div>
+    <!--주문 정보 끝-->
+
+  </div>
+</body>
+
+</html>
