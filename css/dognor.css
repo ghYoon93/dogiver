@@ -4,26 +4,43 @@ body{
 }
 
 .dognorframe{
+
   margin: auto;
   width: 1100px;
-
-}
-
-.dognorframe h3, .dognorframe h4{
   text-align: center;
+
 }
 
 .dognorframe dl{
-  margin: auto;
+  margin: 0 auto;
+  width: 1000px;
   display: inline-block;
-  margin-left: 15px;
+
 }
 
 .dognorframe dl dd{
-  margin: 10px;
-  width: 80px;
-  height: 80px;
+  margin: 0 10px;
+  width: 280px;
+  height: 350px;
   display: inline-block;
-  background: url(../image/dognor.jpg);
+}
+
+.dognorImg{
+  width: 200px;
+  height: 200px;
+  overflow: visible;
+  margin: auto;
+  cursor: pointer;
+}
+
+img{
   border-radius: 40px;
+  width: 200px;
+  height: 200px;
+
+}
+
+.dognorContent{
+  margin-top: 20px;
+  font-size: 15pt;
 }
