@@ -44,7 +44,6 @@
               <label
                 >닉네임<br />
                 <input type="text" placeholder="닉네임" title="닉네임" />
-                <a class="btn_2" href="#" onclick="">중복확인</a>
               </label>
             </li>
             <li>
@@ -69,20 +68,17 @@
             </li>
             <li>
               <label
-                >전화번호 (선택)<br />
-                <select>
-                  <option>선택</option>
-                  <option>010</option>
-                  <option>011</option>
-                  <option>017</option>
-                </select>
-                <input type="tel" />
-                <input type="tel" />
+                >전화번호 <span>(선택)</span><br />
+                <input
+                  type="tel"
+                  placeholder="- 를 제외하고 입력하세요"
+                  title="비밀번호재확인"
+                />
               </label>
             </li>
             <li>
               <label
-                >주소 (선택)<br />
+                >주소 <span>(선택)</span><br />
                 <input
                   type="text"
                   name="zipcode"
@@ -104,13 +100,15 @@
                   type="text"
                   name="addr2"
                   id="addr2"
-                  placeholder="상세 주소"
+                  placeholder="상세주소"
                 />
               </label>
             </li>
           </ul>
         </div>
-        <div class="btn_center"><a class="btn_1" href="sign_up_step4.html">회원가입</a></div>
+        <div class="btn_center">
+          <a class="btn_1" href="sign_up_step4.html">회원가입</a>
+        </div>
       </form>
     </section>
   </body>

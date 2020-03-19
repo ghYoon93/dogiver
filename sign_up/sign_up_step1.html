@@ -37,7 +37,26 @@
       <div class="email_confirm">
         <h3>이메일 인증</h3>
         <p>이메일을 인증 받아야 다음 단계로 넘어갈 수 있습니다.</p>
-        <button onclick="javascript:email_confirm()">이메일 인증</button>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn">이메일 인증</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>이메일 인증</h2>
+            </div>
+            <div class="modal-body">
+              <p>Some text in the Modal Body</p>
+              <p>Some other text...</p>
+            </div>
+            <div class="modal-footer">
+              <h3>Modal Footer</h3>
+            </div>
+          </div>
+        </div>
       </div>
       <p class="noti">
         타인의 정보 및 주민등록번호를 도용하여 기입하는 경우 3년 이하의 징역

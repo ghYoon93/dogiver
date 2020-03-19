@@ -80,11 +80,11 @@ li {
   color: #222;
 }
 .step li.on div {
-  color: #00ade8;
+  color: #e80000;
 }
 .email_confirm {
   height: 400px;
-  background: #e4e8f1;
+  background: #ebebeb;
   margin: 50px 0 30px;
   padding: 40px 0 0;
   text-align: center;
@@ -120,7 +120,7 @@ li {
   line-height: 45px;
   color: #fff;
   font-size: 13px;
-  background: #042e6f;
+  background: #ec2126;
   text-decoration: none;
 }
 .noti {
@@ -146,12 +146,12 @@ li {
   display: inline-block;
   width: 4px;
   height: 4px;
-  background: #00a5e1;
+  background: #e10000;
   margin: 0 8px 0 0;
   vertical-align: 5px;
 }
 .agree_box {
-  border-top: 2px solid #042e6f;
+  border-top: 2px solid #6f0404;
   border-bottom: 1px solid #999;
   margin: 0 0 20px;
   padding: 35px 30px;
@@ -188,7 +188,7 @@ input[type="checkbox"]:checked + label:before {
   line-height: 45px;
   color: #fff;
   font-size: 13px;
-  background: #042e6f;
+  background: #6f0404;
   text-decoration: none;
 }
 .btn_center {
@@ -229,6 +229,9 @@ input[type="checkbox"]:checked + label:before {
 .sign_insert ul li label {
   font-size: 18px;
 }
+.sign_insert ul li label span {
+  color: #ca3333;
+}
 .sign_insert ul li input {
   height: 45px;
   width: 100%;
@@ -248,29 +251,8 @@ input[type="checkbox"]:checked + label:before {
   text-decoration: none;
   vertical-align: middle;
 }
-.sign_insert ul li input[title="닉네임"] {
-  width: 375px;
-}
-.sign_insert ul li select {
-  height: 45px;
-  width: 30%;
-  margin: 0 8px 0;
-  font-size: 18px;
-  color: #888;
-  border: 2px solid #ddd;
-  background: #fff;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -o-appearance: none;
-  text-align: center;
-}
 .sign_insert ul li select::-ms-expand {
   display: none;
-}
-.sign_insert ul li input[type="tel"] {
-  width: 30%;
-  margin: 0 2px 0;
 }
 #zipcode {
   width: 80px;
@@ -278,4 +260,89 @@ input[type="checkbox"]:checked + label:before {
 .sign_insert ul li input::-webkit-input-placeholder {
   font-size: 16px;
   color: #9fa19f;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #b85c5c;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 2px 16px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #b85c5c;
+  color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  top: 20%;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 20%;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 20%;
+    opacity: 1;
+  }
 }
