@@ -1,0 +1,46 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.dognorframe{
+
+  margin: auto;
+  width: 1100px;
+  text-align: center;
+
+}
+
+.dognorframe dl{
+  margin: 0 auto;
+  width: 1000px;
+  display: inline-block;
+
+}
+
+.dognorframe dl dd{
+  margin: 0 10px;
+  width: 280px;
+  height: 350px;
+  display: inline-block;
+}
+
+.dognorImg{
+  width: 200px;
+  height: 200px;
+  overflow: visible;
+  margin: auto;
+  cursor: pointer;
+}
+
+img{
+  border-radius: 40px;
+  width: 200px;
+  height: 200px;
+
+}
+
+.dognorContent{
+  margin-top: 20px;
+  font-size: 15pt;
+}
