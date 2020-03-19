@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원가입</title>
     <link rel="stylesheet" href="../css/sign.css" />
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-3.4.1.min.js"
+    ></script>
   </head>
   <body>
     <section class="sign_up">
@@ -33,7 +37,7 @@
       <div class="email_confirm">
         <h3>이메일 인증</h3>
         <p>이메일을 인증 받아야 다음 단계로 넘어갈 수 있습니다.</p>
-        <a href="sign_up_step2.html">이메일 인증</a>
+        <button onclick="javascript:email_confirm()">이메일 인증</button>
       </div>
       <p class="noti">
         타인의 정보 및 주민등록번호를 도용하여 기입하는 경우 3년 이하의 징역
@@ -42,4 +46,5 @@
       </p>
     </section>
   </body>
+  <script type="text/javascript" src="../js/sign_up.js"></script>
 </html>
