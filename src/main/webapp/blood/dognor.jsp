@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,16 +9,16 @@
 </head>
 <body>
   <div class="dognorframe">
-    <h3>명예의 전당</h3>
-    <h4>자랑스러운 헌혈견들을 소개합니다</h4>
+    <h3>ëªìì ì ë¹</h3>
+    <h4>ìëì¤ë¬ì´ ííê²¬ë¤ì ìê°í©ëë¤</h4>
     <dl class="dognorlist">
       <dd>
         <div class="dognorImg">
             <img src="../image/dognor.jpg"/>
         </div>
         <div class="dognorContent">
-          똘똘이<br /> 6살<br /> 남아<br />
-          래브라도리트리버<br />35kg
+          ëëì´<br /> 6ì´<br /> ë¨ì<br />
+          ëë¸ë¼ëë¦¬í¸ë¦¬ë²<br />35kg
         </div>
       </dd>
       <dd>
@@ -24,8 +26,8 @@
             <img src="../image/dognor.jpg"/>
         </div>
         <div class="dognorContent">
-	          똘똘이<br /> 6살<br /> 남아<br />
-          래브라도리트리버<br />35kg
+	          ëëì´<br /> 6ì´<br /> ë¨ì<br />
+          ëë¸ë¼ëë¦¬í¸ë¦¬ë²<br />35kg
         </div>
       </dd>
       <dd>
@@ -33,8 +35,8 @@
             <img src="../image/dognor.jpg"/>
         </div>
         <div class="dognorContent">
-	          똘똘이<br /> 6살<br /> 남아<br />
-          래브라도리트리버<br />35kg
+	          ëëì´<br /> 6ì´<br /> ë¨ì<br />
+          ëë¸ë¼ëë¦¬í¸ë¦¬ë²<br />35kg
         </div>
       </dd>
 
