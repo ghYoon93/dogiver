@@ -292,20 +292,53 @@ input[type="checkbox"]:checked + label:before {
 /* Modal Header */
 .modal-header {
   padding: 2px 16px;
-  background-color: #b85c5c;
+  background-color: #ca3333;
   color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 100px;
+}
+.modal-header span {
 }
 
 /* Modal Body */
 .modal-body {
   padding: 2px 16px;
+  height: 200px;
+  display: inline-block;
 }
-
+.modal-body input {
+  width: 310px;
+  height: 40px;
+  margin: 3px;
+  font-size: 14pt;
+  text-indent: 12px;
+}
+.modal-body input:first-child {
+  margin-top: 50px;
+  width: 200px;
+}
+.modal-body input::-webkit-input-placeholder {
+  color: rgb(207, 207, 207);
+}
+.modal-body button {
+  width: 100px;
+  height: 45px;
+}
+.modal-body #result-div {
+  color: red;
+  height: 40px;
+  margin: 0 auto;
+  line-height: 2;
+}
 /* Modal Footer */
 .modal-footer {
+  height: 50px;
   padding: 2px 16px;
-  background-color: #b85c5c;
+  background-color: #ca3333;
   color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 /* Modal Content */
@@ -322,6 +355,7 @@ input[type="checkbox"]:checked + label:before {
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
+  border-radius: 6px;
 }
 
 /* Add Animation */

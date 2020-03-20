@@ -19,8 +19,8 @@
 	<resources location="/css/" mapping="/css/**" />
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/" />
-		<beans:property name="suffix" value=".jsp" />
+		<!-- <beans:property name="prefix" value="/WEB-INF/views/" /> -->
+		<beans:property name="suffix" value=".html" />
 	</beans:bean>
 	<!-- json -->
 	<beans:bean id="jsonView" 
