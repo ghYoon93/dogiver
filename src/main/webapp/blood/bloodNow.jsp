@@ -1,14 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>실황 및 현황</title>
+	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/bloodNow.css" />
+	<link
+		rel="stylesheet"
+		type="text/css"
+		href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+	/>
+	<link
+		rel="stylesheet"
+		href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+	/>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script
+		type="text/javascript"
+		src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+	></script>
+
+	<script type="text/javascript" src="../js/bloodNow.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
 </head>
 
 <body>
-	<div class="frame">
+	<div id="header"></div>
+	<div class="wrap">
 		<!-- 컨테이너 -->
 		<div class="container">
 			<div class="blooddog1">
@@ -104,6 +126,6 @@
 		</div>
 		<!-- //컨테이너 -->
 	</div>
+	<div id="footer"></div>
 </body>
-<script type="text/javascript" src="../js/bloodNow.js"></script>
 </html>
