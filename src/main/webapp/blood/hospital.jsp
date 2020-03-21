@@ -7,12 +7,31 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<title>Insert title here</title>
+	<title>동물 병원</title>
+	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/hospital.css">
+	<link
+		rel="stylesheet"
+		type="text/css"
+		href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+	/>
+	<link
+		rel="stylesheet"
+		href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+	/>
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=clbhwdl70e"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script
+		type="text/javascript"
+		src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+	></script>
+	<script src="../js/hospital.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
 </head>
 
 <body>
+	<div id="header"></div>
+	<div class="wrap">
 	<div class="hospitalframe">
 		<div class="hospitallist">
 			<table border="1" cellspacing="0" cellpadding="5" frame="hsides" rules="rows">
@@ -64,8 +83,9 @@
 			</table>
 		</div>
 		<div class="hospitalmap" id="map" style="width: 100%; height: 400px;"></div>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-		<script src="../js/hospital.js"></script>
+		
 	</div>
+	</div>
+	<div id="footer"></div>
 </body>
 </html>

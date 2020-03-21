@@ -13,31 +13,31 @@
 <body>
 <form name="dogJoinForm" method="post">
   <div class="dogjoinframe">
-    <h3>ííê²¬ ì ë³´ ìë ¥</h3>
+    <h3>헌혈견 정보 입력</h3>
     <ul>
       <li>
-        <label>ë°ë ¤ê²¬ ì´ë¦</label>
-        <input type="text" placeholder="ë°ë ¤ê²¬ ì´ë¦" id="dogName">
+        <label>반려견 이름</label>
+        <input type="text" placeholder="반려견 이름" id="dogName">
         <div id="dogNameDiv"></div>
       </li>
       <li>
-        <label>ë°ë ¤ê²¬ ëì´</label>
-        <input type="text" placeholder="ì«ìë§ ìë ¥" id="dogAge">
+        <label>반려견 나이</label>
+        <input type="text" placeholder="숫자만 입력" id="dogAge">
         <div id="dogAgeDiv"></div>
       </li>
       <li>
-        <label>ë°ë ¤ê²¬ ì¢</label>
-        <input type="text" placeholder="íê¸ë¡ ìë ¥" id="dogBreed">
+        <label>반려견 종</label>
+        <input type="text" placeholder="한글로 입력" id="dogBreed">
         <div id="dogBreedDiv"></div>
       </li>
       <li>
-        <label>ë°ë ¤ê²¬ ëª¸ë¬´ê²(kg)</label>
-        <input type="text" placeholder="ì«ìë§ ìë ¥" id="dogWeight">
+        <label>반려견 몸무게(kg)</label>
+        <input type="text" placeholder="숫자만 입력" id="dogWeight">
         <div id="dogWeightDiv"></div>
       </li>
       <li>
-        <label>ë°ë ¤ê²¬ íì¡í</label><br />
-        <select placeholder="ì«ìë§ ìë ¥" id="dogbloodType">
+        <label>반려견 혈액형</label><br />
+        <select placeholder="숫자만 입력" id="dogbloodType">
           <option value="1.1" id="dogbloodType">1.1</option>
           <option value="1.2" id="dogbloodType">1.2</option>
           <option value="1.3" id="dogbloodType">1.3</option>
@@ -48,7 +48,7 @@
         </select>
       </li>
     </ul>
-    <div class="btn_center"><button type="button" class="dogJoinBtn" return="false">ë±ë¡ì ì²­</button></div>
+    <div class="btn_center"><button type="button" class="dogJoinBtn" return="false">등록신청</button></div>
   </div>
 </form>
 </body>
