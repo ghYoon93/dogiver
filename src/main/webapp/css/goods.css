@@ -192,7 +192,7 @@ ul{
 	height: 100px;
 	margin: 30px 10px 10px 10px;
 }
-.goods-name{
+#goods_name{
 	margin-top: 10px;
 	font-size: 13px;
 	line-height: 17px;
@@ -212,7 +212,7 @@ ul{
 	margin-top: 70px;
 	opacity: 0;
 }
-.icon{
+.hover_bar{
 	/* background-color: #7c7c7c; */
 	width: 255px;
 	height: 30px;
@@ -234,7 +234,7 @@ ul{
 	/* -webkit-filter: opacity(1) drop-shadow(0 0 0 white);
 	filter: opacity(.5) drop-shadow(0 0 0 white); */
 }
-.btn_basket_link{
+.btn_detail_link{
 	width:50%; 
 	height:30px; 
 	background:#5b5b5b;
@@ -242,8 +242,8 @@ ul{
 	float: left; 
 	border: none;
 }
-.btn_basket_link:hover {background:#ffc71d; border-color:#ffc71d; cursor: pointer;}
-.btn_basket_link > img{ width: 20px; height: 20px;}
+.btn_detail_link:hover {background:#ffc71d; border-color:#ffc71d; cursor: pointer;}
+.btn_detail_link > img{ width: 20px; height: 20px;}
 /* .goods-price{
 	display: block;
 	float: left;
@@ -267,7 +267,7 @@ ul{
 } */
 
 /* 이미지 확대  */
-.goods-image > img{
+.goods-image .image{
 	/* visibility: hidden;
 	z-index: 1; */
 	width: 100%;
@@ -282,6 +282,79 @@ ul{
 /* .goods-boxs:hover .goods-image > .goods_cart{
 	opacity: 1;
 } */
-.goods-boxs:hover .icon{
+.goods-boxs:hover .hover_bar{
 	display: block;
 } 
+
+/** option modal **/
+.layer_option {
+	overflow-y: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 210;
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  .layer_option .close {
+	position: absolute;
+	right: 35px;
+	top: 0px;
+	font-size: 35px;
+	font-weight: bold;
+  }
+  
+  .layer_option .close:hover,
+  .close:focus {
+	color: #f44336;
+	cursor: pointer;
+  }
+  .layer_option .layer_option_cont{
+	  position:absolute;
+	  left:50%;
+	  top:50%;
+	  margin-left:-300px;
+	  margin-top:-300px;
+	  width: 600px;
+	  padding: 20px;
+	  border: 2px solid #555555;
+	  background: #ffffff;
+  }
+  .layer_option_cont h4 {
+	padding: 0 0 15px 0;
+	border-bottom: 1px solid #999999;
+	font-size: 17px;
+  }
+  .option_tit_box dl {
+	overflow: hidden;
+  }
+  .option_tit_box dt {
+	float: left;
+	margin: 18px 0 0 20px;
+  }
+  .option_tit_box dd {
+	margin: 18px 0 0 133px;
+	padding: 0 5px 13px 5px;
+	border-bottom: 1px solid #dadada;
+  }
+  .option_tit_box dd strong {
+	display: block;
+	font-size: 14px;
+  }
+  .option_tit_box dt img {
+	width: 70px;
+	height: 70px;
+	border: 1px solid #dbdbdb;
+  }
+
+.count{
+	display:inline-block;
+}
+#tot_price{
+	 display: inline-block; 
+	 margin: 20px 10px 20px 200px;
+}
+  /** //option modal **/

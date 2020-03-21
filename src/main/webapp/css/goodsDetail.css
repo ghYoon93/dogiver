@@ -13,7 +13,7 @@ body {
 }
 .overview{
 	border: 1px solid red;
-	width: ;
+	
 	height: 600px;
 	display: block;
 	overflow: hidden; 
@@ -81,19 +81,12 @@ body {
 
 /* 옵션, 수량, 총합계금액  */
 .option-wrap{background-color: #e6e6e6; padding: 10px 0;}
-.goods-name{
-	display: block;
-}
-.amount-warp{
-	 display: block; 
-	text-align: center;
-}
 .count{
 	display:inline-block;
 }
 #tot_price{
 	 display: inline-block; 
-	 margin: 20px 0 20px 250px;
+	 margin: 20px 10px 20px 200px;
 }
 
 
@@ -132,7 +125,7 @@ body {
 /* --------------------------------------------------- */
 .discription{
 	border: 1px solid blue;
-	width: ;
+
 	height: 1000px;
 	display: block;
 	margin: 10px;
