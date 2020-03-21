@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="../js/main.js"></script>
     <link rel="stylesheet" href="../css/style.css" />
     <link
       rel="stylesheet"
@@ -21,6 +22,7 @@
     ></script>
   </head>
   <body>
+    <div include-html="../template/header.html"></div>
     <div class="wrap">
       <div class="slider">
         <div><img src="../image/slide-image-1.jpg" alt="slide1" /></div>
@@ -36,9 +38,10 @@
         </div>
       </div>
     </div>
+    <div include-html="../template/footer.html"></div>
   </body>
-  <script src="js/main.js"></script>
   <script>
+    includeHTML();
     $(".slider").slick({
       autoplay: true,
       autoplaySpeed: 2000,
