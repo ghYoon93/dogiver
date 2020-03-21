@@ -1,4 +1,3 @@
-alert('tlqk');
 var currentScrollTop = 0;
 
 window.onload = function() {
@@ -21,7 +20,6 @@ function scrollController() {
 }
 function loadTemplate(){
 	//인클루드
-	alert('tlqk2');
 	$('#header').load("../template/header.html");
 	$('#footer').load("../template/footer.html");
 }
