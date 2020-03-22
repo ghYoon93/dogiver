@@ -18,11 +18,13 @@
 	<resources location="/js/" mapping="/js/**" />
 	<resources location="/css/" mapping="/css/**" />
 	<resources location="/template/" mapping="/template/**" />
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<!-- <beans:property name="prefix" value="/WEB-INF/views/" /> -->
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
+	
 	<!-- json -->
 	<beans:bean id="jsonView" 
 	      class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
@@ -33,8 +35,7 @@
 		<beans:property name="order" value="0" />	      
 	</beans:bean>
 	
-	<context:component-scan base-package="com.spare.dognor" />
-	
+	<context:component-scan base-package="member.controller"/>
 	
 	
 </beans:beans>

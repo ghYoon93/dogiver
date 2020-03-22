@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="../js/main.js"></script>
+    <title>DOGIVER</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link
       rel="stylesheet"
@@ -15,14 +14,22 @@
       rel="stylesheet"
       href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+    ></script>
     <script
       type="text/javascript"
       src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
+    <script src="../js/main.js"></script>
   </head>
   <body>
-    <div include-html="../template/header.html"></div>
+    <div id="headerDiv"></div>
     <div class="wrap">
       <div class="slider">
         <div><img src="../image/slide-image-1.jpg" alt="slide1" /></div>
@@ -38,10 +45,9 @@
         </div>
       </div>
     </div>
-    <div include-html="../template/footer.html"></div>
+    <div id="footerDiv"></div>
   </body>
   <script>
-    includeHTML();
     $(".slider").slick({
       autoplay: true,
       autoplaySpeed: 2000,
