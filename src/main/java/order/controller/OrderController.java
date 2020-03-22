@@ -11,4 +11,8 @@ public class OrderController {
     public String order() {
     	return "/order/order"; //이동할 view의 이름 (.jsp)
     }
+    @RequestMapping(value="cart", method=RequestMethod.GET)
+    public String cart() {
+    	return "/cart/cart"; //이동할 view의 이름 (.jsp)
+    }
 }
