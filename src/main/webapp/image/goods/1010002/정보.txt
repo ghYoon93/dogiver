@@ -1,0 +1,9 @@
+goods_id: 1010002
+category_code: 000101
+goods_name: 실속형도너츠 애견장난감
+goods_price: 4200
+goods_date: default
+sayles_yn: y
+goods_thumbnail: image/1010002/thumbnail.jpg
+goods_detail: image/1010002/detail.jpg
+goods_amt: 100
