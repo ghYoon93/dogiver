@@ -38,6 +38,7 @@
 	<context:component-scan base-package="com.spare.dognor" />
 	<context:component-scan base-package="order.controller"/>
 	
+	<context:component-scan base-package="main.controller"/>
 	<context:component-scan base-package="member.controller"/>
 	
 	
