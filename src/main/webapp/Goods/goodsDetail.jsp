@@ -5,27 +5,36 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+      rel="stylesheet"
+/>
+	
 <link rel="stylesheet" href="../css/goodsDetail.css" />
 </head>
 <body>
-<div class="frame">
+<!-- 헤더 -->
+
+<div class="wrap">
+<div>
+        <div class="menuBar">HOME>GOODS</div>
+      </div>
 	<div class="overview">
 		<div class="overview-image"><img src="../image/aa.jpg">  </div>
 		<div class="overview-content">
-			<h1 id="goods_name" >SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)</h1>
-<!-- 			<div class="goods-price" style="font-size: 15px;">39,000 원</div>
-				<div class="goods-price-rate">10%</div> -->
-			
-			<div class="wrap">
-				<div>
-					<span class="product-price-wrap">
-						판매가
-						<span id="goods_price">34000</span>	
-					</span>
-				</div>
+			<h1 id="goods_name" >SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)</h1>			
+			<div>
+				
+				<span>판매가</span>
+				<span id="goods_price">34000</span>	
+
 			</div>
 			
-			<div class="delivery-fee" style="margin:20px 0;">배송비   2500원</div>
+			
+			<div class="delivery-fee" style="margin:20px 0;">
+			<span>배송비</span>
+			<span>2500원</span>
+			</div>
 			
 			<div class="option-wrap">
 				<span class="goods-name">SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)<br><br></span>
@@ -60,7 +69,9 @@
 		
 	</div>
 </div>
+<div id="footerDiv"></div>
 </body>
 <script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/main.js"></script>
 <script src="../js/goods.js"></script>
 </html>

@@ -12,8 +12,8 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="../css/goods.css" />
   </head>
   <body>
+    <!-- 헤더 -->
     <div id="headerDiv"></div>
-    <!-- 컨테이너 헤더(타이틀) -->
     <!-- 페이지타이틀 -->
     <div class="page-title">
       <h2 class="h2">GOODS</h2>
@@ -23,7 +23,7 @@ pageEncoding="UTF-8"%>
       <div>
         <div class="menuBar">HOME>GOODS</div>
       </div>
-      <!-- 바디 -->
+      <!-- 카테고리 -->
       <div class="goods_category">
         <ul>
           <li><a href="#">사료/건강</a></li>
@@ -50,10 +50,7 @@ pageEncoding="UTF-8"%>
       <div class="goods-frame">
         <div class="goods-boxs">
           <div class="goods-image">
-            <a
-              href="javascript:void(0)"
-              onclick="location.href='goodsDetail.html'"
-            >
+            <a href="javascript:void(0)">
               <img class="image" src="../image/aa.jpg" />
             </a>
             <div class="hover_bar">

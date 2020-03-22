@@ -6,7 +6,7 @@ body {
   padding: 0;
   margin: 0;
 }
-.frame {
+.warp {
 	border: 1px solid black;
   	margin: 0px auto;
  	width: 1100px;

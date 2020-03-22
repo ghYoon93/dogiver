@@ -93,10 +93,12 @@ $('.close, .cancle').click(function(){
 });
 
 // 버튼 클릭시 해당상품 상세 페이지로 이동
-$('.btn_detail_link').click(function(){
+$('.btn_detail_link, .goods-boxs a').click(function(){
 	alert('url');
-	location.href="goodsDetail.html";
+	location.href="goodsDetail.jsp";
 });
+
+
 
 
 
