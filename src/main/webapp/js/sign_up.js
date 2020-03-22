@@ -41,6 +41,10 @@ $("#auth-btn").click(function() {
     email.focus();
     return false;
   } else {
+    $("#result-div")
+      .text("인증 이메일이 발송 되었습니다.")
+      .css("display", "block")
+      .css("color", "green");
     $.ajax({
       type: "post",
       url: "../member/authEmail",
