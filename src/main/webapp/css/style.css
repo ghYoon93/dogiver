@@ -85,7 +85,7 @@ a:focus {
 /* 탑헤더 */
 .top-header {
   margin: 0 auto;
-  background: rgba(228, 228, 228, 0);
+  background: rgba(228, 228, 228, 0.055);
   width: 100%;
   height: 30px;
   text-align: right;
