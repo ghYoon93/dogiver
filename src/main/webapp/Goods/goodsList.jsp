@@ -19,9 +19,9 @@
 <div>
 	<div class="menuBar">HOME>GOODS</div>
 </div>
-
+<div id="headerDiv"></div>
 <!-- 바디 -->
-<div class="frame">
+<div class="wrap">
 	<div class="goods_category">
 		<ul> 
 			<li><a href="#">사료/건강</a></li> 
@@ -159,12 +159,13 @@
 				</div>
 		  		<!-- //option_layer_scroll -->
 			</div>
-		</div>
 		<!-- //장바구니 모달 -->
+		</div>
 	</div>
 </div>
-
+<div id="footerDiv"></div>
 </body>
 <script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/main.js"></script>
 <script src="../js/goods.js"></script>
 </html>
