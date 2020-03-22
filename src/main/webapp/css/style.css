@@ -259,9 +259,12 @@ header .header {
   font-size: 35px;
   color: #fff;
   line-height: 1;
+  padding: 0 0 10px 0;
   position: relative;
-  top: 45%;
+  top: 40%;
   text-align: center;
+  font-weight: normal;
+  font-family: "Noto Sans KR", sans-serif;
 }
 .page-title h2:after {
   content: "";
@@ -272,6 +275,14 @@ header .header {
   height: 1px;
   background: #fff;
   transform: translateX(-50%);
+}
+.page-title h2 + p {
+  padding: 146px 0 0;
+  font-size: 18px;
+  text-align: center;
+  color: rgb(228, 228, 228);
+  line-height: 30px;
+  font-family: "Noto Sans KR", sans-serif;
 }
 /* main */
 .slider {

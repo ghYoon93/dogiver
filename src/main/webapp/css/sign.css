@@ -12,41 +12,7 @@ li {
   padding: 0;
   margin: 0;
 }
-.contents {
-  height: 400px;
-  margin: 0 auto;
-  background: #ffffff;
-}
 
-.h2 {
-  font-size: 36px;
-  color: rgb(0, 0, 0);
-  line-height: 1;
-  position: relative;
-  padding: 155px 0 30px;
-  text-align: center;
-  font-weight: normal;
-  font-family: "Noto Sans KR", sans-serif;
-}
-
-.h2:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 50px;
-  height: 1px;
-  background: rgb(63, 63, 63);
-  transform: translateX(-50%);
-}
-.h2 + p {
-  padding: 46px 0 84px;
-  font-size: 18px;
-  text-align: center;
-  color: rgb(121, 121, 121);
-  line-height: 30px;
-  font-family: "Noto Sans KR", sans-serif;
-}
 .step {
   display: flex;
   border-top: 1px solid #aaa;
@@ -138,6 +104,8 @@ li {
   font-family: "Noto Sans KR", sans-serif;
 }
 .noti {
+  margin: 0 auto;
+  width: 1100px;
   font-size: 14px;
   color: #888;
 }
@@ -341,8 +309,13 @@ input[type="checkbox"]:checked + label:before {
   width: 302px;
   height: 40px;
   margin: 3px;
+  padding: 0 0 3px 0;
   font-size: 14pt;
   text-indent: 12px;
+  vertical-align: middle;
+  border-radius: 5px;
+  border: 1px solid rgb(221, 221, 221);
+  -webkit-appearance: none;
 }
 .modal-body input:first-child {
   margin-top: 50px;
@@ -358,15 +331,28 @@ input[type="checkbox"]:checked + label:before {
   border-radius: 5px;
   font-size: large;
   font-weight: 600;
-  vertical-align: -4px;
+  vertical-align: -29px;
+}
+.modal-body #timer-div {
+  height: 20px;
+  width: 100px;
+  margin-left: 80px;
+  text-align: left;
+  text-indent: 12px;
+  line-height: 1;
+  padding: 5px 0 0 0;
+  font-size: 15px;
+  color: green;
 }
 .modal-body #result-div {
-  display: none;
-  color: red;
+  /* display: none; */
+  width: 310px;
   height: 40px;
-  margin: 0 auto;
+  margin-left: 80px;
   line-height: 2;
   font-size: 13pt;
+  text-align: left;
+  text-indent: 12px;
 }
 /* Modal Footer */
 .modal-footer {

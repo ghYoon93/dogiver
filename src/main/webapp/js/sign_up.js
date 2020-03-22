@@ -31,13 +31,15 @@ $("#auth-btn").click(function() {
   if ($email.val() == "") {
     $("#result-div")
       .text("이메일을 입력해주세요.")
-      .css("display", "block");
+      .css("display", "block")
+      .css("color", "red");
     email.focus();
   } else if (exptext.test($email.val()) == false) {
     //이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우
     $("#result-div")
       .text("이메일 형식이 올바르지 않습니다.")
-      .css("display", "block");
+      .css("display", "block")
+      .css("color", "red");
     email.focus();
     return false;
   } else {
