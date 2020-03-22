@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class OrderController {
     @RequestMapping(value="order", method=RequestMethod.GET)
     public String order() {
-    	System.out.println("?");
-    	return "order"; //이동할 view의 이름 (.jsp)
+    	return "/order/order"; //이동할 view의 이름 (.jsp)
     }
 }

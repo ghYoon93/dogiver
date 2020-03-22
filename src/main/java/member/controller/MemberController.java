@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import member.service.MemberService;
 
 @Controller
-@RequestMapping(value = "member")
 public class MemberController {
 	@Autowired
 	private MemberService memberService;
-	@Autowired
-	BCryptPasswordEncoder pwdEncoder;
+	/*
+	 * @Autowired BCryptPasswordEncoder pwdEncoder;
+	 */
 	
-	@RequestMapping(value="sign_up_step1")
+	@RequestMapping(value="sign_up/sign_up_step1")
 	public String sign_up_step1() {
 		return "sign_up_step1";
 	}
