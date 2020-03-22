@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@RequestMapping(value="order")
 public class OrderController {
-    @RequestMapping(value="order/order", method=RequestMethod.GET)
+    @RequestMapping(value="order", method=RequestMethod.GET)
     public String order() {
+    	System.out.println("?");
     	return "order"; //이동할 view의 이름 (.jsp)
     }
 }
