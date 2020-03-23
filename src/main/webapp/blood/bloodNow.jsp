@@ -10,14 +10,18 @@
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/bloodNow.css" />
 	<link
-		rel="stylesheet"
-		type="text/css"
-		href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-	/>
-	<link
-		rel="stylesheet"
-		href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
-	/>
+      rel="stylesheet"
+      type="text/css"
+      href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+      rel="stylesheet"
+    />
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script
 		type="text/javascript"
@@ -29,7 +33,10 @@
 </head>
 
 <body>
-	<div id="header"></div>
+	<div id="headerDiv"></div>
+	<div class="page-title">
+      <h2>헌혈견</h2>
+    </div>
 	<div class="wrap">
 		<!-- 컨테이너 -->
 		<div class="container">
@@ -43,7 +50,7 @@
 					<img class="blooddog" src="../image/blooddog6.jpg">
 				</div>
 				<div class="blooddogcontent" align="center">
-					<h3>다른개를 살리기 위해 사는 공혈견...</h3>
+					<h2>다른개를 살리기 위해 사는 공혈견...</h2>
 					개도 갑작스럽게 사고를 당하거나, 질병에 걸리면 수혈이 필요합니다.<br>
 					수혈이 필요한 개에게 피를 나눠주는 개를 '공혈견'이라 부릅니다.<br>
 					현재 개 수혈의 90%를 공혈견이 맡고 있습니다.<br>
@@ -55,7 +62,7 @@
 			</div>
 			<div class="blooddog2">
 				<div class="blooddogcontent2" align="center">
-					<h3>한번에 헌혈로 4마리의 생명을 살릴 수 있습니다.</h3>
+					<h2>한번 헌혈로 4마리의 생명을 살릴 수 있습니다.</h2>
 					반려견 보호자들의 자발적인 참여로 주기적으로 헌혈을 하는 개들을 <br>
 					'헌혈견'이라고 합니다. 아직 우리나라는 많은 숫자는 아니지만 <br>
 					미국이나 영국, 캐나다 들의 나라에서는 헌혈견 문화가<br>
@@ -63,7 +70,7 @@
 					3600마리정도가 1년에 한번만 헌혈하면<br>
 					공혈견이 필요 없을 것으로 보고 있습니다.
 				</div>
-				<div class="blooddogimg2">
+				<div class="blooddogimg2" align="center">
 					<img src="../image/blooddog7.jpg" width="480px" height="300px">
 				</div>
 			</div>
@@ -120,12 +127,13 @@
 					<h4>8. 그 외에 다양한 후원사</h4>
 				</div>
 			</div>
+			<br><br>
 			<div class="bloodNowBtn">
 				<button type="button" id="bloodNowBtn">헌혈견 등록하기</button>
 			</div>
 		</div>
 		<!-- //컨테이너 -->
 	</div>
-	<div id="footer"></div>
+	<div id="footerDiv"></div>
 </body>
 </html>
