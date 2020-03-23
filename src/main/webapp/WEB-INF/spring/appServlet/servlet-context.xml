@@ -49,5 +49,7 @@
 		base-package="member.controller" />
 	<context:component-scan
 		base-package="mail.controller" />
+	<context:component-scan
+		base-package="order.controller" />
 
 </beans:beans>

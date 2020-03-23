@@ -13,6 +13,6 @@ public class OrderController {
     }
     @RequestMapping(value="cart", method=RequestMethod.GET)
     public String cart() {
-    	return "/cart/cart"; //이동할 view의 이름 (.jsp)
+    	return "/order/cart"; //이동할 view의 이름 (.jsp)
     }
 }
