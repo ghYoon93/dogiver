@@ -26,9 +26,9 @@ pageEncoding="UTF-8"%>
       <!-- 카테고리 -->
       <div class="goods_category">
         <ul>
-          <li><a href="#">사료/건강</a></li>
-          <li><a href="#">위생</a></li>
-          <li><a href="#">장난감/용품</a></li>
+          <li><a href="#">장난감</a></li>
+          <li><a href="#">목줄/하네스</a></li>
+          <li><a href="#">패션/의류</a></li>
         </ul>
       </div>
       <div class="goods_top">
@@ -63,10 +63,7 @@ pageEncoding="UTF-8"%>
             </div>
           </div>
           <div class="goods-content">
-            <a
-              href="javascript:void(0)"
-              onclick="location.href='goodsDetail.html'"
-            >
+            <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
               <h1 id="goods_name">
                 SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)
               </h1>
@@ -92,10 +89,7 @@ pageEncoding="UTF-8"%>
             </div>
           </div>
           <div class="goods-content">
-            <a
-              href="javascript:void(0)"
-              onclick="location.href='goodsDetail.html'"
-            >
+            <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
               <h1 id="goods_name">
                 SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)
               </h1>
@@ -105,10 +99,7 @@ pageEncoding="UTF-8"%>
         </div>
         <div class="goods-boxs">
           <div class="goods-image">
-            <a
-              href="javascript:void(0)"
-              onclick="location.href='goodsDetail.html'"
-            >
+            <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
               <img class="image" src="../image/aa.jpg" />
             </a>
             <div class="hover_bar">
@@ -121,10 +112,7 @@ pageEncoding="UTF-8"%>
             </div>
           </div>
           <div class="goods-content">
-            <a
-              href="javascript:void(0)"
-              onclick="location.href='goodsDetail.html'"
-            >
+            <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
               <h1 id="goods_name">
                 SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)
               </h1>
@@ -134,10 +122,7 @@ pageEncoding="UTF-8"%>
         </div>
         <div class="goods-boxs">
           <div class="goods-image">
-            <a
-              href="javascript:void(0)"
-              onclick="location.href='goodsDetail.html'"
-            >
+            <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
               <img class="image" src="../image/aa.jpg" />
             </a>
             <div class="hover_bar">
@@ -150,10 +135,7 @@ pageEncoding="UTF-8"%>
             </div>
           </div>
           <div class="goods-content">
-            <a
-              href="javascript:void(0)"
-              onclick="location.href='goodsDetail.html'"
-            >
+            <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
               <h1 id="goods_name">
                 SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)
               </h1>
