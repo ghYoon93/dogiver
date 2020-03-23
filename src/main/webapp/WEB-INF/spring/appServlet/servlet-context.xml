@@ -21,11 +21,6 @@
 	<resources location="/js/" mapping="/js/**" />
 	<resources location="/css/" mapping="/css/**" />
 	<resources location="/template/" mapping="/template/**" />
-<<<<<<< HEAD
-
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-=======
 	<resources location="/sign_up/" mapping="/sign_up/**" />
 
 
@@ -33,7 +28,7 @@
 		in the /WEB-INF/views directory -->
 	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
->>>>>>> master
+
 		<!-- <beans:property name="prefix" value="/WEB-INF/views/" /> -->
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
