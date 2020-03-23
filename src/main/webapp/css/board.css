@@ -1,44 +1,40 @@
 @charset "UTF-8";
 
 
-.boardMain{
+.board_wrap{
 	width:1100px;
 	margin: 0 auto;
 }
-#writer-info{
-	width:1100px;
-	height:40px;
+.board_category{
+	float:left;
+	width:200px;
+	height: 40px;
+	margin-bottom: 20px;
+}
+#board_category_select{
 	text-align:center;
+	display: inline-block;
+	width: 200px;
+	height: 40px;
 	
+}
+.board_title{
+	border-bottom: 20px;
+}
+#insert_text{
+	float:left;
+	width:876px;
+	height:36px;
+	text-align:center;
+}
+.board_write{
+	clear:both;
+	margin-top: 20px;
+	border-bottom: 20px;
 }
 .board_writeBtn{
 	text-align:center;
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
-}
-.board_category{
-	border: 1px solid black;
-	width:1100px;
-	height: 40px;
-	margin-top: 20px;
-}
-.board_name{
-	margin-top: 20px;
-	
-}
-.board_write{
-	margin-top: 20px;
-	border-bottom: 20px;
-}
-.board_title{
-	margin-top: 20px;
-	border-bottom: 20px;
-}
-#board_category_select{
-	text-align:center;
-	display: inline-block;
-	width: 1100px;
-	height: 35px;
-	
 }

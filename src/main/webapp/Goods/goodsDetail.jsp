@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,18 +12,15 @@
 	<div class="overview">
 		<div class="overview-image"><img src="../image/aa.jpg">  </div>
 		<div class="overview-content">
-			<h1 class="goods-name" >SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)</h1>
+			<h1 id="goods_name" >SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)</h1>
 <!-- 			<div class="goods-price" style="font-size: 15px;">39,000 원</div>
 				<div class="goods-price-rate">10%</div> -->
 			
 			<div class="wrap">
 				<div>
-					<!-- <span class="goods-price-rate">10%</span> -->
 					<span class="product-price-wrap">
 						판매가
-						<span id="goods_price">34000</span>
-						<!-- <del id="goods_price">39000</del> -->
-						<!-- <span id="discount-price">34000</span> -->
+						<span id="goods_price">34000</span>	
 					</span>
 				</div>
 			</div>
@@ -32,11 +31,11 @@
 				<span class="goods-name">SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)<br><br></span>
 				<div class="amount-wrap">
 					<div class="count">
-						<button id="minus" onclick="">-</button>
+						<button id="minus">-</button>
 						<input type="text" id="quantity" value="1" size="4" >
-						<button id="plus" onclick="">+</button>
+						<button id="plus">+</button>
 					</div>
-					<div id="tot_price">총합계금액</div>
+					<strong id="tot_price" title="총합계금액"></strong>
 				</div>
 			</div>
 			

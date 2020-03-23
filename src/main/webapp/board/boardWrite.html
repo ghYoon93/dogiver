@@ -9,40 +9,33 @@
 .fr-box.fr-basic .fr-element {
 	min-height: 600px !important;
 }
-
-#writer-info {
-	text-align: center;
-}
 </style>
 
 </head>
 <body>
-	<div class="boardMain">
+	<div class="board_wrap">
 		<div class="board_category">
 			<div id="board_category_select">
-				<select style="font-size: 13px; padding: 5px; height: 40px; text-align-last: center; ">
+				<select id="board_select" style="font-size: 13px; height: 42px; text-align-last: center; ">
 					<option label="글의 종류를 선택하세요" selected="selected"
 						style="text-align: center;"></option>
-					<option label="헌혈받았어요."></option>
-					<option label="고민이에요."></option>
-					<option label="자랑합니다."></option>
+					<option label="가입" value="join"></option>
+					<option label="고민" value="worry"></option>
+					<option label="자랑" value="good"></option>
+					<option label="헌혈" value="blood"></option>
 				</select>
 			</div>
 		</div>
 
-		<div class="board_name">
-			<input type="text" id="writer-info" placeholder="이름을 입력하세요">
-		</div>
-
 		<div class="board_title">
-			<input type="text" id="writer-info" placeholder="제목을 입력하세요">
+			<input type="text" id="insert_text" placeholder="제목을 입력하세요">
 		</div>
 
 
 		<div class="board_write"></div>
 
 		<div class="board_writeBtn">
-			<input type="button" value="작성하기">
+			<input id="boardWrite_Btn" type="button" value="작성하기">
 		</div>
 	</div>
 </body>
@@ -63,6 +56,23 @@
 </script>
 <script type="text/javascript">
 	var editor = new FroalaEditor('.board_write')
+		
+</script>
+<script type="text/javascript" >
+	$('#boardWrite_Btn').click(function() {
+		
+		if ($('#board_select').val() == '') {
+			alert("plase selecet the Category");
+			$('#board_select').focus();
+		}else if($('#insert_text').val() == '') {
+			alert("plase insert your Title");
+			$('#insert_text').focus();
+		}else if($('.fr-view p').text()==''){
+			alert("plase insert your Content");
+			$('#insert_text').focus();
+		}
+	});
+	
 </script>
 </html>
 
