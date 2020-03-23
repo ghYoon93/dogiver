@@ -1,17 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <title>Insert title here</title>
+    <link rel="stylesheet" href="../css/style.css" />
+	<link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+      rel="stylesheet"
+    />
     <style type="text/css">
       * {
         margin: 0;
-      }
-
-      #board_wrap {
-        width: 1100px;
-        margin: 0 auto;
-        margin: 0 auto;
       }
 
       #board_info_box {
@@ -151,14 +152,14 @@
     </style>
   </head>
   <body>
-    <div id="board_wrap">
+    <div class="wrap">
       <div id="board_info_box">
         <div id="board_category">
           Category
         </div>
 
         <div id="board_category_text">
-          �����޾����!
+          	??
         </div>
 
         <div id="board_writer">
@@ -166,7 +167,7 @@
         </div>
 
         <div id="board_writer_text">
-          ����
+          
         </div>
 
         <div id="board_time">
@@ -188,26 +189,26 @@
 
       <div id="board_title_box">
         <div id="board_title">
-          ����
+       	??
         </div>
         <div id="board_title_text">
           <input
             type="text"
-            value="�� ����Ʈ�� ���ؼ� ����԰� ������ �޾Ҿ��~ �ıⳲ�ܿ�!"
+            value="프로젝트 화이팅!"
             style="padding-left:10px;  width: 930px; height: 46px; border: none"
           />
         </div>
       </div>
 
       <div id="board_content">
-        ����� �����Դϴ�
+        	??
       </div>
 
       <div id="board_content_reply">
-        ����� ��� �����Դϴ�
+      	??
       </div>
       <div id="board_content_reply_paging">
-        ����� ��� ����¡ �����Դϴ�
+        	??
       </div>
       <div id="board_button">
         <input
@@ -215,12 +216,13 @@
           value="����"
           style="width: 95px; margin-left: 500px;"
         />
-        <input type="button" value="����" style="width: 95px;" />
-        <input type="button" value="���" style="width: 95px;" />
-        <input type="button" value="���" style="width: 95px;" />
-        <input type="button" value="����" style="width: 95px;" />
-        <input type="button" value="����" style="width: 95px;" />
+        <input type="button" value="이전" style="width: 95px;" />
+        <input type="button" value="다음" style="width: 95px;" />
+        <input type="button" value="목록" style="width: 95px;" />
+        <input type="button" value="수정" style="width: 95px;" />
+        <input type="button" value="삭제" style="width: 95px;" />
       </div>
     </div>
+    <div id="footerDiv"></div>
   </body>
 </html>

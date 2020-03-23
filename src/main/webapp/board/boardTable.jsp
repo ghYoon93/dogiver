@@ -1,9 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../css/boardTable.css">
+<link rel="stylesheet" href="../css/style.css" />
+<link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+      rel="stylesheet"
+    />
 <style type="text/css">
 td {
 	height: 30px;
@@ -54,8 +61,8 @@ td {
 </style>
 </head>
 <body>
-
-	<div class="container">
+ <div id="headerDiv"></div>
+	<div class="wrap">
 		<div class="table-area">
 			<table border="1" style="width: 100%">
 				<thead>
@@ -204,5 +211,6 @@ td {
 			</div>
 		</div>
 	</div>
+	 <div id="footerDiv"></div>
 </body>
 </html>

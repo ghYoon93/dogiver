@@ -1,6 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../css/style.css" />
+<link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+      rel="stylesheet"
+    />
 <style type="text/css">
 textarea {
 	resize: none;
@@ -155,7 +162,8 @@ input:focus {
 
 <body>
 	<!--전체 DIV  -->
-	<div id="contact_wrap">
+	 <div id="headerDiv"></div>
+	<div class="wrap">
 		<div id="contact_infoDiv">
 			<h2 class="font_2"
 				style="line-height: 1.5em; margin-left: 80px; margin-top: 30px;">
@@ -210,6 +218,7 @@ input:focus {
 			</div>
 		</div>
 	</div>
+		<div id="footerDiv"></div>
 </body>
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"
 	charset="URF-8"></script>

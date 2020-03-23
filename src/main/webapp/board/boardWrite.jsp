@@ -1,8 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../css/style.css" />
+<link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+      rel="stylesheet"
+    />
 <link rel="stylesheet" href="../css/board.css">
 <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 <style>
@@ -13,7 +20,8 @@
 
 </head>
 <body>
-	<div class="board_wrap">
+<div id="headerDiv"></div>
+	<div class="wrap">
 		<div class="board_category">
 			<div id="board_category_select">
 				<select id="board_select" style="font-size: 13px; height: 42px; text-align-last: center; ">
@@ -38,6 +46,7 @@
 			<input id="boardWrite_Btn" type="button" value="작성하기">
 		</div>
 	</div>
+	<div id="footerDiv"></div>
 </body>
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
