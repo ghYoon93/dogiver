@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -16,12 +18,12 @@
   <body>
     <div id="headerDiv"></div>
 
+    <div class="page-title">
+      <h2>회원가입</h2>
+      <p>회원이 되셔서 Dogner를 이용하세요</p>
+    </div>
     <div id="wrap">
     <section class="sign_up">
-      <div class="contents">
-        <h2 class="h2">회원가입</h2>
-        <p>회원이 되셔서 Dogner를 이용하세요</p>
-      </div>
       <ol class="step">
         <li>
           STEP1
