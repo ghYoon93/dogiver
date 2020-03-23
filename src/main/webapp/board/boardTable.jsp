@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../css/boardTable.css">
 <link rel="stylesheet" href="../css/style.css" />
-<link
-      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
       rel="stylesheet"
-    />
+ />
 <style type="text/css">
 td {
 	height: 30px;
@@ -62,7 +61,12 @@ td {
 </head>
 <body>
  <div id="headerDiv"></div>
+ <div class="page-title">
+      <h2>게시판</h2>
+      <p>다양한 주제로 다양한 대화를 하세요</p>
+    </div>
 	<div class="wrap">
+	<div class="container" style="width: 1100px; margin: 0 auto; margin-top: 100px;">
 		<div class="table-area">
 			<table border="1" style="width: 100%">
 				<thead>
@@ -211,6 +215,10 @@ td {
 			</div>
 		</div>
 	</div>
+	</div>
 	 <div id="footerDiv"></div>
 </body>
+
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 </html>
