@@ -7,15 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import goods.bean.GoodsDTO;
+import goods.dao.GoodsDAO;
+import imageboard.bean.ImageboardDTO;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {
 	@Autowired
-	private SqlSession sqlsession;
+	private GoodsDAO goodsDAO;
+	
 
 	@Override
 	public List<GoodsDTO> getGoodsList(String pg) {
-		return sqlsession.selectList("???", pg);
+		return goodsDAO.getGoodsList(Integer.parseInt(pg));
 	}
+	
+	
 
 }
