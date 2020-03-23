@@ -14,6 +14,11 @@
 
 <body>
   <div id="headerDiv"></div>
+  <!-- 페이지타이틀 -->
+    <div class="page-title">
+      <h2 class="h2">주문서 작성/결제</h2>
+    </div>
+    <!-- //페이지타이틀 -->
   <div id="wrap">
     <div class="order_wrap">
       <div class="order_process">
@@ -66,7 +71,7 @@
                     <td class="td_check"><input type="checkbox" id="" name="checkGoods" value="8000" /></td>
                     <td class="td_left">
                       <div class="cart_goods_cont">
-                        <span class="cart_goods_image"> <a href="#"> <img src="/image/no-image-icon.jpg" class="middle"
+                        <span class="cart_goods_image"> <a href="#"> <img src="../image/no-image-icon.jpg" class="middle"
                               width="40" alt="" title="">
                           </a>
                         </span>
@@ -94,7 +99,7 @@
                     <td class="td_check"><input type="checkbox" id="" name="checkGoods" value="8000" /></td>
                     <td class="td_left">
                       <div class="cart_goods_cont">
-                        <span class="cart_goods_image"> <a href="#"> <img src="/image/no-image-icon.jpg" class="middle"
+                        <span class="cart_goods_image"> <a href="#"> <img src="../image/no-image-icon.jpg" class="middle"
                               width="40" alt="" title="">
                           </a>
                         </span>
@@ -118,7 +123,7 @@
                     <td class="td_check"><input type="checkbox" id="" name="checkGoods" value="" /></td>
                     <td class="td_left">
                       <div class="cart_goods_cont">
-                        <span class="cart_goods_image"> <a href="#"> <img src="/image/no-image-icon.jpg" class="middle"
+                        <span class="cart_goods_image"> <a href="#"> <img src="../image/no-image-icon.jpg" class="middle"
                               width="40" alt="" title="">
                           </a>
                         </span>
@@ -142,7 +147,7 @@
                     <td class="td_check"><input type="checkbox" id="" name="checkGoods" value="" /></td>
                     <td class="td_left">
                       <div class="cart_goods_cont">
-                        <span class="cart_goods_image"> <a href="#"> <img src="/image/no-image-icon.jpg" class="middle"
+                        <span class="cart_goods_image"> <a href="#"> <img src="../image/no-image-icon.jpg" class="middle"
                               width="40" alt="" title="">
                           </a>
                         </span>
@@ -166,7 +171,7 @@
                     <td class="td_check"><input type="checkbox" id="" name="checkGoods" value="" /></td>
                     <td class="td_left">
                       <div class="cart_goods_cont">
-                        <span class="cart_goods_image"> <a href="#"> <img src="/image/no-image-icon.jpg" class="middle"
+                        <span class="cart_goods_image"> <a href="#"> <img src="../image/no-image-icon.jpg" class="middle"
                               width="40" alt="" title="">
                           </a>
                         </span>
@@ -192,7 +197,6 @@
                 </tbody>
               </table>
             </div>
-        </form>
         <div class="price_sum">
           <div class="price_sum_cont">
             <div class="price_sum_list">
@@ -232,6 +236,7 @@
             <!-- //price_sum_list -->
           </div>
           <!-- //price_sum_count -->
+          
         </div>
         <!-- //price_sum -->
         <div class="btn_order_box">
@@ -248,39 +253,39 @@
         <!-- //btn_order_box -->
       </div>
       <!-- //cart_cont_list -->
-    </div>
-    <!-- //cart_cont -->
+        </form>
+      <div id="option-view" class="layer_option" style="display: none">
 
-
-    <div id="option-view" class="layer_option" style="display: none">
-
-      <div class="layer_option_cont">
-        <h4>옵션선택</h4>
-        <span onclick="" class="close" title="닫기">&times;</span>
-        <div class="option_layer_scroll">
-          <div class="option_tit_box">
-            <dl>
-              <dt>
-                <img src="../image/no-image-icon.jpg" width="68" alt="상품명" title="상품명" class="middle">
-              </dt>
-              <dd>
-                <strong>같이 구하기 되는 있는 뿐이다. 되려니와, 인생의 고동을 이것이다.
-                  있으며, 되려니와, 피고 철환하였는가?</strong>
-              </dd>
-            </dl>
+        <div class="layer_option_cont">
+          <h4>옵션선택</h4>
+          <span onclick="" class="close" title="닫기">&times;</span>
+          <div class="option_layer_scroll">
+            <div class="option_tit_box">
+              <dl>
+                <dt>
+                  <img src="../image/no-image-icon.jpg" width="68" alt="상품명" title="상품명" class="middle">
+                </dt>
+                <dd>
+                  <strong>같이 구하기 되는 있는 뿐이다. 되려니와, 인생의 고동을 이것이다.
+                    있으며, 되려니와, 피고 철환하였는가?</strong>
+                </dd>
+              </dl>
+            </div>
+            <!-- //option_tit_box -->
           </div>
+          <!-- //option_layer_scroll -->
         </div>
-        <!-- //option_layer_scroll -->
+        <!-- //layer_option_cont -->
       </div>
-
+      <!-- //option-view -->
     </div>
-    <!-- //option-view -->
-  </div>
-  <!-- //order_wrap -->
+    <!-- //order_wrap -->
   </div>
   <!-- //wrap -->
+  </div>
   <div id="footerDiv"></div>
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
   <script type="text/javascript" src="../js/cart.js"></script>
 </body>
 
