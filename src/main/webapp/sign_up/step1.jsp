@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -62,8 +62,9 @@
               </div>
               <div class="modal-body">
                 <input type="email" id="email" placeholder="exam@email.com" />
+                <button type="button" id="email-btn">입력</button>
+                <input type="text" id="auth-number" placeholder="인증번호" />
                 <button type="button" id="auth-btn">입력</button>
-                <input type="text" placeholder="인증번호" />
                 <div id="timer-div"></div>
                 <div id="result-div"></div>
               </div>
@@ -76,6 +77,7 @@
           또는 1천 만원 이하의 벌금에 처해지게 됩니다 반드시 본인의 정보를
           이용하여 가입해주시기 바랍니다.
         </p>
+      <input type="hidden" id="hidden"></input>
       </section>
     </div>
     <div id="footerDiv"></div>

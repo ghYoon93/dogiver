@@ -256,7 +256,7 @@ input[type="checkbox"]:checked + label:before {
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 111111; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -302,13 +302,12 @@ input[type="checkbox"]:checked + label:before {
 /* Modal Body */
 .modal-body {
   padding: 2px 16px;
-  height: 200px;
   display: inline-block;
 }
 .modal-body input {
-  width: 302px;
+  margin: 50px 3px 0 4px;
+  width: 200px;
   height: 40px;
-  margin: 3px;
   padding: 0 0 3px 0;
   font-size: 14pt;
   text-indent: 12px;
@@ -316,14 +315,13 @@ input[type="checkbox"]:checked + label:before {
   border-radius: 5px;
   border: 1px solid rgb(221, 221, 221);
   -webkit-appearance: none;
-}
-.modal-body input:first-child {
-  margin-top: 50px;
-  width: 200px;
-  margin-bottom: 4px;
+  display:none;
 }
 .modal-body input::-webkit-input-placeholder {
   color: rgb(207, 207, 207);
+}
+.modal-body input:first-child{
+	display: inline-block;
 }
 .modal-body button {
   width: 100px;
@@ -331,7 +329,10 @@ input[type="checkbox"]:checked + label:before {
   border-radius: 5px;
   font-size: large;
   font-weight: 600;
-  vertical-align: -29px;
+  vertical-align: -31px;
+}
+#auth-btn{
+	display: none;	
 }
 .modal-body #timer-div {
   height: 20px;
