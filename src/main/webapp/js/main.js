@@ -2,7 +2,12 @@ var currentScrollTop = 0;
 
 window.onload = function() {
   scrollController();
+<<<<<<< HEAD
   loadTemplate();
+=======
+  $("#headerDiv").load("../template/header.html");
+  $("#footerDiv").load("../template/footer.html");
+>>>>>>> master
   $(window).on("scroll", function() {
     scrollController();
   });
@@ -18,6 +23,7 @@ function scrollController() {
     $("header").removeClass("sticky");
   }
 }
+<<<<<<< HEAD
 function loadTemplate(){
 	//인클루드
 	$('#header').load("../template/header.html");
@@ -25,3 +31,5 @@ function loadTemplate(){
 }
 
 
+=======
+>>>>>>> master
