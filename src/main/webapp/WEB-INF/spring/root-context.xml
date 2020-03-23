@@ -14,7 +14,12 @@
 		base-package="member.dao" />
 	<context:component-scan
 		base-package="mail.service" />
-
+	
+	<!-- order component -->
+	<context:component-scan base-package="order.bean" />
+	<context:component-scan base-package="order.service" />
+	<context:component-scan base-package="order.dao" />
+	
 	<bean id="javaMailSender"
 		class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
