@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="orderSQL"></mapper>
+<mapper namespace="orderSQL">
+    <select id="getCart" parameterType="string" resultType="cart">
+        <![CDATA[
+        SELECT
+               c.cart_id AS cart_id,
+               c.email AS email,
+               g.goods_id AS goods_id,
+               g.goods_name AS goods_name,
+               g.goods_thumbnail AS goods_thumbnail,
+               g.goods_price AS goods_price,
+               c.cart_cnt AS cart_cnt,
+               (goods_price * cart_cnt) total_price
+          FROM 
+               cart c 
+               INNER JOIN goods g ON c.goods_id = g.goods_id
+         WHERE c.email = #{memEmail}
+         ORDER BY c.cart_id
+        ]]>
+    </select>
+</mapper>

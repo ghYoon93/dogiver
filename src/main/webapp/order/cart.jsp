@@ -41,7 +41,7 @@
               <input type="hidden" name="useBundleGoods" value="1"> -->
           <div class="cart_cont_list">
             <div class="order_table_type">
-              <table>
+              <table id=cart-Table>
                 <colgroup>
                   <col style="width: 3%">
                   <!-- 체크박스 -->
@@ -58,7 +58,7 @@
                 </colgroup>
                 <thead>
                   <tr>
-                    <th><input type="checkbox" id="check-all" value="" /></th>
+                    <th><input type="checkbox" id="check-all"></th>
                     <th>상품/옵션 정보</th>
                     <th>수량</th>
                     <th>상품금액</th>
@@ -67,7 +67,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <!-- <tr>
                     <td class="td_check"><input type="checkbox" id="" name="checkGoods" value="8000" /></td>
                     <td class="td_left">
                       <div class="cart_goods_cont">
@@ -193,7 +193,7 @@
                     <td><strong>8,000원</strong></td>
                     <td><strong>8,000원</strong></td>
                     <td></td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
             </div>

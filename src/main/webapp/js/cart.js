@@ -2,18 +2,58 @@
 페이지 이동 시 상품 선택 초기 값은 전체 선택
 */
 $(document).ready(function(){
-  checkAll();
-  let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
-  let checkedCnt = checkedGoods.length;
-  let total = calcTot(checkedGoods);
-  $('#totalGoodsCnt').html(checkedCnt);
-  $('#totalGoodsPrice').html(total);
-});
+	$.ajax({
+		type: 'POST',
+		url: '/dogiver/order/getCart',
+		dataType:'json',
+		success: function(data){
+			let tbody = $('#form-cart tbody');
+			let tag;
+			$.each(data.list, function(index, items){
+				tag += '<tr>'
+					     +'<td class="td_check"><input type="checkbox" id="'+items.cart_id+'" name="checkGoods" value="'+items.cart_id+'"></td>'
+					     +'<td class="td_left">'
+				           +'<div class="cart_goods_cont">'
+				             +'<span class="cart_goods_image">'
+				               +'<a href="#">'
+				                 +'<img src="../image/goods/'+items.goods_thumbnail+'" class="middle" alt="'+items.goods_name+'" title="'+items.goods_name+'">'
+                               +'</a>'
+                             +'</span>'
+                             +'<div class="cart_goods_info">'
+                               +'<em><a href="#">'+items.goods_name+'</a></em>'
+                             +'</div>'
+                           +'</div>'
+                         +'</td>'
+                         +'<td class=td_order_amount>'
+                             +'<div class="cart_goods_num">'
+                               +'<strong>'+items.cart_cnt+'</strong><font>개</font>'
+                               +'<div class="btn_option">'
+                                 +'<button type="button" class="btn_option_view">수량 변경</button>'
+                               +'</div>'
+                             +'</div>'
+                         +'</td>'
+                         +'<td><strong>'+items.goods_price+'원</strong></td>'
+                         +'<td><strong>'+items.total_price+'원</strong></td>'
+                      +'</tr>'
+			}); //each
+			tbody.append(tag);
+			let count = Object.keys(data).length;
+			$('#form-cart tr').eq(1).append('<td rowspan="'+count+'">qwe</td>');
+			checkAll();
+			let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
+			let checkedCnt = checkedGoods.length;
+			let total = calcTot(checkedGoods);
+			$('#totalGoodsCnt').html(checkedCnt);
+			$('#totalGoodsPrice').html(total);
+		} //success
+	}); // ajax
+	
   
+});
 
 function checkAll(){
-  $('#check-all').prop('checked', true);
-  $('input[name=checkGoods]').prop('checked', true);
+    $('#check-all').prop('checked', true);
+    $('input[name=checkGoods]').prop('checked', true);
   
 }
 function uncheckAll(){
@@ -21,27 +61,24 @@ function uncheckAll(){
   $('input[name=checkGoods]').prop('checked', false);
 }
 
-$('#check-all').click(function(){
+$(document).on('click','#check-all', function(){
   var chk = $(this).is(":checked");
   if(chk) checkAll();
   else uncheckAll();
 });
-
-$('input:checkbox[name=checkGoods]').click(function(){
-  let goodsCnt = $('input:checkbox[name=checkGoods]').length;
-  let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
-  let checkedCnt = checkedGoods.length;
-  if(goodsCnt==checkedCnt) {
-    $('#check-all').prop('checked', true);
-  }else {
-    $('#check-all').prop('checked', false);
-  }
-  $('#totalGoodsCnt').html(checkedCnt);
-  let total = calcTot(checkedGoods);
-  $('#totalGoodsPrice').html(total);
-  
-  
-  
+$(document).on('click','input:checkbox[name=checkGoods]',function(){
+	alert('checkGoods')
+	let goodsCnt = $('input:checkbox[name=checkGoods]').length;
+	  let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
+	  let checkedCnt = checkedGoods.length;
+	  if(goodsCnt==checkedCnt) {
+	    $('#check-all').prop('checked', true);
+	  }else {
+	    $('#check-all').prop('checked', false);
+	  }
+	  $('#totalGoodsCnt').html(checkedCnt);
+	  let total = calcTot(checkedGoods);
+	  $('#totalGoodsPrice').html(total);
 });
 function calcTot(checkedGoods){
   let total = 0;
@@ -55,12 +92,12 @@ function calcTot(checkedGoods){
     return total;
 }
 
-$('.btn_option_view').click(function(){
+$(document).on('click', '.btn_option_view',function(){
   $('#option-view').show();
   $('body').css('overflow','hidden');
 });
 
-$('.close').click(function(){
+$(document).on('click', '.close', function(){
   $('#option-view').hide();
   $('body').css('overflow','auto');
 });
