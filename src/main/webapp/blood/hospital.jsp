@@ -36,7 +36,7 @@
 <body>
 	<div id="headerDiv"></div>
 	<div class="page-title">
-      <h2>헌혈 협력 병원 위치</h2>
+      <h2>헌혈 협력 병원</h2>
     </div>
 	<div class="wrap">
 	<div class="hospitalframe">
@@ -58,7 +58,7 @@
 					<td id="bAddr">광주 광산구 북문대로420번길 206</td>
 				</tr>
 				<tr>
-					<td id="c" class="name">제주대학교부속동물병원</td>
+					<td id="c" class="name">제주대학교부속동물병원</td>
 					<td id="cTel">064-754-3384</td>
 					<td id="cAddr">제주 제주시 제주대학로 102</td>
 				</tr>
@@ -68,7 +68,7 @@
 					<td id="dAddr">서울 노원구 노원로 456 백암빌딩</td>
 				</tr>
 				<tr>
-					<td id="e" class="name">일산동물의료원</td>
+					<td id="e" class="name">일산동물의료원</td>
 					<td id="eTel">031-924-7582</td>
 					<td id="eAddr">경기 고양시 일산서구 대화로 407</td>
 				</tr>

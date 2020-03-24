@@ -22,6 +22,7 @@
 	<resources location="/css/" mapping="/css/**" />
 	<resources location="/template/" mapping="/template/**" />
 	<resources location="/sign_up/" mapping="/sign_up/**" />
+	<resources location="/blood/" mapping="/blood/**"/>
 
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources
@@ -52,5 +53,6 @@
 		base-package="mail.controller" />
 	<context:component-scan
 		base-package="order.controller" />
+	<context:component-scan base-package="blood.controller"/>
 
 </beans:beans>

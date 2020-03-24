@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="bloodSQL">
+	<!-- 헌혈견 등록 -->
+	<insert id="dogInsert" parameterType="dogJoin">
+		INSERT into apply_dogiver(dog_id, dog_name, dog_age, dog_breed, dog_weight, dog_bloodType,apply_status)
+		VALUES(DOG_ID_APPLY_DOGIVER.nextval,#{dog_name},#{dog_age},#{dog_breed},#{dog_weight},#{dog_bloodType},'신청완료')
+	</insert>
+</mapper>
