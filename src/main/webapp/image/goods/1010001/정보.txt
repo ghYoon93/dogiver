@@ -1,0 +1,9 @@
+goods_id: 1010001
+category_code: 000101
+goods_name: 핸드메이드 강아지 로프 장난감
+goods_price: 3000
+goods_date: default
+sayles_yn: y
+goods_thumbnail: image/1010001/thumbnail.jpg
+goods_detail: image/1010001/detail.jsp
+goods_amt: 100
