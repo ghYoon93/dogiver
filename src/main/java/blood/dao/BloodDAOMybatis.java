@@ -7,9 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import blood.bean.DogJoinDTO;
 
-@Repository("DogJoinDAO")
+@Repository("BloodDAO")
 @Transactional
-public class DogJoinDAOMybatis implements DogJoinDAO {
+public class BloodDAOMybatis implements BloodDAO {
 	@Autowired
 	private SqlSession sqlSession;
 

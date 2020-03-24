@@ -4,16 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import blood.bean.DogJoinDTO;
-import blood.dao.DogJoinDAO;
+import blood.dao.BloodDAO;
 
-@Service("DogJoinService")
-public class DogJoinServiceImpl implements DogJoinService {
+@Service("BloodService")
+public class BloodServiceImpl implements BloodService {
 	@Autowired
-	private DogJoinDAO dogJoinDAO;
+	private BloodDAO bloodDAO;
 
 	@Override
 	public int dogInsert(DogJoinDTO dogJoinDTO) {
-		return dogJoinDAO.dogInsert(dogJoinDTO);
+		return bloodDAO.dogInsert(dogJoinDTO);
 	}
 
 }

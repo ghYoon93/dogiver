@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import blood.bean.DogJoinDTO;
-import blood.service.DogJoinService;
+import blood.service.BloodService;
 
 @Controller
 @RequestMapping("blood")
-public class DogJoinController {
+public class BloodController {
 	@Autowired
-	private DogJoinService dogJoinService;
+	private BloodService bloodService;
 	
 	@RequestMapping(value = "dogInsert", method = RequestMethod.POST)
 	@ResponseBody
 	public String dogInsert(@ModelAttribute DogJoinDTO dogJoinDTO) {
-		int su = dogJoinService.dogInsert(dogJoinDTO);
+		int su = bloodService.dogInsert(dogJoinDTO);
 		return su+"";
 	}
 	
@@ -29,6 +29,10 @@ public class DogJoinController {
 		return "/blood/dogJoin";
 	}
 	
+	@RequestMapping(value = "dogiver", method = RequestMethod.GET)
+	public String dogiver() {
+		return "/blood/dogiver";
+	}
 	
 
 }

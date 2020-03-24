@@ -1,8 +1,8 @@
-package blood.dao;
+package blood.service;
 
 import blood.bean.DogJoinDTO;
 
-public interface DogJoinDAO {
+public interface BloodService {
 
 	public int dogInsert(DogJoinDTO dogJoinDTO);
 
