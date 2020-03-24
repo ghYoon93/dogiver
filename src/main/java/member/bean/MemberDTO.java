@@ -12,5 +12,9 @@ public class MemberDTO {
 	private String zipcode;
 	private String addr;
 	private String addr_detail;
-	
+	private int seq;
+	private String regist_Date;
+	private String drop_Date;
+	private String drop_Yn;
+	private String role;	
 }

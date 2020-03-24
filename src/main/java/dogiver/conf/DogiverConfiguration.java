@@ -17,7 +17,7 @@ public class DogiverConfiguration {
 	public BasicDataSource dataSource() {
 		BasicDataSource basicDataSource = new BasicDataSource();
 		basicDataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-		basicDataSource.setUrl("jdbc:oracle://dogiver.cnlfhnhpcnuu.ap-northeast-2.rds.amazonaws.com/dogiver");
+		basicDataSource.setUrl("jdbc:oracle:thin:@dogiver.cnlfhnhpcnuu.ap-northeast-2.rds.amazonaws.com:1521:orcl");
 		basicDataSource.setUsername("dogiver");
 		basicDataSource.setPassword("dogiver0406!");
 		basicDataSource.setMaxTotal(20);
