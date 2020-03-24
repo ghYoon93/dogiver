@@ -98,7 +98,18 @@ $('.btn_detail_link, .goods-boxs a').click(function(){
 	location.href="goodsDetail.jsp";
 });
 
-
+//
+$(document).ready(function(){
+	$.ajax({
+		type: 'post',
+		url: '/dogiver/goods/getGoodsList',
+		data: 'pg=${pg}',
+		dataType: 'json',
+		success: function(data){
+			alert(JSON.stringify(data));
+		}
+	});
+});
 
 
 

@@ -1,5 +1,6 @@
 package goods.bean;
 
+
 import java.util.Date;
 
 import lombok.Data;
