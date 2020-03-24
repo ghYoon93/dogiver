@@ -75,41 +75,6 @@ function numberFormat(inputNumber) {
 	return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
  }
 
-/************ goodsList.jsp ************/
-//장바구니 모달
-$('.btn_basket_cart').click(function(){
-	$('#option-view').show();
-	$('body').css('overflow','hidden');
-
-});
-  
-$('.close, .cancle').click(function(){	
-	$('#option-view').hide();
-	$('body').css('overflow','auto');
-	//초기화
-	amt = 1; 
-	$('#quantity').val(1);
-	calc_tot_price(price, amt);
-});
-
-// 버튼 클릭시 해당상품 상세 페이지로 이동
-$('.btn_detail_link, .goods-boxs a').click(function(){
-	alert('url');
-	location.href="goodsDetail.jsp";
-});
-
-//
-$(document).ready(function(){
-	$.ajax({
-		type: 'post',
-		url: '/dogiver/goods/getGoodsList',
-		data: 'pg=${pg}',
-		dataType: 'json',
-		success: function(data){
-			alert(JSON.stringify(data));
-		}
-	});
-});
 
 
 

@@ -11,7 +11,9 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/goods.css" />
   </head>
+  
   <body>
+  <input type="hidden" id="pg" value="${pg }">
     <!-- 헤더 -->
     <div id="headerDiv"></div>
     <!-- 페이지타이틀 -->
@@ -47,6 +49,7 @@ pageEncoding="UTF-8"%>
         </ul>
       </div>
       <!-- 상품 컨테이너 -->
+
       <div class="goods-frame">
         <div class="goods-boxs">
           <div class="goods-image">
@@ -67,36 +70,13 @@ pageEncoding="UTF-8"%>
               <h1 id="goods_name">
                 SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)
               </h1>
-              <span id="goods_price">34000 </span>원
+              <span id="goods_price">1000 </span>원
             </a>
           </div>
         </div>
-        <div class="goods-boxs">
-          <div class="goods-image">
-            <a
-              href="javascript:void(0)"
-              onclick="location.href='goodsDetail.html'"
-            >
-              <img class="image" src="../image/aa.jpg" />
-            </a>
-            <div class="hover_bar">
-              <button type="button" class="btn_basket_cart" href="#">
-                <img src="../image/shopping_bucket.png" />
-              </button>
-              <button type="button" class="btn_detail_link">
-                <img src="../image/search.png" />
-              </button>
-            </div>
-          </div>
-          <div class="goods-content">
-            <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
-              <h1 id="goods_name">
-                SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)
-              </h1>
-              <span id="goods_price">34000 </span>원
-            </a>
-          </div>
-        </div>
+        
+     
+       
         <div class="goods-boxs">
           <div class="goods-image">
             <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
@@ -116,34 +96,13 @@ pageEncoding="UTF-8"%>
               <h1 id="goods_name">
                 SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)
               </h1>
-              <span id="goods_price">34000 </span>원
+              <span id="goods_price">2000 </span>원
             </a>
           </div>
         </div>
-        <div class="goods-boxs">
-          <div class="goods-image">
-            <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
-              <img class="image" src="../image/aa.jpg" />
-            </a>
-            <div class="hover_bar">
-              <button type="button" class="btn_basket_cart" href="#">
-                <img src="../image/shopping_bucket.png" />
-              </button>
-              <button type="button" class="btn_detail_link">
-                <img src="../image/search.png" />
-              </button>
-            </div>
-          </div>
-          <div class="goods-content">
-            <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
-              <h1 id="goods_name">
-                SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)
-              </h1>
-              <span id="goods_price">34000 </span>원
-            </a>
-          </div>
-        </div>
+       
 
+        
         <!-- 장바구니 모달 -->
         <div id="option-view" class="layer_option" style="display: none">
           <div class="layer_option_cont">
@@ -195,4 +154,25 @@ pageEncoding="UTF-8"%>
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/main.js"></script>
   <script src="../js/goods.js"></script>
+  <script src="../js/goodsList.js"></script>
+<!--   <script>
+  $(document).ready(function(){
+	  
+		$.ajax({
+			type: 'post',
+			url: '/dogiver/goods/getGoodsList',
+			data: 'pg=${pg}',
+			dataType: 'json',
+			success: function(data){
+				//alert(data.pg);
+				alert(JSON.stringify(data));
+				
+				$.each(data.list, function(index, items){
+					$('')
+					
+				});//each				
+			}
+		});
+	});
+  </script> -->
 </html>

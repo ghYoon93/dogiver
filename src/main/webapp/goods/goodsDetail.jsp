@@ -5,35 +5,38 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link
-      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
-      rel="stylesheet"
-/>
-	
-<link rel="stylesheet" href="../css/goodsDetail.css" />
+	<link
+	      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+	      rel="stylesheet"
+	/>
+    <link rel="stylesheet" href="../css/style.css" />	
+	<link rel="stylesheet" href="../css/goodsDetail.css" />
 </head>
 <body>
-<!-- 헤더 -->
+
+
+	<!-- 헤더 -->
+    <div id="headerDiv"></div>
+    
+    <!-- 페이지타이틀 -->
+    <div class="page-title">
+      <h2 class="h2">GOODS</h2>
+    </div>
 
 <div class="wrap">
-<div>
-        <div class="menuBar">HOME>GOODS</div>
-      </div>
+    <div id="section">
 	<div class="overview">
 		<div class="overview-image"><img src="../image/aa.jpg">  </div>
 		<div class="overview-content">
 			<h1 id="goods_name" >SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)</h1>			
 			<div>
-				
 				<span>판매가</span>
 				<span id="goods_price">34000</span>	
-
 			</div>
 			
-			
 			<div class="delivery-fee" style="margin:20px 0;">
-			<span>배송비</span>
-			<span>2500원</span>
+				<span>배송비</span>
+				<span>2500원</span>
 			</div>
 			
 			<div class="option-wrap">
@@ -55,6 +58,7 @@
 			
 		</div>
 	</div>
+	
 	<div class="discription">
 		<nav class="navigationBar"> 
 			<ul> 
@@ -67,6 +71,7 @@
 		dd
 		</div>
 		
+	</div>
 	</div>
 </div>
 <div id="footerDiv"></div>
