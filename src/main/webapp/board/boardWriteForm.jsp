@@ -10,7 +10,6 @@
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
 <link rel="stylesheet" href="../css/board.css">
-<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 <style>
 .fr-box.fr-basic .fr-element {
 	min-height: 600px !important;
@@ -22,14 +21,15 @@
 	<div id="headerDiv"></div>
 	<div class="page-title">
 		 <h2>게시판</h2>
-      <p>다양한 주제로 함께 얘기해요</p>
+      <p>여러분들의 이야기를 들려주세요</p>
 	</div>
+	<form id="boardWriteForm" name="boardwriteForm" method="post" action="boardWrite">
 	<div class="wrap">
 			<div class="container"
-				style="width: 1100px; margin: 0 auto; margin-top: 100px;">
+				style="width: 1100px; margin: 0 auto; margin-top: 150px;">
 		<div class="board_category">
 				<div id="board_category_select">
-					<select id="board_select"
+					<select id="board_select" name="category"
 						style="font-size: 13px; height: 42px; text-align-last: center;">
 						<option label="글 종류" selected="selected"
 							style="text-align: center;"></option>
@@ -42,22 +42,27 @@
 			</div>
 
 			<div class="board_title">
-				<input type="text" id="insert_text" placeholder="제목을 입력하세요">
+				<input type="text" id="insert_text" name="title" placeholder="제목을 입력하세요">
 			</div>
 
 
-			<div class="board_write"></div>
+			<div class="board_write" >
+				<input type="hidden" name="content" id="content" value="">
+			</div>
 
 			<div class="board_writeBtn">
-				<input id="boardWrite_Btn" type="button" value="작성하기">
+				<input id="boardWrite_Btn" type="button" value="작성하기" onclick="submit()">
 			</div>
 		</div>
 	</div>
+	</form>
 	<div id="footerDiv"></div>
 </body>
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/board.js"></script>
+
 <script type="text/javascript">
 	$("#file").on('change', function() {
 		var fileName = $("#file").val();
@@ -73,21 +78,15 @@
 </script>
 <script type="text/javascript">
 	var editor = new FroalaEditor('.board_write')
-</script>
-<script type="text/javascript">
-	$('#boardWrite_Btn').click(function() {
 
-		if ($('#board_select').val() == '') {
-			alert("plase selecet the Category");
-			$('#board_select').focus();
-		} else if ($('#insert_text').val() == '') {
-			alert("plase insert your Title");
-			$('#insert_text').focus();
-		} else if ($('.fr-view p').text() == '') {
-			alert("plase insert your Content");
-			$('#insert_text').focus();
-		}
-	});
 </script>
+
+<script type="text/javascript">
+$('#boardWrite_Btn').click(function(){
+	$('#content').val($('.fr-view').html());
+	$('#boardWriteForm').submit();
+});
+</script>
+
 </html>
 

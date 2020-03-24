@@ -51,5 +51,9 @@
 		base-package="mail.controller" />
 	<context:component-scan
 		base-package="order.controller" />
+	<context:component-scan
+		base-package="contact.controller" />
+	<context:component-scan
+		base-package="board.controller" />
 
 </beans:beans>

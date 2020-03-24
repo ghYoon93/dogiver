@@ -66,7 +66,7 @@ td {
       <p>다양한 주제로 다양한 대화를 하세요</p>
     </div>
 	<div class="wrap">
-	<div class="container" style="width: 1100px; margin: 0 auto; margin-top: 100px;">
+	<div class="container" style="width: 1100px; margin: 0 auto; margin-top: 150px;">
 		<div class="table-area">
 			<table border="1" style="width: 100%">
 				<thead>
@@ -185,7 +185,7 @@ td {
 
 		<div class="writepage-button-box">
 			<div class="writepage-button">
-				<a href="boardWrite.jsp" style="font-size: 20px;">글쓰기</a>
+				<a href="boardWriteForm" style="font-size: 20px;">글쓰기</a>
 			</div>
 		</div>
 

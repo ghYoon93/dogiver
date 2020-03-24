@@ -153,7 +153,7 @@ input:focus {
 	height: 34px;
 	min-height: 25px;
 	width: 256px;
-	text-align: right;
+	text-align: center;
 	display: inline-block;
 	cursor: pointer;
 }
@@ -181,7 +181,7 @@ input:focus {
 				<div style="width: 328px; min-height: 180px; pointer-events: none;"
 					data-min-height="180">
 					<p class="font_8" style="line-height: 1.5em; margin-left: 80px;">
-						<span style="letter-spacing: 0.02em;"> We are DogNOR. You
+						<span style="letter-spacing: 0.02em; font-size: 16px;"> We are DogIVER. You
 							are interested in us and we are also interested in you. If you
 							have any further information or inquiries, please leave a brief
 							message and we will contact you soon. May all of us be of help to
@@ -194,27 +194,27 @@ input:focus {
 			<div id="contact_imgDiv">
 				<img id="contact_img" src="../image/dog3.jpg">
 			</div>
-
+	<form id="contactForm" method="post">
 			<div id="contact_visitor">
 				<div id="nameText">
-					<input id="text_name" type="text" placeholder="Name">
+					<input id="text_name" name="name" type="text" placeholder="Name">
 				</div>
 
 
 				<div id="emailText">
-					<input id="text_email" type="text" placeholder="Email">
+					<input id="text_email" name="email" type="text" placeholder="Email">
 				</div>
 
 				<div id="phoneText">
-					<input id="text_phone" type="text" placeholder="Phone">
+					<input id="text_phone" name="phone" type="text" placeholder="Phone">
 				</div>
 
 				<div id="subjectText">
-					<input id="text_subject" type="text" placeholder="Subject">
+					<input id="text_subject" name="subject" type="text" placeholder="Subject">
 				</div>
 
 				<div id="textarea">
-					<textarea id="contact_textarea"
+					<textarea id="contact_textarea" name="content"
 						placeholder="Type your message here..."></textarea>
 				</div>
 
@@ -222,7 +222,9 @@ input:focus {
 					<input type="button" id="contact_button" style="cursor: pointer"
 						value="Submit">
 				</div>
+				<div id="OK_signDiv" style="text-align: center;"> </div>
 			</div>
+			</form>
 		</div>
 	</div>
 	<div id="footerDiv"></div>
@@ -230,29 +232,7 @@ input:focus {
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"
 	charset="URF-8"></script>
 <script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" charset="URF-8">
-	$('#contact_button').click(function() {
-		if ($('#text_name').val() == '') {
-			alert("plase insert your Name");
-			$('#text_name').focus();
+<script type="text/javascript" src="../js/contact.js"></script>
 
-		} else if ($('#text_email').val() == '') {
-			alert("plase insert your Email");
-			$('#text_email').focus();
-
-		} else if ($('#text_phone').val() == '') {
-			alert("plase insert your Phone");
-			$('#text_phone').focus();
-
-		} else if ($('#text_subject').val() == '') {
-			alert("plase insert your Subject");
-			$('#text_subject').focus();
-
-		} else if ($('#contact_textarea').val() == '') {
-			alert("plase insert your Content");
-			$('#contact_textarea').focus();
-		}
-	});
-</script>
 </html>
 
