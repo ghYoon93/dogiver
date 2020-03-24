@@ -1,14 +1,20 @@
 package blood.controller;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import blood.bean.DogJoinDTO;
+import blood.bean.DogiverDTO;
 import blood.service.BloodService;
 
 @Controller
@@ -32,6 +38,15 @@ public class BloodController {
 	@RequestMapping(value = "dogiver", method = RequestMethod.GET)
 	public String dogiver() {
 		return "/blood/dogiver";
+	}
+	
+	@RequestMapping(value = "getDogiver", method = RequestMethod.POST)
+	public ModelAndView getDogiver() {
+		List<DogiverDTO> list = bloodService.getDogiver();
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		return mav;
 	}
 	
 

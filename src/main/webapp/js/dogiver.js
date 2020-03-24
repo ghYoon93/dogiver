@@ -1,4 +1,13 @@
 $(document).ready(function() {
+	$.ajax({
+		type: 'post',
+		url: '/dogiver/blood/getDogiver',
+		dataType: 'json',
+		success: function(data){
+			alert(JSON.stringify(data));
+			
+		}
+	});
 	
 	$('img').mouseover(function(){
 		$(this).css('width', '280px').css('height','300px').css('margin-left','-20%');
