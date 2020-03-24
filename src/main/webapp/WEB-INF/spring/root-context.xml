@@ -12,6 +12,13 @@
 		base-package="member.service" />
 	<context:component-scan
 		base-package="member.dao" />
+		
+		<!-- Goods -->
+		<context:component-scan base-package="goods.service"/>
+		<context:component-scan base-package="goods.dao"/>
+		
+		
+		
 	<!-- Gmail -->
 	<bean id="mailSender"
 		class="org.springframework.mail.javamail.JavaMailSenderImpl">

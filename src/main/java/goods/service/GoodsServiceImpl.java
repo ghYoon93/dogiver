@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import goods.bean.GoodsDTO;
 import goods.dao.GoodsDAO;
-import imageboard.bean.ImageboardDTO;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {

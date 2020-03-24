@@ -28,6 +28,7 @@ public class GoodsController {
 	@RequestMapping(value="getGoodsList", method=RequestMethod.POST)
 	@ResponseBody
 	public ModelAndView getGoodsList(@RequestParam(required=false, defaultValue="1") String pg){
+		System.out.println("cr");
 		List<GoodsDTO> list = goodsService.getGoodsList(pg);
 		
 		ModelAndView mav = new ModelAndView();

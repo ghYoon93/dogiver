@@ -75,7 +75,7 @@ function numberFormat(inputNumber) {
 	return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
  }
 
-/**goodsList.jsp**/
+/************ goodsList.jsp ************/
 //장바구니 모달
 $('.btn_basket_cart').click(function(){
 	$('#option-view').show();
