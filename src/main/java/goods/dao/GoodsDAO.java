@@ -6,7 +6,9 @@ import goods.bean.GoodsDTO;
 
 public interface GoodsDAO {
 
-	List<GoodsDTO> getGoodsList(int pg);
+	public List<GoodsDTO> getGoodsList(int pg);
+
+	public GoodsDTO getGoodsDetail(int goodsId);
 
 	
 

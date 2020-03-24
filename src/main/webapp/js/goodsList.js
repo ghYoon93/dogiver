@@ -14,11 +14,7 @@ $('.close, .cancle').click(function(){
 	calc_tot_price(price, amt);
 });
 
-// 버튼 클릭시 해당상품 상세 페이지로 이동
-$(document).on('click', '.btn_detail_link, .goods-boxs a', function(){
-	alert('url');
-	location.href="goodsDetail";
-});
+
 
 //
 $(document).ready(function(){
@@ -35,18 +31,18 @@ $(document).ready(function(){
 			var tag = "";
 			$.each(data.list, function(index, items){
 				//$('#goods_name').text(items.goods_name);
-				//alert(items.goods_name);
+				//alert(items.goods_id);
 				
-				tag += '<div class="goods-boxs">'
-				         + '<div class="goods-image">'
-				           + '<a href="javascript:void(0)">'
+				tag += '<div class="goods-boxs" >'
+				         + '<div class="goods-image" >'
+				           + '<a href="javascript:void(0)" id="'+items.goods_id+'">'
 				             + '<img class="image" src="../image/goods/'+ items.goods_thumbnail +'"/>'
 				           + '</a>'
 				           + '<div class="hover_bar">'
 				             + '<button type="button" class="btn_basket_cart" href="#">'
 				               + '<img src="../image/shopping_bucket.png" />'
 				             + '</button>'
-				             + '<button type="button" class="btn_detail_link">'
+				             + '<button type="button" class="btn_detail_link" >'
 				               + '<img src="../image/search.png" />'
 				             + '</button>'
 				           + '</div>'
@@ -59,9 +55,40 @@ $(document).ready(function(){
 				         + '</div>'
 				      + '</div>';
 				
+				$('.goods-boxs a').attr('id', items.goods_id);
+				
 			});//each	
 			
+			
 			$('.goods-frame').append(tag);
+			
+//			$('.goods-boxs a').click(function(){
+//				alert($(this).attr('id'));
+//				location.href="goodsDetail";
+//			});
+			
+			
 		}
+	});
+	
+});
+
+//버튼 클릭시 해당상품 상세 페이지로 이동 ...안된당....
+$(document).on('click', '.btn_detail_link, .goods-boxs a', function(){
+	//alert($(this).attr('id'));
+	location.href="goodsDetail";
+	
+	$.ajax({	
+		type: 'post',
+		url: '/dogiver/goods/getGoodsDetail',
+		data: 'goods_id='+$(this).attr('id'),
+		dataType: 'json',
+		success: function(data){
+			alert(data.goodsDTO.goods_id);
+		},
+		error: function(error){
+			alert("error:"+error);
+		}
+		
 	});
 });

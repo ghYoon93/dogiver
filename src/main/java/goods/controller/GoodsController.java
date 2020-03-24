@@ -44,6 +44,18 @@ public class GoodsController {
 	public String goodsDetail() {
 		return "/goods/goodsDetail";
 	}
+	
+	@RequestMapping(value="getGoodsDetail", method=RequestMethod.POST)
+	@ResponseBody
+	public ModelAndView getGoodsDetail(@RequestParam String goods_id){
+		GoodsDTO goodsDTO = goodsService.getGoodsDetail(goods_id);
+		System.out.println(goodsDTO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("goodsDTO", goodsDTO);
+		mav.setViewName("jsonView");
+		return mav;
+	}
 
 
 }

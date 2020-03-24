@@ -13,11 +13,17 @@ import goods.bean.GoodsDTO;
 @Transactional
 public class GoodsDAOMybatis implements GoodsDAO {
 	@Autowired
-	private SqlSession sqlsession;
+	private SqlSession sqlSession;
 
 	@Override
 	public List<GoodsDTO> getGoodsList(int pg) {
-		return sqlsession.selectList("goodsSQL.getGoodsList", pg);
+		return sqlSession.selectList("goodsSQL.getGoodsList", pg);
+	}
+
+	@Override
+	public GoodsDTO getGoodsDetail(int goodsId) {
+		return sqlSession.selectOne("goodsSQL.getGoodsDetail", goodsId);
+				
 	}
 
 }

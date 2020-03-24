@@ -5,4 +5,8 @@
 	<select id="getGoodsList" parameterType="int" resultType="goods.bean.GoodsDTO">
 		select * from goods
 	</select>
+	
+	<select id="getGoodsDetail" parameterType="int" resultType="goods.bean.GoodsDTO">
+		select * from goods where goods_id=#{goodsId}
+	</select>
 </mapper>

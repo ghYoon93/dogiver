@@ -138,7 +138,7 @@ pageEncoding="UTF-8"%>
 
                   <dd>
                     <button class="cancle">취소</button>
-                    <button class="">장바구니 담기</button>
+                    <button class="confirm">확인</button>
                   </dd>
                 </dl>
               </div>

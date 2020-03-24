@@ -8,6 +8,8 @@ public interface GoodsService {
 
 	public List<GoodsDTO> getGoodsList(String pg);
 
+	public GoodsDTO getGoodsDetail(String goodsId);
+
 	
 
 }

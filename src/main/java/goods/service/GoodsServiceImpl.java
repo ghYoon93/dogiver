@@ -18,6 +18,12 @@ public class GoodsServiceImpl implements GoodsService {
 	public List<GoodsDTO> getGoodsList(String pg) {
 		return goodsDAO.getGoodsList(Integer.parseInt(pg));
 	}
+
+
+	@Override
+	public GoodsDTO getGoodsDetail(String goodsId) {
+		return goodsDAO.getGoodsDetail(Integer.parseInt(goodsId));
+	}
 	
 	
 
