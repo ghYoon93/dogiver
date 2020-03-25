@@ -133,8 +133,6 @@
 /* --------------------------------------------------- */
 .discription{
 	border: 1px solid #f2f2f2;
-
-	height: 1000px;
 	display: block;
 	margin: 10px 0 0 0;
 }
@@ -179,8 +177,7 @@ table {
     line-height: 1.5;
     border-top: 1px solid #ccc;
 	margin : 20px 10px;
-	width: 90%
-	
+	width : 90%;
 }
 table th {
     padding: 10px;
@@ -189,7 +186,6 @@ table th {
     border-bottom: 1px solid #ccc;
 }
 table td {
-    width: 40%;
     padding: 10px;
     vertical-align: top;
     border-bottom: 1px solid #ccc;

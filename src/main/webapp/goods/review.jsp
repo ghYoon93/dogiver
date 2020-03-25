@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +14,8 @@
 <table cellpadding="5" frame="hsides" rules="rows" valign="top" margin="0">
     <tr>
         <th width="65%">리뷰 제목</th>
-        <th width="10%">아이디</th>
-        <th width="15%">날짜</th>
+        <th width="10%" style="text-align:center;">아이디</th>
+        <th width="25%" style="text-align:center;">날짜</th>
     </tr>
     <tr>
         <td></td>

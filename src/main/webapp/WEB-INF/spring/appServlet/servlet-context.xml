@@ -22,6 +22,7 @@
 	<resources location="/css/" mapping="/css/**" />
 	<resources location="/template/" mapping="/template/**" />
 	<resources location="/sign_up/" mapping="/sign_up/**" />
+	<resources location="/etc/" mapping="/etc/**" />
 
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources
