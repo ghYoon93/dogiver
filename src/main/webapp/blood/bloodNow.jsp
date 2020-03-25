@@ -127,8 +127,9 @@
 					<h4>8. 그 외에 다양한 후원사</h4>
 				</div>
 			</div>
-			<br><br>
+			<br><br><br>
 			<div class="bloodNowBtn">
+				<input type="hidden" id="memEmail" value="${memEmail}">
 				<button type="button" id="bloodNowBtn">헌혈견 등록하기</button>
 			</div>
 		</div>
