@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOGIVER</title>
+    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link
       rel="stylesheet"
@@ -34,9 +35,16 @@
     <div id="headerDiv"></div>
     <div class="wrap">
       <div class="slider">
-        <div><img src="../image/slide-image-1.jpg" alt="slide1" /></div>
+        <div>
+          <img src="../image/photo-of-puppies-3198013.jpg" alt="slide1" />
+        </div>
         <div><img src="../image/slide-image-4.jpg" alt="slide2" /></div>
-        <div><img src="../image/slide-image-5.jpg" alt="slide3" /></div>
+        <div>
+          <img
+            src="../image/brown-short-coated-dog-on-white-background-3487734.jsp"
+            alt="slide3"
+          />
+        </div>
       </div>
       <div class="card-box">
         <div></div>
