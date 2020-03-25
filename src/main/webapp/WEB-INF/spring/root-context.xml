@@ -17,6 +17,8 @@
 	<context:component-scan base-package="blood.dao"/>
 	<context:component-scan base-package="blood.service"/>
 	<context:component-scan base-package="blood.bean"/>
+	<context:component-scan base-package="admin.dao"/>
+	<context:component-scan base-package="admin.service"/>
 
 	<bean id="javaMailSender"
 		class="org.springframework.mail.javamail.JavaMailSenderImpl">

@@ -56,5 +56,6 @@
 	<context:component-scan
 		base-package="order.controller" />
 	<context:component-scan base-package="blood.controller"/>
+	<context:component-scan base-package="admin.controller"/>
 
 </beans:beans>
