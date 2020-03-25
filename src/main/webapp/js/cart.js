@@ -1,71 +1,69 @@
 /*
 페이지 이동 시 상품 선택 초기 값은 전체 선택
  */
-$(document)
-		.ready(
-				function() {
-					$
-							.ajax({
-								type : 'POST',
-								url : '/dogiver/order/getCart',
-								dataType : 'json',
-								success : function(data) {
-									let tbody = $('#form-cart tbody');
-									let tag;
-									$
-											.each(
-													data.list,
-													function(index, items) {
-														tag += '<tr>'
-																+ '<input type=hidden id="goods_id" value="'+ items.goods_id+ '">'
-																+ '<td class="td_check">'
-																  + '<input type="checkbox" id="'+ items.cart_id+ '" name="checkGoods" value="'+ items.cart_id+ '">'
-																+ '</td>'
-																+ '<td class="td_left">'
-																  + '<div class="cart_goods_cont">'
-																    + '<span class="cart_goods_image">'
-																      + '<a href="#">'
-																        + '<img src="../image/goods/'+ items.goods_thumbnail+ '" class="middle" alt="'+ items.goods_name+ '" title="'+ items.goods_name+ '">'
-																      + '</a>'
-																    + '</span>'
-																    + '<div class="cart_goods_info">'
-																      + '<em><a href="#">'+ items.goods_name+ '</a></em>'
-																    + '</div>'
-																  + '</div>'
-																+ '</td>'
-																+ '<td class=td_order_amount>'
-																  + '<div class="cart_goods_num">'
-																    + '<strong>'+ items.cart_cnt+ '</strong><font>개</font>'
-																    + '<div class="btn_option">'
-																      + '<button type="button" class="btn_option_view"'
-																                            + 'data-id="'+items.goods_id
-																                            + '" data-img="'+items.goods_thumbnail
-																                            + '" data-name="'+items.goods_name
-																                            + '" data-cnt="'+items.cart_cnt
-																                            + '" data-price="'+items.goods_price
-																                            +'">수량 변경</button>'
-																    + '</div>'
-																  + '</div>'
-														        + '</td>'
-																+ '<td><strong>'+ items.goods_price+ '원</strong></td>'
-																+ '<td><strong>'+ items.total_price+ '원</strong></td>'
-																+ '</tr>'
-													}); // each
+$(document).ready(function() {
+					$.ajax({
+							type : 'POST',
+							url : '/dogiver/order/getCart',
+							dataType : 'json',
+							success : function(data) {
+								let tbody = $('#form-cart tbody');
+								let tag;
+								$
+										.each(
+												data.list,
+												function(index, items) {
+													tag += '<tr>'
+															+ '<input type=hidden class="goods_id" value="'+ items.goods_id+ '">'
+															+ '<td class="td_check">'
+															  + '<input type="checkbox" id="'+ items.cart_id+ '" name="checkGoods" value="'+ items.cart_id+ '">'
+															+ '</td>'
+															+ '<td class="td_left">'
+															  + '<div class="cart_goods_cont">'
+															    + '<span class="cart_goods_image">'
+															      + '<a href="#">'
+															        + '<img src="../image/goods/'+ items.goods_thumbnail+ '" class="middle" alt="'+ items.goods_name+ '" title="'+ items.goods_name+ '">'
+															      + '</a>'
+															    + '</span>'
+															    + '<div class="cart_goods_info">'
+															      + '<em><a href="#">'+ items.goods_name+ '</a></em>'
+															    + '</div>'
+															  + '</div>'
+															+ '</td>'
+															+ '<td class=td_order_amount>'
+															  + '<div class="cart_goods_num">'
+															    + '<strong>'+ items.cart_cnt+ '</strong><font>개</font>'
+															    + '<div class="btn_option">'
+															      + '<button type="button" class="btn_option_view"'
+															                            + 'data-id="'+items.goods_id
+															                            + '" data-img="'+items.goods_thumbnail
+															                            + '" data-name="'+items.goods_name
+															                            + '" data-cnt="'+items.cart_cnt
+															                            + '" data-price="'+items.goods_price
+															                            + '" data-total_price="'+items.total_price
+															                            +'">수량 변경</button>'
+															    + '</div>'
+															  + '</div>'
+													        + '</td>'
+															+ '<td><strong>'+ items.goods_price+ '원</strong></td>'
+															+ '<td><strong>'+ items.total_price+ '원</strong></td>'
+															+ '</tr>'
+												}); // each
 									tbody.append(tag);
-									let count = Object.keys(data).length;
-									$('#form-cart tr').eq(1).append(
-											'<td rowspan="' + count
-													+ '">qwe</td>');
-									checkAll();
-									let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
-									let checkedCnt = checkedGoods.length;
-									let total = calcTot(checkedGoods);
-									$('#totalGoodsCnt').html(checkedCnt);
-									$('#totalGoodsPrice').html(total);
+								let count = Object.keys(data).length;
+								$('#form-cart tr').eq(1).append(
+										'<td rowspan="' + count
+												+ '">qwe</td>');
+								checkAll();
+								let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
+								let checkedCnt = checkedGoods.length;
+								let total = calcTot(checkedGoods);
+								$('#totalGoodsCnt').html(checkedCnt);
+								$('#totalGoodsPrice').html(total);
 								} // success
-							}); // ajax
+						}); // ajax
 
-				});
+			});
 
 function checkAll() {
 	$('#check-all').prop('checked', true);
@@ -117,11 +115,13 @@ $(document).on('click', '.btn_option_view', function() {
 	let id = goods.dataset.id;
 	let name = goods.dataset.name;
 	let img = goods.dataset.img;
-	let cnt = goods.dataset.cnt;
-	let price = goods.dataset.price;
-	console.log(price);
+	let cnt = Number(goods.dataset.cnt);
+	let price = Number(goods.dataset.price);
+	let total_price = Number(goods.dataset.total_price);
+	console.log(total_price);
 	let box = $('#option-view .option_tit_box');
 	box.empty();
+	//
 	let cont = '<dl>'
 	           + '<dt>'
                  + '<img src="../image/goods/'+img+'" alt="'+name+'" title="'+name+'" class="middle">'
@@ -129,16 +129,57 @@ $(document).on('click', '.btn_option_view', function() {
                + '<dd>'
                  + '<strong>'+name+'</strong>'
                + '</dd>'
-             +'</dl>'
+               + '<dd>'
+                 + '<div class="count">'
+                   + '<button id="minus">-</button>'
+                   + '<input type="text" id="quantity" value="'+cnt+'" size="4" />'
+                   + '<button id="plus">+</button>'
+                 + '</div>'
+                 + '<strong id="tot_price" title="총합계금액">'+total_price+'</strong>'
+               + '</dd>'
+               + '<dd>'
+                 + '<button class="cancel">취소</button>'
+                 + '<button class="changeCnt">확인</button>'
+               + '</dd>'
+               +'</dl>'
 	box.append(cont);
 	$('#option-view').show();
 	$('body').css('overflow', 'hidden');
+	$(document).on('click', '.close', closeModal);
+	$(document).on('click', '.cancel', closeModal);
+	$(document).on('click', '#plus', function(){
+		$('#quantity').val(++cnt);
+		console.log($('#quantity').val());
+		calcPrice();
+	});
+	
+	$(document).on('click', '#minus', function(){
+		if($('#quantity').val()>=1){
+			$('#quantity').val(--cnt);
+			console.log($('#quantity').val());
+			calcPrice();
+		}
+	});
+	$(document).on('change', '#quantity', calcPrice);
+	function calcPrice(){
+		cnt = $('#quantity').val();
+		let total_price = $('#quantity').val() * price;
+		console.log(total_price);
+		$('#tot_price').text(total_price);
+	}
+	function closeModal(){
+		$('#option-view').hide();
+		$('body').css('overflow', 'auto');
+	};
+	$('.changeCnt').on('click', changeCnt);
+	function changeCnt(){
+		$.ajax({
+			type: 'POST',
+			url: '/dogiver/order/changeCnt'
+		}); //ajax
+	};
 });
 
-$(document).on('click', '.close', function() {
-	$('#option-view').hide();
-	$('body').css('overflow', 'auto');
-});
 
 /** 주소 * */
 function sample4_execDaumPostcode() {
