@@ -11,10 +11,11 @@ public class MemberDTO {
 	private String phone;
 	private String zipcode;
 	private String addr;
-	private String addr_detail;
+	private String addr_Detail;
 	private int seq;
 	private String regist_Date;
 	private String drop_Date;
 	private String drop_Yn;
-	private String role;	
+	private String role;
+	private String email_Yn;
 }

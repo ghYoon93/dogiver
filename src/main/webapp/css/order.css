@@ -48,7 +48,9 @@ body{font-family: "Noto Sans KR", sans-serif;}
 .btn_order_box .btn_right_box {text-align: right; float: right;}
 .btn_center_box {
   text-align: center;
+  
 }
+
 .btn_order_choice_del, .btn_order_shop_go_link{
   display: inline-block;
   min-width: 120px;
@@ -307,5 +309,13 @@ body{font-family: "Noto Sans KR", sans-serif;}
   width: 70px;
   height: 70px;
   border: 1px solid #dbdbdb;
+}
+.option_tit_box #tot_price {
+  display: inline-block;
+  margin: 20px 10px 20px 200px;
+}
+
+.option_tit_box .count {
+  display: inline-block;
 }
 /** //option modal **/
