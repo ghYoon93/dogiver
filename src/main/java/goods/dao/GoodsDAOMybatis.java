@@ -21,8 +21,8 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	}
 
 	@Override
-	public GoodsDTO getGoodsDetail(int goodsId) {
-		return sqlSession.selectOne("goodsSQL.getGoodsDetail", goodsId);
+	public GoodsDTO getGoodsDetail(int goods_id) {
+		return sqlSession.selectOne("goodsSQL.getGoodsDetail", goods_id);
 				
 	}
 

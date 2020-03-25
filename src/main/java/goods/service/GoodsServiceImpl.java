@@ -21,8 +21,8 @@ public class GoodsServiceImpl implements GoodsService {
 
 
 	@Override
-	public GoodsDTO getGoodsDetail(String goodsId) {
-		return goodsDAO.getGoodsDetail(Integer.parseInt(goodsId));
+	public GoodsDTO getGoodsDetail(String goods_id) {
+		return goodsDAO.getGoodsDetail(Integer.parseInt(goods_id));
 	}
 	
 	

@@ -41,7 +41,9 @@ public class GoodsController {
 	}
 	
 	@RequestMapping(value="goodsDetail", method=RequestMethod.GET)
-	public String goodsDetail() {
+	public String goodsDetail(@RequestParam String goods_id, Model model) {
+		model.addAttribute("goods_id", goods_id);
+		System.out.println(goods_id);
 		return "/goods/goodsDetail";
 	}
 	
@@ -55,6 +57,11 @@ public class GoodsController {
 		mav.addObject("goodsDTO", goodsDTO);
 		mav.setViewName("jsonView");
 		return mav;
+	}
+	
+	@RequestMapping(value="review", method=RequestMethod.GET)
+	public String review(@RequestParam(required=false, defaultValue="1") String seq, Model model) {
+		return "/goods/review";
 	}
 
 

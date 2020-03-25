@@ -14,6 +14,8 @@
 </head>
 <body>
 
+<input type="hidden" id="goods_id" value="${goods_id }">
+
 
 	<!-- 헤더 -->
     <div id="headerDiv"></div>
@@ -26,7 +28,7 @@
 <div class="wrap">
     <div id="section">
 	<div class="overview">
-		<div class="overview-image"><img src="../image/aa.jpg">  </div>
+<!-- 		<div class="overview-image"><img src="../image/aa.jpg">  </div>
 		<div class="overview-content">
 			<h1 id="goods_name" >SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)</h1>			
 			<div>
@@ -53,10 +55,10 @@
 			
 			<div class="btn_form">
 				<button id="btn-cart">장바구니</button>
-				<button id="btn-order">구매하기</button>
+				<button id="btn-order">구매하기</button>`
 			</div>
 			
-		</div>
+		</div> -->
 	</div>
 	
 	<div class="discription">

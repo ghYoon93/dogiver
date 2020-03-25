@@ -8,7 +8,7 @@ public interface GoodsDAO {
 
 	public List<GoodsDTO> getGoodsList(int pg);
 
-	public GoodsDTO getGoodsDetail(int goodsId);
+	public GoodsDTO getGoodsDetail(int goods_id);
 
 	
 
