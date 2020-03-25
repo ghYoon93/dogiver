@@ -216,6 +216,7 @@
 			<version>1.4</version>
 		</dependency>
 
+<<<<<<< HEAD
 	    <!-- spring security -->
 	    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<dependency>
@@ -239,6 +240,27 @@
 		
 		 
 
+=======
+		<!-- spring security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>5.0.8.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>5.0.8.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>5.0.8.RELEASE</version>
+		</dependency>
+		
+>>>>>>> 회원가입
 	</dependencies>
 	<build>
 		<plugins>

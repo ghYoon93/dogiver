@@ -1,3 +1,30 @@
+$(document).ready(function(){
+    $("#chkAll").click(function(){
+    	var check = $("#chkAll").prop("checked");
+    	$("input[type=checkbox]").prop("checked", check);
+    })
+    $('#btn_1').click(function(){
+    	if($("#chk1-1").is(":checked") == true) {
+    		var email_Yn = $('input:checkbox[id="chk1-2"]').is(":checked");
+    		$.ajax({
+    			type: "get",
+    			url: "../sign_up/emailYn",
+    			data:"email_Yn=" + email_Yn,
+    			success: function(){
+    				location.href="../sign_up/step2";
+    			}
+    		});
+    	}else if($("#chk1-1").is(":checked") == false){
+    		$('#chkModal').css('display','block');
+    		window.onclick = function(event) {
+    			if (event.target == document.getElementById('chkModal')) {
+    				document.getElementById('chkModal').style.display = "none";
+    			}
+    		};
+    	}
+    });
+})
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -7,7 +34,8 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
+// When the user clicks on the button, open the modala
+if(btn != null){
 btn.onclick = function() {
 	modal.style.display = "block";
 };
@@ -16,13 +44,8 @@ btn.onclick = function() {
 span.onclick = function() {
 	modal.style.display = "none";
 };
+}
 
-// When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-// if (event.target == modal) {
-// modal.style.display = "none";
-// }
-// };
 // 타이머
 function $ComTimer(){
     // prototype extend
@@ -34,14 +57,16 @@ $ComTimer.prototype = {
     , timer : ""
     , domId : ""
     , fnTimer : function(){
-        var m = Math.floor(this.comSecond / 60) + "분 " + (this.comSecond % 60) + "초";	// 남은
-																						// 시간
-																						// 계산
-        this.comSecond--;					// 1초씩 감소
+        var m = Math.floor(this.comSecond / 60) + "분 " + (this.comSecond % 60) + "초";
+        this.comSecond--;
         this.domId.innerText = m;
         if (this.comSecond < 0) {			// 시간이 종료 되었으면..
             clearInterval(this.timer);		// 타이머 해제
             $("#result-div").text("인증시간이 초과되었습니다.").css("color", "red");
+            $('#timer-div').toggle('slow');
+            setTimeout(function() {
+            	  location.href="../sign_up/step2";
+            	}, 1000);
         }
     }
     ,fnStop : function(){
@@ -78,50 +103,66 @@ $("#email-btn").click(function() {
 								$('#email-btn').toggle('slow');
 								$('#auth-number').toggle('slow');
 								$('#auth-btn').toggle('slow');
-							 	$.ajax({
+							 	
+								$.ajax({
 								  type: "get",
 								  url: "../mail/signMail",
-								  data:"to=" + $email.val(),
-								  dataType:"text",
+								  data:"to=" + $email.val()+""+"&random="+$('#random').val()+"",
 								  success : function(data){
 										$('#timer-div').css('display','block').css('color','red');
-										  var AuthTimer = new $ComTimer()
-										  AuthTimer.comSecond = 180;
-										  AuthTimer.timer =  setInterval(function(){AuthTimer.fnTimer()},1000);
-										  AuthTimer.domId = document.getElementById("timer-div");
-										  $("#result-div").text("이메일이 발송되었습니다.").css("display",
+										var AuthTimer = new $ComTimer()
+										  	AuthTimer.comSecond = 180;
+										  	AuthTimer.fnCallback = function(){alert("다시인증을 시도해주세요.")}
+										  	AuthTimer.timer =  setInterval(function(){AuthTimer.fnTimer()},1000);
+										  	AuthTimer.domId = document.getElementById("timer-div");
+										
+										$("#result-div").text("이메일이 발송되었습니다.").css("display",
 										  "block").css("color", "green");
-										  $('#hidden').text(data);
-								  }
+								  },
+								  error: function(data){
+									  alert("에러가 발생했습니다.");
+									  console.log(data);
+									  return false;
+									  }
 							  });
 						}else{
-							$("#result-div").text("가입된 이메일입니다.").css("display",
+							$("#result-div").text("이미 가입된 이메일입니다.").css("display",
 							"block").css("color", "red");
 						}	
-					}
+					},
+					  error: function(data){
+						  alert("에러가 발생했습니다.");
+						  console.log(data);
+						  return false;
+						  }
 				});
 
 			}
 		});
 
 $('#auth-btn').click(function(){
-	$('#auth-number').val();
-	if($("#result-div").text()=='인증시간이 초과되었습니다.'){
-		AuthTimer.set
-	}else if($('#auth-number').val()==''){
-		$("#result-div").text("인증번호를 입력하세요.").css("color", "red");
-	}else if($('#auth-number').val()!=$('#hidden').text()){
-		$("#result-div").text("인증번호가 옳지 않습니다.").css("color", "red");
-	}else if($('#auth-number').val()==$('#hidden').text()){
-		$.ajax({
-			type: 'get',
-			url: '../sign_up/step2',
-			data: "auth="+$('#auth-number').val(),
-			success: function(){
-				$("#result-div").text("인증완료!").css("color", "blue");
+	$.ajax({
+		type:"get",
+		url:"../sign_up/authEmail",
+		data:"authCode=" + $('#auth-number').val() + "&random=" + $("#random").val(),
+		success:function(data){
+			if(data=="complete"){
+				$('#timer-div').toggle('slow');
+				$("#result-div").text("인증성공!").css("display",
+				"block").css("color", "blue");
+				setTimeout(function() {
+					location.href="../sign_up/step3";
+				}, 1000);
+			}else if(data == "false"){
+				$("#result-div").text("잘못된 인증번호입니다.").css("display",
+				"block").css("color", "red");
 			}
-		});
-	}
+		},
+		error:function(data){
+			alert("에러가 발생했습니다.");
+			}
+	});
+
 });
 
 
