@@ -28,9 +28,9 @@ pageEncoding="UTF-8"%>
       <!-- 카테고리 -->
       <div class="goods_category">
         <ul>
-          <li><a href="#">장난감</a></li>
-          <li><a href="#">목줄/하네스</a></li>
-          <li><a href="#">패션/의류</a></li>
+          <li value="101"><a href="#">장난감</a></li>
+          <li value="201"><a href="#">목줄/하네스</a></li>
+          <li value="301"><a href="#">패션/의류</a></li>
         </ul>
       </div>
       <div class="goods_top">
@@ -51,6 +51,7 @@ pageEncoding="UTF-8"%>
       <!-- 상품 컨테이너 -->
 
       <div class="goods-frame">
+ <!-- 
         <div class="goods-boxs">
           <div class="goods-image">
             <a href="javascript:void(0)">
@@ -73,33 +74,9 @@ pageEncoding="UTF-8"%>
               <span id="goods_price">1000 </span>원
             </a>
           </div>
-        </div>
+        </div> -->
         
-     
-       
-        <div class="goods-boxs">
-          <div class="goods-image">
-            <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
-              <img class="image" src="../image/aa.jpg" />
-            </a>
-            <div class="hover_bar">
-              <button type="button" class="btn_basket_cart" href="#">
-                <img src="../image/shopping_bucket.png" />
-              </button>
-              <button type="button" class="btn_detail_link">
-                <img src="../image/search.png" />
-              </button>
-            </div>
-          </div>
-          <div class="goods-content">
-            <a href="javascript:void(0)" onclick="location.href='goodsDetail.html'" >
-              <h1 id="goods_name">
-                SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)
-              </h1>
-              <span id="goods_price">2000 </span>원
-            </a>
-          </div>
-        </div>
+   
        
 
         
@@ -153,8 +130,8 @@ pageEncoding="UTF-8"%>
   </body>
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/main.js"></script>
-  <script src="../js/goods.js"></script>
   <script src="../js/goodsList.js"></script>
+<!--   <script src="../js/goods.js"></script> -->
 <!--   <script>
   $(document).ready(function(){
 	  
