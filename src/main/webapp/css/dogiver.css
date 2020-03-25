@@ -19,7 +19,6 @@ body{
 }
 
 .dognorframe dl dd{
-	border: 1px solid;
   margin: 20px 10px;
   width: 280px;
   height: 350px;

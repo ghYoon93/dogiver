@@ -1,4 +1,4 @@
-S<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,54 +30,6 @@ S<%@ page language="java" contentType="text/html; charset=UTF-8"
 	<div class="wrap">
 		<div class="dognorframe">
 			<dl class="dognorlist">
-				<dd>
-					<div class="dognorImg">
-						<img src="../image/dognor.jpg" />
-					</div>
-					<div class="dognorContent">
-						이름<br> 나이<br> 몸무게<br> 종<br>
-					</div>
-				</dd>
-				<dd>
-					<div class="dognorImg">
-						<img src="../image/dognor.jpg" />
-					</div>
-					<div class="dognorContent">
-						이름<br> 나이<br> 몸무게<br> 종<br>
-					</div>
-				</dd>
-				<dd>
-					<div class="dognorImg">
-						<img src="../image/dognor.jpg" />
-					</div>
-					<div class="dognorContent">
-						이름<br> 나이<br> 몸무게<br> 종<br>
-					</div>
-				</dd>
-				<dd>
-					<div class="dognorImg">
-						<img src="../image/dognor.jpg" />
-					</div>
-					<div class="dognorContent">
-						이름<br> 나이<br> 몸무게<br> 종<br>
-					</div>
-				</dd>
-				<dd>
-					<div class="dognorImg">
-						<img src="../image/dognor.jpg" />
-					</div>
-					<div class="dognorContent">
-						이름<br> 나이<br> 몸무게<br> 종<br>
-					</div>
-				</dd>
-				<dd>
-					<div class="dognorImg">
-						<img src="../image/dognor.jpg" />
-					</div>
-					<div class="dognorContent">
-						이름<br> 나이<br> 몸무게<br> 종<br>
-					</div>
-				</dd>
 			</dl>
 		</div>
 	</div>
