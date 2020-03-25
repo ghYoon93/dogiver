@@ -9,7 +9,7 @@
 	
 	<!-- 명예의 전당 -->
 	<select id="getDogiver" resultType="dogiver">
-		select dog_name, dog_age, dog_weight, dog_breed, dog_image, blood_cc, description, donation_date, apply_dogiver.dog_id 
-		from apply_dogiver join dogiver on dogiver.dog_id = apply_dogiver.dog_id;
+		select dog_name, dog_age, dog_weight, dog_breed, dog_image, blood_cc, description, donation_date, dog_id 
+		from apply_dogiver join dogiver using(dog_id)
 	</select>
 </mapper>

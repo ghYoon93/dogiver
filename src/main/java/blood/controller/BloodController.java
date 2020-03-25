@@ -23,11 +23,9 @@ public class BloodController {
 	@Autowired
 	private BloodService bloodService;
 	
-	@RequestMapping(value = "dogInsert", method = RequestMethod.POST)
-	@ResponseBody
-	public String dogInsert(@ModelAttribute DogJoinDTO dogJoinDTO) {
-		int su = bloodService.dogInsert(dogJoinDTO);
-		return su+"";
+	@RequestMapping(value = "bloodNow", method = RequestMethod.GET)
+	public String bloodNow() {
+		return "/blood/bloodNow";
 	}
 	
 	@RequestMapping(value = "dogJoin", method = RequestMethod.GET)
@@ -40,14 +38,30 @@ public class BloodController {
 		return "/blood/dogiver";
 	}
 	
+	@RequestMapping(value = "hospital", method = RequestMethod.GET)
+	public String hospital() {
+		return "/blood/hospital";
+	}
+	
+	
+	@RequestMapping(value = "dogInsert", method = RequestMethod.POST)
+	@ResponseBody
+	public String dogInsert(@ModelAttribute DogJoinDTO dogJoinDTO) {
+		int su = bloodService.dogInsert(dogJoinDTO);
+		return su+"";
+	}
+	
 	@RequestMapping(value = "getDogiver", method = RequestMethod.POST)
 	public ModelAndView getDogiver() {
 		List<DogiverDTO> list = bloodService.getDogiver();
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
+		mav.setViewName("jsonView");
 		return mav;
 	}
+	
+	
 	
 
 }

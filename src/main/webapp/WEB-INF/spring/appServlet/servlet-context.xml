@@ -23,6 +23,8 @@
 	<resources location="/template/" mapping="/template/**" />
 	<resources location="/sign_up/" mapping="/sign_up/**" />
 	<resources location="/blood/" mapping="/blood/**"/>
+	<resources location="/dogiverImage/" mapping="/dogiverImage/**"/>
+	<resources location="/login/" mapping="/login/**"/>
 
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources
