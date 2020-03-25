@@ -22,6 +22,8 @@
 		base-package="board.service" />
 	<context:component-scan
 		base-package="board.dao" />
+	<context:component-scan 
+		base-package="board.bean" />
 		
 		
 

@@ -29,29 +29,29 @@
 				style="width: 1100px; margin: 0 auto; margin-top: 150px;">
 		<div class="board_category">
 				<div id="board_category_select">
-					<select id="board_select" name="category"
+					<select id="board_select" name="brd_category"
 						style="font-size: 13px; height: 42px; text-align-last: center;">
 						<option label="글 종류" selected="selected"
 							style="text-align: center;"></option>
-						<option label="가입" value="join"></option>
-						<option label="고민" value="worry"></option>
-						<option label="자랑" value="good"></option>
-						<option label="헌혈" value="blood"></option>
+						<option label="가입" value="가입"></option>
+						<option label="고민" value="고민"></option>
+						<option label="자랑" value="자랑"></option>
+						<option label="헌혈" value="헌혈"></option>
 					</select>
 				</div>
 			</div>
 
 			<div class="board_title">
-				<input type="text" id="insert_text" name="title" placeholder="제목을 입력하세요">
+				<input type="text" id="insert_text" name="brd_title" placeholder="제목을 입력하세요">
 			</div>
 
 
 			<div class="board_write" >
-				<input type="hidden" name="content" id="content" value="">
+				<input type="hidden" name="brd_content" id="brd_content" >
 			</div>
 
 			<div class="board_writeBtn">
-				<input id="boardWrite_Btn" type="button" value="작성하기" onclick="submit()">
+				<input id="boardWrite_Btn" type="button" value="작성하기">
 			</div>
 		</div>
 	</div>
@@ -61,7 +61,25 @@
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/board.js"></script>
+
+<script type="text/javascript">
+$('#boardWrite_Btn').click(function(){
+	if ($('#board_select').val() == '') {
+		alert("plase selecet the Category");
+		$('#board_select').focus();
+	}else if ($('#insert_text').val() == '') {
+		alert("plase insert your Title");
+		$('#insert_text').focus();
+	}else if ($('.fr-view').text() == '') {
+		alert("plase insert your Content");
+		$('.fr-view').focus();
+	}else{
+	$('#brd_content').val($('.fr-view').html());
+	$('#boardWriteForm').submit();
+	location.href='boardList';
+	}
+});
+</script>
 
 <script type="text/javascript">
 	$("#file").on('change', function() {
@@ -78,15 +96,8 @@
 </script>
 <script type="text/javascript">
 	var editor = new FroalaEditor('.board_write')
-
 </script>
 
-<script type="text/javascript">
-$('#boardWrite_Btn').click(function(){
-	$('#content').val($('.fr-view').html());
-	$('#boardWriteForm').submit();
-});
-</script>
 
 </html>
 
