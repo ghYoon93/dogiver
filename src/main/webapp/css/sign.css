@@ -60,7 +60,7 @@ li {
   display: inline-block;
   height: 600px;
   width: 1100px;
-  background: #ffeded;
+  background: #fbf1f0;
   margin: 0 0 5px;
   padding: 40px 0 0;
   text-align: center;
@@ -97,7 +97,7 @@ li {
   text-align: center;
   line-height: 45px;
   color: #fff;
-  font-size: 13px;
+  font-size: 15px;
   background: #ec2126;
   text-decoration: none;
   border-radius: 5px;
@@ -128,6 +128,12 @@ li {
   color: #222;
   font-weight: normal;
   margin: 50px 0 20px;
+}
+.h3 span{
+	color:red;	
+}
+.h3 #choice{
+	color:blue;
 }
 .h3::before {
   content: "";
@@ -177,18 +183,22 @@ input[type="checkbox"]:checked + label:before {
   text-align: center;
   line-height: 45px;
   color: #fff;
-  font-size: 13px;
-  background: #6f0404;
+  font-size: 15px;
+  background: #d1261a;
   text-decoration: none;
+  border-radius: 5px;
+  line-height: 10px;
 }
 .btn_center {
   text-align: center;
+  margin-bottom: 50px;
 }
 .sign_insert {
-  margin: 50px auto;
-  padding: 40px 0 0;
+  margin: 0 auto;
+  padding: 10px 0 10px;
   text-align: center;
   box-sizing: border-box;
+   font-family: "Noto Sans KR", sans-serif;
 }
 .sign_insert h3 {
   position: relative;
@@ -219,6 +229,10 @@ input[type="checkbox"]:checked + label:before {
 .sign_insert ul li label {
   font-size: 18px;
 }
+.sign_insert ul li label + div{
+	text-indent: 12px;
+	visibility: hidden;
+}
 .sign_insert ul li label span {
   color: #ca3333;
 }
@@ -228,18 +242,23 @@ input[type="checkbox"]:checked + label:before {
   font-size: 18px;
   text-indent: 12px;
   margin: 2px 0 0;
+  border-radius: 5px;
+  border:1px solid #f0eff2;
+	-webkit-appearance:none;
 }
 .btn_2 {
   display: inline-block;
-  width: 80px;
+  width: 100px;
   height: 45px;
   text-align: center;
   line-height: 45px;
   color: #fff;
   font-size: 13px;
   background: #666;
-  text-decoration: none;
-  vertical-align: middle;
+  vertical-align: 1px;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 10px;
 }
 .sign_insert ul li select::-ms-expand {
   display: none;
@@ -286,11 +305,10 @@ input[type="checkbox"]:checked + label:before {
   color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  height: 80px;
   text-align: center;
 }
 .modal-header h2 {
-  margin-top: 10px;
+  margin: 10px 0 10px;
   font-size: 24px;
   text-indent: 13px;
 }
@@ -354,6 +372,13 @@ input[type="checkbox"]:checked + label:before {
   font-size: 13pt;
   text-align: left;
   text-indent: 12px;
+}
+.modal-body #chk-message{
+	width: 310px;
+  margin-left: 80px;
+  line-height: 2;
+  font-size: 20pt;
+  text-align: center;
 }
 /* Modal Footer */
 .modal-footer {
