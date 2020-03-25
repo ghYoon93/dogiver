@@ -259,6 +259,7 @@
         <div class="layer_option_cont">
           <h4>옵션선택</h4>
           <span onclick="" class="close" title="닫기">&times;</span>
+          <form name="updateCartFrm" action="updateCart">
           <div class="option_layer_scroll">
             <div class="option_tit_box">
               <dl>
@@ -274,6 +275,7 @@
             <!-- //option_tit_box -->
           </div>
           <!-- //option_layer_scroll -->
+          </form>
         </div>
         <!-- //layer_option_cont -->
       </div>

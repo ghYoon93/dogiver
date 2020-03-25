@@ -1,6 +1,7 @@
 package order.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,11 @@ public class OrderDAOMyBatis implements OrderDAO {
 		List<CartDTO> list = sqlSession.selectList("orderSQL.getCart", memEmail);
 		System.out.println("dao: "+list.size());
 		return list;
+	}
+	@Override
+	public void updateCart(Map<String, String> map) {
+		sqlSession.update("orderSQL.updateCart", map);
+		
 	}
 
 }

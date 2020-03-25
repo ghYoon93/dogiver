@@ -20,4 +20,7 @@
          ORDER BY c.cart_id
         ]]>
     </select>
+    <update id="updateCart" parameterType="java.util.Map">
+        UPDATE cart SET cart_cnt = #{cart_cnt} WHERE cart_id = #{cart_id}
+    </update>
 </mapper>

@@ -35,7 +35,8 @@ $(document).ready(function() {
 															    + '<strong>'+ items.cart_cnt+ '</strong><font>개</font>'
 															    + '<div class="btn_option">'
 															      + '<button type="button" class="btn_option_view"'
-															                            + 'data-id="'+items.goods_id
+															      						+ 'data-cartId="'+items.cart_id
+															                            + '" data-id="'+items.goods_id
 															                            + '" data-img="'+items.goods_thumbnail
 															                            + '" data-name="'+items.goods_name
 															                            + '" data-cnt="'+items.cart_cnt
@@ -109,10 +110,10 @@ function calcTot(checkedGoods) {
 	return total;
 }
 
-/** 수량 변경 * */
+/** 수량 변경 **/
 $(document).on('click', '.btn_option_view', function() {
 	let goods = this;
-	let id = goods.dataset.id;
+	let cartId = Number(goods.dataset.cartid);
 	let name = goods.dataset.name;
 	let img = goods.dataset.img;
 	let cnt = Number(goods.dataset.cnt);
@@ -122,26 +123,30 @@ $(document).on('click', '.btn_option_view', function() {
 	let box = $('#option-view .option_tit_box');
 	box.empty();
 	//
-	let cont = '<dl>'
-	           + '<dt>'
-                 + '<img src="../image/goods/'+img+'" alt="'+name+'" title="'+name+'" class="middle">'
-               + '</dt>'
-               + '<dd>'
-                 + '<strong>'+name+'</strong>'
-               + '</dd>'
-               + '<dd>'
-                 + '<div class="count">'
-                   + '<button id="minus">-</button>'
-                   + '<input type="text" id="quantity" value="'+cnt+'" size="4" />'
-                   + '<button id="plus">+</button>'
-                 + '</div>'
-                 + '<strong id="tot_price" title="총합계금액">'+total_price+'</strong>'
-               + '</dd>'
-               + '<dd>'
-                 + '<button class="cancel">취소</button>'
-                 + '<button class="changeCnt">확인</button>'
-               + '</dd>'
-               +'</dl>'
+	let cont = '<form action="updateCart" method="get">' 
+		       + '<dl>'
+	             + '<dt>'
+	               + '<input type="hidden" name="cart_id" value="'+cartId+'">' 
+                   + '<img src="../image/goods/'+img+'" alt="'+name+'" title="'+name+'" class="middle">'
+                 + '</dt>'
+                 + '<dd>'
+                   + '<strong>'+name+'</strong>'
+                 + '</dd>'
+                 + '<dd>'
+                   + '<div class="count">'
+                     + '<button type="button" id="minus">-</button>'
+                     + '<input type="text" id="quantity" name="cnt" value="'+cnt+'" size="4" />'
+                     + '<button type="button" id="plus">+</button>'
+                   + '</div>'
+                   + '<strong id="tot_price" title="총합계금액">'+total_price+'</strong>'
+                 + '</dd>'
+                 + '<dd>'
+                   + '<button type="button" class="cancel">취소</button>'
+                   + '<button type="submit" class="changeCnt">확인</button>'
+                 + '</dd>'
+               + '</dl>'
+               +  '</form>'
+               
 	box.append(cont);
 	$('#option-view').show();
 	$('body').css('overflow', 'hidden');
@@ -171,13 +176,7 @@ $(document).on('click', '.btn_option_view', function() {
 		$('#option-view').hide();
 		$('body').css('overflow', 'auto');
 	};
-	$('.changeCnt').on('click', changeCnt);
-	function changeCnt(){
-		$.ajax({
-			type: 'POST',
-			url: '/dogiver/order/changeCnt'
-		}); //ajax
-	};
+	
 });
 
 
