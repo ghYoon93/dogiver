@@ -72,7 +72,6 @@ $ComTimer.prototype = {
     ,fnStop : function(){
         clearInterval(this.timer);
     }
-// [출처] [javascript] 인증번호 입력 타이머 기능 쉽게 만들기~!|작성자 온이파파
 }
 
 // 이메일 버튼 클릭 이벤트
@@ -164,8 +163,7 @@ $('#auth-btn').click(function(){
 	});
 
 });
-
-
+//step3
 
 
 

@@ -36,12 +36,12 @@ pageEncoding="UTF-8"%>
     <div class="wrap">
       <div class="slider">
         <div>
-          <img src="../image/photo-of-puppies-3198013.jpg" alt="slide1" />
+          <img src="../image/puppy-sleeping-in-a-pet-bowl-3198004.jpg" alt="slide1" />
         </div>
         <div><img src="../image/slide-image-4.jpg" alt="slide2" /></div>
         <div>
           <img
-            src="../image/brown-short-coated-dog-on-white-background-3487734.jsp"
+            src="../image/brown-short-coated-dog-on-white-background-3487734.jpg"
             alt="slide3"
           />
         </div>
