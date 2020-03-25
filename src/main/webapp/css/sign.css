@@ -205,7 +205,7 @@ input[type="checkbox"]:checked + label:before {
   font-size: 24px;
   color: #222;
   line-height: 1;
-  padding: 0 0 30px;
+  padding: 15px 0 30px;
 }
 .sign_insert h3:after {
   content: "";
@@ -264,7 +264,7 @@ input[type="checkbox"]:checked + label:before {
   display: none;
 }
 #zipcode {
-  width: 80px;
+  width: 85px;
 }
 .sign_insert ul li input::-webkit-input-placeholder {
   font-size: 16px;
