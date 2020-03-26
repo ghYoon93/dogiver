@@ -1,5 +1,6 @@
 package order.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +21,11 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public void updateCart(Map<String, String> map) {
 		orderDAO.updateCart(map);
+	}
+	@Override
+	public void deleteCart(Map<String, String[]> map) {
+		orderDAO.deleteCart(map);
+		
 	}
 
 }

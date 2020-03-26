@@ -75,7 +75,6 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.5.3</version>
 		</dependency>
-
 		<!-- MyBatis-spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
