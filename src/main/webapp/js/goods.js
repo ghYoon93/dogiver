@@ -1,7 +1,7 @@
 /******goodsDetail.jsp******/
 $('nav ul li').click(function(){
 	if($(this).index()=='0'){
-		$('.discription div').html('<h3>상세내용</h3>');		
+		$('.discription div').html(detail_image);		
 	}else if($(this).index()=='1'){
 		$('.discription div').load('review');
 	}else if($(this).index()=='2'){
@@ -12,10 +12,12 @@ $('nav ul li').click(function(){
 
 let price="";
 let amt = "";
+var detail_image = "";
 $(document).ready(function(){	
 	//해당 상품 Detail페이지 뿌려주기
 	//alert($('#goods_id').val());
 	var tag="";
+	
 	$.ajax({	
 		type: 'post',
 		url: '/dogiver/goods/getGoodsDetail',
@@ -32,7 +34,7 @@ $(document).ready(function(){
 							+'<span id="goods_price">'+ data.goodsDTO.goods_price +'</span>'	
 						+'</div>'
 						
-						+'<div class="delivery-fee" style="margin:20px 0;">'
+						+'<div class="delivery-fee" style="margin:20px 0; text-align: right">'
 							+'<span>배송비</span>'
 							+'<span>2500원</span>'
 						+'</div>'
@@ -55,8 +57,11 @@ $(document).ready(function(){
 						+'</div>'
 					+'</div>';
 			
+			detail_image = '<img src="../image/goods/'+ data.goodsDTO.goods_detail +'" >'; 
 			
 			$('.overview').append(tag);
+			$('.discription div').append(detail_image);
+			
 			
 			price = data.goodsDTO.goods_price;
 			amt = $('#quantity').val();
@@ -141,10 +146,14 @@ function calc_tot_price(price, amt){
 //콤마 찍기
 function numberFormat(inputNumber) {
 	return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
- }
+}
 
 
 
+//상품후기 창 띄우기
+function reviewWrite(){
+	window.open('/dogiver/goods/reviewWrite', '', 'width=700 height=400 scrollbars=yes');
+}
 
 
 

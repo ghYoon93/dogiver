@@ -1,4 +1,3 @@
-/************ goodsList.jsp ************/
 
 var idx = new Array();
 var g_price = new Array();
@@ -16,7 +15,7 @@ $(document).ready(function(){
 			var tag = "";
 			$.each(data.list, function(index, items){
 				//$('#goods_name').text(items.goods_name);
-				//alert(items.goods_id);
+				//alert(items.goods_detail);
 				
 				tag += '<div class="goods-boxs" >'
 				         + '<div class="goods-image" >'
@@ -27,7 +26,7 @@ $(document).ready(function(){
 				             + '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
 				               + '<img src="../image/shopping_bucket.png" />'
 				             + '</button>'
-				             + '<button type="button" class="btn_detail_link" >'
+				             + '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
 				               + '<img src="../image/search.png" />'
 				             + '</button>'
 				           + '</div>'
@@ -39,6 +38,7 @@ $(document).ready(function(){
 				           + '</a>'
 				         + '</div>'
 				      + '</div>';
+				
 				
 				//$('.goods-boxs a').attr('id', items.goods_id);
 				//$('.goods-boxs button').attr('id', index);
@@ -54,7 +54,7 @@ $(document).ready(function(){
 			});//each	
 			
 			$('.goods-frame').append(tag);
-			
+	
 		}
 	});
 });
@@ -67,19 +67,94 @@ $(document).on('click', '.btn_detail_link, .goods-boxs a', function(){
 
 
 /****** 카테고리 정렬 ******/
+var category = "";
 $('.goods_category li').click(function(){
-	var category = $(this).attr('value');
-
-	$.ajax({
+	category = $(this).attr('value');
+	$('.goods-boxs').remove(); //초기화
+	
+	var tag = "";
+	$.ajax({		
 		type: 'post',
 		url: '/dogiver/goods/getCategory',
-		type: id,
+		data: 'category='+category,
 		dataType: 'json',
-		success:function(){
-			//컨트롤러 고고
+		success:function(data){
+			//alert(JSON.stringify(data));
+			
+			$.each(data.list, function(index, items){
+
+				tag += '<div class="goods-boxs" >'
+				         + '<div class="goods-image" >'
+				           + '<a href="javascript:void(0)" id="'+items.goods_id+'">'
+				             + '<img class="image" src="../image/goods/'+ items.goods_thumbnail +'"/>'
+				           + '</a>'
+				           + '<div class="hover_bar">'
+				             + '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
+				               + '<img src="../image/shopping_bucket.png" />'
+				             + '</button>'
+				             + '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
+				               + '<img src="../image/search.png" />'
+				             + '</button>'
+				           + '</div>'
+				         + '</div>'
+				         + '<div class="goods-content">'
+				           + '<a href="javascript:void(0)" onclick="" >'
+				             + '<h1 id="goods_name">'+ items.goods_name + '</h1>'
+				             + '<span id="goods_price">' + items.goods_price + '</span>원'
+				           + '</a>'
+				         + '</div>'
+				      + '</div>';
+			});//each
+			$('.goods-frame').append(tag);
 		}
 	});
 });
+
+
+/****** 카테고리 정렬 ******/
+$('.goods_sort').change(function(){
+	//var lineUp = $('.goods_sort option:selected').val();
+	var lineUp = $('#goods_sort').val();
+	$('.goods-boxs').remove(); //초기화
+	
+	var tag = "";
+	$.ajax({
+		type: 'post',
+		url: '/dogiver/goods/goods_lineUp',
+		data: 'lineUp='+lineUp,
+		dataType: 'json',
+		success: function(data){
+			$.each(data.list, function(index, items){
+
+				tag += '<div class="goods-boxs" >'
+				         + '<div class="goods-image" >'
+				           + '<a href="javascript:void(0)" id="'+items.goods_id+'">'
+				             + '<img class="image" src="../image/goods/'+ items.goods_thumbnail +'"/>'
+				           + '</a>'
+				           + '<div class="hover_bar">'
+				             + '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
+				               + '<img src="../image/shopping_bucket.png" />'
+				             + '</button>'
+				             + '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
+				               + '<img src="../image/search.png" />'
+				             + '</button>'
+				           + '</div>'
+				         + '</div>'
+				         + '<div class="goods-content">'
+				           + '<a href="javascript:void(0)" onclick="" >'
+				             + '<h1 id="goods_name">'+ items.goods_name + '</h1>'
+				             + '<span id="goods_price">' + items.goods_price + '</span>원'
+				           + '</a>'
+				         + '</div>'
+				      + '</div>';
+			});//each
+			$('.goods-frame').append(tag);
+		}
+		
+	});
+});
+
+
 
 /****** 장바구니옵션 모달 ******/
 let price="";
@@ -105,15 +180,6 @@ $('.close, .cancle').click(function(){
 	$('#quantity').val(1);
 	calc_tot_price(price, amt);
 });
-
-
-//$(document).ready(function(){	
-//	
-//	calc_tot_price(price, amt);
-//	let num = numberFormat(price);
-//	$('#tot_price').html(num);
-//
-//});
 
 $('#quantity').change(function(){
 	amt = $('#quantity').val();

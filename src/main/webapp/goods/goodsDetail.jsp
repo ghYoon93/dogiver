@@ -10,6 +10,7 @@
 	      rel="stylesheet"
 	/>
     <link rel="stylesheet" href="../css/style.css" />	
+	<link rel="stylesheet" href="../css/reset.css" />
 	<link rel="stylesheet" href="../css/goodsDetail.css" />
 </head>
 <body>
@@ -69,8 +70,8 @@
 				<li>교환/환불/배송</li> 
 			</ul> 
 		</nav>
-		<div>
-		dd
+		<div title="상세이미지" style="text-align:center;">
+		
 		</div>
 		
 	</div>

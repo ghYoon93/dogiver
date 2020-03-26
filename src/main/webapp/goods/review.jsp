@@ -8,8 +8,8 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="../css/goodsDetail.css" />
 </head>
 <body>
-<h3>상품후기</h3>
-<button id="review_btn">상품후기 작성</button><br>
+<h3 style="text-align: left;">상품후기</h3>
+<button id="review_btn" style="text-align:right; float:right; margin:0 100px;" onclick="reviewWrite()">상품후기 작성</button><br>
 
 <table cellpadding="5" frame="hsides" rules="rows" valign="top" margin="0">
     <tr>
