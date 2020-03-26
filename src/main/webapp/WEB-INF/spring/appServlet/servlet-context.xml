@@ -22,12 +22,16 @@
 	<resources location="/css/" mapping="/css/**" />
 	<resources location="/template/" mapping="/template/**" />
 	<resources location="/sign_up/" mapping="/sign_up/**" />
+	<resources location="/blood/" mapping="/blood/**"/>
+	<resources location="/dogiverImage/" mapping="/dogiverImage/**"/>
+	<resources location="/login/" mapping="/login/**"/>
 
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources
 		in the /WEB-INF/views directory -->
 	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
 		<!-- <beans:property name="prefix" value="/WEB-INF/views/" /> -->
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
@@ -51,5 +55,7 @@
 		base-package="mail.controller" />
 	<context:component-scan
 		base-package="order.controller" />
+	<context:component-scan base-package="blood.controller"/>
+	<context:component-scan base-package="admin.controller"/>
 
 </beans:beans>
