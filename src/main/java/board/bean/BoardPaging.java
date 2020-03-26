@@ -23,17 +23,17 @@ public class BoardPaging {
 			endPage = totalP;
 
 		if (startPage > pageBlock)
-			pagingHTML.append("[<a id='paging' href='boardList.do?pg=" + (startPage - 1) + "'>이전</a>]");
+			pagingHTML.append("<a style=\"font-size:20px;\" id='paging' href='boardList?pg=" + (startPage - 1) + "'>이전</a> &emsp;&emsp; ");
 
 		for (int i = startPage; i <= endPage; i++) {
 			if (i == currentPage)
-				pagingHTML.append("[<a id='currentPaging' href='boardList.do?pg=" + i + "'>" + i + "</a>]");
+				pagingHTML.append("<a style=\"font-size:20px;\" id='currentPaging' href='boardList?pg=" + i + "'>" + i + "</a> &emsp;&emsp;");
 			else
-				pagingHTML.append("[<a id='paging' href='boardList.do?pg=" + i + "'>" + i + "</a>]");
+				pagingHTML.append("<a style=\"font-size:20px;\" id='paging' href='boardList?pg=" + i + "'>" + i + "</a> &emsp;&emsp;");
 		}
 
 		if (endPage < totalP)
-			pagingHTML.append("[<a id='paging' href='boardList.do?pg=" + (endPage + 1) + "'>다음</a>]");
+			pagingHTML.append("<a style=\"font-size:20px;\" id='paging' href='boardList?pg=" + (endPage + 1) + "'>다음</a>");
 	}
 
 	public void makeSearchPagingHTML() {
@@ -47,17 +47,17 @@ public class BoardPaging {
 			endPage = totalP;
 
 		if (startPage > pageBlock)
-			pagingHTML.append("[<span id='paging' onclick='boardSearch(" + (startPage - 1) + ")'>이전</span>]");
+			pagingHTML.append("<span id='paging' onclick='boardSearch(" + (startPage - 1) + ")'>이전 &emsp;&emsp;</span> ");
 
 		for (int i = startPage; i <= endPage; i++) {
 			if (i == currentPage)
-				pagingHTML.append("[<span id='currentPaging' onclick='boardSearch(" + i + ")'>" + i + "</span>]");
+				pagingHTML.append("<span style=\"font-size:20px;\" id='currentPaging' onclick='boardSearch(" + i + ")'>" + i +  "</span> &emsp;&emsp;" );
 			else
-				pagingHTML.append("[<span id='paging' onclick='boardSearch(" + i + ")'>" + i + "</span>]");
+				pagingHTML.append("<span style=\"font-size:20px;\" id='paging' onclick='boardSearch(" + i + ")'>" + i + "</span> &emsp;&emsp;");
 		}
 
 		if (endPage < totalP)
-			pagingHTML.append("[<span id='paging' onclick='boardSearch(" + (endPage + 1) + ")'>다음</span>]");
+			pagingHTML.append("<span style=\"font-size:20px;\" id='paging' onclick='boardSearch(" + (endPage + 1) + ")'>다음</span>");
 	}
 
 }

@@ -50,6 +50,7 @@ public class BoardController {
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("pg", pg);
+		System.out.println("현재"+ pg + "페이지 입니다");
 		mav.addObject("list", list);
 		mav.addObject("memId", session.getAttribute("memId"));
 		mav.addObject("boardPaging", boardPaging);
@@ -88,6 +89,7 @@ public class BoardController {
 		
 		//map안에는 pg,searchoption,keyword가 들어와 있따.
 		String pg =map.get("pg");
+		System.out.println("검색전 현재"+ pg + "페이지 입니다");
 		List<BoardDTO> list = boardService.getBoardSearch(map);//->서브시 ->마이바티스 ->멥퍼 다시 돌아옴 
 		
 		//페이징 처리
@@ -95,6 +97,7 @@ public class BoardController {
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("pg", pg);
+		System.out.println("검색후"+ pg + "페이지 입니다");
 		mav.addObject("list", list);
 		mav.addObject("memId", session.getAttribute("memId"));
 		mav.addObject("boardPaging", boardPaging);

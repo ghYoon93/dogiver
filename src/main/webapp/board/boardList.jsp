@@ -89,7 +89,7 @@
 					</div>
 					<div id="keywordDiv" style="text-align: center; width: 400px; height: 50px; display: inline-block; float: left;">
 						<!-- 검색어가 사라지지 않게 -->
-						<input type="text" name="keyword" value="${keyword }"
+						<input type="text" name="keyword" id="keyword" value="${keyword }"
 							placeholder="검색어 입력" style="width: 390px; height: 36px; ">
 					</div>
 					<div id="searchBtnDiv" style="text-align: left; width: 103px; height: 50px; display: inline-block; float: left;">
@@ -108,7 +108,14 @@
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/boardList.js"></script>
-
+<script type="text/javascript">
+$('#keyword').keypress(function(event){
+    if ( event.which == 13 ) {
+        $('#boardSearchBtn').click();
+        return false;
+    }
+});
+</script>
 <script type="text/javascript">
 	function boardSearch(pg) {
 		//location.href='getBoardSearch?pg='+pg+'&searchOption=${searchOption}'+'&keyword=${keyword}'

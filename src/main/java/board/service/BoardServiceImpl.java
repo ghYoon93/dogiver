@@ -56,9 +56,10 @@ public class BoardServiceImpl implements BoardService {
 		int totalA = boardDAO.getBoardTotalA();//총글수
 		
 		boardPaging.setCurrentPage(Integer.parseInt(pg));
-		boardPaging.setPageBlock(3);
-		boardPaging.setPageSize(5);
+		boardPaging.setPageBlock(5);
+		boardPaging.setPageSize(8);
 		boardPaging.setTotalA(totalA);
+		System.out.println("1페이징처리후 총 개수는"+totalA+"입니다");
 		boardPaging.makePagingHTML();
 		return boardPaging;
 	}
@@ -72,7 +73,7 @@ public class BoardServiceImpl implements BoardService {
 		boardPaging.setPageBlock(5);
 		boardPaging.setPageSize(10);
 		boardPaging.setTotalA(totalA);
-		System.out.println(totalA+"검색번입니다");
+		System.out.println("2페이징처리후 총 개수는"+totalA+"입니다");
 		boardPaging.makeSearchPagingHTML();
 		
 		return boardPaging;

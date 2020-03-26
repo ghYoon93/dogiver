@@ -73,7 +73,6 @@ $('#boardSearchBtn').click(function(event){
 			data : $('#boardListForm').serialize(), //submit이나, serialize에는  항상 name 속성만 전달된다.
 			dataType : 'json',
 			success : function(data){
-				alert(JSON.stringify(data));
 				$.each(data.list, function(index, items){
 					$('<tr/>').append($('<td/>',{
 						style:'height:80px',

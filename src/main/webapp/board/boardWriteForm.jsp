@@ -79,6 +79,7 @@ $('#boardWrite_Btn').click(function(){
 	location.href='boardList';
 	}
 });
+
 </script>
 
 <script type="text/javascript">
