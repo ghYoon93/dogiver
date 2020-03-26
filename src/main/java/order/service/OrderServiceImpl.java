@@ -27,5 +27,14 @@ public class OrderServiceImpl implements OrderService {
 		orderDAO.deleteCart(map);
 		
 	}
+	@Override
+	public CartDTO searchCart(Map<String, String> map) {
+		return orderDAO.searchCart(map);
+	}
+	@Override
+	public CartDTO insertCart(Map<String, String> map) {
+		return orderDAO.insertCart(map);
+		
+	}
 
 }

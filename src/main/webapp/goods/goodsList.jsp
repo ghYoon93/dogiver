@@ -91,18 +91,11 @@ pageEncoding="UTF-8"%>
               <div class="option_tit_box">
                 <dl>
                   <dt>
-                    <img
-                      src="../image/no-image-icon.jpg"
-                      width="68"
-                      alt="상품명"
-                      title="상품명"
-                      class="middle"
-                    />
+                    <img/>
                   </dt>
                   <dd>
                     <strong
-                      >같이 구하기 되는 있는 뿐이다. 되려니와, 인생의 고동을
-                      이것이다. 있으며, 되려니와, 피고 철환하였는가?</strong
+                      ></strong
                     >
                   </dd>
 
@@ -116,7 +109,7 @@ pageEncoding="UTF-8"%>
                   </dd>
 
                   <dd>
-                    <button class="cancle">취소</button>
+                    <button class="cancel">취소</button>
                     <button class="confirm">확인</button>
                   </dd>
                 </dl>

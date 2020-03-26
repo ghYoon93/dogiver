@@ -1,6 +1,9 @@
 
 var idx = new Array();
+var g_id = new Array();
 var g_price = new Array();
+var g_name = new Array();
+var g_img = new Array();
 $(document).ready(function(){
 
 	$.ajax({
@@ -46,7 +49,10 @@ $(document).ready(function(){
 				
 
 				idx.push(index);
+				g_id.push(items.goods_id);
 				g_price.push(items.goods_price);
+				g_img.push(items.goods_thumbnail);
+				g_name.push(items.goods_name);
 				
 //				alert(idx[index]);
 //				alert(price[index]);
@@ -164,15 +170,37 @@ $(document).on('click', '.btn_basket_cart', function(){
 	$('body').css('overflow','hidden');
 	
 	var id = $(this).attr('id');
-	var total = g_price[id];
+	var goods_id = g_id[id];
+	var total = numberFormat(g_price[id]);
+	var img = g_img[id];
+	var name = g_name[id];
+	console.log(img);
+	console.log(name);
+	
+	$('#option-view img').attr('src', '../image/goods/'+img);
+	$('#option-view strong').text(name);
 	$('#tot_price').text(total).append(' 원');
 	
 	amt = $('#quantity').val();
-	price = total;
+	price = total.replace(/[^0-9]/g, '');
+	$('.confirm').click(function(){
+		console.log(id);
+		console.log(amt);
+		$.ajax({
+			type: 'post',
+			url: '/dogiver/order/addCart',
+			data: 'goods_id='+goods_id+'&cart_cnt='+amt,
+			dataType: 'json',
+			success: function(){
+//				confirm('상품이 장바구니에 담겼습니다.<br>바로 확인하시겠습니까?');
+				alert('?');
+			}
+		}); // ajax
+	});//장바구니 추가
 
 });
   
-$('.close, .cancle').click(function(){	
+$('.close, .cancel').click(function(){	
 	$('#option-view').hide();
 	$('body').css('overflow','auto');
 	//초기화
@@ -201,6 +229,7 @@ $('#minus').click(function(){
 	}
 	calc_tot_price(price, amt);
 });
+
 
 function calc_tot_price(price, amt){
 	var totalPrice = numberFormat(price*amt);
