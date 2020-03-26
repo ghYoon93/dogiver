@@ -1,39 +1,36 @@
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-li {
-  margin: 0;
-  padding: 0;
-}
-
 .login {
   width: 410px;
   position: absolute;
   left: 50%;
-  top: 45%;
+  top: 33%;
   transform: translate(-50%, -50%);
 }
 .login h2 {
   font-size: 32px;
   color: #111;
-  border-bottom: #111 2px solid;
+  border-bottom: rgb(218, 218, 218) 2px solid;
   text-align: center;
   line-height: 1;
   padding: 0 0 20px 0;
 }
 .login > ul {
-  padding: 40px 0 30px;
+  padding: 20px 0 10px;
 }
 .login > ul li {
-  padding: 0 0 12px 0;
+  padding: 0 0 7px 0;
 }
 .login > ul li input {
   width: 100%;
   height: 45px;
   box-sizing: border-box;
   text-indent: 16px;
+  border: 2px solid #f2f2f2;
+  border-radius: 5px;
+  font-size: 15px;
+  appearance:none;
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   outline-style: none;
 }
 
 .login > ul li input::-webkit-input-placeholder {
@@ -52,11 +49,12 @@ input[type="checkbox"] + label:before {
   content: "";
   width: 18px;
   height: 18px;
-  border: 1px solid #666;
+  border: 1px solid rgb(155, 155, 155);
   background-color: #fff;
   display: inline-block;
   vertical-align: middle;
   margin: 0 10px 0 0;
+  border-radius: 5px;
 }
 input[type="checkbox"]:checked + label:before {
   background: url(../image/checkbox.png) no-repeat #fff center;
@@ -67,19 +65,15 @@ input[type="checkbox"]:checked + label:before {
   background: url(../image/checkbox.png) no-repeat #fff center;
   border-color: #333;
 }
-.login button {
-  width: 100%;
-  height: 56px;
-  font-size: 18px;
-  color: #fff;
-  background-color: red;
-}
 .login div ul {
   display: flex;
   justify-content: center;
 }
+.login div ul li:first-child {
+  margin-left: 20px;
+}
 .login div ul li {
-  padding: 0 18px;
+  padding: 0 16px;
 }
 .login div ul li a {
   font-size: 14px;
@@ -91,24 +85,41 @@ input[type="checkbox"]:checked + label:before {
   width: 100%;
   height: 56px;
   cursor: pointer;
+  border-radius:10px;
+    appearance:none;
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   outline-style: none;
 }
 #my-signin2 {
   background: url(../image/login_google.png) no-repeat;
   width: 100%;
   height: 56px;
   cursor: pointer;
+    appearance:none;
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   outline-style: none;
 }
 #naverIdLogin {
   background: url(../image/login_naver.png) no-repeat;
   width: 100%;
   height: 56px;
   cursor: pointer;
+    appearance:none;
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   outline-style: none;
 }
 #kakao-login {
   background: url(../image/login_kakao.png) no-repeat;
   width: 100%;
   height: 56px;
   cursor: pointer;
+    appearance:none;
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   outline-style: none;
 }
 #logins li {
   width: 410px;
@@ -117,7 +128,30 @@ input[type="checkbox"]:checked + label:before {
 #logins li div:hover {
   border: 1px solid #c4fbff;
   border-radius: 10px;
+  opacity: 0.9;
 }
 .bottomDiv li:hover a {
-  color: #ff0000;
+  color: #ec4d4d;
+}
+#logins button:hover {
+	border: 1px solid #c4fbff;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+.ui-widget.ui-widget-content{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid #f2f2f2;
+
+}
+.ui-menu-item-wrapper{
+      text-indent: 16px;
+	font-size: 15px;
+	color:#bdbcc1;
+	margin:5px 0 5px;
+}
+.loginMessage{
+	text-align: center;
+	font-size: 20px;
+	margin:10px 0 0 0;
 }

@@ -6,10 +6,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>회원가입</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
-      rel="stylesheet"
-    />
+<link
+	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+	rel="stylesheet" />
 <link rel="stylesheet" href="../css/reset.css" />
 <link rel="stylesheet" href="../css/style.css" />
 <link rel="stylesheet" href="../css/sign.css" />
@@ -18,6 +17,7 @@
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <script type="text/javascript" src="../js/main.js"></script>
+
 </head>
 <body>
 	<div id="headerDiv"></div>
@@ -41,54 +41,70 @@
 				<div>가입완료</div>
 			</li>
 		</ol>
-		<form action="">
+		<form id="sign-form">
 			<div class="sign_insert">
 				<h3>회원정보입력</h3>
 				<ul>
-					<li><label>이름<br /> <input
-							type="text" placeholder="이름" title="이름" name="name" id="name"/>
+					<li><label>이름<br /> <input type="text"
+							placeholder="이름" title="이름" name="name" id="name" />
 					</label>
-					<div id="nameDiv"></div></li>
-					<li><label>닉네임<br /> <input
-							type="text" placeholder="닉네임" title="닉네임" name="nickName" id="nickName" />
-					</label><div id="nickNameDiv"></div></li>
-					<li><label>비밀번호<br /> <input
-							type="password" placeholder="비밀번호" title="비밀번호" name="pwd" id="pwd"/>
-					</label><div id="pwdDiv"></div></li>
-					<li><label>비밀번호재확인<br /> <input
-							type="password" placeholder="비밀번호재확인" title="비밀번호재확인" name="rePwd" id="rePwd"/>
-					</label><div id="rePwdDiv"></div></li>
-					<li><label>전화번호 <span>(선택)</span><br />
-							<input type="tel" placeholder="- 를 제외하고 입력하세요" title="전화번호" name="phone" id="phone"/>
-					</label><div id="phoneDiv"></div></li>
-					<li><label>주소 <span>(선택)</span><br />
-							<input type="text" name="zipcode" id="zipcode" placeholder="우편번호"
-							readonly /> <button type="button" class="btn_2" id="btn_2">우편번호검색</button>
-							<br /> <input type="text" name="addr1" id="addr1"
-							placeholder="주소" readonly /> <br /> <input
-							type="text" name="addr2" id="addr2" placeholder="상세주소" />
+						<div id="nameDiv"></div></li>
+					<li><label>닉네임<br /> <input type="text"
+							placeholder="닉네임" title="닉네임" name="nickName" id="nickName" />
+					</label>
+						<div id="nickNameDiv"></div></li>
+					<li><label>비밀번호<br /> <input type="password"
+							placeholder="비밀번호" title="비밀번호" name="pwd" id="pwd" />
+					</label>
+						<div id="pwdDiv"></div></li>
+					<li><label>비밀번호재확인<br /> <input type="password"
+							placeholder="비밀번호재확인" title="비밀번호재확인" name="rePwd" id="rePwd" />
+					</label>
+						<div id="rePwdDiv"></div></li>
+					<li><label>전화번호 <span>(선택)</span><br /> <input
+							type="tel" placeholder="전화번호" title="전화번호" name="pre-phone"
+							id="pre-phone" maxlength="13"/>
+					</label>
+						<div id="phoneDiv"></div></li>
+					<li><label>주소 <span>(선택)</span><br /> <input
+							type="text" name="zipcode" id="zipcode" placeholder="우편번호"
+							readonly />
+							<button type="button" class="btn_2" id="btn_2"
+								onclick="sample2_execDaumPostcode()">우편번호검색</button> <br /> <input
+							type="text" name="addr" id="addr" placeholder="주소" readonly />
+							<br /> <input type="text" name="addr_Detail" id="addr_Detail"
+							placeholder="상세주소" />
 					</label></li>
 				</ul>
 			</div>
-			<div class="btn_center">
-				<button class="btn_1" id="btn_2">회원가입</button>
+			<input type="hidden" id="email" name="email" value="${email}">
+			<input type="hidden" id="phone" name="phone" value="" maxlength="13">
+	 		<div class="btn_center">
+				<button type="button" class="btn_1" id="sign-btn">회원가입</button>
 			</div>
+		</form>
 			<!-- 모달 -->
-			<div id="chkModal" class="modal">
+			<div id="signModal" class="modal">
 				<!-- Modal content -->
 				<div class="modal-content">
 					<div class="modal-header">
-						<h2>주의</h2>
+						<h2 id="sign-message-header"></h2>
 					</div>
 					<div class="modal-body">
-						<div id="chk-message">
-							필수 약관에 동의해 주세요.</span>
-						</div>
+						<div id="sign-message" class="message"></div>
 					</div>
 				</div>
 			</div>
-		</form>
+			<!-- 주소 -->
+			<div id="layer"
+				style="display: none; position: absolute; overflow: hidden; z-index: 1; -webkit-overflow-scrolling: touch; border-radius:5px;">
+				<img src="http://t1.daumcdn.net/postcode/resource/images/close.png"
+					id="btnCloseLayer"
+					style="cursor: pointer; position: absolute; right: -3px; top: -3px; z-index: 1"
+					onclick="closeDaumPostcode()" alt="닫기 버튼">
+			</div>
 	</section>
 	<div id="footerDiv"></div>
 </body>
+<script type="text/javascript" src="../js/sign_up.js"></script>
 </html>

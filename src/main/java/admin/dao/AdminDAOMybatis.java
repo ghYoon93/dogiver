@@ -18,6 +18,4 @@ public class AdminDAOMybatis implements AdminDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
 }

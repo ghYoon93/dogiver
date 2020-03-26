@@ -103,6 +103,22 @@ li {
   border-radius: 5px;
   font-family: "Noto Sans KR", sans-serif;
 }
+.email_confirm p + a {
+  display: inline-block;
+  width: 120px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  font-size: 15px;
+  background: #ec2126;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.email_confirm p + a:hover {
+  background: #b3302b;
+}
 .noti {
   margin: 0 auto;
   width: 1100px;
@@ -129,11 +145,11 @@ li {
   font-weight: normal;
   margin: 50px 0 20px;
 }
-.h3 span{
-	color:red;	
+.h3 span {
+  color: red;
 }
-.h3 #choice{
-	color:blue;
+.h3 #choice {
+  color: blue;
 }
 .h3::before {
   content: "";
@@ -198,7 +214,7 @@ input[type="checkbox"]:checked + label:before {
   padding: 10px 0 10px;
   text-align: center;
   box-sizing: border-box;
-   font-family: "Noto Sans KR", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 .sign_insert h3 {
   position: relative;
@@ -229,9 +245,9 @@ input[type="checkbox"]:checked + label:before {
 .sign_insert ul li label {
   font-size: 18px;
 }
-.sign_insert ul li label + div{
-	text-indent: 12px;
-	visibility: hidden;
+.sign_insert ul li label + div {
+  text-indent: 13px;
+  display: none;
 }
 .sign_insert ul li label span {
   color: #ca3333;
@@ -243,8 +259,8 @@ input[type="checkbox"]:checked + label:before {
   text-indent: 12px;
   margin: 2px 0 0;
   border-radius: 5px;
-  border:1px solid #f0eff2;
-	-webkit-appearance:none;
+  border: 1px solid #f0eff2;
+  -webkit-appearance: none;
 }
 .btn_2 {
   display: inline-block;
@@ -333,13 +349,13 @@ input[type="checkbox"]:checked + label:before {
   border-radius: 5px;
   border: 1px solid rgb(221, 221, 221);
   -webkit-appearance: none;
-  display:none;
+  display: none;
 }
 .modal-body input::-webkit-input-placeholder {
   color: rgb(207, 207, 207);
 }
-.modal-body input:first-child{
-	display: inline-block;
+.modal-body input:first-child {
+  display: inline-block;
 }
 .modal-body button {
   width: 100px;
@@ -349,8 +365,8 @@ input[type="checkbox"]:checked + label:before {
   font-weight: 600;
   vertical-align: -31px;
 }
-#auth-btn{
-	display: none;	
+#auth-btn {
+  display: none;
 }
 .modal-body #timer-div {
   height: 20px;
@@ -373,9 +389,8 @@ input[type="checkbox"]:checked + label:before {
   text-align: left;
   text-indent: 12px;
 }
-.modal-body #chk-message{
-	width: 310px;
-  margin-left: 80px;
+.modal-body .message {
+  width: 310px;
   line-height: 2;
   font-size: 20pt;
   text-align: center;
