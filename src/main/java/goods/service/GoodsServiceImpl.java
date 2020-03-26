@@ -12,6 +12,7 @@ import goods.dao.GoodsDAO;
 public class GoodsServiceImpl implements GoodsService {
 	@Autowired
 	private GoodsDAO goodsDAO;
+	private String lineUp;
 	
 
 	@Override
@@ -19,10 +20,19 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsDAO.getGoodsList(Integer.parseInt(pg));
 	}
 
-
 	@Override
 	public GoodsDTO getGoodsDetail(String goods_id) {
 		return goodsDAO.getGoodsDetail(Integer.parseInt(goods_id));
+	}
+
+	@Override
+	public List<GoodsDTO> getCategory(int category) {
+		return goodsDAO.getCategory(category);
+	}
+
+	@Override
+	public List<GoodsDTO> goods_lineUp(String lineUp) {
+		return goodsDAO.goods_lineUp(lineUp);
 	}
 	
 	

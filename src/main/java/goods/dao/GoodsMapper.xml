@@ -9,4 +9,26 @@
 	<select id="getGoodsDetail" parameterType="int" resultType="goods.bean.GoodsDTO">
 		select * from goods where goods_id=#{goodsId}
 	</select>
+	
+	<select id="getCategory" parameterType="int" resultType="goods.bean.GoodsDTO">
+		select * from category join goods
+		on category.category_code = goods.category_code
+		where category.category_code= #{category}
+	</select>
+	
+	<select id="goods_lineUp" parameterType="String" resultType="goods.bean.GoodsDTO">
+		select * from goods order by
+		<if test="lineUp == 'newly'">
+			goods_date
+		</if>
+		<if test="lineUp == 'popular'">
+			goods_cum_sales desc
+		</if>
+		<if test="lineUp == 'hight_price'">
+			goods_price desc
+		</if>
+		<if test="lineUp == 'low_price'">
+			goods_price
+		</if>
+	</select>
 </mapper>

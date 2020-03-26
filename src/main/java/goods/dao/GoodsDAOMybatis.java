@@ -23,7 +23,16 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	@Override
 	public GoodsDTO getGoodsDetail(int goods_id) {
 		return sqlSession.selectOne("goodsSQL.getGoodsDetail", goods_id);
-				
+	}
+
+	@Override
+	public List<GoodsDTO> getCategory(int category) {
+		return sqlSession.selectList("goodsSQL.getCategory", category);
+	}
+
+	@Override
+	public List<GoodsDTO> goods_lineUp(String lineUp) {
+		return sqlSession.selectList("goodsSQL.goods_lineUp", lineUp);
 	}
 
 }

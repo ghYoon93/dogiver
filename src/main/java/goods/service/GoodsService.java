@@ -10,6 +10,8 @@ public interface GoodsService {
 
 	public GoodsDTO getGoodsDetail(String goods_id);
 
-	
+	public List<GoodsDTO> getCategory(int category);
+
+	public List<GoodsDTO> goods_lineUp(String lineUp);
 
 }

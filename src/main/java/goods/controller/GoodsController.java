@@ -65,4 +65,27 @@ public class GoodsController {
 	}
 
 
+	@RequestMapping(value="getCategory", method=RequestMethod.POST)
+	@ResponseBody
+	public ModelAndView getCategory(@RequestParam int category){
+		List<GoodsDTO> list = goodsService.getCategory(category);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	
+	@RequestMapping(value="goods_lineUp", method=RequestMethod.POST)
+	@ResponseBody
+	public ModelAndView goods_lineUp(@RequestParam String lineUp){
+		List<GoodsDTO> list = goodsService.goods_lineUp(lineUp);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	
+	
 }

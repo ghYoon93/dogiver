@@ -10,6 +10,10 @@ public interface GoodsDAO {
 
 	public GoodsDTO getGoodsDetail(int goods_id);
 
+	public List<GoodsDTO> getCategory(int category);
+
+	public List<GoodsDTO> goods_lineUp(String lineUp);
+
 	
 
 }

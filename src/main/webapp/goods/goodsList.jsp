@@ -9,7 +9,9 @@ pageEncoding="UTF-8"%>
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/goods.css" />
+    
   </head>
   
   <body>
@@ -38,9 +40,9 @@ pageEncoding="UTF-8"%>
           <li class="list_qty"><span>100</span>개의 상품</li>
           <li class="right_box">
             <div class="sort_box">
-              <select name="goods_sort" id="goods_sort">
+              <select class="goods_sort" id="goods_sort">
                 <option value="newly">등록일순</option>
-                <option value="popular">인기순</option>
+                <option value="popular">판매순</option>
                 <option value="hight_price">높은 가격순</option>
                 <option value="low_price">낮은 가격순</option>
               </select>
