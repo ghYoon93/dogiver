@@ -1,6 +1,8 @@
 package mail.service;
 
+import javax.servlet.http.HttpSession;
+
 public interface MailService {
 
-	public String signMail(String to);
+	public void signMail(String to, int random, HttpSession session);
 }

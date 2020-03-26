@@ -16,10 +16,7 @@ public class MailController {
 	private MailService mailService;
 
 	@RequestMapping(value = "/mail/signMail")
-	public @ResponseBody String signMail(@RequestParam String to, HttpSession session) {
-		System.out.println("signMail = " + to);
-		String code = mailService.signMail(to);
-		session.setAttribute("auth", code);
-		return code;
+	public @ResponseBody void signMail(@RequestParam String to, @RequestParam int random,HttpSession session) {
+		mailService.signMail(to,random,session);
 	}
 }
