@@ -12,14 +12,14 @@ body{
 }
 
 .dognorframe dl{
-  margin: 0 auto;
-  width: 1000px;
+  margin: 150px 0 0 0;
+  width: 100%;
   display: inline-block;
 
 }
 
 .dognorframe dl dd{
-  margin: 0 10px;
+  margin: 20px 10px;
   width: 280px;
   height: 350px;
   display: inline-block;
@@ -31,16 +31,20 @@ body{
   overflow: visible;
   margin: auto;
   cursor: pointer;
+  z-index: 1000000;
+  
 }
 
 img{
   border-radius: 40px;
   width: 200px;
   height: 200px;
+  z-index: 1000000;
 
 }
 
 .dognorContent{
-  margin-top: 20px;
+  margin-top: 0px;
   font-size: 15pt;
+  z-index: 10;
 }
