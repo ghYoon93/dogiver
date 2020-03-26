@@ -14,9 +14,9 @@ public class MemberServiceimpl implements MemberService {
 	@Override
 	public String checkEmail(String email) {
 		MemberDTO memberDTO = memberDAO.checkEmail(email);
-		if(memberDTO == null) {
+		if (memberDTO == null) {
 			return "non_exist";
-		}else {
+		} else {
 			return "exist";
 		}
 	}
@@ -24,10 +24,25 @@ public class MemberServiceimpl implements MemberService {
 	@Override
 	public String chkNickName(String nickName) {
 		MemberDTO memberDTO = memberDAO.checkEmail(nickName);
-		if(memberDTO == null) {
+		if (memberDTO == null) {
 			return "non_exist";
-		}else {
+		} else {
 			return "exist";
 		}
+	}
+
+	@Override
+	public String sign(MemberDTO memberDTO) {
+		int su = memberDAO.sign(memberDTO);
+
+		if (su == 1)
+			return "complete";
+		else
+			return "fail";
+	}
+
+	@Override
+	public MemberDTO getMember(String email) {
+		return memberDAO.getMember(email);
 	}
 }

@@ -22,4 +22,14 @@ public class MemberDAOMybatis implements MemberDAO {
 	public MemberDTO chkNickName(String nickName) {
 		return sqlSession.selectOne("memberSQL.checkNickName", nickName);
 	}
+
+	@Override
+	public int sign(MemberDTO memberDTO) {
+		return sqlSession.insert("memberSQL.sign",memberDTO);
+	}
+
+	@Override
+	public MemberDTO getMember(String email) {
+		return sqlSession.selectOne("memberSQL.checkEmail",email);
+	}
 }

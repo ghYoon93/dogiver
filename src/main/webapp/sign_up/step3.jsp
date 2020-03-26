@@ -41,7 +41,7 @@
 				<div>가입완료</div>
 			</li>
 		</ol>
-		<form action="">
+		<form id="sign-form">
 			<div class="sign_insert">
 				<h3>회원정보입력</h3>
 				<ul>
@@ -77,22 +77,21 @@
 					</label></li>
 				</ul>
 			</div>
-			<input type="hidden" id="email" name="email" value="{email}">
+			<input type="hidden" id="email" name="email" value="${email}">
 			<input type="hidden" id="phone" name="phone" value="" maxlength="13">
 	 		<div class="btn_center">
-				<button class="btn_1" id="btn_3">회원가입</button>
+				<button type="button" class="btn_1" id="sign-btn">회원가입</button>
 			</div>
+		</form>
 			<!-- 모달 -->
-			<div id="chkModal" class="modal">
+			<div id="signModal" class="modal">
 				<!-- Modal content -->
 				<div class="modal-content">
 					<div class="modal-header">
-						<h2>주의</h2>
+						<h2 id="sign-message-header"></h2>
 					</div>
 					<div class="modal-body">
-						<div id="chk-message">
-							필수 약관에 동의해 주세요.</span>
-						</div>
+						<div id="sign-message" class="message"></div>
 					</div>
 				</div>
 			</div>
@@ -104,7 +103,6 @@
 					style="cursor: pointer; position: absolute; right: -3px; top: -3px; z-index: 1"
 					onclick="closeDaumPostcode()" alt="닫기 버튼">
 			</div>
-		</form>
 	</section>
 	<div id="footerDiv"></div>
 </body>

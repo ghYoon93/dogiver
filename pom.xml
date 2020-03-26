@@ -242,7 +242,6 @@
 		    <artifactId>spring-security-config</artifactId>
 		    <version>5.1.0.RELEASE</version>
 		</dependency>		
-		</dependency>
 		 <!-- //spring security -->
 
 	</dependencies>

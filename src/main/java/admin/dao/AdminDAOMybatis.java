@@ -15,7 +15,9 @@ public class AdminDAOMybatis implements AdminDAO {
 
 	@Override
 	public Map<String, String> getDogiver() {
-		
+		// TODO Auto-generated method stub
+		return null;
 	}
+
 
 }

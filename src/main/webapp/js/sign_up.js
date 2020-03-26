@@ -394,44 +394,93 @@ $('#rePwd').blur(
 			}
 		});
 // 전화번호
-var autoHypenPhone = function(str) {
-	str = str.replace(/[^0-9]/g, '');
-	var tmp = '';
-	if (str.length < 4) {
-		return str;
-	} else if (str.length < 7) {
-		tmp += str.substr(0, 3);
-		tmp += '-';
-		tmp += str.substr(3);
-		return tmp;
-	} else if (str.length < 11) {
-		tmp += str.substr(0, 3);
-		tmp += '-';
-		tmp += str.substr(3, 3);
-		tmp += '-';
-		tmp += str.substr(6);
-		return tmp;
-	} else {
-		tmp += str.substr(0, 3);
-		tmp += '-';
-		tmp += str.substr(3, 4);
-		tmp += '-';
-		tmp += str.substr(7);
-		return tmp;
-	}
+$(function() {
+	  $('#pre-phone').on('keyup', function(event) {
+	   var value = $(this).val().replace(/[^0-9]/g, ""),
+	         addValue = [];
+	   value = value.replace(/-/gi, '');
 
-	return str;
-}
-
-var phoneNum = document.getElementById('pre-phone');
-
-phoneNum.onkeyup = function() {
-	// console.log(this.value);
-	this.value = autoHypenPhone(this.value);
-}
+	   if (value.length >= 3) { 
+	    if (value.substring(0, 2) == '02') { // 서울 번호를 체크하기 위한 조건
+	     addValue.push(value.substring(0, 2)); 
+	     if (value.length >= 3) { 
+	      var endKey = (value.length >= 10 ? 6 : 5); // 00-000-000, 00-0000-0000 처리 
+	      addValue.push(value.substring(2, endKey)); 
+	      if (value.length >= 6) { 
+	       if (value.length >= 10) { // 10자리 이상 입력 방지
+	       value = value.substring(0, 10); 
+	      }
+	      addValue.push(value.substring(endKey, value.length)); 
+	     }
+	    }
+	   } else { 
+	   addValue.push(value.substring(0, 3)); 
+	    if (value.length >= 4) { 
+	     var endKey = (value.length >= 11 ? 7 : 6); // 000-000-0000, 000-0000-0000 처리 
+	     addValue.push(value.substring(3, endKey)); 
+	      if (value.length >= 7) { 
+	       if (value.length >= 11) { // 11자리 이상 입력 방지
+	        value = value.substring(0, 11); 
+	       }
+	       addValue.push(value.substring(endKey, value.length)); 
+	      }
+	     }
+	    }
+	    $(this).val(addValue.join('-')); 
+	   }
+	  });
+	 });
 // 전화번호 재 변환
 $('#pre-phone').blur(function() {
-	var phone = document.getElementById('pre-phone').value.replace("-", "");
+	var phone = document.getElementById('pre-phone').value.replace(/-/gi, "");		
 	console.log("변경 "+phone);
 	$('#phone').val(phone);
 });
+//회원가입
+$('#sign-btn').click(function(){
+	//alert('');
+	if($('#name').val()==''||$('#id').val()==''||$('#pwd').val()==''||$('#rePwd').val()==''){
+		$('#sign-message-header').text('실패');
+		$('#sign-message').text('필수 정보를 입력해주세요')
+		$('#signModal').css('display','block');
+		window.onclick = function(event) {
+			if (event.target == document.getElementById('signModal')) {
+				document.getElementById('signModal').style.display = "none";
+			}
+		};
+	}else{
+		$.ajax({
+			type : "post",
+			url : "../sign_up/sign",
+			data : $('#sign-form').serialize(),
+			dataType: 'text',
+			success : function(data) {
+				if (data == "complete") {
+					location.href="../sign_up/step4";
+				} else {
+					$('#sign-message-header').text('가입 실패');
+					$('#sign-message').text('다시 시도해 주세요.')
+					$('#signModal').css('display','block');
+					window.onclick = function(event) {
+						if (event.target == document.getElementById('signModal')) {
+							document.getElementById('signModal').style.display = "none";
+						}
+					};
+				}
+			},
+			error : function(data) {
+				alert("에러가 발생했습니다.");
+			}
+		});
+	}
+});
+
+
+
+
+
+
+
+
+
+

@@ -8,4 +8,8 @@ public interface MemberDAO {
 
 	public MemberDTO chkNickName(String nickName);
 
+	public int sign(MemberDTO memberDTO);
+
+	public MemberDTO getMember(String email);
+
 }
