@@ -14,7 +14,7 @@ $(document).ready(function() {
 												data.list,
 												function(index, items) {
 													tag += '<tr>'
-															+ '<input type=hidden class="goods_id" value="'+ items.goods_id+ '">'
+															/*+ '<input type=hidden class="goods_id" value="'+ items.goods_id+ '">'*/
 															+ '<td class="td_check">'
 															  + '<input type="checkbox" id="'+ items.cart_id+ '" name="checkGoods" value="'+ items.cart_id+ '">'
 															+ '</td>'
@@ -56,11 +56,6 @@ $(document).ready(function() {
 										'<td rowspan="' + count
 												+ '">qwe</td>');
 								checkAll();
-								let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
-								let checkedCnt = checkedGoods.length;
-								let total = calcTot(checkedGoods);
-								$('#totalGoodsCnt').html(checkedCnt);
-								$('#totalGoodsPrice').html(total);
 								} // success
 						}); // ajax
 
@@ -69,11 +64,21 @@ $(document).ready(function() {
 function checkAll() {
 	$('#check-all').prop('checked', true);
 	$('input[name=checkGoods]').prop('checked', true);
+	let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
+	let checkedCnt = checkedGoods.length;
+	let total = calcTot(checkedGoods);
+	$('#totalGoodsCnt').html(checkedCnt);
+	$('#totalGoodsPrice').html(total);
 
 }
 function uncheckAll() {
 	$('#check-all').prop('checked', false);
 	$('input[name=checkGoods]').prop('checked', false);
+	let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
+	let checkedCnt = checkedGoods.length;
+	let total = calcTot(checkedGoods);
+	$('#totalGoodsCnt').html(checkedCnt);
+	$('#totalGoodsPrice').html(total);
 }
 
 $(document).on('click', '#check-all', function() {
@@ -103,7 +108,7 @@ function calcTot(checkedGoods) {
 	checkedGoods.each(function(i) {
 		let tr = checkedGoods.parent().parent().eq(i);
 		let td = tr.children();
-		let price = td.eq(5).text().replace(/[^0-9]/g, '');
+		let price = td.eq(4).text().replace(/[^0-9]/g, '');
 		total += Number(price);
 	});
 	total = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -165,6 +170,8 @@ $(document).on('click', '.btn_option_view', function() {
 			calcPrice();
 		}
 	});
+	/*$('#plus').on('click', increaseQTY);
+	$('#minus').on('click', decreaseQTY);*/
 	$(document).on('change', '#quantity', calcPrice);
 	function calcPrice(){
 		cnt = $('#quantity').val();
@@ -179,6 +186,26 @@ $(document).on('click', '.btn_option_view', function() {
 	
 });
 
+/** 장바구니 선택 프로세스 **/
+function gd_cart_process(command){
+	let count = $('input[name=checkGoods]:checked').length;
+	alert(count);
+	alert(command);
+	let form = $('#form-cart');
+	if (count == 0){
+		alert('선택하신 상품이 없습니다. 상품을 선택해주세요.');
+		return false;
+	}
+	if(command == 'cartDelete'){
+		alert('deleteC');
+		form.attr('action','deleteCart');
+		form.submit();
+		
+	}else if(command == 'orderSelect'){
+		form.attr('action','order');
+		form.submit();
+	}
+}
 
 /** 주소 * */
 function sample4_execDaumPostcode() {

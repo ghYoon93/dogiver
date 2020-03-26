@@ -11,4 +11,6 @@ public interface OrderService {
 
 	public void updateCart(Map<String, String> map);
 
+	public void deleteCart(Map<String, String[]> map);
+
 }

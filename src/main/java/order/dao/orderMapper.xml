@@ -23,4 +23,11 @@
     <update id="updateCart" parameterType="java.util.Map">
         UPDATE cart SET cart_cnt = #{cart_cnt} WHERE cart_id = #{cart_id}
     </update>
+    
+    <delete id="deleteCart" parameterType="java.util.Map">
+        DELETE CART WHERE cart_id in
+        <foreach collection="array" item="item" index="i" separator="," open="(" close=")">
+            ${array[i]}
+        </foreach>
+    </delete>
 </mapper>

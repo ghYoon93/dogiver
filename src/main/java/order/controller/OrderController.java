@@ -38,10 +38,8 @@ public class OrderController {
     public ModelAndView getCart(HttpSession session) {
     	String memEmail = (String)session.getAttribute("memEmail");
     	List<CartDTO> list = orderService.getCart(memEmail);
-    	System.out.println("장바구니 개수: "+ list.size());
     	ModelAndView mav = new ModelAndView();
     	mav.addObject("list",list);
-//    	mav.addObject("memEmail", (String)session.getAttribute("memEmail"));
     	mav.setViewName("jsonView");
     	return mav;
     }
@@ -50,8 +48,15 @@ public class OrderController {
     	Map<String, String> map = new HashMap<String, String>();
     	map.put("cart_id", cart_id);
     	map.put("cart_cnt", cnt);
-    	System.out.println(map.get("cart_id"));
     	orderService.updateCart(map);
+    	return "redirect:/order/cart";
+    }
+    
+    @RequestMapping(value="deleteCart", method=RequestMethod.GET)
+    public String deleteCart(@RequestParam String[] checkGoods, Model model) {
+    	Map<String, String[]> map = new HashMap<String, String[]>();
+    	map.put("array", checkGoods);
+    	orderService.deleteCart(map);
     	return "redirect:/order/cart";
     }
 }
