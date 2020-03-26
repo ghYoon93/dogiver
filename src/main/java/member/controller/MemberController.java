@@ -78,4 +78,11 @@ public class MemberController {
 		
 		return mav;
 	}
+	
+	@RequestMapping(value = "/sign_up/chkNickName", method = RequestMethod.POST)
+	public @ResponseBody String chkNickName(@RequestParam String nickName) {
+		String exist = memberService.chkNickName(nickName);
+		return exist;
+	}
+
 }

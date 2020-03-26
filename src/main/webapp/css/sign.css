@@ -230,8 +230,8 @@ input[type="checkbox"]:checked + label:before {
   font-size: 18px;
 }
 .sign_insert ul li label + div{
-	text-indent: 12px;
-	visibility: hidden;
+	text-indent: 13px;
+	display: none;
 }
 .sign_insert ul li label span {
   color: #ca3333;

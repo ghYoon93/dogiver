@@ -20,4 +20,14 @@ public class MemberServiceimpl implements MemberService {
 			return "exist";
 		}
 	}
+
+	@Override
+	public String chkNickName(String nickName) {
+		MemberDTO memberDTO = memberDAO.checkEmail(nickName);
+		if(memberDTO == null) {
+			return "non_exist";
+		}else {
+			return "exist";
+		}
+	}
 }
