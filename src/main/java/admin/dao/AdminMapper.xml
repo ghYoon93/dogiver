@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="adminSQL">
-
+	<select id="getDogiver" parameterType="java.util.Map" resultType="dogiver">
+		<![CDATA[ 
+		select dog_id, dog_name, dog_age, dog_weight, dog_breed, dog_bloodtype, name, email, phone, apply_status, blood_cc, dog_image, description, donation_date 
+		from (select rownum rn, tt.*from(select*from apply_dogiver join dogiver using(dog_id) join member using(email) order by dog_id desc)tt) 
+		where rn>=#{startNum} and rn<=#{endNum}
+		]]>
+	</select>
+	
+	<select id="getDogiverTotalA" resultType="int">
+		select count(*) from apply_dogiver
+	</select>
 </mapper>
+
+
+		
+		

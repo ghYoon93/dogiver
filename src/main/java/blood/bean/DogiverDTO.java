@@ -16,8 +16,13 @@ public class DogiverDTO {
 	private double dog_weight;
 	private String description;
 	private int blood_cc;
+	private String dog_bloodtype;
 	private Date donation_date;
 	private String dog_image;
 	private String dog_breed;
+	private String email;
+	private String name;
+	private int phone;
+	private String apply_status;
 
 }

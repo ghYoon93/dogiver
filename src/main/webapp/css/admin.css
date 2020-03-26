@@ -7,22 +7,23 @@
 
 #side {
 	float: left;
-	width: 350px;
+	width: 20%;
 	height: 800px;
 	
 }
 
 #menu{
 	margin: 0 auto;
-	width: 300px;
+	width: 70%;
 	height: 800px;
 	font-size: 15pt;
-	
+	padding-left: 50px;
+	border-right: 1px solid;
 }
 
 #contents{
 	float: left;
-	width: 1100px;
+	width: 80%;
 	height: 800px;
 }
 
@@ -30,4 +31,28 @@
 	cursor: pointer;
 	margin: 10px;
 
+}
+
+.admin_dogiverTable{
+	text-align: center;	
+}
+
+#admin_dogiverPagingDiv{
+	width: 1180px;
+	text-align: center;
+}
+
+#admin_dogiverView{
+	width: 1180px;
+	height: 500px;
+	display: none;
+	
+}
+
+#admin_dogiverView table{
+	font-size: 13pt;
+}
+
+.subject{
+	text-align: center;
 }
