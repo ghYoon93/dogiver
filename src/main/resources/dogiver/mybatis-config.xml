@@ -6,8 +6,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<typeAlias type="blood.bean.DogJoinDTO" alias="dogJoin"/>
 		<typeAlias type="blood.bean.DogiverDTO" alias="dogiver"/>
-	</typeAliases>
-    <typeAliases>
         <typeAlias type="order.bean.CartDTO" alias="cart"/>
     </typeAliases>
 </configuration>
