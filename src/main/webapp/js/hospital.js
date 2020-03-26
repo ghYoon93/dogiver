@@ -46,15 +46,15 @@ $(document).ready(function() {
 		var marker = new naver.maps.Marker({
 			map : map,
 			position : position,
-			title : key,
-			icon : {
-				url : HOME_PATH + '/img/example/sp_pins_spot_v3.png',
-				size : new naver.maps.Size(24, 37),
-				anchor : new naver.maps.Point(12, 37),
-				origin : new naver.maps.Point(MARKER_SPRITE_POSITION[key][0],
-						MARKER_SPRITE_POSITION[key][1])
-			},
-			zIndex : 100
+//			title : key,
+//			icon : {
+//				url : HOME_PATH + '/img/example/sp_pins_spot_v3.png',
+//				size : new naver.maps.Size(24, 37),
+//				anchor : new naver.maps.Point(12, 37),
+//				origin : new naver.maps.Point(MARKER_SPRITE_POSITION[key][0],
+//						MARKER_SPRITE_POSITION[key][1])
+//			},
+//			zIndex : 100
 		});
 	
 		var infoWindow = new naver.maps.InfoWindow({
@@ -118,48 +118,47 @@ $(document).ready(function() {
 		naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i));
 	}
 
-});
-
-$('.name').click(function() {
-	$('#map').empty();
-
-	var name = $(this).text();
-	var tel = $(this).next().text();
-	var addr = $(this).next().next().text();
-	
-	var key = $(this).attr("id");
-	
-	var position = new naver.maps.LatLng(MARKER_SPRITE_POSITION[key][0],
-			MARKER_SPRITE_POSITION[key][1]); 
-
-	var map = new naver.maps.Map('map', {
-	    center: position,
-	    zoom: 15
-	});
-
-	var contentString = [
-		'<div class="marker_inner">',
-	    '   <h3>'+name+'</h3>',
-	    '   <p>'+tel+'<br>',
-	    '       '+addr+'<br>',
-	    '   </p>',
-	    '</div>'
-	].join('');
-
-	var marker = new naver.maps.Marker({
-	    map: map,
-	    position: position
-	});
-
-	var infowindow = new naver.maps.InfoWindow({
-	    content: contentString
-	});
-
-	naver.maps.Event.addListener(marker, "click", function(e) {
-	    if (infowindow.getMap()) {
-	        infowindow.close();
-	    } else {
-	        infowindow.open(map, marker);
-	    }
+	$('.name').click(function() {
+		$('#map').empty();
+		
+		var name = $(this).text();
+		var tel = $(this).next().text();
+		var addr = $(this).next().next().text();
+		
+		var key = $(this).attr("id");
+		
+		var position = new naver.maps.LatLng(MARKER_SPRITE_POSITION[key][0],
+				MARKER_SPRITE_POSITION[key][1]); 
+		
+		var map = new naver.maps.Map('map', {
+			center: position,
+			zoom: 15
+		});
+		
+		var contentString = [
+			'<div class="marker_inner">',
+			'   <h3>'+name+'</h3>',
+			'   <p>'+tel+'<br>',
+			'       '+addr+'<br>',
+			'   </p>',
+			'</div>'
+			].join('');
+		
+		var marker = new naver.maps.Marker({
+			map: map,
+			position: position
+		});
+		
+		var infowindow = new naver.maps.InfoWindow({
+			content: contentString
+		});
+		
+		naver.maps.Event.addListener(marker, "click", function(e) {
+			if (infowindow.getMap()) {
+				infowindow.close();
+			} else {
+				infowindow.open(map, marker);
+			}
+		});
 	});
 });

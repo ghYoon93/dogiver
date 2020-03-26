@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -5,12 +7,38 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<title>Insert title here</title>
+	<title>동물 병원</title>
+	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/hospital.css">
+	<link
+		rel="stylesheet"
+		type="text/css"
+		href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+	/>
+	<link
+		rel="stylesheet"
+		href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+	/>
+	<link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+      rel="stylesheet"
+    />
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=clbhwdl70e"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script
+		type="text/javascript"
+		src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+	></script>
+	<script type="text/javascript" src="../js/hospital.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
 </head>
 
 <body>
+	<div id="headerDiv"></div>
+	<div class="page-title">
+      <h2>헌혈 협력 병원</h2>
+    </div>
+	<div class="wrap">
 	<div class="hospitalframe">
 		<div class="hospitallist">
 			<table border="1" cellspacing="0" cellpadding="5" frame="hsides" rules="rows">
@@ -35,7 +63,7 @@
 					<td id="cAddr">제주 제주시 제주대학로 102</td>
 				</tr>
 				<tr>
-					<td id="d" class="name">노원24시N동물의료센터</td>
+					<td id="d" class="name">노원24시N동물병원</td>
 					<td id="dTel">02-919-0075</td>
 					<td id="dAddr">서울 노원구 노원로 456 백암빌딩</td>
 				</tr>
@@ -55,15 +83,16 @@
 					<td id="gAddr">부산 남구 수영로13번길 3</td>
 				</tr>
 				<tr>
-					<td id="h" class="name">대구탑스동물메디컬센터</td>
+					<td id="h" class="name">대구탑스동물메디컬</td>
 					<td id="hTel">053-637-7501</td>
-					<td id="hAddr">대구 달서구 월곡로 291 상인중석타운</td>
+					<td id="hAddr">부산 남구 수영로13번길 3</td>
 				</tr>
 			</table>
 		</div>
 		<div class="hospitalmap" id="map" style="width: 100%; height: 400px;"></div>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-		<script src="../js/hospital.js"></script>
+		
 	</div>
+	</div>
+	<div id="footerDiv"></div>
 </body>
 </html>
