@@ -21,7 +21,7 @@ pageEncoding="UTF-8"%>
 
     <div class="page-title">
       <h2>회원가입</h2>
-      <p>회원이 되셔서 Dogner를 이용하세요</p>
+      <p>회원이 되셔서 dogiver를 이용하세요</p>
     </div>
     <div id="wrap">
     <section class="sign_up">
@@ -86,9 +86,10 @@ pageEncoding="UTF-8"%>
             </div>
           </div>
   	</div>
+  	</div>
     </section>
   </div>
   <div id="footerDiv"></div>
   </body>
   <script type="text/javascript" src="../js/sign_up.js"></script>
-</html>\
+</html>
