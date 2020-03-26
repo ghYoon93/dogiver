@@ -92,7 +92,7 @@ public class GoodsController {
 	@RequestMapping(value="insertReview", method=RequestMethod.POST)
 	@ResponseBody
 	public void insertReview(Map<String, String> map) {
-		System.out.println(map.put("reviewText", reviewText));
+//		System.out.println(map.put("reviewText", reviewText));
 	}
 	
 }
