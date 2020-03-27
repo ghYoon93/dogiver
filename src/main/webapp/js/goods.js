@@ -1,11 +1,12 @@
 /******goodsDetail.jsp******/
 $('nav ul li').click(function(){
 	if($(this).index()=='0'){
-		$('.discription div').html(detail_image);		
+		$('.discription div').html(detail_image).css('text-align', 'center');		
 	}else if($(this).index()=='1'){
-		$('.discription div').load('review');
+		//$('.discription div').load('review');
+		$('.discription div').load('qna?goods_id='+$('#goods_id').val());
 	}else if($(this).index()=='2'){
-		$('.discription div').load('../etc/delivery_info.html');	
+		$('.discription div').load('../etc/delivery_info.html').css('text-align', 'left');	
 	}
 });
 
@@ -60,7 +61,7 @@ $(document).ready(function(){
 			detail_image = '<img src="../image/goods/'+ data.goodsDTO.goods_detail +'" >'; 
 			
 			$('.overview').append(tag);
-			$('.discription div').append(detail_image);
+			$('.discription div').append(detail_image).css('text-align', 'center');
 			
 			
 			price = data.goodsDTO.goods_price;

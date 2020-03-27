@@ -1,6 +1,7 @@
 package goods.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,12 @@ public class GoodsServiceImpl implements GoodsService {
 	@Override
 	public List<GoodsDTO> goods_lineUp(String lineUp) {
 		return goodsDAO.goods_lineUp(lineUp);
+	}
+
+	@Override
+	public int qnaWrite(Map<String, String> map) {
+		return goodsDAO.qnaWrite(map);
+		
 	}
 	
 	
