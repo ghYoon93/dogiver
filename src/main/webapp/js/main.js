@@ -1,11 +1,12 @@
 var currentScrollTop = 0;
 
 window.onload = function() {
-  setTimeout(function(){
-	  scrollTo(0,0);
-  },100);
+  setTimeout(function() {
+    scrollTo(0, 0);
+  }, 100);
   scrollController();
-  $("#headerDiv").load("../template/header.html");
+
+  $("#headerDiv").load("../template/header.jsp");
   $("#footerDiv").load("../template/footer.html");
   $(window).on("scroll", function() {
     scrollController();

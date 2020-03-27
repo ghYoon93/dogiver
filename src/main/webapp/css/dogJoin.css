@@ -1,71 +1,81 @@
 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
+
 li {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
-.dogjoinframe{
-  width: 500px;
-  margin: 0 auto;
+
+.dogjoinframe {
+	width: 500px;
+	margin: 0 auto;
 }
 
 .dogjoinframe h3 {
-  position: relative;
-  font-size: 24px;
-  color: #222;
-  line-height: 1;
-  padding: 0 0 30px;
-  text-align: center;
+	position: relative;
+	font-size: 24px;
+	color: #222;
+	line-height: 1;
+	padding: 0 0 30px;
+	text-align: center;
 }
 
 .dogJoinBtn {
-  display: inline-block;
-  width: 120px;
-  height: 45px;
-  text-align: center;
-  line-height: 45px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  background: #F8585B;
-  text-decoration: none;
+	display: inline-block;
+	width: 120px;
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	background: #F8585B;
+	text-decoration: none;
 }
 
 .btn_center {
-  text-align: center;
+	margin: 0 auto;
+	text-align: center;
 }
 
-.dogjoinframe ul{
-  display: inline-block;
-  width: 500px;
-  margin: 0 0 30px;
+.dogjoinframe ul {
+	display: inline-block;
+	width: 500px;
+	margin: 150px 0 0 0px;
 }
 
-.dogjoinframe ul li{
-  margin: 15px;
-  text-align: left;
+.dogjoinframe ul li {
+	margin: 15px;
+	text-align: left;
 }
 
-.dogjoinframe ul li label{
-  font-size: 15px;
-
+.dogjoinframe ul li label {
+	font-size: 15px;
 }
 
-.dogjoinframe ul li input{
-  height: 45px;
-  width: 100%;
-  font-size: 18px;
-  text-indent: 12px;
-  margin-top: 5px;
+.dogjoinframe ul li input {
+	height: 45px;
+	width: 100%;
+	font-size: 18px;
+	text-indent: 12px;
+	margin-top: 5px;
 }
 
-.dogjoinframe select{
-  height: 45px;
-  width: 100%;
-  font-size: 18px;
-  text-indent: 12px;
-  margin-top: 5px;
+.dogjoinframe select {
+	height: 45px;
+	width: 100%;
+	font-size: 18px;
+	text-indent: 12px;
+	margin-top: 5px;
+}
+
+.dogjoinframe ul li input datalist {
+	height: 45px;
+	width: 100%;
+	font-size: 18px;
+	text-indent: 12px;
+	margin-top: 5px;
 }

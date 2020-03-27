@@ -3,7 +3,9 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <typeAliases>
+	<typeAliases>
+		<typeAlias type="blood.bean.DogJoinDTO" alias="dogJoin"/>
+		<typeAlias type="blood.bean.DogiverDTO" alias="dogiver"/>
         <typeAlias type="order.bean.CartDTO" alias="cart"/>
     </typeAliases>
 </configuration>
