@@ -22,7 +22,8 @@ import board.service.BoardService;
 public class BoardController {
 	@Autowired
 	private BoardService boardService;
-
+	
+	
 	@RequestMapping(value = "boardWriteForm", method = RequestMethod.GET)
 	public String boardWriteForm() {
 		return "boardWriteForm";
@@ -50,7 +51,6 @@ public class BoardController {
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("pg", pg);
-		System.out.println("현재"+ pg + "페이지 입니다");
 		mav.addObject("list", list);
 		mav.addObject("memId", session.getAttribute("memId"));
 		mav.addObject("boardPaging", boardPaging);
@@ -59,51 +59,53 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="boardView", method=RequestMethod.GET)
-	public String boardView(@RequestParam String seq,
+	public String boardView(@RequestParam String brd_seq,
 							@RequestParam(required=false, defaultValue="1") String pg,
-							Model model) {
-		
-		model.addAttribute("seq", seq);
+							Model model, HttpSession session) {
+		model.addAttribute("brd_seq", brd_seq);
 		model.addAttribute("pg", pg);
-		return "/board/boardList";
+		
+		return "/board/boardView";
 	}
 	
 	@RequestMapping(value="getBoardView", method=RequestMethod.POST)
-	public ModelAndView getBoardView(
-			@RequestParam String seq,
-			@RequestParam(required=false, defaultValue="1") String pg,
-			HttpSession session) {
-		
-		BoardDTO boardDTO = boardService.getBoard(seq);
-		
+	public ModelAndView getBoardView( @RequestParam String brd_seq, @RequestParam(required=false, defaultValue="1") String pg,
+									HttpSession session) {
+		System.out.println("겟보드뷰 오는지 확인");
+		BoardDTO boardDTO = boardService.getBoard(brd_seq);
+		System.out.println(brd_seq+"입니다");
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("memId", session.getAttribute("memId"));
+		//mav.addObject("memId", session.getAttribute("memId"));
 		mav.addObject("boardDTO", boardDTO);
+		System.out.println(boardDTO+"입니다");
 		mav.setViewName("jsonView");
 		return mav;
 	}
+	
 	
 	@RequestMapping(value="getBoardSearch", method=RequestMethod.POST)
 	public ModelAndView getBoardSearch(@RequestParam Map<String, String> map,
 										HttpSession session) {
 		
 		//map안에는 pg,searchoption,keyword가 들어와 있따.
-		String pg =map.get("pg");
-		System.out.println("검색전 현재"+ pg + "페이지 입니다");
 		List<BoardDTO> list = boardService.getBoardSearch(map);//->서브시 ->마이바티스 ->멥퍼 다시 돌아옴 
 		
 		//페이징 처리
 		BoardPaging boardPaging = boardService.boardPaging(map);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pg", pg);
-		System.out.println("검색후"+ pg + "페이지 입니다");
 		mav.addObject("list", list);
 		mav.addObject("memId", session.getAttribute("memId"));
 		mav.addObject("boardPaging", boardPaging);
 		mav.setViewName("jsonView");
 		return mav;
 	}
+	
+	@RequestMapping(value="boardDelete", method=RequestMethod.POST)
+	public void boardDelete(int brd_seq) {
+		boardService.delete(brd_seq);
+	}
+	
 	
 
 

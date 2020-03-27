@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../css/reset.css" />
 <link rel="stylesheet" href="../css/style.css" />
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
@@ -32,13 +33,14 @@ input:focus {
 }
 
 #contact_infoDiv {
+	font-weight:bold;
 	position: relative;
-	top: 5px;
+	top: 13px;
 	z-index: 1;
 	display: inline-block;
 	width: 424px;
 	height: 436px;
-	background-color: white;
+	background-color: none;
 }
 
 #contact_imgDiv {

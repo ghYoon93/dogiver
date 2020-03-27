@@ -24,7 +24,7 @@ $(document).ready(function(){
 						href : '#',
 						style:'color:#ab2328',
 						text : items.brd_title,
-						id : 'subjectA',
+						id : 'titleA',
 						class : items.brd_seq+''
 					}))
 				).append($('<td/>',{
@@ -46,23 +46,18 @@ $(document).ready(function(){
 			//페이징처리
 			$('#boardPagingDiv').html(data.boardPaging.pagingHTML);
 			
-			//로그인 여부
-			$('#boardListTable').on('click', '#subjectA', function(){
-				//alert($(this).prop('tagName'));
-				if(data.memId==null)
-					alert('먼저 로그인하세요');
-				else{
-					//alert($(this).parent().prev().text());
-					let seq = $(this).attr('class');
+			$('#titleA').click(function(){
+					let brd_seq = $(this).attr('class');
 					let pg = data.pg;
-					location.href='/dogiver/board/boardView?seq='+seq+'&pg='+pg;        
-				}
+					location.href='/dogiver/board/boardView?brd_seq='+brd_seq+'&pg='+pg;        
 			});
 		}
 	});
 });
 			
-$('#boardSearchBtn').click(function(event){
+$('#boardSearchBtn').click(function(event, str){
+	if(str!='trigger') $('input[name=pg]').val(1);
+	
 	if($('input[name=keyword]').val()==''){
 		alert('검색어를 입력하세요');
 	}else {
@@ -93,7 +88,7 @@ $('#boardSearchBtn').click(function(event){
 							style:'font-size: 20px',
 							href : '#',
 							text : items.brd_title,
-							id : 'subjectA',
+							id : 'titleA',
 							class : items.brd_seq+''
 						}))
 					).append($('<td/>',{

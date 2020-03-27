@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +18,17 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardDAO boardDAO;
 	@Autowired
+	private HttpSession session;
+	@Autowired
 	private BoardPaging boardPaging;
 
 	@Override
 	public void boardWrite(BoardDTO boardDTO) {
 		boardDAO.boardWrite(boardDTO);
+	}
+	@Override
+	public void delete(int brd_seq) {
+		boardDAO.boardDelete(brd_seq);
 	}
 
 	@Override
@@ -59,7 +67,7 @@ public class BoardServiceImpl implements BoardService {
 		boardPaging.setPageBlock(5);
 		boardPaging.setPageSize(8);
 		boardPaging.setTotalA(totalA);
-		System.out.println("1페이징처리후 총 개수는"+totalA+"입니다");
+		//System.out.println("1페이징처리후 총 개수는"+totalA+"입니다");
 		boardPaging.makePagingHTML();
 		return boardPaging;
 	}
@@ -73,16 +81,17 @@ public class BoardServiceImpl implements BoardService {
 		boardPaging.setPageBlock(5);
 		boardPaging.setPageSize(10);
 		boardPaging.setTotalA(totalA);
-		System.out.println("2페이징처리후 총 개수는"+totalA+"입니다");
+		//System.out.println("2페이징처리후 총 개수는"+totalA+"입니다");
 		boardPaging.makeSearchPagingHTML();
 		
 		return boardPaging;
 	}
 
 	@Override
-	public BoardDTO getBoard(String seq) {
-		return boardDAO.getBoard(seq);
+	public BoardDTO getBoard(String brd_seq) {
+		return boardDAO.getBoard(brd_seq);
 	}
+
 
 
 

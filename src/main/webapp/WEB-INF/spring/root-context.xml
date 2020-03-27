@@ -27,7 +27,6 @@
 		
 		
 
-	
 	<!-- order component -->
 	<context:component-scan base-package="order.bean" />
 	<context:component-scan base-package="order.service" />

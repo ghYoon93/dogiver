@@ -13,11 +13,13 @@ public interface BoardDAO {
 
 	public int getBoardTotalA();
 
-	public BoardDTO getBoard(String seq);
+	public BoardDTO getBoard(String brd_seq);
 
 	public int getBoardSearchTotalA(Map<String, String> map);
 
 	public List<BoardDTO> getBoardSearch(Map<String, String> map);
+
+	public void boardDelete(int brd_seq);
 
 
 

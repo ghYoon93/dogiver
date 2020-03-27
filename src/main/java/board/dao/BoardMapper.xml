@@ -25,12 +25,12 @@
 
 	<select id="getBoard" parameterType="int"
 		resultType="board.bean.BoardDTO">
-		select * from board where seq=#{seq}
+		select * from board where brd_seq=#{brd_seq}
 	</select>
 
 	<update id="boardHit" parameterType="int">
 		UPDATE board SET hit=hit+1
-		WHERE seq=#{seq}
+		WHERE brd_seq=#{brd_seq}
 	</update>
 
 	<select id="getBoardSearchTotalA" parameterType="java.util.Map"
@@ -44,6 +44,9 @@
 		select * from (select rownum rn, tt.* from (select * from board where ${searchOption} like '%'||#{keyword}||'%' order by brd_seq desc)tt) where rn>=#{startNum} and rn<=#{endNum} 
 		]]>
 	</select>
+	<delete id="boardDelete" parameterType="int">
+		 DELETE FROM board WHERE brd_seq = #{brd_seq}
+	</delete>
 </mapper>
 
 

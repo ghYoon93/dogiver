@@ -14,6 +14,7 @@ import board.bean.BoardDTO;
 @Repository
 @Transactional
 public class BoardDAOMybatis implements BoardDAO {
+	
 	@Autowired
 	private SqlSession sqlSession;
 
@@ -33,8 +34,8 @@ public class BoardDAOMybatis implements BoardDAO {
 	}
 
 	@Override
-	public BoardDTO getBoard(String seq) {
-		return sqlSession.selectOne("boardSQL.getBoard", Integer.parseInt(seq));
+	public BoardDTO getBoard(String brd_seq) {
+		return sqlSession.selectOne("boardSQL.getBoard", Integer.parseInt(brd_seq));
 	}
 
 	@Override
@@ -45,6 +46,11 @@ public class BoardDAOMybatis implements BoardDAO {
 	@Override
 	public List<BoardDTO> getBoardSearch(Map<String, String> map) {
 		return sqlSession.selectList("boardSQL.getBoardSearch", map);
+	}
+
+	@Override
+	public void boardDelete(int brd_seq) {
+		sqlSession.delete("boardSQL.boardDelete", brd_seq);
 	}
 
 	
