@@ -1,9 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원가입</title>
+    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/sign.css" />
     <script
@@ -40,8 +43,8 @@
         </ol>
         <div class="email_confirm">
           <h3>가입완료</h3>
-          <p>Dogner의 회원이 되신걸 축하드립니다!</p>
-          <a href="../main/main.html">홈으로</a>
+          <p>dogiver의 회원이 되신걸 축하드립니다!</p>
+          <a href="../main/index">홈으로</a>
         </div>
       </section>
     </div>
