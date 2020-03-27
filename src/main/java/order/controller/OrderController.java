@@ -45,22 +45,21 @@ public class OrderController {
     	return mav;
     }
     
-    @RequestMapping(value="addCart", method=RequestMethod.POST)
+    @RequestMapping(value="addCart", method=RequestMethod.GET)
     @ResponseBody
-    public CartDTO addCart(@RequestParam String goods_id, @RequestParam String cart_cnt, HttpSession session) {
+    public String addCart(@RequestParam String goods_id, @RequestParam String cart_cnt, HttpSession session) {
     	String memEmail = (String)session.getAttribute("memEmail");
     	System.out.println(memEmail);
     	Map<String, String> map = new HashMap<String, String>();
-    	map.put("goods_id", goods_id);
     	map.put("email", memEmail);
-    	CartDTO cart_id = orderService.searchCart(map);
-    	if(cart_id == null) {
+    	map.put("goods_id", goods_id);
+    	CartDTO cartDTO = orderService.searchCart(map);
+    	if(cartDTO == null) {
     		map.put("cart_cnt", cart_cnt);
     		orderService.insertCart(map);
-    	}else {
-    		orderService.updateCart(map);
+    		return "notExist";
     	}
-    	return cart_id;
+		return "exist";
     }
     @RequestMapping(value="updateCart", method=RequestMethod.GET)
     public String updateCart(@RequestParam String cart_id, @RequestParam String cnt) {

@@ -13,6 +13,12 @@ import order.dao.OrderDAO;
 public class OrderServiceImpl implements OrderService {
 	@Autowired
 	private OrderDAO orderDAO;
+	
+	@Override
+	public void insertCart(Map<String, String> map) {
+		orderDAO.insertCart(map);
+		
+	}
 	@Override
 	public List<CartDTO> getCart(String memEmail) {
 		List<CartDTO> list = orderDAO.getCart(memEmail);
@@ -29,12 +35,10 @@ public class OrderServiceImpl implements OrderService {
 	}
 	@Override
 	public CartDTO searchCart(Map<String, String> map) {
-		return orderDAO.searchCart(map);
+		CartDTO cartDTO = new CartDTO(); 
+		cartDTO = orderDAO.searchCart(map);
+		return cartDTO;
 	}
-	@Override
-	public CartDTO insertCart(Map<String, String> map) {
-		return orderDAO.insertCart(map);
-		
-	}
+	
 
 }
