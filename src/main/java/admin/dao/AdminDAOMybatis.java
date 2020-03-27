@@ -26,4 +26,10 @@ public class AdminDAOMybatis implements AdminDAO {
 		return sqlSession.selectOne("adminSQL.getDogiverTotalA");
 	}
 
+	@Override
+	public int adminDogiverModify(Map<String, String> map) {
+		
+		return sqlSession.update("adminSQL.adminDogiverModify", map);
+	}
+
 }

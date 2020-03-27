@@ -47,4 +47,10 @@ public class AdminServiceImpl implements AdminService {
 		return admin_dogiverPaging;
 	}
 
+	@Override
+	public int adminDogiverModify(Map<String, String> map) {
+		
+		return adminDAO.adminDogiverModify(map);
+	}
+
 }
