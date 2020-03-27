@@ -26,7 +26,7 @@ public class Admin_dogiverPaging {
 		for(int i=startPage; i<=endPage; i++) {
 			if(i ==currentPage) pagingHTML.append("[<a id='currentPaging' href='/dogiver/admin/admin_dogiver?pg="+i+"'>"+i+"</a>]");
 				
-			else pagingHTML.append("[<a id='paging' href='//dogiver/admin/admin_dogiver?pg="+i+"'>"+i+"</a>]");
+			else pagingHTML.append("[<a id='paging' href='/dogiver/admin/admin_dogiver?pg="+i+"'>"+i+"</a>]");
 		}
 		
 		if(endPage<totalP) pagingHTML.append("[<a href='/dogiver/admin/admin_dogiver?pg="+(endPage+1)+"'>다음</a>]");

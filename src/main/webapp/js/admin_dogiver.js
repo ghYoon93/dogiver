@@ -1,9 +1,11 @@
 $(document).ready(function() {
 	$.ajax({
-		type: 'post',
+		type: 'get',
 		url: '/dogiver/admin/getDogiver',
+		data: 'pg='+$('#pg').val(),
 		dataType: 'json',
 		success: function(data){
+			//alert(JSON.stringify(data));
 			$.each(data.list, function(index, items){
 				$('<tr/>').append($('<td/>', {
 					text: items.dog_id
@@ -35,13 +37,16 @@ $(document).ready(function() {
 			//페이징 처리
 			$('#admin_dogiverPagingDiv').html(data.admin_dogiverPaging.pagingHTML);
 			
+			let id;
 			//상세보기
-			$('a').click(function() {
+			$('.admin_dogiverTable a').click(function() {
 				$('#admin_dogiverView').css('display', 'block');
-				let id=$(this).attr('class');
+				id=$(this).attr('class');
+				
 				$.each(data.list, function(index, items){
 					if(items.dog_id+''==id){
-						$('#dog_image').attr('src', '/dogiver/dogiverImage/'+items.dog_image);
+						$('#dog_id').val(items.dog_id);
+						$('#dog_imageView').attr('src', '/dogiver/dogiverImage/'+items.dog_image);
 						$('#dog_name').text(items.dog_name);
 						$('#dog_age').text(items.dog_age);
 						$('#dog_weight').text(items.dog_weight);
@@ -56,18 +61,29 @@ $(document).ready(function() {
 						$('#description').val(items.description);
 					}
 				});//each
-			});
+				
+				//헌혈견 정보변경
+				$('#admin_dogiverModifyBtn').click(function() {
+					let formData = new FormData($('#admin_dogiverViewForm')[0]);
+					$.ajax({
+						type: 'post',
+						enctype: "multipart/form-data",
+						processData: false,//데이터를 컨텐트 타입에 맞게 변환 여부
+						contentType: false,//요청 컨텐트 타입
+						url: '/dogiver/admin/adminDogiverModify',
+						data: formData,
+						dataType: 'text',
+						success: function(data){
+							if(data!='0'){
+								alert("헌혈견 정보 수정 완료")
+								location.reload();
+							}
+						}
+							   
+					});//ajax
+				});//정보변경
+			});//상세보기
 		}//success
 	});//ajax
-	$('#admin_dogiverModifyBtn').click(function() {
-		$.ajax({
-			type: 'post',
-			url: '/dogiver/admin/adminDogiverModify',
-			data: {'apply_status': $('#apply_status').val(), 'blood_cc':$('#blood_cc').val(), 'donation_date': $('#donation_date').val()},
-			dataType: 'text',
-			success: function(data){
-				
-			}
-		});
-	});
+
 });

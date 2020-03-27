@@ -11,6 +11,7 @@
 </head>
 <body>
 <div>
+	<input type="hidden" id="pg" name="pg" value="${pg }">
 	<table class="admin_dogiverTable" border="1" cellspacing="0" cellpadding="5" frame="hsides" rules="rows">
 		<tr>
 			<th width="50">ID</th>
@@ -29,10 +30,12 @@
 	<div id="admin_dogiverPagingDiv"></div>
 	
 	<div id="admin_dogiverView">
-		<table>
+	<form action="#" id="admin_dogiverViewForm">
+		<input type="hidden" name="dog_id" id="dog_id" value="">
+		<table >
 			<tr>
-				<td rowspan="4" width="300" height="400" >
-					<img id="dog_image" width="300" height="300" alt="개" src="">
+				<td rowspan="3" width="300" height="400" >
+					<img id="dog_imageView" width="300" height="300" alt="헌혈 완료후 사진등록 해주세요" src="">
 				</td>
 				<td width="110" class="subject">이름 : </td>
 				<td>
@@ -58,7 +61,7 @@
 				</td>
 				<td class="subject">진행상태 : </td>
 				<td>
-					<select id="apply_status">
+					<select id="apply_status" name="apply_status">
 						<option value="신청완료">신청완료</option>
 						<option value="검사대기중">검사대기중</option>
 						<option value="헌혈완료">헌혈완료</option>
@@ -69,11 +72,11 @@
 			<tr>
 				<td class="subject">헌혈량 : </td>
 				<td>
-					<input type="text" id="blood_cc">
+					<input type="text" id="blood_cc" name="blood_cc">
 				</td>
 				<td class="subject">헌혈 날짜 : </td>
 				<td>
-					<input type="text" id="donation_date">
+					<input type="text" id="donation_date" name="donation_date">
 				</td>
 				<td class="subject">회원이름 : </td>
 				<td>
@@ -81,6 +84,9 @@
 				</td>
 			</tr>
 			<tr>
+				<td>
+					<input type="file" name="dog_image" id="dog_image">
+				</td>
 				<td class="subject">회원연락처 : </td>
 				<td>
 					<div id="phone"></div>
@@ -92,13 +98,14 @@
 			</tr>
 			<tr>
 				<td colspan="6" valign="middle"> 
-					<textarea rows="5" cols="140" id="description" placeholder="메모"></textarea>
+					<textarea rows="5" cols="140" name="description" id="description" placeholder="메모"></textarea>
 				</td>
 				<td align="center">
 					<input type="button" id="admin_dogiverModifyBtn" value="변경하기">
 				</td>
 			</tr>
 		</table>
+	</form>
 	</div>
 </div>
 </body>

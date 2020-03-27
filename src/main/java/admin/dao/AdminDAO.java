@@ -11,4 +11,6 @@ public interface AdminDAO {
 
 	public int getDogiverTotalA();
 
+	public int adminDogiverModify(Map<String, String> map);
+
 }

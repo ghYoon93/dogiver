@@ -35,7 +35,7 @@
  		<div id="menu">
  			<h3>관리자 메뉴</h3>
  			<ul>
- 				<li id="member">회원관리</li>
+ 				<li id="member"><a></a>회원관리</li>
  				<li id="dog">헌혈견관리</li>
  				<li id="goods">상품관리</li>
  				<li id="order">주문관리</li>
