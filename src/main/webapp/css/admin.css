@@ -38,12 +38,12 @@
 }
 
 #admin_dogiverPagingDiv{
-	width: 1180px;
+	width: 690px;
 	text-align: center;
 }
 
 #admin_dogiverView{
-	width: 1180px;
+	width: 0px;
 	height: 500px;
 	display: none;
 	

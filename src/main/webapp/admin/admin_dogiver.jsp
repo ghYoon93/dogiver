@@ -17,12 +17,9 @@
 			<th width="50">ID</th>
 			<th width="100">이름</th>
 			<th width="70">나이</th>
-			<th width="90">몸무게(kg)</th>
 			<th width="200">견종</th>
 			<th width="70">혈액형</th>
 			<th width="100">회원이름</th>
-			<th width="200">회원이메일</th>
-			<th width="200">회원연락처</th>
 			<th width="100">진행상태</th>
 		</tr>
 	</table>
@@ -97,11 +94,16 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="6" valign="middle"> 
-					<textarea rows="5" cols="140" name="description" id="description" placeholder="메모"></textarea>
+				<td colspan="5" valign="middle"> 
+					<textarea rows="5" cols="150" name="description" id="description" placeholder="메모"></textarea>
 				</td>
-				<td align="center">
-					<input type="button" id="admin_dogiverModifyBtn" value="변경하기">
+				<td align="center" colspan="2">
+					<div>
+						<button id="admin_dogiverModifyBtn">정보 변경하기</button>
+					</div>
+					<div>
+						<button id="admin_dogiverBtn">명예의전당 등록</button>
+					</div>
 				</td>
 			</tr>
 		</table>

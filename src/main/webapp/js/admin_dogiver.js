@@ -18,17 +18,11 @@ $(document).ready(function() {
 				}))).append($('<td/>', {
 					text: items.dog_age
 				})).append($('<td/>', {
-					text: items.dog_weight
-				})).append($('<td/>', {
 					text: items.dog_breed
 				})).append($('<td/>', {
 					text: items.dog_bloodtype
 				})).append($('<td/>', {
 					text: items.name
-				})).append($('<td/>', {
-					text: items.email
-				})).append($('<td/>', {
-					text: items.phone
 				})).append($('<td/>', {
 					text: items.apply_status
 				})).appendTo($('.admin_dogiverTable'))
