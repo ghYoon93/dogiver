@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import order.bean.CartDTO;
@@ -21,7 +20,6 @@ import order.service.OrderService;
 
 @Controller
 @RequestMapping(value="order")
-@SessionAttributes({"memEmail"})
 public class OrderController {
 	@Autowired
 	private OrderService orderService;
@@ -30,8 +28,7 @@ public class OrderController {
     	return "/order/order"; //이동할 view의 이름 (.jsp)
     }
     @RequestMapping(value="cart", method=RequestMethod.GET)
-    public String cart(Model model) {
-    	model.addAttribute("memEmail", "ghyoon93@gmail.com");
+    public String cart() {
     	return "/order/cart"; //이동할 view의 이름 (.jsp)
     	
     }

@@ -195,13 +195,13 @@ function gd_cart_process(command){
 		return false;
 	}
 	if(command == 'cartDelete'){
-		alert('deleteC');
 		form.attr('action','deleteCart');
 		form.submit();
 		
 	}else if(command == 'orderSelect'){
-		form.attr('action','order');
+		form.attr('action','orderCart');
 		form.submit();
+		
 	}
 }
 
