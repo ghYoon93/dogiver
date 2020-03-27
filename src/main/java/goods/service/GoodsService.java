@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import goods.bean.GoodsDTO;
+import goods.bean.QnaDTO;
 
 public interface GoodsService {
 
@@ -16,5 +17,7 @@ public interface GoodsService {
 	public List<GoodsDTO> goods_lineUp(String lineUp);
 
 	public int qnaWrite(Map<String, String> map);
+
+	public List<QnaDTO> getGoodsQnaList(String goods_id);
 
 }

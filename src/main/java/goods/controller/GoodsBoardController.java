@@ -1,15 +1,20 @@
 package goods.controller;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import goods.bean.QnaDTO;
 import goods.service.GoodsService;
 
 @Controller
@@ -34,8 +39,17 @@ public class GoodsBoardController {
 		return "/goods/goodsDetail";
 	}
 	
+
+	@RequestMapping(value="getGoodsQnaList", method=RequestMethod.POST)
+	@ResponseBody
+	public ModelAndView getGoodsQnaList(@RequestParam String goods_id){
+		List<QnaDTO> list = goodsService.getGoodsQnaList(goods_id);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.setViewName("jsonView");
+		return mav;
+	}
 	
-//	
 //	@RequestMapping(value="review", method=RequestMethod.GET)
 //	public String review(@RequestParam(required=false, defaultValue="1") String seq, Model model) {
 //		return "/goods/review";

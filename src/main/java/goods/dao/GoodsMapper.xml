@@ -37,4 +37,8 @@
 		insert into goods_board(email, goods_id, category_code, title, text_content, qna_date)
 		values('dogiver503@gmail.com', #{goods_id}, 'QNA', 'test', #{text_content}, SYSDATE)
 	</insert>
+	
+	<select id="getGoodsQnaList" parameterType="int" resultType="goods.bean.QnaDTO">
+		select * from goods_board where goods_id=#{goods_id} AND category_code='QNA' order by qna_date desc
+	</select>
 </mapper>

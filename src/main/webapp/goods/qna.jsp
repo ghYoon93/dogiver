@@ -16,28 +16,24 @@ pageEncoding="UTF-8"%>
 <input type="hidden" name="goods_id" id="goods_id" value="${goods_id }">
 
 
+<p class="qnaWriteDiv"></p>
 <div style="display: flex;">
 	<textarea name="text_content" id="text_content" rows="3" cols="110" ></textarea>
-	<button id="qnaWrite_btn" >상품문의 작성</button><br>
-	<p class="qnaWriteDiv"></p>
+	<button type="button" id="qnaWrite_btn">상품문의 작성</button><br><br>
 </div>
 </form>
 
-<div>
-	<table cellpadding="5" frame="hsides" rules="rows" valign="top" margin="0">
-	    <tr>
-	        <th width="65%">문의 내용</th>
-	        <th width="10%" style="text-align:center;">닉네임</th>
-	        <th width="25%" style="text-align:center;">날짜</th>
-	    </tr>
-	    <tr>
-	        <td width="65%">문의 내용</td>
-	        <td width="10%" style="text-align:center;">닉네임</td>
-	        <td width="25%" style="text-align:center;">날짜</td>
-	    </tr>
-	
-	</table>
-</div>
+
+<table cellpadding="5" frame="hsides" rules="rows" valign="top" margin="0">
+    <tr>
+        <th width="65%">문의 내용</th>
+        <th width="10%" style="text-align:center;">닉네임</th>
+        <th width="25%" style="text-align:center;">날짜</th>
+    </tr>
+</table>
+<table class="qnaList" cellpadding="5" frame="hsides" rules="rows" valign="top" margin="0">
+</table>
+
 </body>
 <script src="../js/jquery-3.4.1.min.js"></script>
 <script src="../js/goods_qna.js"></script>

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import goods.bean.GoodsDTO;
+import goods.bean.QnaDTO;
 import goods.dao.GoodsDAO;
 
 @Service
@@ -40,6 +41,11 @@ public class GoodsServiceImpl implements GoodsService {
 	public int qnaWrite(Map<String, String> map) {
 		return goodsDAO.qnaWrite(map);
 		
+	}
+
+	@Override
+	public List<QnaDTO> getGoodsQnaList(String goods_id) {
+		return goodsDAO.getGoodsQnaList(Integer.parseInt(goods_id));
 	}
 	
 	

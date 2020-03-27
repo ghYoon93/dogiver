@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import goods.bean.GoodsDTO;
+import goods.bean.QnaDTO;
 
 @Repository
 @Transactional
@@ -39,6 +40,11 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	@Override
 	public int qnaWrite(Map<String, String> map) {
 		return sqlSession.insert("goodsSQL.qnaWrite", map);
+	}
+
+	@Override
+	public List<QnaDTO> getGoodsQnaList(int goods_id) {
+		return sqlSession.selectList("goodsSQL.getGoodsQnaList", goods_id);
 	}
 
 }
