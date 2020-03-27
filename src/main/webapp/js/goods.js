@@ -10,7 +10,6 @@ $('nav ul li').click(function(){
 	}
 });
 
-
 let price="";
 let amt = "";
 var detail_image = "";

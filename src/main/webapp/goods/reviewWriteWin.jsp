@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 
-<strong>리뷰 작성하기</strong>
+<strong>리뷰 작성</strong>
 <span class="writeArea">0/500</span><br>
 
 <form id="reviewWriteForm" name="reviewWriteForm" enctype="multipart/form-data" method="post" action="reviewWrite">
