@@ -20,12 +20,21 @@
 	
 	<context:component-scan
 		base-package="mail.service" />
+	<context:component-scan
+		base-package="contact.service" />
+	<context:component-scan
+		base-package="contact.dao" />
+	<context:component-scan
+		base-package="board.service" />
+	<context:component-scan
+		base-package="board.dao" />
+	<context:component-scan 
+		base-package="board.bean" />
 	<context:component-scan base-package="blood.dao"/>
 	<context:component-scan base-package="blood.service"/>
 	<context:component-scan base-package="blood.bean"/>
 	<context:component-scan base-package="admin.dao"/>
 	<context:component-scan base-package="admin.service"/>
-
 
 	<!-- order component -->
 	<context:component-scan base-package="order.bean" />
