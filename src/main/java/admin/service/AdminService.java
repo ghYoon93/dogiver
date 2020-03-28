@@ -14,4 +14,6 @@ public interface AdminService {
 
 	public int adminDogiverModify(Map<String, String> map);
 
+	public int dogiverInsert(Map<String, String> map);
+
 }

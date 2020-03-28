@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$.ajax({
-		type: 'get',
+		type: 'post',
 		url: '/dogiver/admin/getDogiver',
 		data: 'pg='+$('#pg').val(),
 		dataType: 'json',
@@ -18,17 +18,9 @@ $(document).ready(function() {
 				}))).append($('<td/>', {
 					text: items.dog_age
 				})).append($('<td/>', {
-					text: items.dog_weight
-				})).append($('<td/>', {
 					text: items.dog_breed
 				})).append($('<td/>', {
-					text: items.dog_bloodtype
-				})).append($('<td/>', {
 					text: items.name
-				})).append($('<td/>', {
-					text: items.email
-				})).append($('<td/>', {
-					text: items.phone
 				})).append($('<td/>', {
 					text: items.apply_status
 				})).appendTo($('.admin_dogiverTable'))
@@ -47,17 +39,17 @@ $(document).ready(function() {
 					if(items.dog_id+''==id){
 						$('#dog_id').val(items.dog_id);
 						$('#dog_imageView').attr('src', '/dogiver/dogiverImage/'+items.dog_image);
-						$('#dog_name').text(items.dog_name);
-						$('#dog_age').text(items.dog_age);
-						$('#dog_weight').text(items.dog_weight);
-						$('#dog_breed').text(items.dog_breed);
-						$('#dog_bloodtype').text(items.dog_bloodtype);
+						$('#dog_name').val(items.dog_name);
+						$('#dog_age').val(items.dog_age);
+						$('#dog_weight').val(items.dog_weight);
+						$('#dog_breed').val(items.dog_breed);
+						$('#dog_bloodtype').val(items.dog_bloodtype);
 						$('#apply_status').val(items.apply_status);
 						$('#blood_cc').val(items.blood_cc);
 						$('#donation_date').val(items.donation_date);
-						$('#name').text(items.name);
-						$('#phone').text(items.phone);
-						$('#email').text(items.email);
+						$('#name').val(items.name);
+						$('#phone').val(items.phone);
+						$('#email').val(items.email);
 						$('#description').val(items.description);
 					}
 				});//each
@@ -78,10 +70,39 @@ $(document).ready(function() {
 								alert("헌혈견 정보 수정 완료")
 								location.reload();
 							}
+						},
+						error: function(error){
+							alert(error);
 						}
 							   
 					});//ajax
 				});//정보변경
+				
+				//명예의 전당 등록
+				$('#admin_dogiverBtn').click(function() {
+					if($('#dog_image').val()!=""){
+						let formData = new FormData($('#admin_dogiverViewForm')[0]);
+						$.ajax({
+							type: 'post',
+							enctype: "multipart/form-data",
+							processData: false,//데이터를 컨텐트 타입에 맞게 변환 여부
+							contentType: false,//요청 컨텐트 타입
+							url: '/dogiver/admin/dogiverInsert',
+							data: formData,
+							dataType: 'text',
+							success: function(data){
+								if(data!='0'){
+									alert("명예의 전당 등록");
+								}
+							}
+							
+						});//ajax
+					}else{
+						alert("사진파일을 등록해주세요");
+					}
+					
+				});//등록
+				
 			});//상세보기
 		}//success
 	});//ajax

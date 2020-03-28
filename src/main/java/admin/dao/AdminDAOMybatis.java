@@ -32,4 +32,10 @@ public class AdminDAOMybatis implements AdminDAO {
 		return sqlSession.update("adminSQL.adminDogiverModify", map);
 	}
 
+	@Override
+	public int dogiverInsert(Map<String, String> map) {
+		
+		return sqlSession.insert("adminSQL.dogiverInsert", map);
+	}
+
 }

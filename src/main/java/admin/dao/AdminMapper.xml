@@ -17,13 +17,25 @@
 	<!-- 관리자헌혈견 수정 -->
 	<update id="adminDogiverModify" parameterType="java.util.Map">
 	begin
-		update apply_dogiver set apply_status=#{apply_status} where dog_id=#{dog_id};
-		<if test="apply_status==헌혈완료">
-		insert into dogiver(dog_id) values(#{dog_id});
+		update apply_dogiver set dog_name=#{dog_name}, dog_age=#{dog_age}, dog_breed=#{dog_breed}, dog_weight=#{dog_weight}, dog_bloodtype=#{dog_bloodtype}, apply_status=#{apply_status} where dog_id=#{dog_id};
+		update dogiver set 
+		<if test="dog_image==''">
+		description=#{description}, blood_cc=#{blood_cc}, donation_date=#{donation_date}
 		</if>
-		update dogiver set dog_image=#{dog_image}, description=#{description}, blood_cc=#{blood_cc}, donation_date=#{donation_date} where dog_id=#{dog_id};
+		<if test="dog_image!=''">
+		dog_image=#{dog_image}, description=#{description}, blood_cc=#{blood_cc}, donation_date=#{donation_date} 		
+		</if>
+		where dog_id=#{dog_id};
 	end;
 	</update>
+	
+	<!-- 명예의 전당 등록 -->
+	<insert id="dogiverInsert" parameterType="java.util.Map">
+	begin
+		insert into dogiver(dog_id, dog_image) values(#{dog_id}, #{dog_image});
+		update apply_dogiver set apply_status='헌혈완료' where dog_id=#{dog_id};
+	end;
+	</insert>
 </mapper>
 
 

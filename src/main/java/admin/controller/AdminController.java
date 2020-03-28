@@ -3,8 +3,11 @@ package admin.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,7 +45,7 @@ public class AdminController {
 		return "/admin/adminForm";
 	}
 	
-	@RequestMapping(value = "getDogiver", method = RequestMethod.GET)
+	@RequestMapping(value = "getDogiver", method = RequestMethod.POST)
 	@ResponseBody
 	public ModelAndView getDogiver(@RequestParam(required = false, defaultValue = "1") String pg) {
 		List<DogiverDTO> list = adminService.getDogiver(pg);
@@ -62,7 +65,6 @@ public class AdminController {
 	public String adminDogiverModify(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_image) {
 		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\dogiverImage";
 		String fileName = dog_image.getOriginalFilename();
-		System.out.println(fileName);
 		File file = new File(filePath, fileName);
 		
 		//파일복사
@@ -73,8 +75,28 @@ public class AdminController {
 		}
 		map.put("dog_image", fileName);
 		
-		System.out.println(map);
 		int su = adminService.adminDogiverModify(map);
+		return su+"";
+	}
+	
+	@RequestMapping(value = "dogiverInsert", method = RequestMethod.POST)
+	@ResponseBody
+	public String dogiverInsert(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_image) {
+		System.out.println(map);
+		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\dogiverImage";
+		String fileName = dog_image.getOriginalFilename();
+		File file = new File(filePath, fileName);
+		
+		//파일복사
+		try {
+			FileCopyUtils.copy(dog_image.getInputStream(), new FileOutputStream(file));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		map.put("dog_image", fileName);
+			
+		int su = adminService.dogiverInsert(map);
 		return su+"";
 	}
 
