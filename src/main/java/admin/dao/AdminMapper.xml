@@ -19,10 +19,10 @@
 	begin
 		update apply_dogiver set dog_name=#{dog_name}, dog_age=#{dog_age}, dog_breed=#{dog_breed}, dog_weight=#{dog_weight}, dog_bloodtype=#{dog_bloodtype}, apply_status=#{apply_status} where dog_id=#{dog_id};
 		update dogiver set 
-		<if test="dog_image==''">
+		<if test="dog_image==null">
 		description=#{description}, blood_cc=#{blood_cc}, donation_date=#{donation_date}
 		</if>
-		<if test="dog_image!=''">
+		<if test="dog_image!=null">
 		dog_image=#{dog_image}, description=#{description}, blood_cc=#{blood_cc}, donation_date=#{donation_date} 		
 		</if>
 		where dog_id=#{dog_id};

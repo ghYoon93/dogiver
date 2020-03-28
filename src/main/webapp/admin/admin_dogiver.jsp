@@ -30,7 +30,7 @@
 		<input type="hidden" name="dog_id" id="dog_id" value="">
 		
 		<div id="dog_imageViewDiv" class="admin_dogiverViewDiv">
-			<img id="dog_imageView" width="300" height="300" alt="헌혈 완료후 사진등록 해주세요" src="">
+			<img id="dog_imageView" alt="헌혈 완료후 사진등록 해주세요" src="">
 		</div>
 		<div id="dog_nameDiv" class="admin_dogiverViewDiv">
 			<label>이름</label><br>

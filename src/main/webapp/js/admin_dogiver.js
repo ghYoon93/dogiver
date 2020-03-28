@@ -66,9 +66,11 @@ $(document).ready(function() {
 						data: formData,
 						dataType: 'text',
 						success: function(data){
-							if(data!='0'){
-								alert("헌혈견 정보 수정 완료")
+							if(data=='success'){
+								alert("헌혈견 정보 수정 완료");
 								location.reload();
+							}else{
+								alert("수정 실패 문의해주세요");
 							}
 						},
 						error: function(error){
@@ -91,9 +93,12 @@ $(document).ready(function() {
 							data: formData,
 							dataType: 'text',
 							success: function(data){
-								if(data!='0'){
+								if(data=='success'){
 									alert("명예의 전당 등록");
+								}else{
+									alert("등록 실패 문의하세요");
 								}
+								
 							}
 							
 						});//ajax

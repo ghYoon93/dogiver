@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,8 @@ import blood.bean.DogiverDTO;
 public class AdminController {
 	@Autowired
 	private AdminService adminService;
+	@Autowired
+	private ServletContext servletContext;
 	
 	@RequestMapping(value = "adminForm", method = RequestMethod.GET)
 	public String admin(Model model) {
@@ -63,27 +66,33 @@ public class AdminController {
 	@RequestMapping(value = "adminDogiverModify", method = RequestMethod.POST)
 	@ResponseBody
 	public String adminDogiverModify(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_image) {
-		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\dogiverImage";
+		String filePath = servletContext.getRealPath("dogiverImage");
 		String fileName = dog_image.getOriginalFilename();
 		File file = new File(filePath, fileName);
 		
-		//파일복사
-		try {
-			FileCopyUtils.copy(dog_image.getInputStream(), new FileOutputStream(file));
-		} catch (IOException e) {
-			e.printStackTrace();
+		if(!fileName.equals("")) {
+			//파일복사
+			try {
+				FileCopyUtils.copy(dog_image.getInputStream(), new FileOutputStream(file));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			map.put("dog_image", fileName);
 		}
-		map.put("dog_image", fileName);
 		
 		int su = adminService.adminDogiverModify(map);
-		return su+"";
+		if(su!=0) {
+			return "success";
+		}else {
+			return "false";			
+		}
 	}
 	
 	@RequestMapping(value = "dogiverInsert", method = RequestMethod.POST)
 	@ResponseBody
 	public String dogiverInsert(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_image) {
-		System.out.println(map);
-		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\dogiverImage";
+		String filePath = servletContext.getRealPath("dogiverImage");
 		String fileName = dog_image.getOriginalFilename();
 		File file = new File(filePath, fileName);
 		
@@ -93,11 +102,14 @@ public class AdminController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 		map.put("dog_image", fileName);
 			
 		int su = adminService.dogiverInsert(map);
-		return su+"";
+		if(su!=0) {
+			return "success";
+		}else {
+			return "false";			
+		}
 	}
 
 
