@@ -69,7 +69,7 @@
             <li>
               <a href="#">GOODS</a>
               <ul>
-                <li><a href="#">GOODS</a></li>
+                <li><a href="../goods/goodsList">GOODS</a></li>
                 <li><a href="../order/cart">장바구니</a></li>
                 <li><a href="#">주문조회</a></li>
               </ul>

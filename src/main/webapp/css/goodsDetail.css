@@ -2,53 +2,54 @@
 /* *{
 	border: 1px solid black;
 } */
-body {
-  padding: 0;
-  margin: 0;
-}
-.frame {
-	border: 1px solid black;
-  	margin: 0px auto;
- 	width: 1100px;
+.wrap #section{
+	width: 1100px;
+	left:50%;
+	position:relative;
+	transform:translateX(-50%);
+	margin-top:110px;
+	
 }
 .overview{
-	border: 1px solid red;
-	
+	border: 2px solid rgba(0,0,0,0.1);
 	height: 600px;
 	display: block;
 	overflow: hidden; 
-
 }
 .overview-image{
-	border: 1px solid green;
 	width: 55%;
 	height: inherit;
 	display: block;
 	float: left;
 }
 .overview-image img{ 
-	border: 1px solid black;
 	width: 500px; 
 	height: 500px;
 	margin: 50px;
 }
 .overview-content{
-	border: 1px solid green;
 	width: 42%;
 	height: inherit;
 	padding: 10px;
 	display: block;
 	float: right;
 	overflow: hidden;
+	border-left: 1px solid #f2f2f2;
 }
 .overview-content h1{
 	font-size: 20px; 
 	margin:50px 0 30px 0;
+	padding: 20px 0 20px;
+	border-top: 1px solid #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
 }
-
-/* .overview-content div{
-	display: block;
-}  */
+.overview-content h1 + div{
+	border-bottom: 1px solid #f2f2f2;
+	text-align: right;
+}
+.delivery-fee span:first-child{
+	margin: 20px 0 0 20px;
+}
 
 /* 가격 테이블영역 */
 .goods-price-rate{
@@ -80,7 +81,7 @@ body {
 }
 
 /* 옵션, 수량, 총합계금액  */
-.option-wrap{background-color: #e6e6e6; padding: 10px 0;}
+.option-wrap{background-color: #e6e6e6; padding: 20px 20px;}
 .count{
 	display:inline-block;
 }
@@ -91,7 +92,12 @@ body {
 
 
 /* 버튼(장바구니, 구매하기) */
-.btn_form{text-align: center; margin: 50px 0;}
+.btn_form{
+	text-align: center; 
+	margin: 50px 0;
+	 border-top:1px solid #f2f2f2;
+	  border-bottom:1px solid #f2f2f2;
+	}
 #btn-cart{
 	width:200px;
     background-color: #fff;
@@ -105,6 +111,7 @@ body {
     font-size: 15px;
     margin: 4px;
     cursor: pointer;	
+   
 }
 
 #btn-order{
@@ -120,25 +127,23 @@ body {
     font-size: 15px;
     margin: 4px;
     cursor: pointer;
+    margin: 20px 0 20px;
 }
 
 /* --------------------------------------------------- */
 .discription{
-	border: 1px solid blue;
-
-	height: 1000px;
+	border: 1px solid #f2f2f2;
 	display: block;
-	margin: 10px;
+	margin: 10px 0 0 0;
 }
-nav{
-	border: 1px solid green;
+.navigationBar{
 	height: 50px;
 } 
-nav ul{margin:0; padding: 0; height: 50px; width: 100%;}
-nav ul li{
+.navigationBar ul{margin:0; padding: 0; height: 50px; width: 100%; display:flex;}
+.navigationBar ul li{
 	list-style: none; /* <li>태그의 점을 없앤다  */	 
 	display: block ; 
-	width: 33.3333%; 
+	flex:3;
 	height: 50px; 
 	float: left; /* <li>태그들이 왼쪽에 흐르게 설정(그러면 아래있는 내용은 오른쪽으로 옴) */ 
 	line-height: 50px; /* 글씨가 가운데로 오도록 설정하기 위해 한줄의 높이를 30px로 설정 */ 
@@ -146,13 +151,17 @@ nav ul li{
 	text-align: center; 
 	font-weight: bold; 	
 	color: white;
-	background-color: #2d2d2d;
+	background-color: #f8585b;
+	font-size: 13pt;
+	box-shadow: rgba(0,0,0,0.4);
+	border: 1px solid #f2f2f2;
 }
 
 .navigationBar ul li:hover { 
 	color: white;
-	background-color: #f8585b; 
+	background-color: #f51217; 
 	cursor: pointer;
+	font-size: 15pt;
 }
 
 .discription div{
@@ -168,8 +177,7 @@ table {
     line-height: 1.5;
     border-top: 1px solid #ccc;
 	margin : 20px 10px;
-	width: 90%
-	
+	width : 90%;
 }
 table th {
     padding: 10px;
@@ -178,7 +186,6 @@ table th {
     border-bottom: 1px solid #ccc;
 }
 table td {
-    width: 40%;
     padding: 10px;
     vertical-align: top;
     border-bottom: 1px solid #ccc;

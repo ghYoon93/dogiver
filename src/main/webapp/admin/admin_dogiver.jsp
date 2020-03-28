@@ -18,7 +18,6 @@
 			<th width="100">이름</th>
 			<th width="70">나이</th>
 			<th width="200">견종</th>
-			<th width="70">혈액형</th>
 			<th width="100">회원이름</th>
 			<th width="100">진행상태</th>
 		</tr>
@@ -26,89 +25,79 @@
 	
 	<div id="admin_dogiverPagingDiv"></div>
 	
-	<div id="admin_dogiverView">
 	<form action="#" id="admin_dogiverViewForm">
+	<div id="admin_dogiverView">
 		<input type="hidden" name="dog_id" id="dog_id" value="">
-		<table >
-			<tr>
-				<td rowspan="3" width="300" height="400" >
-					<img id="dog_imageView" width="300" height="300" alt="헌혈 완료후 사진등록 해주세요" src="">
-				</td>
-				<td width="110" class="subject">이름 : </td>
-				<td>
-					<div id="dog_name"></div>
-				</td>
-				<td width="110" class="subject">나이 : </td>
-				<td>
-					<div id="dog_age"></div>
-				</td>
-				<td width="110" class="subject">몸무게 : </td>
-				<td>
-					<div id="dog_weight"></div>
-				</td>
-			</tr>
-			<tr>
-				<td class="subject">견종 : </td>
-				<td>
-					<div id="dog_breed"></div>
-				</td>
-				<td class="subject">혈액형 : </td>
-				<td>
-					<div id="dog_bloodtype"></div>
-				</td>
-				<td class="subject">진행상태 : </td>
-				<td>
-					<select id="apply_status" name="apply_status">
-						<option value="신청완료">신청완료</option>
-						<option value="검사대기중">검사대기중</option>
-						<option value="헌혈완료">헌혈완료</option>
-						<option value="헌혈불가">헌혈불가</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td class="subject">헌혈량 : </td>
-				<td>
-					<input type="text" id="blood_cc" name="blood_cc">
-				</td>
-				<td class="subject">헌혈 날짜 : </td>
-				<td>
-					<input type="text" id="donation_date" name="donation_date">
-				</td>
-				<td class="subject">회원이름 : </td>
-				<td>
-					<div id="name"></div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="file" name="dog_image" id="dog_image">
-				</td>
-				<td class="subject">회원연락처 : </td>
-				<td>
-					<div id="phone"></div>
-				</td>
-				<td class="subject">회원 이메일 : </td>
-				<td colspan="3">
-					<div id="email"></div>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="5" valign="middle"> 
-					<textarea rows="5" cols="150" name="description" id="description" placeholder="메모"></textarea>
-				</td>
-				<td align="center" colspan="2">
-					<div>
-						<button id="admin_dogiverModifyBtn">정보 변경하기</button>
-					</div>
-					<div>
-						<button id="admin_dogiverBtn">명예의전당 등록</button>
-					</div>
-				</td>
-			</tr>
-		</table>
+		
+		<div id="dog_imageViewDiv" class="admin_dogiverViewDiv">
+			<img id="dog_imageView" width="300" height="300" alt="헌혈 완료후 사진등록 해주세요" src="">
+		</div>
+		<div id="dog_nameDiv" class="admin_dogiverViewDiv">
+			<label>이름</label><br>
+			<input type="text" id="dog_name" name="dog_name">
+		</div>
+		<div id="dog_ageDiv" class="admin_dogiverViewDiv">
+			<label>나이</label><br>
+			<input type="text" id="dog_age" name="dog_age">
+		</div>
+		<div id="dog_weightDiv" class="admin_dogiverViewDiv">
+			<label>몸무게(kg)</label><br>
+			<input type="text" id="dog_weight" name="dog_weight">
+		</div>
+		<div id="dog_breedDiv" class="admin_dogiverViewDiv">
+			<label>견종</label><br>
+			<input type="text" id="dog_breed" name="dog_breed">
+		</div>
+		<div id="dog_bloodtypeDiv" class="admin_dogiverViewDiv">
+			<label>혈액형</label><br>
+			<input type="text" id="dog_bloodtype" name="dog_bloodtype">
+		</div>
+		<div id="apply_statusDiv" class="admin_dogiverViewDiv">
+			<label>진행상태</label><br> 
+			<select id="apply_status" name="apply_status">
+				<option value="신청완료">신청완료</option>
+				<option value="검사대기중">검사대기중</option>
+				<option value="헌혈불가">헌혈불가</option>
+				<option value="헌혈완료">헌혈완료</option>
+			</select>
+		</div>
+		<div id="blood_ccDiv" class="admin_dogiverViewDiv">
+			<label>헌혈량</label><br>
+			<input type="text" id="blood_cc" name="blood_cc">
+		</div>
+		<div id="donation_dateDiv" class="admin_dogiverViewDiv">
+			<label>최근 헌혈 날짜</label><br>
+			<input type="text" id="donation_date" name="donation_date">
+		</div>
+		<div id="nameDiv" class="admin_dogiverViewDiv">
+			<label>회원이름</label><br>
+			<input type="text" id="name" name="name">
+		</div>
+		<div id="phoneDiv" class="admin_dogiverViewDiv">
+			<label>회원연락처</label><br>
+			<input type="text" id="phone" name="phone">
+		</div>
+		<div id="emailDiv" class="admin_dogiverViewDiv">
+			<label>회원메일</label><br>
+			<input type="text" id="email" name="email">
+		</div>
+		<div id="dog_imageDiv">
+			<label>사진 파일</label><br>
+			<input type="file" name="dog_image" id="dog_image">
+		</div>
+		<div id="descriptionDiv">
+			<textarea rows="5" cols="150" id="description" name="description" placeholder="메모"></textarea>
+		</div>
+		<div id="modifyBtnDiv">
+			<div class="btnDiv">
+				<button id="admin_dogiverModifyBtn">정보 변경하기</button>
+			</div>
+			<div class="btnDiv">
+				<button id="admin_dogiverBtn">명예의전당 등록</button>
+			</div>
+		</div>
+		</div>
 	</form>
-	</div>
 </div>
 </body>
 </html>

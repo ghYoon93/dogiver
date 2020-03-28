@@ -53,4 +53,10 @@ public class AdminServiceImpl implements AdminService {
 		return adminDAO.adminDogiverModify(map);
 	}
 
+	@Override
+	public int dogiverInsert(Map<String, String> map) {
+		
+		return adminDAO.dogiverInsert(map);
+	}
+
 }
