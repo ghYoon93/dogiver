@@ -349,7 +349,7 @@ ul {
   left: 50%;
   top: 50%;
   margin-left: -300px;
-  margin-top: -300px;
+  margin-top: -200px;
   width: 600px;
   padding: 20px;
   border: 2px solid #555555;
@@ -365,7 +365,7 @@ ul {
 }
 .option_tit_box dt {
   float: left;
-  margin: 18px 0 0 20px;
+  margin-top: 5px;
 }
 .option_tit_box dd {
   margin: 18px 0 0 133px;
@@ -377,8 +377,8 @@ ul {
   font-size: 14px;
 }
 .option_tit_box dt img {
-  width: 70px;
-  height: 70px;
+  width: 120px;
+  height: 120px;
   border: 1px solid #dbdbdb;
 }
 

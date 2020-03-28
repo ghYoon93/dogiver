@@ -8,10 +8,16 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<context:component-scan
 		base-package="dogiver.conf" />
-	<context:component-scan
-		base-package="member.service" />
-	<context:component-scan
-		base-package="member.dao" />
+	<context:component-scan	base-package="member.service" />
+	<context:component-scan	base-package="member.dao" />
+		
+	<!-- Goods -->
+	<context:component-scan base-package="goods.service"/>
+	<context:component-scan base-package="goods.dao"/>
+		
+		
+		
+	
 	<context:component-scan
 		base-package="mail.service" />
 		

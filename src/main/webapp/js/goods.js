@@ -1,37 +1,96 @@
-/**goodsDetail.jsp**/
+/******goodsDetail.jsp******/
 $('nav ul li').click(function(){
 	if($(this).index()=='0'){
-		$('.discription div').html('<h3>상세내용</h3>');		
+		$('.discription div').html(detail_image);		
 	}else if($(this).index()=='1'){
-		$('.discription div').load('review.html');
+		$('.discription div').load('review');
 	}else if($(this).index()=='2'){
-		$('.discription div').load('delivery_info.html');	
+		$('.discription div').load('../etc/delivery_info.html');	
 	}
 });
 
-let price = $('#goods_price').html();
-let amt = $('#quantity').val();
+
+let price="";
+let amt = "";
+var detail_image = "";
 $(document).ready(function(){	
+	//해당 상품 Detail페이지 뿌려주기
+	//alert($('#goods_id').val());
+	var tag="";
 	
-	let num = numberFormat(price);
-	$('#goods_price').html(num);
+	$.ajax({	
+		type: 'post',
+		url: '/dogiver/goods/getGoodsDetail',
+		data: 'goods_id='+$('#goods_id').val(),
+		dataType: 'json',
+		success: function(data){
+			//alert(JSON.stringify(data));
 
-	calc_tot_price(price, amt);
+			tag += '<div class="overview-image"><img src="../image/goods/'+ data.goodsDTO.goods_thumbnail +'"></div>'
+					+ '<div class="overview-content">'
+						+'<h1 id="goods_name" >'+ data.goodsDTO.goods_name +'</h1>'			
+						+'<div>'
+							+'<span>판매가</span>'
+							+'<span id="goods_price">'+ data.goodsDTO.goods_price +'</span>'	
+						+'</div>'
+						
+						+'<div class="delivery-fee" style="margin:20px 0; text-align: right">'
+							+'<span>배송비</span>'
+							+'<span>2500원</span>'
+						+'</div>'
+						
+						+'<div class="option-wrap">'
+							+'<span class="goods-name">'+ data.goodsDTO.goods_name +'<br><br></span>'
+							+'<div class="amount-wrap">'
+								+'<div class="count">'
+									+'<button id="minus">-</button>'
+									+'<input type="text" id="quantity" value="1" size="4" >'
+									+'<button id="plus">+</button>'
+								+'</div>'
+								+'<strong id="tot_price" title="총합계금액"></strong>'
+							+'</div>'
+						+'</div>'
+						
+						+'<div class="btn_form">'
+							+'<button id="btn-cart">장바구니</button>'
+							+'<button id="btn-order">구매하기</button>'
+						+'</div>'
+					+'</div>';
+			
+			detail_image = '<img src="../image/goods/'+ data.goodsDTO.goods_detail +'" >'; 
+			
+			$('.overview').append(tag);
+			$('.discription div').append(detail_image);
+			
+			
+			price = data.goodsDTO.goods_price;
+			amt = $('#quantity').val();
+			
+			let num = numberFormat(price);
+			$('#goods_price').html(num);
 
+			calc_tot_price(price, amt);
+			
+		},
+		error: function(error){
+			alert("error:"+error);
+		}
+		
+	});
+	
 });
 
-$('#quantity').change(function(){
+
+$(document).on('change', '#quantity', function(){
 	amt = $('#quantity').val();
 	calc_tot_price(price, amt);
 });
-
-$('#plus').click(function(){
+$(document).on('click', '#plus', function(){
 	amt++;
 	$('#quantity').val(amt);
 	calc_tot_price(price, amt);
-	
 });
-$('#minus').click(function(){
+$(document).on('click', '#minus', function(){
 	if(amt<=1){
 		$('#quantity').attr('value', '1');	
 	}else {
@@ -41,14 +100,28 @@ $('#minus').click(function(){
 	calc_tot_price(price, amt);
 });
 
+//$('#quantity').change(function(){
+//	amt = $('#quantity').val();
+//	calc_tot_price(price, amt);
+//});
+//$('#plus').click(function(){
+//	amt++;
+//	$('#quantity').val(amt);
+//	calc_tot_price(price, amt);
+//});
+//$('#minus').click(function(){
+//	if(amt<=1){
+//		$('#quantity').attr('value', '1');	
+//	}else {
+//		amt--;
+//		$('#quantity').val(amt);
+//	}
+//	calc_tot_price(price, amt);
+//});
+
 function calc_tot_price(price, amt){
 	var totalPrice = numberFormat(price*amt);
 	$('#tot_price').html(totalPrice).append(' 원');
-
-	// var price = $('#goods_price').html();
-	// var amt = $('#quantity').val();
-	// var totalPrice = numberFormat(price*amt);
-	// $('#tot_price').html(totalPrice).append(' 원');
 }
 
 // $('.count').on({
@@ -73,32 +146,14 @@ function calc_tot_price(price, amt){
 //콤마 찍기
 function numberFormat(inputNumber) {
 	return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
- }
-
-/**goodsList.jsp**/
-//장바구니 모달
-$('.btn_basket_cart').click(function(){
-	$('#option-view').show();
-	$('body').css('overflow','hidden');
-
-});
-  
-$('.close, .cancle').click(function(){	
-	$('#option-view').hide();
-	$('body').css('overflow','auto');
-	//초기화
-	amt = 1; 
-	$('#quantity').val(1);
-	calc_tot_price(price, amt);
-});
-
-// 버튼 클릭시 해당상품 상세 페이지로 이동
-$('.btn_detail_link').click(function(){
-	alert('url');
-	location.href="goodsDetail.html";
-});
+}
 
 
+
+//상품후기 창 띄우기
+function reviewWrite(){
+	window.open('/dogiver/goods/reviewWrite', '', 'width=700 height=400 scrollbars=yes');
+}
 
 
 
