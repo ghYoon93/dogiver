@@ -23,9 +23,9 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	
 	@RequestMapping(value = "boardWriteForm", method = RequestMethod.GET)
 	public String boardWriteForm() {
+		
 		return "boardWriteForm";
 	}
 	
@@ -52,7 +52,8 @@ public class BoardController {
 		
 		mav.addObject("pg", pg);
 		mav.addObject("list", list);
-		mav.addObject("memId", session.getAttribute("memId"));
+		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("memNickName", session.getAttribute("memNickName"));
 		mav.addObject("boardPaging", boardPaging);
 		mav.setViewName("jsonView");
 		return mav;
@@ -71,13 +72,11 @@ public class BoardController {
 	@RequestMapping(value="getBoardView", method=RequestMethod.POST)
 	public ModelAndView getBoardView( @RequestParam String brd_seq, @RequestParam(required=false, defaultValue="1") String pg,
 									HttpSession session) {
-		System.out.println("겟보드뷰 오는지 확인");
 		BoardDTO boardDTO = boardService.getBoard(brd_seq);
-		System.out.println(brd_seq+"입니다");
 		ModelAndView mav = new ModelAndView();
-		//mav.addObject("memId", session.getAttribute("memId"));
+		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("memNickName", session.getAttribute("memNickName"));
 		mav.addObject("boardDTO", boardDTO);
-		System.out.println(boardDTO+"입니다");
 		mav.setViewName("jsonView");
 		return mav;
 	}
@@ -95,7 +94,8 @@ public class BoardController {
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
-		mav.addObject("memId", session.getAttribute("memId"));
+		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("memNickName", session.getAttribute("memNickName"));
 		mav.addObject("boardPaging", boardPaging);
 		mav.setViewName("jsonView");
 		return mav;
