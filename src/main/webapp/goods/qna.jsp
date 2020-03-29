@@ -11,16 +11,14 @@ pageEncoding="UTF-8"%>
 <body>
 <h3 style="text-align: left;">상품 문의</h3><br>
 
-<form id="qnaWrite" name="qnaWrite" method="post" action="qnaWrite">
-
-<input type="hidden" name="goods_id" id="goods_id" value="${goods_id }">
-
-
-<p class="qnaWriteDiv"></p>
-<div style="display: flex;">
-	<textarea name="text_content" id="text_content" rows="3" cols="110" ></textarea>
-	<button type="button" id="qnaWrite_btn">상품문의 작성</button><br><br>
-</div>
+<form id="qnaWrite" method="post" action="qnaWrite">
+	<input type="hidden" name="goods_id" id="goods_id" value="${goods_id }">
+	
+	<p class="qnaWriteDiv"></p>
+	<div style="display: flex;">
+		<textarea name="text_content" id="text_content" rows="3" cols="110" ></textarea>
+		<button type="button" id="qnaWrite_btn">상품문의 작성</button><br><br>
+	</div>
 </form>
 
 

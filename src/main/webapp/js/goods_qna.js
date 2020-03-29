@@ -14,10 +14,10 @@ $('#qnaWrite_btn').click(function(){
 });
 
  //상품QNA 리스트 
-$(document).ready(function(){
-//$(document).on('click', 'nav ul li', function(){
-//	if($(this).index()=='1'){
-		
+//$(document).ready(function(){
+$(document).on('click', 'nav ul li', function(){
+	if($(this).index()=='1'){
+		var tag="";
 		$.ajax({
 			type:'post',
 			url: '/dogiver/goods/getGoodsQnaList',
@@ -26,7 +26,6 @@ $(document).ready(function(){
 			success: function(data){
 				//alert(JSON.stringify(data));
 				alert();
-				var tag="";
 				$.each(data.list, function(index, items){
 					tag += '<tr>'
 						+ '<td width="65%">'+ items.text_content +'</td>'
@@ -39,6 +38,6 @@ $(document).ready(function(){
 				$('.qnaList').html(tag);
 			}
 		});
-//	}
+	}
 });
 
