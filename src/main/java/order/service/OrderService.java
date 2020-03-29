@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import order.bean.CartDTO;
+import order.bean.KakaoPayApprovalDTO;
+import order.bean.OrderDTO;
 
 public interface OrderService {
 
@@ -16,6 +18,12 @@ public interface OrderService {
 	public void deleteCart(Map<String, String[]> map);
 
 	public CartDTO searchCart(Map<String, String> map);
+
+	public List<CartDTO> getOrderList(Map<String, String[]> map);
+
+	public String kakaoPayReady(OrderDTO orderDTO);
+
+	public KakaoPayApprovalDTO kakaoPayInfo(String pg_token);
 
 
 }

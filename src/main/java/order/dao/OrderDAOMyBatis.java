@@ -43,5 +43,10 @@ public class OrderDAOMyBatis implements OrderDAO {
 		return cartDTO;
 		
 	}
+	@Override
+	public List<CartDTO> getOrderList(Map<String, String[]> map) {
+		System.out.println("orderdao:"+map.get("array")[0]);
+		return sqlSession.selectList("orderSQL.getOrderList",map);
+	}
 
 }

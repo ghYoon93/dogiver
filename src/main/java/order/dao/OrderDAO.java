@@ -14,6 +14,8 @@ public interface OrderDAO {
 	public void deleteCart(Map<String, String[]> map);
 	public CartDTO searchCart(Map<String, String> map);
 
+	public List<CartDTO> getOrderList(Map<String, String[]> map);
+
 
 
 

@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
 <head>
 <meta charset="UTF-8">
-<title>DogNOR</title>
+<title>dogiver</title>
 <!-- <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/common.css"> -->
 <link rel="stylesheet" href="../css/style.css" />
@@ -33,6 +34,10 @@
         </ol>
       </div>
       <!-- //order_process -->
+      <form id="form-order" name="form-order" method="post" action="">
+      <c:forEach var="checkGoods" items="${checkGoods}">
+        <input type="hidden" name="checkGoods" value="${checkGoods }">
+      </c:forEach>
       <div class="order_cont">
         <div class="cart_cont_list">
           <div class="order_cart_tit">
@@ -63,29 +68,6 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="td_left">
-                    <div class="cart_goods_cont">
-                      <span class="cart_goods_image"> <a href="#">
-                          <img src="../image/no-image-icon.jpg"
-                          class="middle" width="40" alt="" title="">
-                      </a>
-                      </span>
-                      <div class="cart_goods_info">
-                        <em><a href="#">같이 구하기 되는 있는 뿐이다. 되려니와,
-                            인생의 고동을 이것이다. 있으며, 되려니와, 피고 철환하였는가?</a></em>
-                      </div>
-                    </div>
-                  </td>
-                  <td class=td_order_amount>
-                    <div class="cart_goods_num">
-                      <strong>1</strong> <font>개</font>
-                    </div>
-                  </td>
-                  <td><strong>8,000원</strong></td>
-                  <td><strong>8,000원</strong></td>
-                  <td></td>
-                </tr>
               </tbody>
             </table>
             <div class="price_sum">
@@ -93,7 +75,7 @@
                 <div class="price_sum_list">
                   <dl>
                     <dt>
-                      총 <strong id="totalGoodsCnt">2</strong> 개의 상품금액
+                      총 <strong id="totalGoodsCnt"></strong> 개의 상품금액
                     </dt>
                     <dd>
                       <strong id="totalGoodsPrice">31,900</strong>원
@@ -142,24 +124,23 @@
                     </colgroup>
                     <tbody>
                       <tr>
-                        <th scope="row">주문하시는 분</span></th>
+                        <th scope="row">주문하시는 분<span class="important">(필수)</span></th>
                         <td><input type="text" name="orderName"
-                          value="윤건희" maxlength="20"></td>
+                          value="${memberDTO.name }" maxlength="20"></td>
                       </tr>
                       <tr>
-                        <th scope="row">받으실 곳</th>
+                        <th scope="row">받으실 곳<span class="important">(필수)</span></th>
                         <td class="member_address">
                           <div class="address_postcode">
-                            <input type="text" name="orderPostcode"
-                              readonly="readonly"> <input
-                              type="hidden" name="orderZipcode">
+                              <input type="text" name="orderZipcode"value="${memberDTO.zipcode }"
+                              readonly="readonly">
                             <button type="button"
                               class="btn_post_search">우편번호 검색</button>
                           </div>
                           <div class="address_input">
-                            <input type="text" name="orderAddress"
+                            <input type="text" name="orderAddress" value="${memberDTO.addr }"
                               readonly="readonly"> <input
-                              type="text" name="orderAddressSub">
+                              type="text" name="orderAddressSub" value="${memberDTO.addr_Detail }">
                             <button type="button"
                               class="btn_post_setting">기본 배송지로
                               설정</button>
@@ -167,18 +148,17 @@
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row"><span class="important">휴대폰
-                            번호</span></th>
+                        <th scope="row">전화번호<span class="important">(필수)</span></th>
                         <td><input type="text" id="mobileNum"
-                          name="orderCellPhone" value="010-8705-4028"
+                          name="orderCellPhone" value="${memberDTO.phone }"
                           maxlength="20"></td>
                       </tr>
                       <tr>
-                        <th scope="row"><span class="important">이메일</span></th>
+                        <th scope="row">이메일<span class="important">(필수)</span></th>
                         <td class="member_email"><input type="text"
-                          name="orderEmail1" value="" maxlength="20">
-                          @ <input type="text" name="orderEmail2"
-                          value="" maxlength="20"> <select
+                          name="orderEmail" value="${memberDTO.email }" maxlength="20">
+                          <input type="hidden" name="partner_user_id" value="${memberDTO.email }">
+                          <select
                           id="inputState">
                             <option value="self">직접입력</option>
                             <option value="naver.com">naver.com</option>
@@ -208,19 +188,24 @@
                     <tbody>
                       <tr>
                         <th scope="row">상품 합계금액</th>
-                        <td><strong id="totalGoodsPrice"
-                          class="order_payment_sum">31,900원</strong></td>
+                        <td><strong
+                          class="order_payment_sum"></strong>
+                          <input type="hidden" name="partner_order_id" value="">
+                          <input type="hidden" name="item_name" value="">
+                          <input type="hidden" name="total_amount" value="">
+                          <input type="hidden" name="quantity" value="">
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">배송비</th>
-                        <td><span id="totalDeliveryCharge">2,500</span>원</td>
+                        <td><span class="totalDeliveryCharge"></span>원</td>
                       </tr>
                       <tr>
                         <th scope="row">최종 결제 금액</th>
                         <td><input type="hidden" name="settlePrice"
-                          value="34400"> <strong
-                          id="totalSettlePrice"
-                          class="order_payment_sum">34,400</strong>원</td>
+                          value=""> <strong
+                          class="totalSettlePrice"
+                          class="order_payment_sum"></strong>원</td>
                       </tr>
                     </tbody>
                   </table>
@@ -247,6 +232,7 @@
                                 type="radio" name="payment"
                                 id="payment_kakao"> <label
                                 for="payment_kakao">카카오 페이</label>
+                                <input type="hidden" name="order_pay">
                             </div>
                             <div class="pay_noBook_box">
                               <ul>
@@ -271,7 +257,7 @@
                       <dl>
                         <dt>최종 결제 금액</dt>
                         <dd>
-                          <span><strong id="totalSettlePriceView">34,400</strong>원</span>
+                          <span><strong id="totalSettlePriceView"></strong>원</span>
                         </dd>
                       </dl>
                     </div>
@@ -299,6 +285,7 @@
           <!-- //cart_cont_list -->
         </div>
       </div>
+      </form>
       <!--//order_cont -->
     </div>
     <!-- //order_wrap -->
@@ -307,6 +294,7 @@
   <div id="footerDiv"></div>
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="../js/main.js"></script>
+  <script type="text/javascript" src="../js/order.js"></script>
 </body>
 
 </html>
