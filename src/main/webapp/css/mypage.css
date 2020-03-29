@@ -1,0 +1,60 @@
+.mypage {
+  text-align: center;
+  width: 1100px;
+  margin: 0 auto;
+}
+.my-nav {
+  display: flex;
+  background: #dd3838;
+  padding: 5px 0 0 0;
+  box-sizing: border-box;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #9e1616;
+  border-bottom: none;
+}
+.my-nav ol li {
+  float: left;
+  flex: 3;
+  width: 140px;
+  height: 40px;
+  padding-top: 5px;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #9e1616;
+  box-sizing: border-box;
+}
+
+.my-nav ol li:hover {
+  cursor: pointer;
+}
+.my-nav ol li:first-child {
+  margin-left: 5px;
+  color: #222;
+}
+.my-nav ol li.on {
+  background: #fff;
+  border-bottom: none;
+}
+.my-nav ol li.on a {
+  color: #222;
+}
+.my-nav ol li a {
+  font-size: 15px;
+  line-height: 2;
+  color: #fff;
+  text-decoration: none;
+}
+.article {
+  width: 1100px;
+  border: 1px solid #f2f2f2;
+  border-top: none;
+  box-sizing: border-box;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 5px;
+}
+.article table {
+  border: 1px solid;
+}

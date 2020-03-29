@@ -23,7 +23,8 @@ public class MemberServiceimpl implements MemberService {
 
 	@Override
 	public String chkNickName(String nickName) {
-		MemberDTO memberDTO = memberDAO.checkEmail(nickName);
+		MemberDTO memberDTO = memberDAO.chkNickName(nickName);
+		System.out.println("chk nick = "+ memberDTO);
 		if (memberDTO == null) {
 			return "non_exist";
 		} else {

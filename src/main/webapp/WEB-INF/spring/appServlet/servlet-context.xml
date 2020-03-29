@@ -8,13 +8,14 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- DispatcherServlet Context: defines this servlet's request-processing
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
 
-	<!-- Enables the Spring MVC @Controller programming model ex)@Controller, @Service, @Repository..-->
+	<!-- Enables the Spring MVC @Controller programming model ex)@Controller, 
+		@Service, @Repository.. -->
 	<annotation-driven />
 
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources location="/image/" mapping="/image/**" />
@@ -22,12 +23,13 @@
 	<resources location="/css/" mapping="/css/**" />
 	<resources location="/template/" mapping="/template/**" />
 	<resources location="/sign_up/" mapping="/sign_up/**" />
-	<resources location="/blood/" mapping="/blood/**"/>
-	<resources location="/dogiverImage/" mapping="/dogiverImage/**"/>
-	<resources location="/login/" mapping="/login/**"/>
+	<resources location="/blood/" mapping="/blood/**" />
+	<resources location="/dogiverImage/"
+		mapping="/dogiverImage/**" />
+	<resources location="/login/" mapping="/login/**" />
 
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -55,7 +57,12 @@
 		base-package="mail.controller" />
 	<context:component-scan
 		base-package="order.controller" />
-	<context:component-scan base-package="blood.controller"/>
-	<context:component-scan base-package="admin.controller"/>
+	<context:component-scan
+		base-package="blood.controller" />
+	<context:component-scan
+		base-package="admin.controller" />
+
+	<context:component-scan
+		base-package="auth" />
 
 </beans:beans>

@@ -4,6 +4,9 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+     <link rel="favicon" href="../image/favicon.ico" />
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="google-signin-client_id"
@@ -25,6 +28,10 @@
   </head>
   <body>
     <section class="login">
+       <!-- 로고 -->
+        <a href="../main/index">
+        	<img src="../image/dogiver-logo.png" alt="로고이미지" />
+        </a>
       <h2>로그인</h2>
       <div class="loginMessage" style="display:none;"></div>
       <ul>
@@ -54,7 +61,7 @@
       </ul>
       <div class="bottomDiv">
         <ul>
-          <li><a href="">회원가입</a></li>
+          <li><a href="../sign_up/step1">회원가입</a></li>
           <li><a href="">아이디/비밀번호입력 찾기</a></li>
         </ul>
       </div>
