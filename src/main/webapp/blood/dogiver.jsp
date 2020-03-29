@@ -34,6 +34,32 @@
 		</div>
 	</div>
 	<div id="footerDiv"></div>
+	
+	<!-- 상세페이지 modal -->
+	<div id="dogiverView">
+		<div id="image">
+			<img src="">
+		</div>
+		<div id="name" class="dogiverViewDiv">
+		<label>이름</label><br>
+		</div>
+		<div id="age" class="dogiverViewDiv">
+		<label>나이</label><br>
+		</div>
+		<div id="weight" class="dogiverViewDiv">
+		<label>몸무게</label><br>
+		</div>
+		<div id="breed" class="dogiverViewDiv">
+		<label>견종</label><br>a
+		</div>
+		<div id="bloodType" class="dogiverViewDiv">
+		<label>혈액형</label><br>a
+		</div>
+		<div id="donationDate" class="dogiverViewDiv">
+		<label>최종 헌혈날짜</label><br>a
+		</div>
+		<div id="description"></div>
+	</div>
 </body>
 
 </html>

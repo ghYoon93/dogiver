@@ -33,7 +33,7 @@ body{
   cursor: pointer;
 }
 
-img{
+.dognorImg img{
   border-radius: 40px;
   width: 100%;
   height: 100%;
@@ -45,8 +45,50 @@ img{
 	transform: scale(1.2);
 }
 
-
 .dognorContent{
   margin-top: 0px;
   font-size: 15pt;
+}
+
+/* 상세페이지 모달 */
+#dogiverView{
+	position: fixed;
+	width: 600px;
+	height: 400px;
+	left: 50%;
+	margin-left: -300px;
+	top: 50%;
+	margin-top: -200px;
+	overflow: auto;
+	border: 1px solid red;
+	box-sizing: border-box;
+	background-color: #fff;
+	z-index: 10000;
+	display: none;
+}
+
+#dogiverView label{
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+#dogiverView #image img{
+	width: 300px;
+	height: 400px;
+}
+#dogiverView #image{
+	width: 300px;
+	height: 400px;
+	float: left;
+}
+.dogiverViewDiv{
+	width: 150px;
+	height: 100px;
+	float: left;
+	background-color: green;
+}
+#description{
+	width: 300px;
+	height: 100px;
+	float: left;
 }
