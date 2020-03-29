@@ -18,6 +18,10 @@ public class OrderDAOMyBatis implements OrderDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	@Override
+	public void insertCart(Map<String, String> map) {
+		sqlSession.insert("orderSQL.insertCart", map);
+	}
+	@Override
 	public List<CartDTO> getCart(String memEmail) {
 		List<CartDTO> list = sqlSession.selectList("orderSQL.getCart", memEmail);
 		return list;
@@ -26,10 +30,17 @@ public class OrderDAOMyBatis implements OrderDAO {
 	public void updateCart(Map<String, String> map) {
 		sqlSession.update("orderSQL.updateCart", map);
 		
-	}
+	} 
 	@Override
 	public void deleteCart(Map<String, String[]> map) {
 		sqlSession.delete("orderSQL.deleteCart", map);
+		
+	}
+	@Override
+	public CartDTO searchCart(Map<String, String> map) {
+		CartDTO cartDTO = sqlSession.selectOne("orderSQL.searchCart", map);
+		System.out.println(cartDTO);
+		return cartDTO;
 		
 	}
 

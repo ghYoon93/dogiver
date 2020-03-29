@@ -48,6 +48,12 @@
 		class="org.springframework.web.servlet.view.BeanNameViewResolver">
 		<beans:property name="order" value="0" />
 	</beans:bean>
+	
+	<context:component-scan base-package="main.controller"/>
+	<context:component-scan base-package="member.controller"/>
+	<context:component-scan base-package="goods.controller"/>
+	
+	
 
 	<context:component-scan
 		base-package="main.controller" />

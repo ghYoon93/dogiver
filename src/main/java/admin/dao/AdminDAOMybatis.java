@@ -19,5 +19,5 @@ public class AdminDAOMybatis implements AdminDAO {
 		return null;
 	}
 
-
+	
 }

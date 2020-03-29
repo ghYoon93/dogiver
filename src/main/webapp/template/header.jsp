@@ -63,14 +63,13 @@
             <li>
               <a href="#">커뮤니티</a>
               <ul>
-                <li><a href="#">자유게시판</a></li>
               </ul>
             </li>
 
             <li>
               <a href="#">GOODS</a>
               <ul>
-                <li><a href="#">GOODS</a></li>
+                <li><a href="../goods/goodsList">GOODS</a></li>
                 <li><a href="../order/cart">장바구니</a></li>
                 <li><a href="#">주문조회</a></li>
               </ul>

@@ -105,7 +105,8 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "/login/login", method = RequestMethod.GET)
-	public String loginform(Model model) {
+	public String loginform(Model model, HttpSession session) {
+		
 		model.addAttribute("login");
 		return "login";
 	}
