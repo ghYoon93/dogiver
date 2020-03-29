@@ -12,26 +12,19 @@ $(document).ready(function() {
 					src: '../dogiverImage/'+items.dog_image
 				}))).append($('<div/>',{
 					class: 'dognorContent',
-					text: items.dog_name+"("+items.dog_age+"살)"
-				}).append($('<br>')
-							).append(items.dog_weight+'kg').append($('<br>')
-									).append(items.dog_breed)
-				).appendTo($('.dognorlist'))
+					text: items.dog_name
+				})).appendTo($('.dognorlist'))
 			});//each
 			
 		}
+	});//ajax
+	
+	/*$(document).on('mouseover', 'dd', function(){
+		$(this).css('border', '3px solid').css('border-color','gold');
 	});
-	$(document).on('mouseover', 'img', function(){
-		$(this).css('width', '280px').css('height','300px').css('margin-left','-20%');
-	});
-	$(document).on('mouseout', 'img', function(){
-		$(this).css('width', '200px').css('height','200px').css('margin-left','0');
-	});
-	/*$('img').mouseover(function(){
-		$(this).css('width', '280px').css('height','300px').css('margin-left','-20%');
-		//$(this).parent().next().hide();
-	}).mouseout(function(){
-		$(this).css('width', '200px').css('height','200px').css('margin-left','0');
-		//$('.dognorContent').show();
+	$(document).on('mouseout', 'dd', function(){
+		$(this).css('border', '0px').css('border-color','white');
 	});*/
+	
+	
 });

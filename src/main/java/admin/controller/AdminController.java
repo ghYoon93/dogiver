@@ -66,7 +66,8 @@ public class AdminController {
 	@RequestMapping(value = "adminDogiverModify", method = RequestMethod.POST)
 	@ResponseBody
 	public String adminDogiverModify(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_image) {
-		String filePath = servletContext.getRealPath("dogiverImage");
+//		String filePath = servletContext.getRealPath("dogiverImage");
+		String filePath = "/dogiver/src/main/webapp/dogiverImage";
 		String fileName = dog_image.getOriginalFilename();
 		File file = new File(filePath, fileName);
 		
