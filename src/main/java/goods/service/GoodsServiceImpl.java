@@ -47,7 +47,11 @@ public class GoodsServiceImpl implements GoodsService {
 	public List<QnaDTO> getGoodsQnaList(String goods_id) {
 		return goodsDAO.getGoodsQnaList(Integer.parseInt(goods_id));
 	}
-	
-	
+
+	@Override
+	public void reviewWrite(QnaDTO qnaDTO) {
+		goodsDAO.reviewWrite(qnaDTO);
+	}
+
 
 }

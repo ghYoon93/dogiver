@@ -16,4 +16,5 @@ public class QnaDTO {
 	private String reply;
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd")
 	private Date qna_date;
+	private String image;
 }

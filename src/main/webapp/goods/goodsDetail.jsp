@@ -56,7 +56,7 @@
 			
 			<div class="btn_form">
 				<button id="btn-cart">장바구니</button>
-				<button id="btn-order">구매하기</button>`
+				<button id="btn-order">구매하기</button>
 			</div>
 			
 		</div> -->
@@ -67,6 +67,7 @@
 			<ul> 
 				<li>상세내용</li> 
 				<li>상품문의</li> 
+				<li>상품후기</li> 
 				<li>교환/환불/배송</li> 
 			</ul> 
 		</nav>
@@ -81,6 +82,6 @@
 </body>
 <script src="../js/jquery-3.4.1.min.js"></script>
 <script src="../js/main.js"></script>
-<script src="../js/goods.js"></script>
+<script src="../js/goodsDetail.js"></script>
 <script src="../js/goods_qna.js"></script>
 </html>

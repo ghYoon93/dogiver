@@ -9,7 +9,11 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
 <h3 style="text-align: left;">상품후기</h3>
-<button id="review_btn" style="text-align:right; float:right; margin:0 100px;" onclick="reviewWrite()">상품후기 작성</button><br>
+
+<button id="review_btn" style="text-align:right; float:right; margin:0 100px;" onclick="reviewWriteWin('${goods_id }')">상품후기 작성</button><br>
+
+<input type="hidden" name="goods_id" id="goods_id" value="${goods_id }">
+
 
 <table cellpadding="5" frame="hsides" rules="rows" valign="top" margin="0">
     <tr>
@@ -26,5 +30,5 @@ pageEncoding="UTF-8"%>
 </table>
 </body>
 <script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../js/goods.js"></script>
+<script src="../js/goodsDetail.js"></script>
 </html>

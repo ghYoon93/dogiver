@@ -20,4 +20,7 @@ public interface GoodsService {
 
 	public List<QnaDTO> getGoodsQnaList(String goods_id);
 
+	public void reviewWrite(QnaDTO qnaDTO);
+
+
 }
