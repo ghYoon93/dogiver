@@ -29,9 +29,28 @@ $('#reviewWriteBtn').click(function(){
 				alert('리뷰 등록 완료!');
 				window.close();
 			}
-			
 		});
-		
 	}
-	
+});
+$(document).ready(function(){
+	$.ajax({	
+		type: 'post',
+		url: '/dogiver/goods/getGoodsReviewList',
+		data: 'goods_id='+$('#goods_id').val(),
+		dataType: 'json',
+		success: function(data){
+			alert(JSON.stringify(data));
+			
+			var tag="";
+			$.each(data.list, function(index, items){
+				tag += '<tr>'
+			        	+ '<th width="65%">'+ items.text_content+'</th>'
+			        	+ '<th width="10%" style="text-align:center;">닉네임</th>'
+			        	+ '<th width="25%" style="text-align:center;">'+ items.board_date+'</th>'
+			         + '</tr>';
+			});//each
+			
+			$('.reviewList').html(tag);
+		}
+	});
 });

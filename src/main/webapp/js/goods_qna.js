@@ -14,10 +14,10 @@ $('#qnaWrite_btn').click(function(){
 });
 
  //상품QNA 리스트 
-//$(document).ready(function(){
-$(document).on('click', 'nav ul li', function(){
-	if($(this).index()=='1'){
-		var tag="";
+$(document).ready(function(){
+//$(document).on('click', 'nav ul li', function(){
+//	if($(this).index()=='1'){
+		
 		$.ajax({
 			type:'post',
 			url: '/dogiver/goods/getGoodsQnaList',
@@ -26,11 +26,12 @@ $(document).on('click', 'nav ul li', function(){
 			success: function(data){
 				//alert(JSON.stringify(data));
 				alert();
+				var tag="";
 				$.each(data.list, function(index, items){
 					tag += '<tr>'
 						+ '<td width="65%">'+ items.text_content +'</td>'
 						+ '<td width="10%" style="text-align:center;">닉네임</td>'
-						+ '<td width="25%" style="text-align:center;">'+ items.qna_date +'</td>'
+						+ '<td width="25%" style="text-align:center;">'+ items.board_date +'</td>'
 						+ '</tr>';
 					
 				});//each
@@ -38,6 +39,6 @@ $(document).on('click', 'nav ul li', function(){
 				$('.qnaList').html(tag);
 			}
 		});
-	}
+//	}
 });
 

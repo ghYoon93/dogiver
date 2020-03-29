@@ -78,7 +78,6 @@ public class GoodsBoardController {
 	public void reviewWrite(@ModelAttribute QnaDTO qnaDTO, @RequestParam("img[]") List<MultipartFile> list) {
 	//public void reviewWrite(@RequestParam Map<String, Integer> map, @RequestParam("img[]") List<MultipartFile> list) {
 		
-		System.out.println(list);
 		System.out.println(qnaDTO);
 		String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
 
@@ -99,6 +98,17 @@ public class GoodsBoardController {
 			goodsService.reviewWrite(qnaDTO);
 		}//for
 	
+	}
+	
+	
+	@RequestMapping(value="getGoodsReviewList", method=RequestMethod.POST)
+	@ResponseBody
+	public ModelAndView getGoodsReviewList(@RequestParam String goods_id){
+		List<QnaDTO> list = goodsService.getGoodsReviewList(goods_id);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.setViewName("jsonView");
+		return mav;
 	}
 	
 }

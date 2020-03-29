@@ -153,7 +153,6 @@ function numberFormat(inputNumber) {
 
 //상품후기 창 띄우기
 function reviewWriteWin(goods_id){
-	alert(goods_id);
 	window.open('/dogiver/goods/reviewWriteWin?goods_id='+goods_id, '', 'width=700 height=400 scrollbars=yes');
 }
 

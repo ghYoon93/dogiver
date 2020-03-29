@@ -22,5 +22,7 @@ public interface GoodsDAO {
 
 	public void reviewWrite(QnaDTO qnaDTO);
 
+	public List<QnaDTO> getGoodsReviewList(int goods_id);
+
 
 }

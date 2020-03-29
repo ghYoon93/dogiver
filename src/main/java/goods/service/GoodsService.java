@@ -22,5 +22,7 @@ public interface GoodsService {
 
 	public void reviewWrite(QnaDTO qnaDTO);
 
+	public List<QnaDTO> getGoodsReviewList(String goods_id);
+
 
 }

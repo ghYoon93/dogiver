@@ -53,5 +53,10 @@ public class GoodsServiceImpl implements GoodsService {
 		goodsDAO.reviewWrite(qnaDTO);
 	}
 
+	@Override
+	public List<QnaDTO> getGoodsReviewList(String goods_id) {
+		return goodsDAO.getGoodsReviewList(Integer.parseInt(goods_id));
+	}
+
 
 }
