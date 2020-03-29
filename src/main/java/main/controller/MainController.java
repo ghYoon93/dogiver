@@ -9,6 +9,7 @@ public class MainController {
 
 	@RequestMapping(value = "index")
 	public String index() {
+		System.out.println("index");
 		return "index";
 	}
 }
