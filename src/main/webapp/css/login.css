@@ -2,7 +2,7 @@
   width: 410px;
   position: absolute;
   left: 50%;
-  top: 30%;
+  top: 25%;
   transform: translate(-50%, -50%);
 }
 .login a:after {
@@ -40,10 +40,10 @@
   border: 3px solid #f2f2f2;
   border-radius: 5px;
   font-size: 15px;
-  appearance:none;
-   -moz-appearance: none;
-   -webkit-appearance: none;
-   outline-style: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline-style: none;
 }
 
 .login > ul li input::-webkit-input-placeholder {
@@ -99,41 +99,41 @@ input[type="checkbox"]:checked + label:before {
   width: 100%;
   height: 56px;
   cursor: pointer;
-  border-radius:10px;
-    appearance:none;
-   -moz-appearance: none;
-   -webkit-appearance: none;
-   outline-style: none;
+  border-radius: 10px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline-style: none;
 }
 #my-signin2 {
   background: url(../image/login_google.png) no-repeat;
   width: 100%;
   height: 56px;
   cursor: pointer;
-    appearance:none;
-   -moz-appearance: none;
-   -webkit-appearance: none;
-   outline-style: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline-style: none;
 }
 #naverIdLogin {
   background: url(../image/login_naver.png) no-repeat;
   width: 100%;
   height: 56px;
   cursor: pointer;
-    appearance:none;
-   -moz-appearance: none;
-   -webkit-appearance: none;
-   outline-style: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline-style: none;
 }
 #kakao-login {
   background: url(../image/login_kakao.png) no-repeat;
   width: 100%;
   height: 56px;
   cursor: pointer;
-    appearance:none;
-   -moz-appearance: none;
-   -webkit-appearance: none;
-   outline-style: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline-style: none;
 }
 #logins li {
   width: 410px;
@@ -148,24 +148,23 @@ input[type="checkbox"]:checked + label:before {
   color: #ec4d4d;
 }
 #logins button:hover {
-	border: 1px solid #c4fbff;
+  border: 1px solid #c4fbff;
   border-radius: 10px;
   opacity: 0.9;
 }
-.ui-widget.ui-widget-content{
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border: 1px solid #f2f2f2;
-
+.ui-widget.ui-widget-content {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #f2f2f2;
 }
-.ui-menu-item-wrapper{
-      text-indent: 16px;
-	font-size: 15px;
-	color:#bdbcc1;
-	margin:5px 0 5px;
+.ui-menu-item-wrapper {
+  text-indent: 16px;
+  font-size: 15px;
+  color: #bdbcc1;
+  margin: 5px 0 5px;
 }
-.loginMessage{
-	text-align: center;
-	font-size: 20px;
-	margin:10px 0 0 0;
+.loginMessage {
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 0 0 0;
 }

@@ -54,9 +54,9 @@
         </li>
         <div id="logins">
           <li><button type="button" id="login_btn"></button></li>
-          <li><div id="my-signin2"></div></li>
+        <!--   <li><div id="my-signin2"></div></li>
           <li><div id="naverIdLogin"></div></li>
-          <li><div id="kakao-login"></div></li>
+          <li><div id="kakao-login"></div></li> -->
         </div>
       </ul>
       <div class="bottomDiv">
