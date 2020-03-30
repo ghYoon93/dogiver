@@ -32,4 +32,9 @@ public class MemberDAOMybatis implements MemberDAO {
 	public MemberDTO getMember(String email) {
 		return sqlSession.selectOne("memberSQL.checkEmail",email);
 	}
+
+	@Override
+	public int modi(MemberDTO memberDTO) {
+		return sqlSession.update("memberSQL.modi",memberDTO);
+	}
 }

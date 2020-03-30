@@ -39,12 +39,12 @@ pageEncoding="UTF-8"%>
     <div class="wrap">
       <div class="slider">
         <div>
-          <img src="../image/puppy-sleeping-in-a-pet-bowl-3198004.jpg" alt="slide1" />
+          <img id="slide-img-1" src="" alt="slide1" />
         </div>
-        <div><img src="../image/slide-image-4.jpg" alt="slide2" /></div>
+        <div><img id="slide-img-2" src="" alt="slide2" /></div>
         <div>
-          <img
-            src="../image/brown-short-coated-dog-on-white-background-3487734.jpg"
+          <img id="slide-img-3"
+            src=""
             alt="slide3"
           />
         </div>

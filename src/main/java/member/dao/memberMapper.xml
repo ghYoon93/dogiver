@@ -20,5 +20,10 @@
 		values
 		(#{email},#{name},#{nickName},#{pwd},#{phone},#{zipcode},#{addr},#{addr_Detail},seq_member.nextval,#{email_Yn})
 	</insert>
-	
+
+	<update id="modi" parameterType="member.bean.MemberDTO">
+		update member set
+		nickname=#{nickName}, pwd=#{pwd}, phone=#{phone},
+		zipcode=#{zipcode},addr=#{addr}, addr_detail=#{addr_Detail} where email = #{email}
+	</update>
 </mapper>

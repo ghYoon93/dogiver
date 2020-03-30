@@ -51,9 +51,11 @@
 	margin: 3px 30px 0;
 	vertical-align: middle;
 }
-.top-header div span{
+
+.top-header div span {
 	font-size: 15px;
 }
+
 .top-header div a {
 	text-decoration: none;
 	font-family: "Noto Sans KR", sans-serif;
@@ -69,6 +71,14 @@
 }
 
 #my-page a img {
+	margin-left: 10px;
+	vertical-align: middle;
+	width: 25px;
+	height: 25px;
+}
+#admin-page{
+}
+#admin-page a img {
 	margin-left: 10px;
 	vertical-align: middle;
 	width: 25px;
@@ -108,7 +118,8 @@ header .header {
 }
 
 .header a {
-	margin-right: 240px;
+	margin-right: 220px;
+	margin-left: 20px;
 }
 
 .header a img {
@@ -131,7 +142,8 @@ header .header {
 	height: 40px;
 	margin: 40px 15px 0 10px;
 }
-.header-menu li:last-child{
+
+.header-menu li:last-child {
 	margin-right: 0;
 }
 /* link */
@@ -273,9 +285,45 @@ header .header {
 
 .slider div img {
 	margin: 0 auto;
-	width: 100%;
-	background-image: no-repeat center center;
-	background-position: bottom;
+}
+
+#slide-img-1 {
+	background: url("../image/puppy-sleeping-in-a-pet-bowl-3198004.jpg")
+		no-repeat center center;
+	max-width: 100%;
+	max-height: 100%;
+	min-width: 1100px;
+	min-height: 1000px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#slide-img-2 {
+	background: url("../image/slide-image-4.jpg") no-repeat center center;
+	max-width: 100%;
+	max-height: 100%;
+	min-width: 1100px;
+	min-height: 1000px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#slide-img-3 {
+	background:
+		url("../image/brown-short-coated-dog-on-white-background-3487734.jpg")
+		no-repeat center center;
+	max-width: 100%;
+	max-height: 100%;
+	min-width: 1100px;
+	min-height: 1000px;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
