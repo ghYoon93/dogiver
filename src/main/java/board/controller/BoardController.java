@@ -63,6 +63,7 @@ public class BoardController {
 	public String boardView(@RequestParam String brd_seq,
 							@RequestParam(required=false, defaultValue="1") String pg,
 							Model model, HttpSession session) {
+		
 		model.addAttribute("brd_seq", brd_seq);
 		model.addAttribute("pg", pg);
 		
@@ -73,6 +74,28 @@ public class BoardController {
 	public ModelAndView getBoardView( @RequestParam String brd_seq, @RequestParam(required=false, defaultValue="1") String pg,
 									HttpSession session) {
 		BoardDTO boardDTO = boardService.getBoard(brd_seq);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("memNickName", session.getAttribute("memNickName"));
+		mav.addObject("boardDTO", boardDTO);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	@RequestMapping(value="getBoardView_before", method=RequestMethod.POST)
+	public ModelAndView getBoardView_before( @RequestParam String brd_seq, 
+											HttpSession session) {
+		BoardDTO boardDTO = boardService.getBoardView_before(brd_seq);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("memNickName", session.getAttribute("memNickName"));
+		mav.addObject("boardDTO", boardDTO);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	@RequestMapping(value="getBoardView_after", method=RequestMethod.POST)
+	public ModelAndView getBoardView_after( @RequestParam String brd_seq, 
+											HttpSession session) {
+		BoardDTO boardDTO = boardService.getBoardView_after(brd_seq);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
@@ -107,7 +130,6 @@ public class BoardController {
 	}
 	
 	
-
 
 
 }

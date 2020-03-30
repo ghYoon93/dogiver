@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="boardSQL">
-	<!-- 글쓰기 -->
-	<insert id="boardWrite" parameterType="board.bean.BoardDTO">
-		insert into board (brd_seq, brd_email, brd_nickname, brd_category, brd_title, brd_content,
-		brd_logtime) values(brd_seq.nextval,#{brd_email},#{brd_nickname}, #{brd_category}, #{brd_title},
-		#{brd_content}, SYSDATE)
-	</insert>
 
-	<select id="getBoardList" parameterType="java.util.Map"
+<mapper namespace="boardSQL">
+
+	<!-- 글쓰기 -->
+	<insert parameterType="board.bean.BoardDTO" id="boardWrite">insert into board
+		(brd_seq, brd_email, brd_nickname, brd_category, brd_title,
+		brd_content,brd_logtime)
+		values(brd_seq.nextval,#{brd_email},#{brd_nickname}, #{brd_category},
+		#{brd_title},#{brd_content}, SYSDATE) </insert>
+
+
+	
+	<select parameterType="java.util.Map" id="getBoardList"
 		resultType="board.bean.BoardDTO">
+
 		<![CDATA[
 		select * from
 		(select rownum rn, tt.* from
@@ -18,50 +23,49 @@
 		]]>
 	</select>
 
-	<select id="getBoardTotalA" resultType="int">
-		select count(*) from
-		board
-	</select>
+	<select id="getBoardTotalA" resultType="int">select count(*) from
+		board </select>
 
-	<select id="getBoard" parameterType="int"
+	<select parameterType="int" id="getBoard"
+		resultType="board.bean.BoardDTO">select * from board where brd_seq=#{brd_seq} </select>
+
+
+	
+	<select parameterType="int" id="getBoardView_before"
 		resultType="board.bean.BoardDTO">
-		select * from board where brd_seq=#{brd_seq}
+
+		<![CDATA[
+		select * from board where brd_seq=(select max(brd_seq) from (select brd_seq from board where brd_seq < #{brd_seq}))
+		]]>
 	</select>
 
-	<update id="boardHit" parameterType="int">
-		UPDATE board SET hit=hit+1
-		WHERE brd_seq=#{brd_seq}
-	</update>
 
-	<select id="getBoardSearchTotalA" parameterType="java.util.Map"
-		resultType="int">
-		select count(*) from board where ${searchOption} like
-		'%'||#{keyword}||'%'
+	
+	<select parameterType="int" id="getBoardView_after"
+		resultType="board.bean.BoardDTO">
+
+		<![CDATA[
+		select * from board where brd_seq=(select min(brd_seq) from (select brd_seq from board where brd_seq > #{brd_seq}))
+		]]>
 	</select>
 
-	<select id="getBoardSearch" parameterType="java.util.Map" resultType="board.bean.BoardDTO">
+	<update parameterType="int" id="boardHit">UPDATE board SET hit=hit+1WHERE
+		brd_seq=#{brd_seq} </update>
+
+	<select parameterType="java.util.Map" id="getBoardSearchTotalA"
+		resultType="int">select count(*) from board where ${searchOption}
+		like'%'||#{keyword}||'%' </select>
+
+	
+	<select parameterType="java.util.Map" id="getBoardSearch"
+		resultType="board.bean.BoardDTO">
+
 		<![CDATA[
 		select * from (select rownum rn, tt.* from (select * from board where ${searchOption} like '%'||#{keyword}||'%' order by brd_seq desc)tt) where rn>=#{startNum} and rn<=#{endNum} 
 		]]>
 	</select>
-	<delete id="boardDelete" parameterType="int">
-		 DELETE FROM board WHERE brd_seq = #{brd_seq}
-	</delete>
+
+	<delete parameterType="int" id="boardDelete">DELETE FROM board WHERE brd_seq =
+		#{brd_seq} </delete>
+
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
