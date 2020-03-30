@@ -24,7 +24,7 @@ public interface GoodsService {
 
 	public List<QnaDTO> getGoodsReviewList(String goods_id);
 
-	public void writeReply(QnaDTO qnaDTO);
+	public void writeReply(Map<String, String> map);
 
 
 }

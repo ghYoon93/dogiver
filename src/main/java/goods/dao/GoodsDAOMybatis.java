@@ -58,8 +58,8 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	}
 
 	@Override
-	public void writeReply(QnaDTO qnaDTO) {
-		sqlSession.insert("goodsSQL.writeReply", qnaDTO);
+	public void writeReply(Map<String, String> map) {
+		sqlSession.insert("goodsSQL.writeReply", map);
 	}
 
 }

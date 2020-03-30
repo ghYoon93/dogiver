@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -116,9 +117,9 @@ public class GoodsBoardController {
 	
 	@RequestMapping(value="writeReply", method=RequestMethod.POST)
 	@ResponseBody
-	public String writeReply(@ModelAttribute QnaDTO qnaDTO, Model model){
-		goodsService.writeReply(qnaDTO);
-		System.out.println(qnaDTO);
+	public String writeReply(@RequestBody Map<String, String> map){
+		goodsService.writeReply(map);
+		System.out.println(map.get("goods_id"));
 		return "/goods/qnaWrite";
 	}
 	

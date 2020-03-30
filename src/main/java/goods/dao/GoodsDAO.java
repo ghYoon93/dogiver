@@ -24,7 +24,7 @@ public interface GoodsDAO {
 
 	public List<QnaDTO> getGoodsReviewList(int goods_id);
 
-	public void writeReply(QnaDTO qnaDTO);
+	public void writeReply(Map<String, String> map);
 
 
 }

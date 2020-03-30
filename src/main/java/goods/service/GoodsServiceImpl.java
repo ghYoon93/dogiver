@@ -59,8 +59,8 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 
 	@Override
-	public void writeReply(QnaDTO qnaDTO) {
-		goodsDAO.writeReply(qnaDTO);
+	public void writeReply(Map<String, String> map) {
+		goodsDAO.writeReply(map);
 	}
 
 

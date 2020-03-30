@@ -55,17 +55,22 @@ $(document).on('click', '.qna_content', function(){
 
 $(document).on('click', '.replyBtn', function(){
 //$('.replyBtn').click(function(){
-	var reply = $('.reply #text_content').val();
-	alert(text);
+	//alert($('#bo_seq').val());
+	alert($(this).parent().parent().prev().find('#bo_seq').val());
+	alert($('.reply #text_content').val());
 	$.ajax({
 		type: 'post',
 		url: '/dogiver/goods/writeReply',
-		data: $('#qnaWrite').serialize(),
-		data: 'goods_id='+goods_id+'&reply='+reply+'&bo_seq'+bo_seq, 
-		dataType: 'json',
-		success: function(data){
-			alert(data);
-			
+		contentType: 'application/json;charset=UTF-8',
+		//data: $('#qnaWrite').serialize(),
+		//data: 'goods_id='+goods_id+'&reply='+reply+'&bo_seq'+bo_seq, 
+		data: JSON.stringify({'goods_id': $('#goods_id').val(),
+								'bo_seq': $('#bo_seq').val(),	 
+								'reply': $('.reply #text_content').val()}),
+		success: function(){
+			alert('댓글 작성 완료하였습니다.');
+			location.reload();
+			//$('#qnaList').load(window.location +'#qnaList');
 		}
 	});
 });
