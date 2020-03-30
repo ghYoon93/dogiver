@@ -14,7 +14,7 @@ $(document).ready(function() {
 			$('#seqSpan').text(data.boardDTO.brd_seq);
 			$('#categorySpan').text(data.boardDTO.brd_category);
 			$('#titleSpan').text(data.boardDTO.brd_title);
-			$('#idSpan').text(data.boardDTO.brd_id);
+			$('#idSpan').text(data.boardDTO.brd_nickname);
 			$('#dateSpan').text(data.boardDTO.brd_logtime);
 			$('#hitSpan').text(data.boardDTO.brd_hit);
 			$('#contentSpan').html(data.boardDTO.brd_content);
