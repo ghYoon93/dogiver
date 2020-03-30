@@ -24,6 +24,8 @@ public class GoodsController {
 	
 	@RequestMapping(value="goodsList", method=RequestMethod.GET)
 	public String goodsList(@RequestParam(required=false, defaultValue="1") String pg, Model model) {
+		System.out.println("goodsList");
+		System.out.println("pg");
 		model.addAttribute("pg", pg);
 		return "/goods/goodsList";
 	}

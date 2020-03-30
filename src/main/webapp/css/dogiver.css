@@ -20,31 +20,98 @@ body{
 
 .dognorframe dl dd{
   margin: 20px 10px;
-  width: 280px;
+  width: 330px;
   height: 350px;
   display: inline-block;
 }
 
 .dognorImg{
-  width: 200px;
-  height: 200px;
-  overflow: visible;
+  width: 330px;
+  height: 330px;
+  overflow: hidden;
   margin: auto;
   cursor: pointer;
-  z-index: 1000000;
-  
 }
 
-img{
+.dognorImg img{
   border-radius: 40px;
-  width: 200px;
-  height: 200px;
-  z-index: 1000000;
-
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+/*이미지확대*/
+.dognorImg:hover img{
+	transform: scale(1.2);
 }
 
 .dognorContent{
   margin-top: 0px;
   font-size: 15pt;
-  z-index: 10;
+}
+
+/* 상세페이지 모달 */
+#dogiverView{
+	position: fixed;
+	width: 940px;
+	height: 602px;
+	left: 50%;
+	margin-left: -470px;
+	top: 50%;
+	margin-top: -300px;
+	overflow: auto;
+	border: 1px solid red;
+	box-sizing: border-box;
+	background-color: #fff;
+	z-index: 1000000000;
+	display: none;
+	padding: 10px;
+}
+
+#modalWrap{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.7;
+	background-color: #FFF;
+	display: none;
+	z-index: 999999999;
+}
+
+#dogiverView label{
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+#dogiverView #image{
+	width: 550px;
+	height: 580px;
+	float: left;
+}
+
+#dogiverView #image img{
+	width: 550px;
+	height: 580px;
+}
+
+.dogiverViewDiv{
+	width: 160px;
+	height: 100px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.dogiverViewDiv div{
+	font-size: 15pt;
+}
+
+#description{
+	width: 300px;
+	height: 100px;
+	margin: 10px;
+	float: left;
+	font-size: 16pt;
 }

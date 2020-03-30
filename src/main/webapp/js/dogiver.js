@@ -7,31 +7,54 @@ $(document).ready(function() {
 		success: function(data){
 			$.each(data.list, function(index, items){
 				$('<dd/>').append($('<div/>',{
-					class: 'dognorImg'
+					class: 'dognorImg',
+					id: items.dog_id+""
 				}).append($('<img/>',{
 					src: '../dogiverImage/'+items.dog_image
 				}))).append($('<div/>',{
 					class: 'dognorContent',
-					text: items.dog_name+"("+items.dog_age+"살)"
-				}).append($('<br>')
-							).append(items.dog_weight+'kg').append($('<br>')
-									).append(items.dog_breed)
-				).appendTo($('.dognorlist'))
-			});//each
+					text: items.dog_name
+				})).appendTo($('.dognorlist'))
+			});// each
 			
-		}
-	});
-	$(document).on('mouseover', 'img', function(){
-		$(this).css('width', '280px').css('height','300px').css('margin-left','-20%');
-	});
-	$(document).on('mouseout', 'img', function(){
-		$(this).css('width', '200px').css('height','200px').css('margin-left','0');
-	});
-	/*$('img').mouseover(function(){
-		$(this).css('width', '280px').css('height','300px').css('margin-left','-20%');
-		//$(this).parent().next().hide();
-	}).mouseout(function(){
-		$(this).css('width', '200px').css('height','200px').css('margin-left','0');
-		//$('.dognorContent').show();
-	});*/
+			
+			// 모달 팝업 활성화
+			$(document).on('click','.dognorImg', function(){
+				$('#dogiverView').show();
+				$('#modalWrap').show();
+				let id = $(this).attr('id');
+				$.each(data.list, function(index, items){
+					if(id==items.dog_id+''){
+						$('#image img').attr('src', '../dogiverImage/'+items.dog_image);
+						$('#name').text(items.dog_name);
+						$('#age').text(items.dog_age+'살');
+						$('#weight').text(items.dog_weight+'kg');
+						$('#breed').text(items.dog_breed);
+						$('#bloodType').text(items.dog_bloodtype);
+						$('#donationDate').text(items.donation_date);
+						$('#description').text(items.description);
+					}
+				});
+			});
+			
+			// 모달 제거
+			$('#modalWrap').click(function() {
+				if (!$(this.target).is('#dogiverView')) {
+					$("#dogiverView").hide();
+					$('#modalWrap').hide();
+				}
+			});
+			
+		}// success
+	});// ajax
+	
+	/*
+	 * $(document).on('mouseover', 'dd', function(){ $(this).css('border', '3px
+	 * solid').css('border-color','gold'); }); $(document).on('mouseout', 'dd',
+	 * function(){ $(this).css('border', '0px').css('border-color','white'); });
+	 */
+	
+	
+	
+	
 });

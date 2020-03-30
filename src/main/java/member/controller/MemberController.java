@@ -10,15 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.sun.org.apache.regexp.internal.recompile;
 
 import member.bean.MemberDTO;
 import member.service.MemberService;
@@ -84,19 +81,16 @@ public class MemberController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/sign_up/chkNickName", method = RequestMethod.POST)
+	@RequestMapping(value = "/sign_up/chkNickName", method = RequestMethod.POST, produces = "application/text; charset=utf8")
 	public @ResponseBody String chkNickName(@RequestParam String nickName) {
-		String exist = memberService.chkNickName(nickName);
-		return exist;
+		return memberService.chkNickName(nickName);
 	}
 
 	@RequestMapping(value = "/sign_up/sign", method = RequestMethod.POST)
 	public @ResponseBody String sign(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
 		String encPwd = bcryptPasswordEncoder.encode(memberDTO.getPwd());
 		memberDTO.setPwd(encPwd);
-
 		memberDTO.setEmail_Yn((String) session.getAttribute("email_Yn"));
-
 		System.out.println(memberDTO);
 		String exist = memberService.sign(memberDTO);
 		return exist;
@@ -110,7 +104,8 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "/login/login", method = RequestMethod.GET)
-	public String loginform(Model model) {
+	public String loginform(Model model, HttpSession session) {
+
 		model.addAttribute("login");
 		return "login";
 	}
@@ -119,20 +114,71 @@ public class MemberController {
 	public @ResponseBody String log(@RequestParam Map<String, String> map, MemberDTO memberDTO, HttpSession session) {
 		String email = map.get("email");
 		memberDTO = memberService.getMember(email);
+		if (memberDTO == null)
+			return "false";
 		System.out.println(memberDTO);
 		boolean chkPwd = bcryptPasswordEncoder.matches(map.get("pwd"), memberDTO.getPwd());
 		System.out.println(chkPwd);
 		if (chkPwd) {
+			session.setAttribute("role", memberDTO.getRole());
 			session.setAttribute("memEmail", email);
 			return "true";
 		} else {
 			return "false";
 		}
 	}
-	
+
 	@RequestMapping(value = "/logout/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "../main/index";
+	}
+
+	@RequestMapping(value = "/my/mypage", method = RequestMethod.GET)
+	public String mypage(Model model) {
+		model.addAttribute("mypage");
+		return "mypage";
+	}
+
+	@RequestMapping(value = "/my/modiPermit", method = RequestMethod.POST)
+	public ModelAndView modiPermit(@RequestParam Map<String, String> map, MemberDTO memberDTO) {
+		ModelAndView mav = new ModelAndView();
+		System.out.println(map.get("email") + "  " + map.get("pwd"));
+
+		String email = map.get("email");
+		memberDTO = memberService.getMember(email);
+		if (memberDTO == null) {
+			mav.addObject("chkPwd", "false");
+			return mav;
+		}
+		System.out.println(memberDTO);
+		boolean chkPwd = bcryptPasswordEncoder.matches(map.get("pwd"), memberDTO.getPwd());
+		System.out.println(chkPwd);
+
+		if (chkPwd) {
+			mav.addObject("memberDTO", memberDTO);
+			mav.addObject("chkPwd", "true");
+			mav.setViewName("jsonView");
+			return mav;
+		} else {
+			mav.addObject("chkPwd", "false");
+			mav.setViewName("jsonView");
+			return mav;
+		}
+	}
+	
+	@RequestMapping(value = "/my/modi", method = RequestMethod.POST)
+	public @ResponseBody String modi(@ModelAttribute MemberDTO memberDTO) {
+		String encPwd = bcryptPasswordEncoder.encode(memberDTO.getPwd());
+		memberDTO.setPwd(encPwd);
+		System.out.println(memberDTO);
+		String exist = memberService.modi(memberDTO);
+		return exist;
+	}
+	
+	@RequestMapping(value = "/admin/admin", method = RequestMethod.GET)
+	public String admin(Model model) {
+		model.addAttribute("admin");
+		return "admin";
 	}
 }

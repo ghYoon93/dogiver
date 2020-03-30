@@ -12,4 +12,6 @@ public interface MemberService {
 
 	public MemberDTO getMember(String email);
 
+	public String modi(MemberDTO memberDTO);
+
 }

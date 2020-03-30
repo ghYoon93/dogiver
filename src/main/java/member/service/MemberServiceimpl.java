@@ -23,11 +23,12 @@ public class MemberServiceimpl implements MemberService {
 
 	@Override
 	public String chkNickName(String nickName) {
-		MemberDTO memberDTO = memberDAO.checkEmail(nickName);
+		MemberDTO memberDTO = memberDAO.chkNickName(nickName);
+		System.out.println("chk nick = "+ memberDTO);
 		if (memberDTO == null) {
 			return "non_exist";
 		} else {
-			return "exist";
+			return memberDTO.getNickName()+"";
 		}
 	}
 
@@ -44,5 +45,15 @@ public class MemberServiceimpl implements MemberService {
 	@Override
 	public MemberDTO getMember(String email) {
 		return memberDAO.getMember(email);
+	}
+
+	@Override
+	public String modi(MemberDTO memberDTO) {
+		int su = memberDAO.modi(memberDTO);
+
+		if (su == 1)
+			return "complete";
+		else
+			return "fail";
 	}
 }
