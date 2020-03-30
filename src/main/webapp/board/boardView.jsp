@@ -71,15 +71,22 @@
 				<div id="board_content_reply">여기는 댓글 공간입니다</div>
 				
 				<div id="board_button">
-					<input type="button" id="beforeBtn" value="이전"> 
-					<input type="button" id="afterBtn" value="다음" onclick='mode(2)'> 
-					<input type="button" id="listBtn" value="목록" >
+					<input type="button" id="beforeBtn" value="이전"
+						style="width: 150px; height: 30px; margin-right: 20px;"> 
+					<input type="button" id="afterBtn" value="다음" onclick='mode(2)'
+						style="width: 150px; height: 30px; margin-right: 20px;"> 
+					<input type="button" id="listBtn" value="목록" 
+						style="width: 150px; height: 30px; margin-right: 20px;">
+					<input type="button" id="writeBtn" value="글작성" 
+						style="width: 150px; height: 30px; margin-right: 20px;">
 				</div>
 
-				<div id="board_member_addBtn">
-					<input type="button" value="수정" onclick='mode(4)'> 
-					<input type="button" id="deletBtn" value="삭제" >
-					<input type="button" id="writeBtn" value="글작성">
+				<div id="board_member_addBtn"
+					style="text-align: center; margin-top: 10px;">
+					<input type="button" value="수정" onclick='mode(4)'
+						style="width: 150px; height: 30px; margin-right: 20px;"> <input
+						type="button" id="deletBtn" value="삭제" 
+						style="width: 150px; height: 30px; margin-right: 20px;">
 				</div>
 			</div>
 		</form>

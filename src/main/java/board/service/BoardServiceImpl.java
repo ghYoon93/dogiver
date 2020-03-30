@@ -24,8 +24,6 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void boardWrite(BoardDTO boardDTO) {
-		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
-		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
 		boardDAO.boardWrite(boardDTO);
 	}
 	@Override
