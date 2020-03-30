@@ -75,9 +75,9 @@ public class BoardController {
 		BoardDTO boardDTO = boardService.getBoard(brd_seq);
 		System.out.println(brd_seq+"입니다");
 		ModelAndView mav = new ModelAndView();
-		//mav.addObject("memId", session.getAttribute("memId"));
+		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("memNickName", session.getAttribute("memNickName"));
 		mav.addObject("boardDTO", boardDTO);
-		System.out.println(boardDTO+"입니다");
 		mav.setViewName("jsonView");
 		return mav;
 	}
