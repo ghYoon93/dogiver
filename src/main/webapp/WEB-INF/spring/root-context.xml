@@ -25,6 +25,8 @@
 	<context:component-scan
 		base-package="contact.dao" />
 	<context:component-scan
+		base-package="contact.bean" />
+	<context:component-scan
 		base-package="board.service" />
 	<context:component-scan
 		base-package="board.dao" />

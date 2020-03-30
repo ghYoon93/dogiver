@@ -53,7 +53,16 @@ public class BoardDAOMybatis implements BoardDAO {
 		sqlSession.delete("boardSQL.boardDelete", brd_seq);
 	}
 
-	
+	@Override
+	public BoardDTO getBoardView_before(String brd_seq) {
+		return sqlSession.selectOne("boardSQL.getBoardView_before", Integer.parseInt(brd_seq));
+	}
+
+	@Override
+	public BoardDTO getBoardView_after(String brd_seq) {
+		return sqlSession.selectOne("boardSQL.getBoardView_after", Integer.parseInt(brd_seq));
+	}
+
 	
 }
 

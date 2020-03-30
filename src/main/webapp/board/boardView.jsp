@@ -21,7 +21,7 @@
 			<input type="hidden" name="brd_seq" id="brd_seq" value="${brd_seq }">
 			<input type="hidden" name="pg" id="pg" value="${pg }"> 
 
-			<div id="board_wrap" style="margin-top: 100px;">
+			<div id="board_wrap" style="margin-top: 100px; "><!-- board_title_text -->
 				<div id="board_info_box">
 
 					<div id="board_seq">글번호</div>
@@ -65,14 +65,18 @@
 
 				<div id="board_content">
 					<span id="contentSpan"> </span>
+					
 				</div>
-
-
-				<div id="board_content_reply">여기는 댓글 공간입니다</div>
+					<div id="board_reply">
+						<%@ include file="../board/boardReplyForm.jsp" %>
+					</div>
 				
+				
+				
+			</div>
 				<div id="board_button">
-					<input type="button" id="beforeBtn" value="이전"> 
-					<input type="button" id="afterBtn" value="다음" onclick='mode(2)'> 
+				    <input type="button" id="beforeBtn" value="이전"> 
+					<input type="button" id="afterBtn" value="다음" onclick='mode(2)'>  
 					<input type="button" id="listBtn" value="목록" >
 				</div>
 
@@ -81,7 +85,6 @@
 					<input type="button" id="deletBtn" value="삭제" >
 					<input type="button" id="writeBtn" value="글작성">
 				</div>
-			</div>
 		</form>
 	</div>
 </div>
