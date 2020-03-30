@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -26,7 +28,7 @@
     <script src="../js/main.js"></script>
   </head>
   <body>
-    <!-- <div id="headerDiv"></div> -->
+    <div id="headerDiv"></div>
     <div class="page-title">
       <h2>admin</h2>
       <p>관리자 페이지 입니다.</p>
