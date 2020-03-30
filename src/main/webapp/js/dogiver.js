@@ -21,6 +21,7 @@ $(document).ready(function() {
 			// 모달 팝업 활성화
 			$(document).on('click','.dognorImg', function(){
 				$('#dogiverView').show();
+				$('#modalWrap').show();
 				let id = $(this).attr('id');
 				$.each(data.list, function(index, items){
 					if(id==items.dog_id+''){
@@ -37,9 +38,10 @@ $(document).ready(function() {
 			});
 			
 			// 모달 제거
-			$('body').click(function() {
+			$('#modalWrap').click(function() {
 				if (!$(this.target).is('#dogiverView')) {
 					$("#dogiverView").hide();
+					$('#modalWrap').hide();
 				}
 			});
 			
