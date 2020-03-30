@@ -19,5 +19,13 @@ public class BoardDTO {
 	private String brd_reContent;
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd")
 	private Date brd_logtime;
+	
+	private int bd_seq;
+	private int re_seq;
+	private String re_writer;
+	private String re_content;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd")
+	private Date re_logtime;
+	
 
 }

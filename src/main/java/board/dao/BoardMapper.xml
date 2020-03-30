@@ -11,8 +11,8 @@
 		#{brd_title},#{brd_content}, SYSDATE) 
 		</insert>
 	
-	<insert id="reply_write" parameterType="board.bean.BoardDTO">
-		insert into board (brd_seq, brd_email, brd_nickname, brd_reContent,brd_pseq, brd_logtime) values(brd_seq.nextval,#{brd_email},#{brd_nickname},#{brd_reContent}, {brd_seq},SYSDATE) 
+	<insert id="re_write" parameterType="board.bean.BoardDTO">
+		insert into brd_reply (bd_seq, re_seq, re_writer, re_content,re_logtime) values(#{brd_seq} ,re_seq.nextval,#{brd_nickname},#{re_content},SYSDATE) 
 	</insert>
 
 	
@@ -35,8 +35,12 @@
 		resultType="board.bean.BoardDTO">
 		select * from board where brd_seq=#{brd_seq} 
 	</select>
-
-
+	
+	<select parameterType="int" id="getReBoard"
+		resultType="board.bean.BoardDTO">
+		select * from brd_reply where bd_seq=#{brd_seq} 
+	</select>
+	
 	
 	<select parameterType="int" id="getBoardView_before"
 		resultType="board.bean.BoardDTO">

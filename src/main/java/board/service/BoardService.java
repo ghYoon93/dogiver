@@ -28,6 +28,11 @@ public interface BoardService {
 
 	public void reply_write(BoardDTO boardDTO);
 
+	public List<BoardDTO> getReply(int bd_seq);
+
+	public void re_write(BoardDTO boardDTO);
+
+	public List<BoardDTO> getReBoard(String brd_seq);
 
 
 }

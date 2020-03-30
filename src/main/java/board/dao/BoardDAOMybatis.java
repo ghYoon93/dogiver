@@ -37,6 +37,11 @@ public class BoardDAOMybatis implements BoardDAO {
 	public BoardDTO getBoard(String brd_seq) {
 		return sqlSession.selectOne("boardSQL.getBoard", Integer.parseInt(brd_seq));
 	}
+	
+	@Override
+	public List<BoardDTO> getReBoard(String brd_seq) {
+		return sqlSession.selectList("boardSQL.getReBoard", Integer.parseInt(brd_seq));
+	}
 
 	@Override
 	public int getBoardSearchTotalA(Map<String, String> map) {
@@ -67,6 +72,20 @@ public class BoardDAOMybatis implements BoardDAO {
 	public void reply_write(BoardDTO boardDTO) {
 		sqlSession.insert("boardSQL.reply_write", boardDTO);
 	}
+
+	@Override
+	public List<BoardDTO> getReply(int bd_seq) {
+		return sqlSession.selectList("boardSQL.getReply", bd_seq);
+	}
+
+	@Override
+	public void re_write(BoardDTO boardDTO) {
+		sqlSession.insert("boardSQL.re_write", boardDTO);
+	}
+
+	
+
+	
 
 	
 }

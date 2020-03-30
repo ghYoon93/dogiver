@@ -31,6 +31,27 @@ $(document).ready(function() {
 	});
 });
 
+//댓글 작성 
+$('#boardFormBtn').click(function() {
+	$('#contentDiv').empty();
+	if ($('#re_content').val() == '') {
+		$('#contentDiv').text('내용을 입력하세요');
+		$('#contentDiv').css('color', 'red');
+		$('#contentDiv').css('font-size', '8pt');
+		$('#contentDiv').css('font-weight', 'bold')
+	} else
+		$.ajax({
+			type : 'post',
+			url : '/dogiver/board/re_write',
+			data : {'brd_seq': $('#brd_seq').val(), 're_content': $('#re_content').val()}, 
+			dataType : 'json',
+			success : function(data) {
+				alert(JSON.stringify(data));
+			}
+		});
+		
+	});
+
 
 
 $('#writeBtn').click(function(){
@@ -89,6 +110,8 @@ $('#afterBtn').click(function() {
       });
 	
 });
+
+
 
 
 //글쓰기 버튼 삭제 버튼 
