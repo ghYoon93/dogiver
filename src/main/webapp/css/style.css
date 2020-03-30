@@ -76,6 +76,14 @@
 	width: 25px;
 	height: 25px;
 }
+#admin-page{
+}
+#admin-page a img {
+	margin-left: 10px;
+	vertical-align: middle;
+	width: 25px;
+	height: 25px;
+}
 
 /* �뿤�뜑 */
 header {

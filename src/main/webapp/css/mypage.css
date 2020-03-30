@@ -58,3 +58,25 @@
 .article table {
   border: 1px solid;
 }
+#modi-form h3 + p {
+  font-size: 15px;
+  margin: 10px;
+  color: #a8a7a7;
+}
+#after{
+	display: none;
+}
+#modi-btn{
+	display: none;
+}
+#email{
+	color: #969696;
+}
+#name{
+	color: #969696;
+}
+#modi-form label sapn{
+	display:none;
+	color: #969696;
+	font-size: 15px;
+}
