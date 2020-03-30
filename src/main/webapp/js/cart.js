@@ -9,7 +9,11 @@ $(document).ready(function() {
 							success : function(data) {
 								let tbody = $('#form-cart tbody');
 								let tag;
-								$.each(data.list,function(index, items) {
+								let trCount = 0;
+								$
+										.each(
+												data.list,
+												function(index, items) {
 													tag += '<tr>'
 															/*+ '<input type=hidden class="goods_id" value="'+ items.goods_id+ '">'*/
 															+ '<td class="td_check">'
@@ -46,12 +50,13 @@ $(document).ready(function() {
 															+ '<td><strong>'+ items.goods_price+ '원</strong></td>'
 															+ '<td><strong>'+ items.total_price+ '원</strong></td>'
 															+ '</tr>'
+												trCount++;
 												}); // each
 									tbody.append(tag);
-								let count = Object.keys(data).length;
+									console.log(trCount);
 								$('#form-cart tr').eq(1).append(
-										'<td rowspan="' + count
-												+ '">qwe</td>');
+										'<td rowspan="' + trCount
+												+ '" >배송비<br>2,500원</td>');
 								checkAll();
 								} // success
 						}); // ajax
@@ -152,8 +157,7 @@ $(document).on('click', '.btn_option_view', function() {
 	box.append(cont);
 	$('#option-view').show();
 	$('body').css('overflow', 'hidden');
-	$(document).on('click', '.close', closeModal);
-	$(document).on('click', '.cancel', closeModal);
+	$(document).on('click', '.close, cancel', closeModal);
 	$(document).on('click', '#plus', function(){
 		$('#quantity').val(++cnt);
 		console.log($('#quantity').val());
@@ -192,13 +196,16 @@ function gd_cart_process(command){
 		return false;
 	}
 	if(command == 'cartDelete'){
-		alert('deleteC');
 		form.attr('action','deleteCart');
 		form.submit();
 		
 	}else if(command == 'orderSelect'){
-		form.attr('action','order');
-		form.submit();
+		let orderGoods = confirm('선택하신 '+count+'개의 상품을 주문하시겠습니까?');
+		if(orderGoods){
+			form.attr('action','order');
+			form.submit();
+		}
+		
 	}
 }
 

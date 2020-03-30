@@ -187,7 +187,7 @@ $(document).on('click', '.btn_basket_cart', function(){
 		console.log('id:'+id);
 		console.log('amt:'+amt);
 		$.ajax({
-			type: 'post',
+			type: 'get',
 			url: '/dogiver/order/addCart',
 			data: 'goods_id='+goods_id+'&cart_cnt='+amt,
 			dataType: 'text',
@@ -200,7 +200,7 @@ $(document).on('click', '.btn_basket_cart', function(){
 			    if(result){
 			    	location.href='../order/cart';
 			    }
-			    closeModal;
+			    closeModal();
 			}
 		}); // ajax
 	});//장바구니 추가
