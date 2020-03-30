@@ -46,11 +46,15 @@
 	<!-- 상품리뷰 -->
  	<insert id="reviewWrite" parameterType="goods.bean.QnaDTO">
 		insert into goods_board(email, goods_id, category_code, title, text_content, image, board_date)
-		values('dogiver503@gmail.com', #{goods_id}, 'REVIEW', 'test', #{text_content}, #{image}, SYSDATE) 
+		values(#{email}, #{goods_id}, 'REVIEW', 'test', #{text_content}, #{image}, SYSDATE) 
 	</insert> 
 	
 	<select id="getGoodsReviewList" parameterType="int" resultType="goods.bean.QnaDTO">
-		select * from goods_board where goods_id=#{goods_id} AND category_code='REVIEW' order by board_date desc
+		select * 
+		from goods_board join member
+		on member.email = goods_board.email
+		where goods_board.goods_id='3010001'
+		AND category_code='REVIEW' order by board_date desc
 	</select>
 	
 </mapper>

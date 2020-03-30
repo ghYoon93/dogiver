@@ -17,4 +17,5 @@ public class QnaDTO {
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd")
 	private Date board_date;
 	private String image;
+	private String nickname;
 }

@@ -10,6 +10,7 @@
 	<br><div class="reviewTextDiv"></div><br>
 	<input type="file" name="img[]" id="imageList" size="50" multiple>
 	<input type="hidden" name="goods_id" id="goods_id" value="${goods_id }">
+	<input type="hidden" name="memEmail" id="memEmail" value="${memEmail }">
 	
 
 	<button class="cancle" onclick="window.close();">취소</button>

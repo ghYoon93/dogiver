@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -58,14 +60,17 @@ public class GoodsBoardController {
 	}
 	
 	@RequestMapping(value="review", method=RequestMethod.GET)
-	public String review(@RequestParam String goods_id, Model model) {
+	public String review(@RequestParam String goods_id, Model model, HttpSession session) {
 		model.addAttribute("goods_id", goods_id);
+		model.addAttribute("memEmail", session.getAttribute("memEmail"));
 		return "/goods/review";
 	}
 	
 	@RequestMapping(value="reviewWriteWin", method=RequestMethod.GET)
 	public String reviewWrite(@RequestParam String goods_id, Model model) {
 		model.addAttribute("goods_id", goods_id);
+//		model.addAttribute("memEmail", session.getAttribute("memEmail"));
+//		model.addAttribute("memNickName", session.getAttribute("memNickName"));
 		System.out.println(goods_id);
 		return "/goods/reviewWriteWin";
 	}
@@ -75,11 +80,11 @@ public class GoodsBoardController {
 	//드래그 해서 한번에 여러개의 파일을 선택
 	@RequestMapping(value="reviewWrite", method=RequestMethod.POST)
 	@ResponseBody
-	public void reviewWrite(@ModelAttribute QnaDTO qnaDTO, @RequestParam("img[]") List<MultipartFile> list) {
+	public void reviewWrite(@ModelAttribute QnaDTO qnaDTO, @RequestParam("img[]") List<MultipartFile> list, HttpSession session) {
 	//public void reviewWrite(@RequestParam Map<String, Integer> map, @RequestParam("img[]") List<MultipartFile> list) {
 		
-		System.out.println(qnaDTO);
-		String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
+		//String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
+		String filePath = "C:\\Users\\bitcamp\\Desktop\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
 
 		for(MultipartFile img : list) {
 			String fileName = img.getOriginalFilename(); //실제 파일명
@@ -90,13 +95,17 @@ public class GoodsBoardController {
 				FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file)); //copy(in, out);
 			} catch (IOException e) {
 				e.printStackTrace();
+				
 			}
 			
 			//3) 디비 저장을 위해 파일명을 DTO에  넘겨줌
 			qnaDTO.setImage(fileName);
-			
-			goodsService.reviewWrite(qnaDTO);
 		}//for
+			
+		qnaDTO.setEmail((String) session.getAttribute("memEmail"));
+		System.out.println(qnaDTO);
+		goodsService.reviewWrite(qnaDTO);
+
 	
 	}
 	
