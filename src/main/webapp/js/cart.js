@@ -189,8 +189,6 @@ $(document).on('click', '.btn_option_view', function() {
 /** 장바구니 선택 프로세스 **/
 function gd_cart_process(command){
 	let count = $('input[name=checkGoods]:checked').length;
-	alert(count);
-	alert(command);
 	let form = $('#form-cart');
 	if (count == 0){
 		alert('선택하신 상품이 없습니다. 상품을 선택해주세요.');

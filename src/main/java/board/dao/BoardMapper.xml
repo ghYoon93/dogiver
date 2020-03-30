@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardSQL">
+	<!-- 글쓰기 -->
+	<insert id="boardWrite" parameterType="board.bean.BoardDTO">
+		insert into board (brd_seq, brd_email, brd_nickname, brd_category, brd_title, brd_content,
+		brd_logtime) values(brd_seq.nextval,#{brd_email},#{brd_nickname}, #{brd_category}, #{brd_title},
+		#{brd_content}, SYSDATE)
+	</insert>
+
+	<select id="getBoardList" parameterType="java.util.Map"
+		resultType="board.bean.BoardDTO">
+		<![CDATA[
+		select * from
+		(select rownum rn, tt.* from
+		(select * from board order by brd_seq desc)tt
+		)where rn>=#{startNum} and rn<=#{endNum} 
+		]]>
+	</select>
+
+	<select id="getBoardTotalA" resultType="int">
+		select count(*) from
+		board
+	</select>
+
+	<select id="getBoard" parameterType="int"
+		resultType="board.bean.BoardDTO">
+		select * from board where brd_seq=#{brd_seq}
+	</select>
+
+	<update id="boardHit" parameterType="int">
+		UPDATE board SET hit=hit+1
+		WHERE brd_seq=#{brd_seq}
+	</update>
+
+	<select id="getBoardSearchTotalA" parameterType="java.util.Map"
+		resultType="int">
+		select count(*) from board where ${searchOption} like
+		'%'||#{keyword}||'%'
+	</select>
+
+	<select id="getBoardSearch" parameterType="java.util.Map" resultType="board.bean.BoardDTO">
+		<![CDATA[
+		select * from (select rownum rn, tt.* from (select * from board where ${searchOption} like '%'||#{keyword}||'%' order by brd_seq desc)tt) where rn>=#{startNum} and rn<=#{endNum} 
+		]]>
+	</select>
+	<delete id="boardDelete" parameterType="int">
+		 DELETE FROM board WHERE brd_seq = #{brd_seq}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

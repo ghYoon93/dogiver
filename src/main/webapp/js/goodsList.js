@@ -1,6 +1,9 @@
 
 var idx = new Array();
+var g_id = new Array();
 var g_price = new Array();
+var g_name = new Array();
+var g_img = new Array();
 $(document).ready(function(){
 
 	$.ajax({
@@ -46,7 +49,10 @@ $(document).ready(function(){
 				
 
 				idx.push(index);
+				g_id.push(items.goods_id);
 				g_price.push(items.goods_price);
+				g_img.push(items.goods_thumbnail);
+				g_name.push(items.goods_name);
 				
 //				alert(idx[index]);
 //				alert(price[index]);
@@ -163,23 +169,45 @@ $(document).on('click', '.btn_basket_cart', function(){
 	$('#option-view').show();
 	$('body').css('overflow','hidden');
 	
-	var id = $(this).attr('id');
-	var total = g_price[id];
+	let id = $(this).attr('id');
+	let goods_id = g_id[id];
+	let total = numberFormat(g_price[id]);
+	let img = g_img[id];
+	let name = g_name[id];
+	console.log(img);
+	console.log(name);
+	
+	$('#option-view img').attr('src', '../image/goods/'+img);
+	$('#option-view strong').text(name);
 	$('#tot_price').text(total).append(' 원');
 	
 	amt = $('#quantity').val();
-	price = total;
+	price = total.replace(/[^0-9]/g, '');
+	$('#confirm').on('click', function(){
+		console.log('id:'+id);
+		console.log('amt:'+amt);
+		$.ajax({
+			type: 'post',
+			url: '/dogiver/order/addCart',
+			data: 'goods_id='+goods_id+'&cart_cnt='+amt,
+			dataType: 'text',
+			success: function(data){
+				let msg = '상품을 장바구니에 담았습니다.\n확인하시겠습니까?';
+				if(data == 'exist'){
+					msg = '동일한 상품이 장바구니에 존재합니다.\n확인하시겠습니까?';
+				}
+				let result = confirm(msg);    		
+			    if(result){
+			    	location.href='../order/cart';
+			    }
+			    closeModal;
+			}
+		}); // ajax
+	});//장바구니 추가
 
 });
   
-$('.close, .cancle').click(function(){	
-	$('#option-view').hide();
-	$('body').css('overflow','auto');
-	//초기화
-	amt = 1; 
-	$('#quantity').val(1);
-	calc_tot_price(price, amt);
-});
+$('.close, .cancel').click(closeModal);
 
 $('#quantity').change(function(){
 	amt = $('#quantity').val();
@@ -202,6 +230,7 @@ $('#minus').click(function(){
 	calc_tot_price(price, amt);
 });
 
+
 function calc_tot_price(price, amt){
 	var totalPrice = numberFormat(price*amt);
 	$('#tot_price').html(totalPrice).append(' 원');
@@ -212,5 +241,15 @@ function numberFormat(inputNumber) {
 	return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
  }
 
-
+function closeModal(){
+	$('#option-view').hide();
+	$('body').css('overflow','auto');
+	//초기화
+	amt = 1; 
+	$('#quantity').val(1);
+	calc_tot_price(price, amt);
+	$('#confirm').off('click').on('click', function(){
+		console.log('confirm');		
+	});
+} // 모달 닫기
 

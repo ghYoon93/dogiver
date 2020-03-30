@@ -19,8 +19,9 @@
       <div><a href="../sign_up/step1">SIGN UP</a></div>
     </c:if>
     <c:if test="${memEmail != null}">
+    <div>"<span>${memNickName }</span>"님 dogiver에 오신것을 환영 합니다!</div>
       <div><a href="../logout/logout">LOG OUT</a></div>
-      <div id="my-page"><a href="../member/mypage">MY</a></div>
+      <div id="my-page"><a href="../member/mypage">MY<img alt="my-page" src="../image/user_icon.svg"></a></div>
     </c:if>
       <div>
         <a><img src="../image/shopping_bucket.png" alt="장바구니"/></a>
@@ -34,7 +35,7 @@
         <h1>도그너</h1>
         <!-- 로고 -->
         <a href="../main/index"
-          ><img src="../image/dogner.png" alt="로고이미지"
+          ><img src="../image/dogiver-logo.png" alt="로고이미지"
         /></a>
 
         <!-- 헤더 메뉴 -->
@@ -62,7 +63,6 @@
             <li>
               <a href="#">커뮤니티</a>
               <ul>
-                <li><a href="#">자유게시판</a></li>
               </ul>
             </li>
 

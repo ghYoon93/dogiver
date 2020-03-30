@@ -1,0 +1,74 @@
+#boardListTable{
+	margin: 0 auto;
+	margin-top: 150px;
+}
+
+#subjectA:link {
+	color: black;
+	text-decoration: none;
+}
+
+#subjectA:visited {
+	color: black;
+	text-decoration: none;
+}
+
+#subjectA:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+#subjectA:active {
+	color: black;
+	text-decoration: none;
+}
+
+#paging {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#currentPaging {
+	color: red;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#boardListTable td {
+	height: 50px;
+}
+
+#boardListTable th {
+	border: 2px solid #ab2328;
+}
+
+#boardPagingDiv{
+	margin: 0 auto; 
+	width: 1100px; 
+	text-align: center; 
+	margin-top: 30px;
+}
+
+#container{
+	width: 1100px; 
+	margin: 0 auto;
+	margin-top: 150px;
+}
+#boardOptionDiv{
+	text-align:center;
+	margin: 0 auto;
+	width:1100px;
+	margin-top: 30px; 
+	
+}
+
+#searchOption{
+width: 100px; 
+height: 40px; 
+text-align-last: center;
+}
+
+
+
+

@@ -294,7 +294,7 @@ body{font-family: "Noto Sans KR", sans-serif;}
 }
 .option_tit_box dt {
   float: left;
-  margin: 18px 0 0 20px;
+  margin-top: 5px;
 }
 .option_tit_box dd {
   margin: 18px 0 0 133px;
@@ -306,8 +306,8 @@ body{font-family: "Noto Sans KR", sans-serif;}
   font-size: 14px;
 }
 .option_tit_box dt img {
-  width: 70px;
-  height: 70px;
+  width: 120px;
+  height: 120px;
   border: 1px solid #dbdbdb;
 }
 .option_tit_box #tot_price {
