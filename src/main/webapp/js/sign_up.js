@@ -1,7 +1,24 @@
-$("#chkAll").click(function() {
-	var check = $("#chkAll").prop("checked");
-	$("input[type=checkbox]").prop("checked", check);
-})
+//$("#chkAll").click(function() {
+//	var check = $("#chkAll").prop("checked");
+//	$("input[type=checkbox]").prop("checked", check);
+//})
+function checkAll() {
+	$('#chkAll').prop('checked', true);
+	$('input[type=checkbox]').prop('checked', true);
+}
+function uncheckAll() {
+	$('#chkAll').prop('checked', false);
+	$('input[type=checkbox]').prop('checked', false);
+}
+
+$(document).on('click', '#chkAll', function() {
+	var chk = $(this).is(":checked");
+	if (chk)
+		checkAll();
+	else
+		uncheckAll();
+});
+
 $('#btn_1').click(function() {
 	if ($("#chk1-1").is(":checked") == true) {
 		var email_Yn = $('input:checkbox[id="chk1-2"]').is(":checked");
@@ -62,11 +79,12 @@ $ComTimer.prototype = {
 		this.domId.innerText = m;
 		if (this.comSecond < 0) { // 시간이 종료 되었으면..
 			clearInterval(this.timer); // 타이머 해제
-			$("#result-div").text("인증시간이 초과되었습니다.").css("color", "red");
+			$("#result-div").text("인증시간이 초과되었습니다.").css("color", "red").show(
+					'fast');
 			$('#timer-div').toggle('slow');
 			setTimeout(function() {
 				location.href = "../sign_up/step2";
-			}, 1000);
+			}, 2000);
 		}
 	},
 	fnStop : function() {
@@ -81,13 +99,18 @@ $("#email-btn").click(
 			let exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
 			if ($email.val() == "") {
-				$("#result-div").text("이메일을 입력해주세요.").css("display", "block")
-						.css("color", "red");
+				$("#result-div").text("이메일을 입력해주세요.").css("color", "red").show("fast");
+				setTimeout(function() {
+					$("#result-div").hide(1000);
+				}, 1000);
 				email.focus();
 			} else if (exptext.test($email.val()) == false) {
 				// 이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우
-				$("#result-div").text("이메일 형식이 올바르지 않습니다.").css("display",
-						"block").css("color", "red");
+				$("#result-div").text("이메일 형식이 올바르지 않습니다.").css("color", "red")
+						.toggle("fast");
+				setTimeout(function() {
+					$("#result-div").hide(1000);
+				}, 1000);
 				email.focus();
 				return false;
 			} else {
@@ -99,10 +122,10 @@ $("#email-btn").click(
 					success : function(data) {
 						if (data == "non_exist") {
 							// 이메일 발송
-							$('#email').toggle('slow');
-							$('#email-btn').toggle('slow');
-							$('#auth-number').toggle('slow');
-							$('#auth-btn').toggle('slow');
+							$('#email').hide();
+							$('#email-btn').hide();
+							$('#auth-number').show('fast');
+							$('#auth-btn').show('fast');
 
 							$.ajax({
 								type : "get",
@@ -110,8 +133,7 @@ $("#email-btn").click(
 								data : "to=" + $email.val() + "" + "&random="
 										+ $('#random').val() + "",
 								success : function(data) {
-									$('#timer-div').css('display', 'block')
-											.css('color', 'red');
+									$('#timer-div').css('color', 'red').show('fast');
 									var AuthTimer = new $ComTimer()
 									AuthTimer.comSecond = 180;
 									AuthTimer.fnCallback = function() {
@@ -123,9 +145,8 @@ $("#email-btn").click(
 									AuthTimer.domId = document
 											.getElementById("timer-div");
 
-									$("#result-div").text("이메일이 발송되었습니다.").css(
-											"display", "block").css("color",
-											"green");
+									$("#result-div").text("이메일이 발송되었습니다.").css("color",
+											"green").show('fast');
 								},
 								error : function(data) {
 									alert("에러가 발생했습니다.");
@@ -134,8 +155,10 @@ $("#email-btn").click(
 								}
 							});
 						} else {
-							$("#result-div").text("이미 가입된 이메일입니다.").css(
-									"display", "block").css("color", "red");
+							$("#result-div").text("이미 가입된 이메일입니다.").css("color", "red").toggle('fast');
+							setTimeout(function() {
+								$("#result-div").hide(1000);
+							}, 1000);
 						}
 					},
 					error : function(data) {
@@ -147,7 +170,7 @@ $("#email-btn").click(
 
 			}
 		});
-
+//인증 버튼
 $('#auth-btn').click(
 		function() {
 			$.ajax({
@@ -157,15 +180,16 @@ $('#auth-btn').click(
 						+ $("#random").val(),
 				success : function(data) {
 					if (data == "complete") {
-						$('#timer-div').toggle('slow');
-						$("#result-div").text("인증성공!").css("display", "block")
-								.css("color", "blue");
+						$('#timer-div').hide('slow');
+						$("#result-div").text("인증성공!").css("color", "blue").show('fast');
 						setTimeout(function() {
 							location.href = "../sign_up/step3";
 						}, 1000);
 					} else if (data == "false") {
-						$("#result-div").text("잘못된 인증번호입니다.").css("display",
-								"block").css("color", "red");
+						$("#result-div").text("잘못된 인증번호입니다.").css("color", "red").show('fast');
+						setTimeout(function() {
+							$("#result-div").hide(1000);
+						}, 1000);
 					}
 				},
 				error : function(data) {
@@ -335,18 +359,19 @@ $('#nickName').blur(
 					type : 'POST',
 					url : "../sign_up/chkNickName",
 					data : "nickName=" + nickname,
-					error : function(err) {
-						alert("실행중 오류가 발생하였습니다.");
-					},
 					success : function(data) {
 						if (data == "non_exist") {
-							$('#nickNameDiv').text('사용가능.')
-									.css('color', 'blue').show('fast');
-							$('#nickNameDiv').hide('slow');
+							$('#nickNameDiv').text('사용가능.').css('color', 'blue').show('fast');
+							setTimeout(function() {
+								$("#nickNameDiv").hide(1000);
+							}, 1000);
 						} else {
 							$('#nickNameDiv').text('중복된 닉네임입니다.').css('color',
 									'red').show('fast');
 						}
+					},
+					error : function(err) {
+						alert("실행중 오류가 발생하였습니다.");
 					}
 				});
 			}
@@ -395,92 +420,95 @@ $('#rePwd').blur(
 		});
 // 전화번호
 $(function() {
-	  $('#pre-phone').on('keyup', function(event) {
-	   var value = $(this).val().replace(/[^0-9]/g, ""),
-	         addValue = [];
-	   value = value.replace(/-/gi, '');
+	$('#pre-phone').on('keyup', function(event) {
+		var value = $(this).val().replace(/[^0-9]/g, ""), addValue = [];
+		value = value.replace(/-/gi, '');
 
-	   if (value.length >= 3) { 
-	    if (value.substring(0, 2) == '02') { // 서울 번호를 체크하기 위한 조건
-	     addValue.push(value.substring(0, 2)); 
-	     if (value.length >= 3) { 
-	      var endKey = (value.length >= 10 ? 6 : 5); // 00-000-000, 00-0000-0000 처리 
-	      addValue.push(value.substring(2, endKey)); 
-	      if (value.length >= 6) { 
-	       if (value.length >= 10) { // 10자리 이상 입력 방지
-	       value = value.substring(0, 10); 
-	      }
-	      addValue.push(value.substring(endKey, value.length)); 
-	     }
-	    }
-	   } else { 
-	   addValue.push(value.substring(0, 3)); 
-	    if (value.length >= 4) { 
-	     var endKey = (value.length >= 11 ? 7 : 6); // 000-000-0000, 000-0000-0000 처리 
-	     addValue.push(value.substring(3, endKey)); 
-	      if (value.length >= 7) { 
-	       if (value.length >= 11) { // 11자리 이상 입력 방지
-	        value = value.substring(0, 11); 
-	       }
-	       addValue.push(value.substring(endKey, value.length)); 
-	      }
-	     }
-	    }
-	    $(this).val(addValue.join('-')); 
-	   }
-	  });
-	 });
+		if (value.length >= 3) {
+			if (value.substring(0, 2) == '02') { // 서울 번호를 체크하기 위한 조건
+				addValue.push(value.substring(0, 2));
+				if (value.length >= 3) {
+					var endKey = (value.length >= 10 ? 6 : 5); // 00-000-000,
+																// 00-0000-0000
+																// 처리
+					addValue.push(value.substring(2, endKey));
+					if (value.length >= 6) {
+						if (value.length >= 10) { // 10자리 이상 입력 방지
+							value = value.substring(0, 10);
+						}
+						addValue.push(value.substring(endKey, value.length));
+					}
+				}
+			} else {
+				addValue.push(value.substring(0, 3));
+				if (value.length >= 4) {
+					var endKey = (value.length >= 11 ? 7 : 6); // 000-000-0000,
+																// 000-0000-0000
+																// 처리
+					addValue.push(value.substring(3, endKey));
+					if (value.length >= 7) {
+						if (value.length >= 11) { // 11자리 이상 입력 방지
+							value = value.substring(0, 11);
+						}
+						addValue.push(value.substring(endKey, value.length));
+					}
+				}
+			}
+			$(this).val(addValue.join('-'));
+		}
+	});
+});
 // 전화번호 재 변환
 $('#pre-phone').blur(function() {
-	var phone = document.getElementById('pre-phone').value.replace(/-/gi, "");		
-	console.log("변경 "+phone);
+	var phone = document.getElementById('pre-phone').value.replace(/-/gi, "");
+	console.log("변경 " + phone);
 	$('#phone').val(phone);
 });
-//회원가입
-$('#sign-btn').click(function(){
-	//alert('');
-	if($('#name').val()==''||$('#id').val()==''||$('#pwd').val()==''||$('#rePwd').val()==''){
-		$('#sign-message-header').text('실패');
-		$('#sign-message').text('필수 정보를 입력해주세요')
-		$('#signModal').css('display','block');
-		window.onclick = function(event) {
-			if (event.target == document.getElementById('signModal')) {
-				document.getElementById('signModal').style.display = "none";
-			}
-		};
-	}else{
-		$.ajax({
-			type : "post",
-			url : "../sign_up/sign",
-			data : $('#sign-form').serialize(),
-			dataType: 'text',
-			success : function(data) {
-				if (data == "complete") {
-					location.href="../sign_up/step4";
-				} else {
-					$('#sign-message-header').text('가입 실패');
-					$('#sign-message').text('다시 시도해 주세요.')
-					$('#signModal').css('display','block');
-					window.onclick = function(event) {
-						if (event.target == document.getElementById('signModal')) {
-							document.getElementById('signModal').style.display = "none";
-						}
-					};
-				}
-			},
-			error : function(data) {
-				alert("에러가 발생했습니다.");
-			}
-		});
-	}
-});
-
-
-
-
-
-
-
-
-
-
+// 회원가입
+$('#sign-btn')
+		.click(
+				function() {
+					// alert('');
+					if ($('#name').val() == '' || $('#id').val() == ''
+							|| $('#pwd').val() == '' || $('#rePwd').val() == '') {
+						$('#sign-message-header').text('실패');
+						$('#sign-message').text('필수 정보를 입력해주세요')
+						$('#signModal').css('display', 'block');
+						window.onclick = function(event) {
+							if (event.target == document
+									.getElementById('signModal')) {
+								document.getElementById('signModal').style.display = "none";
+							}
+						};
+					} else {
+						$
+								.ajax({
+									type : "post",
+									url : "../sign_up/sign",
+									data : $('#sign-form').serialize(),
+									dataType : 'text',
+									success : function(data) {
+										if (data == "complete") {
+											location.href = "../sign_up/step4";
+										} else {
+											$('#sign-message-header').text(
+													'가입 실패');
+											$('#sign-message').text(
+													'다시 시도해 주세요.')
+											$('#signModal').css('display',
+													'block');
+											window.onclick = function(event) {
+												if (event.target == document
+														.getElementById('signModal')) {
+													document
+															.getElementById('signModal').style.display = "none";
+												}
+											};
+										}
+									},
+									error : function(data) {
+										alert("에러가 발생했습니다.");
+									}
+								});
+					}
+				});
