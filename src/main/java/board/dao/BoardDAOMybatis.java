@@ -63,6 +63,11 @@ public class BoardDAOMybatis implements BoardDAO {
 		return sqlSession.selectOne("boardSQL.getBoardView_after", Integer.parseInt(brd_seq));
 	}
 
+	@Override
+	public void reply_write(BoardDTO boardDTO) {
+		sqlSession.insert("boardSQL.reply_write", boardDTO);
+	}
+
 	
 }
 

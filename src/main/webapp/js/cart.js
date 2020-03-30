@@ -9,10 +9,7 @@ $(document).ready(function() {
 							success : function(data) {
 								let tbody = $('#form-cart tbody');
 								let tag;
-								$
-										.each(
-												data.list,
-												function(index, items) {
+								$.each(data.list,function(index, items) {
 													tag += '<tr>'
 															/*+ '<input type=hidden class="goods_id" value="'+ items.goods_id+ '">'*/
 															+ '<td class="td_check">'

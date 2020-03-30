@@ -31,6 +31,8 @@ public class BoardController {
 	
 	@RequestMapping(value = "boardWrite", method = RequestMethod.POST)
 	public void boardWrite(BoardDTO boardDTO) {
+		System.out.println("확인중 ㅋㅋㅋ");
+		System.out.println(boardDTO);
 		boardService.boardWrite(boardDTO);
 	}
 	@RequestMapping(value="boardList", method=RequestMethod.GET)
@@ -127,6 +129,13 @@ public class BoardController {
 	@RequestMapping(value="boardDelete", method=RequestMethod.POST)
 	public void boardDelete(int brd_seq) {
 		boardService.delete(brd_seq);
+	}
+	
+	
+	@RequestMapping(value = "reply_write", method = RequestMethod.POST)
+	public void reply_write(BoardDTO boardDTO, @RequestParam String brd_seq) {
+		System.out.println("들어오는지 확인 "+boardDTO);
+		boardService.reply_write(boardDTO);
 	}
 	
 	

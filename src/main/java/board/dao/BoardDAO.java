@@ -25,6 +25,8 @@ public interface BoardDAO {
 
 	public BoardDTO getBoardView_after(String brd_seq);
 
+	public void reply_write(BoardDTO boardDTO);
+
 
 
 

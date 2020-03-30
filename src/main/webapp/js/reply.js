@@ -6,15 +6,14 @@ $('#boardFormBtn').click(function() {
 		$('#contentDiv').css('font-size', '8pt');
 		$('#contentDiv').css('font-weight', 'bold')
 	} else
-		var re_content = $('#re_content').val();
-	$.ajax({
-		type : 'POST',
-		url : '/dogiver/board/boardReply',
-		data : {
-			're_content' : re_content
-		},
-		success : function(data) {
-			alert("댓글이 작성되었습니다.");
-		}
+		$.ajax({
+			type : 'post',
+			url : '/dogiver/board/reply_write',
+			data : 'brd_seq=' + $('#brd_seq').val(),
+			dataType : 'json',
+			success : function(data) {
+				alert(JSON.stringify(data));
+			}
+		});
+		
 	});
-});

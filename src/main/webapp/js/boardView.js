@@ -9,20 +9,32 @@ $(document).ready(function() {
 		data : 'brd_seq=' + $('#brd_seq').val(),
 		dataType : 'json',
 		success : function(data) {
+			alert(JSON.stringify(data));
+
 			$('#seqSpan').text(data.boardDTO.brd_seq);
 			$('#categorySpan').text(data.boardDTO.brd_category);
 			$('#titleSpan').text(data.boardDTO.brd_title);
-			$('#idSpan').text(data.boardDTO.brd_nickname);
+			$('#idSpan').text(data.boardDTO.brd_id);
 			$('#dateSpan').text(data.boardDTO.brd_logtime);
 			$('#hitSpan').text(data.boardDTO.brd_hit);
 			$('#contentSpan').html(data.boardDTO.brd_content);
-
+			
+			if (data.memId == data.boardDTO.brd_id)
+				$('#boardViewSpan').show();
+			else
+				$('#boardViewSpan').hide();
 			if (data.memEmail == data.boardDTO.brd_email)
 				$('#board_member_addBtn').show();
 			else
 				$('#board_member_addBtn').hide();
 		}
 	});
+});
+
+
+
+$('#writeBtn').click(function(){
+	location.href ='boardWriteForm';
 });
 //글쓰기 버튼 
 $('#writeBtn').click(function(){
@@ -31,20 +43,50 @@ $('#writeBtn').click(function(){
 });
 
 //이전 버튼
-$('#beforeBtn').click(function(){
-	location.href ='boardView?brd_seq='+($('#brd_seq').val()-1);
-	
-	if(link=='http://localhost:8080/dogiver/board/boardView?brd_seq=0')
-		alert('현제 페이지가 첫번째 페이지 입니다.');
-	else
-		location.href='http://localhost:8080/dogiver/board/boardView?brd_seq=1';
-});
+$('#beforeBtn').click(function() {
+    $.ajax({
+        type : 'post',
+        url : '/dogiver/board/getBoardView_before',
+        data : 'brd_seq=' + $('#brd_seq').val(),
+        dataType : 'json',
+        success : function(data) {
+            alert("aa");
+            $('#seqSpan').text(data.boardDTO.brd_seq);
+            $('#categorySpan').text(data.boardDTO.brd_category);
+            $('#titleSpan').text(data.boardDTO.brd_title);
+            $('#idSpan').text(data.boardDTO.brd_nickname);
+            $('#dateSpan').text(data.boardDTO.brd_logtime);
+            $('#hitSpan').text(data.boardDTO.brd_hit);
+            $('#contentSpan').html(data.boardDTO.brd_content);
+            $('#brd_seq').val(data.boardDTO.brd_seq);
 
+            if (data.memEmail == data.boardDTO.brd_email)
+                $('#board_member_addBtn').show();
+            else
+                $('#board_member_addBtn').hide();
+        }
+    });
+
+});
 //다음 버튼 버튼
-$('#afterBtn').click(function(){
-	var num= $('#brd_seq').val();
-	num++;
-	location.href ='boardView?brd_seq='+num;
+$('#afterBtn').click(function() {
+    $.ajax({
+        type : 'post',
+        url : '/dogiver/board/getBoardView_after',
+        data : 'brd_seq=' + $('#brd_seq').val(),
+        dataType : 'json',
+        success : function(data) {
+            alert("aa");
+            $('#seqSpan').text(data.boardDTO.brd_seq);
+            $('#categorySpan').text(data.boardDTO.brd_category);
+            $('#titleSpan').text(data.boardDTO.brd_title);
+            $('#idSpan').text(data.boardDTO.brd_nickname);
+            $('#dateSpan').text(data.boardDTO.brd_logtime);
+            $('#hitSpan').text(data.boardDTO.brd_hit);
+            $('#contentSpan').html(data.boardDTO.brd_content);
+            $('#brd_seq').val(data.boardDTO.brd_seq);
+	}
+      });
 	
 });
 
@@ -59,10 +101,15 @@ $('#deletBtn').click(function(){
 	
 });
 
+$('#listBtn').click(function(){
+	location.href ='boardList?pg='+$('#pg').val();
+	
+});
 
 //목록 버튼 
 $('#listBtn').click(function(){
 	location.href ='boardList?pg='+$('#pg').val();
 	
 });
+
 

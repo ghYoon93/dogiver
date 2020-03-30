@@ -8,8 +8,12 @@
 		(brd_seq, brd_email, brd_nickname, brd_category, brd_title,
 		brd_content,brd_logtime)
 		values(brd_seq.nextval,#{brd_email},#{brd_nickname}, #{brd_category},
-		#{brd_title},#{brd_content}, SYSDATE) </insert>
-
+		#{brd_title},#{brd_content}, SYSDATE) 
+		</insert>
+	
+	<insert id="reply_write" parameterType="board.bean.BoardDTO">
+		insert into board (brd_seq, brd_email, brd_nickname, brd_reContent,brd_pseq, brd_logtime) values(brd_seq.nextval,#{brd_email},#{brd_nickname},#{brd_reContent}, {brd_seq},SYSDATE) 
+	</insert>
 
 	
 	<select parameterType="java.util.Map" id="getBoardList"
@@ -23,23 +27,23 @@
 		]]>
 	</select>
 
-	<select id="getBoardTotalA" resultType="int">select count(*) from
-		board </select>
+	<select id="getBoardTotalA" resultType="int">
+		select count(*) from board 
+	</select>
 
 	<select parameterType="int" id="getBoard"
-		resultType="board.bean.BoardDTO">select * from board where brd_seq=#{brd_seq} </select>
+		resultType="board.bean.BoardDTO">
+		select * from board where brd_seq=#{brd_seq} 
+	</select>
 
 
 	
 	<select parameterType="int" id="getBoardView_before"
 		resultType="board.bean.BoardDTO">
-
 		<![CDATA[
 		select * from board where brd_seq=(select max(brd_seq) from (select brd_seq from board where brd_seq < #{brd_seq}))
 		]]>
 	</select>
-
-
 	
 	<select parameterType="int" id="getBoardView_after"
 		resultType="board.bean.BoardDTO">

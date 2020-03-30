@@ -19,9 +19,10 @@
 		style="width: 1100px; margin: 0 auto; margin-top: 150px;">
 		<form name="boardViewForm">
 			<input type="hidden" name="brd_seq" id="brd_seq" value="${brd_seq }">
-			<input type="hidden" name="pg" id="pg" value="${pg }"> 
+			<input type="hidden" name="pg" id="pg" value="${pg }">
 
-			<div id="board_wrap" style="margin-top: 100px; "><!-- board_title_text -->
+			<div id="board_wrap" style="margin-top: 100px;">
+				<!-- board_title_text -->
 				<div id="board_info_box">
 
 					<div id="board_seq">글번호</div>
@@ -54,6 +55,7 @@
 						<span id="hitSpan"></span>
 					</div>
 				</div>
+			
 
 
 				<div id="board_title_box">
@@ -65,26 +67,27 @@
 
 				<div id="board_content">
 					<span id="contentSpan"> </span>
-					
+
 				</div>
-					<div id="board_reply">
-						<%@ include file="../board/boardReplyForm.jsp" %>
-					</div>
 				
-				
-				
-			</div>
-				<div id="board_button">
-				    <input type="button" id="beforeBtn" value="이전"> 
-					<input type="button" id="afterBtn" value="다음" onclick='mode(2)'>  
-					<input type="button" id="listBtn" value="목록" >
+				<div id="board_reply">
+					<%@ include file="../board/boardReplyForm.jsp"%>
 				</div>
 
-				<div id="board_member_addBtn">
-					<input type="button" value="수정" onclick='mode(4)'> 
-					<input type="button" id="deletBtn" value="삭제" >
-					<input type="button" id="writeBtn" value="글작성">
-				</div>
+
+
+			</div>
+			<div id="board_button">
+				<input type="button" id="beforeBtn" value="이전글"> <input
+					type="button" id="afterBtn" value="다음글" onclick='mode(2)'> <input
+					type="button" id="listBtn" value="목록"><input
+					type="button" id="writeBtn" value="글작성">
+			</div>
+
+			<div id="board_member_addBtn">
+				<input type="button" value="수정" onclick='mode(4)'> <input
+					type="button" id="deletBtn" value="삭제">
+					</div>
 		</form>
 	</div>
 </div>

@@ -31,16 +31,11 @@
 						<th width="150" style="font-size: 15px;">이메일</th>
 						<th width="150" style="font-size: 15px;">핸드폰번호</th>
 						<th width="150" style="font-size: 15px;">주제</th>
-						<th width="450" style="font-size: 15px;">내용</th>
+						<th width="300" style="font-size: 15px;">내용</th>
 						<th width="100" style="font-size: 15px;">작성시간</th>
+						<th width="100" style="font-size: 15px;">확인여부</th>
 					</tr>
 				</table>
-				
-<!-- 				<table id="admin_content" border="1" cellpadding="5"
-					frame="hsides " rules="rows">
-					
-				</table>
- -->					
 			</div>
 		</div>
 	</form>
@@ -56,50 +51,41 @@
 		url : '/dogiver/contact/contactList',
 		dataType : 'json',
 		success : function(data){
-			alert(JSON.stringify(data)); 
 			$.each(data.list, function(index, items){
 				 $('<tr/>').append($('<td/>',{
-					style:'height:50px',
-					style:'font-size: 15px',
+					style:'font-size: 15px; height:150px',
 					align : 'center',
 					text : items.seq
 				})).append($('<td/>',{
-					style:'font-size: 15px',
+					style:'font-size: 15px; height:150px',
 					align : 'center',
 					text : items.name
 				})).append($('<td/>',{
-					style:'font-size: 15px',
+					style:'font-size: 15px; height:150px',
 					align : 'center',
 					text : items.email
 				})).append($('<td/>',{
-					style:'font-size: 15px',
+					style:'font-size: 15px; height:150px',
 					align : 'center',
 					text : items.phone
 				})).append($('<td/>',{
-					style:'font-size: 15px',
+					style:'font-size: 15px; height:150px',
 					align : 'center',
 					text : items.subject
 				})).append($('<td/>',{
-					style:'font-size: 15px',
+					style:'font-size: 15px; height:150px',
 					align : 'center',
 					text : items.content
-				})).append($('<td/>',{
-					style:'font-size: 15px',
-					align : 'center',
-					text : items.logtime
-				})).appendTo($('#admin_contactTable'));
-			/* .append($('<td/>',{
-			style:'font-size: 20px',
-			align : 'center'
-		}).append($('<a/>',{
-			style:'font-size: 20px',
-			href : '#',
-			style:'color:#ab2328',
-			text : items.brd_title,
-			id : 'titleA',
-			class : items.brd_seq+''
-		})) */
-			});// each */
+				})).append($('<td/>',{style:'font-size: 15px; height:150px',align : 'center',text : items.logtime})
+				).append($('<td/>',{
+					align : 'center'
+				}).append($('<input/>',{
+					type: 'checkbox',
+					style:'height:150px',
+					align: 'center',
+					name: 'check'
+				}))).appendTo($('#admin_contactTable'));
+			});// each 
 		}
 	});
 }); 
