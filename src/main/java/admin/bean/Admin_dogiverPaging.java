@@ -21,15 +21,15 @@ public class Admin_dogiverPaging {
 		int endPage = startPage+pageBlock-1;
 		if(endPage>totalP) endPage = totalP;
 		
-		if(startPage>pageBlock) pagingHTML.append("[<a href='/dogiver/admin/admin_dogiver?pg="+(startPage-1)+"'>이전</a>]");
+		if(startPage>pageBlock) pagingHTML.append("[<a href='/dogiver/admin/admin_blood?pg="+(startPage-1)+"'>이전</a>]");
 		
 		for(int i=startPage; i<=endPage; i++) {
-			if(i ==currentPage) pagingHTML.append("[<a id='currentPaging' href='/dogiver/admin/admin_dogiver?pg="+i+"'>"+i+"</a>]");
+			if(i ==currentPage) pagingHTML.append("[<a id='currentPaging' href='/dogiver/admin/admin_blood?pg="+i+"'>"+i+"</a>]");
 				
-			else pagingHTML.append("[<a id='paging' href='/dogiver/admin/admin_dogiver?pg="+i+"'>"+i+"</a>]");
+			else pagingHTML.append("[<a id='paging' href='/dogiver/admin/admin_blood?pg="+i+"'>"+i+"</a>]");
 		}
 		
-		if(endPage<totalP) pagingHTML.append("[<a href='/dogiver/admin/admin_dogiver?pg="+(endPage+1)+"'>다음</a>]");
+		if(endPage<totalP) pagingHTML.append("[<a href='/dogiver/admin/admin_blood?pg="+(endPage+1)+"'>다음</a>]");
 		
 	}
 

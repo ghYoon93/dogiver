@@ -34,18 +34,16 @@ public class AdminController {
 	@Autowired
 	private ServletContext servletContext;
 	
-	@RequestMapping(value = "adminForm", method = RequestMethod.GET)
-	public String admin(Model model) {
-		model.addAttribute("display", "/admin/admin.jsp");
-		return "/admin/adminForm";
+	@RequestMapping(value = "admin", method = RequestMethod.GET)
+	public String admin() {
+		return "/admin/admin";
 	}
 	
-	@RequestMapping(value = "admin_dogiver", method = RequestMethod.GET)
-	public String admin_dogiver(@RequestParam(required = false, defaultValue = "1") String pg, Model model) {
+	@RequestMapping(value = "admin_blood", method = RequestMethod.GET)
+	public String admin_blood(@RequestParam(required = false, defaultValue = "1") String pg, Model model) {
 		
 		model.addAttribute("pg", pg);
-		model.addAttribute("display", "/admin/admin_dogiver.jsp");
-		return "/admin/adminForm";
+		return "/admin/admin_blood";
 	}
 	
 	@RequestMapping(value = "getDogiver", method = RequestMethod.POST)
@@ -67,7 +65,7 @@ public class AdminController {
 	@ResponseBody
 	public String adminDogiverModify(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_image) {
 //		String filePath = servletContext.getRealPath("dogiverImage");
-		String filePath = "/dogiver/src/main/webapp/dogiverImage";
+		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\dogiverImage";
 		String fileName = dog_image.getOriginalFilename();
 		File file = new File(filePath, fileName);
 		
