@@ -10,15 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.sun.org.apache.regexp.internal.recompile;
 
 import member.bean.MemberDTO;
 import member.service.MemberService;
@@ -94,9 +91,7 @@ public class MemberController {
 	public @ResponseBody String sign(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
 		String encPwd = bcryptPasswordEncoder.encode(memberDTO.getPwd());
 		memberDTO.setPwd(encPwd);
-
 		memberDTO.setEmail_Yn((String) session.getAttribute("email_Yn"));
-
 		System.out.println(memberDTO);
 		String exist = memberService.sign(memberDTO);
 		return exist;
@@ -119,6 +114,8 @@ public class MemberController {
 	public @ResponseBody String log(@RequestParam Map<String, String> map, MemberDTO memberDTO, HttpSession session) {
 		String email = map.get("email");
 		memberDTO = memberService.getMember(email);
+		if(memberDTO == null)
+			return "false";
 		System.out.println(memberDTO);
 		boolean chkPwd = bcryptPasswordEncoder.matches(map.get("pwd"), memberDTO.getPwd());
 		System.out.println(chkPwd);

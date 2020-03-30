@@ -4,6 +4,9 @@ pageEncoding="UTF-8"%>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+      <link rel="favicon" href="../image/favicon.ico" />
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOGIVER</title>
     <link rel="stylesheet" href="../css/reset.css" />
