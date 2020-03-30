@@ -5,10 +5,7 @@
 	<insert id="contactWrite" parameterType="contact.bean.ContactDTO">
 	insert into contact values(seq_contact.nextval, #{name },#{email },#{phone },#{subject },#{content }, SYSDATE)
 	</insert>
-	
-	<select id="contactList" resultType="contact.bean.ContactDTO">
-		select * from contact
-	</select>
+
 </mapper>
 
 

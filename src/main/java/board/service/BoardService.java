@@ -22,10 +22,6 @@ public interface BoardService {
 	
 	public List<BoardDTO> getBoardSearch(Map<String, String> map);
 
-	public BoardDTO getBoardView_before(String brd_seq);
-
-	public BoardDTO getBoardView_after(String brd_seq);
-
 
 
 }

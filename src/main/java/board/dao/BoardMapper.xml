@@ -19,26 +19,13 @@
 	</select>
 
 	<select id="getBoardTotalA" resultType="int">
-		select count(*) from board
+		select count(*) from
+		board
 	</select>
 
 	<select id="getBoard" parameterType="int"
 		resultType="board.bean.BoardDTO">
 		select * from board where brd_seq=#{brd_seq}
-	</select>
-	
-	<select id="getBoardView_before" parameterType="int"
-		resultType="board.bean.BoardDTO">
-		<![CDATA[
-		select * from board where brd_seq=(select max(brd_seq) from (select brd_seq from board where brd_seq < #{brd_seq}))
-		]]>
-	</select>
-	
-	<select id="getBoardView_after" parameterType="int"
-		resultType="board.bean.BoardDTO">
-		<![CDATA[
-		select * from board where brd_seq=(select min(brd_seq) from (select brd_seq from board where brd_seq > #{brd_seq}))
-		]]>
 	</select>
 
 	<update id="boardHit" parameterType="int">

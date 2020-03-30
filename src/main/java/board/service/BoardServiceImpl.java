@@ -93,14 +93,10 @@ public class BoardServiceImpl implements BoardService {
 	public BoardDTO getBoard(String brd_seq) {
 		return boardDAO.getBoard(brd_seq);
 	}
-	@Override
-	public BoardDTO getBoardView_before(String brd_seq) {
-		return boardDAO.getBoardView_before(brd_seq);
-	}
-	@Override
-	public BoardDTO getBoardView_after(String brd_seq) {
-		return boardDAO.getBoardView_after(brd_seq);
-	}
+
+
+
+
 	
 
 }

@@ -2,7 +2,6 @@ package contact.bean;
 
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 
@@ -14,7 +13,6 @@ public class ContactDTO {
 	private String phone;
 	private String subject;
 	private String content;
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd")
 	private Date logtime;
 
 
