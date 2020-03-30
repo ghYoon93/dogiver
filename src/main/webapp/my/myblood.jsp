@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -10,6 +12,7 @@
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/mypage.css" />
+    <link rel="stylesheet" href="../css/myblood.css"/>
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
       rel="stylesheet"
@@ -22,10 +25,11 @@
       type="text/javascript"
       src="/data/201101/IJ12941530138912/jquery-contained-sticky-scroll.js"
     ></script>
+    <script type="text/javascript" src="../js/dogJoin.js"></script>
     <script src="../js/main.js"></script>
   </head>
   <body>
-    <!-- <div id="headerDiv"></div> -->
+    <div id="headerDiv"></div>
     <div class="page-title">
       <h2>my page</h2>
       <p>나의 정보들</p>
@@ -35,13 +39,38 @@
         <div class="my-nav">
           <ol>
             <li><a href="../my/mypage">내 정보</a></li>
-            <li class="on"><a href="">헌혈견</a></li>
-            <li><a href="">상품</a></li>
+            <li class="on"><a href="../blood/myblood">헌혈견</a></li>
+            <li><a href="">상품 </a></li>
             <li><a href="">내 게시글 </a></li>
-            <li><a href="">내 문의</a></li>
+            <li><a href="">내 문의 </a></li>
           </ol>
         </div>
-        <div class="article"></div>
+        <div class="article">
+        <form action="" id="mybloodForm">
+        	<div id="mybloodDiv">
+        		<ul>
+					<li><label>반려견 이름</label> 
+						<input type="text" id="dog_name" name="dog_name">
+					</li>
+					<li><label>반려견 나이</label>
+						<input type="text" id="dog_age" name="dog_age">
+					</li>
+					<li><label>반려견 종</label>
+						<input type="text" id="dog_breed" name="dog_breed" list="breed-list"> 
+					</li>
+					<li><label>반려견 몸무게(kg)</label> 
+						<input type="text" id="dog_weight" name="dog_weight">
+					</li>
+					<li><label>반려견 혈액형</label><br /> 
+						<input type="text" id="dog_bloodType" name="dog_bloodType">
+					</li>
+				</ul>
+				<div class="btn_center">
+					<button type="button" class="dogModifyBtn">수정하기</button>
+				</div>
+        	</div>
+        </form>
+        </div>
       </div>
     </div>
     <div id="footerDiv"></div>

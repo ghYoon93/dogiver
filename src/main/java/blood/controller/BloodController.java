@@ -61,7 +61,10 @@ public class BloodController {
 		return mav;
 	}
 	
-	
+	@RequestMapping(value = "myblood", method = RequestMethod.GET)
+	public String myblood() {
+		return "/my/myblood";
+	}
 	
 
 }

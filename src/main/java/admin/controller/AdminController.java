@@ -34,11 +34,6 @@ public class AdminController {
 	@Autowired
 	private ServletContext servletContext;
 	
-	@RequestMapping(value = "admin", method = RequestMethod.GET)
-	public String admin() {
-		return "/admin/admin";
-	}
-	
 	@RequestMapping(value = "admin_blood", method = RequestMethod.GET)
 	public String admin_blood(@RequestParam(required = false, defaultValue = "1") String pg, Model model) {
 		
@@ -91,7 +86,7 @@ public class AdminController {
 	@RequestMapping(value = "dogiverInsert", method = RequestMethod.POST)
 	@ResponseBody
 	public String dogiverInsert(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_image) {
-		String filePath = servletContext.getRealPath("dogiverImage");
+		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\dogiverImage";
 		String fileName = dog_image.getOriginalFilename();
 		File file = new File(filePath, fileName);
 		
