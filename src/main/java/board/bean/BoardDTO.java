@@ -8,6 +8,8 @@ import lombok.Data;
 
 @Data
 public class BoardDTO {
+	private String brd_email;
+	private String brd_nickname;
 	private int brd_seq;
 	private String brd_category;
 	private String brd_title;

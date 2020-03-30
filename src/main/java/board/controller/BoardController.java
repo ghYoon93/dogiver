@@ -37,7 +37,7 @@ public class BoardController {
 		
 	@RequestMapping(value = "re_write", method = RequestMethod.POST)
 	public void re_write(BoardDTO boardDTO) {
-		System.out.println("확인중 ㅋㅋㅋ");
+		System.out.println("�솗�씤以� �뀑�뀑�뀑");
 		System.out.println(boardDTO);
 		boardService.re_write(boardDTO);
 		
@@ -54,7 +54,6 @@ public class BoardController {
 			HttpSession session) {
 		List<BoardDTO> list = boardService.getBoardList(pg);
 		
-		//페이징 처리
 		BoardPaging boardPaging = boardService.boardPaging(pg);
 		
 		ModelAndView mav = new ModelAndView();
@@ -80,19 +79,15 @@ public class BoardController {
 	@RequestMapping(value="getBoardView", method=RequestMethod.POST)
 	public ModelAndView getBoardView( @RequestParam String brd_seq, @RequestParam(required=false, defaultValue="1") String pg,
 									HttpSession session) {
-		System.out.println("겟보드뷰 오는지 확인");
+
 		BoardDTO boardDTO = boardService.getBoard(brd_seq);
-<<<<<<< HEAD
-		System.out.println(brd_seq+"입니다");
-=======
 		List<BoardDTO> list = boardService.getReBoard(brd_seq);
-		
->>>>>>> origin/board&contact
+
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
 		mav.addObject("boardDTO", boardDTO);
-		mav.addObject("list", list);//리스트에는 댓글의 내용들이 들어있다.
+		mav.addObject("list", list);
 		mav.setViewName("jsonView");
 		return mav;
 	}
@@ -124,10 +119,7 @@ public class BoardController {
 	public ModelAndView getBoardSearch(@RequestParam Map<String, String> map,
 										HttpSession session) {
 		
-		//map안에는 pg,searchoption,keyword가 들어와 있따.
-		List<BoardDTO> list = boardService.getBoardSearch(map);//->서브시 ->마이바티스 ->멥퍼 다시 돌아옴 
-		
-		//페이징 처리
+		List<BoardDTO> list = boardService.getBoardSearch(map);
 		BoardPaging boardPaging = boardService.boardPaging(map);
 		
 		ModelAndView mav = new ModelAndView();
@@ -146,7 +138,6 @@ public class BoardController {
 	
 	@RequestMapping(value = "reply_write", method = RequestMethod.POST)
 	public void reply_write(BoardDTO boardDTO, @RequestParam String brd_seq) {
-		System.out.println("들어오는지 확인 "+boardDTO);
 		boardService.reply_write(boardDTO);
 	}
 	
