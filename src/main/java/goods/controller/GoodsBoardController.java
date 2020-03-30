@@ -69,13 +69,9 @@ public class GoodsBoardController {
 	@RequestMapping(value="reviewWriteWin", method=RequestMethod.GET)
 	public String reviewWrite(@RequestParam String goods_id, Model model) {
 		model.addAttribute("goods_id", goods_id);
-//		model.addAttribute("memEmail", session.getAttribute("memEmail"));
-//		model.addAttribute("memNickName", session.getAttribute("memNickName"));
 		System.out.println(goods_id);
 		return "/goods/reviewWriteWin";
 	}
-	
-
 	
 	//드래그 해서 한번에 여러개의 파일을 선택
 	@RequestMapping(value="reviewWrite", method=RequestMethod.POST)
@@ -95,7 +91,6 @@ public class GoodsBoardController {
 				FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file)); //copy(in, out);
 			} catch (IOException e) {
 				e.printStackTrace();
-				
 			}
 			
 			//3) 디비 저장을 위해 파일명을 DTO에  넘겨줌
@@ -105,7 +100,6 @@ public class GoodsBoardController {
 		qnaDTO.setEmail((String) session.getAttribute("memEmail"));
 		System.out.println(qnaDTO);
 		goodsService.reviewWrite(qnaDTO);
-
 	
 	}
 	
@@ -119,5 +113,14 @@ public class GoodsBoardController {
 		mav.setViewName("jsonView");
 		return mav;
 	}
+	
+	@RequestMapping(value="writeReply", method=RequestMethod.POST)
+	@ResponseBody
+	public String writeReply(@ModelAttribute QnaDTO qnaDTO, Model model){
+		goodsService.writeReply(qnaDTO);
+		System.out.println(qnaDTO);
+		return "/goods/qnaWrite";
+	}
+	
 	
 }

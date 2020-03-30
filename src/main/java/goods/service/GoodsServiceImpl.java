@@ -58,5 +58,11 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsDAO.getGoodsReviewList(Integer.parseInt(goods_id));
 	}
 
+	@Override
+	public void writeReply(QnaDTO qnaDTO) {
+		goodsDAO.writeReply(qnaDTO);
+	}
+
+
 
 }

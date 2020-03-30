@@ -18,4 +18,6 @@ public class QnaDTO {
 	private Date board_date;
 	private String image;
 	private String nickname;
+	private int bo_seq;
+	private int re_seq;
 }

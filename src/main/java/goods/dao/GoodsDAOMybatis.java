@@ -57,4 +57,9 @@ public class GoodsDAOMybatis implements GoodsDAO {
 		return sqlSession.selectList("goodsSQL.getGoodsReviewList", goods_id);
 	}
 
+	@Override
+	public void writeReply(QnaDTO qnaDTO) {
+		sqlSession.insert("goodsSQL.writeReply", qnaDTO);
+	}
+
 }
