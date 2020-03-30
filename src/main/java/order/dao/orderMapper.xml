@@ -57,4 +57,15 @@
             ${array[i]}
         </foreach>
     </delete>
+    <insert id="insertOrder" parameterType="order">
+        INSERT INTO GOODS_ORDER(order_id, email, order_date, order_total_price, delivery_price, 
+                                recipient, order_phone, order_zip_code, order_addr, order_addr_detail,
+                                order_memo, order_pay, order_status, delivery_code)
+                         VALUES(#{partner_order_id}, #{partner_user_id}, SYSDATE, #{total_amount}, 2500,
+                                #{orderName}, #{orderCellPhone}, #{orderZipcode}, #{orderAddress}, #{orderAddressSub}
+                                ,#{order_memo}, #{order_pay}, '결제 완료', 1)
+    </insert>
+    <insert id="insertOrderDetail" parameterType="orderDetail">
+        INSERT INTO ORDER_DETAIL VALUES(#{partner_order_id}, #{order_goods_id}, #{goods_count}, #{total_price})
+    </insert>
 </mapper>

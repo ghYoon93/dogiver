@@ -169,8 +169,8 @@
                       </tr>
                       <tr>
                         <th scope="row">배송메세지</th>
-                        <td class="order_message"><input
-                          type="text" name="orderMessage"></td>
+                        <td class="order_memo"><input
+                          type="text" name="order_memo"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -191,6 +191,8 @@
                         <td><strong
                           class="order_payment_sum"></strong>
                           <input type="hidden" name="partner_order_id" value="">
+                          <input type="hidden" name="aid" value="">
+                          <input type="hidden" name="tid" value="">
                           <input type="hidden" name="item_name" value="">
                           <input type="hidden" name="total_amount" value="">
                           <input type="hidden" name="quantity" value="">

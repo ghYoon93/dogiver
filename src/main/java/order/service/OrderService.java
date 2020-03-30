@@ -6,6 +6,7 @@ import java.util.Map;
 import order.bean.CartDTO;
 import order.bean.KakaoPayApprovalDTO;
 import order.bean.OrderDTO;
+import order.bean.OrderDetailDTO;
 
 public interface OrderService {
 
@@ -24,6 +25,10 @@ public interface OrderService {
 	public String kakaoPayReady(OrderDTO orderDTO);
 
 	public KakaoPayApprovalDTO kakaoPayInfo(String pg_token);
+
+	public void insertOrderDetail(OrderDetailDTO orderDetailDTO);
+
+	public void insertOrder(OrderDTO orderDTO);
 
 
 }

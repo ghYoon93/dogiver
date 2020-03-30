@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import order.bean.CartDTO;
+import order.bean.KakaoPayApprovalDTO;
+import order.bean.OrderDTO;
+import order.bean.OrderDetailDTO;
 
 public interface OrderDAO {
 
@@ -15,6 +18,12 @@ public interface OrderDAO {
 	public CartDTO searchCart(Map<String, String> map);
 
 	public List<CartDTO> getOrderList(Map<String, String[]> map);
+
+	public void insertOrder(OrderDTO orderDTO);
+
+	public void insertOrderDetail(OrderDetailDTO orderDetailDTO);
+
+	
 
 
 

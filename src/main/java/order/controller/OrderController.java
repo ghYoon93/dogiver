@@ -20,6 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import member.bean.MemberDTO;
 import member.service.MemberService;
 import order.bean.CartDTO;
+import order.bean.KakaoPayApprovalDTO;
 import order.bean.OrderDTO;
 import order.bean.OrderDetailDTO;
 import order.service.OrderService;
@@ -113,18 +114,38 @@ public class OrderController {
     
     @RequestMapping(value="/kakaoPay", method=RequestMethod.POST)
     public String kakaoPay(@ModelAttribute OrderDTO orderDTO) {
-    	System.out.println(orderDTO.getPartner_order_id());
-    	System.out.println(orderDTO.getPartner_user_id());
-    	System.out.println(orderDTO.getItem_name());
-    	System.out.println(orderDTO.getTotal_amount());
+    	System.out.println(orderDTO);
 //    	System.out.println(orderDTO.getOrderEmail());
 //    	redirect.addAttribute("orderDTO", orderDTO);
     	return "redirect:"+orderService.kakaoPayReady(orderDTO);
-//    	return "asd";
     }
-    @RequestMapping(value="/kakaoPaySuccess", method=RequestMethod.POST)
-    public void kakaoPaySuccess(@RequestParam("pg_token") String pg_token, Model model) {
-    	model.addAttribute("info", orderService.kakaoPayInfo(pg_token));
+    @RequestMapping(value="/kakaoPaySuccess", method=RequestMethod.GET)
+    public String kakaoPaySuccess(@RequestParam("pg_token") String pg_token, Model model) {
+    	KakaoPayApprovalDTO kakaoPayApprovalDTO = orderService.kakaoPayInfo(pg_token);
+    	System.out.println("success");
+    	System.out.println(kakaoPayApprovalDTO);
+    	model.addAttribute("info", kakaoPayApprovalDTO);
+    	
+    	return "/order/kakaoPaySuccess";
+    	
+    }
+    @RequestMapping(value="/insertOrder", method=RequestMethod.POST)
+    public String insertOrder(@ModelAttribute OrderDTO orderDTO, 
+    		                  @ModelAttribute OrderDetailDTO orderDetailDTO,
+    		                  @RequestParam String[] goods_id,
+    		                  @RequestParam String[] cart_cnt,
+    		                  @RequestParam String[] total_price) {
+    	System.out.println(orderDTO);
+    	orderService.insertOrder(orderDTO);
+    	System.out.println("order 개수: "+goods_id.length);
+    	for(int i = 0; i < goods_id.length; i++) {
+    		orderDetailDTO.setOrder_goods_id(Integer.parseInt(goods_id[i]));
+    		orderDetailDTO.setGoods_count(cart_cnt[i]);
+    		orderDetailDTO.setTotal_price(total_price[i]);
+    		System.out.println(orderDetailDTO);
+    		orderService.insertOrderDetail(orderDetailDTO);
+    	}
+    	return "asd";
     }
     
 }

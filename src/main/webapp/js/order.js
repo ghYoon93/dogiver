@@ -29,7 +29,9 @@ $(document).ready(function(){
     		  if(index == 0) item_name = items.goods_name;
     		  tag += '<tr>'
                      + '<td class="td_left">'
-                       + '<input type="hidden" name="cart_no" value="">'
+                       + '<input type="hidden" name="goods_id" value="'+items.goods_id+'">'
+                       + '<input type="hidden" name="cart_cnt" value="'+items.cart_cnt+'">'
+                       + '<input type="hidden" name="total_price" value="'+items.total_price+'">'
                        + '<div class="cart_goods_cont">'
                          + '<span class="cart_goods_image">'
                            +' <a href="#">'
@@ -66,6 +68,7 @@ $(document).ready(function(){
     	  $('#totalGoodsCnt').text(goodsCount);
     	  $('#totalGoodsPrice').text(totalGoodsPrice);
     	  $('#totalSettlePrice').text(totalSettlePrice);
+    	  $('.totalSettlePrice').text(totalSettlePrice);
     	  $('.order_payment_sum').text(totalGoodsPrice+'원');
     	  $('.totalDeliveryCharge').text(numberFormat(deliveryCharge));
     	  $('input[name=settlePrice]').val(totalSettlePrice.replace(/[^0-9]/g, ''));
@@ -84,14 +87,25 @@ $(document).ready(function(){
 //콤마 찍기
 function numberFormat(inputNumber) {
 	return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
- }
+}
+
+$('#payment_noBook').click(function(){
+	$('input[name="order_pay"').val('bank');
+});
+$('#payment_kakao').click(function(){
+	$('input[name="order_pay"').val('kakao');
+});
 
 
 $('.order-buy').on('click', function(){
 	let partner_order_id= getNow()+getRandom();
 	console.log(partner_order_id);
     $('input[name=partner_order_id]').val(getNow()+getRandom());
-    window.open('','viewer', 'width=650, height=770');
+    let popupWidth = 650;
+    let popupHeight = 770;
+    let popupX = (window.screen.width/2) - (popupWidth/2);
+    let popupY = (window.screen.height/2) - (popupHeight/2);
+    window.open('','viewer', 'width='+popupWidth+', height='+popupHeight+',  left='+ popupX + ', top='+ popupY);
     let form = document.getElementById('form-order');
     form.target='viewer';
     form.action = 'kakaoPay';
