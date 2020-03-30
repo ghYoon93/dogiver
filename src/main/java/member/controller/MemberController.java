@@ -162,6 +162,7 @@ public class MemberController {
 			return mav;
 		} else {
 			mav.addObject("chkPwd", "false");
+			mav.setViewName("jsonView");
 			return mav;
 		}
 	}
@@ -173,5 +174,11 @@ public class MemberController {
 		System.out.println(memberDTO);
 		String exist = memberService.modi(memberDTO);
 		return exist;
+	}
+	
+	@RequestMapping(value = "/admin/admin", method = RequestMethod.GET)
+	public String admin(Model model) {
+		model.addAttribute("admin");
+		return "admin";
 	}
 }
