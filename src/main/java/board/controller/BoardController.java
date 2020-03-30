@@ -31,9 +31,16 @@ public class BoardController {
 	
 	@RequestMapping(value = "boardWrite", method = RequestMethod.POST)
 	public void boardWrite(BoardDTO boardDTO) {
-		System.out.println("확인중 ㅋㅋㅋ");
 		System.out.println(boardDTO);
 		boardService.boardWrite(boardDTO);
+	}	
+		
+	@RequestMapping(value = "re_write", method = RequestMethod.POST)
+	public void re_write(BoardDTO boardDTO) {
+		System.out.println("확인중 ㅋㅋㅋ");
+		System.out.println(boardDTO);
+		boardService.re_write(boardDTO);
+		
 	}
 	@RequestMapping(value="boardList", method=RequestMethod.GET)
 	public String boardList(@RequestParam(required=false, defaultValue="1") String pg,
@@ -59,28 +66,33 @@ public class BoardController {
 		mav.setViewName("jsonView");
 		return mav;
 	}
-	
 	@RequestMapping(value="boardView", method=RequestMethod.GET)
-	public String boardView(@RequestParam String brd_seq,
+	public String boardList(@RequestParam String brd_seq,
 							@RequestParam(required=false, defaultValue="1") String pg,
-							Model model, HttpSession session) {
-		
+							Model model) {
 		model.addAttribute("brd_seq", brd_seq);
 		model.addAttribute("pg", pg);
-		
-		return "/board/boardView";
+		return "boardView";
 	}
+	
+	
 	
 	@RequestMapping(value="getBoardView", method=RequestMethod.POST)
 	public ModelAndView getBoardView( @RequestParam String brd_seq, @RequestParam(required=false, defaultValue="1") String pg,
 									HttpSession session) {
 		System.out.println("겟보드뷰 오는지 확인");
 		BoardDTO boardDTO = boardService.getBoard(brd_seq);
+<<<<<<< HEAD
 		System.out.println(brd_seq+"입니다");
+=======
+		List<BoardDTO> list = boardService.getReBoard(brd_seq);
+		
+>>>>>>> origin/board&contact
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
 		mav.addObject("boardDTO", boardDTO);
+		mav.addObject("list", list);//리스트에는 댓글의 내용들이 들어있다.
 		mav.setViewName("jsonView");
 		return mav;
 	}

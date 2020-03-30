@@ -100,6 +100,10 @@ public class BoardServiceImpl implements BoardService {
 		return boardDAO.getBoard(brd_seq);
 	}
 	@Override
+	public List<BoardDTO> getReBoard(String brd_seq) {
+		return boardDAO.getReBoard(brd_seq);
+	}
+	@Override
 	public BoardDTO getBoardView_before(String brd_seq) {
 		return boardDAO.getBoardView_before(brd_seq);
 	}
@@ -107,6 +111,22 @@ public class BoardServiceImpl implements BoardService {
 	public BoardDTO getBoardView_after(String brd_seq) {
 		return boardDAO.getBoardView_after(brd_seq);
 	}
+
+	@Override
+	public List<BoardDTO> getReply(int bd_seq) {
+		return boardDAO.getReply(bd_seq);
+	}
+
+	@Override
+	public void re_write(BoardDTO boardDTO) {
+		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
+		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
+		System.out.println("확인중!!!"+boardDTO);
+		boardDAO.re_write(boardDTO);
+		
+	}
+
+
 	
 	
 
