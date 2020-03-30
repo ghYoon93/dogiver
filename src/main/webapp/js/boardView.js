@@ -1,6 +1,6 @@
 let link = document.location.href; 
 
-//데이터 뿌려주기 
+// 데이터 뿌려주기
 $(document).ready(function() {
 	
 	$.ajax({
@@ -18,32 +18,33 @@ $(document).ready(function() {
 			$('#dateSpan').text(data.boardDTO.brd_logtime);
 			$('#hitSpan').text(data.boardDTO.brd_hit);
 			$('#contentSpan').html(data.boardDTO.brd_content);
+
 			if (data.memId == data.boardDTO.brd_id)
 				$('#boardViewSpan').show();
 			else
 				$('#boardViewSpan').hide();
+
 		}
 	});
 });
 
 
 $('#writeBtn').click(function(){
-
-			if (data.memEmail == data.boardDTO.brd_email)
-				$('#board_member_addBtn').show();
-			else
-				$('#board_member_addBtn').hide();
 	location.href ='boardWriteForm';
-		}
-	});
 });
-//글쓰기 버튼 
+
+
+
+$('#writeBtn').click(function(){
+	location.href ='boardWriteForm';
+});
+// 글쓰기 버튼
 $('#writeBtn').click(function(){
 		location.href='http://localhost:8080/dogiver/board/boardWriteForm';
 	
 });
 
-//이전 버튼
+// 이전 버튼
 $('#beforeBtn').click(function() {
     $.ajax({
         type : 'post',
@@ -69,7 +70,7 @@ $('#beforeBtn').click(function() {
     });
 
 });
-//다음 버튼 버튼
+// 다음 버튼 버튼
 $('#afterBtn').click(function() {
     $.ajax({
         type : 'post',
@@ -92,7 +93,7 @@ $('#afterBtn').click(function() {
 });
 
 
-//글쓰기 버튼 삭제 버튼 
+// 글쓰기 버튼 삭제 버튼
 $('#deletBtn').click(function(){
 	document.boardViewForm.method = 'POST';
 	document.boardViewForm.action = 'boardDelete';
@@ -107,7 +108,7 @@ $('#listBtn').click(function(){
 	
 });
 
-//목록 버튼 
+// 목록 버튼
 $('#listBtn').click(function(){
 	location.href ='boardList?pg='+$('#pg').val();
 	

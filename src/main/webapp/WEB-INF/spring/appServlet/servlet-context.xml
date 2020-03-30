@@ -52,6 +52,8 @@
 	<context:component-scan base-package="main.controller"/>
 	<context:component-scan base-package="member.controller"/>
 	<context:component-scan base-package="goods.controller"/>
+	<context:component-scan base-package="board.controller"/>
+	<context:component-scan base-package="contact.controller"/>
 	
 	
 
