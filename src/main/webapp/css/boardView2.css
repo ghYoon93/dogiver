@@ -165,26 +165,25 @@ span{
 	
 }
 
-#board_button input{
-	width: 150px; 
-	height: 30px; 
-	margin-right: 20px;
-	
-}
-#board_member_addBtn{
-	text-align: center; 
-	margin-top: 10px;
-}
-#board_member_addBtn input{
-	width: 150px; 
-	height: 30px; 
-	margin-right: 20px;
+#board_content_reply {
+	min-height: 200px;
+	width: 1100px;
+	border: 1px solid black;
 }
 
+<<<<<<< HEAD
+#board_content_reply {
+	min-height: 200px;
+	width: 1100px;
+	border: 1px solid black;
+}
+
+=======
 
 #board_reply {
 	
 	}
+>>>>>>> board&contact
 #board_member_addBtn{
 	width: 1100px;
 }
