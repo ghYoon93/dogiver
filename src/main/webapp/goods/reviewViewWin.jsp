@@ -44,6 +44,8 @@ $('#reviewDeleteBtn').click(function(){
 		data: 'bo_seq=${bo_seq}',
 		success: function(){
 			alert('삭제되었습니다.');
+			window.close();
+
 		}
 	});
 });
