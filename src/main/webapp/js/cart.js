@@ -7,51 +7,59 @@ $(document).ready(function() {
 							url : '/dogiver/order/getCart',
 							dataType : 'json',
 							success : function(data) {
-								let tbody = $('#form-cart tbody');
-								let tag;
-								let trCount = 0;
-								$.each(data.list,function(index, items) {
-								    tag += '<tr>'
-												   + '<td class="td_check">'
-													   + '<input type="checkbox" id="'+ items.cart_id+ '" name="checkGoods" value="'+ items.cart_id+ '">'
-													 + '</td>'
-													 + '<td class="td_left">'
-													   + '<div class="cart_goods_cont">'
-														   + '<span class="cart_goods_image">'
-															   + '<a href="#">'
-															     + '<img src="../image/goods/'+ items.goods_thumbnail+ '" class="middle" alt="'+ items.goods_name+ '" title="'+ items.goods_name+ '">'
-															   + '</a>'
-															 + '</span>'
-														   + '<div class="cart_goods_info">'
-														     + '<em><a href="#">'+ items.goods_name+ '</a></em>'
-														   + '</div>'
-													  + '</div>'
-													 + '</td>'
-													 + '<td class=td_order_amount>'
-													   + '<div class="cart_goods_num">'
-														   + '<strong>'+ items.cart_cnt+ '</strong><font>개</font>'
-															 + '<div class="btn_option">'
-															   + '<button type="button" class="btn_option_view"'
-															   + 'data-cartId="'+items.cart_id
-															   + '" data-id="'+items.goods_id
-															   + '" data-img="'+items.goods_thumbnail
-															   + '" data-name="'+items.goods_name
-															   + '" data-cnt="'+items.cart_cnt
-															   + '" data-price="'+items.goods_price
-															   + '" data-total_price="'+items.total_price
-															   +'">수량 변경</button>'
-															 + '</div>'
-														 + '</div>'
-													 + '</td>'
-													 + '<td><strong>'+ items.goods_price+ '원</strong></td>'
-													 + '<td><strong>'+ items.total_price+ '원</strong></td>'
-													+ '</tr>'
-									  trCount++;
-								}); // each
-									  tbody.append(tag);
-										console.log(trCount);
-								$('#form-cart tr').eq(1).append('<td rowspan="' + trCount + '" >배송비<br>2,500원</td>');
-								checkAll();
+								if(data.memEmail == null){
+									$('.order_wrap').hide();
+									$('.need_login').show();
+								}else{
+									$('.order_wrap').show();
+									$('.need_login').hide();
+									let tbody = $('#form-cart tbody');
+									let tag;
+									let trCount = 0;
+									$.each(data.list,function(index, items) {
+										tag += '<tr>'
+											+ '<td class="td_check">'
+											+ '<input type="checkbox" id="'+ items.cart_id+ '" name="checkGoods" value="'+ items.cart_id+ '">'
+											+ '</td>'
+											+ '<td class="td_left">'
+											+ '<div class="cart_goods_cont">'
+											+ '<span class="cart_goods_image">'
+											+ '<a href="#">'
+											+ '<img src="../image/goods/'+ items.goods_thumbnail+ '" class="middle" alt="'+ items.goods_name+ '" title="'+ items.goods_name+ '">'
+											+ '</a>'
+											+ '</span>'
+											+ '<div class="cart_goods_info">'
+											+ '<em><a href="#">'+ items.goods_name+ '</a></em>'
+											+ '</div>'
+											+ '</div>'
+											+ '</td>'
+											+ '<td class=td_order_amount>'
+											+ '<div class="cart_goods_num">'
+											+ '<strong>'+ items.cart_cnt+ '</strong><font>개</font>'
+											+ '<div class="btn_option">'
+											+ '<button type="button" class="btn_option_view"'
+											+ 'data-cartId="'+items.cart_id
+											+ '" data-id="'+items.goods_id
+											+ '" data-img="'+items.goods_thumbnail
+											+ '" data-name="'+items.goods_name
+											+ '" data-cnt="'+items.cart_cnt
+											+ '" data-price="'+items.goods_price
+											+ '" data-total_price="'+items.total_price
+											+'">수량 변경</button>'
+											+ '</div>'
+											+ '</div>'
+											+ '</td>'
+											+ '<td><strong>'+ items.goods_price+ '원</strong></td>'
+											+ '<td><strong>'+ items.total_price+ '원</strong></td>'
+											+ '</tr>'
+											trCount++;
+									}); // each
+									tbody.append(tag);
+									console.log(trCount);
+									$('#form-cart tr').eq(1).append('<td rowspan="' + trCount + '" >배송비<br>2,500원</td>');
+									checkAll();
+									
+								}
 								} // success
 						}); // ajax
 

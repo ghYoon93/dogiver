@@ -24,13 +24,13 @@
           <li class="dot"><span class="dot">01</span> 장바구니 <span>&gt;</span></li>
           <li><span class="dot">02</span> 주문서작성/결제<span>&gt;</span></li>
           <li class="page_on"><span class="dot">03</span> 주문완료</li>
+        </ol>
       </div>
           <div class="order_complete">
             <h3>주문완료</h3>
             <p>주문이 정상적으로 완료되었습니다.<br>주문번호: ${param.order_id}</p>
             <a href="../main/index">홈으로</a> <a href="../my/orderList">주문 조회</a>
           </div>
-        </ol>
     </div>
   </div>
   <div id="footerDiv"></div>

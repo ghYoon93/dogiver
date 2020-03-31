@@ -324,7 +324,7 @@ body{font-family: "Noto Sans KR", sans-serif;}
   display: inline-block;
 }
 /** //option modal **/
-
+/* 완료 및 접근 제한 */
 .order_complete {
   display: inline-block;
   height: 600px;
@@ -618,6 +618,46 @@ body{font-family: "Noto Sans KR", sans-serif;}
   color: #000;
 }
 
+/* 장바구니 접근 제한 */
+.need_login {
+  display: block;
+  height: 600px;
+  width: 1100px;
+  background: #fbf1f0;
+  margin: 0 auto;
+  padding: 40px 0 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 100px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.need_login h3 {
+  position: relative;
+  font-size: 24px;
+  color: #222;
+  line-height: 1;
+  padding: 30px 0 30px;
+}
 
+.need_login p {
+  padding: 30px 0 50px;
+  font-size: 14px;
+  color: #888;
+}
+
+.need_login a {
+  display: inline-block;
+  width: 120px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  font-size: 15px;
+  background: #ec2126;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+/* //장바구니 접근 제한 */
 
 
