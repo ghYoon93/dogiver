@@ -113,7 +113,8 @@ $(document).ready(function() {
 				dataType: 'text',
 				success : function(data) {
 					if (data == "true") {
-						location.href="../main/index";
+//						location.href="../main/index";
+						history.back();
 					} else {
 						$('.loginMessage').text('로그인 실패~ㅋ').show("slow").css("color","red");
 						setTimeout(function() {
