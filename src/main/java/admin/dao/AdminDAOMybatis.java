@@ -37,5 +37,4 @@ public class AdminDAOMybatis implements AdminDAO {
 		
 		return sqlSession.insert("adminSQL.dogiverInsert", map);
 	}
-
 }
