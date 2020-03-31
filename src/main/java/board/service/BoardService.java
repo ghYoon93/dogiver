@@ -32,6 +32,8 @@ public interface BoardService {
 
 	public List<BoardDTO> getMyreply(String nickName);
 
+	public BoardDTO getMyboardView(String brd_seq);
+
 
 
 }

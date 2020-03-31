@@ -51,21 +51,30 @@
         	<label>내가 쓴 글</label>
         		<table id="myboardTable">
 	        		<tr>
-		        		<th>제목</th>
-		        		<th>날짜</th>
+		        		<th width="350px">제목</th>
+		        		<th width="150px">날짜</th>
 	        		</tr>
         		</table>
         	</div>
         	<div class="myboardList">
         	<label>내가 쓴 댓글</label>
         		<table id="myreplyTable">
+        			<tr>
+        				<th width="350px">코멘트</th>
+        				<th width="150px">날짜</th>
+        			</tr>
         		</table>
         	</div>
         	<div id="myboardView">
         		<table>
         			<tr>
-        				<th>코멘트</th>
-        				<th>날짜</th>
+        				<td width="150" height="150">글번호 : <span id="brd_seq"></span></td>
+        				<td width="150">글종류 : <span id="brd_category"></span></td>
+        				<td width="600">제목 : <span id="brd_title"></span></td>
+        				<td width="150">날짜 : <span id="brd_logtime"></span></td>
+        			</tr>
+        			<tr>
+        				<td colspan="4" id="brd_content" height="350"></td>
         			</tr>
         		</table>
         	</div>

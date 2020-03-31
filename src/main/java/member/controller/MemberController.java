@@ -122,6 +122,7 @@ public class MemberController {
 		if (chkPwd) {
 			session.setAttribute("role", memberDTO.getRole());
 			session.setAttribute("memEmail", email);
+			session.setAttribute("memNickName", memberDTO.getNickName());
 			return "true";
 		} else {
 			return "false";

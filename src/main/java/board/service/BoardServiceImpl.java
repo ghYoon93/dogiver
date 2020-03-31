@@ -153,4 +153,10 @@ public class BoardServiceImpl implements BoardService {
 		
 		return boardDAO.getMyreply(nickName);
 	}
+
+	@Override
+	public BoardDTO getMyboardView(String brd_seq) {
+		
+		return boardDAO.getMyboardView(brd_seq);
+	}
 }

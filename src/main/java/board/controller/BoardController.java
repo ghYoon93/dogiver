@@ -195,5 +195,14 @@ public class BoardController {
 		mav.setViewName("jsonView");
 		return mav;
 	}
+	
+	@RequestMapping(value = "getMyboardView", method = RequestMethod.POST)
+	public ModelAndView getMyboardView(@RequestParam String brd_seq) {
+		BoardDTO boardDTO = boardService.getMyboardView(brd_seq);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("boardDTO", boardDTO);
+		mav.setViewName("jsonView");
+		return mav;
+	}
 
 }

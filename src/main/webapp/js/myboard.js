@@ -4,7 +4,6 @@ $(document).ready(function() {
 		url: '/dogiver/board/getMyboard',
 		dataType: 'json',
 		success: function(data){
-			alert(JSON.stringify(data));
 			$.each(data.list, function(index, items){
 				$('<tr/>').append($('<td/>',{
 				}).append($('<a/>', {
@@ -17,22 +16,39 @@ $(document).ready(function() {
 				})).appendTo('#myboardTable')
 			});//each
 		}
-	});
+	});//글 ajax
 	
 	$.ajax({
 		type: 'post',
 		url: '/dogiver/board/getMyreply',
 		dataType: 'json',
 		success: function(data){
-			alert(JSON.stringify(data));
 			$.each(data.list, function(index, items){
 				$('<tr/>').append($('<td/>',{
 					text: items.re_content
 				})).append($('<td/>',{
 					text: items.re_logtime
-				})).appendTo('#myboardreply')
-				
+				})).appendTo('#myreplyTable')	
 			});//each
 		}
+	});//댓글 ajax
+	
+	$(document).on('click', 'a', function() {
+		let brd_seq = $(this).attr('id');
+		alert(brd_seq);
+		$.ajax({
+			type: 'post',
+			url: '/dogiver/board/getMyboardView',
+			data: {'brd_seq': brd_seq},
+			dataType: 'json',
+			success: function(data){
+				alert(JSON.stringify(data));
+				$('#brd_seq').text(data.boardDTO.brd_seq);
+				$('#brd_category').text(data.boardDTO.brd_category);
+				$('#brd_title').text(data.boardDTO.brd_title);
+				$('#brd_logtime').text(data.boardDTO.brd_logtime);
+				$('#brd_content').html(data.boardDTO.brd_content);
+			}
+		});
 	});
 });
