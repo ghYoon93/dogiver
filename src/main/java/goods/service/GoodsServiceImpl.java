@@ -55,6 +55,7 @@ public class GoodsServiceImpl implements GoodsService {
 
 	@Override
 	public List<QnaDTO> getGoodsReviewList(String goods_id) {
+		System.out.println(goods_id);
 		return goodsDAO.getGoodsReviewList(Integer.parseInt(goods_id));
 	}
 
@@ -76,6 +77,11 @@ public class GoodsServiceImpl implements GoodsService {
 	@Override
 	public QnaDTO reviewUpdateWin(String bo_seq) {
 		return goodsDAO.reviewUpdateWin(Integer.parseInt(bo_seq));
+	}
+
+	@Override
+	public void reviewUpdate(QnaDTO qnaDTO) {
+		goodsDAO.reviewUpdate(qnaDTO);
 	}
 
 

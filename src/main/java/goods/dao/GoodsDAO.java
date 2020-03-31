@@ -32,5 +32,7 @@ public interface GoodsDAO {
 
 	public QnaDTO reviewUpdateWin(int bo_seq);
 
+	public void reviewUpdate(QnaDTO qnaDTO);
+
 
 }

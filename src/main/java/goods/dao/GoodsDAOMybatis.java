@@ -77,4 +77,9 @@ public class GoodsDAOMybatis implements GoodsDAO {
 		return sqlSession.selectOne("goodsSQL.reviewUpdateWin", bo_seq);
 	}
 
+	@Override
+	public void reviewUpdate(QnaDTO qnaDTO) {
+		sqlSession.insert("goodsSQL.reviewUpdate", qnaDTO);
+	}
+
 }

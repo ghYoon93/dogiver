@@ -32,5 +32,7 @@ public interface GoodsService {
 
 	public QnaDTO reviewUpdateWin(String bo_seq);
 
+	public void reviewUpdate(QnaDTO qnaDTO);
+
 
 }

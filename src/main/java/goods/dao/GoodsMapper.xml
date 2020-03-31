@@ -59,11 +59,12 @@
 	</insert> 
 	
 	<select id="getGoodsReviewList" parameterType="int" resultType="goods.bean.QnaDTO">
-		select * 
-		from goods_board join member
-		on member.email = goods_board.email
-		where goods_board.goods_id=#{goods_id}
-		AND category_code='REVIEW' order by board_date desc
+		SELECT * 
+		  FROM goods_board
+               JOIN member
+		       ON member.email = goods_board.email
+		 WHERE goods_board.goods_id=#{goods_id}
+		       AND category_code='REVIEW' ORDER BY board_date DESC
 	</select>
 	
 	<select id="reviewView" parameterType="int" resultType="goods.bean.QnaDTO">
@@ -73,4 +74,8 @@
 	<select id="reviewUpdateWin" parameterType="int" resultType="goods.bean.QnaDTO">
 		select * from goods_board where bo_seq=#{bo_seq} AND category_code='REVIEW'
 	</select>
+	
+	<insert id="reviewUpdate" parameterType="goods.bean.QnaDTO">
+		update goods_board set text_content=#{text_content}, image=#{image} where bo_seq=#{bo_seq} 
+	</insert>
 </mapper>

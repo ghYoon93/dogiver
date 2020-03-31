@@ -80,8 +80,8 @@ public class GoodsBoardController {
 	public void reviewWrite(@ModelAttribute QnaDTO qnaDTO, @RequestParam("img[]") List<MultipartFile> list, HttpSession session) {
 	//public void reviewWrite(@RequestParam Map<String, Integer> map, @RequestParam("img[]") List<MultipartFile> list) {
 		
-		//String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
-		String filePath = "C:\\Users\\bitcamp\\Desktop\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
+		String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
+		//String filePath = "C:\\Users\\bitcamp\\Desktop\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
 
 		for(MultipartFile img : list) {
 			String fileName = img.getOriginalFilename(); //실제 파일명
@@ -151,16 +151,38 @@ public class GoodsBoardController {
 		return mav;
 	}
 
-	@RequestMapping(value="reviewUpdateWin", method=RequestMethod.POST)
+	@RequestMapping(value="reviewUpdateWin", method=RequestMethod.GET)
 	public String reviewUpdateWin(@RequestParam String bo_seq, Model model, HttpSession session) {
 		model.addAttribute("bo_seq", bo_seq);
+		System.out.println(bo_seq);
 		model.addAttribute("memEmail", session.getAttribute("memEmail"));
 		return "/goods/reviewUpdateWin";
-//		QnaDTO qnaDTO = goodsService.reviewUpdateWin(bo_seq);
-//		ModelAndView mav = new ModelAndView();
-//		mav.addObject("qnaDTO", qnaDTO);
-//		mav.setViewName("jsonView");
-//		
-//		return mav;
+	}
+	
+	@RequestMapping(value="reviewUpdate", method=RequestMethod.POST)
+	@ResponseBody
+	public void reviewUpdate(@ModelAttribute QnaDTO qnaDTO, @RequestParam("img[]") List<MultipartFile> list, HttpSession session) {
+		
+		String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
+		//String filePath = "C:\\Users\\bitcamp\\Desktop\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
+
+		for(MultipartFile img : list) {
+			String fileName = img.getOriginalFilename(); //실제 파일명
+			File file = new File(filePath, fileName);
+			
+			//2) 파일 복사
+			try {
+				FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file)); //copy(in, out);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			//3) 디비 저장을 위해 파일명을 DTO에  넘겨줌
+			qnaDTO.setImage(fileName);
+		}//for
+			
+		qnaDTO.setEmail((String) session.getAttribute("memEmail"));
+		System.out.println(qnaDTO);
+		goodsService.reviewUpdate(qnaDTO);
 	}
 }
