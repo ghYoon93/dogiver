@@ -17,8 +17,8 @@
   float: left;
   flex: 3;
   width: 140px;
-  height: 40px;
-  padding-top: 5px;
+  height: 50px;
+  padding: 10px;
   text-align: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -48,7 +48,7 @@
 }
 .article {
   width: 1100px;
-  border: 1px solid #f2f2f2;
+  border: 1px solid #e6e5e7;
   border-top: none;
   box-sizing: border-box;
   border-bottom-right-radius: 5px;
@@ -58,3 +58,185 @@
 .article table {
   border: 1px solid;
 }
+
+/* 헌혈견 관리자 css */
+
+.admin_dogiverTable{
+	text-align: center;
+	font-size: 13pt;
+	margin: auto;	
+}
+
+#admin_dogiverPagingDiv{
+	width: 1100px;
+	text-align: center;
+}
+
+#admin_dogiverView{
+	width: 1100px;
+	height: 500px;
+	overflow: hidden;
+	font-size: 13pt;
+	display: none;
+	padding-left: 10px;
+	
+}
+
+.btnDiv{
+	margin: auto;
+	width: 80%;
+	height: 45%;
+	margin-bottom: 5px;
+}
+
+.btnDiv button{
+	display: inline-block;
+	width: 120px;
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+	color: #fff;
+	font-size: 13px;
+	font-weight: bold;
+	background: #F8585B;
+	text-decoration: none;
+}
+
+#dog_imageViewDiv{
+	width: 300px;
+	height: 400px;
+	float: left;
+}
+
+#dog_imageView{
+	margin-top: 10px;
+	width: 300px;
+	height: 380px;
+}
+
+#dog_nameDiv{
+	width: 250px;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#dog_ageDiv{
+	width: 250px;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#dog_weightDiv{
+	width: 250px;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#dog_breedDiv{
+	width: 250px;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#dog_bloodtypeDiv{
+	width: 250px;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#apply_statusDiv{
+	width: 250px;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#apply_status{
+	height: 50px;
+	width: 230px;
+	font-size: 15pt;
+}
+
+#blood_ccDiv{
+	width: 250px;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#donation_dateDiv{
+	width: 250px;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#nameDiv{
+	width: 250px;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#phoneDiv{
+	width: 250px;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#emailDiv{
+	width: 250px;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#dog_imageDiv{
+	width: 300px;
+	height: 100px;
+	float: left;
+	font-size: 13pt;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#dog_image{
+	width: 280px;
+}
+
+#descriptionDiv{
+	width: 900px;
+	height: 100px;
+	float: left;
+
+}
+
+#modifyBtnDiv{
+	width: 200px;
+	height: 100px;
+	float: left;
+}
+
+#admin_dogiverView input{
+	width: 230px;
+	height: 50px;
+	font-size: 14pt;
+}
+/* 헌혈견 관리자 css*/

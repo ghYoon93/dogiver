@@ -12,4 +12,6 @@ public interface MemberDAO {
 
 	public MemberDTO getMember(String email);
 
+	public int modi(MemberDTO memberDTO);
+
 }

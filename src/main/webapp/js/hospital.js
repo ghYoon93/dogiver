@@ -46,15 +46,6 @@ $(document).ready(function() {
 		var marker = new naver.maps.Marker({
 			map : map,
 			position : position,
-//			title : key,
-//			icon : {
-//				url : HOME_PATH + '/img/example/sp_pins_spot_v3.png',
-//				size : new naver.maps.Size(24, 37),
-//				anchor : new naver.maps.Point(12, 37),
-//				origin : new naver.maps.Point(MARKER_SPRITE_POSITION[key][0],
-//						MARKER_SPRITE_POSITION[key][1])
-//			},
-//			zIndex : 100
 		});
 	
 		var infoWindow = new naver.maps.InfoWindow({

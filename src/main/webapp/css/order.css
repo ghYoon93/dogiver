@@ -168,7 +168,7 @@ body{font-family: "Noto Sans KR", sans-serif;}
   height: 31px;
   line-height: 30px;
 }
-.order_message input[type="text"]{
+.order_memo input[type="text"]{
   width: 90%;
 }
 .address_input .btn_post_setting{

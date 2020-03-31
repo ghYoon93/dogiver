@@ -3,8 +3,8 @@
 <mapper namespace="boardSQL">
 	<!-- 글쓰기 -->
 	<insert id="boardWrite" parameterType="board.bean.BoardDTO">
-		insert into board (brd_seq, brd_email, brd_nickname, brd_category, brd_title, brd_content,
-		brd_logtime) values(brd_seq.nextval,#{brd_email},#{brd_nickname}, #{brd_category}, #{brd_title},
+		insert into board (brd_seq, brd_category, brd_title, brd_content,
+		brd_logtime) values(brd_seq.nextval, #{brd_category}, #{brd_title},
 		#{brd_content}, SYSDATE)
 	</insert>
 

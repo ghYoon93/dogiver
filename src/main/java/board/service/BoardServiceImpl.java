@@ -24,10 +24,16 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void boardWrite(BoardDTO boardDTO) {
-		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
-		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
 		boardDAO.boardWrite(boardDTO);
 	}
+	
+	@Override
+	public void reply_write(BoardDTO boardDTO) {
+		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
+		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
+		boardDAO.reply_write(boardDTO);
+	}
+	
 	@Override
 	public void delete(int brd_seq) {
 		boardDAO.boardDelete(brd_seq);
@@ -93,10 +99,15 @@ public class BoardServiceImpl implements BoardService {
 	public BoardDTO getBoard(String brd_seq) {
 		return boardDAO.getBoard(brd_seq);
 	}
-
-
-
-
+	@Override
+	public BoardDTO getBoardView_before(String brd_seq) {
+		return boardDAO.getBoardView_before(brd_seq);
+	}
+	@Override
+	public BoardDTO getBoardView_after(String brd_seq) {
+		return boardDAO.getBoardView_after(brd_seq);
+	}
+	
 	
 
 }
