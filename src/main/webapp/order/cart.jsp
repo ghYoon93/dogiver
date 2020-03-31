@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="../css/order.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
     rel="stylesheet" />
-  <title>DOGIVER</title>
+  <title>장바구니</title>
 </head>
 
 <body>
   <div id="headerDiv"></div>
   <!-- 페이지타이틀 -->
     <div class="page-title">
-      <h2 class="h2">주문서 작성/결제</h2>
+      <h2 class="h2">장바구니</h2>
     </div>
     <!-- //페이지타이틀 -->
   <div id="wrap">

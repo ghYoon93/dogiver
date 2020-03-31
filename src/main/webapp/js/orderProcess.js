@@ -11,5 +11,5 @@ $(document).ready(function(){
 	form.action = 'insertOrder';
 	form.target = '';
 	form.submit();
-//	self.close();
+	self.close();
 });

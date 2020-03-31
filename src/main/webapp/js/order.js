@@ -4,7 +4,7 @@
 $(document).ready(function(){
   let checkGoodsArr = $('input[name=checkGoods]');
   console.log(checkGoodsArr[0].value);
-  if(checkGoodsArr[0].value == 'buyNow'){
+  if(checkGoodsArr[0].value == '0'){
 
   }else{
 	  let orderList = new Array();
@@ -75,7 +75,7 @@ $(document).ready(function(){
     	  $('#totalSettlePriceView').text(totalSettlePrice);
     	  
     	  //카카오페이
-    	  if(goodsCount>1) item_name +=' 외 '+goodsCount+'건';
+    	  if(goodsCount>1) item_name +=' 외 '+(goodsCount-1)+'건';
     	  $('input[name=item_name]').val(item_name);
     	  $('input[name=total_amount]').val(priceSum+deliveryCharge);
     	  $('input[name=quantity]').val(goodsCount);
@@ -111,15 +111,20 @@ $('.order-buy').on('click', function(){
     form.action = 'kakaoPay';
     form.submit();
 });
+
+$('input[name="email"]').on('focusout', function(){
+	$('input[name="partner_user_id"]').val($(this).val());
+});
+
 //주문하기
 function getNow(){
 	var date = new Date(); 
 	var year = date.getFullYear(); 
 	var month = new String(date.getMonth()+1); 
 	var day = new String(date.getDate()); 
-	var hour = date.getHours(); 
-	var minute = date.getMinutes(); 
-	var second = date.getSeconds(); 
+	var hour = new String(date.getHours()); 
+	var minute = new String(date.getMinutes()); 
+	var second = new String(date.getSeconds()); 
 	if(month.length == 1){ 
 	    month = "0" + month; 
 	} 
@@ -135,7 +140,7 @@ function getNow(){
 	if(second.length == 1){ 
 		second = "0" + second; 
 	} 
-	return String(year+month+day+hour+minute+second);
+	return new String(year+month+day+hour+minute+second);
 }
 function getRandom(){
 	var num1 = Math.floor(Math.random() * 9) + 1;
@@ -143,5 +148,5 @@ function getRandom(){
 	var num3 = Math.floor(Math.random() * 9) + 1;
 	var num4 = Math.floor(Math.random() * 9) + 1;
 	var randomNum = num1*1000 + num2*100 + num3*10 + num4;
-	return String(randomNum);
+	return new String(randomNum);
 }

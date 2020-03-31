@@ -34,10 +34,10 @@ public class AdminController {
 	@Autowired
 	private ServletContext servletContext;
 	
-	@RequestMapping(value = "admin", method = RequestMethod.GET)
-	public String admin() {
-		return "/admin/admin";
-	}
+//	@RequestMapping(value = "admin", method = RequestMethod.GET)
+//	public String admin() {
+//		return "/admin/admin";
+//	}
 	
 	@RequestMapping(value = "admin_blood", method = RequestMethod.GET)
 	public String admin_blood(@RequestParam(required = false, defaultValue = "1") String pg, Model model) {

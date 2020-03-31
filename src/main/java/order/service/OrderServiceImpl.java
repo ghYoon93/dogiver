@@ -20,8 +20,9 @@ import order.bean.KakaoPayApprovalDTO;
 import order.bean.KakaoPayReadyDTO;
 import order.bean.OrderDTO;
 import order.bean.OrderDetailDTO;
+import order.bean.OrderListDTO;
+import order.bean.OrderStatusDTO;
 import order.dao.OrderDAO;
-import order.dao.OrderDAOMyBatis;
 @Service
 public class OrderServiceImpl implements OrderService {
 	@Autowired
@@ -147,6 +148,14 @@ public class OrderServiceImpl implements OrderService {
 	public void insertOrder(OrderDTO orderDTO) {
 		orderDAO.insertOrder(orderDTO);
 		
+	}
+	@Override
+	public List<OrderListDTO> getMyOrder(String memEmail) {
+		return orderDAO.getMyOrder(memEmail);
+	}
+	@Override
+	public List<OrderStatusDTO> getStatus(String memEmail) {
+		return orderDAO.getStatus(memEmail);
 	}
 
 }

@@ -156,7 +156,7 @@
                       <tr>
                         <th scope="row">이메일<span class="important">(필수)</span></th>
                         <td class="member_email"><input type="text"
-                          name="orderEmail" value="${memberDTO.email }" maxlength="20">
+                          name="email" value="${memberDTO.email }" maxlength="20">
                           <input type="hidden" name="partner_user_id" value="${memberDTO.email }">
                           <select
                           id="inputState">

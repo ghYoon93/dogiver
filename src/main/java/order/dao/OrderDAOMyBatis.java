@@ -12,6 +12,8 @@ import order.bean.CartDTO;
 import order.bean.KakaoPayApprovalDTO;
 import order.bean.OrderDTO;
 import order.bean.OrderDetailDTO;
+import order.bean.OrderListDTO;
+import order.bean.OrderStatusDTO;
 
 @Repository
 @Transactional
@@ -58,6 +60,14 @@ public class OrderDAOMyBatis implements OrderDAO {
 	public void insertOrderDetail(OrderDetailDTO orderDetailDTO) {
 		sqlSession.insert("orderSQL.insertOrderDetail", orderDetailDTO);
 		
+	}
+	@Override
+	public List<OrderListDTO> getMyOrder(String memEmail) {
+		return sqlSession.selectList("orderSQL.getMyOrder",memEmail);
+	}
+	@Override
+	public List<OrderStatusDTO> getStatus(String memEmail) {
+		return sqlSession.selectList("orderSQL.getStatus", memEmail);
 	}
 
 }
