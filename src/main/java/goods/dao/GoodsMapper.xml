@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+	
 <mapper namespace="goodsSQL">
 	<select id="getGoodsList" parameterType="int" resultType="goods.bean.GoodsDTO">
 		select * from goods
@@ -31,4 +32,34 @@
 			goods_price
 		</if>
 	</select>
+	
+	<!-- 상품문의 -->
+	<insert id="qnaWrite" parameterType="java.util.Map">
+		insert into goods_board(bo_seq, email, goods_id, category_code, title, text_content, board_date)
+		values(goods_board_bo_seq.nextval, 'dogiver503@gmail.com', #{goods_id}, 'QNA', 'test', #{text_content}, SYSDATE)
+	</insert>
+	
+	<select id="getGoodsQnaList" parameterType="int" resultType="goods.bean.QnaDTO">
+		select * from goods_board where goods_id=#{goods_id} AND category_code='QNA' order by board_date desc
+	</select>
+	
+	<!-- 상품리뷰 -->
+ 	<insert id="reviewWrite" parameterType="goods.bean.QnaDTO">
+		insert into goods_board(email, goods_id, category_code, title, text_content, image, board_date)
+		values(#{email}, #{goods_id}, 'REVIEW', 'test', #{text_content}, #{image}, SYSDATE) 
+	</insert> 
+	
+	<select id="getGoodsReviewList" parameterType="int" resultType="goods.bean.QnaDTO">
+		select * 
+		from goods_board join member
+		on member.email = goods_board.email
+		where goods_board.goods_id='3010001'
+		AND category_code='REVIEW' order by board_date desc
+	</select>
+	
+ 	<insert id="writeReply" parameterType="java.util.Map"> 
+		insert into goods_board(email, goods_id, category_code, title, reply, board_date, bo_seq, re_seq)
+		values('dogiver503@gmail.com', #{goods_id}, 'REVIEW', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
+	</insert>
+	
 </mapper>

@@ -1,14 +1,15 @@
-/******goodsDetail.jsp******/
 $('nav ul li').click(function(){
 	if($(this).index()=='0'){
-		$('.discription div').html(detail_image);		
+		$('.discription div').html(detail_image).css('text-align', 'center');		
 	}else if($(this).index()=='1'){
-		$('.discription div').load('review');
+		//$('.discription div').load('review');
+		$('.discription div').load('qna?goods_id='+$('#goods_id').val());
 	}else if($(this).index()=='2'){
-		$('.discription div').load('../etc/delivery_info.html');	
+		$('.discription div').load('review?goods_id='+$('#goods_id').val());	
+	}else if($(this).index()=='3'){
+		$('.discription div').load('../etc/delivery_info.html').css('text-align', 'left');	
 	}
 });
-
 
 let price="";
 let amt = "";
@@ -60,7 +61,7 @@ $(document).ready(function(){
 			detail_image = '<img src="../image/goods/'+ data.goodsDTO.goods_detail +'" >'; 
 			
 			$('.overview').append(tag);
-			$('.discription div').append(detail_image);
+			$('.discription div').append(detail_image).css('text-align', 'center');
 			
 			
 			price = data.goodsDTO.goods_price;
@@ -151,11 +152,9 @@ function numberFormat(inputNumber) {
 
 
 //상품후기 창 띄우기
-function reviewWrite(){
-	window.open('/dogiver/goods/reviewWrite', '', 'width=700 height=400 scrollbars=yes');
+function reviewWriteWin(goods_id){
+	window.open('/dogiver/goods/reviewWriteWin?goods_id='+goods_id, '', 'width=700 height=400 scrollbars=yes');
 }
-
-
 
 
 
