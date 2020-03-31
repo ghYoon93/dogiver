@@ -133,10 +133,11 @@ public class GoodsBoardController {
 		return mav;
 	}
 	
-	@RequestMapping(value="reviewWin", method=RequestMethod.GET)
-	public String reviewWin(@RequestParam String bo_seq, Model model) {
+	@RequestMapping(value="reviewViewWin", method=RequestMethod.GET)
+	public String reviewViewWin(@RequestParam String bo_seq, Model model, HttpSession session) {
 		model.addAttribute("bo_seq", bo_seq);
-		return "/goods/reviewWin";
+		model.addAttribute("memEmail", session.getAttribute("memEmail"));
+		return "/goods/reviewViewWin";
 	}
 	
 	@RequestMapping(value="reviewView", method=RequestMethod.POST)
@@ -149,5 +150,17 @@ public class GoodsBoardController {
 		
 		return mav;
 	}
-	
+
+	@RequestMapping(value="reviewUpdateWin", method=RequestMethod.POST)
+	public String reviewUpdateWin(@RequestParam String bo_seq, Model model, HttpSession session) {
+		model.addAttribute("bo_seq", bo_seq);
+		model.addAttribute("memEmail", session.getAttribute("memEmail"));
+		return "/goods/reviewUpdateWin";
+//		QnaDTO qnaDTO = goodsService.reviewUpdateWin(bo_seq);
+//		ModelAndView mav = new ModelAndView();
+//		mav.addObject("qnaDTO", qnaDTO);
+//		mav.setViewName("jsonView");
+//		
+//		return mav;
+	}
 }

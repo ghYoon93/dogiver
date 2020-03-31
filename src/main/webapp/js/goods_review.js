@@ -57,7 +57,7 @@ $(document).ready(function(){
 
 //작성된 상품후기 창 띄우기
 function reviewViewWin(bo_seq){
-	window.open('/dogiver/goods/reviewWin?bo_seq='+bo_seq, '', 'width=700 height=400 scrollbars=yes');
+	window.open('/dogiver/goods/reviewViewWin?bo_seq='+bo_seq, '', 'width=700 height=400 scrollbars=yes');
 }
 
 

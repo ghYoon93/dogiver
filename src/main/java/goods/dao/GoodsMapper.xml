@@ -43,6 +43,15 @@
 		select * from goods_board where goods_id=#{goods_id} AND category_code='QNA' order by board_date desc
 	</select>
 	
+ 	<insert id="writeReply" parameterType="java.util.Map"> 
+		insert into goods_board(email, goods_id, category_code, title, reply, board_date, bo_seq, re_seq)
+		values('dogiver503@gmail.com', #{goods_id}, 'QNA', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
+	</insert>
+	
+	<select id="replyList" parameterType="int" resultType="goods.bean.QnaDTO">
+		select * from goods_board WHERE bo_seq=#{bo_seq} AND reply IS NOT NULL
+	</select>
+	
 	<!-- 상품리뷰 -->
  	<insert id="reviewWrite" parameterType="goods.bean.QnaDTO">
 		insert into goods_board(email, goods_id, category_code, title, text_content, image, board_date, bo_seq)
@@ -57,16 +66,11 @@
 		AND category_code='REVIEW' order by board_date desc
 	</select>
 	
- 	<insert id="writeReply" parameterType="java.util.Map"> 
-		insert into goods_board(email, goods_id, category_code, title, reply, board_date, bo_seq, re_seq)
-		values('dogiver503@gmail.com', #{goods_id}, 'QNA', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
-	</insert>
-	
-	<select id="replyList" parameterType="int" resultType="goods.bean.QnaDTO">
-		select * from goods_board WHERE bo_seq=#{bo_seq} AND reply IS NOT NULL
+	<select id="reviewView" parameterType="int" resultType="goods.bean.QnaDTO">
+		select * from goods_board where bo_seq=#{bo_seq} AND category_code='REVIEW'
 	</select>
 	
-	<select id="reviewView" parameterType="int" resultType="goods.bean.QnaDTO">
+	<select id="reviewUpdateWin" parameterType="int" resultType="goods.bean.QnaDTO">
 		select * from goods_board where bo_seq=#{bo_seq} AND category_code='REVIEW'
 	</select>
 </mapper>

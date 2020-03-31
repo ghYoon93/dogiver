@@ -72,4 +72,9 @@ public class GoodsDAOMybatis implements GoodsDAO {
 		return sqlSession.selectOne("goodsSQL.reviewView", bo_seq);
 	}
 
+	@Override
+	public QnaDTO reviewUpdateWin(int bo_seq) {
+		return sqlSession.selectOne("goodsSQL.reviewUpdateWin", bo_seq);
+	}
+
 }
