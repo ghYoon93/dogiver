@@ -26,8 +26,6 @@ public interface BoardService {
 
 	public BoardDTO getBoardView_after(String brd_seq);
 
-	public void reply_write(BoardDTO boardDTO);
-
 	public List<BoardDTO> getReply(int bd_seq);
 
 	public void re_write(BoardDTO boardDTO);

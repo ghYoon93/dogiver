@@ -57,7 +57,6 @@
 				</div>
 			
 
-
 				<div id="board_title_box">
 					<div id="board_title">제목</div>
 					<div id="board_title_text">
@@ -70,7 +69,7 @@
 
 				</div>
 				
-<<<<<<< HEAD
+
 				<div id="board_button">
 					<input type="button" id="beforeBtn" value="이전"
 						style="width: 150px; height: 30px; margin-right: 20px;"> 
@@ -89,26 +88,11 @@
 						type="button" id="deletBtn" value="삭제" 
 						style="width: 150px; height: 30px; margin-right: 20px;">
 				</div>
-=======
+
 				<div id="board_reply">
 					<%@ include file="../board/boardReplyForm.jsp"%>
 				</div>
-
-
-
 			</div>
-			<div id="board_button">
-				<input type="button" id="beforeBtn" value="이전글"> <input
-					type="button" id="afterBtn" value="다음글" onclick='mode(2)'> <input
-					type="button" id="listBtn" value="목록"><input
-					type="button" id="writeBtn" value="글작성">
->>>>>>> board&contact
-			</div>
-
-			<div id="board_member_addBtn">
-				<input type="button" value="수정" onclick='mode(4)'> <input
-					type="button" id="deletBtn" value="삭제">
-					</div>
 		</form>
 	</div>
 </div>

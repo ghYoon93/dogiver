@@ -2,22 +2,15 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="boardSQL">
 	<!-- 글쓰기 -->
-<<<<<<< HEAD
+
 	<insert id="boardWrite" parameterType="board.bean.BoardDTO">
-		insert into board (brd_seq, brd_category, brd_title, brd_content,
-		brd_logtime) values(brd_seq.nextval, #{brd_category}, #{brd_title},
+		insert into board (brd_email, brd_nickname,brd_seq, brd_category, brd_title, brd_content,
+		brd_logtime) values(#{brd_email}, #{brd_nickname}, brd_seq.nextval, #{brd_category}, #{brd_title},
 		#{brd_content}, SYSDATE)
-=======
-	<insert parameterType="board.bean.BoardDTO" id="boardWrite">insert into board
-		(brd_seq, brd_email, brd_nickname, brd_category, brd_title,
-		brd_content,brd_logtime)
-		values(brd_seq.nextval,#{brd_email},#{brd_nickname}, #{brd_category},
-		#{brd_title},#{brd_content}, SYSDATE) 
 		</insert>
 	
 	<insert id="re_write" parameterType="board.bean.BoardDTO">
 		insert into brd_reply (bd_seq, re_seq, re_writer, re_content,re_logtime) values(#{brd_seq} ,re_seq.nextval,#{brd_nickname},#{re_content},SYSDATE) 
->>>>>>> origin/board&contact
 	</insert>
 
 	<select id="getBoardList" parameterType="java.util.Map"
@@ -39,31 +32,29 @@
 		resultType="board.bean.BoardDTO">
 		select * from board where brd_seq=#{brd_seq}
 	</select>
-<<<<<<< HEAD
 
-	<update id="boardHit" parameterType="int">
-		UPDATE board SET hit=hit+1
-		WHERE brd_seq=#{brd_seq}
-	</update>
 
 	<select id="getBoardSearchTotalA" parameterType="java.util.Map"
 		resultType="int">
 		select count(*) from board where ${searchOption} like
 		'%'||#{keyword}||'%'
-=======
+	</select>
 	
-	<select parameterType="int" id="getReBoard"
-		resultType="board.bean.BoardDTO">
+	<select parameterType="int" id="getReBoard" resultType="board.bean.BoardDTO">
 		select * from brd_reply where bd_seq=#{brd_seq} 
 	</select>
 	
 	
-	<select parameterType="int" id="getBoardView_before"
-		resultType="board.bean.BoardDTO">
+	<select parameterType="int" id="getBoardView_before" resultType="board.bean.BoardDTO">
 		<![CDATA[
 		select * from board where brd_seq=(select max(brd_seq) from (select brd_seq from board where brd_seq < #{brd_seq}))
 		]]>
->>>>>>> origin/board&contact
+	</select>
+	
+	<select parameterType="int" id="getBoardView_after" resultType="board.bean.BoardDTO">
+		<![CDATA[
+		select * from board where brd_seq=(select min(brd_seq) from (select brd_seq from board where brd_seq > #{brd_seq}))
+		]]>
 	</select>
 
 	<select id="getBoardSearch" parameterType="java.util.Map" resultType="board.bean.BoardDTO">

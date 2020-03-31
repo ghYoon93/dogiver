@@ -31,14 +31,12 @@ public class BoardController {
 	
 	@RequestMapping(value = "boardWrite", method = RequestMethod.POST)
 	public void boardWrite(BoardDTO boardDTO) {
-		System.out.println(boardDTO);
 		boardService.boardWrite(boardDTO);
 	}	
 		
 	@RequestMapping(value = "re_write", method = RequestMethod.POST)
-	public void re_write(BoardDTO boardDTO) {
-		System.out.println("�솗�씤以� �뀑�뀑�뀑");
-		System.out.println(boardDTO);
+	public void re_write(BoardDTO boardDTO, @RequestParam(required=false, defaultValue="1") String bre_seq ) {
+		boardDTO.setBrd_seq(Integer.parseInt(bre_seq));
 		boardService.re_write(boardDTO);
 		
 	}
@@ -54,8 +52,8 @@ public class BoardController {
 			HttpSession session) {
 		List<BoardDTO> list = boardService.getBoardList(pg);
 		
-		BoardPaging boardPaging = boardService.boardPaging(pg);
 		
+		BoardPaging boardPaging = boardService.boardPaging(pg);
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("pg", pg);
@@ -73,7 +71,6 @@ public class BoardController {
 		model.addAttribute("pg", pg);
 		return "boardView";
 	}
-	
 	
 	
 	@RequestMapping(value="getBoardView", method=RequestMethod.POST)
@@ -136,12 +133,5 @@ public class BoardController {
 	}
 	
 	
-	@RequestMapping(value = "reply_write", method = RequestMethod.POST)
-	public void reply_write(BoardDTO boardDTO, @RequestParam String brd_seq) {
-		boardService.reply_write(boardDTO);
-	}
-	
-	
-
 
 }

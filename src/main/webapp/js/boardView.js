@@ -14,7 +14,7 @@ $(document).ready(function() {
 			$('#seqSpan').text(data.boardDTO.brd_seq);
 			$('#categorySpan').text(data.boardDTO.brd_category);
 			$('#titleSpan').text(data.boardDTO.brd_title);
-			$('#idSpan').text(data.boardDTO.brd_id);
+			$('#idSpan').text(data.boardDTO.brd_nickname);
 			$('#dateSpan').text(data.boardDTO.brd_logtime);
 			$('#hitSpan').text(data.boardDTO.brd_hit);
 			$('#contentSpan').html(data.boardDTO.brd_content);
@@ -49,16 +49,6 @@ $('#boardFormBtn').click(function() {
 		
 	});
 
-
-$('#writeBtn').click(function(){
-	location.href ='boardWriteForm';
-});
-
-
-
-$('#writeBtn').click(function(){
-	location.href ='boardWriteForm';
-});
 // 글쓰기 버튼
 $('#writeBtn').click(function(){
 		location.href='http://localhost:8080/dogiver/board/boardWriteForm';
@@ -114,29 +104,20 @@ $('#afterBtn').click(function() {
 });
 
 
-<<<<<<< HEAD
-// 글쓰기 버튼 삭제 버튼
-=======
-
-
 //글쓰기 버튼 삭제 버튼 
->>>>>>> origin/board&contact
 $('#deletBtn').click(function(){
 	document.boardViewForm.method = 'POST';
 	document.boardViewForm.action = 'boardDelete';
 	document.boardViewForm.submit();
 	alert("글이 삭제되었습니다.")
 	location.href = 'boardList';
-	
 });
 
 $('#listBtn').click(function(){
 	location.href ='boardList?pg='+$('#pg').val();
-	
 });
 
 // 목록 버튼
 $('#listBtn').click(function(){
 	location.href ='boardList?pg='+$('#pg').val();
-	
 });

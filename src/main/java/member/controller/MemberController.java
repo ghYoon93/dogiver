@@ -94,6 +94,7 @@ public class MemberController {
 		System.out.println(memberDTO);
 		String exist = memberService.sign(memberDTO);
 		return exist;
+		
 	}
 
 	@RequestMapping(value = "/sign_up/step4", method = RequestMethod.GET)
@@ -122,6 +123,7 @@ public class MemberController {
 		if (chkPwd) {
 			session.setAttribute("role", memberDTO.getRole());
 			session.setAttribute("memEmail", email);
+//			session.setAttribute("memNickName", memberDTO.get);
 			return "true";
 		} else {
 			return "false";
