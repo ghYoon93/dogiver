@@ -1,3 +1,9 @@
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
 ul {
 	list-style: none;
 	padding: 0;
@@ -10,8 +16,26 @@ li {
 }
 
 .dogjoinframe {
-	width: 500px;
-	margin: 0 auto;
+	left: 50%;
+	position: relative;
+	transform: translateX(-50%);
+	margin-top: 100px;
+	width: 1100px;
+	border: 1px solid #f2f2f2;
+	padding: 1px 0 10px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.dog-join-bred {
+	display: flex;
+	padding: 15px;
+	box-sizing: border-box;
+	border-top: 1px solid #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
+	margin-bottom: 5px;
+	font-size: 17px;
+	border-radius: 5px;
 }
 
 .dogjoinframe h3 {
@@ -19,8 +43,20 @@ li {
 	font-size: 24px;
 	color: #222;
 	line-height: 1;
-	padding: 0 0 30px;
+	padding: 30px 0 30px;
 	text-align: center;
+	margin-top: 30px;
+}
+
+.dogjoinframe h3:after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 50px;
+	height: 2px;
+	background: #222;
+	transform: translateX(-50%);
 }
 
 .dogJoinBtn {
@@ -30,10 +66,11 @@ li {
 	text-align: center;
 	line-height: 45px;
 	color: #fff;
-	font-size: 18px;
-	font-weight: bold;
-	background: #F8585B;
+	font-size: 15px;
+	background: #ec2126;
 	text-decoration: none;
+	border-radius: 5px;
+	font-family: "Noto Sans KR", sans-serif;
 }
 
 .btn_center {
@@ -44,7 +81,7 @@ li {
 .dogjoinframe ul {
 	display: inline-block;
 	width: 500px;
-	margin: 150px 0 0 0px;
+	margin: 20px 0 40px;
 }
 
 .dogjoinframe ul li {
@@ -61,21 +98,57 @@ li {
 	width: 100%;
 	font-size: 18px;
 	text-indent: 12px;
-	margin-top: 5px;
+	margin: 2px 0 0;
+	border-radius: 5px;
+	border: 1px solid #f0eff2;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	outline-style: none;
+		font-family: "Noto Sans KR", sans-serif;
+}
+.dogjoinframe ul li input::-webkit-input-placeholder {
+  font-size: 16px;
+  color: #9fa19f;
+}
+
+.dogjoinframe ul li select::-ms-expand {
+	display: none;
 }
 
 .dogjoinframe select {
-	height: 45px;
 	width: 100%;
+	height: 45px;
 	font-size: 18px;
 	text-indent: 12px;
-	margin-top: 5px;
+	border-radius: 5px;
+	border: 1px solid #f0eff2;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #fff;
+	outline-style: none;
+	color: #222;
+	font-family: "Noto Sans KR", sans-serif;
+	-webkit-writing-mode: horizontal-tb !important;
 }
 
-.dogjoinframe ul li input datalist {
-	height: 45px;
+.dogjoinframe select::-ms-expand {
+	display: none;
+}
+
+.dogjoinframe ul li input[list] {
 	width: 100%;
-	font-size: 18px;
-	text-indent: 12px;
-	margin-top: 5px;
+	background: #fff;
+}
+option{
+	width: 100%;
+	white-space: inherit;
+	padding: 0;
+	height: 100%;
+		font-family: "Noto Sans KR", sans-serif;
+}
+.btn_center{
+	margin: 10px 0 90px;
 }
