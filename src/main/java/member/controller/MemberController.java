@@ -176,9 +176,5 @@ public class MemberController {
 		return exist;
 	}
 	
-	@RequestMapping(value = "/admin/admin", method = RequestMethod.GET)
-	public String admin(Model model) {
-		model.addAttribute("admin");
-		return "admin";
-	}
+	
 }

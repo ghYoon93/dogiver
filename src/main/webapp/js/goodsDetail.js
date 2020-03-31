@@ -12,7 +12,7 @@ $('nav ul li').click(function(){
 });
 
 let price="";
-let amt = "";
+var amt = "";
 var detail_image = "";
 $(document).ready(function(){	
 	//해당 상품 Detail페이지 뿌려주기

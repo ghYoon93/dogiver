@@ -123,5 +123,14 @@ public class GoodsBoardController {
 		return "/goods/qnaWrite";
 	}
 	
+	@RequestMapping(value="replyList", method=RequestMethod.POST)
+	@ResponseBody
+	public ModelAndView replyList(@RequestParam String bo_seq){
+		List<QnaDTO> list = goodsService.replyList(bo_seq);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.setViewName("jsonView");
+		return mav;
+	}
 	
 }

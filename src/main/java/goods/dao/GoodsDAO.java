@@ -26,5 +26,7 @@ public interface GoodsDAO {
 
 	public void writeReply(Map<String, String> map);
 
+	public List<QnaDTO> replyList(int bo_seq);
+
 
 }

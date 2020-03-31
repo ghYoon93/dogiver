@@ -59,7 +59,10 @@
 	
  	<insert id="writeReply" parameterType="java.util.Map"> 
 		insert into goods_board(email, goods_id, category_code, title, reply, board_date, bo_seq, re_seq)
-		values('dogiver503@gmail.com', #{goods_id}, 'REVIEW', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
+		values('dogiver503@gmail.com', #{goods_id}, 'QNA', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
 	</insert>
 	
+	<select id="replyList" parameterType="int" resultType="goods.bean.QnaDTO">
+		select * from goods_board WHERE bo_seq=#{bo_seq} AND reply IS NOT NULL
+	</select>
 </mapper>

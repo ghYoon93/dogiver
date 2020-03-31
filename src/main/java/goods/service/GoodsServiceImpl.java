@@ -63,6 +63,11 @@ public class GoodsServiceImpl implements GoodsService {
 		goodsDAO.writeReply(map);
 	}
 
+	@Override
+	public List<QnaDTO> replyList(String bo_seq) {
+		return goodsDAO.replyList(Integer.parseInt(bo_seq));
+	}
+
 
 
 }

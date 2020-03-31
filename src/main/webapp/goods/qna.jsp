@@ -21,7 +21,8 @@ pageEncoding="UTF-8"%>
         <th width="25%" style="text-align:center;">날짜</th>
     </tr>
 </table>
-<table class="qnaList" id="qnaList" cellpadding="5" frame="hsides" rules="rows" valign="top" margin="0">
+<table class="qnaList" id="qnaList" frame="void" cellpadding="5" frame="hsides" rules="rows" valign="top" margin="0">
+
 </table>
 
 

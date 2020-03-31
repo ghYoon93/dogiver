@@ -33,6 +33,9 @@ $(document).on('click', 'nav ul li', function(){
 						+ '<td width="10%" style="text-align:center;">'+items.nickname+'</td>'
 						+ '<td width="25%" style="text-align:center;">'+ items.board_date +'</td>'
 						+ '</tr>'
+						+ '<tr class="tr">'
+						+ '<td class="replyList" colspan="2" width="65%" style="cursor: pointer;"></td>'
+						+ '</tr>'
 						+ '<tr>'
 						+ '<td class="reply" colspan="2"><textarea id="text_content" rows="3" cols="110"></textarea>'
 						+ '<button type="button" class="replyBtn">댓글 작성</button></td>'
@@ -42,7 +45,7 @@ $(document).on('click', 'nav ul li', function(){
 				
 				$('.qnaList').append(tag);
 				
-				$('.reply').hide();
+				$('.reply, .replyList').hide();
 			}
 		
 		});
@@ -50,13 +53,13 @@ $(document).on('click', 'nav ul li', function(){
 });
 
 $(document).on('click', '.qna_content', function(){
-	$(this).parent().next().find('.reply').slideToggle();
+	$(this).parent().next().find('.replyList').slideToggle();
+	$(this).parent().next().next().find('.reply').slideToggle();
 });
 
 $(document).on('click', '.replyBtn', function(){
-//$('.replyBtn').click(function(){
 	//alert($('#bo_seq').val());
-	alert($(this).parent().parent().prev().find('#bo_seq').val());
+	alert($(this).parent().parent().prev().prev().find('#bo_seq').val());
 	alert($('.reply #text_content').val());
 	$.ajax({
 		type: 'post',
@@ -65,12 +68,31 @@ $(document).on('click', '.replyBtn', function(){
 		//data: $('#qnaWrite').serialize(),
 		//data: 'goods_id='+goods_id+'&reply='+reply+'&bo_seq'+bo_seq, 
 		data: JSON.stringify({'goods_id': $('#goods_id').val(),
-								'bo_seq': $('#bo_seq').val(),	 
+								'bo_seq': $(this).parent().parent().prev().prev().find('#bo_seq').val(),	 
 								'reply': $('.reply #text_content').val()}),
 		success: function(){
 			alert('댓글 작성 완료하였습니다.');
-			location.reload();
+			//location.reload();
 			//$('#qnaList').load(window.location +'#qnaList');
+			
+			var tag="";
+			$.ajax({
+				type: 'post',
+				url: '/dogiver/goods/replyList',
+				data: 'bo_seq='+$('#bo_seq').val(),
+				dataType: 'json',
+				success: function(data){
+					
+					alert(JSON.stringify(data));
+					$.each(data.list, function(index, items){
+						tag += '<td colspan="2">'+ items.reply +'</td>';
+					});//each
+					
+					$('.replyList').append(tag);
+					
+					$('.reply').hide();
+				}
+			});
 		}
 	});
 });

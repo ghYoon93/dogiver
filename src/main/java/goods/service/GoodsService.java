@@ -26,5 +26,7 @@ public interface GoodsService {
 
 	public void writeReply(Map<String, String> map);
 
+	public List<QnaDTO> replyList(String bo_seq);
+
 
 }
