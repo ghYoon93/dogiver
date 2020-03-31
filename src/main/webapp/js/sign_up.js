@@ -471,13 +471,13 @@ $('#sign-btn')
 					// alert('');
 					if ($('#name').val() == '' || $('#id').val() == ''
 							|| $('#pwd').val() == '' || $('#rePwd').val() == '') {
-						$('#sign-message-header').text('실패');
-						$('#sign-message').text('필수 정보를 입력해주세요')
-						$('#signModal').css('display', 'block');
+						$('#find-message-header').text('실패');
+						$('#find-message').text('필수 정보를 입력해주세요')
+						$('#findModal').css('display', 'block');
 						window.onclick = function(event) {
 							if (event.target == document
-									.getElementById('signModal')) {
-								document.getElementById('signModal').style.display = "none";
+									.getElementById('findModal')) {
+								document.getElementById('findModal').style.display = "none";
 							}
 						};
 					} else {

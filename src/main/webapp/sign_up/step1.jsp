@@ -442,18 +442,17 @@
 				<div class="btn_center">
 					<button class="btn_1" id="btn_1">다음</button>
 				</div>
-				<!-- 모달 -->
-				<div id="chkModal" class="modal">
-					<!-- Modal content -->
-					<div class="modal-content">
-						<div class="modal-header">
-							<h2>경고</h2>
-						</div>
-						<div class="modal-body">
-							<div id="chk-message" class="message">필수 약관에 동의해 주세요.</div>
-						</div>
+				<div id="findModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 id="find-message-header"></h2>
+					</div>
+					<div class="modal-body">
+						<div id="find-message" class="message"></div>
 					</div>
 				</div>
+			</div>
 			</div>
 		</section>
 	</div>

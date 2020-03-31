@@ -104,4 +104,154 @@ textarea:focus{
 #contactBtn:hover {
 	cursor: pointer;
 }
+/* /////////////// */
+textarea {
+	resize: none;
+}
 
+textarea:focus {
+	outline-color: orange;
+}
+
+input:focus {
+	outline-color: orange;
+}
+
+#contact_wrap {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+#contact_img {
+	width: 1100px;
+	height: 500px;
+	object-fit: cover; /* 아래에서 다룰 속성값 */
+}
+
+#contact_infoDiv {
+	font-weight:bold;
+	position: relative;
+	top: 13px;
+	z-index: 1;
+	display: inline-block;
+	width: 424px;
+	height: 436px;
+	background-color: none;
+}
+
+#contact_imgDiv {
+	position: relative;
+	top: -100px;
+	z-index: 0;
+}
+
+#contact_visitor {
+	position: relative;
+	left: 800px;
+	top: -172px;
+	z-index: 1;
+	width: 300px;
+	height: 500px;
+}
+
+#nameText {
+	background-color: rgba(70, 70, 70, 1);
+	color: white;
+	maxlength: 100px;
+	width: 256px;
+	height: 37px;
+}
+
+#emailText {
+	margin-top: 10px;
+	background-color: rgba(70, 70, 70, 1);
+	color: white;
+	maxlength: 100px;
+	width: 256px;
+	height: 37px;
+	background-color: rgba(70, 70, 70, 1);
+}
+
+#phoneText {
+	margin-top: 10px;
+	background-color: rgba(70, 70, 70, 1);
+	color: white;
+	maxlength: 100px;
+	width: 256px;
+	height: 37px;
+}
+
+#subjectText {
+	margin-top: 10px;
+	background-color: rgba(70, 70, 70, 1);
+	color: white;
+	maxlength: 100px;
+	width: 256px;
+	height: 37px;
+}
+
+#textarea {
+	margin-top: 10px;
+	background-color: rgba(70, 70, 70, 1);
+	color: white;
+	padding-right: 10px;
+	resize: none;
+	width: 246px;
+	height: 149px;
+}
+
+#contact_textarea {
+	padding-left: 24px;
+	color: white;
+	background-color: rgba(70, 70, 70, 1);
+	border: none;
+	width: 230px;
+	height: 145px;
+}
+
+#text_name {
+	padding-left: 24px;
+	color: white;
+	background-color: rgba(70, 70, 70, 1);
+	border: none;
+	width: 232px;
+	height: 35px;
+}
+
+#text_email {
+	padding-left: 24px;
+	color: white;
+	background-color: rgba(70, 70, 70, 1);
+	border: none;
+	width: 232px;
+	height: 35px;
+}
+
+#text_subject {
+	padding-left: 24px;
+	color: white;
+	background-color: rgba(70, 70, 70, 1);
+	border: none;
+	width: 232px;
+	height: 35px;
+}
+
+#text_phone {
+	padding-left: 24px;
+	color: white;
+	background-color: rgba(70, 70, 70, 1);
+	border: none;
+	width: 232px;
+	height: 35px;
+}
+
+#buttonDiv {
+	margin-top: 10px;
+	cursor: pointer;
+	height: 34px;
+	min-height: 25px;
+	width: 256px;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+}
