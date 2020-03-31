@@ -30,7 +30,7 @@
       </div>
       <!-- //order_process -->
       <div class="cart_cont">
-        <form id="form-cart" name="formCart" method="get">
+        <form id="form-cart" name="formCart" method="post">
           <div class="cart_cont_list">
             <div class="order_table_type">
                 <table id=cart-Table>
