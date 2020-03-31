@@ -68,6 +68,11 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsDAO.replyList(Integer.parseInt(bo_seq));
 	}
 
+	@Override
+	public QnaDTO reviewView(String bo_seq) {
+		return goodsDAO.reviewView(Integer.parseInt(bo_seq));
+	}
+
 
 
 }

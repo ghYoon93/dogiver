@@ -35,8 +35,8 @@
 	
 	<!-- 상품문의 -->
 	<insert id="qnaWrite" parameterType="java.util.Map">
-		insert into goods_board(bo_seq, email, goods_id, category_code, title, text_content, board_date)
-		values(goods_board_bo_seq.nextval, 'dogiver503@gmail.com', #{goods_id}, 'QNA', 'test', #{text_content}, SYSDATE)
+		insert into goods_board(bo_seq, email, goods_id, category_code, title, text_content, board_date, bo_seq)
+		values(goods_board_bo_seq.nextval, 'dogiver503@gmail.com', #{goods_id}, 'QNA', 'test', #{text_content}, SYSDATE, goods_board_bo_seq.nextval)
 	</insert>
 	
 	<select id="getGoodsQnaList" parameterType="int" resultType="goods.bean.QnaDTO">
@@ -45,15 +45,15 @@
 	
 	<!-- 상품리뷰 -->
  	<insert id="reviewWrite" parameterType="goods.bean.QnaDTO">
-		insert into goods_board(email, goods_id, category_code, title, text_content, image, board_date)
-		values(#{email}, #{goods_id}, 'REVIEW', 'test', #{text_content}, #{image}, SYSDATE) 
+		insert into goods_board(email, goods_id, category_code, title, text_content, image, board_date, bo_seq)
+		values(#{email}, #{goods_id}, 'REVIEW', 'test', #{text_content}, #{image}, SYSDATE, goods_board_bo_seq.nextval) 
 	</insert> 
 	
 	<select id="getGoodsReviewList" parameterType="int" resultType="goods.bean.QnaDTO">
 		select * 
 		from goods_board join member
 		on member.email = goods_board.email
-		where goods_board.goods_id='3010001'
+		where goods_board.goods_id=#{goods_id}
 		AND category_code='REVIEW' order by board_date desc
 	</select>
 	
@@ -64,5 +64,9 @@
 	
 	<select id="replyList" parameterType="int" resultType="goods.bean.QnaDTO">
 		select * from goods_board WHERE bo_seq=#{bo_seq} AND reply IS NOT NULL
+	</select>
+	
+	<select id="reviewView" parameterType="int" resultType="goods.bean.QnaDTO">
+		select * from goods_board where bo_seq=#{bo_seq} AND category_code='REVIEW'
 	</select>
 </mapper>

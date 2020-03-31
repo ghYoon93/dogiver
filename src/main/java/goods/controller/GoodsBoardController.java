@@ -133,4 +133,21 @@ public class GoodsBoardController {
 		return mav;
 	}
 	
+	@RequestMapping(value="reviewWin", method=RequestMethod.GET)
+	public String reviewWin(@RequestParam String bo_seq, Model model) {
+		model.addAttribute("bo_seq", bo_seq);
+		return "/goods/reviewWin";
+	}
+	
+	@RequestMapping(value="reviewView", method=RequestMethod.POST)
+	@ResponseBody
+	public ModelAndView reviewView(@RequestParam String bo_seq) {
+		QnaDTO qnaDTO = goodsService.reviewView(bo_seq);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("qnaDTO", qnaDTO);
+		mav.setViewName("jsonView");
+		
+		return mav;
+	}
+	
 }

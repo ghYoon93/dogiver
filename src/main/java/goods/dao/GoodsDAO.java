@@ -28,5 +28,7 @@ public interface GoodsDAO {
 
 	public List<QnaDTO> replyList(int bo_seq);
 
+	public QnaDTO reviewView(int bo_seq);
+
 
 }

@@ -28,5 +28,7 @@ public interface GoodsService {
 
 	public List<QnaDTO> replyList(String bo_seq);
 
+	public QnaDTO reviewView(String seq);
+
 
 }
