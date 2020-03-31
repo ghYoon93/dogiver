@@ -38,6 +38,12 @@
 		select * from brd_reply where bd_seq=#{bd_seq}
 	</select>
 	
+	<select id="getUser" parameterType="int" resultType="board.bean.BoardDTO">
+		select * from board where brd_seq=#{brd_seq}
+	</select>
+	
+	
+	
 	<select id="getReBoard_before" parameterType="int"
 		resultType="board.bean.BoardDTO">
 		<![CDATA[

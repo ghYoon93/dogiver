@@ -95,6 +95,11 @@ public class BoardDAOMybatis implements BoardDAO {
 		
 	}
 
+	@Override
+	public BoardDTO getUser(String brd_seq) {
+		return sqlSession.selectOne("boardSQL.getUser", Integer.parseInt(brd_seq));
+	}
+
 	
 
 	

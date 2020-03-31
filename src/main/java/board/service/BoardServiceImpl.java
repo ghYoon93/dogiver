@@ -136,8 +136,11 @@ public class BoardServiceImpl implements BoardService {
 		
 	}
 
+	@Override
+	public BoardDTO getUser(String brd_seq) {
+		return boardDAO.getUser(brd_seq);
+	}
 
-	
 	
 
 }

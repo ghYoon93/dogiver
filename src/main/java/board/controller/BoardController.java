@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import board.bean.BoardDTO;
 import board.bean.BoardPaging;
 import board.service.BoardService;
+import net.sf.json.JSONObject;
 
 @Controller
 @RequestMapping(value = "board")
@@ -67,7 +68,6 @@ public class BoardController {
 		model.addAttribute("pg", pg);
 		return "boardView";
 	}
-	
 	
 	
 	@RequestMapping(value="getBoardView", method=RequestMethod.POST)
@@ -151,6 +151,21 @@ public class BoardController {
 		
 	}
 	
+	@RequestMapping(value = "modifyForm", method = RequestMethod.GET)
+	public String modifyForm() {
+		return "boardModifyForm";
+	}
+	@RequestMapping(value="getUser", method=RequestMethod.POST)
+	public ModelAndView getUser( @RequestParam String brd_seq, HttpSession session) {
+		BoardDTO boardDTO = boardService.getUser(brd_seq);
+		System.out.println(boardDTO);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("memNickName", session.getAttribute("memNickName"));
+		mav.addObject("boardDTO", boardDTO);
+		mav.setViewName("jsonView");
+		return mav;
+	}
 
-
-}
+	
+	}
