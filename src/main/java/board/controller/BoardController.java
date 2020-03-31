@@ -82,12 +82,8 @@ public class BoardController {
 									HttpSession session) {
 		System.out.println("겟보드뷰 오는지 확인");
 		BoardDTO boardDTO = boardService.getBoard(brd_seq);
-<<<<<<< HEAD
 		List<BoardDTO> list = boardService.getReBoard(brd_seq);
-		
-=======
-		System.out.println(brd_seq+"입니다");
->>>>>>> master
+
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
@@ -144,10 +140,10 @@ public class BoardController {
 	}
 	
 	
-	@RequestMapping(value = "reply_write", method = RequestMethod.POST)
+	@RequestMapping(value = "re_write", method = RequestMethod.POST)
 	public void reply_write(BoardDTO boardDTO, @RequestParam String brd_seq) {
 		System.out.println("들어오는지 확인 "+boardDTO);
-		boardService.reply_write(boardDTO);
+		boardService.re_write(boardDTO);
 	}
 	
 	
