@@ -28,6 +28,10 @@ public interface BoardService {
 
 	public void reply_write(BoardDTO boardDTO);
 
+	public List<BoardDTO> getMyboard(String nickName);
+
+	public List<BoardDTO> getMyreply(String nickName);
+
 
 
 }

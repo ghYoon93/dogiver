@@ -107,7 +107,50 @@ public class BoardServiceImpl implements BoardService {
 	public BoardDTO getBoardView_after(String brd_seq) {
 		return boardDAO.getBoardView_after(brd_seq);
 	}
+
 	
 	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public List<BoardDTO> getMyboard(String nickName) {
+		
+		return boardDAO.getMyboard(nickName);
+	}
+	@Override
+	public List<BoardDTO> getMyreply(String nickName) {
+		
+		return boardDAO.getMyreply(nickName);
+	}
 }

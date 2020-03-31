@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -10,6 +12,7 @@
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/mypage.css" />
+    <link rel="stylesheet" href="../css/myboard.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
       rel="stylesheet"
@@ -22,10 +25,11 @@
       type="text/javascript"
       src="/data/201101/IJ12941530138912/jquery-contained-sticky-scroll.js"
     ></script>
+    <script type="text/javascript" src="../js/myboard.js"></script>
     <script src="../js/main.js"></script>
   </head>
   <body>
-    <!-- <div id="headerDiv"></div> -->
+    <div id="headerDiv"></div>
     <div class="page-title">
       <h2>my page</h2>
       <p>나의 정보들</p>
@@ -35,13 +39,38 @@
         <div class="my-nav">
           <ol>
             <li><a href="../my/mypage">내 정보</a></li>
-            <li><a href="">헌혈견</a></li>
+            <li><a href="../blood/myblood">헌혈견</a></li>
             <li><a href="">상품 </a></li>
-            <li class="on"><a href="">내 게시글 </a></li>
+            <li class="on"><a href="../board/myboard">내 게시글 </a></li>
             <li><a href="">내 문의 </a></li>
           </ol>
         </div>
-        <div class="article"></div>
+        <div class="article">
+        <div id="myboardDiv">
+        	<div class="myboardList">
+        	<label>내가 쓴 글</label>
+        		<table id="myboardTable">
+	        		<tr>
+		        		<th>제목</th>
+		        		<th>날짜</th>
+	        		</tr>
+        		</table>
+        	</div>
+        	<div class="myboardList">
+        	<label>내가 쓴 댓글</label>
+        		<table id="myreplyTable">
+        		</table>
+        	</div>
+        	<div id="myboardView">
+        		<table>
+        			<tr>
+        				<th>코멘트</th>
+        				<th>날짜</th>
+        			</tr>
+        		</table>
+        	</div>
+        </div>
+        </div>
       </div>
     </div>
     <div id="footerDiv"></div>
