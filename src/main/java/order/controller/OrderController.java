@@ -57,9 +57,12 @@ public class OrderController {
     @RequestMapping(value="/order/getCart", method=RequestMethod.POST)
     public ModelAndView getCart(HttpSession session) {
     	String memEmail = (String)session.getAttribute("memEmail");
-    	List<CartDTO> list = orderService.getCart(memEmail);
     	ModelAndView mav = new ModelAndView();
-    	mav.addObject("list",list);
+    	mav.addObject("memEmail", memEmail);
+    	if(memEmail!=null) {
+    		List<CartDTO> list = orderService.getCart(memEmail);   		
+    		mav.addObject("list",list);
+    	}
     	mav.setViewName("jsonView");
     	return mav;
     }

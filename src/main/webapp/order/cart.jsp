@@ -67,10 +67,10 @@
             <div class="price_sum_list">
               <dl>
                 <dt>
-                  총 <strong id="totalGoodsCnt"></strong> 개의 상품금액
+                  총 <strong id="totalGoodsCnt">0</strong> 개의 상품금액
                 </dt>
                 <dd>
-                  <strong id="totalGoodsPrice"></strong>원
+                  <strong id="totalGoodsPrice">0</strong>원
                 </dd>
               </dl>
               <dl>
@@ -82,7 +82,7 @@
               <dl>
                 <dt>배송비</dt>
                 <dd>
-                  <strong id="totalDeliveryCharge">2,500</strong>원
+                  <strong id="totalDeliveryCharge">0</strong>원
                 </dd>
               </dl>
               <dl>
@@ -94,7 +94,7 @@
               <dl class="price_total">
                 <dt>합계</dt>
                 <dd>
-                  <strong id="totalSettlePrice"></strong>원
+                  <strong id="totalSettlePrice">0</strong>원
                 </dd>
               </dl>
             </div>

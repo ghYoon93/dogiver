@@ -201,6 +201,9 @@ function gd_cart_process(command){
 		
 	}
 }
+function gd_order_all(){
+	check
+}
 
 /** 주소 * */
 function sample4_execDaumPostcode() {
