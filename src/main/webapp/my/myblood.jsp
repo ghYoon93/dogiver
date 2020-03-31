@@ -25,7 +25,7 @@
       type="text/javascript"
       src="/data/201101/IJ12941530138912/jquery-contained-sticky-scroll.js"
     ></script>
-    <script type="text/javascript" src="../js/dogJoin.js"></script>
+    <script type="text/javascript" src="../js/myblood.js"></script>
     <script src="../js/main.js"></script>
   </head>
   <body>
@@ -46,23 +46,32 @@
           </ol>
         </div>
         <div class="article">
-        <form action="" id="mybloodForm">
+        <form action="../blood/mybloodModify" name="mybloodForm" id="mybloodForm" method="post">
+        <input type="hidden" id="email" name="email" value="">
         	<div id="mybloodDiv">
         		<ul>
 					<li><label>반려견 이름</label> 
 						<input type="text" id="dog_name" name="dog_name">
+						<div id="dogNameDiv"></div>
 					</li>
 					<li><label>반려견 나이</label>
 						<input type="text" id="dog_age" name="dog_age">
+						<div id="dogAgeDiv"></div> 
 					</li>
 					<li><label>반려견 종</label>
-						<input type="text" id="dog_breed" name="dog_breed" list="breed-list"> 
+						<input type="text" id="dog_breed" name="dog_breed" list="breed-list">
+						<div id="dogBreedDiv"></div>
 					</li>
 					<li><label>반려견 몸무게(kg)</label> 
 						<input type="text" id="dog_weight" name="dog_weight">
+						<div id="dogWeightDiv"></div>
 					</li>
 					<li><label>반려견 혈액형</label><br /> 
 						<input type="text" id="dog_bloodType" name="dog_bloodType">
+						<div id="dogBloodTypeDiv"></div>
+					</li>
+					<li><label>헌혈 진행상황</label><br /> 
+						<input type="text" id="apply_status" name="apply_status" readonly="readonly">
 					</li>
 				</ul>
 				<div class="btn_center">
