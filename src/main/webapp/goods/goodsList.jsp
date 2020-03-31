@@ -123,25 +123,5 @@
 <script src="../js/jquery-3.4.1.min.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/goodsList.js"></script>
-<!--   <script src="../js/goods.js"></script> -->
-<!--   <script>
-  $(document).ready(function(){
-	  
-		$.ajax({
-			type: 'post',
-			url: '/dogiver/goods/getGoodsList',
-			data: 'pg=${pg}',
-			dataType: 'json',
-			success: function(data){
-				//alert(data.pg);
-				alert(JSON.stringify(data));
-				
-				$.each(data.list, function(index, items){
-					$('')
-					
-				});//each				
-			}
-		});
-	});
-  </script> -->
+
 </html>

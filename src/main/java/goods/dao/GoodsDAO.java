@@ -1,8 +1,10 @@
 package goods.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import goods.bean.GoodsDTO;
+import goods.bean.QnaDTO;
 
 public interface GoodsDAO {
 
@@ -14,6 +16,15 @@ public interface GoodsDAO {
 
 	public List<GoodsDTO> goods_lineUp(String lineUp);
 
-	
+	public int qnaWrite(Map<String, String> map);
+
+	public List<QnaDTO> getGoodsQnaList(int goods_id);
+
+	public void reviewWrite(QnaDTO qnaDTO);
+
+	public List<QnaDTO> getGoodsReviewList(int goods_id);
+
+	public void writeReply(Map<String, String> map);
+
 
 }
