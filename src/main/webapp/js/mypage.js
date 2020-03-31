@@ -39,7 +39,7 @@ $('#pre-modi-btn')
 											$('#addr').val(data.memberDTO.addr);
 											$('#addr_Detail').val(
 													data.memberDTO.addr_Detail);
-										} else {
+										} else{
 											$('#modi-message-header')
 													.text('경고');
 											$('#modi-message').text(

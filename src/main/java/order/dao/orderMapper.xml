@@ -3,10 +3,29 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="orderSQL">
 	<select id="searchCart" parameterType="java.util.Map" resultType="cart">
-	SELECT *
-	  FROM cart
-	 WHERE goods_id=#{goods_id} 
-	       AND email=#{email}
+	    <![CDATA[
+        SELECT
+               cart_id
+          FROM cart
+         WHERE goods_id = #{goods_id} AND email = #{email}
+        ]]>
+	</select>
+	<select id="getOrderList" parameterType="java.util.Map" resultType="cart">
+        SELECT
+               g.goods_id AS goods_id,
+               g.goods_name AS goods_name,
+               g.goods_thumbnail AS goods_thumbnail,
+               g.goods_price AS goods_price,
+               c.cart_cnt AS cart_cnt,
+               (goods_price * cart_cnt) total_price
+          FROM 
+               cart c 
+               INNER JOIN goods g ON c.goods_id = g.goods_id
+         WHERE c.cart_id IN
+         <foreach collection="array" item="item" index="i" separator="," open="(" close=")">
+            ${array[i]}
+        </foreach>
+         ORDER BY c.cart_id
 	</select>
 	<insert id="insertCart" parameterType="java.util.Map">
 	    INSERT INTO cart VALUES(SEQ_CART.NEXTVAL, #{email}, #{goods_id}, #{cart_cnt})
@@ -15,7 +34,6 @@
         <![CDATA[
         SELECT
                c.cart_id AS cart_id,
-               c.email AS email,
                g.goods_id AS goods_id,
                g.goods_name AS goods_name,
                g.goods_thumbnail AS goods_thumbnail,
@@ -39,4 +57,15 @@
             ${array[i]}
         </foreach>
     </delete>
+    <insert id="insertOrder" parameterType="order">
+        INSERT INTO GOODS_ORDER(order_id, email, order_date, order_total_price, delivery_price, 
+                                recipient, order_phone, order_zip_code, order_addr, order_addr_detail,
+                                order_memo, order_pay, order_status, delivery_code)
+                         VALUES(#{partner_order_id}, #{partner_user_id}, SYSDATE, #{total_amount}, 2500,
+                                #{orderName}, #{orderCellPhone}, #{orderZipcode}, #{orderAddress}, #{orderAddressSub}
+                                ,#{order_memo}, #{order_pay}, '결제 완료', 1)
+    </insert>
+    <insert id="insertOrderDetail" parameterType="orderDetail">
+        INSERT INTO ORDER_DETAIL VALUES(#{partner_order_id}, #{order_goods_id}, #{goods_count}, #{total_price})
+    </insert>
 </mapper>
