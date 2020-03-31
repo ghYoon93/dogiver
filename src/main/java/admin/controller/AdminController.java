@@ -3,18 +3,15 @@ package admin.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,11 +30,6 @@ public class AdminController {
 	private AdminService adminService;
 	@Autowired
 	private ServletContext servletContext;
-	
-	@RequestMapping(value = "admin", method = RequestMethod.GET)
-	public String admin() {
-		return "/admin/admin";
-	}
 	
 	@RequestMapping(value = "admin_blood", method = RequestMethod.GET)
 	public String admin_blood(@RequestParam(required = false, defaultValue = "1") String pg, Model model) {
