@@ -34,5 +34,7 @@ public interface GoodsService {
 
 	public void reviewUpdate(QnaDTO qnaDTO);
 
+	public void reviewDelete(String bo_seq);
+
 
 }

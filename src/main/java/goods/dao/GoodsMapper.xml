@@ -78,4 +78,8 @@
 	<insert id="reviewUpdate" parameterType="goods.bean.QnaDTO">
 		update goods_board set text_content=#{text_content}, image=#{image} where bo_seq=#{bo_seq} 
 	</insert>
+	
+	<delete id="reviewDelete" parameterType="int">
+		delete from goods_board where bo_seq=#{bo_seq}
+	</delete>
 </mapper>

@@ -15,6 +15,7 @@
 	<button class="cancle" onclick="window.close();">취소</button>
 <c:if test="${memEmail != null }">
 	<button type="button" id="reviewWriteBtn" onclick="location.href='reviewUpdateWin?bo_seq=${bo_seq}'">수정</button>
+	<button type="button" id="reviewDeleteBtn">삭제</button>
 </c:if>
 	<!-- <button type="button" id="reviewWriteBtn">등록</button> -->
 </form>
@@ -32,7 +33,17 @@ $(document).ready(function(){
 
 			$('#image').attr('src', '../image/goods_board/'+data.qnaDTO.image);
 			$('.text_content').text(data.qnaDTO.text_content);
-			
+		}
+	});
+});
+
+$('#reviewDeleteBtn').click(function(){
+	$.ajax({
+		type: 'post',
+		url: '/dogiver/goods/reviewDelete',
+		data: 'bo_seq=${bo_seq}',
+		success: function(){
+			alert('삭제되었습니다.');
 		}
 	});
 });

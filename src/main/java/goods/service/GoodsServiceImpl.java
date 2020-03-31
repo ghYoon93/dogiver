@@ -84,6 +84,11 @@ public class GoodsServiceImpl implements GoodsService {
 		goodsDAO.reviewUpdate(qnaDTO);
 	}
 
+	@Override
+	public void reviewDelete(String bo_seq) {
+		goodsDAO.reviewDelete(Integer.parseInt(bo_seq));
+	}
+
 
 
 }

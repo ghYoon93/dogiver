@@ -185,4 +185,12 @@ public class GoodsBoardController {
 		System.out.println(qnaDTO);
 		goodsService.reviewUpdate(qnaDTO);
 	}
+	
+	@RequestMapping(value="reviewDelete", method=RequestMethod.POST)
+	@ResponseBody
+	public void reviewDelete(@RequestParam String bo_seq) {
+		goodsService.reviewDelete(bo_seq);
+		System.out.println(bo_seq);
+		
+	}
 }

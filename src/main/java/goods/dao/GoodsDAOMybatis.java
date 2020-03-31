@@ -82,4 +82,9 @@ public class GoodsDAOMybatis implements GoodsDAO {
 		sqlSession.insert("goodsSQL.reviewUpdate", qnaDTO);
 	}
 
+	@Override
+	public void reviewDelete(int bo_seq) {
+		sqlSession.delete("goodsSQL.reviewDelete", bo_seq);
+	}
+
 }

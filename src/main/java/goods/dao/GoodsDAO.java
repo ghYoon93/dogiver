@@ -34,5 +34,7 @@ public interface GoodsDAO {
 
 	public void reviewUpdate(QnaDTO qnaDTO);
 
+	public void reviewDelete(int bo_seq);
+
 
 }
