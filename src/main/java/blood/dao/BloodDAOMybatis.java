@@ -28,4 +28,15 @@ public class BloodDAOMybatis implements BloodDAO {
 		return sqlSession.selectList("bloodSQL.getDogiver");
 	}
 
+	@Override
+	public DogJoinDTO getMyblood(String email) {
+		return sqlSession.selectOne("bloodSQL.getMyblood", email);
+	}
+
+	@Override
+	public void mybloodModify(DogJoinDTO dogJoinDTO) {
+		sqlSession.update("bloodSQL.mybloodModify", dogJoinDTO);
+		
+	}
+
 }

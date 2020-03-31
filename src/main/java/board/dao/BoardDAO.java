@@ -26,6 +26,20 @@ public interface BoardDAO {
 	public BoardDTO getBoardView_after(String brd_seq);
 
 	public void reply_write(BoardDTO boardDTO);
+	
+	
+	
+	
+	
+	
+	
+	
+
+	public List<BoardDTO> getMyboard(String nickName);
+
+	public List<BoardDTO> getMyreply(String nickName);
+
+	public BoardDTO getMyboardView(String brd_seq);
 
 
 

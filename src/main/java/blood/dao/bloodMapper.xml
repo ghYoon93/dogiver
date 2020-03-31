@@ -4,7 +4,7 @@
 	<!-- 헌혈견 등록 -->
 	<insert id="dogInsert" parameterType="dogJoin">
 		INSERT into apply_dogiver(dog_id, dog_name, dog_age, dog_breed, dog_weight, dog_bloodType, apply_status, email)
-		VALUES(DOG_ID_APPLY_DOGIVER.nextval,#{dog_name},#{dog_age},#{dog_breed},#{dog_weight},#{dog_bloodType},'신청완료', #{memEmail})
+		VALUES(DOG_ID_APPLY_DOGIVER.nextval,#{dog_name},#{dog_age},#{dog_breed},#{dog_weight},#{dog_bloodType},'신청완료', #{email})
 	</insert>
 	
 	<!-- 명예의 전당 -->
@@ -12,4 +12,14 @@
 		select dog_name, dog_age, dog_weight, dog_breed, dog_image, blood_cc, description, donation_date, dog_id, dog_bloodtype 
 		from apply_dogiver join dogiver using(dog_id)
 	</select>
+	
+	<!-- 마이페이지 헌혈견 -->
+	<select id="getMyblood" parameterType="String" resultType="dogJoin">
+		select * from apply_dogiver where email=#{email}
+	</select>
+	
+	<!-- 마이페이지 헌혈견 수정 -->
+	<update id="mybloodModify" parameterType="dogJoin">
+		update apply_dogiver set dog_name=#{dog_name}, dog_age=#{dog_age}, dog_breed=#{dog_breed}, dog_weight=#{dog_weight}, dog_bloodType=#{dog_bloodType} where email=#{email}
+	</update>
 </mapper>

@@ -47,6 +47,27 @@
 	<delete id="boardDelete" parameterType="int">
 		 DELETE FROM board WHERE brd_seq = #{brd_seq}
 	</delete>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 마이페이지 내글 -->
+	<select id="getMyboard" parameterType="String" resultType="board.bean.BoardDTO">
+		select * from board where brd_nickname = #{nickName}
+	</select>
+	<!-- 마이페이지 내댓글 -->
+	<select id="getMyreply" parameterType="String" resultType="board.bean.BoardDTO">
+		select * from brd_reply where re_writer = #{nickName}
+	</select>
 </mapper>
 
 

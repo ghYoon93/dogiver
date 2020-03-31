@@ -69,6 +69,56 @@ public class BoardDAOMybatis implements BoardDAO {
 	}
 
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public List<BoardDTO> getMyboard(String nickName) {
+		return sqlSession.selectList("boardSQL.getMyboard", nickName);
+	}
+	
+	@Override
+	public List<BoardDTO> getMyreply(String nickName) {
+		return sqlSession.selectList("boardSQL.getMyreply", nickName);
+	}
+
+	@Override
+	public BoardDTO getMyboardView(String brd_seq) {
+		return sqlSession.selectOne("boardSQL.getBoard", Integer.parseInt(brd_seq));
+	}
+
+	
 }
 
 
