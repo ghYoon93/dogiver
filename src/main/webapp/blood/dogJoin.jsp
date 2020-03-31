@@ -26,11 +26,13 @@
 <body>
 	<div id="headerDiv"></div>
 	<div class="page-title">
-		<h2>헌혈견 정보 입력</h2>
+		<h2>헌혈견정보입력</h2>
 	</div>
 	<form id="dogJoinForm" method="post">
 		<div class="wrap">
 			<div class="dogjoinframe">
+			<div class="dog-join-bred">헌혈견등록</div>
+			<h3>등록신청</h3>
 			<input type="hidden" id="memEmail" name="memEmail" value="${memEamil }">
 				<ul>
 					<li><label>반려견 이름</label> <input type="text"
