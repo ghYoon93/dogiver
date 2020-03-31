@@ -32,5 +32,11 @@ public interface BoardService {
 
 	public List<BoardDTO> getReBoard(String brd_seq);
 
+	public List<BoardDTO> getReBoard_before(String brd_seq);
+
+	public List<BoardDTO> getReBoard_after(String brd_seq);
+
+	public void reply_delete(int re_seq);
+
 
 }

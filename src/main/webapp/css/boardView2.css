@@ -35,7 +35,7 @@ span{
 }
 
 #board_category {
-	margin-left: 48px;
+	margin-left: 100px;
 	width: 80px;
 	height: 70px;
 	border: 3px solid #9a7879;
@@ -62,13 +62,13 @@ span{
 	border-radius: 50%;
 	float: left;
 	display: inline-block;
-	margin-left: 57px;
+	margin-left: 95px;
 	text-align: center;
 }
 
 #board_time_text {
 	text-align: center;
-	width: 110px;
+	width: 190px;
 	height: 48px;
 	display: inline-block;
 	float: left;
@@ -83,7 +83,7 @@ span{
 	border-radius: 50%;
 	float: left;
 	display: inline-block;
-	margin-left: 57px;
+	margin-left: 94px;
 	text-align: center;
 }
 
@@ -97,26 +97,6 @@ span{
 	border-bottom-width: 3px;
 }
 
-#board_count {
-	width: 80px;
-	height: 70px;
-	border: 3px solid #9a7879;
-	border-radius: 50%;
-	float: left;
-	display: inline-block;
-	margin-left: 40px;
-	text-align: center;
-}
-
-#board_count_text {
-	text-align: center;
-	width: 80px;
-	height: 48px;
-	display: inline-block;
-	float: left;
-	border-bottom: 1px solid #9a7879;
-	border-bottom-width: 3px;
-}
 
 #board_title_box {
 	font-size:17px;
@@ -152,6 +132,10 @@ span{
 	min-height: 500px;
 	border: 3px solid #9a7879;
 }
+#board_reply{
+	width: 1100px;
+	margin: 0 auto;
+}
 
 #board_content-reply {
 	width: 1100px;
@@ -162,7 +146,6 @@ span{
 	text-align: center; 
 	margin-top: 20px;
 	width: 1100px;
-	
 }
 
 #board_content_reply {
@@ -171,19 +154,7 @@ span{
 	border: 1px solid black;
 }
 
-<<<<<<< HEAD
-#board_content_reply {
-	min-height: 200px;
-	width: 1100px;
-	border: 1px solid black;
-}
 
-=======
-
-#board_reply {
-	
-	}
->>>>>>> board&contact
 #board_member_addBtn{
 	width: 1100px;
 }

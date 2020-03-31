@@ -94,7 +94,7 @@ $('#boardSearchBtn').click(function(event, str){
 						style:'height:80px',
 						style:'font-size: 20px',
 						align : 'center',
-						text : items.brd_id
+						text : items.brd_nickname
 					})).append($('<td/>',{
 						style:'height:80px',
 						style:'font-size: 20px',

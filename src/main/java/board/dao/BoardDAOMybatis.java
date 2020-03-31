@@ -79,6 +79,22 @@ public class BoardDAOMybatis implements BoardDAO {
 		sqlSession.insert("boardSQL.re_write", boardDTO);
 	}
 
+	@Override
+	public List<BoardDTO> getReBoard_before(String brd_seq) {
+		return sqlSession.selectList("boardSQL.getReBoard_before", Integer.parseInt(brd_seq));
+	}
+
+	@Override
+	public List<BoardDTO> getReBoard_after(String brd_seq) {
+		return sqlSession.selectList("boardSQL.getReBoard_after", Integer.parseInt(brd_seq));
+	}
+
+	@Override
+	public void reply_delete(int re_seq) {
+		sqlSession.delete("boardSQL.reply_delete", re_seq);
+		
+	}
+
 	
 
 	

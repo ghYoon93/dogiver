@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import board.bean.BoardDTO;
@@ -34,14 +35,6 @@ public class BoardController {
 		System.out.println(boardDTO);
 		boardService.boardWrite(boardDTO);
 	}	
-		
-	@RequestMapping(value = "re_write", method = RequestMethod.POST)
-	public void re_write(BoardDTO boardDTO) {
-		System.out.println("확인중 ㅋㅋㅋ");
-		System.out.println(boardDTO);
-		boardService.re_write(boardDTO);
-		
-	}
 	@RequestMapping(value="boardList", method=RequestMethod.GET)
 	public String boardList(@RequestParam(required=false, defaultValue="1") String pg,
 							Model model) {
@@ -80,10 +73,8 @@ public class BoardController {
 	@RequestMapping(value="getBoardView", method=RequestMethod.POST)
 	public ModelAndView getBoardView( @RequestParam String brd_seq, @RequestParam(required=false, defaultValue="1") String pg,
 									HttpSession session) {
-		System.out.println("겟보드뷰 오는지 확인");
 		BoardDTO boardDTO = boardService.getBoard(brd_seq);
 		List<BoardDTO> list = boardService.getReBoard(brd_seq);
-
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
@@ -96,21 +87,26 @@ public class BoardController {
 	public ModelAndView getBoardView_before( @RequestParam String brd_seq, 
 											HttpSession session) {
 		BoardDTO boardDTO = boardService.getBoardView_before(brd_seq);
+		List<BoardDTO> list = boardService.getReBoard_before(brd_seq);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
 		mav.addObject("boardDTO", boardDTO);
+		mav.addObject("list", list);
 		mav.setViewName("jsonView");
 		return mav;
 	}
+	
 	@RequestMapping(value="getBoardView_after", method=RequestMethod.POST)
 	public ModelAndView getBoardView_after( @RequestParam String brd_seq, 
 											HttpSession session) {
 		BoardDTO boardDTO = boardService.getBoardView_after(brd_seq);
+		List<BoardDTO> list = boardService.getReBoard_after(brd_seq);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
 		mav.addObject("boardDTO", boardDTO);
+		mav.addObject("list", list);
 		mav.setViewName("jsonView");
 		return mav;
 	}
@@ -141,11 +137,19 @@ public class BoardController {
 	
 	
 	@RequestMapping(value = "re_write", method = RequestMethod.POST)
+	@ResponseBody
 	public void reply_write(BoardDTO boardDTO, @RequestParam String brd_seq) {
-		System.out.println("들어오는지 확인 "+boardDTO);
 		boardService.re_write(boardDTO);
 	}
 	
+	
+	@RequestMapping(value="reply_delete", method= RequestMethod.POST)
+	@ResponseBody
+	public void reply_delete(@RequestParam int re_seq) {
+		boardService.reply_delete(re_seq);
+		System.out.println(re_seq);
+		
+	}
 	
 
 

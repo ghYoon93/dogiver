@@ -123,7 +123,8 @@ public class MemberController {
 		if (chkPwd) {
 			session.setAttribute("role", memberDTO.getRole());
 			session.setAttribute("memEmail", email);
-//			session.setAttribute("memNickName", memberDTO.get);
+			session.setAttribute("memNickName", memberDTO.getNickName());
+			System.out.println(memberDTO.getNickName());
 			return "true";
 		} else {
 			return "false";

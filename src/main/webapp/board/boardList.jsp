@@ -45,7 +45,7 @@
 						<input type="hidden" name="pg" value="1">
 						<select name="searchOption" id="searchOption" >
 							<option value="brd_title">제목
-							<option value="brd_id">아이디
+							<option value="brd_nickname">닉네임
 							<option value="brd_category">종류
 							</option>
 						</select>

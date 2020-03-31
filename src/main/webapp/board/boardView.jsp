@@ -17,7 +17,7 @@
 <div class="wrap">
 	<div class="container"
 		style="width: 1100px; margin: 0 auto; margin-top: 150px;">
-		<form name="boardViewForm">
+		<form name="boardViewForm" method="post">
 			<input type="hidden" name="brd_seq" id="brd_seq" value="${brd_seq }">
 			<input type="hidden" name="pg" id="pg" value="${pg }">
 
@@ -48,12 +48,7 @@
 					<div id="board_time_text">
 						<span id="dateSpan"></span>
 					</div>
-
-					<div id="board_count">조회수</div>
-
-					<div id="board_count_text">
-						<span id="hitSpan"></span>
-					</div>
+									
 				</div>
 			
 
@@ -81,12 +76,9 @@
 						style="width: 150px; height: 30px; margin-right: 20px;">
 				</div>
 
-				<div id="board_member_addBtn"
-					style="text-align: center; margin-top: 10px;">
-					<input type="button" value="수정" onclick='mode(4)'
-						style="width: 150px; height: 30px; margin-right: 20px;"> <input
-						type="button" id="deletBtn" value="삭제" 
-						style="width: 150px; height: 30px; margin-right: 20px;">
+				<div id="board_member_addBtn" style="text-align: center; margin-top: 10px;">
+					<input type="button" id="modifyBtn" value="수정" style="width: 150px; height: 30px; margin-right: 20px;"> 
+					<input type="button" id="deletBtn" value="삭제" style="width: 150px; height: 30px; margin-right: 20px;">
 				</div>
 
 				<div id="board_reply">

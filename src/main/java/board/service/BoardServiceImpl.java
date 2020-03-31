@@ -120,6 +120,22 @@ public class BoardServiceImpl implements BoardService {
 		
 	}
 
+	@Override
+	public List<BoardDTO> getReBoard_before(String brd_seq) {
+		return boardDAO.getReBoard_before(brd_seq);
+	}
+
+	@Override
+	public List<BoardDTO> getReBoard_after(String brd_seq) {
+		return boardDAO.getReBoard_after(brd_seq);
+	}
+
+	@Override
+	public void reply_delete(int re_seq) {
+		boardDAO.reply_delete(re_seq);
+		
+	}
+
 
 	
 	
