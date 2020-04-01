@@ -27,6 +27,5 @@ pageEncoding="UTF-8"%>
 
 </body>
 <script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../js/goodsDetail.js"></script>
 <script src="../js/goods_review.js"></script>
 </html>

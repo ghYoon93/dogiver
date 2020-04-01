@@ -85,9 +85,18 @@
 .count{
 	display:inline-block;
 }
+#minus, #plus{
+	width: 25px;
+    height: 25px;
+}
+#quantity{
+	width: 40px;
+    height: 21px;
+}
 #tot_price{
 	 display: inline-block; 
 	 margin: 20px 10px 20px 200px;
+	 font-size: 20px;
 }
 
 
