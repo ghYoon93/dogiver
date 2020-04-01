@@ -69,9 +69,9 @@
         		<table>
         			<tr>
         				<td width="150" height="150">글번호 : <span id="brd_seq"></span></td>
-        				<td width="150">글종류 : <span id="brd_category"></span></td>
-        				<td width="600">제목 : <span id="brd_title"></span></td>
-        				<td width="150">날짜 : <span id="brd_logtime"></span></td>
+        				<td width="200">글종류 : <span id="brd_category"></span></td>
+        				<td width="500">제목 : <span id="brd_title"></span></td>
+        				<td width="200">날짜 : <span id="brd_logtime"></span></td>
         			</tr>
         			<tr>
         				<td colspan="4" id="brd_content" height="350"></td>

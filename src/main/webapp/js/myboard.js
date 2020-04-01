@@ -35,14 +35,12 @@ $(document).ready(function() {
 	
 	$(document).on('click', 'a', function() {
 		let brd_seq = $(this).attr('id');
-		alert(brd_seq);
 		$.ajax({
 			type: 'post',
 			url: '/dogiver/board/getMyboardView',
 			data: {'brd_seq': brd_seq},
 			dataType: 'json',
 			success: function(data){
-				alert(JSON.stringify(data));
 				$('#brd_seq').text(data.boardDTO.brd_seq);
 				$('#brd_category').text(data.boardDTO.brd_category);
 				$('#brd_title').text(data.boardDTO.brd_title);
