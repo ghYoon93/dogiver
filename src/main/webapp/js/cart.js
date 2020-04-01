@@ -20,16 +20,17 @@ $(document).ready(function() {
 										tag += '<tr>'
 											+ '<td class="td_check">'
 											+ '<input type="checkbox" id="'+ items.cart_id+ '" name="checkGoods" value="'+ items.cart_id+ '">'
+											+ '<label for="'+ items.cart_id+ '">'
 											+ '</td>'
 											+ '<td class="td_left">'
 											+ '<div class="cart_goods_cont">'
 											+ '<span class="cart_goods_image">'
-											+ '<a href="#">'
+											+ '<a href="../goods/goodsDetail?goods_id='+items.goods_id+'">'
 											+ '<img src="../image/goods/'+ items.goods_thumbnail+ '" class="middle" alt="'+ items.goods_name+ '" title="'+ items.goods_name+ '">'
 											+ '</a>'
 											+ '</span>'
 											+ '<div class="cart_goods_info">'
-											+ '<em><a href="#">'+ items.goods_name+ '</a></em>'
+											+ '<em><a href="../goods/goodsDetail?goods_id='+items.goods_id+'">'+ items.goods_name+ '</a></em>'
 											+ '</div>'
 											+ '</div>'
 											+ '</td>'
@@ -49,8 +50,8 @@ $(document).ready(function() {
 											+ '</div>'
 											+ '</div>'
 											+ '</td>'
-											+ '<td><strong>'+ items.goods_price+ '원</strong></td>'
-											+ '<td><strong>'+ items.total_price+ '원</strong></td>'
+											+ '<td><strong>'+ cashFormat(items.goods_price)+ '원</strong></td>'
+											+ '<td><strong>'+ cashFormat(items.total_price)+ '원</strong></td>'
 											+ '</tr>'
 											trCount++;
 									}); // each
@@ -70,18 +71,29 @@ function checkAll() {
 		$('input[name=checkGoods]').prop('checked', true);
 		let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
 		let checkedCnt = checkedGoods.length;
+		let deliveryCharge = 2500;
+		console.log('checkedCnt'+checkedCnt);
+		if(checkedCnt==0) deliveryCharge = 0;
 		let total = calcTot(checkedGoods);
-		$('#totalGoodsCnt').html(checkedCnt);
-		$('#totalGoodsPrice').html(total);
+		let totalSettlePrice = total + deliveryCharge;
+		$('#totalGoodsCnt').html(cashFormat(checkedCnt));
+		$('#totalGoodsPrice').html(cashFormat(total));
+		$('#totalSettlePrice').html(cashFormat(total));
+		$('#totalDeliveryCharge').html(cashFormat(deliveryCharge));
 }
 function uncheckAll() {
 		$('#check-all').prop('checked', false);
 		$('input[name=checkGoods]').prop('checked', false);
 		let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
 		let checkedCnt = checkedGoods.length;
+		let deliveryCharge = 2500;
+		if(checkedCnt==0) deliveryCharge = 0;
 		let total = calcTot(checkedGoods);
-		$('#totalGoodsCnt').html(checkedCnt);
-		$('#totalGoodsPrice').html(total);
+		let totalSettlePrice = total + deliveryCharge;
+		$('#totalGoodsCnt').html(cashFormat(checkedCnt));
+		$('#totalGoodsPrice').html(cashFormat(total));
+		$('#totalSettlePrice').html(cashFormat(total));
+		$('#totalDeliveryCharge').html(cashFormat(deliveryCharge));
 }
 
 $(document).on('click', '#check-all', function() {
@@ -101,9 +113,13 @@ $(document).on('click', 'input:checkbox[name=checkGoods]', function() {
 		} else {
 				$('#check-all').prop('checked', false);
 		}
-		$('#totalGoodsCnt').html(checkedCnt);
 		let total = calcTot(checkedGoods);
-		$('#totalGoodsPrice').html(total);
+		let deliveryCharge = 2500;
+		let totalSettlePrice = total + deliveryCharge;
+		$('#totalGoodsCnt').html(cashFormat(checkedCnt));
+		$('#totalGoodsPrice').html(cashFormat(total));
+		$('#totalSettlePrice').html(cashFormat(total));
+		$('#totalDeliveryCharge').html(cashFormat(deliveryCharge));
 });
 
 function calcTot(checkedGoods) {
@@ -111,10 +127,9 @@ function calcTot(checkedGoods) {
 		checkedGoods.each(function(i) {
 				let tr = checkedGoods.parent().parent().eq(i);
 				let td = tr.children();
-				let price = td.eq(4).text().replace(/[^0-9]/g, '');
-				total += Number(price);
+				let price = numberFormat(td.eq(4).text());
+				total += price;
 		});
-		total = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		return total;
 }
 
@@ -210,66 +225,14 @@ function gd_cart_process(command){
 	}
 }
 function gd_order_all(){
-	check
+	let form = $('#form-cart');
+	checkAll();
+	form.attr('action', 'order');
+	form.submit();
 }
-
-/** 주소 * */
-function sample4_execDaumPostcode() {
-	new daum.Postcode(
-			{
-				oncomplete : function(data) {
-					// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-					// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-					// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-					var roadAddr = data.roadAddress; // 도로명 주소 변수
-					var extraRoadAddr = ''; // 참고 항목 변수
-
-					// 법정동명이 있을 경우 추가한다. (법정리는 제외)
-					// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-					if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
-						extraRoadAddr += data.bname;
-					}
-					// 건물명이 있고, 공동주택일 경우 추가한다.
-					if (data.buildingName !== '' && data.apartment === 'Y') {
-						extraRoadAddr += (extraRoadAddr !== '' ? ', '
-								+ data.buildingName : data.buildingName);
-					}
-					// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-					if (extraRoadAddr !== '') {
-						extraRoadAddr = ' (' + extraRoadAddr + ')';
-					}
-
-					// 우편번호와 주소 정보를 해당 필드에 넣는다.
-					document.getElementById('sample4_postcode').value = data.zonecode;
-					document.getElementById("sample4_roadAddress").value = roadAddr;
-					document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
-
-					// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-					if (roadAddr !== '') {
-						document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-					} else {
-						document.getElementById("sample4_extraAddress").value = '';
-					}
-
-					var guideTextBox = document.getElementById("guide");
-					// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-					if (data.autoRoadAddress) {
-						var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
-						guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr
-								+ ')';
-						guideTextBox.style.display = 'block';
-
-					} else if (data.autoJibunAddress) {
-						var expJibunAddr = data.autoJibunAddress;
-						guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr
-								+ ')';
-						guideTextBox.style.display = 'block';
-					} else {
-						guideTextBox.innerHTML = '';
-						guideTextBox.style.display = 'none';
-					}
-				}
-			}).open();
-}
-/** 주소 * */
+function cashFormat(number){
+	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+function numberFormat(cash){
+  return Number(cash.replace(/[^0-9]/g, ''));
+};

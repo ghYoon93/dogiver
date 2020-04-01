@@ -133,6 +133,12 @@ public class OrderController {
     	return "/order/kakaoPaySuccess";
     	
     }
+    @RequestMapping(value="/order/kakaoPayCancel", method=RequestMethod.GET)
+    public String kakaoPayCancel() {
+    	
+    	return "/order/kakaoPayCancel";
+    	
+    }
     @RequestMapping(value="/order/insertOrder", method=RequestMethod.POST)
     public String insertOrder(@ModelAttribute OrderDTO orderDTO, 
     		                  @ModelAttribute OrderDetailDTO orderDetailDTO,

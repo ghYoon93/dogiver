@@ -51,7 +51,8 @@
                   </colgroup>
                   <thead>
                     <tr>
-                      <th><input type="checkbox" id="check-all"></th>
+                      <th>
+                        <input type="checkbox" id="check-all" /> <label for="check-all"></label></th>
                       <th>상품/옵션 정보</th>
                       <th>수량</th>
                       <th>상품금액</th>
