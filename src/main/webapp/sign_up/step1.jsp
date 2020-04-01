@@ -6,6 +6,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>회원가입</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+      rel="stylesheet"
+    />
 <link rel="stylesheet" href="../css/reset.css" />
 <link rel="stylesheet" href="../css/style.css" />
 <link rel="stylesheet" href="../css/sign.css" />
@@ -438,18 +442,17 @@
 				<div class="btn_center">
 					<button class="btn_1" id="btn_1">다음</button>
 				</div>
-				<!-- 모달 -->
-				<div id="chkModal" class="modal">
-					<!-- Modal content -->
-					<div class="modal-content">
-						<div class="modal-header">
-							<h2>경고</h2>
-						</div>
-						<div class="modal-body">
-							<div id="chk-message" class="message">필수 약관에 동의해 주세요.</div>
-						</div>
+				<div id="findModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 id="find-message-header"></h2>
+					</div>
+					<div class="modal-body">
+						<div id="find-message" class="message"></div>
 					</div>
 				</div>
+			</div>
 			</div>
 		</section>
 	</div>
