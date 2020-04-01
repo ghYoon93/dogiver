@@ -39,6 +39,8 @@ public interface BoardService {
 	public void reply_delete(int re_seq);
 
 	public BoardDTO getUser(String brd_seq);
+	
+	public void boardModify(String brd_seq);
 
 
 }

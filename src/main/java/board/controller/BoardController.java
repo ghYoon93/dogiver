@@ -151,21 +151,18 @@ public class BoardController {
 		
 	}
 	
-	@RequestMapping(value = "modifyForm", method = RequestMethod.GET)
-	public String modifyForm() {
+	@RequestMapping(value = "boardModifyForm", method = RequestMethod.GET)
+	public String modifyForm(@RequestParam String brd_seq, Model model) {
+		BoardDTO boardDTO = boardService.getUser(brd_seq);
+		
+		model.addAttribute("boardDTO", boardDTO);
+		System.out.println(boardDTO);
 		return "boardModifyForm";
 	}
-	@RequestMapping(value="getUser", method=RequestMethod.POST)
-	public ModelAndView getUser( @RequestParam String brd_seq, HttpSession session) {
-		BoardDTO boardDTO = boardService.getUser(brd_seq);
-		System.out.println(boardDTO);
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("memEmail", session.getAttribute("memEmail"));
-		mav.addObject("memNickName", session.getAttribute("memNickName"));
-		mav.addObject("boardDTO", boardDTO);
-		mav.setViewName("jsonView");
-		return mav;
-	}
-
 	
+	@RequestMapping(value = "boardModify", method = RequestMethod.POST)
+	public void boardModify(@RequestParam String brd_seq) {
+		boardService.boardModify(brd_seq);
 	}
+	
+}

@@ -295,19 +295,7 @@ $('#listBtn').click(function() {
 });
 
 $('#modifyBtn').click(function(){
-	$.ajax({
-		type : 'post',
-		url : '/dogiver/board/getUser',
-		data : 'brd_seq=' + $('#brd_seq').val(),
-		dataType : 'json',
-		success : function(data) {
-			alert('1');
-		alert(JSON.stringify(data));
-			$('#board_select').val(data.boardDTO.brd_category);
-			$('#insert_text').val(data.boardDTO.brd_title);
-			$('#brd_content').val(data.boardDTO.brd_content);
-		}
-});
+	location.href="/dogiver/board/boardModifyForm?brd_seq="+$('#brd_seq').val();
 });
 
 
