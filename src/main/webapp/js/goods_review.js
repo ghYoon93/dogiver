@@ -50,7 +50,7 @@ $(document).ready(function(){
 			         + '</tr>';
 			});//each
 			
-			$('.reviewList').append(tag);
+			$('.reviewList tbody').append(tag);
 		}
 	});
 });
