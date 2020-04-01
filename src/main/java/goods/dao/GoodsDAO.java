@@ -28,5 +28,7 @@ public interface GoodsDAO {
 
 	public int goodsInsert(GoodsDTO goodsDTO);
 
+	public GoodsDTO goodsModify(GoodsDTO goodsDTO);
+
 
 }

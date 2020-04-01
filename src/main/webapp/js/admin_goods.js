@@ -56,7 +56,24 @@ $(document).ready(function() {
 	//수정하기
 	$(document).on('click', '#goodsModify', function(){
 		$.ajax({
-			
+			type: 'post',
+			url: '/dogiver/goods/goodsModify',
+			data: {'goods_id':$('#goods_id').val(),
+				   'category_code':$('#category_code').val(),
+				   'goods_name':$('#goods_name').val(),
+				   'goods_price':$('#goods_price').val(),
+				   'goods_amt':$('#goods_amt').val()},
+			dataType: 'json',
+			success: function(data){
+				$('#goods_id').val(data.goodsDTO.goods_id);
+				$('#category_code').val(data.goodsDTO.category_code);
+				$('#goods_name').val(data.goodsDTO.goods_name);
+				$('#goods_price').val(data.goodsDTO.goods_price);
+				$('#goods_date').val(data.goodsDTO.goods_date);
+				$('#goods_amt').val(data.goodsDTO.goods_amt);
+				$('#goods_thumbnail').html(data.goodsDTO.goods_thumbnail);
+				$('#goods_detail').html(data.goodsDTO.goods_detail);
+			}		
 		});
 	});
 	

@@ -64,8 +64,18 @@ public class GoodsDAOMybatis implements GoodsDAO {
 
 	@Override
 	public int goodsInsert(GoodsDTO goodsDTO) {
+		return sqlSession.insert("goodsSQL.goodsInsert", goodsDTO);
+	}
+
+	@Override
+	public GoodsDTO goodsModify(GoodsDTO goodsDTO) {
+		int su = sqlSession.update("goodsSQL.goodsModify", goodsDTO);
 		
-		return sqlSession.insert("goodSQL.goodsInsert", goodsDTO);
+		if(su==1) {
+			return sqlSession.selectOne("goodsSQL.getGoodsDetail", goodsDTO.getGoods_id());
+		}else {
+			return goodsDTO;
+		}
 	}
 
 }

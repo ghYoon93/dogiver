@@ -28,5 +28,7 @@ public interface GoodsService {
 
 	public int goodsInsert(GoodsDTO goodsDTO);
 
+	public GoodsDTO goodsModify(GoodsDTO goodsDTO);
+
 
 }

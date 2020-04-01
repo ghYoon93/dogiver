@@ -81,7 +81,7 @@ pageEncoding="UTF-8"%>
         				<p>가격</p><input type="text" id="goods_price" name="goods_price">
         			</div>
         			<div class="adminGoodsViewDiv">
-        				<p>날짜</p><input type="text" id="goods_date">
+        				<p>날짜</p><input type="text" id="goods_date" name="goods_date" readonly="readonly">
         			</div>
         			<div class="adminGoodsViewDiv">
         				<p>수량</p><input type="text" id="goods_amt" name="goods_amt">

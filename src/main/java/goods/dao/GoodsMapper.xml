@@ -63,8 +63,12 @@
 	</insert>
 	
 	<insert id="goodsInsert" parameterType="goods.bean.GoodsDTO">
-		insert into goods(goods_id, categoty_code, goods_name, goods_price, goods_date, goods_amt, good_thumbanil, goods_detail)
-		values(#{goods_id},#{categoty_code},#{goods_name},#{goods_price},SYSDATE,#{goods_amt},#{good_thumbanil},#{goods_detail}) 
+		insert into goods(goods_id, category_code, goods_name, goods_price, goods_date, goods_amt, good_thumbanil, goods_detail)
+		values(#{goods_id},#{category_code},#{goods_name},#{goods_price},SYSDATE,#{goods_amt},#{good_thumbanil},#{goods_detail}) 
 	</insert>
+	
+	<update id="goodsModify" parameterType="goods.bean.GoodsDTO">
+		update goods set category_code=#{category_code}, goods_name=#{goods_name}, goods_price=#{goods_price}, goods_date=SYSDATE, goods_amt=#{goods_amt} where goods_id = #{goods_id}
+	</update>
 	
 </mapper>

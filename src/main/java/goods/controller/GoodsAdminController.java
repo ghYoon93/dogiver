@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import goods.bean.GoodsDTO;
 import goods.service.GoodsService;
@@ -50,6 +51,16 @@ public class GoodsAdminController {
 			return "fail";
 		}
 			
+	}
+	
+	@RequestMapping(value = "goodsModify", method = RequestMethod.POST)
+	public ModelAndView goodsModify(@ModelAttribute GoodsDTO goodsDTO) {
+		goodsDTO = goodsService.goodsModify(goodsDTO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("goodsDTO", goodsDTO);
+		mav.setViewName("jsonView");
+		return mav;
 	}
 		
 }
