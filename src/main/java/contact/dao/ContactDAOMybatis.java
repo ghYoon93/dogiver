@@ -36,6 +36,16 @@ public class ContactDAOMybatis implements ContactDAO {
 	public void admin_contect_delete(String seq) {
 		sqlSession.delete("contactSQL.admin_contect_delete", Integer.parseInt(seq));
 	}
+
+	@Override
+	public List<ContactDTO> getInfo(String email) {
+		return sqlSession.selectList("contactSQL.getInfo", email);
+	}
+
+	@Override
+	public void my_contect_delete(String seq) {
+		sqlSession.delete("contactSQL.my_contect_delete", Integer.parseInt(seq));
+	}
 }
 
 

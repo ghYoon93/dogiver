@@ -10,8 +10,16 @@
 		select * from contact
 	</select>
 	
+	<select id="getInfo" parameterType="String" resultType="contact.bean.ContactDTO">
+		select * from contact where email=#{email}
+	</select>
 	
 	<delete id="admin_contect_delete" parameterType="int">
+		delete contact where seq =#{seq}
+	</delete>
+	
+	
+	<delete id="my_contect_delete" parameterType="int">
 		delete contact where seq =#{seq}
 	</delete>
 </mapper>
