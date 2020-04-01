@@ -25,6 +25,7 @@ pageEncoding="UTF-8"%>
       type="text/javascript"
       src="/data/201101/IJ12941530138912/jquery-contained-sticky-scroll.js"
     ></script>
+    <script type="text/javascript" src="../js/admin_goods.js"></script>
     <script src="../js/main.js"></script>
   </head>
   <body>
@@ -37,8 +38,8 @@ pageEncoding="UTF-8"%>
       <div class="admin-page">
         <div class="admin-nav">
           <ol>
-            <li><a href="../admin/admin-page">회원관리</a></li>
-            <li><a href="">헌혈견 관리</a></li>
+            <li><a href="../admin/admin">회원관리</a></li>
+            <li><a href="../admin/admin_blood">헌혈견 관리</a></li>
             <li class="on"><a href="../admin/admin_goods">상품 관리</a></li>
             <li><a href="">게시글 관리</a></li>
             <li><a href="">문의 관리</a></li>
@@ -47,23 +48,59 @@ pageEncoding="UTF-8"%>
         <div class="article">
         	<div id="adminGoodsDiv">
         		<div id="adminGoodsList">
-        			<table>
+        			<table id="adminGoodsListTable" border="1px solid" cellspacing="0">
         				<tr>
-        					<th>상품번호</th>
-        					<th>카테고리</th>
-        					<th>상품명</th>
-        					<th>가격</th>
-        					<th>날짜</th>
-        					<th>설명</th>
-        					<th>수량</th>
-        					<th>할인</th>
-        					<th>디테일</th>
+        					<th width="100">상품번호</th>
+        					<th width="75">카테고리</th>
+        					<th width="300">상품명</th>
+        					<th width="100">가격</th>
+        					<th width="125">날짜</th>
+        					<th width="150">썸네일</th>
+        					<th width="50">수량</th>
+        					<th width="150">상세정보</th>
         				</tr>
         			</table>
         		</div>
         		<div id="adminGoodsView">
-        			
+        		<form name="goodsForm" id="goodsForm">
+        			<div class="adminGoodsViewDiv">
+        				<p>상품번호</p><input type="text" id="goods_id" name="goods_id">
+        			</div>
+        			<div class="adminGoodsViewDiv">
+        				<p>카테고리</p>
+						<select id="category_code" name="category_code">
+							<option value="101">101</option>
+							<option value="201">201</option>
+							<option value="301">301</option>
+						</select>
+        			</div>
+        			<div class="adminGoodsViewDiv">
+        				<p>상품명</p><input type="text" id="goods_name" name="goods_name">
+        			</div>
+        			<div class="adminGoodsViewDiv">
+        				<p>가격</p><input type="text" id="goods_price" name="goods_price">
+        			</div>
+        			<div class="adminGoodsViewDiv">
+        				<p>날짜</p><input type="text" id="goods_date">
+        			</div>
+        			<div class="adminGoodsViewDiv">
+        				<p>수량</p><input type="text" id="goods_amt" name="goods_amt">
+        			</div>
+        			<div class="adminGoodsViewimg">
+        				<p>썸네일</p>
+        				<input type="file" id="goods_thumbnail" name="goods_thumbnail">
+        			</div>
+        			<div class="adminGoodsViewimg">
+        				<p>상세정보</p>
+        				<input type="file" id="goods_detail" name="goods_detail">
+        			</div>
+        		</form>
         		</div>
+        			<div>
+        			<input type="button" value="수정하기" id="goodsModify">
+        			<input type="button" value="비우기" id="re">
+        			<input type="button" value="등록하기" id="goodsInsert">
+        			</div>
         	</div>
         </div>
       </div>

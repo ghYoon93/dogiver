@@ -26,5 +26,7 @@ public interface GoodsDAO {
 
 	public void writeReply(Map<String, String> map);
 
+	public int goodsInsert(GoodsDTO goodsDTO);
+
 
 }

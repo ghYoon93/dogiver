@@ -62,4 +62,9 @@
 		values('dogiver503@gmail.com', #{goods_id}, 'REVIEW', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
 	</insert>
 	
+	<insert id="goodsInsert" parameterType="goods.bean.GoodsDTO">
+		insert into goods(goods_id, categoty_code, goods_name, goods_price, goods_date, goods_amt, good_thumbanil, goods_detail)
+		values(#{goods_id},#{categoty_code},#{goods_name},#{goods_price},SYSDATE,#{goods_amt},#{good_thumbanil},#{goods_detail}) 
+	</insert>
+	
 </mapper>

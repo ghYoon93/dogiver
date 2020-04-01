@@ -42,9 +42,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "admin_goods", method = RequestMethod.GET)
-	public String admin_goods(@RequestParam(required = false, defaultValue = "1") String pg, Model model) {
-		
-		model.addAttribute("pg", pg);
+	public String admin_goods() {
 		return "/admin/admin_goods";
 	}
 	
@@ -67,11 +65,10 @@ public class AdminController {
 	@RequestMapping(value = "adminDogiverModify", method = RequestMethod.POST)
 	@ResponseBody
 	public String adminDogiverModify(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_image) {
-//		String filePath = servletContext.getRealPath("dogiverImage");
 		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\dogiverImage";
 		String fileName = dog_image.getOriginalFilename();
 		File file = new File(filePath, fileName);
-		
+		System.out.println(map);
 		if(!fileName.equals("")) {
 			//파일복사
 			try {
@@ -98,6 +95,7 @@ public class AdminController {
 		String fileName = dog_image.getOriginalFilename();
 		File file = new File(filePath, fileName);
 		
+		
 		//파일복사
 		try {
 			FileCopyUtils.copy(dog_image.getInputStream(), new FileOutputStream(file));
@@ -113,6 +111,12 @@ public class AdminController {
 			return "false";			
 		}
 	}
+	
+	@RequestMapping(value = "error_fileupload", method = RequestMethod.GET)
+	public String error_fileupload() {
+		return "/error/error_fileupload";
+	}
+	
 
 
 }

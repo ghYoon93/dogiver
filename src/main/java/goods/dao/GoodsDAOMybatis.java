@@ -62,4 +62,10 @@ public class GoodsDAOMybatis implements GoodsDAO {
 		sqlSession.insert("goodsSQL.writeReply", map);
 	}
 
+	@Override
+	public int goodsInsert(GoodsDTO goodsDTO) {
+		
+		return sqlSession.insert("goodSQL.goodsInsert", goodsDTO);
+	}
+
 }

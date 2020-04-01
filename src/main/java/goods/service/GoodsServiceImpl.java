@@ -63,6 +63,13 @@ public class GoodsServiceImpl implements GoodsService {
 		goodsDAO.writeReply(map);
 	}
 
+	@Override
+	public int goodsInsert(GoodsDTO goodsDTO) {
+		return goodsDAO.goodsInsert(goodsDTO);
+	}
+	
+	
+
 
 
 }

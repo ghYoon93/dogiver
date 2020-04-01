@@ -35,8 +35,8 @@ pageEncoding="UTF-8"%>
 			<div class="admin-nav">
 				<ol>
 					<li><a href="../admin/admin-page">회원관리</a></li>
-					<li class="on"><a href="">헌혈견 관리</a></li>
-					<li><a href="">상품 관리</a></li>
+					<li class="on"><a href="../admin/admin_blood">헌혈견 관리</a></li>
+					<li><a href="../admin/admin_goods">상품 관리</a></li>
 					<li><a href="">게시글 관리</a></li>
 					<li><a href="">문의 관리</a></li>
 				</ol>
@@ -113,7 +113,7 @@ pageEncoding="UTF-8"%>
 								name="email">
 						</div>
 						<div id="dog_imageDiv">
-							<label>사진 파일</label><br> <input type="file" name="dog_image"
+							<label>사진 파일(최대 5M)</label><br> <input type="file" name="dog_image"
 								id="dog_image">
 						</div>
 						<div id="descriptionDiv">
