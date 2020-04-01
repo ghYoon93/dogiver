@@ -9,10 +9,7 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
-<script type="text/javascript" src="../js/jquery-3.4.1.min.js"
-	charset="URF-8"></script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/contact.js"></script>
+
 
 </head>
 
@@ -53,28 +50,33 @@
 			<form id="contactForm" method="post">
 				<div id="contact_visitor">
 					<div id="nameText">
-						<input id="text_name" name="name" type="text" placeholder="Name">
+						<input id="text_name" name="name" type="text" placeholder="이름">
 					</div>
 
 
 					<div id="emailText">
 						<input id="text_email" name="email" type="text"
-							placeholder="Email">
+							placeholder="이메일">
 					</div>
 
 					<div id="phoneText">
 						<input id="text_phone" name="phone" type="text"
-							placeholder="Phone">
+							placeholder="핸드폰 번호">
 					</div>
 
 					<div id="subjectText">
 						<input id="text_subject" name="subject" type="text"
-							placeholder="Subject">
+							placeholder="방문목적">
 					</div>
 
 					<div id="textarea">
 						<textarea id="contact_textarea" name="content"
-							placeholder="Type your message here..."></textarea>
+							placeholder="내용을 입력"></textarea>
+					</div>
+
+					<div id="passwordText">
+						<input id="text_password" name="password" type="password" maxlength="4"
+							placeholder="비밀번호 4자리">
 					</div>
 
 					<div id="buttonDiv">
@@ -88,5 +90,9 @@
 	</div>
 	<div id="footerDiv"></div>
 </body>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"
+	charset="URF-8"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/contact.js"></script>
 </html>
 

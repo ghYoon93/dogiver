@@ -26,6 +26,17 @@ public class ContactServiceImpl implements ContactService {
 		List<ContactDTO> list = contactDAO.contactList();
 		return list;
 	}
+
+	@Override
+	public List<ContactDTO> myContactList() {
+		List<ContactDTO> list = contactDAO.myContactList();
+		return list;
+	}
+
+	@Override
+	public void admin_contect_delete(String seq) {
+		contactDAO.admin_contect_delete(seq);
+	}
 	
 	
 

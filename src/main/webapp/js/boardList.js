@@ -34,10 +34,6 @@ $(document).ready(function(){
 					style:'font-size: 20px',
 					align : 'center',
 					text : items.brd_logtime
-				})).append($('<td/>',{
-					style:'font-size: 20px',
-					align : 'center',
-					text : items.brd_hit
 				})).appendTo($('#boardListTable'));
 				
 			});//each
@@ -100,13 +96,7 @@ $('#boardSearchBtn').click(function(event, str){
 						style:'font-size: 20px',
 						align : 'center',
 						text : items.brd_logtime
-					})).append($('<td/>',{
-						style:'height:80px',
-						style:'font-size: 20px',
-						align : 'center',
-						text : items.brd_hit
 					})).appendTo($('#boardListTable'));
-					
 				});//each
 				
 				//페이징처리

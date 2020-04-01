@@ -33,7 +33,6 @@
 						<th width="500" style="font-size: 15px;">제목</th>
 						<th width="150" style="font-size: 15px;">작성자</th>
 						<th width="150" style="font-size: 15px;">작성일</th>
-						<th width="100" style="font-size: 15px;">조회수</th>
 					</tr>
 				</table>
 			</div>

@@ -10,4 +10,8 @@ public interface ContactDAO {
 
 	public List<ContactDTO> contactList();
 
+	public List<ContactDTO> myContactList();
+
+	public void admin_contect_delete(String seq);
+
 }

@@ -2,14 +2,18 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="contactSQL">
 	<!-- 글쓰기 -->
-	<insert id="contactWrite"
-		parameterType="contact.bean.ContactDTO">
-		insert into contact values(seq_contact.nextval, #{name },#{email },#{phone
-		},#{subject },#{content }, SYSDATE)
+	<insert id="contactWrite" parameterType="contact.bean.ContactDTO">
+		insert into contact values(contact_seq.nextval, #{name },#{email },#{phone},#{subject },#{content },SYSDATE, #{password})
 	</insert>
-
-	<select id="contactList" resultType="contact.bean.ContactDTO">select * from contact
+	
+	<select id="contactList" resultType="contact.bean.ContactDTO">
+		select * from contact
 	</select>
+	
+	
+	<delete id="admin_contect_delete" parameterType="int">
+		delete contact where seq =#{seq}
+	</delete>
 </mapper>
 
 

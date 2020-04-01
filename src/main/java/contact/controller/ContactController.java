@@ -33,10 +33,9 @@ public class ContactController {
 	}
 	
 	@RequestMapping(value="contactWrite", method=RequestMethod.POST)
-	public String contactWrite(ContactDTO contactDTO) {
-		
+	@ResponseBody
+	public void contactWrite(ContactDTO contactDTO) {
 		contactService.contactWrite(contactDTO);
-		return "/contact/contactForm";
 
 	}
 	
@@ -47,13 +46,32 @@ public class ContactController {
 	
 	@RequestMapping(value="contactList", method=RequestMethod.POST)
 	public ModelAndView contactList() {
-		
 		List<ContactDTO> list = contactService.contactList();
-		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
 		mav.setViewName("jsonView");
 		return mav;
 	}
 	
+	@RequestMapping(value="admin_contect_delete", method=RequestMethod.POST)
+	@ResponseBody
+	public void admin_contect_delete(@RequestParam String seq) {
+		contactService.admin_contect_delete(seq);
+	}
+	
+	
+	
+//	@RequestMapping(value="myContactList", method=RequestMethod.POST)
+//	public ModelAndView myContactList(HttpSession session) {
+//		
+//		List<ContactDTO> list = contactService.contactList();
+//		ModelAndView mav = new ModelAndView();
+//		mav.addObject("memEmail", session.getAttribute("memEmail"));
+//		mav.addObject("memNickName", session.getAttribute("memNickName"));
+//		System.out.println(session.getAttribute("memNickName"));
+//		mav.addObject("list", list);
+//		mav.setViewName("jsonView");
+//		return mav;
+//	}
+//	
 }
