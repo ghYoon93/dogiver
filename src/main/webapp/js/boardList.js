@@ -5,6 +5,7 @@ $(document).ready(function(){
 		data : 'pg='+$('#pg').val(),
 		dataType : 'json',
 		success : function(data){
+			alert("aa");
 			$.each(data.list, function(index, items){
 				$('<tr/>').append($('<td/>',{
 					align : 'center',
@@ -40,6 +41,7 @@ $(document).ready(function(){
 			
 			//페이징처리
 			$('#boardPagingDiv').html(data.boardPaging.pagingHTML);
+			
 			
 			//로그인 여부
 			$('#boardListTable').on('click', '.titleA', function(){
