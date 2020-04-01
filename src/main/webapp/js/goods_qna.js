@@ -1,5 +1,3 @@
-
-
  //상품QNA 리스트 
 $(document).ready(function(){
 
@@ -10,7 +8,6 @@ $(document).ready(function(){
 		data: 'goods_id='+$('input[name=goods_id]').val(),
 		dataType: 'json',
 		success: function(data){
-			//alert(JSON.stringify(data));
 			
 			$.each(data.list, function(index, items){
 				tag += '<tr>'
@@ -19,11 +16,8 @@ $(document).ready(function(){
 					+ '<td width="10%" style="text-align:center;">'+items.nickname+'</td>'
 					+ '<td width="25%" style="text-align:center;">'+ items.board_date +'</td>'
 					+ '</tr>'
-					+ '<tr class="tr">'
-					+ '<td class="replyList" colspan="2" width="65%" style="cursor: pointer;"></td>'
-					+ '</tr>'
-					+ '<tr>'
-					+ '<td class="reply" colspan="2"><textarea class="text_content" rows="3" cols="110"></textarea>'
+					+ '<tr class="replyText">'
+					+ '<td colspan="3"><textarea class="text_content" rows="3" cols="110"></textarea>'
 					+ '<button type="button" class="replyBtn">댓글 작성</button></td>'
 					+ '</tr>';
 				
@@ -31,7 +25,7 @@ $(document).ready(function(){
 			
 			$('.qnaList tbody').append(tag);
 			
-			$('.reply, .replyList').hide();
+			$('.replyText').hide();
 		}
 	
 	});
@@ -48,33 +42,27 @@ $('#qnaWrite').on('click', '#qnaWrite_btn', function(){
 						.css('font-weight', 'bold')
 						.css('text-align', 'left');
 	}else {
-		alert("submit");
 		document.forms[0].submit();
 	}
 });
 
 $('.qnaList').on('click', '.qna_content', function(){
-	$(this).parent().next().find('.replyList').slideToggle();
-	$(this).parent().next().next().find('.reply').slideToggle();
+	$(this).parent().next().slideToggle();
 });
 
 $('.qnaList').on('click', '.replyBtn', function(){
-	//alert($('#bo_seq').val());
-	alert($(this).parent().parent().prev().prev().find('#bo_seq').val());
-	alert($('.reply .text_content').val());
+
+	//alert($(this).parent().parent().prev().find('#bo_seq').val());
 	$.ajax({
 		type: 'post',
 		url: '/dogiver/goods/writeReply',
 		contentType: 'application/json;charset=UTF-8',
-		//data: $('#qnaWrite').serialize(),
-		//data: 'goods_id='+goods_id+'&reply='+reply+'&bo_seq'+bo_seq, 
 		data: JSON.stringify({'goods_id': $('#goods_id').val(),
-								'bo_seq': $(this).parent().parent().prev().prev().find('#bo_seq').val(),	 
-								'reply': $('.reply .text_content').val()}),
+								'bo_seq': $(this).parent().parent().prev().find('#bo_seq').val(),	 
+								'reply': $('.replyText .text_content').val()}),
 		success: function(){
 			alert('댓글 작성 완료하였습니다.');
 			//location.reload();
-			//$('#qnaList').load(window.location +'#qnaList');
 			
 			var tag="";
 			$.ajax({
@@ -83,15 +71,19 @@ $('.qnaList').on('click', '.replyBtn', function(){
 				data: 'bo_seq='+$('#bo_seq').val(),
 				dataType: 'json',
 				success: function(data){
-					
 					alert(JSON.stringify(data));
 					$.each(data.list, function(index, items){
-						tag += '<td colspan="2">'+ items.reply +'</td>';
+						tag += '<tr class="replyTr">'
+							+ '<td class="replyTd" style="padding-left: 50px;">'+ items.reply +'</td>'
+							+ '<td width="10%" style="text-align:center;">'+items.nickname+'</td>'
+							+ '</tr>';
 					});//each
 					
-					$('.replyList').append(tag);
+					//$('.replyList').prependTo(tag);
+					$('.replyText').before(tag);
 					
-					$('.reply').hide();
+					$('.replyTr').not($(this).parent().parent().prev().find('.reply')).hide();
+					$('.replyText').hide();
 				}
 			});
 		}
