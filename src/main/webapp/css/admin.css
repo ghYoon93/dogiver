@@ -1,95 +1,151 @@
 .admin-page {
-  text-align: center;
-  width: 1100px;
-  margin: 0 auto;
+	text-align: center;
+	width: 1100px;
+	margin: 0 auto;
 }
+
 .admin-nav {
-  display: flex;
-  background: #dd3838;
-  padding: 5px 0 0 0;
-  box-sizing: border-box;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border: 1px solid #9e1616;
-  border-bottom: none;
+	display: flex;
+	background: #dd3838;
+	padding: 5px 0 0 0;
+	box-sizing: border-box;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border: 1px solid #9e1616;
+	border-bottom: none;
 }
+
 .admin-nav ol li {
-  float: left;
-  flex: 3;
-  width: 140px;
-  height: 50px;
-  padding: 10px;
-  text-align: center;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border: 1px solid #9e1616;
-  box-sizing: border-box;
+	float: left;
+	flex: 3;
+	width: 140px;
+	height: 50px;
+	padding: 10px;
+	text-align: center;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border: 1px solid #9e1616;
+	box-sizing: border-box;
 }
 
 .admin-nav ol li:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
+
 .admin-nav ol li:first-child {
-  margin-left: 5px;
-  color: #222;
+	margin-left: 5px;
+	color: #222;
 }
+
 .admin-nav ol li.on {
-  background: #fff;
-  border-bottom: none;
+	background: #fff;
+	border-bottom: none;
 }
+
 .admin-nav ol li.on a {
-  color: #222;
+	color: #222;
 }
+
 .admin-nav ol li a {
-  font-size: 15px;
-  line-height: 2;
-  color: #fff;
-  text-decoration: none;
+	font-size: 13px;
+	line-height: 2;
+	color: #fff;
+	text-decoration: none;
 }
+
 .article {
-  width: 1100px;
-  border: 1px solid #e6e5e7;
-  border-top: none;
-  box-sizing: border-box;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  padding: 5px;
-}
-.article table {
-  border: 1px solid;
+	width: 1100px;
+	border: 1px solid #e6e5e7;
+	border-top: none;
+	box-sizing: border-box;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding: 5px;
 }
 
+.panel-body table {
+	border: 1px solid #f2f2f2;
+	border-radius: 5px;
+	text-align: center;
+	width: 800px;
+	margin: 0 auto;
+}
+
+.panel-body table thead tr th {
+	text-align: center;
+}
+#look{
+ 	display: none;
+}
+#look .form-group {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-group label {
+	float: left;
+	font-size: 20px;
+	width: 130px;
+}
+
+.form-group input {
+	width: 400px;
+}
+
+.form-group #zipcode {
+	display: inline-block;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.form-group #zipcode+button {
+	float: left;
+	margin-bottom: 10px;
+}
+
+.form-group #addr {
+	margin-left: 130px;
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+.form-group #addr_Detail {
+	margin-left: 130px;
+}
+.form-sort{
+	width: 400px;
+	height: 35px;
+}
 /* 헌혈견 관리자 css */
-
-.admin_dogiverTable{
+.admin_dogiverTable {
 	text-align: center;
 	font-size: 13pt;
-	margin: auto;	
+	margin: auto;
 }
 
-#admin_dogiverPagingDiv{
+#admin_dogiverPagingDiv {
 	width: 1100px;
 	text-align: center;
 }
 
-#admin_dogiverView{
+#admin_dogiverView {
 	width: 1100px;
 	height: 500px;
 	overflow: hidden;
 	font-size: 13pt;
 	display: none;
 	padding-left: 10px;
-	
 }
 
-.btnDiv{
+.btnDiv {
 	margin: auto;
 	width: 80%;
 	height: 45%;
 	margin-bottom: 5px;
 }
 
-.btnDiv button{
+.btnDiv button {
 	display: inline-block;
 	width: 120px;
 	height: 45px;
@@ -102,19 +158,19 @@
 	text-decoration: none;
 }
 
-#dog_imageViewDiv{
+#dog_imageViewDiv {
 	width: 300px;
 	height: 400px;
 	float: left;
 }
 
-#dog_imageView{
+#dog_imageView {
 	margin-top: 10px;
 	width: 300px;
 	height: 380px;
 }
 
-#dog_nameDiv{
+#dog_nameDiv {
 	width: 250px;
 	height: 100px;
 	float: left;
@@ -122,7 +178,7 @@
 	padding: 10px;
 }
 
-#dog_ageDiv{
+#dog_ageDiv {
 	width: 250px;
 	height: 100px;
 	float: left;
@@ -130,7 +186,7 @@
 	padding: 10px;
 }
 
-#dog_weightDiv{
+#dog_weightDiv {
 	width: 250px;
 	height: 100px;
 	float: left;
@@ -138,7 +194,7 @@
 	padding: 10px;
 }
 
-#dog_breedDiv{
+#dog_breedDiv {
 	width: 250px;
 	height: 100px;
 	float: left;
@@ -146,7 +202,7 @@
 	padding: 10px;
 }
 
-#dog_bloodtypeDiv{
+#dog_bloodtypeDiv {
 	width: 250px;
 	height: 100px;
 	float: left;
@@ -154,7 +210,7 @@
 	padding: 10px;
 }
 
-#apply_statusDiv{
+#apply_statusDiv {
 	width: 250px;
 	height: 100px;
 	float: left;
@@ -162,13 +218,13 @@
 	padding: 10px;
 }
 
-#apply_status{
+#apply_status {
 	height: 50px;
 	width: 230px;
 	font-size: 15pt;
 }
 
-#blood_ccDiv{
+#blood_ccDiv {
 	width: 250px;
 	height: 100px;
 	float: left;
@@ -176,7 +232,7 @@
 	padding: 10px;
 }
 
-#donation_dateDiv{
+#donation_dateDiv {
 	width: 250px;
 	height: 100px;
 	float: left;
@@ -184,7 +240,7 @@
 	padding: 10px;
 }
 
-#nameDiv{
+#nameDiv {
 	width: 250px;
 	height: 100px;
 	float: left;
@@ -192,7 +248,7 @@
 	padding: 10px;
 }
 
-#phoneDiv{
+#phoneDiv {
 	width: 250px;
 	height: 100px;
 	float: left;
@@ -200,7 +256,7 @@
 	padding: 10px;
 }
 
-#emailDiv{
+#emailDiv {
 	width: 250px;
 	height: 100px;
 	float: left;
@@ -208,7 +264,7 @@
 	padding: 10px;
 }
 
-#dog_imageDiv{
+#dog_imageDiv {
 	width: 300px;
 	height: 100px;
 	float: left;
@@ -217,24 +273,23 @@
 	padding: 10px;
 }
 
-#dog_image{
+#dog_image {
 	width: 280px;
 }
 
-#descriptionDiv{
+#descriptionDiv {
 	width: 900px;
 	height: 100px;
 	float: left;
-
 }
 
-#modifyBtnDiv{
+#modifyBtnDiv {
 	width: 200px;
 	height: 100px;
 	float: left;
 }
 
-#admin_dogiverView input{
+#admin_dogiverView input {
 	width: 230px;
 	height: 50px;
 	font-size: 14pt;

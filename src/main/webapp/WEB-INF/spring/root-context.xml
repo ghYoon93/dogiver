@@ -10,6 +10,7 @@
 		base-package="dogiver.conf" />
 	<context:component-scan	base-package="member.service" />
 	<context:component-scan	base-package="member.dao" />
+	<context:component-scan base-package="member.bean"/>
 		
 	<!-- Goods -->
 	<context:component-scan base-package="goods.service"/>

@@ -1,5 +1,8 @@
 package member.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -36,5 +39,25 @@ public class MemberDAOMybatis implements MemberDAO {
 	@Override
 	public int modi(MemberDTO memberDTO) {
 		return sqlSession.update("memberSQL.modi",memberDTO);
+	}
+
+	@Override
+	public List<MemberDTO> getMemberList(Map<String, Integer> map) {
+		return sqlSession.selectList("memberSQL.getMemberList", map);
+	}
+
+	@Override
+	public int getTotalA() {
+		return sqlSession.selectOne("memberSQL.getTotalA");
+	}
+
+	@Override
+	public int change(MemberDTO memberDTO) {
+		return sqlSession.update("memberSQL.change",memberDTO);
+	}
+
+	@Override
+	public int drop(MemberDTO memberDTO) {
+		return sqlSession.delete("memberSQL.drop",memberDTO);
 	}
 }
