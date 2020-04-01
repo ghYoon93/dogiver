@@ -21,6 +21,12 @@ public interface BoardDAO {
 
 	public void boardDelete(int brd_seq);
 
+	public BoardDTO getBoardView_before(String brd_seq);
+
+	public BoardDTO getBoardView_after(String brd_seq);
+
+	public void reply_write(BoardDTO boardDTO);
+
 
 
 

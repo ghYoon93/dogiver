@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<title>동물 병원</title>
+	<title>동물병원</title>
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/hospital.css">
 	<link
@@ -40,19 +40,21 @@
     </div>
 	<div class="wrap">
 	<div class="hospitalframe">
+	<div class="blood-bred">협력병원</div>
+	<div class="hospitalmap" id="map"></div>
 		<div class="hospitallist">
-			<table border="1" cellspacing="0" cellpadding="5" frame="hsides" rules="rows">
-				<tr>
-					<th width="250">병원명</th>
-					<th width="250">전화번호</th>
-					<th width="500">주소</th>
+			<table>
+				<tr id="table-head">
+					<th>병원명</th>
+					<th>전화번호</th>
+					<th>주소</th>
 				</tr>
 				<tr>
 					<td id="a" class="name">의정부서정동물메디컬센터</td>
 					<td id="aTel">031-851-0901</td>
 					<td id="aAddr">경기 의정부시 청사로48번길 7 3층 1호</td>
 				</tr>
-				<tr>
+				<tr id="color-table">
 					<td id="b" class="name">광주동물메디컬센터</td>
 					<td id="bTel">062-523-0075</td>
 					<td id="bAddr">광주 광산구 북문대로420번길 206</td>
@@ -62,7 +64,7 @@
 					<td id="cTel">064-754-3384</td>
 					<td id="cAddr">제주 제주시 제주대학로 102</td>
 				</tr>
-				<tr>
+				<tr id="color-table">
 					<td id="d" class="name">노원24시N동물병원</td>
 					<td id="dTel">02-919-0075</td>
 					<td id="dAddr">서울 노원구 노원로 456 백암빌딩</td>
@@ -72,7 +74,7 @@
 					<td id="eTel">031-924-7582</td>
 					<td id="eAddr">경기 고양시 일산서구 대화로 407</td>
 				</tr>
-				<tr>
+				<tr id="color-table">
 					<td id="f" class="name">충남대학교부속동물병원</td>
 					<td id="fTel">042-821-6704</td>
 					<td id="fAddr">대전 유성구 대학로 99</td>
@@ -82,14 +84,14 @@
 					<td id="gTel">051-632-7580</td>
 					<td id="gAddr">부산 남구 수영로13번길 3</td>
 				</tr>
-				<tr>
+				<tr id="color-table">
 					<td id="h" class="name">대구탑스동물메디컬</td>
 					<td id="hTel">053-637-7501</td>
 					<td id="hAddr">부산 남구 수영로13번길 3</td>
 				</tr>
 			</table>
 		</div>
-		<div class="hospitalmap" id="map" style="width: 100%; height: 400px;"></div>
+		
 		
 	</div>
 	</div>

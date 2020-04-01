@@ -168,3 +168,4 @@ input[type="checkbox"]:checked + label:before {
   font-size: 20px;
   margin: 10px 0 0 0;
 }
+.city {display:none}

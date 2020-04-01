@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -35,11 +37,11 @@
       <div class="admin-page">
         <div class="admin-nav">
           <ol>
-            <li><a href="../admin/admin-page">회원관리</a></li>
-            <li><a href="">헌혈견 관리</a></li>
+            <li><a href="../admin/admin">회원관리</a></li>
+            <li><a href="../admin/admin_blood">헌혈견 관리</a></li>
             <li><a href="">상품 관리</a></li>
-            <li><a href="">게시글 관리</a></li>
-            <li class="on"><a href="">문의 관리</a></li>
+            <li class="on"><a href="">게시글 관리</a></li>
+            <li><a href="">문의 관리</a></li>
           </ol>
         </div>
         <div class="article"></div>

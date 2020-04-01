@@ -1,50 +1,144 @@
-body{
-  margin: 0;
-  padding: 0;
+.dognorframe {
+	left: 50%;
+	position: relative;
+	transform: translateX(-50%);
+	margin-top: 100px;
+	width: 1100px;
+	border: 1px solid #f2f2f2;
+	padding: 1px 0 10px;
+	border-radius: 5px;
+	text-align: center;
 }
 
-.dognorframe{
-
-  margin: auto;
-  width: 1100px;
-  text-align: center;
-
+.dog-bred {
+	display: flex;
+	padding: 15px;
+	box-sizing: border-box;
+	border-top: 1px solid #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
+	margin-bottom: 5px;
+	font-size: 17px;
+	border-radius: 5px;
 }
 
-.dognorframe dl{
-  margin: 150px 0 0 0;
-  width: 100%;
-  display: inline-block;
-
+.dognorlist {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
 }
 
-.dognorframe dl dd{
-  margin: 20px 10px;
-  width: 280px;
-  height: 350px;
-  display: inline-block;
+.dognorlist dd {
+	display: inline-block;
 }
 
-.dognorImg{
-  width: 200px;
-  height: 200px;
-  overflow: visible;
-  margin: auto;
-  cursor: pointer;
-  z-index: 1000000;
-  
+.dognorImg {
+	width: 350px;
+	height: 350px;
+	cursor: pointer;
+	padding: 5px;
 }
 
-img{
-  border-radius: 40px;
-  width: 200px;
-  height: 200px;
-  z-index: 1000000;
-
+.dognorImg img {
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+	transition: all 0.3s ease-in-out;
+}
+/*이미지확대*/
+.dognorImg img:hover {
+	border-radius: 5px;
+	border: 3px solid #68a5ff;
+	box-sizing: border-box;
+	opacity: 0.8;
 }
 
-.dognorContent{
-  margin-top: 0px;
-  font-size: 15pt;
-  z-index: 10;
+.dognorContent {
+	margin-top: 0px;
+	font-size: 15pt;
+	text-align: center;
+}
+
+/* 상세페이지 모달 */
+#dogiverView {
+	position: fixed;
+	width: 940px;
+	height: 602px;
+	top: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 0 auto;
+	overflow: auto;
+	border: 1px solid #888;
+	box-sizing: border-box;
+	background-color: #fefefe;
+	z-index: 1000000000;
+	display: none;
+	padding: 10px;
+	border-radius: 6px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s;
+}
+
+#modalWrap {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 111111; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+#dogiverView #image img {
+	position:absolute;
+	width: 550px;
+	height: 570px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	margin: 5px;
+	border: 1px solid #f2f2f2;
+}
+#dogiverView #other{
+margin-left: 570px;
+}
+#dogiverView #other label{
+	font-size: 19px;
+	font-weight: 500;
+}
+#dogiverView #other div{
+	font-size: 15px;
+	font-weight: 400;
+	margin-bottom: 3px;
+	color: #666;
+	text-indent: 5px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 20%;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 20%;
+    opacity: 1;
+  }
 }

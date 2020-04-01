@@ -23,6 +23,7 @@
 	<resources location="/css/" mapping="/css/**" />
 	<resources location="/template/" mapping="/template/**" />
 	<resources location="/sign_up/" mapping="/sign_up/**" />
+	<resources location="/etc/" mapping="/etc/**" />
 	<resources location="/blood/" mapping="/blood/**" />
 	<resources location="/dogiverImage/"
 		mapping="/dogiverImage/**" />
@@ -48,12 +49,17 @@
 		class="org.springframework.web.servlet.view.BeanNameViewResolver">
 		<beans:property name="order" value="0" />
 	</beans:bean>
-	
+	<!-- 파일 업로드 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="5000000" />
+	</beans:bean>
+
 	<context:component-scan base-package="main.controller"/>
 	<context:component-scan base-package="member.controller"/>
 	<context:component-scan base-package="goods.controller"/>
-	
-	
+	<context:component-scan base-package="board.controller"/>
+	<context:component-scan base-package="contact.controller"/>
+
 
 	<context:component-scan
 		base-package="main.controller" />

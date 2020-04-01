@@ -1,38 +1,63 @@
 @charset "utf-8";
-.body{
-	margin: 0;
-	padding: 0;
-}
 
-.hospitalframe{
+.hospitalframe {
+	left: 50%;
+	position: relative;
+	transform: translateX(-50%);
+	margin-top: 100px;
 	width: 1100px;
-	height: 800px;
+	border: 1px solid #f2f2f2;
+	padding: 1px 0 10px;
+	border-radius: 5px;
+}
+
+.blood-bred {
+	display: flex;
+	padding: 15px;
+	box-sizing: border-box;
+	border-top: 1px solid #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
+	margin-bottom: 5px;
+	font-size: 17px;
+	border-radius: 5px;
+}
+
+.hospitalmap {
+	width: 1050px;
+	height: 500px;
 	margin: 0 auto;
 }
 
-.hospitallist{
-	margin: 0 auto;
-	width: 1000px;
-	height: 300px;
-	padding: 0px;
-}
-
-.hospitallist table{
-	border-top: 1px solid;
-	border-bottom: 1px solid;
+.hospitallist {
 	text-align: center;
-	margin-top: 150px;
-	height: 300px;
+	margin: 10px 0 25px;
 }
 
-.hospitalmap{
-	margin: 50px 0 0 0;
+.hospitallist table {
+	width: 1050px;
+	font-size: 15px;
+	margin: 0 auto;
+	border: 1px solid #f2f2f2;
+	border-radius: 5px;
 }
 
-.marker_inner{
-	padding: 10px;
+.hospitallist #table-head {
+	font-size: 17px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #f2f2f2;
+	border-radius: 5px;
+	background: #f2f2f2;
+}
+.hospitallist #table-head th{
+	padding: 5px;
 }
 
-.name{
+#color-table{
+	background: #f8f7f9;
+}
+.hospitallist table tr td:first-child:hover {
 	cursor: pointer;
+}
+.hospitallist table tr td{
+	padding: 5px;
 }

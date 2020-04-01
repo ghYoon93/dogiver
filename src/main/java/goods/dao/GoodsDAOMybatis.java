@@ -1,6 +1,7 @@
 package goods.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import goods.bean.GoodsDTO;
+import goods.bean.QnaDTO;
 
 @Repository
 @Transactional
@@ -33,6 +35,31 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	@Override
 	public List<GoodsDTO> goods_lineUp(String lineUp) {
 		return sqlSession.selectList("goodsSQL.goods_lineUp", lineUp);
+	}
+
+	@Override
+	public int qnaWrite(Map<String, String> map) {
+		return sqlSession.insert("goodsSQL.qnaWrite", map);
+	}
+
+	@Override
+	public List<QnaDTO> getGoodsQnaList(int goods_id) {
+		return sqlSession.selectList("goodsSQL.getGoodsQnaList", goods_id);
+	}
+
+	@Override
+	public void reviewWrite(QnaDTO qnaDTO) {
+		sqlSession.insert("goodsSQL.reviewWrite", qnaDTO);		
+	}
+
+	@Override
+	public List<QnaDTO> getGoodsReviewList(int goods_id) {
+		return sqlSession.selectList("goodsSQL.getGoodsReviewList", goods_id);
+	}
+
+	@Override
+	public void writeReply(Map<String, String> map) {
+		sqlSession.insert("goodsSQL.writeReply", map);
 	}
 
 }

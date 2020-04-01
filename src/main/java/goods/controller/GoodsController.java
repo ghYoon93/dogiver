@@ -24,6 +24,8 @@ public class GoodsController {
 	
 	@RequestMapping(value="goodsList", method=RequestMethod.GET)
 	public String goodsList(@RequestParam(required=false, defaultValue="1") String pg, Model model) {
+		System.out.println("goodsList");
+		System.out.println("pg");
 		model.addAttribute("pg", pg);
 		return "/goods/goodsList";
 	}
@@ -60,12 +62,6 @@ public class GoodsController {
 		mav.setViewName("jsonView");
 		return mav;
 	}
-	
-	@RequestMapping(value="review", method=RequestMethod.GET)
-	public String review(@RequestParam(required=false, defaultValue="1") String seq, Model model) {
-		return "/goods/review";
-	}
-
 
 	@RequestMapping(value="getCategory", method=RequestMethod.POST)
 	@ResponseBody
@@ -89,10 +85,6 @@ public class GoodsController {
 		return mav;
 	}
 	
-	@RequestMapping(value="insertReview", method=RequestMethod.POST)
-	@ResponseBody
-	public void insertReview(Map<String, String> map) {
-//		System.out.println(map.put("reviewText", reviewText));
-	}
+	
 	
 }

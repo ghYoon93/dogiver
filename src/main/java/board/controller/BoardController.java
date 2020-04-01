@@ -23,14 +23,16 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
+	
 	@RequestMapping(value = "boardWriteForm", method = RequestMethod.GET)
 	public String boardWriteForm() {
-		
 		return "boardWriteForm";
 	}
 	
 	@RequestMapping(value = "boardWrite", method = RequestMethod.POST)
 	public void boardWrite(BoardDTO boardDTO) {
+		System.out.println("확인중 ㅋㅋㅋ");
+		System.out.println(boardDTO);
 		boardService.boardWrite(boardDTO);
 	}
 	@RequestMapping(value="boardList", method=RequestMethod.GET)
@@ -52,8 +54,7 @@ public class BoardController {
 		
 		mav.addObject("pg", pg);
 		mav.addObject("list", list);
-		mav.addObject("memEmail", session.getAttribute("memEmail"));
-		mav.addObject("memNickName", session.getAttribute("memNickName"));
+		mav.addObject("memId", session.getAttribute("memId"));
 		mav.addObject("boardPaging", boardPaging);
 		mav.setViewName("jsonView");
 		return mav;
@@ -63,6 +64,7 @@ public class BoardController {
 	public String boardView(@RequestParam String brd_seq,
 							@RequestParam(required=false, defaultValue="1") String pg,
 							Model model, HttpSession session) {
+		
 		model.addAttribute("brd_seq", brd_seq);
 		model.addAttribute("pg", pg);
 		
@@ -72,7 +74,31 @@ public class BoardController {
 	@RequestMapping(value="getBoardView", method=RequestMethod.POST)
 	public ModelAndView getBoardView( @RequestParam String brd_seq, @RequestParam(required=false, defaultValue="1") String pg,
 									HttpSession session) {
+		System.out.println("겟보드뷰 오는지 확인");
 		BoardDTO boardDTO = boardService.getBoard(brd_seq);
+		System.out.println(brd_seq+"입니다");
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("memNickName", session.getAttribute("memNickName"));
+		mav.addObject("boardDTO", boardDTO);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	@RequestMapping(value="getBoardView_before", method=RequestMethod.POST)
+	public ModelAndView getBoardView_before( @RequestParam String brd_seq, 
+											HttpSession session) {
+		BoardDTO boardDTO = boardService.getBoardView_before(brd_seq);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("memNickName", session.getAttribute("memNickName"));
+		mav.addObject("boardDTO", boardDTO);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	@RequestMapping(value="getBoardView_after", method=RequestMethod.POST)
+	public ModelAndView getBoardView_after( @RequestParam String brd_seq, 
+											HttpSession session) {
+		BoardDTO boardDTO = boardService.getBoardView_after(brd_seq);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
@@ -94,8 +120,7 @@ public class BoardController {
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
-		mav.addObject("memEmail", session.getAttribute("memEmail"));
-		mav.addObject("memNickName", session.getAttribute("memNickName"));
+		mav.addObject("memId", session.getAttribute("memId"));
 		mav.addObject("boardPaging", boardPaging);
 		mav.setViewName("jsonView");
 		return mav;
@@ -107,7 +132,13 @@ public class BoardController {
 	}
 	
 	
-
+	@RequestMapping(value = "reply_write", method = RequestMethod.POST)
+	public void reply_write(BoardDTO boardDTO, @RequestParam String brd_seq) {
+		System.out.println("들어오는지 확인 "+boardDTO);
+		boardService.reply_write(boardDTO);
+	}
+	
+	
 
 
 }

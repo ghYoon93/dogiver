@@ -25,15 +25,52 @@
 	<div id="headerDiv"></div>
 	<div class="page-title">
 		<h2>명예의 전당</h2>
-		<h3>자랑스러운 헌혈견들을 소개합니다</h3>
+		<p>자랑스러운 헌혈견들을 소개합니다</p>
 	</div>
 	<div class="wrap">
 		<div class="dognorframe">
+			<div class="dog-bred">명예의 전당</div>
 			<dl class="dognorlist">
 			</dl>
 		</div>
 	</div>
 	<div id="footerDiv"></div>
+
+	<!-- 상세페이지 modal -->
+	<div id="dogiverView">
+		<div id="image">
+			<img src="">
+		</div>
+		<div id="other">
+			<label>이름</label><br>
+			<div id="name"></div>
+		</div>
+		<div id="other">
+			<label>나이</label><br>
+			<div id="age"></div>
+		</div>
+		<div id="other">
+			<label>몸무게</label><br>
+			<div id="weight"></div>
+		</div>
+		<div id="other">
+			<label>견종</label><br>
+			<div id="breed"></div>
+		</div>
+		<div id="other">
+			<label>혈액형</label><br>
+			<div id="bloodType"></div>
+		</div>
+		<div id="other">
+			<label>최종 헌혈날짜</label><br>
+			<div id="donationDate"></div>
+		</div>
+		<div id="other">
+			<label>상세설명</label><br>
+			<div id="discription"></div>
+		</div>
+	</div>
+	<div id="modalWrap">a</div>
 </body>
 
 </html>

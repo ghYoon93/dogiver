@@ -5,7 +5,7 @@ $(document).ready(function(){
 		data : 'pg='+$('#pg').val(),
 		dataType : 'json',
 		success : function(data){
-			alert(JSON.stringify(data));
+			
 			$.each(data.list, function(index, items){
 				$('<tr/>').append($('<td/>',{
 					align : 'center',
@@ -30,7 +30,7 @@ $(document).ready(function(){
 				).append($('<td/>',{
 					style:'font-size: 20px',
 					align : 'center',
-					text : items.brd_nickname
+					text : items.brd_id
 				})).append($('<td/>',{
 					style:'font-size: 20px',
 					align : 'center',
@@ -41,35 +41,16 @@ $(document).ready(function(){
 					text : items.brd_hit
 				})).appendTo($('#boardListTable'));
 				
-			});// each
+			});//each
 			
-			// 페이징처리
+			//페이징처리
 			$('#boardPagingDiv').html(data.boardPaging.pagingHTML);
 			
-			// 로그인 여부
-			$('#boardListTable').on('click', '#titleA', function(){
-				// alert($(this).prop('tagName'));
-				if(data.memEmail==null){
-					alert('먼저 로그인하세요');
-				location.href='http://localhost:8080/dogiver/login/login.html';
-				}else{
-					// alert($(this).parent().prev().text());
+			$('#titleA').click(function(){
 					let brd_seq = $(this).attr('class');
 					let pg = data.pg;
-					location.href='/dogiver/board/boardView?brd_seq='+brd_seq+'&pg='+pg; 
-			}
+					location.href='/dogiver/board/boardView?brd_seq='+brd_seq+'&pg='+pg;        
 			});
-			
-			$('#boardWriteBtn').click(function(){
-				if(data.memEmail==null){
-					alert('먼저 로그인하세요');
-				location.href='http://localhost:8080/dogiver/login/login.html';
-				}else{
-					location.href='http://localhost:8080/dogiver/board/boardWriteForm';
-				}
-				
-			});
-			
 		}
 	});
 });
@@ -84,8 +65,7 @@ $('#boardSearchBtn').click(function(event, str){
 		$.ajax({
 			type : 'post',
 			url : '/dogiver/board/getBoardSearch',
-			data : $('#boardListForm').serialize(), // submit이나, serialize에는 항상
-													// name 속성만 전달된다.
+			data : $('#boardListForm').serialize(), //submit이나, serialize에는  항상 name 속성만 전달된다.
 			dataType : 'json',
 			success : function(data){
 				$.each(data.list, function(index, items){
@@ -128,11 +108,10 @@ $('#boardSearchBtn').click(function(event, str){
 						text : items.brd_hit
 					})).appendTo($('#boardListTable'));
 					
-				});// each
+				});//each
 				
-				// 페이징처리
+				//페이징처리
 				$('#boardPagingDiv').html(data.boardPaging.pagingHTML);
-				
 			}
 			
 		});
