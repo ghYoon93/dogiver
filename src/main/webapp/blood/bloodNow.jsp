@@ -98,12 +98,12 @@
 					<p>- 헌혈견지원센터 및 도그너헌혈카 운영기금 후원(어톡티브)</p>
 				
 				<strong>셋,</strong><span>사이트에 반려견의 프로필 등록!</span>
+				<div class="bloodNowBtn">
+					<input type="hidden" id="memEmail" value="${memEmail}">
+					<button type="button" id="bloodNowBtn">헌혈견 등록하기</button>
+				</div>
 			</div>
 
-			<div class="bloodNowBtn">
-				<input type="hidden" id="memEmail" value="${memEmail}">
-				<button type="button" id="bloodNowBtn">헌혈견 등록하기</button>
-			</div>
 		</div>
 		<!-- //컨테이너 -->
 	</div>
