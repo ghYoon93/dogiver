@@ -69,8 +69,6 @@ public class ContactController {
 	public ModelAndView getInfo(HttpSession session) {
 		String email= (String) session.getAttribute("memEmail");
 		List<ContactDTO> list = contactService.getInfo(email);
-		System.out.println(list);
-		System.out.println("aa");
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
 		mav.setViewName("jsonView");

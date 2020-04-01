@@ -1,6 +1,3 @@
-let link = document.location.href;
-/*<a href="/dogiver/board/reply_delete?re_seq='+items.re_seq+'&brd_seq='+items.bd_seq+'">삭제</a></td>'
-*/
 // 데이터 뿌려주기
 $(document).ready(function() {
    $.ajax({
@@ -42,9 +39,8 @@ $(document).ready(function() {
          });
          $('#contentDiv').append(tag);
       
-         
+         //댓글 삭제
          $(document).on('click', 'a', function(){
-            alert('aa');
             let re_seq=$(this).attr('id');
             $.ajax({
                type : 'post',

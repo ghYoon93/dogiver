@@ -146,14 +146,6 @@ input:focus {
 	height: 37px;
 }
 
-#passwordText {
-	margin-top: 10px;
-	background-color: rgba(70, 70, 70, 1);
-	color: white;
-	maxlength: 100px;
-	width: 256px;
-	height: 37px;
-}
 
 #textarea {
 	margin-top: 10px;
@@ -183,14 +175,6 @@ input:focus {
 	height: 35px;
 }
 
-#text_password {
-	padding-left: 24px;
-    color: white;
-    background-color: rgba(70, 70, 70, 1);
-    border: none;
-    width: 232px;
-    height: 35px;
-}
 #text_email {
 	padding-left: 24px;
 	color: white;

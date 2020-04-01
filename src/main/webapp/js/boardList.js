@@ -41,10 +41,15 @@ $(document).ready(function(){
 			//페이징처리
 			$('#boardPagingDiv').html(data.boardPaging.pagingHTML);
 			
-			$('.titleA').click(function(){
-					let brd_seq = $(this).attr('id');
+			//로그인 여부
+			$('#boardListTable').on('click', '.titleA', function(){
+				if(data.memEmail==null)
+					alert('먼저 로그인하세요');
+				else{
+					let seq = $(this).attr('id');
 					let pg = data.pg;
-					location.href='/dogiver/board/boardView?brd_seq='+brd_seq+'&pg='+pg;        
+					location.href='/dogiver/board/boardView?brd_seq='+seq+'&pg='+pg;        
+				}
 			});
 		}
 	});

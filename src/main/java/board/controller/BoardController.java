@@ -54,7 +54,7 @@ public class BoardController {
 		
 		mav.addObject("pg", pg);
 		mav.addObject("list", list);
-		mav.addObject("memId", session.getAttribute("memId"));
+		mav.addObject("memEmail", session.getAttribute("memEmail"));
 		mav.addObject("boardPaging", boardPaging);
 		mav.setViewName("jsonView");
 		return mav;

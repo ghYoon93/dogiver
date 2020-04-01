@@ -16,7 +16,5 @@ public class ContactDTO {
 	private String content;
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd hh:mm", timezone = "Asia/Seoul")
 	private Date logtime;
-	private String password;
-
 
 }

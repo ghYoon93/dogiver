@@ -74,16 +74,10 @@
 							placeholder="내용을 입력"></textarea>
 					</div>
 
-					<div id="passwordText">
-						<input id="text_password" name="password" type="password" maxlength="4"
-							placeholder="비밀번호 4자리">
-					</div>
-
 					<div id="buttonDiv">
 						<input type="button" id="contact_button" style="cursor: pointer"
 							value="Submit">
 					</div>
-					<div id="OK_signDiv" style="text-align: center;"></div>
 				</div>
 			</form>
 		</div>

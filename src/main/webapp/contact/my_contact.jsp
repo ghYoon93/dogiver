@@ -48,26 +48,28 @@ $(document).ready(function() {
 				$('#my_contactTable td').remove();
 				$.each(data.list, function(index, items) {
 					$('<tr/>').append($('<td/>', {
-						style:'height:100px;',
+						style:'height:100px; font-size:17px;',
 						align : 'center',
 						text : items.seq
 					})).append($('<td/>', {
-						style:'height:100px;',
+						style:'height:100px; font-size:17px;',
 						align : 'center',
 						text : items.subject
 					})).append($('<td/>', {
-						style:'height:100px;',
+						style:'height:100px; font-size:17px;',
 						align : 'center',
 						text : items.content
 					})).append($('<td/>', {
-						style:'height:100px;',
+						style:'height:100px; font-size:17px;',
 						align : 'center',
 						text : items.logtime
 					})).append($('<td/>', {
-						style:'height:100px;',align : 'center'
+						style:'height:100px; font-size:17px;',
+						align : 'center'
 						}).append($('<input/>',{
 							type:'button',
 							value:'삭제',
+							style:'width:80px; height:30px;',
 							id:items.seq+'',
 							class:'delete'
 					}))).appendTo($('#my_contactTable'));
