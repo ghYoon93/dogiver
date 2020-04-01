@@ -157,10 +157,15 @@
 	border: 1px solid #f2f2f2;
 }
 
+.navigationBar ul li a{
+	color: white;
+	text-decoration:none;
+	cursor: pointer;
+}
+
 .navigationBar ul li:hover { 
 	color: white;
 	background-color: #f51217; 
-	cursor: pointer;
 	font-size: 15pt;
 }
 

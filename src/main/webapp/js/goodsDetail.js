@@ -1,15 +1,36 @@
-$('nav ul li').click(function(){
-	if($(this).index()=='0'){
-		$('.discription div').html(detail_image).css('text-align', 'center');		
-	}else if($(this).index()=='1'){
-		//$('.discription div').load('review');
-		$('.discription div').load('qna?goods_id='+$('#goods_id').val());
-	}else if($(this).index()=='2'){
-		$('.discription div').load('review?goods_id='+$('#goods_id').val());	
-	}else if($(this).index()=='3'){
-		$('.discription div').load('../etc/delivery_info.html').css('text-align', 'left');	
+//$('nav ul li').click(function(){
+//	if($(this).index()=='0'){
+//		$('.discription div').html(detail_image).css('text-align', 'center');		
+//	}else if($(this).index()=='1'){
+//		//$('.discription div').load('review');
+//		$('.discription div').load('qna?goods_id='+$('#goods_id').val());
+//	}else if($(this).index()=='2'){
+//		$('.discription div').load('review?goods_id='+$('#goods_id').val());	
+//	}else if($(this).index()=='3'){
+//		$('.discription div').load('../etc/delivery_info.html').css('text-align', 'left');	
+//	}
+//});
+function getContentTab(index){
+	let url;
+	if(index==1){
+		url = $('.discription div').html(detail_image).css('text-align', 'center');	
 	}
-});
+	else if(index==2){
+		url='qna?goods_id='+$('#goods_id').val();
+	}
+	else if(index==3){
+		url='review?goods_id='+$('#goods_id').val();
+	}
+	else if(index==4){
+		url=$('.discription div').load('../etc/delivery_info.html').css('text-align', 'left');
+	}
+
+	$.get(url, null, function(result){
+		$('.discription div').empty();
+		console.log(result);
+		$('.discription div').append(result); //해당 div에 결과가 나타남
+	});
+}
 
 let price="";
 var amt = "";
@@ -18,7 +39,6 @@ $(document).ready(function(){
 	//해당 상품 Detail페이지 뿌려주기
 	//alert($('#goods_id').val());
 	var tag="";
-	
 	$.ajax({	
 		type: 'post',
 		url: '/dogiver/goods/getGoodsDetail',
