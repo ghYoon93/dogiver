@@ -101,6 +101,14 @@ $(document).on('click', '#minus', function(){
 	calc_tot_price(price, amt);
 });
 
+/*바로 구매하기*/
+$(document).on('click','#btn-order', function(){
+	let goods_id = $('#goods_id').val();
+	let quantity = $('#quantity').val();
+	console.log($('#goods_id').val());
+	console.log($('#quantity').val());
+	location.href='../order/order?goods_id='+goods_id+'&quantity='+quantity;
+});
 //$('#quantity').change(function(){
 //	amt = $('#quantity').val();
 //	calc_tot_price(price, amt);

@@ -33,17 +33,22 @@ public class OrderController {
 	private OrderService orderService;
 	@Autowired
 	private MemberService memberService;
-    @RequestMapping(value="/order/order", method=RequestMethod.POST)
+    @RequestMapping(value="/order/order", method=RequestMethod.GET)
     public String order(@RequestParam(required=false, defaultValue="0") String[] checkGoods,
     		            @RequestParam(required=false, defaultValue="0") int goods_id,
-    		            @RequestParam(required=false, defaultValue="0") int cart_cnt,
+    		            @RequestParam(required=false, defaultValue="0") int quantity,
     		            HttpSession session,
     		            Model model) {
+    	System.out.println(checkGoods.length);
+    	System.out.println(goods_id);
+    	System.out.println(quantity);
     	String email = (String) session.getAttribute("memEmail");
     	MemberDTO memberDTO = memberService.getMember(email);
     	model.addAttribute("memberDTO", memberDTO);
     	if(checkGoods[0].equals("0")) {
-    	    	 
+    		model.addAttribute("checkGoods", checkGoods);
+    		model.addAttribute("goods_id", goods_id);
+    		model.addAttribute("quantity", quantity);
     	}else {
     		model.addAttribute("checkGoods", checkGoods);
     	}
