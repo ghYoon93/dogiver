@@ -36,11 +36,11 @@ public interface BoardService {
 
 	public List<BoardDTO> getReBoard_after(String brd_seq);
 
-	public void reply_delete(int re_seq);
+	public void reply_delete(String re_seq);
 
 	public BoardDTO getUser(String brd_seq);
 	
-	public void boardModify(String brd_seq);
+	public void boardModify(BoardDTO boardDTO);
 
 
 }

@@ -90,8 +90,8 @@
 		 DELETE FROM brd_reply WHERE re_seq = #{re_seq}
 	</delete>
 	
-	<update id="boardModify" parameterType="int">
-		update board set brd_category=#{brd_category}, brd_title=#{brd_title},  brd_content=#{brd_content}, brd_logtime=SYSDATE
+	<update id="boardModify" parameterType="board.bean.BoardDTO">
+		update board set brd_category=#{brd_category}, brd_title=#{brd_title}, brd_content=#{brd_content}, brd_logtime=SYSDATE where brd_seq=#{brd_seq}
 	</update>
 </mapper>
 

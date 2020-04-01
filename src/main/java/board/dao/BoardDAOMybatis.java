@@ -90,8 +90,8 @@ public class BoardDAOMybatis implements BoardDAO {
 	}
 
 	@Override
-	public void reply_delete(int re_seq) {
-		sqlSession.delete("boardSQL.reply_delete", re_seq);
+	public void reply_delete(String re_seq) {
+		sqlSession.delete("boardSQL.reply_delete", Integer.parseInt(re_seq));
 		
 	}
 
@@ -100,15 +100,12 @@ public class BoardDAOMybatis implements BoardDAO {
 		return sqlSession.selectOne("boardSQL.getUser", Integer.parseInt(brd_seq));
 	}
 	
+	
 	@Override
-	public void boardModify(String brd_seq) {
-		sqlSession.update("boardSQL.boardModify", Integer.parseInt(brd_seq));
+	public void boardModify(BoardDTO boardDTO) {
+		sqlSession.update("boardSQL.boardModify", boardDTO);
 		
 	}
-
-	
-
-	
 
 	
 }

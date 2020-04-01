@@ -14,7 +14,9 @@
 	src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
 <style type="text/css">
 .fr-view {
-	height: 500px; !important;
+	height: 500px;
+	!
+	important;
 }
 </style>
 </head>
@@ -25,28 +27,28 @@
 		<h2>게시판</h2>
 		<p>여러분들의 이야기를 들려주세요</p>
 	</div>
-	
 	<form id="modifyForm" name="modifyForm" method="post" action="boardModify">
-		<input type="hidden" name="boardDTO" id="boardDTO" >
+		<input type="hidden" id="boardDTO" name="boardDTO" value="${boardDTO }">
+		<input type="hidden" id="brd_seq" name="brd_seq" value="${brd_seq }">
+		<input type="hidden" id="category" name="category" value="${boardDTO.brd_category }">
+		<input type="hidden" id="content" name="content" value="${boardDTO.brd_content }">
 		<div class="wrap">
 			<div class="container"
 				style="width: 1100px; margin: 0 auto; margin-top: 150px;">
 				<div class="board_category">
 					<div id="board_category_select">
-						<select id="board_select" name="brd_category" 
-							style="font-size: 13px; height: 42px; text-align-last: center;">
-							<option label="글 종류" value=""
-								style="text-align: center;"></option>
-							<option label="가입" value="가입"></option>
-							<option label="고민" value="고민"></option>
-							<option label="자랑" value="자랑"></option>
-							<option label="헌혈" value="헌혈"></option>
+						<select id="brd_category" name="brd_category" style="font-size: 13px; height: 42px; text-align-last: center;">
+							<option label="글 종류" style="text-align: center;"></option>
+							<option label="가입" value="가입">가입</option>
+							<option label="고민" value="고민">고민</option>
+							<option label="자랑" value="자랑">자랑</option>
+							<option label="헌혈" value="헌혈">헌혈</option>
 						</select>
 					</div>
 				</div>
-
 				<div class="board_title">
-					<input type="text" id="insert_text" name="brd_title" 
+
+					<input type="text" id="insert_text" name="brd_title" value="${boardDTO.brd_title }"
 						placeholder="제목을 입력하세요">
 				</div>
 
@@ -56,7 +58,8 @@
 				</div>
 
 				<div class="board_writeBtn">
-					<input type="button" id="modifyBtn" name="boardWrite_Btn" value="수정하기">
+					<input type="button" id="boardModifyBtn" name="boardModifyBtn" 
+						value="수정하기">
 				</div>
 			</div>
 		</div>
@@ -67,31 +70,42 @@
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript">
-$(document).ready(function (){
+$(document).ready(function(){
 	
-$('#modifyBtn').click(function() {
+	$('.fr-placeholder').text('');
+	$('.fr-view').html($('#content').val());
+	
+	var option = $('#category').val(); //헌혈
+	alert(option);
+	$('#brd_category option').each(function() {
+			if($(this).val()==option){
+				$(this).prop('selected', true);
+				return false;
+			} 
+		 });  
 
-		if ($('#board_select').val() == '') {
-			alert("plase selecet the Category");
-			$('#board_select').focus();
 
-		} else if ($('#insert_text').val() == '') {
-			alert("plase insert your Title");
-			$('#insert_text').focus();
-
-		} else if ($('.fr-view').text() == '') {
-			alert("plase insert your Content");
-			$('.fr-view').focus();
-		} else {
-			$('#brd_content').val($('.fr-view').html());
-			$('#modifyForm').submit();
-			alert("글이 수정 되었습니다.")
-			location.href = 'boardList';
-		}
-	});
+	$('#boardModifyBtn').click(function() {
+			if ($('#brd_category').val() == '') {
+				alert("plase selecet the Category");
+				$('#brd_category').focus();
+	
+			} else if ($('#insert_text').val() == '') {
+				alert("plase insert your Title");
+				$('#insert_text').focus();
+	
+			} else if ($('.fr-view').text() == '') {
+				alert("plase insert your Content");
+				$('.fr-view').focus();
+			} else {
+				$('#brd_content').val($('.fr-view').html());
+				$('#modifyForm').submit();
+				alert("글이 수정되었습니다.")
+				location.href = 'boardList';
+			}
+		});
 });
 </script>
-
 <script type="text/javascript">
 	$("#file").on('change', function() {
 		var fileName = $("#file").val();
@@ -109,4 +123,5 @@ $('#modifyBtn').click(function() {
 	var editor = new FroalaEditor('#brd_content')
 </script> 
 </html>
+
 

@@ -15,7 +15,7 @@ box-sizing: border-box;
 <form name="boardReplyForm" >
 	<input type="hidden" name="brd_seq" value="${brd_seq}"> 
 	<input type="hidden" name="pg" value="${pg }">
-	<input type="hidden" name="re_seq" value="${re_seq }">
+	<%-- <input type="hidden" name="re_seq" value="${re_seq }"> --%>
 		
 
 	<div id="replyFormDiv" style="width: 1100px; min-height: 140px; border: 1px solid black; box-sizing: border-box; background-color: #f1eaea; padding-left: 200px; padding-top: 33px;">

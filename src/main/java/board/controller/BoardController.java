@@ -17,7 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 import board.bean.BoardDTO;
 import board.bean.BoardPaging;
 import board.service.BoardService;
-import net.sf.json.JSONObject;
 
 @Controller
 @RequestMapping(value = "board")
@@ -145,24 +144,25 @@ public class BoardController {
 	
 	@RequestMapping(value="reply_delete", method= RequestMethod.POST)
 	@ResponseBody
-	public void reply_delete(@RequestParam int re_seq) {
+	public void reply_delete(@RequestParam String re_seq) {
 		boardService.reply_delete(re_seq);
-		System.out.println(re_seq);
-		
+		//System.out.println(re_seq);
 	}
 	
 	@RequestMapping(value = "boardModifyForm", method = RequestMethod.GET)
 	public String modifyForm(@RequestParam String brd_seq, Model model) {
 		BoardDTO boardDTO = boardService.getUser(brd_seq);
-		
 		model.addAttribute("boardDTO", boardDTO);
-		System.out.println(boardDTO);
+		model.addAttribute("brd_seq", brd_seq);
 		return "boardModifyForm";
 	}
 	
 	@RequestMapping(value = "boardModify", method = RequestMethod.POST)
-	public void boardModify(@RequestParam String brd_seq) {
-		boardService.boardModify(brd_seq);
-	}
+	public void boardModify(@RequestParam String brd_seq, BoardDTO boardDTO) {
+		boardService.boardModify(boardDTO);
+		System.out.println(boardDTO);
+		
+	}	
+	
 	
 }
