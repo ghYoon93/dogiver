@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Random;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -111,12 +112,15 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "/login/log", method = RequestMethod.POST)
-	public @ResponseBody String log(@RequestParam Map<String, String> map, MemberDTO memberDTO, HttpSession session) {
+	public @ResponseBody String log(@RequestParam Map<String, String> map, MemberDTO memberDTO, 
+			HttpSession session,
+			HttpServletRequest request) {
 		String email = map.get("email");
 		memberDTO = memberService.getMember(email);
 		if (memberDTO == null)
 			return "false";
 		System.out.println(memberDTO);
+		System.out.println(request.getHeader("referer"));
 		boolean chkPwd = bcryptPasswordEncoder.matches(map.get("pwd"), memberDTO.getPwd());
 		System.out.println(chkPwd);
 		if (chkPwd) {

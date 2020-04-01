@@ -114,7 +114,7 @@ $(document).ready(function() {
 				success : function(data) {
 					if (data == "true") {
 //						location.href="../main/index";
-						history.back();
+						history.go(-1);
 					} else {
 						$('.loginMessage').text('로그인 실패~ㅋ').show("slow").css("color","red");
 						setTimeout(function() {
