@@ -41,6 +41,14 @@ public class AdminController {
 		return "/admin/admin_blood";
 	}
 	
+	@RequestMapping(value = "admin_goods", method = RequestMethod.GET)
+	public String admin_goods(@RequestParam(required = false, defaultValue = "1") String pg, Model model) {
+		
+		model.addAttribute("pg", pg);
+		return "/admin/admin_goods";
+	}
+	
+	
 	@RequestMapping(value = "getDogiver", method = RequestMethod.POST)
 	@ResponseBody
 	public ModelAndView getDogiver(@RequestParam(required = false, defaultValue = "1") String pg) {

@@ -55,9 +55,7 @@
   border-bottom-left-radius: 5px;
   padding: 5px;
 }
-.article table {
-  border: 1px solid;
-}
+
 
 /* 헌혈견 관리자 css */
 
@@ -240,3 +238,54 @@
 	font-size: 14pt;
 }
 /* 헌혈견 관리자 css*/
+
+/* 상품 관리자 css */
+
+#adminGoodsDiv{
+	width: 1100px;
+	height: 1000px;
+}
+
+#adminGoodsList{
+	box-sizing: border-box;
+	overflow: auto;
+	width: 1035px;
+	height: 400px;
+	margin: 25px;
+	background-color: aqua;
+}
+#adminGoodsList th{
+	width: 115px;
+}
+
+#adminGoodsView{
+	box-sizing: border-box;
+	width: 1050px;
+	height: 400px;
+	margin: 25px;
+	background-color: gray;
+}
+/* 상품 관리자 css */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

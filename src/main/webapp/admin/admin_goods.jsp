@@ -28,7 +28,7 @@ pageEncoding="UTF-8"%>
     <script src="../js/main.js"></script>
   </head>
   <body>
-    <!-- <div id="headerDiv"></div> -->
+    <div id="headerDiv"></div>
     <div class="page-title">
       <h2>admin</h2>
       <p>관리자 페이지 입니다.</p>
@@ -39,12 +39,33 @@ pageEncoding="UTF-8"%>
           <ol>
             <li><a href="../admin/admin-page">회원관리</a></li>
             <li><a href="">헌혈견 관리</a></li>
-            <li class="on"><a href="">상품 관리</a></li>
+            <li class="on"><a href="../admin/admin_goods">상품 관리</a></li>
             <li><a href="">게시글 관리</a></li>
             <li><a href="">문의 관리</a></li>
           </ol>
         </div>
-        <div class="article"></div>
+        <div class="article">
+        	<div id="adminGoodsDiv">
+        		<div id="adminGoodsList">
+        			<table>
+        				<tr>
+        					<th>상품번호</th>
+        					<th>카테고리</th>
+        					<th>상품명</th>
+        					<th>가격</th>
+        					<th>날짜</th>
+        					<th>설명</th>
+        					<th>수량</th>
+        					<th>할인</th>
+        					<th>디테일</th>
+        				</tr>
+        			</table>
+        		</div>
+        		<div id="adminGoodsView">
+        			
+        		</div>
+        	</div>
+        </div>
       </div>
     </div>
     <div id="footerDiv"></div>
