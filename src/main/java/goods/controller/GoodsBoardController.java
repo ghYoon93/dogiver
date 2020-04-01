@@ -3,6 +3,7 @@ package goods.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -36,24 +37,38 @@ public class GoodsBoardController {
 	
 	
 	@RequestMapping(value="qna", method=RequestMethod.GET)
-	public String goodsDetail(@RequestParam String goods_id, Model model) {
+	public String qna(@RequestParam String goods_id, Model model) {
 		model.addAttribute("goods_id", goods_id);
+		System.out.println("goodsDetail push");
 		return "/goods/qna";
 	}
 
 	@RequestMapping(value="qnaWrite", method=RequestMethod.POST)
 	public String qnaWrite(@RequestParam Map<String, String> map, Model model) {
-		//System.out.println(map);
+		System.out.println(map);
+		Iterator<String> mapIter = map.keySet().iterator();
+		 
+		//map 출력
+        while(mapIter.hasNext()){
+ 
+            String key = mapIter.next();
+            String value = map.get( key );
+ 
+            System.out.println(key+" : "+value);
+ 
+        }
 		goodsService.qnaWrite(map);
 		model.addAttribute("goods_id", map.get("goods_id"));
-		return "/goods/goodsDetail";
+		return "redirect:goodsDetail";
 	}
 	
 
 	@RequestMapping(value="getGoodsQnaList", method=RequestMethod.POST)
 	@ResponseBody
 	public ModelAndView getGoodsQnaList(@RequestParam String goods_id){
-		List<QnaDTO> list = goodsService.getGoodsQnaList(goods_id);
+		String[] goods = goods_id.split(",");
+		System.out.println("59:"+goods_id);
+		List<QnaDTO> list = goodsService.getGoodsQnaList(goods[0]);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
 		mav.setViewName("jsonView");

@@ -45,6 +45,7 @@ public class GoodsServiceImpl implements GoodsService {
 
 	@Override
 	public List<QnaDTO> getGoodsQnaList(String goods_id) {
+		System.out.println("serviceImpl:"+goods_id);
 		return goodsDAO.getGoodsQnaList(Integer.parseInt(goods_id));
 	}
 
