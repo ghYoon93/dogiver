@@ -49,7 +49,7 @@
         <div id="myboardDiv">
         	<div class="myboardList">
         	<label>내가 쓴 글</label>
-        		<table id="myboardTable">
+        		<table id="myboardTable" border="1" cellspacing="0" frame="hsides" rules="rows">
 	        		<tr>
 		        		<th width="350px">제목</th>
 		        		<th width="150px">날짜</th>
@@ -58,7 +58,7 @@
         	</div>
         	<div class="myboardList">
         	<label>내가 쓴 댓글</label>
-        		<table id="myreplyTable">
+        		<table id="myreplyTable" border="1" cellspacing="0" frame="hsides" rules="rows">
         			<tr>
         				<th width="350px">코멘트</th>
         				<th width="150px">날짜</th>
@@ -66,7 +66,7 @@
         		</table>
         	</div>
         	<div id="myboardView">
-        		<table>
+        		<table border="1" cellspacing="0" cellpadding="5" frame="hsides" rules="rows">
         			<tr>
         				<td width="150" height="150">글번호 : <span id="brd_seq"></span></td>
         				<td width="200">글종류 : <span id="brd_category"></span></td>

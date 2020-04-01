@@ -18,6 +18,7 @@
 	font-size: 13pt;
 	font-weight: bold;
 }
+
 .myboardList td{
 	font-size: 12pt;
 }
@@ -33,7 +34,6 @@
 	box-sizing: border-box;
 	margin: 25px;
 	float: left;
-	border: 1px solid;
 }
 #myboardView table{
 	font-size: 14pt;

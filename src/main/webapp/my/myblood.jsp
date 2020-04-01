@@ -41,7 +41,7 @@
             <li><a href="../my/mypage">내 정보</a></li>
             <li class="on"><a href="../blood/myblood">헌혈견</a></li>
             <li><a href="">상품 </a></li>
-            <li><a href="">내 게시글 </a></li>
+            <li><a href="../board/myboard">내 게시글 </a></li>
             <li><a href="">내 문의 </a></li>
           </ol>
         </div>
