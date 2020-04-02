@@ -50,65 +50,63 @@ $(document).ready(function() {
 						$('#name').val(items.name);
 						$('#phone').val(items.phone);
 						$('#email').val(items.email);
+						$('#dog_image').html(tiems.dog_image);
 						$('#description').val(items.description);
 					}
-				});//each
-				
-				//헌혈견 정보변경
-				$('#admin_dogiverModifyBtn').click(function() {
+				});//each				
+			});//상세보기
+			
+			//헌혈견 정보변경
+			$('#admin_dogiverModifyBtn').click(function() {
+				let formData = new FormData($('#admin_dogiverViewForm')[0]);
+				$.ajax({
+					type: 'post',
+					enctype: "multipart/form-data",
+					processData: false,//데이터를 컨텐트 타입에 맞게 변환 여부
+					contentType: false,//요청 컨텐트 타입
+					url: '/dogiver/admin/adminDogiverModify',
+					data: formData,
+					dataType: 'text',
+					success: function(data){
+						if(data=='success'){
+							alert("헌혈견 정보 수정 완료");
+							location.reload();
+						}else{
+							alert("수정 실패 문의해주세요");
+						}
+					},
+					error: function(error){
+						alert(error);
+					}
+					
+				});//ajax
+			});//정보변경
+			
+			//명예의 전당 등록
+			$('#admin_dogiverBtn').click(function() {
+				if($('#dog_image').val()!=""){
 					let formData = new FormData($('#admin_dogiverViewForm')[0]);
 					$.ajax({
 						type: 'post',
 						enctype: "multipart/form-data",
 						processData: false,//데이터를 컨텐트 타입에 맞게 변환 여부
 						contentType: false,//요청 컨텐트 타입
-						url: '/dogiver/admin/adminDogiverModify',
+						url: '/dogiver/admin/dogiverInsert',
 						data: formData,
 						dataType: 'text',
 						success: function(data){
 							if(data=='success'){
-								alert("헌혈견 정보 수정 완료");
-								location.reload();
+								alert("명예의 전당 등록");
 							}else{
-								alert("수정 실패 문의해주세요");
-							}
-						},
-						error: function(error){
-							alert(error);
+								alert("등록 실패 문의하세요");
+							}	
 						}
-							   
 					});//ajax
-				});//정보변경
-				
-				//명예의 전당 등록
-				$('#admin_dogiverBtn').click(function() {
-					if($('#dog_image').val()!=""){
-						let formData = new FormData($('#admin_dogiverViewForm')[0]);
-						$.ajax({
-							type: 'post',
-							enctype: "multipart/form-data",
-							processData: false,//데이터를 컨텐트 타입에 맞게 변환 여부
-							contentType: false,//요청 컨텐트 타입
-							url: '/dogiver/admin/dogiverInsert',
-							data: formData,
-							dataType: 'text',
-							success: function(data){
-								if(data=='success'){
-									alert("명예의 전당 등록");
-								}else{
-									alert("등록 실패 문의하세요");
-								}
-								
-							}
-							
-						});//ajax
-					}else{
-						alert("사진파일을 등록해주세요");
-					}
-					
-				});//등록
-				
-			});//상세보기
+				}else{
+					alert("사진파일을 등록해주세요");
+				}
+			});//등록
+			
 		}//success
 	});//ajax
 

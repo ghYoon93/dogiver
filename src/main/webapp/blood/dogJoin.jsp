@@ -33,7 +33,8 @@
 			<div class="dogjoinframe">
 			<div class="dog-join-bred">헌혈견등록</div>
 			<h3>등록신청</h3>
-			<input type="hidden" id="memEmail" name="memEmail" value="${memEamil }">
+			<input type="hidden" id="email" name="email" value="${memEmail }">
+
 				<ul>
 					<li><label>반려견 이름</label> <input type="text"
 						placeholder="반려견 이름" id="dog_name" name="dog_name">

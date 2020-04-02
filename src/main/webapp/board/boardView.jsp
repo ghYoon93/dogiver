@@ -17,7 +17,7 @@
 <div class="wrap">
 	<div class="container"
 		style="width: 1100px; margin: 0 auto; margin-top: 150px;">
-		<form name="boardViewForm">
+		<form name="boardViewForm" method="post">
 			<input type="hidden" name="brd_seq" id="brd_seq" value="${brd_seq }">
 			<input type="hidden" name="pg" id="pg" value="${pg }">
 
@@ -37,7 +37,7 @@
 						<span id="categorySpan"></span>
 					</div>
 
-					<div id=board_writer>작성자</div>
+					<div id=board_writer>닉네임</div>
 
 					<div id="board_writer_text">
 						<span id="idSpan"></span>
@@ -48,15 +48,9 @@
 					<div id="board_time_text">
 						<span id="dateSpan"></span>
 					</div>
-
-					<div id="board_count">조회수</div>
-
-					<div id="board_count_text">
-						<span id="hitSpan"></span>
-					</div>
+									
 				</div>
 			
-
 
 				<div id="board_title_box">
 					<div id="board_title">제목</div>
@@ -70,7 +64,7 @@
 
 				</div>
 				
-<<<<<<< HEAD
+
 				<div id="board_button">
 					<input type="button" id="beforeBtn" value="이전"
 						style="width: 150px; height: 30px; margin-right: 20px;"> 
@@ -82,33 +76,15 @@
 						style="width: 150px; height: 30px; margin-right: 20px;">
 				</div>
 
-				<div id="board_member_addBtn"
-					style="text-align: center; margin-top: 10px;">
-					<input type="button" value="수정" onclick='mode(4)'
-						style="width: 150px; height: 30px; margin-right: 20px;"> <input
-						type="button" id="deletBtn" value="삭제" 
-						style="width: 150px; height: 30px; margin-right: 20px;">
+				<div id="board_member_addBtn" style="text-align: center; margin-top: 10px;">
+					<input type="button" id="modifyBtn" value="수정" style="width: 150px; height: 30px; margin-right: 20px;"> 
+					<input type="button" id="deletBtn" value="삭제" style="width: 150px; height: 30px; margin-right: 20px;">
 				</div>
-=======
+
 				<div id="board_reply">
 					<%@ include file="../board/boardReplyForm.jsp"%>
 				</div>
-
-
-
 			</div>
-			<div id="board_button">
-				<input type="button" id="beforeBtn" value="이전글"> <input
-					type="button" id="afterBtn" value="다음글" onclick='mode(2)'> <input
-					type="button" id="listBtn" value="목록"><input
-					type="button" id="writeBtn" value="글작성">
->>>>>>> board&contact
-			</div>
-
-			<div id="board_member_addBtn">
-				<input type="button" value="수정" onclick='mode(4)'> <input
-					type="button" id="deletBtn" value="삭제">
-					</div>
 		</form>
 	</div>
 </div>
@@ -117,4 +93,6 @@
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/boardView.js"></script>
+<script type="text/javascript" src="../js/board_reply.js"></script>
+
 </html>

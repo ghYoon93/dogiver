@@ -4,7 +4,7 @@
 	
 <mapper namespace="goodsSQL">
 	<select id="getGoodsList" parameterType="int" resultType="goods.bean.GoodsDTO">
-		select * from goods
+		select * from goods order by goods_date
 	</select>
 	
 	<select id="getGoodsDetail" parameterType="int" resultType="goods.bean.GoodsDTO">
@@ -40,34 +40,71 @@
 	</insert>
 	
 	<select id="getGoodsQnaList" parameterType="int" resultType="goods.bean.QnaDTO">
-		select * from goods_board where goods_id=#{goods_id} AND category_code='QNA' order by board_date desc
-	</select>
-	
-	<!-- 상품리뷰 -->
- 	<insert id="reviewWrite" parameterType="goods.bean.QnaDTO">
-		insert into goods_board(email, goods_id, category_code, title, text_content, image, board_date)
-		values(#{email}, #{goods_id}, 'REVIEW', 'test', #{text_content}, #{image}, SYSDATE) 
-	</insert> 
-	
-	<select id="getGoodsReviewList" parameterType="int" resultType="goods.bean.QnaDTO">
-		select * 
-		from goods_board join member
-		on member.email = goods_board.email
-		where goods_board.goods_id='3010001'
-		AND category_code='REVIEW' order by board_date desc
+		SELECT * 
+		  FROM goods_board
+               JOIN member
+		       ON member.email = goods_board.email
+		  WHERE goods_board.goods_id=#{goods_id}
+		       AND category_code='QNA' 
+		       AND reply IS NULL ORDER BY board_date DESC		
 	</select>
 	
  	<insert id="writeReply" parameterType="java.util.Map"> 
 		insert into goods_board(email, goods_id, category_code, title, reply, board_date, bo_seq, re_seq)
-		values('dogiver503@gmail.com', #{goods_id}, 'REVIEW', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
+		values('uri927@naver.com', #{goods_id}, 'REPLY', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
 	</insert>
 	
+	<select id="replyList" parameterType="int" resultType="goods.bean.QnaDTO">
+		SELECT *
+		  FROM goods_board
+		  	   JOIN member
+		  	   ON member.email = goods_board.email
+		  WHERE goods_id=#{goods_id}
+		  AND category_code='REPLY'
+	</select>
+	
+	<!-- 상품리뷰 -->
+ 	<insert id="reviewWrite" parameterType="goods.bean.QnaDTO">
+		insert into goods_board(email, goods_id, category_code, title, text_content, image, board_date, bo_seq)
+		values(#{email}, #{goods_id}, 'REVIEW', 'test', #{text_content}, #{image}, SYSDATE, goods_board_bo_seq.nextval) 
+	</insert> 
+	
+	<select id="getGoodsReviewList" parameterType="int" resultType="goods.bean.QnaDTO">
+		SELECT * 
+		  FROM goods_board
+               JOIN member
+		       ON member.email = goods_board.email
+		 WHERE goods_board.goods_id=#{goods_id}
+		       AND category_code='REVIEW' ORDER BY board_date DESC
+	</select>
+	
+	<select id="reviewView" parameterType="int" resultType="goods.bean.QnaDTO">
+		select * from goods_board where bo_seq=#{bo_seq} AND category_code='REVIEW'
+	</select>
+	
+	<select id="reviewUpdateWin" parameterType="int" resultType="goods.bean.QnaDTO">
+		select * from goods_board where bo_seq=#{bo_seq} AND category_code='REVIEW'
+	</select>
+	
+	<insert id="reviewUpdate" parameterType="goods.bean.QnaDTO">
+		update goods_board set text_content=#{text_content}, image=#{image} where bo_seq=#{bo_seq} 
+	</insert>
 	<update id="updateAmt" parameterType="orderDetail">
 	    UPDATE goods SET 
 		                 goods_amt = goods_amt - #{goods_count}
 		               , goods_cum_sales = goods_cum_sales + #{goods_count}
 		 WHERE goods_id = #{order_goods_id}
-		    	
-	</update>
+	 </update>
+	 
+	<insert id="goodsInsert" parameterType="goods.bean.GoodsDTO">
+		insert into goods(goods_id, category_code, goods_name, goods_price, goods_date, goods_amt, goods_thumbnail, goods_detail)
+		values(#{goods_id},#{category_code},#{goods_name},#{goods_price},SYSDATE,#{goods_amt},#{goods_id}||'/'||#{goods_thumbnail},#{goods_id}||'/'||#{goods_detail}) 
+	</insert>
 	
+	<update id="goodsModify" parameterType="goods.bean.GoodsDTO">
+		update goods set category_code=#{category_code}, goods_name=#{goods_name}, goods_price=#{goods_price}, goods_date=SYSDATE, goods_amt=#{goods_amt} where goods_id = #{goods_id}
+	</update>
+	<delete id="reviewDelete" parameterType="int">
+		delete from goods_board where bo_seq=#{bo_seq}
+	</delete>
 </mapper>

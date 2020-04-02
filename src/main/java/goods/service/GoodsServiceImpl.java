@@ -46,6 +46,7 @@ public class GoodsServiceImpl implements GoodsService {
 
 	@Override
 	public List<QnaDTO> getGoodsQnaList(String goods_id) {
+		System.out.println("serviceImpl:"+goods_id);
 		return goodsDAO.getGoodsQnaList(Integer.parseInt(goods_id));
 	}
 
@@ -56,6 +57,7 @@ public class GoodsServiceImpl implements GoodsService {
 
 	@Override
 	public List<QnaDTO> getGoodsReviewList(String goods_id) {
+		System.out.println(goods_id);
 		return goodsDAO.getGoodsReviewList(Integer.parseInt(goods_id));
 	}
 
@@ -70,6 +72,39 @@ public class GoodsServiceImpl implements GoodsService {
 		
 	}
 
+	@Override
+	public int goodsInsert(GoodsDTO goodsDTO) {
+		return goodsDAO.goodsInsert(goodsDTO);
+	}
+
+	@Override
+	public GoodsDTO goodsModify(GoodsDTO goodsDTO) {
+		return goodsDAO.goodsModify(goodsDTO);
+	}
+	@Override
+	public List<QnaDTO> replyList(String bo_seq) {
+		return goodsDAO.replyList(Integer.parseInt(bo_seq));
+	}
+
+	@Override
+	public QnaDTO reviewView(String bo_seq) {
+		return goodsDAO.reviewView(Integer.parseInt(bo_seq));
+	}
+
+	@Override
+	public QnaDTO reviewUpdateWin(String bo_seq) {
+		return goodsDAO.reviewUpdateWin(Integer.parseInt(bo_seq));
+	}
+
+	@Override
+	public void reviewUpdate(QnaDTO qnaDTO) {
+		goodsDAO.reviewUpdate(qnaDTO);
+	}
+
+	@Override
+	public void reviewDelete(String bo_seq) {
+		goodsDAO.reviewDelete(Integer.parseInt(bo_seq));
+	}
 
 
 }

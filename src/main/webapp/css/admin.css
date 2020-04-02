@@ -63,6 +63,7 @@
 	padding: 5px;
 }
 
+
 .panel-body table {
 	border: 1px solid #f2f2f2;
 	border-radius: 5px;
@@ -122,11 +123,13 @@
 	text-align: center;
 	font-size: 13pt;
 	margin: auto;
+	margin-top: 50px;	
 }
 
 #admin_dogiverPagingDiv {
 	width: 1100px;
 	text-align: center;
+	font-size: 12pt;
 }
 
 #admin_dogiverView {
@@ -295,3 +298,83 @@
 	font-size: 14pt;
 }
 /* 헌혈견 관리자 css*/
+
+/* 상품 관리자 css */
+
+#adminGoodsDiv{
+	width: 1100px;
+	height: 1000px;
+}
+
+#adminGoodsList{
+	box-sizing: border-box;
+	overflow: auto;
+	width: 1050px;
+	height: 400px;
+	margin: 25px;
+	
+}
+#adminGoodsList tr{
+	height: 30px;
+}
+
+#adminGoodsList a{
+	cursor: pointer;
+}
+
+#adminGoodsView{
+	box-sizing: border-box;
+	width: 1050px;
+	height: 400px;
+	margin: 30px;
+	border: 1px solid #c0c0c0;
+}
+
+#adminGoodsView div{
+	height: 70px;
+}
+
+.adminGoodsViewDiv{
+	width: 280px;
+	margin: 10px 25px;
+	float: left;
+}
+#adminGoodsView p{
+	font-size: 15pt;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.adminGoodsViewDiv input{
+	font-size: 13pt;
+	width: 250px;
+	height: 50px;
+}
+.adminGoodsViewDiv select{
+	font-size: 13pt;
+	width: 250px;
+	height: 50px;
+}
+
+
+.adminGoodsViewimg{
+	width: 1000px;
+	margin: 20px;
+	float: left;
+	text-align: left;
+	margin-left: 50px;
+}
+.adminGoodsView input {
+	width: 900px;
+	height: 50px;
+}
+
+#adminGoodsBtn input{
+	width: 100px;
+	height: 40px;
+	font-size: 14pt;
+}
+
+
+/* 상품 관리자 css */
+
+

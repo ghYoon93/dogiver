@@ -34,9 +34,9 @@ pageEncoding="UTF-8"%>
 		<div class="admin-page">
 			<div class="admin-nav">
 				<ol>
-					<li><a href="../admin/admin">회원관리</a></li>
+					<li><a href="../admin/admin-page">회원관리</a></li>
 					<li class="on"><a href="../admin/admin_blood">헌혈견 관리</a></li>
-					<li><a href="">상품 관리</a></li>
+					<li><a href="../admin/admin_goods">상품 관리</a></li>
 					<li><a href="">게시글 관리</a></li>
 					<li><a href="">문의 관리</a></li>
 				</ol>
@@ -98,7 +98,7 @@ pageEncoding="UTF-8"%>
 						</div>
 						<div id="donation_dateDiv" class="admin_dogiverViewDiv">
 							<label>최근 헌혈 날짜</label><br> <input type="text"
-								id="donation_date" name="donation_date">
+								id="donation_date" name="donation_date" placeholder="ex)2020.04.02">
 						</div>
 						<div id="nameDiv" class="admin_dogiverViewDiv">
 							<label>회원이름</label><br> <input type="text" id="name"
@@ -113,7 +113,7 @@ pageEncoding="UTF-8"%>
 								name="email">
 						</div>
 						<div id="dog_imageDiv">
-							<label>사진 파일</label><br> <input type="file" name="dog_image"
+							<label>사진 파일(최대 5M)</label><br> <input type="file" name="dog_img"
 								id="dog_image">
 						</div>
 						<div id="descriptionDiv">

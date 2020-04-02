@@ -38,14 +38,15 @@ $(document).ready(function(){
 		url: '/dogiver/goods/getGoodsReviewList',
 		data: 'goods_id='+$('#goods_id').val(),
 		dataType: 'json',
-		success: function(data){
+		success: function(data){ 	
+			//alert(JSON.stringify(data));
 			
-			var tag="";
+			var tag = "";
 			$.each(data.list, function(index, items){
 				tag += '<tr>'
-			        	+ '<th width="65%">'+ items.text_content+'</th>'
-			        	+ '<th width="10%" style="text-align:center;">'+items.nickname+'</th>'
-			        	+ '<th width="25%" style="text-align:center;">'+ items.board_date+'</th>'
+			        	+ '<td class="reviewView" width="65%" style="cursor: pointer;" onclick="reviewViewWin('+ items.bo_seq +')">'+ items.text_content+'</td>'
+			        	+ '<td width="10%" style="text-align:center;">'+items.nickname+'</td>'
+			        	+ '<td width="25%" style="text-align:center;">'+ items.board_date+'</td>'
 			         + '</tr>';
 			});//each
 			
@@ -53,5 +54,10 @@ $(document).ready(function(){
 		}
 	});
 });
+
+//작성된 상품후기 창 띄우기
+function reviewViewWin(bo_seq){
+	window.open('/dogiver/goods/reviewViewWin?bo_seq='+bo_seq, '', 'width=700 height=400 scrollbars=yes');
+}
 
 

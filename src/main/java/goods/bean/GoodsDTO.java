@@ -5,6 +5,8 @@ import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 @Data
@@ -14,6 +16,7 @@ public class GoodsDTO {
 	private int category_code;
 	private String goods_name;
 	private int goods_price;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy.MM.dd HH:mm", timezone = "Asia/Seoul")
 	private Date goods_date;
 	private String goods_thumbnail;
 	private int goods_amt;

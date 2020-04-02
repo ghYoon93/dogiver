@@ -66,7 +66,45 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	@Override
 	public void updateAmt(OrderDetailDTO orderDetailDTO) {
 		sqlSession.update("goodsSQL.updateAmt", orderDetailDTO);
+	}
+	@Override
+	public int goodsInsert(GoodsDTO goodsDTO) {
+		return sqlSession.insert("goodsSQL.goodsInsert", goodsDTO);
+	}
+
+	@Override
+	public GoodsDTO goodsModify(GoodsDTO goodsDTO) {
+		int su = sqlSession.update("goodsSQL.goodsModify", goodsDTO);
 		
+		if(su==1) {
+			return sqlSession.selectOne("goodsSQL.getGoodsDetail", goodsDTO.getGoods_id());
+		}else {
+			return goodsDTO;
+		}
+	}
+		@Override
+	public List<QnaDTO> replyList(int bo_seq) {
+		return sqlSession.selectList("goodsSQL.replyList", bo_seq);
+	}
+
+	@Override
+	public QnaDTO reviewView(int bo_seq) {
+		return sqlSession.selectOne("goodsSQL.reviewView", bo_seq);
+	}
+
+	@Override
+	public QnaDTO reviewUpdateWin(int bo_seq) {
+		return sqlSession.selectOne("goodsSQL.reviewUpdateWin", bo_seq);
+	}
+
+	@Override
+	public void reviewUpdate(QnaDTO qnaDTO) {
+		sqlSession.insert("goodsSQL.reviewUpdate", qnaDTO);
+	}
+
+	@Override
+	public void reviewDelete(int bo_seq) {
+		sqlSession.delete("goodsSQL.reviewDelete", bo_seq);
 	}
 
 }

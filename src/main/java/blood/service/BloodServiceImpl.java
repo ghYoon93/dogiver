@@ -26,4 +26,15 @@ public class BloodServiceImpl implements BloodService {
 		return bloodDAO.getDogiver();
 	}
 
+	@Override
+	public DogJoinDTO getMyblood(String email) {
+		return bloodDAO.getMyblood(email);
+	}
+
+	@Override
+	public void mybloodModify(DogJoinDTO dogJoinDTO) {
+		bloodDAO.mybloodModify(dogJoinDTO);
+		
+	}
+
 }

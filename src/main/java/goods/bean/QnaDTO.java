@@ -20,4 +20,5 @@ public class QnaDTO {
 	private String nickname;
 	private int bo_seq;
 	private int re_seq;
+	private String role;
 }

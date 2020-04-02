@@ -38,8 +38,7 @@
 					<div id="board_category_select">
 						<select id="board_select" name="brd_category"
 							style="font-size: 13px; height: 42px; text-align-last: center;">
-							<option label="글 종류" selected="selected"
-								style="text-align: center;"></option>
+							<option label="글 종류" style="text-align: center;"></option>
 							<option label="가입" value="가입"></option>
 							<option label="고민" value="고민"></option>
 							<option label="자랑" value="자랑"></option>
