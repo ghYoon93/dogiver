@@ -24,6 +24,33 @@
 	<update id="modi" parameterType="member.bean.MemberDTO">
 		update member set
 		nickname=#{nickName}, pwd=#{pwd}, phone=#{phone},
-		zipcode=#{zipcode},addr=#{addr}, addr_detail=#{addr_Detail} where email = #{email}
+		zipcode=#{zipcode},addr=#{addr}, addr_detail=#{addr_Detail} where
+		email = #{email}
 	</update>
+
+	<select id="getMemberList" parameterType="java.util.Map"
+		resultType="member.bean.MemberDTO">
+		<![CDATA[ 
+		select * from 
+		(select rownum rn, tt.* from 
+		(select * from member order by seq desc) tt
+		) where rn>=#{startNum} and rn<=#{endNum}
+		]]>
+	</select>
+
+	<select id="getTotalA" resultType="int">
+		select count(*) from member
+	</select>
+	
+	<update id="change" parameterType="member.bean.MemberDTO">
+		update member set
+		name=#{name}, nickname=#{nickName}, pwd=#{pwd}, phone=#{phone},
+		zipcode=#{zipcode},addr=#{addr}, addr_detail=#{addr_Detail},
+		role=#{role},email_Yn=#{email_Yn}
+		 where email = #{email}
+	</update>
+	
+	<delete id="drop" parameterType="member.bean.MemberDTO">
+		delete from member where email= #{email}
+	</delete>
 </mapper>

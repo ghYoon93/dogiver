@@ -1,5 +1,10 @@
 @charset "utf-8";
 body{font-family: "Noto Sans KR", sans-serif;}
+.both {
+  clear: both;
+  overflow: hidden;
+}
+
 .order_wrap{width: 1100px; margin: 0 auto; height: inherit;}
 .order_wrap .order_process{overflow: auto; padding-bottom:18px;}
 .order_wrap .order_process ol {list-style: none; float: right; line-height: 22px; height: 26px; margin-top: 60px;}
@@ -319,3 +324,408 @@ body{font-family: "Noto Sans KR", sans-serif;}
   display: inline-block;
 }
 /** //option modal **/
+/* 완료 및 접근 제한 */
+.order_complete {
+  display: inline-block;
+  height: 600px;
+  width: 1100px;
+  background: #fbf1f0;
+  margin: 0 0 5px;
+  padding: 40px 0 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 100px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.order_complete h3 {
+  position: relative;
+  font-size: 24px;
+  color: #222;
+  line-height: 1;
+  padding: 30px 0 30px;
+}
+
+.order_complete p {
+  padding: 30px 0 50px;
+  font-size: 14px;
+  color: #888;
+}
+
+.order_complete a {
+  display: inline-block;
+  width: 120px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  font-size: 15px;
+  background: #ec2126;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 주문 조회 */
+
+.mypage_order_info_cont {
+  margin: 0 0 30px 0;
+  padding: 0;
+  font-size: 0;
+  border: 2px solid #e6e6e6;
+  border-top: 1px solid #666666;
+  text-align: center;
+  background: #fafafa;
+}
+
+.mypage_order_info_cont ol {
+  display: inline-block;
+  width: 80%;
+  font-size: 0;
+  padding: 20px 0 22px;
+  border-right: 1px solid #e3e3e3;
+  vertical-align: middle;
+}
+.mypage_order_info_cont ol li {
+  display: inline-block;
+  width: 10%;
+  min-width: 66px;
+  padding: 0 10px 0 30px;
+  font-size: 13px;
+  text-align: center;
+  background: none 0;
+}
+
+.mypage_order_info_cont ol li strong {
+  display: inline-block;
+  width: 52px;
+  height: 42px;
+  line-height: 1.1;
+  padding: 0;
+  color: #888888;
+  font-size: 40px;
+  background: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.mypage_order_info_cont ol li b {
+  display: block;
+  padding: 10px 0 0 0;
+  font-size: 16px;
+  color: #666666;
+  font-weight: 300;
+}
+.mypage_order_info_cont ol li:first-child {
+  padding-left: 10px;
+}
+
+
+
+.mypage_order_info_cont .order_case_list {
+  display: inline-block;
+  width: 19%;
+  font-size: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+.mypage_order_info_cont .order_case_list {
+  display: inline-block;
+  width: 19%;
+  font-size: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+.mypage_order_info_cont .order_case_list ul {
+  display: inline-block;
+  width: 70%;
+  font-size: 0;
+}
+
+.mypage_order_info_cont .order_case_list ul li {
+  padding: 0;
+  line-height: 25px;
+  font-size: 16px;
+  color: #666666;
+  border-top: none;
+  text-align: left;
+}
+
+.mypage_order_info_cont .order_case_list ul li:first-child {
+  border-top: none 0;
+}
+
+.mypage_order_info_cont .order_case_list ul li b {
+  font-size: 16px;
+  color: #666666;
+  font-weight: 300;
+}
+
+.mypage_order_info_cont .order_case_list ul li span {
+  float: right;
+  font-size: 16px;
+  color: #666666;
+}
+
+
+.mypage_order_info_cont .order_case_list ul li span > em, .mypage_order_info_cont .order_case_list ul li span > strong {
+  padding: 0 3px 0 0;
+  font-size: 20px;
+  color: #888888;
+}
+
+.mypage_lately_info {
+  position: relative;
+}
+
+.mypage_zone_tit {
+  overflow: hidden;
+  clear: both;
+  margin: 0 0 0 0;
+  padding: 0 0 6px;
+  font-size: 16px;
+}
+
+.mypage_zone_tit h3 {
+  font-size: 22px;
+  color: #333333;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.mypage_table_type table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  text-align: center;
+  border: none;
+  border-top: 1px solid #666666;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+
+.mypage_table_type th {
+  padding: 16px 10px;
+  border-top: none;
+  border-bottom: 1px solid #e6e6e6;
+  background: #fff;
+  color: #666666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.mypage_table_type th:first-child, .mypage_table_type .row_line:first-child td:first-child, .mypage_table_type table td.order_day_num {
+  border-right: 1px solid #e6e6e6;
+}
+
+.mypage_table_type td {
+  height: 31px;
+  padding: 20px;
+  color: #000000;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 14px;
+}
+
+.mypage_table_type table td.order_day_num em {
+  font-weight: 300;
+  color: #666666;
+}
+.mypage_table_type .order_num_link {
+  color: #0380ff;
+  font-weight: bold;
+  border-bottom: 1px solid #0380ff;
+}
+.mypage_table_type .btn_claim > span {
+  display: inline-block;
+  margin: 7px 0 0 0;
+}
+
+.mypage_table_type .btn_gray_list .btn_gray_small {
+  display: inline-block;
+  font-size: 14px;
+  background: none;
+  border: 1px solid #e6e6e6;
+  margin: 0;
+  padding: 0 8px;
+  border-radius: 0;
+  min-width: 60px;
+}
+
+.mypage_table_type .btn_gray_list .btn_gray_small span {
+  display: inline-block;
+  background: none;
+  line-height: 30px;
+  height: 29px;
+  padding: 0;
+  background: none;
+  vertical-align: top;
+  font-size: 14px;
+  font-weight: 300;
+  color: #333;
+}
+
+.mypage_table_type .row_line td {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.mypage_table_type .td_left {
+  text-align: left;
+}
+
+.mypage_table_type .pick_add_cont {
+  display: table;
+  position: relative;
+}
+
+.mypage_table_type .pick_add_cont .pick_add_img {
+  display: table-cell;
+  width: 120px;
+  vertical-align: top;
+}
+
+.mypage_table_type .pick_add_cont .pick_add_img img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #dbdbdb;
+  vertical-align: middle;
+}
+
+.mypage_table_type .pick_add_cont .pick_add_info {
+  display: table-cell;
+  padding: 0 0 0 10px;
+  vertical-align: middle;
+  word-break: break-all;
+  color: #000;
+  font-size: 15px;
+}
+
+.mypage_table_type .pick_add_cont .pick_add_info a {
+  margin: 5px 0;
+  display: block;
+}
+
+.mypage_table_type .pick_add_cont .pick_add_info em {
+  display: block;
+  color: #000;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.mypage_table_type .row_line td {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.mypage_table_type td > strong {
+  color: #000;
+}
+
+/* 장바구니 접근 제한 */
+.need_login {
+  display: block;
+  height: 600px;
+  width: 1100px;
+  background: #fbf1f0;
+  margin: 0 auto;
+  padding: 40px 0 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 100px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.need_login h3 {
+  position: relative;
+  font-size: 24px;
+  color: #222;
+  line-height: 1;
+  padding: 30px 0 30px;
+}
+
+.need_login p {
+  padding: 30px 0 50px;
+  font-size: 14px;
+  color: #888;
+}
+
+.need_login a {
+  display: inline-block;
+  width: 120px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  font-size: 15px;
+  background: #ec2126;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+/* //장바구니 접근 제한 */
+
+
+/* 체크박스 */
+input[type="checkbox"] {
+  position: absolute;
+  left: -3000%;
+}
+input[type="checkbox"] + label {
+  height: 36px;
+  line-height: 36px;
+  font-size: 15px;
+}
+input[type="checkbox"] + label:before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 1px solid #666;
+  background-color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px 0 0;
+}
+input[type="checkbox"]:checked + label:before {
+  background: url(../image/checkbox.png) no-repeat #fff center;
+  border-color: #333;
+}
+/* //체크박스 */
+
+/* 주문 버튼 */
+.btn_order_box .btn_order_choice_buy {
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #f8585b;
+    color: #f8585b;
+    border-radius: 5px;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 0px;
+    cursor: pointer;
+}
+.btn_order_box .btn_order_whole_buy {
+    width: 200px;
+    background-color: #f8585b;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px;
+    cursor: pointer;
+    margin: 0px;
+}
+/* //주문 버튼 */
+ .order_table_type .important {
+    color: #ca3333;
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+ .order_table_type .btn_phone_setting {
+    margin: 10px 0 0 0;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #989898;
+}

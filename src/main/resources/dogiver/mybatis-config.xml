@@ -8,6 +8,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="blood.bean.DogiverDTO" alias="dogiver"/>
         <typeAlias type="order.bean.CartDTO" alias="cart"/>
         <typeAlias type="order.bean.OrderDTO" alias="order"/>
-        <typeAlias type="order.bean.OrderDetailDTO" alias="OrderDetail"/>
+        <typeAlias type="order.bean.OrderDetailDTO" alias="orderDetail"/>
+        <typeAlias type="order.bean.OrderListDTO" alias="orderList"/>
+        <typeAlias type="order.bean.OrderStatusDTO" alias="orderStatus"/>
     </typeAliases>
 </configuration>

@@ -7,7 +7,7 @@
         SELECT
                cart_id
           FROM cart
-         WHERE goods_id = #{goods_id} AND email = #{email}
+         WHERE goods_id = #{goods_id} AND email = #{email} ORDER BY cart_id
         ]]>
 	</select>
 	<select id="getOrderList" parameterType="java.util.Map" resultType="cart">
@@ -60,12 +60,31 @@
     <insert id="insertOrder" parameterType="order">
         INSERT INTO GOODS_ORDER(order_id, email, order_date, order_total_price, delivery_price, 
                                 recipient, order_phone, order_zip_code, order_addr, order_addr_detail,
-                                order_memo, order_pay, order_status, delivery_code)
-                         VALUES(#{partner_order_id}, #{partner_user_id}, SYSDATE, #{total_amount}, 2500,
+                                order_memo, order_pay, order_status, delivery_code, order_email, order_amount)
+                         VALUES(#{partner_order_id}, #{email}, SYSDATE, #{total_amount}, 2500,
                                 #{orderName}, #{orderCellPhone}, #{orderZipcode}, #{orderAddress}, #{orderAddressSub}
-                                ,#{order_memo}, #{order_pay}, '결제 완료', 1)
+                                ,#{order_memo}, #{order_pay}, '결제완료', 1, #{partner_user_id}, #{quantity})
     </insert>
     <insert id="insertOrderDetail" parameterType="orderDetail">
         INSERT INTO ORDER_DETAIL VALUES(#{partner_order_id}, #{order_goods_id}, #{goods_count}, #{total_price})
     </insert>
+    
+    <select id="getMyOrder" parameterType="String" resultType="orderList">
+        <![CDATA[
+        SELECT go.order_id, go.order_status, go.order_date, go.order_amount,
+               g.goods_thumbnail, g.goods_name, 
+               od.goods_id, od.goods_count, od.total_price
+          FROM order_detail  od
+               LEFT JOIN goods g on od.goods_id = g.goods_id 
+               LEFT JOIN goods_order go on od.order_id = go.order_id
+         WHERE go.email = #{email} ORDER BY order_id DESC
+        ]]>
+    </select>
+    
+    <select id="getStatus" parameterType="String" resultType="orderStatus">
+        SELECT order_status, count(order_id) AS count 
+          FROM goods_order  
+         WHERE order_email = #{memEmail}
+         GROUP BY order_status
+    </select>
 </mapper>

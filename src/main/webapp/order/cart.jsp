@@ -4,19 +4,20 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8">  
+  <link rel="stylesheet" href="../css/reset.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/order.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
     rel="stylesheet" />
-  <title>DOGIVER</title>
+  <title>장바구니</title>
 </head>
 
 <body>
   <div id="headerDiv"></div>
   <!-- 페이지타이틀 -->
     <div class="page-title">
-      <h2 class="h2">주문서 작성/결제</h2>
+      <h2 class="h2">장바구니</h2>
     </div>
     <!-- //페이지타이틀 -->
   <div id="wrap">
@@ -30,7 +31,7 @@
       </div>
       <!-- //order_process -->
       <div class="cart_cont">
-        <form id="form-cart" name="formCart" method="post">
+        <form id="form-cart" name="formCart" method="get">
           <div class="cart_cont_list">
             <div class="order_table_type">
                 <table id=cart-Table>
@@ -50,7 +51,8 @@
                   </colgroup>
                   <thead>
                     <tr>
-                      <th><input type="checkbox" id="check-all"></th>
+                      <th>
+                        <input type="checkbox" id="check-all" /> <label for="check-all"></label></th>
                       <th>상품/옵션 정보</th>
                       <th>수량</th>
                       <th>상품금액</th>
@@ -67,10 +69,10 @@
             <div class="price_sum_list">
               <dl>
                 <dt>
-                  총 <strong id="totalGoodsCnt"></strong> 개의 상품금액
+                  총 <strong id="totalGoodsCnt">0</strong> 개의 상품금액
                 </dt>
                 <dd>
-                  <strong id="totalGoodsPrice"></strong>원
+                  <strong id="totalGoodsPrice">0</strong>원
                 </dd>
               </dl>
               <dl>
@@ -82,7 +84,7 @@
               <dl>
                 <dt>배송비</dt>
                 <dd>
-                  <strong id="totalDeliveryCharge">2,500</strong>원
+                  <strong id="totalDeliveryCharge">0</strong>원
                 </dd>
               </dl>
               <dl>
@@ -94,7 +96,7 @@
               <dl class="price_total">
                 <dt>합계</dt>
                 <dd>
-                  <strong id="totalSettlePrice"></strong>원
+                  <strong id="totalSettlePrice">0</strong>원
                 </dd>
               </dl>
             </div>
@@ -139,6 +141,12 @@
     </div>
     <!-- //order_wrap -->
   </div>
+  <div class="need_login">
+            <h3>장바구니 권한 안내</h3>
+            <p>로그인이 필요한 페이지입니다. 먼저 로그인을 하시고 이용해주세요.
+            <br>아직 회원이 아니시면 회원가입을 해주세요.</p>
+            <a href="../login/login">로그인</a> <a href="../sign_up/step1">회원가입</a>
+          </div>
   <!-- //wrap -->
   </div>
   <div id="footerDiv"></div>

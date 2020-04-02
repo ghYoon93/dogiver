@@ -62,9 +62,8 @@
 				<ul class="header-menu">
 					<li><a href="#">ABOUT</a>
 						<ul>
-							<li><a href="../about/about.html">ABOUT US</a></li>
-							<li><a href="#">TEAM</a></li>
-							<li><a href="#">JOIN THE TEAM</a></li>
+							<li><a href="../about/about">ABOUT US</a></li>
+							<li><a href="../about/team">TEAM</a></li>
 						</ul></li>
 
 					<li><a href="#">헌혈견</a>
@@ -83,7 +82,7 @@
 						<ul>
 							<li><a href="../goods/goodsList">GOODS</a></li>
 							<li><a href="../order/cart">장바구니</a></li>
-							<li><a href="#">주문조회</a></li>
+							<li><a href="../my/orderList">주문조회</a></li>
 						</ul></li>
 
 					<li><a href="#">CONTACT</a>

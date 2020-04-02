@@ -27,6 +27,7 @@ $('#pre-modi-btn')
 											$('#after').show('fast');
 											$('#pre-modi-btn').hide('slow');
 											$('#modi-btn').show('fast');
+											$('#drop-btn').show('fast');
 											$('#name').val(data.memberDTO.name);
 											$('#nickName').val(
 													data.memberDTO.nickName);
@@ -39,7 +40,7 @@ $('#pre-modi-btn')
 											$('#addr').val(data.memberDTO.addr);
 											$('#addr_Detail').val(
 													data.memberDTO.addr_Detail);
-										} else{
+										} else {
 											$('#modi-message-header')
 													.text('경고');
 											$('#modi-message').text(
@@ -363,4 +364,53 @@ $('#modi-btn')
 									}
 								});
 					}
+				});
+// 탈퇴
+$('#drop-btn').on('click',
+				function() {
+					alert('tlqkf');
+					var result = confirm('정말 탈퇴 하시겠습니까?');
+					if (result) {
+						$
+								.ajax({
+									type : 'post',
+									url : '../my/myDrop',
+									data : "email=" + $('#email').val(),
+									success : function(data) {
+										if (data == "삭제 완료!") {
+											$('#modi-message-header').text(
+													'탈퇴 성공');
+											$('#modi-message')
+													.text('또 이용해주세요.')
+											$('#modiModal').css('display',
+													'block');
+											setTimeout(
+													function() {
+														location.href = "../main/index";
+													}, 1000);
+										} else {
+											$('#modi-message-header').text(
+													'탈퇴 실패');
+											$('#modi-message').text(
+													'다시 시도해 주세요.')
+											$('#modiModal').css('display',
+													'block');
+										}
+										window.onclick = function(event) {
+											if (event.target == document
+													.getElementById('modiModal')) {
+												document
+														.getElementById('modiModal').style.display = "none";
+											}
+										};
+
+									},
+									error : function(data) {
+										console.log(data);
+									}
+								});
+					} else {
+						return false;
+					}
+
 				});

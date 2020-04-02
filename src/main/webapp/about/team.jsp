@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -8,19 +10,34 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/about.css" />
     <link rel="stylesheet" href="../css/team.css" />
+        <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+    ></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/about.js"></script>
   </head>
   <body>
+  <div id="headerDiv"></div>
     <!-- 페이지타이틀 -->
     <div class="page-title">
       <h2 class="h2">team</h2>
     </div>
     <!-- //페이지타이틀 -->
+    <div class="wrap">
     <section class="about">
       <div class="about-nav">
         <ol>
-          <li><a href="">ABOUT US</a></li>
-          <li><a class="on" href="">THE TEAM</a></li>
-          <li><a href="">JOIN TEH TEAM</a></li>
+          <li><a href="../about/about">ABOUT US</a></li>
+          <li class="on"><a href="../about/team">TEAM</a></li>
         </ol>
       </div>
       <div class="team-content">
@@ -104,7 +121,7 @@
                 <div class="container">
                   <h2>박진수</h2>
                   <p class="title">Designer</p>
-                  <p>내가 한게 없다.</p>
+                  <p>하기 싫다.</p>
                   <p>01077717141p@gmail.com</p>
                   <p></p>
                 </div>
@@ -114,5 +131,7 @@
         </div>
       </div>
     </section>
+    </div>
+    <div id="footerDiv"></div>
   </body>
 </html>

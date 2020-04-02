@@ -71,9 +71,19 @@
 }
 #modi-form .btn_1{
 	margin-bottom: 100px;
+	cursor: pointer;
+}
+#modi-form .btn_1:hover{
+	opacity: 0.8;
 }
 #modi-btn{
 	display: none;
+}
+#drop-btn{
+	display: none;
+	background: #fff;
+	border:1px solid #dd5e38;
+	color:#666;
 }
 #email{
 	color: #969696;

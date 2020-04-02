@@ -7,6 +7,8 @@ import order.bean.CartDTO;
 import order.bean.KakaoPayApprovalDTO;
 import order.bean.OrderDTO;
 import order.bean.OrderDetailDTO;
+import order.bean.OrderListDTO;
+import order.bean.OrderStatusDTO;
 
 public interface OrderService {
 
@@ -29,6 +31,10 @@ public interface OrderService {
 	public void insertOrderDetail(OrderDetailDTO orderDetailDTO);
 
 	public void insertOrder(OrderDTO orderDTO);
+
+	public List<OrderListDTO> getMyOrder(String memEmail);
+
+	public List<OrderStatusDTO> getStatus(String memEmail);
 
 
 }
