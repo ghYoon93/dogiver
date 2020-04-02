@@ -74,7 +74,7 @@
 							<li><a href="../blood/hospital">협력병원</a></li>
 						</ul></li>
 
-					<li><a id="offA" href="#" onclick="return false">커뮤니티</a>
+					<li><a id="offA" href="../board/boardList">커뮤니티</a>
 						<ul>
 						</ul></li>
 
