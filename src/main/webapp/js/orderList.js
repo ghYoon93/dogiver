@@ -64,3 +64,6 @@ $(document).ready(function(){
 function numberFormat(inputNumber) {
 	return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+$('.btn_gray_small').on('click', function(){
+	alert('x');
+});
