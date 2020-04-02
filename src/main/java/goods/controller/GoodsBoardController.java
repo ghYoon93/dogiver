@@ -44,23 +44,33 @@ public class GoodsBoardController {
 		return "/goods/qna";
 	}
 
+//	@RequestMapping(value="qnaWrite", method=RequestMethod.POST)
+//	public String qnaWrite(@RequestParam Map<String, String> map, Model model, HttpSession session) {
+//		Iterator<String> mapIter = map.keySet().iterator();
+//		 
+//		//map 출력
+//        while(mapIter.hasNext()){
+//            String key = mapIter.next();
+//            String value = map.get( key );
+// 
+//            System.out.println(key+" : "+value);
+//        }
+//		goodsService.qnaWrite(map);
+//		model.addAttribute("memEmail", session.getAttribute("memEmail"));
+//		model.addAttribute("goods_id", map.get("goods_id"));
+//		return "redirect:goodsDetail";
+//	}
+	
 	@RequestMapping(value="qnaWrite", method=RequestMethod.POST)
-	public String qnaWrite(@RequestParam Map<String, String> map, Model model) {
+	public ModelAndView qnaWrite(@RequestParam Map<String, String> map, HttpSession session){
 		System.out.println(map);
-		Iterator<String> mapIter = map.keySet().iterator();
-		 
-		//map 출력
-        while(mapIter.hasNext()){
- 
-            String key = mapIter.next();
-            String value = map.get( key );
- 
-            System.out.println(key+" : "+value);
- 
-        }
+		ModelAndView mav = new ModelAndView();
+		
 		goodsService.qnaWrite(map);
-		model.addAttribute("goods_id", map.get("goods_id"));
-		return "redirect:goodsDetail";
+		//mav.addObject("map", map);
+		//mav.addObject("memEmail", session.getAttribute("memEmail"));
+		
+		return mav;
 	}
 	
 

@@ -74,7 +74,7 @@
 							<li><a href="../blood/hospital">협력병원</a></li>
 						</ul></li>
 
-					<li><a id="offA" href="#" onclick="return false">커뮤니티</a>
+					<li><a id="offA" href="../board/boardList">커뮤니티</a>
 						<ul>
 						</ul></li>
 
@@ -87,7 +87,7 @@
 
 					<li><a id="offA"href="#" onclick="return false">CONTACT</a>
 						<ul>
-							<li><a href="#">문의하기</a></li>
+							<li><a href="../contact/contactForm">문의하기</a></li>
 							<!-- <li><a href="#">무엇?</a></li> -->
 						</ul></li>
 				</ul>

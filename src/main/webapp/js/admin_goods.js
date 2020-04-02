@@ -33,7 +33,7 @@ $(document).ready(function() {
 	//상세보기
 	$(document).on('click', '.goodsView', function(){
 		let goods_id = $(this).attr('id');
-		$('#goods_id').attr('readyonly', 'readyonly');
+		$('#goods_id').attr('readonly', 'readonly');
 		$.ajax({
 			type: 'post',
 			url: '/dogiver/goods/getGoodsDetail',
