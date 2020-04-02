@@ -24,9 +24,6 @@
 	<!-- //페이지타이틀 -->
 	<div class="wrap">
 		<div class="goodsListDiv">
-			<div>
-				<div class="menuBar">HOME>GOODS</div>
-			</div>
 			<!-- 카테고리 -->
 			<div class="goods_category">
 				<ul>

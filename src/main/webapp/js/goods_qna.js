@@ -1,4 +1,5 @@
  //상품QNA 리스트 
+var check="";
 $(document).ready(function(){
 
 	var tag="";
@@ -8,6 +9,7 @@ $(document).ready(function(){
 		data: 'goods_id='+$('input[name=goods_id]').val(),
 		dataType: 'json',
 		success: function(data){
+			alert(JSON.stringify(data));
 			
 			$.each(data.list, function(index, items){
 				tag += '<tr>'
@@ -21,12 +23,15 @@ $(document).ready(function(){
 					+ '<button type="button" class="replyBtn">댓글 작성</button></td>'
 					+ '</tr>';
 				
+				check = items.role;
 			});//each
 			
 			$('.qnaList tbody').append(tag);
 			
 			$('.replyText').hide();
+			
 		}
+	
 	
 	});
 });
@@ -48,6 +53,12 @@ $('#qnaWrite').on('click', '#qnaWrite_btn', function(){
 
 $('.qnaList').on('click', '.qna_content', function(){
 	$(this).parent().next().slideToggle();
+	
+	if(check != "admin"){
+		$('.replyText').hide();
+	}else{
+		$('.replyText').attr("display", "block");
+	}
 });
 
 $('.qnaList').on('click', '.replyBtn', function(){
@@ -61,7 +72,7 @@ $('.qnaList').on('click', '.replyBtn', function(){
 								'bo_seq': $(this).parent().parent().prev().find('#bo_seq').val(),	 
 								'reply': $('.replyText .text_content').val()}),
 		success: function(){
-			alert('댓글 작성 완료하였습니다.');
+			alert(	'댓글 작성 완료하였습니다.');
 			//location.reload();
 			
 			var tag="";
@@ -79,7 +90,6 @@ $('.qnaList').on('click', '.replyBtn', function(){
 							+ '</tr>';
 					});//each
 					
-					//$('.replyList').prependTo(tag);
 					$('.replyText').before(tag);
 					
 					$('.replyTr').not($(this).parent().parent().prev().find('.reply')).hide();

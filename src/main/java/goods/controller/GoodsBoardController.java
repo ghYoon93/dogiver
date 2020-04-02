@@ -37,8 +37,9 @@ public class GoodsBoardController {
 	
 	
 	@RequestMapping(value="qna", method=RequestMethod.GET)
-	public String qna(@RequestParam String goods_id, Model model) {
+	public String qna(@RequestParam String goods_id, Model model, HttpSession session) {
 		model.addAttribute("goods_id", goods_id);
+		model.addAttribute("memEmail", session.getAttribute("memEmail"));
 		System.out.println("goodsDetail push");
 		return "/goods/qna";
 	}
@@ -65,13 +66,14 @@ public class GoodsBoardController {
 
 	@RequestMapping(value="getGoodsQnaList", method=RequestMethod.POST)
 	@ResponseBody
-	public ModelAndView getGoodsQnaList(@RequestParam String goods_id){
+	public ModelAndView getGoodsQnaList(@RequestParam String goods_id, HttpSession session){
 		String[] goods = goods_id.split(",");
 		System.out.println("59:"+goods_id);
 		List<QnaDTO> list = goodsService.getGoodsQnaList(goods[0]);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
 		mav.setViewName("jsonView");
+		System.out.println(list);
 		return mav;
 	}
 	

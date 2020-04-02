@@ -30,9 +30,15 @@ $(document).ready(function(){
 		dataType : 'json',
 		success : function(data){
 			alert(JSON.stringify(data));
+			if(data.qnaDTO.image != null){
+				alert("null");
+				$('#image').attr('src', '../image/goods_board/'+data.qnaDTO.image);
+				$('.text_content').text(data.qnaDTO.text_content);
+				
+			}else{
+				$('#image').hide();
+			}
 
-			$('#image').attr('src', '../image/goods_board/'+data.qnaDTO.image);
-			$('.text_content').text(data.qnaDTO.text_content);
 		}
 	});
 });

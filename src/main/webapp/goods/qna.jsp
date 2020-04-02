@@ -5,6 +5,7 @@ pageEncoding="UTF-8"%>
 
 <form id="qnaWrite" method="post" action="qnaWrite">
 	<input type="hidden" name="goods_id" id="goods_id" value="${goods_id }">
+	<input type="hidden" name="memEmail" id="memEmail" value="${memEmail }">
 	
 	<p class="qnaWriteDiv"></p>
 	<div style="display: flex;">
