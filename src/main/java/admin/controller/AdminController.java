@@ -48,13 +48,18 @@ public class AdminController {
 		return "/admin/admin_contact";
 	}
 	
+	@RequestMapping(value = "admin_board", method = RequestMethod.GET)
+	public String admin_board() {
+		return "/admin/admin_board";
+	}
+	
 	
 	@RequestMapping(value = "getDogiver", method = RequestMethod.POST)
 	@ResponseBody
 	public ModelAndView getDogiver(@RequestParam(required = false, defaultValue = "1") String pg) {
 		List<DogiverDTO> list = adminService.getDogiver(pg);
 		
-		//페이징 처리
+		
 		Admin_dogiverPaging admin_dogiverPaging = adminService.admin_dogiverPaging(pg);
 		
 		ModelAndView mav = new ModelAndView();
@@ -72,7 +77,7 @@ public class AdminController {
 		File file = new File(filePath, fileName);
 		System.out.println(map);
 		if(!fileName.equals("")) {
-			//파일복사
+			
 			try {
 				FileCopyUtils.copy(dog_img.getInputStream(), new FileOutputStream(file));
 			} catch (IOException e) {
@@ -98,7 +103,7 @@ public class AdminController {
 		File file = new File(filePath, fileName);
 		
 		
-		//파일복사
+		
 		try {
 			FileCopyUtils.copy(dog_img.getInputStream(), new FileOutputStream(file));
 		} catch (IOException e) {
