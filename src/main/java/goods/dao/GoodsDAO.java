@@ -27,11 +27,21 @@ public interface GoodsDAO {
 
 	public void writeReply(Map<String, String> map);
 
+
 	public void updateAmt(OrderDetailDTO orderDetailDTO);
 	
 	public int goodsInsert(GoodsDTO goodsDTO);
 
 	public GoodsDTO goodsModify(GoodsDTO goodsDTO);
+	public List<QnaDTO> replyList(int bo_seq);
+
+	public QnaDTO reviewView(int bo_seq);
+
+	public QnaDTO reviewUpdateWin(int bo_seq);
+
+	public void reviewUpdate(QnaDTO qnaDTO);
+
+	public void reviewDelete(int bo_seq);
 
 
 }

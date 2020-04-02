@@ -183,6 +183,7 @@ public class MemberController {
 		return exist;
 	}
 	
+
 	@RequestMapping(value = "/my/myDrop", method = RequestMethod.POST, produces = "application/text; charset=utf8")
 	public @ResponseBody String myDrop(@ModelAttribute MemberDTO memberDTO,HttpSession session) {
 		System.out.println(memberDTO);

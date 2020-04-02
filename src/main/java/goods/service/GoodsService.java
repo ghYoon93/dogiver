@@ -27,6 +27,16 @@ public interface GoodsService {
 
 	public void writeReply(Map<String, String> map);
 
+	public List<QnaDTO> replyList(String bo_seq);
+
+	public QnaDTO reviewView(String seq);
+
+	public QnaDTO reviewUpdateWin(String bo_seq);
+
+	public void reviewUpdate(QnaDTO qnaDTO);
+
+	public void reviewDelete(String bo_seq);
+
 
 	public void updateAmt(OrderDetailDTO orderDetailDTO);
 	public int goodsInsert(GoodsDTO goodsDTO);
