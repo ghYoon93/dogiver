@@ -59,6 +59,26 @@ public class BoardController {
 		mav.setViewName("jsonView");
 		return mav;
 	}
+	
+//	@RequestMapping(value="getBoardList", method=RequestMethod.POST)
+//	public ModelAndView getBoardList(
+//			@RequestParam(required=false, defaultValue="1") String pg,
+//			HttpSession session) {
+//		List<BoardDTO> list = boardService.getBoardList(pg);
+//		
+//		//페이징 처리
+//		BoardPaging boardPaging = boardService.boardPaging(pg);
+//		
+//		ModelAndView mav = new ModelAndView();
+//		
+//		mav.addObject("pg", pg);
+//		mav.addObject("list", list);
+//		mav.addObject("memEmail", session.getAttribute("memEmail"));
+//		mav.addObject("boardPaging", boardPaging);
+//		mav.setViewName("jsonView");
+//		return mav;
+//	}
+	
 	@RequestMapping(value="boardView", method=RequestMethod.GET)
 	public String boardList(@RequestParam String brd_seq,
 							@RequestParam(required=false, defaultValue="1") String pg,

@@ -37,7 +37,7 @@
 						<span id="categorySpan"></span>
 					</div>
 
-					<div id=board_writer>작성자</div>
+					<div id=board_writer>닉네임</div>
 
 					<div id="board_writer_text">
 						<span id="idSpan"></span>

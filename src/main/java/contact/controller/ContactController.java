@@ -39,10 +39,6 @@ public class ContactController {
 
 	}
 	
-	@RequestMapping(value="admin_contactForm", method=RequestMethod.GET)
-	public String admin_contactForm() {
-		return "/contact/admin_contactForm";
-	}
 	
 	@RequestMapping(value="contactList", method=RequestMethod.POST)
 	public ModelAndView contactList() {

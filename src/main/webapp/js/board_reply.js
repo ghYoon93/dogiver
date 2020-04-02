@@ -2,7 +2,6 @@
 $('#boardFormBtn').click(function() {
 	//유효성 검사.
 	$('#confirmDiv').empty();
-	
 	if ($('#re_content').val() == '') {
 		$('#confirmDiv').text('내용을 입력하세요');
 		$('#confirmDiv').css('color', 'red');
@@ -42,7 +41,7 @@ $('#boardFormBtn').click(function() {
 								+ '<td width="100" align="center"><span id="timeSapn">'
 								+ items.re_logtime
 								+ '</span></td>'
-								+ '<td width="480" align="right" style="padding-right: 20px;"><a href="#" id='+items.re_seq+'>삭제</a></td>'
+								+ '<td width="480" align="right" style="padding-right: 20px;"><a href="#" class='+items.re_writer+'>삭제</a></td>'
 								+ '</tr><tr><td colspan="6" height="65" style="padding: 10px;"><span id="timeSapn">'
 								+ items.re_content
 								+ '</span></td></tr>'
@@ -50,10 +49,18 @@ $('#boardFormBtn').click(function() {
 						});
 						$('#contentDiv').append(tag);
 						
-						if (data.memEmail == data.boardDTO.brd_email)
-							$('#board_member_addBtn').show();
-							else
+						$.each(data.list, function(index, items) {
+							if(data.memNickName != $('.'+items.re_writer).attr('class')){
+								$('.'+items.re_writer).hide();
+							}
+									
+							
+						});
+						if (data.memEmail == data.boardDTO.brd_email){
+							$('#board_member_addBtn').show();}
+							else{
 							$('#board_member_addBtn').hide();
+							}
 						
 					}
 				});
@@ -64,7 +71,6 @@ $('#boardFormBtn').click(function() {
 });
 //댓글 삭제
 $(document).on('click', 'a', function(){
-	alert('aa');
 	let re_seq=$(this).attr('id');
 	$.ajax({
 		type : 'post',
@@ -79,7 +85,6 @@ $(document).on('click', 'a', function(){
 				data : 'brd_seq=' + $('#brd_seq').val(),
 				dataType : 'json',
 				success : function(data) {
-						alert('2');
 					$('#seqSpan').text(data.boardDTO.brd_seq);
 					$('#categorySpan').text(data.boardDTO.brd_category);
 					$('#titleSpan').text(data.boardDTO.brd_title);
@@ -100,7 +105,7 @@ $(document).on('click', 'a', function(){
 							+ '<td width="100" align="center"><span id="timeSapn">'
 							+ items.re_logtime
 							+ '</span></td>'
-							+ '<td width="480" align="right" style="padding-right: 20px;"><a href="#" id='+items.re_seq+'>삭제</a></td>'
+							+ '<td width="480" align="right" style="padding-right: 20px;"><a href="#" class='+items.re_writer+'>삭제</a></td>'
 							+ '</tr><tr><td colspan="6" height="65" style="padding: 10px;"><span id="timeSapn">'
 							+ items.re_content
 							+ '</span></td></tr>'
@@ -109,11 +114,20 @@ $(document).on('click', 'a', function(){
 					$('#contentDiv').append(tag);
 					
 					
-						if (data.memEmail == data.boardDTO.brd_email)
-							$('#board_member_addBtn').show();
-						else
-							$('#board_member_addBtn').hide();
-			
+					$.each(data.list, function(index, items) {
+						if(data.memNickName != $('.'+items.re_writer).attr('class')){
+							$('.'+items.re_writer).hide();
+						}
+								
+						
+					});
+					
+					
+					if (data.memEmail == data.boardDTO.brd_email){
+						$('#board_member_addBtn').show();}
+						else{
+						$('#board_member_addBtn').hide();
+						}
 				}
 			});
 			
