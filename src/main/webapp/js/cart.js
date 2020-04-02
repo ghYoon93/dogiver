@@ -8,11 +8,8 @@ $(document).ready(function() {
 							dataType : 'json',
 							success : function(data) {
 								if(data.memEmail == null){
-									$('.order_wrap').hide();
-									$('.need_login').show();
+									location.href = '/dogiver/login/login'
 								}else{
-									$('.order_wrap').show();
-									$('.need_login').hide();
 									let tbody = $('#form-cart tbody');
 									let tag;
 									let trCount = 0;
