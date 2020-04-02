@@ -393,6 +393,7 @@
 							<option value="홋카이도">
 							<option value="휘펫">
 						</datalist>
+						<div id="dogBreedDiv"></div></li>
 					</li>
 					<li><label>반려견 몸무게(kg)</label> <input type="text"
 						placeholder="숫자만 입력" id="dog_weight" name="dog_weight">

@@ -9,18 +9,26 @@ $(document).on('click', '.dogJoinBtn', function(){
 		$('#dogAgeDiv').empty();
 		$('#dogBreedDiv').empty();
 		$('#dogWeightDiv').empty();
-		
+		var test = "^[0-9]$";
+		alert($('#dog_breed').val());
 		if($('#dog_name').val()==''){
 			$('#dogNameDiv').text("이름을 입력해주세요").css("color","red").css("font-size","10pt").css("font-weight", "bold");
 			
 		}else if($('#dog_age').val()==''){
 			$('#dogAgeDiv').text("나이를 입력해주세요").css("color","red").css("font-size","10pt").css("font-weight", "bold");
 			
+		}else if(!$('#dog_age').val().match(test)){
+			$('#dogAgeDiv').text("숫자만 입력해주세요").css("color","red").css("font-size","10pt").css("font-weight", "bold");
+			
 		}else if($('#dog_breed').val()==''){
 			$('#dogBreedDiv').text("종을 입력해주세요").css("color","red").css("font-size","10pt").css("font-weight", "bold");
 			
 		}else if($('#dog_weight').val()==''){
 			$('#dogWeightDiv').text("몸무게을 입력해주세요").css("color","red").css("font-size","10pt").css("font-weight", "bold");
+			
+		}else if(!$('#dog_weight').val().match(test)){
+			$('#dogWeightDiv').text("숫자만 입력해주세요").css("color","red").css("font-size","10pt").css("font-weight", "bold");
+			
 		}else{
 			$.ajax({
 				type:'post',
