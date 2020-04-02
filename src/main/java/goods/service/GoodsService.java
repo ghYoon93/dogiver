@@ -5,6 +5,7 @@ import java.util.Map;
 
 import goods.bean.GoodsDTO;
 import goods.bean.QnaDTO;
+import order.bean.OrderDetailDTO;
 
 public interface GoodsService {
 
@@ -25,6 +26,8 @@ public interface GoodsService {
 	public List<QnaDTO> getGoodsReviewList(String goods_id);
 
 	public void writeReply(Map<String, String> map);
+
+	public void updateAmt(OrderDetailDTO orderDetailDTO);
 
 
 }

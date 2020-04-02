@@ -284,8 +284,8 @@
                                   type="text" id="bankSender" class="form-control"
                                   name="bankSender"></li>
                                 <li><strong>입금은행</strong> <select
-                                  id="inputState" class="form-control">
-                                    <option value="">은행 선택</option>
+                                  id="bankStatus" class="form-control">
+                                    <option value="0">은행 선택</option>
                                     <option value="1">국민은행
                                       536801-04-008887 윤건희</option>
                                 </select></li>

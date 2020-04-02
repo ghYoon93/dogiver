@@ -25,4 +25,5 @@ public class OrderDTO {
 	private String item_name;
 	private String total_amount;
 	private String quantity;
+	private String order_status;
 }

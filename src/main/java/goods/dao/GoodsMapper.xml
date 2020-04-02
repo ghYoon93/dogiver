@@ -62,4 +62,12 @@
 		values('dogiver503@gmail.com', #{goods_id}, 'REVIEW', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
 	</insert>
 	
+	<update id="updateAmt" parameterType="orderDetail">
+	    UPDATE goods SET 
+		                 goods_amt = goods_amt - #{goods_count}
+		               , goods_cum_sales = goods_cum_sales + #{goods_count}
+		 WHERE goods_id = #{order_goods_id}
+		    	
+	</update>
+	
 </mapper>

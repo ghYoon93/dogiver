@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import goods.bean.GoodsDTO;
 import goods.bean.QnaDTO;
 import goods.dao.GoodsDAO;
+import order.bean.OrderDetailDTO;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {
@@ -61,6 +62,12 @@ public class GoodsServiceImpl implements GoodsService {
 	@Override
 	public void writeReply(Map<String, String> map) {
 		goodsDAO.writeReply(map);
+	}
+
+	@Override
+	public void updateAmt(OrderDetailDTO orderDetailDTO) {
+		goodsDAO.updateAmt(orderDetailDTO);
+		
 	}
 
 

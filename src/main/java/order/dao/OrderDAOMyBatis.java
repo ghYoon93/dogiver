@@ -53,12 +53,13 @@ public class OrderDAOMyBatis implements OrderDAO {
 	}
 	@Override
 	public void insertOrder(OrderDTO orderDTO) {
+		System.out.println(orderDTO);
 		sqlSession.insert("orderSQL.insertOrder", orderDTO);
 		
 	}
 	@Override
 	public void insertOrderDetail(OrderDetailDTO orderDetailDTO) {
-		sqlSession.insert("orderSQL.insertOrderDetail", orderDetailDTO);
+		sqlSession.insert("orderSQL.insertOrderDetail",orderDetailDTO);
 		
 	}
 	@Override

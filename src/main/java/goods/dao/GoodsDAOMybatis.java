@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import goods.bean.GoodsDTO;
 import goods.bean.QnaDTO;
+import order.bean.OrderDetailDTO;
 
 @Repository
 @Transactional
@@ -60,6 +61,12 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	@Override
 	public void writeReply(Map<String, String> map) {
 		sqlSession.insert("goodsSQL.writeReply", map);
+	}
+
+	@Override
+	public void updateAmt(OrderDetailDTO orderDetailDTO) {
+		sqlSession.update("goodsSQL.updateAmt", orderDetailDTO);
+		
 	}
 
 }

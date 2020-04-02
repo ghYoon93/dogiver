@@ -1,5 +1,6 @@
 package order.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import goods.service.GoodsService;
 import member.bean.MemberDTO;
 import member.service.MemberService;
 import order.bean.CartDTO;
@@ -33,6 +35,8 @@ public class OrderController {
 	private OrderService orderService;
 	@Autowired
 	private MemberService memberService;
+	@Autowired
+	private GoodsService goodsService;
     @RequestMapping(value="/order/order", method=RequestMethod.GET)
     public String order(@RequestParam(required=false, defaultValue="0") String[] checkGoods,
     		            @RequestParam(required=false, defaultValue="0") int goods_id,
@@ -97,7 +101,7 @@ public class OrderController {
     	return "redirect:/order/cart";
     }
     
-    @RequestMapping(value="/order/deleteCart", method=RequestMethod.POST)
+    @RequestMapping(value="/order/deleteCart", method=RequestMethod.GET)
     public String deleteCart(@RequestParam String[] checkGoods, Model model) {
     	Map<String, String[]> map = new HashMap<String, String[]>();
     	map.put("array", checkGoods);
@@ -156,14 +160,22 @@ public class OrderController {
     	String email = (String) session.getAttribute("memEmail");
     	orderDTO.setEmail(email);
     	System.out.println(orderDTO);
+    	if(orderDTO.getOrder_pay().equals("bank")) {
+    		orderDTO.setOrder_status("입금대기");
+    		System.out.println(orderDTO);
+    	}else {
+    		orderDTO.setOrder_status("결제완료");
+    	}
     	orderService.insertOrder(orderDTO);
     	System.out.println("order 개수: "+goods_id.length);
+    	List<OrderDetailDTO> list = new ArrayList<OrderDetailDTO>();
     	for(int i = 0; i < goods_id.length; i++) {
     		orderDetailDTO.setOrder_goods_id(Integer.parseInt(goods_id[i]));
     		orderDetailDTO.setGoods_count(cart_cnt[i]);
     		orderDetailDTO.setTotal_price(total_price[i]);
-    		System.out.println(orderDetailDTO);
     		orderService.insertOrderDetail(orderDetailDTO);
+        	goodsService.updateAmt(orderDetailDTO);
+    		
     	}
     	model.addAttribute("order_id", orderDTO.getPartner_order_id());
     	Map<String, String[]> map = new HashMap<String, String[]>();

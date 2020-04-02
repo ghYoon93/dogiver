@@ -6,6 +6,7 @@ $(document).ready(function(){
   let orderList = new Array();
   for(let i = 0; i < checkGoodsArr.length; i++){
 	  orderList.push(checkGoodsArr[i].value);
+	  console.log(checkGoodsArr[i].value);
   }
   let url;
   let dataType;
@@ -15,8 +16,8 @@ $(document).ready(function(){
       data = 'goods_id='+$('#goods_id').val();
       console.log(data);	
   }else{
-	  url = '/dogiver/order/getOrderList';
-	  data = '{orderList:'+orderList+'}';	
+	  url = '/dogiver/order/getOrderList';orderList
+	  data = 'orderList='+orderList;
   }
     $.ajax({
       type: 'POST',
@@ -91,6 +92,7 @@ $(document).ready(function(){
     	  $('#totalSettlePrice').text(cashFormat(totalSettlePrice));
     	  $('.totalSettlePrice').text(cashFormat(totalSettlePrice));
     	  $('.order_payment_sum').text(cashFormat(totalGoodsPrice)+'원');
+    	  $('#totalDeliveryCharge').text(cashFormat(deliveryCharge));
     	  $('.totalDeliveryCharge').text(cashFormat(deliveryCharge));
     	  $('input[name=settlePrice]').val(cashFormat(totalSettlePrice));
     	  $('#totalSettlePriceView').text(cashFormat(totalSettlePrice));
@@ -135,27 +137,36 @@ $('.order-buy').on('click', function(){
 	$('#member_email').focus();
 	}else if($('#order_pay').val() ==''){
 		alert('결제 방식을 선택해주세요.');
-	}else if($('#order_pay').val() == 'bank'){
-		if($('#bankSender').val() == ''){
+	}else if($('#order_pay').val() == 'bank' 
+		  && $('#bankSender').val() == ''){
 			alert('입금자 명을 적어주세요.');
 			$('#bankSender').focus();
-		}else if($('#inputState').val() == ''){
+			console.log($('#bankStatus option:selected').val());
+	}else if($('#order_pay').val() == 'bank' 
+		  && $('#bankStatus').val() == 0){
 			alert('입금하실 은행을 선택해주세요.');
-		}
 	}else if($('#termAgree_orderCheck').is(":checked")==false){
-		alert('청약의사 재확인을 동의해 주셔야 주문을 진행할 수 있습니다.')
+		console.log("not check");
+		alert('청약의사 재확인을 동의해 주셔야 주문을 진행할 수 있습니다.');
+		
 	}else{
 		let partner_order_id= getNow()+getRandom();
+		let form = document.getElementById('form-order');
 		console.log(partner_order_id);
 		$('input[name=partner_order_id]').val(getNow()+getRandom());
-		let popupWidth = 650;
-		let popupHeight = 770;
-		let popupX = (window.screen.width/2) - (popupWidth/2);
-		let popupY = (window.screen.height/2) - (popupHeight/2);
-		window.open('','viewer', 'width='+popupWidth+', height='+popupHeight+',  left='+ popupX + ', top='+ popupY);
-		let form = document.getElementById('form-order');
-		form.target='viewer';
-		form.action = 'kakaoPay';
+		if(($('#order_pay')).val() == 'bank'){
+			form.target='_self';
+			form.action= 'insertOrder';
+		}else{
+			let popupWidth = 650;
+			let popupHeight = 770;
+			let popupX = (window.screen.width/2) - (popupWidth/2);
+			let popupY = (window.screen.height/2) - (popupHeight/2);
+			window.open('','viewer', 'width='+popupWidth+', height='+popupHeight+',  left='+ popupX + ', top='+ popupY);
+			form.target='viewer';
+			form.action = 'kakaoPay';
+			
+		}
 		form.submit();	
 	}
 });
@@ -280,4 +291,10 @@ function initLayerPosition() {
 	element_layer.style.top = '60%';
 }
 /** 주소 * */
+
+
+$(document).on('click', '.btn_post_setting', function(){
+	
+});
+
 

@@ -62,11 +62,13 @@
                                 recipient, order_phone, order_zip_code, order_addr, order_addr_detail,
                                 order_memo, order_pay, order_status, delivery_code, order_email, order_amount)
                          VALUES(#{partner_order_id}, #{email}, SYSDATE, #{total_amount}, 2500,
-                                #{orderName}, #{orderCellPhone}, #{orderZipcode}, #{orderAddress}, #{orderAddressSub}
-                                ,#{order_memo}, #{order_pay}, '결제완료', 1, #{partner_user_id}, #{quantity})
+                                #{orderName}, #{orderCellPhone}, #{orderZipcode}, #{orderAddress}, #{orderAddressSub},
+                                #{order_memo}, #{order_pay}, #{order_status}, 1, #{partner_user_id}, #{quantity})
     </insert>
     <insert id="insertOrderDetail" parameterType="orderDetail">
-        INSERT INTO ORDER_DETAIL VALUES(#{partner_order_id}, #{order_goods_id}, #{goods_count}, #{total_price})
+        INSERT INTO ORDER_DETAIL
+    	VALUES
+        (${partner_order_id}, ${order_goods_id}, ${goods_count}, ${total_price})
     </insert>
     
     <select id="getMyOrder" parameterType="String" resultType="orderList">
