@@ -26,10 +26,10 @@ pageEncoding="UTF-8"%>
       src="/data/201101/IJ12941530138912/jquery-contained-sticky-scroll.js"
     ></script>
     <script src="../js/main.js"></script>
-      <script src="../js/admin_contact.js"></script>
+     
   </head>
   <body>
-    <!-- <div id="headerDiv"></div> -->
+    <div id="headerDiv"></div>
     <div class="page-title">
       <h2>admin</h2>
       <p>관리자 페이지 입니다.</p>
@@ -41,7 +41,7 @@ pageEncoding="UTF-8"%>
             <li><a href="../admin/admin">회원관리</a></li>
             <li><a href="../admin/admin_blood">헌혈견 관리</a></li>
             <li><a href="">상품 관리</a></li>
-            <li><a href="">게시글 관리</a></li>
+            <li><a href="../admin/admin_board">게시글 관리</a></li>
             <li class="on"><a href="../admin/admin_contact">문의 관리</a></li>
           </ol>
         </div>
@@ -70,4 +70,5 @@ pageEncoding="UTF-8"%>
     </div>
     <div id="footerDiv"></div>
   </body>
+   <script src="../js/admin_contact.js"></script>
 </html>
