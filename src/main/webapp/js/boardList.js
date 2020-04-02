@@ -5,6 +5,7 @@ $(document).ready(function(){
 		data : 'pg='+$('#pg').val(),
 		dataType : 'json',
 		success : function(data){
+			
 			$.each(data.list, function(index, items){
 				$('<tr/>').append($('<td/>',{
 					align : 'center',
@@ -43,7 +44,7 @@ $(document).ready(function(){
 			
 			// 로그인 여부
 			$('#boardListTable').on('click', '.titleA', function(){
-				if(data.memEmail==null)
+				if(data.memEmail == null)
 					alert('먼저 로그인하세요');
 				else{
 					let seq = $(this).attr('id');
@@ -60,7 +61,7 @@ $(document).ready(function(){
 						
 			});
 			
-			if (data.memEmail == data.boardDTO.brd_email){
+			if ((data.memEmail == data.boardDTO.brd_email) || (data.role=='admin')){
 				$('#board_member_addBtn').show();}
 				else{
 				$('#board_member_addBtn').hide();
@@ -122,7 +123,7 @@ $('#boardSearchBtn').click(function(event, str){
 				// 페이징처리
 				$('#boardPagingDiv').html(data.boardPaging.pagingHTML);
 				
-				// 로그인 여부
+				// 검색후 뷰 접근
 				$('#boardListTable').on('click', '.titleA', function(){
 						let seq = $(this).attr('id');
 						let pg = data.pg;
@@ -138,7 +139,7 @@ $('#boardSearchBtn').click(function(event, str){
 							
 				});
 				
-				if (data.memEmail == data.boardDTO.brd_email){
+				if ((data.memEmail == data.boardDTO.brd_email) || (data.role=='admin')){
 					$('#board_member_addBtn').show();}
 					else{
 					$('#board_member_addBtn').hide();

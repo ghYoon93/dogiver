@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -23,9 +25,10 @@
       src="/data/201101/IJ12941530138912/jquery-contained-sticky-scroll.js"
     ></script>
     <script src="../js/main.js"></script>
+     <script src="../js/mycontact.js"></script>
   </head>
   <body>
-    <!-- <div id="headerDiv"></div> -->
+    <div id="headerDiv"></div>
     <div class="page-title">
       <h2>my page</h2>
       <p>나의 정보들</p>
@@ -37,11 +40,28 @@
             <li><a href="../my/mypage">내 정보</a></li>
             <li><a href="">헌혈견</a></li>
             <li><a href="">상품 </a></li>
-            <li><a href="">내 게시글 </a></li>
-            <li class="on"><a href="">내 문의 </a></li>
+            <li><a href="../board/myboard">내 게시글 </a></li>
+            <li class="on"><a href="../contact/mycontact">내 문의 </a></li>
           </ol>
         </div>
-        <div class="article"></div>
+        <div class="article">
+        <div id="my-write" style="width: 1100px; margin: 0 auto;  margin-top:100px; margin-bottom: 80px; border: 1px solid red;">
+		<form id="myContactForm">
+			<div class="mycon-container"
+				style="width: 1100px; margin: 0 auto; text-align: center;">
+				<table id="my_contactTable" border="1" cellpadding="5" frame="hsides " rules="rows">
+					<tr height="70">
+						<th width="200" style="font-size: 15px; border: 1px solid black;">번호</th>
+						<th width="200" style="font-size: 15px; border: 1px solid black;">주제</th>
+						<th width="300" style="font-size: 15px; border: 1px solid black;">내용</th>
+						<th width="200" style="font-size: 15px; border: 1px solid black;">작성날짜</th>
+						<th width="200" style="font-size: 15px; border: 1px solid black;">삭제</th>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+        </div>
       </div>
     </div>
     <div id="footerDiv"></div>

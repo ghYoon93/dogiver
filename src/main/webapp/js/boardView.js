@@ -6,7 +6,7 @@ $(document).ready(function() {
 		data : 'brd_seq=' + $('#brd_seq').val(),
 		dataType : 'json',
 		success : function(data) {
-			
+			alert(data.role);
 			$('#seqSpan').text(data.boardDTO.brd_seq);
 			$('#categorySpan').text(data.boardDTO.brd_category);
 			$('#titleSpan').text(data.boardDTO.brd_title);
@@ -47,7 +47,7 @@ $(document).ready(function() {
 				
 			});
 			//글 수정 삭제 보여주기
-			if (data.memEmail == data.boardDTO.brd_email){
+			if ((data.memEmail == data.boardDTO.brd_email) || (data.role=='admin')){
 				$('#board_member_addBtn').show();}
 				else{
 				$('#board_member_addBtn').hide();
@@ -65,6 +65,7 @@ $('#writeBtn').click(function() {
 // 이전 버튼
 $('#beforeBtn').click(function() {
 	$('.replyContent').remove();
+	$('#re_content').val('');
 	$.ajax({
 		type : 'post',
 		url : '/dogiver/board/getBoardView_before',
@@ -106,7 +107,7 @@ $('#beforeBtn').click(function() {
 				
 			});
 			
-			if (data.memEmail == data.boardDTO.brd_email){
+			if ((data.memEmail == data.boardDTO.brd_email) || (data.role=='admin')){
 				$('#board_member_addBtn').show();}
 				else{
 				$('#board_member_addBtn').hide();
@@ -118,6 +119,7 @@ $('#beforeBtn').click(function() {
 // 다음 버튼 버튼
 $('#afterBtn').click(function() {
 	$('.replyContent').remove();
+	$('#re_content').val('');
 	$.ajax({
 		type : 'post',
 		url : '/dogiver/board/getBoardView_after',
@@ -154,13 +156,13 @@ $('#afterBtn').click(function() {
 			
 			//삭제 기능
 			$.each(data.list, function(index, items) {
-				if(data.memNickName != $('.'+items.re_writer).attr('class')){
+				if((data.memNickName != $('.'+items.re_writer).attr('class')) && data.role!='admin'){ 
 					$('.'+items.re_writer).hide();
 				}
 						
 			});
 			
-			if (data.memEmail == data.boardDTO.brd_email){
+			if ((data.memEmail == data.boardDTO.brd_email) || (data.role=='admin')){
 				$('#board_member_addBtn').show();}
 				else{
 				$('#board_member_addBtn').hide();

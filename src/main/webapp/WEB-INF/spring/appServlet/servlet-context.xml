@@ -28,6 +28,8 @@
 	<resources location="/dogiverImage/"
 		mapping="/dogiverImage/**" />
 	<resources location="/login/" mapping="/login/**" />
+	<resources location="/my/" mapping="/my/**" />
+	
 
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
