@@ -3,29 +3,50 @@
  */
 $(document).ready(function(){
   let checkGoodsArr = $('input[name=checkGoods]');
-  console.log(checkGoodsArr[0].value);
-  if(checkGoodsArr[0].value == '0'){
-
+  let orderList = new Array();
+  for(let i = 0; i < checkGoodsArr.length; i++){
+	  orderList.push(checkGoodsArr[i].value);
+  }
+  let url;
+  let dataType;
+  let data;
+  if(checkGoodsArr[0].value == 0){
+	  url = '/dogiver/goods/getGoodsDetail';
+      data = 'goods_id='+$('#goods_id').val();
+      console.log(data);	
   }else{
-	  let orderList = new Array();
-	  for(let i = 0; i < checkGoodsArr.length; i++){
-		  orderList.push(checkGoodsArr[i].value);
-	  }
+	  url = '/dogiver/order/getOrderList';
+	  data = '{orderList:'+orderList+'}';	
+  }
     $.ajax({
       type: 'POST',
-      url: '/dogiver/order/getOrderList',
+      url: url,
       traditional: true,
-      data: {
-        'orderList' : orderList
-      },
+      data: data,
       dataType: 'json',
       success: function(data){
+//    	alert(JSON.stringify(data));
+    	  let list;
     	  let tbody = $('.order_table_type tbody:eq(0)');
     	  let tag;
     	  let goodsCount = 0;
     	  let priceSum = 0;
     	  let partner_user_id;
-    	  $.each(data.list, function(index, items){
+    	  console.log('success');
+    	  if(checkGoodsArr[0].value == 0){
+    		  let quantity = $('#quantity').val()
+    		  list =[
+    			  {goods_id: $('#goods_id').val(),  
+    			   cart_cnt: quantity,
+    			   goods_price: data.goodsDTO.goods_price,
+    			   total_price: data.goodsDTO.goods_price*quantity,
+    			   goods_name: data.goodsDTO.goods_name,
+    			   goods_thumbnail: data.goodsDTO.goods_thumbnail}
+    		  ];
+    	  }else{
+    		  list = data.list;
+    	  }
+    	  $.each(list, function(index, items){
     		  if(index == 0) item_name = items.goods_name;
     		  tag += '<tr>'
                      + '<td class="td_left">'
@@ -55,10 +76,10 @@ $(document).ready(function(){
 		      goodsCount++;
     		  priceSum += items.total_price;	 
     	  }); //each
+    	  tbody.append(tag);
     	  console.log(goodsCount);
     	  console.log(priceSum);
-    	  tbody.append(tag);
-    	  $('#form-cart tr').eq(1).append(
+    	  $('#form-order tr').eq(1).append(
 					'<td rowspan="' + goodsCount
 							+ '">배송비<br>2,500원</td>');
     	  let deliveryCharge = 2500;
@@ -81,7 +102,7 @@ $(document).ready(function(){
     	  $('input[name=quantity]').val(goodsCount);
       } //success
     }); // ajax
-  }
+  
 }); //주문 상품 테이블
 
 function cashFormat(number){

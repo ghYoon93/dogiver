@@ -92,6 +92,7 @@
 					<div class="btn_center">
 						<button type="button" class="btn_1" id="pre-modi-btn">입력</button>
 						<button type="button" class="btn_1" id="modi-btn">수정</button>
+						<button type="button" class="btn_1" id="drop-btn">탈퇴</button>
 					</div>
 				</form>
 			</div>

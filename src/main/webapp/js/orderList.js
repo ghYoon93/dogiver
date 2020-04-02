@@ -7,14 +7,6 @@ $(document).ready(function(){
       let tbody = $('.mypage_table_type tbody');
       let tag;
       let orderIdChk = 0;
-//      private String order_id;
-//      private String order_status;
-//      private Date order_date;
-//      private String goods_thumbnail;
-//      private String goods_name;
-//      private int goods_count;
-//      private int total_price;
-//      private int order_amount;
       $.each(data.list,function(index, items) {
     	  let orderDate = items.order_date;
     	  new Date(Date.parse(orderDate.replace(/-/g, '/')));
@@ -57,7 +49,7 @@ $(document).ready(function(){
                    + '</div>'
                  + '</td>'
                  + '<td><strong>'+items.goods_count +'</strong>개</td>'
-                 + '<td><strong>'+items.total_price +'원</strong></td>'
+                 + '<td><strong>'+numberFormat(items.total_price) +'원</strong></td>'
                  + '<td>'
                    + '<em>'
                      + items.order_status
@@ -69,3 +61,6 @@ $(document).ready(function(){
     }
   });
 });
+function numberFormat(inputNumber) {
+	return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

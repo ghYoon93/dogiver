@@ -1,9 +1,11 @@
 package member.controller;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import member.bean.MemberDTO;
+import member.bean.MemberPaging;
 import member.service.MemberService;
 
 @Controller
@@ -111,12 +114,15 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "/login/log", method = RequestMethod.POST)
-	public @ResponseBody String log(@RequestParam Map<String, String> map, MemberDTO memberDTO, HttpSession session) {
+	public @ResponseBody String log(@RequestParam Map<String, String> map, MemberDTO memberDTO, 
+			HttpSession session,
+			HttpServletRequest request) {
 		String email = map.get("email");
 		memberDTO = memberService.getMember(email);
 		if (memberDTO == null)
 			return "false";
 		System.out.println(memberDTO);
+		System.out.println(request.getHeader("referer"));
 		boolean chkPwd = bcryptPasswordEncoder.matches(map.get("pwd"), memberDTO.getPwd());
 		System.out.println(chkPwd);
 		if (chkPwd) {
@@ -177,9 +183,45 @@ public class MemberController {
 		return exist;
 	}
 	
+	@RequestMapping(value = "/my/myDrop", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	public @ResponseBody String myDrop(@ModelAttribute MemberDTO memberDTO,HttpSession session) {
+		System.out.println(memberDTO);
+		session.invalidate();
+		String message = memberService.drop(memberDTO);
+		return message;
+	}
+	
 	@RequestMapping(value = "/admin/admin", method = RequestMethod.GET)
-	public String admin(Model model) {
-		model.addAttribute("admin");
-		return "admin";
+	public String admin(@RequestParam(required = false, defaultValue = "1") String pg, Model model) {
+		model.addAttribute("pg", pg);
+		return "/admin/admin";
+	}
+	
+	@RequestMapping(value = "/admin/getMemberList", method = RequestMethod.POST)
+	public @ResponseBody ModelAndView getMemberList(@RequestParam(required = false, defaultValue = "1") String pg) {
+		List<MemberDTO> list = memberService.getMemberList(pg);
+		
+		MemberPaging memberPaging = memberService.memberPaging(pg);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.addObject("memberPaging", memberPaging);
+		mav.setViewName("jsonView");
+		
+		return mav;
+	}
+	
+	@RequestMapping(value = "/admin/change", method = RequestMethod.POST,  produces = "application/text; charset=utf8")
+	public @ResponseBody String change(@ModelAttribute MemberDTO memberDTO) {
+		System.out.println(memberDTO);
+		String change;
+		
+		if(memberDTO.getDrop_Yn().equals("Y")) {
+			change = memberService.drop(memberDTO);
+		}else {
+			change = memberService.change(memberDTO);
+		}
+		
+		return change;
 	}
 }
