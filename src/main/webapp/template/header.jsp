@@ -5,6 +5,9 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
+<link rel="favicon" href="../image/favicon.ico" />
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
 <link rel="stylesheet" href="../css/reset.css" />
@@ -74,7 +77,7 @@
 							<li><a href="../blood/hospital">협력병원</a></li>
 						</ul></li>
 
-					<li><a id="offA" href="../board/boardList" >커뮤니티</a>
+					<li><a id="offA" href="../board/boardList">커뮤니티</a>
 						<ul>
 						</ul></li>
 
@@ -87,7 +90,7 @@
 
 					<li><a id="offA"href="#" onclick="return false">CONTACT</a>
 						<ul>
-							<li><a href="../contact/contactForm">문의하기</a></li>
+							<li><a href="#">문의하기</a></li>
 							<!-- <li><a href="#">무엇?</a></li> -->
 						</ul></li>
 				</ul>
