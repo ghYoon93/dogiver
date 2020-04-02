@@ -29,9 +29,8 @@ $(document).ready(function(){
 		data : 'bo_seq=${bo_seq}',
 		dataType : 'json',
 		success : function(data){
-			alert(JSON.stringify(data));
+			
 			if(data.qnaDTO.image != null){
-				alert("null");
 				$('#image').attr('src', '../image/goods_board/'+data.qnaDTO.image);
 				$('.text_content').text(data.qnaDTO.text_content);
 				

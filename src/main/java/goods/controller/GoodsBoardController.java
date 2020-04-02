@@ -77,6 +77,24 @@ public class GoodsBoardController {
 		return mav;
 	}
 	
+	@RequestMapping(value="writeReply", method=RequestMethod.POST)
+	@ResponseBody
+	public String writeReply(@RequestBody Map<String, String> map){
+		goodsService.writeReply(map);
+		System.out.println(map.get("goods_id"));
+		return "/goods/qnaWrite";
+	}
+	
+	@RequestMapping(value="replyList", method=RequestMethod.POST)
+	@ResponseBody
+	public ModelAndView replyList(@RequestParam String goods_id){
+		List<QnaDTO> list = goodsService.replyList(goods_id);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	
 	@RequestMapping(value="review", method=RequestMethod.GET)
 	public String review(@RequestParam String goods_id, Model model, HttpSession session) {
 		model.addAttribute("goods_id", goods_id);
@@ -87,7 +105,6 @@ public class GoodsBoardController {
 	@RequestMapping(value="reviewWriteWin", method=RequestMethod.GET)
 	public String reviewWrite(@RequestParam String goods_id, Model model) {
 		model.addAttribute("goods_id", goods_id);
-		System.out.println(goods_id);
 		return "/goods/reviewWriteWin";
 	}
 	
@@ -126,24 +143,6 @@ public class GoodsBoardController {
 	@ResponseBody
 	public ModelAndView getGoodsReviewList(@RequestParam String goods_id){
 		List<QnaDTO> list = goodsService.getGoodsReviewList(goods_id);
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("list", list);
-		mav.setViewName("jsonView");
-		return mav;
-	}
-	
-	@RequestMapping(value="writeReply", method=RequestMethod.POST)
-	@ResponseBody
-	public String writeReply(@RequestBody Map<String, String> map){
-		goodsService.writeReply(map);
-		System.out.println(map.get("goods_id"));
-		return "/goods/qnaWrite";
-	}
-	
-	@RequestMapping(value="replyList", method=RequestMethod.POST)
-	@ResponseBody
-	public ModelAndView replyList(@RequestParam String bo_seq){
-		List<QnaDTO> list = goodsService.replyList(bo_seq);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
 		mav.setViewName("jsonView");

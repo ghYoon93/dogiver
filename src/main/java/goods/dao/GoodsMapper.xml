@@ -59,7 +59,7 @@
 		  FROM goods_board
 		  	   JOIN member
 		  	   ON member.email = goods_board.email
-		  WHERE bo_seq=#{bo_seq}
+		  WHERE goods_id=#{goods_id}
 		  AND category_code='REPLY'
 	</select>
 	
