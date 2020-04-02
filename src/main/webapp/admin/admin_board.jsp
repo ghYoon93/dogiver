@@ -48,9 +48,9 @@ pageEncoding="UTF-8"%>
         <div class="article">
         <form id="admin_boardForm" method="post">
 		<div class="wrap">
-			<div class="container" style="width: 1000px; height:500px; margin: 0 auto; margin-top: 150px; overflow: auto;">
+			<div class="container" style="width: 1000px; height:700px; margin: 0 auto; margin-top: 150px; overflow: auto;">
 				<table id="admin_boardTable" border="1"  cellpadding="5" frame="hsides " rules="rows">
-					<tr height="70">
+					<tr height="70" style="background-color: #FFEBF0;">
 						<th width="50" style="font-size: 15px; border: 1px solid black;">번호</th>
 						<th width="50" style="font-size: 15px; border: 1px solid black;">종류</th>
 						<th width="100" style="font-size: 15px; border: 1px solid black;">닉네임</th>

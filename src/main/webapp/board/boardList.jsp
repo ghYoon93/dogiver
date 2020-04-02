@@ -23,19 +23,26 @@
 	</div>
 	<form id="boardListForm">
 		<div class="wrap">
-			<div class="container">
-				<input type="hidden" id="pg" value="${pg }">
+			<input type="hidden" id="pg" value="${pg }">
+			
+			
+			<div class="content_info">
 				<table id="boardListTable" border="1" cellpadding="5"
 					frame="hsides " rules="rows" style="color: #ab2328;">
-					<tr height="70">
-						<th width="100" style="font-size: 15px;">글번호</th>
-						<th width="100" style="font-size: 15px;">글종류</th>
-						<th width="500" style="font-size: 15px;">제목</th>
-						<th width="150" style="font-size: 15px;">닉네임</th>
-						<th width="150" style="font-size: 15px;">작성일</th>
+					<tr height="70" style="font-size: 20px; font-weight: bold">
+						<th width="100">글번호</th>
+						<th width="100">글종류</th>
+						<th width="500">제목</th>
+						<th width="150">닉네임</th>
+						<th width="150">작성일</th>
 					</tr>
 				</table>
 			</div>
+			
+					
+			
+			
+			
 
 				<div id="boardPagingDiv"></div>
 
