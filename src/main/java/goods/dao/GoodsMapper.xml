@@ -4,7 +4,7 @@
 	
 <mapper namespace="goodsSQL">
 	<select id="getGoodsList" parameterType="int" resultType="goods.bean.GoodsDTO">
-		select * from goods
+		select * from goods order by goods_date
 	</select>
 	
 	<select id="getGoodsDetail" parameterType="int" resultType="goods.bean.GoodsDTO">
@@ -67,7 +67,15 @@
 		                 goods_amt = goods_amt - #{goods_count}
 		               , goods_cum_sales = goods_cum_sales + #{goods_count}
 		 WHERE goods_id = #{order_goods_id}
-		    	
+	 </update>
+	 
+	<insert id="goodsInsert" parameterType="goods.bean.GoodsDTO">
+		insert into goods(goods_id, category_code, goods_name, goods_price, goods_date, goods_amt, goods_thumbnail, goods_detail)
+		values(#{goods_id},#{category_code},#{goods_name},#{goods_price},SYSDATE,#{goods_amt},#{goods_id}||'/'||#{goods_thumbnail},#{goods_id}||'/'||#{goods_detail}) 
+	</insert>
+	
+	<update id="goodsModify" parameterType="goods.bean.GoodsDTO">
+		update goods set category_code=#{category_code}, goods_name=#{goods_name}, goods_price=#{goods_price}, goods_date=SYSDATE, goods_amt=#{goods_amt} where goods_id = #{goods_id}
 	</update>
 	
 </mapper>

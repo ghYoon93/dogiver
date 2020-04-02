@@ -2,6 +2,8 @@ package blood.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -58,7 +60,27 @@ public class BloodController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "myblood", method = RequestMethod.GET)
+	public String myblood() {
+		return "/my/myblood";
+	}
 	
+	@RequestMapping(value = "getMyblood", method = RequestMethod.POST)
+	public ModelAndView getMyblood(HttpSession session ) {
+		String email = (String) session.getAttribute("memEmail");
+		DogJoinDTO dogJoinDTO = bloodService.getMyblood(email);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("dogJoinDTO", dogJoinDTO);
+		mav.setViewName("jsonView");
+		
+		return mav;
+	}
+	
+	@RequestMapping(value = "mybloodModify", method = RequestMethod.POST)
+	public void mybloodModify(DogJoinDTO dogJoinDTO) {
+		bloodService.mybloodModify(dogJoinDTO);
+	}
 	
 
 }

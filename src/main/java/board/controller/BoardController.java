@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -160,8 +161,7 @@ public class BoardController {
 	public void reply_write(BoardDTO boardDTO, @RequestParam String brd_seq) {
 		boardService.re_write(boardDTO);
 	}
-	
-	
+
 	@RequestMapping(value="reply_delete", method= RequestMethod.POST)
 	@ResponseBody
 	public void reply_delete(@RequestParam String re_seq) {
@@ -184,5 +184,41 @@ public class BoardController {
 		
 	}	
 	
+
+	@RequestMapping(value = "myboard", method = RequestMethod.GET)
+	public String myboard() {
+		return "/my/myboard";
+	}
 	
+	@RequestMapping(value = "getMyboard", method = RequestMethod.POST)
+	public ModelAndView getMyboard(HttpSession session) {
+		String nickName = (String) session.getAttribute("memNickName");
+		List<BoardDTO> list = boardService.getMyboard(nickName);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	
+	@RequestMapping(value = "getMyreply", method = RequestMethod.POST)
+	public ModelAndView getMyreply(HttpSession session) {
+		String nickName = (String) session.getAttribute("memNickName");
+		List<BoardDTO> list = boardService.getMyreply(nickName);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	
+	@RequestMapping(value = "getMyboardView", method = RequestMethod.POST)
+	public ModelAndView getMyboardView(@RequestParam String brd_seq) {
+		BoardDTO boardDTO = boardService.getMyboardView(brd_seq);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("boardDTO", boardDTO);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+
 }

@@ -28,6 +28,10 @@ public interface GoodsDAO {
 	public void writeReply(Map<String, String> map);
 
 	public void updateAmt(OrderDetailDTO orderDetailDTO);
+	
+	public int goodsInsert(GoodsDTO goodsDTO);
+
+	public GoodsDTO goodsModify(GoodsDTO goodsDTO);
 
 
 }

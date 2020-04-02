@@ -70,6 +70,15 @@ public class GoodsServiceImpl implements GoodsService {
 		
 	}
 
+	@Override
+	public int goodsInsert(GoodsDTO goodsDTO) {
+		return goodsDAO.goodsInsert(goodsDTO);
+	}
+
+	@Override
+	public GoodsDTO goodsModify(GoodsDTO goodsDTO) {
+		return goodsDAO.goodsModify(goodsDTO);
+	}
 
 
 }

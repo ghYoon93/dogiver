@@ -104,6 +104,7 @@ public class BoardServiceImpl implements BoardService {
 		return boardDAO.getBoardView_after(brd_seq);
 	}
 
+
 	@Override
 	public List<BoardDTO> getReply(int bd_seq) {
 		return boardDAO.getReply(bd_seq);
@@ -147,6 +148,55 @@ public class BoardServiceImpl implements BoardService {
 		boardDAO.boardModify(boardDTO);
 		
 	}
+
 	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public List<BoardDTO> getMyboard(String nickName) {
+		
+		return boardDAO.getMyboard(nickName);
+	}
+	@Override
+	public List<BoardDTO> getMyreply(String nickName) {
+		
+		return boardDAO.getMyreply(nickName);
+	}
+
+	@Override
+	public BoardDTO getMyboardView(String brd_seq) {
+		
+		return boardDAO.getMyboardView(brd_seq);
+	}
 }

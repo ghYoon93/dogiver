@@ -12,4 +12,8 @@ public interface BloodService {
 
 	public List<DogiverDTO> getDogiver();
 
+	public DogJoinDTO getMyblood(String email);
+
+	public void mybloodModify(DogJoinDTO dogJoinDTO);
+
 }

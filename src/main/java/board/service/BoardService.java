@@ -28,6 +28,7 @@ public interface BoardService {
 
 	public List<BoardDTO> getReply(int bd_seq);
 
+
 	public void re_write(BoardDTO boardDTO);
 
 	public List<BoardDTO> getReBoard(String brd_seq);
@@ -41,6 +42,14 @@ public interface BoardService {
 	public BoardDTO getUser(String brd_seq);
 	
 	public void boardModify(BoardDTO boardDTO);
+
+	public List<BoardDTO> getMyboard(String nickName);
+
+	public List<BoardDTO> getMyreply(String nickName);
+
+	public BoardDTO getMyboardView(String brd_seq);
+
+
 
 
 }

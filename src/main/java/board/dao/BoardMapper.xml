@@ -93,6 +93,17 @@
 	<update id="boardModify" parameterType="board.bean.BoardDTO">
 		update board set brd_category=#{brd_category}, brd_title=#{brd_title}, brd_content=#{brd_content}, brd_logtime=SYSDATE where brd_seq=#{brd_seq}
 	</update>
+
+	
+	<!-- 마이페이지 내글 -->
+	<select id="getMyboard" parameterType="String" resultType="board.bean.BoardDTO">
+		select * from board where brd_nickname = #{nickName}
+	</select>
+	<!-- 마이페이지 내댓글 -->
+	<select id="getMyreply" parameterType="String" resultType="board.bean.BoardDTO">
+		select * from brd_reply where re_writer = #{nickName}
+	</select>
+
 </mapper>
 
 
