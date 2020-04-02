@@ -81,7 +81,7 @@
 					<input type="button" id="deletBtn" value="삭제" style="width: 150px; height: 30px; margin-right: 20px;">
 				</div>
 
-				<div id="board_reply">
+				<div id="board_reply" style="margin-top:20px;">
 					<%@ include file="../board/boardReplyForm.jsp"%>
 				</div>
 			</div>

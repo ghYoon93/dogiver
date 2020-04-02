@@ -84,9 +84,10 @@ $(document).ready(function(){
 			
 			// 로그인 여부
 			$('#boardListTable').on('click', '.titleA', function(){
-				if(data.memEmail == null)
+				if(data.memEmail == null){
 					alert('먼저 로그인하세요');
-				else{
+				location.href="/dogiver/login/login"
+				}else{
 					let seq = $(this).attr('id');
 					let pg = data.pg;
 					location.href='/dogiver/board/boardView?brd_seq='+seq+'&pg='+pg;        
