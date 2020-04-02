@@ -37,6 +37,11 @@ public class BoardDAOMybatis implements BoardDAO {
 	public BoardDTO getBoard(String brd_seq) {
 		return sqlSession.selectOne("boardSQL.getBoard", Integer.parseInt(brd_seq));
 	}
+	
+	@Override
+	public List<BoardDTO> getReBoard(String brd_seq) {
+		return sqlSession.selectList("boardSQL.getReBoard", Integer.parseInt(brd_seq));
+	}
 
 	@Override
 	public int getBoardSearchTotalA(Map<String, String> map) {
@@ -63,9 +68,43 @@ public class BoardDAOMybatis implements BoardDAO {
 		return sqlSession.selectOne("boardSQL.getBoardView_after", Integer.parseInt(brd_seq));
 	}
 
+
 	@Override
-	public void reply_write(BoardDTO boardDTO) {
-		sqlSession.insert("boardSQL.reply_write", boardDTO);
+	public List<BoardDTO> getReply(int bd_seq) {
+		return sqlSession.selectList("boardSQL.getReply", bd_seq);
+	}
+
+	@Override
+	public void re_write(BoardDTO boardDTO) {
+		sqlSession.insert("boardSQL.re_write", boardDTO);
+	}
+
+	@Override
+	public List<BoardDTO> getReBoard_before(String brd_seq) {
+		return sqlSession.selectList("boardSQL.getReBoard_before", Integer.parseInt(brd_seq));
+	}
+
+	@Override
+	public List<BoardDTO> getReBoard_after(String brd_seq) {
+		return sqlSession.selectList("boardSQL.getReBoard_after", Integer.parseInt(brd_seq));
+	}
+
+	@Override
+	public void reply_delete(String re_seq) {
+		sqlSession.delete("boardSQL.reply_delete", Integer.parseInt(re_seq));
+		
+	}
+
+	@Override
+	public BoardDTO getUser(String brd_seq) {
+		return sqlSession.selectOne("boardSQL.getUser", Integer.parseInt(brd_seq));
+	}
+	
+	
+	@Override
+	public void boardModify(BoardDTO boardDTO) {
+		sqlSession.update("boardSQL.boardModify", boardDTO);
+		
 	}
 
 	

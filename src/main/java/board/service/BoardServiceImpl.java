@@ -24,14 +24,9 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void boardWrite(BoardDTO boardDTO) {
-		boardDAO.boardWrite(boardDTO);
-	}
-	
-	@Override
-	public void reply_write(BoardDTO boardDTO) {
 		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
 		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
-		boardDAO.reply_write(boardDTO);
+		boardDAO.boardWrite(boardDTO);
 	}
 	
 	@Override
@@ -41,7 +36,6 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<BoardDTO> getBoardList(String pg) {
-		// 1페이지당 8개씩
 		int endNum = Integer.parseInt(pg)*8;
 		int startNum = endNum-7;
 
@@ -69,13 +63,12 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public BoardPaging boardPaging(String pg) {
-		int totalA = boardDAO.getBoardTotalA();//총글수
+		int totalA = boardDAO.getBoardTotalA();//珥앷��닔
 		
 		boardPaging.setCurrentPage(Integer.parseInt(pg));
 		boardPaging.setPageBlock(5);
 		boardPaging.setPageSize(8);
 		boardPaging.setTotalA(totalA);
-		//System.out.println("1페이징처리후 총 개수는"+totalA+"입니다");
 		boardPaging.makePagingHTML();
 		return boardPaging;
 	}
@@ -83,13 +76,12 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public BoardPaging boardPaging(Map<String, String> map) {
 		
-		int totalA = boardDAO.getBoardSearchTotalA(map);//총글수
+		int totalA = boardDAO.getBoardSearchTotalA(map);//珥앷��닔
 		
 		boardPaging.setCurrentPage(Integer.parseInt(map.get("pg")));
 		boardPaging.setPageBlock(5);
 		boardPaging.setPageSize(10);
 		boardPaging.setTotalA(totalA);
-		//System.out.println("2페이징처리후 총 개수는"+totalA+"입니다");
 		boardPaging.makeSearchPagingHTML();
 		
 		return boardPaging;
@@ -100,6 +92,10 @@ public class BoardServiceImpl implements BoardService {
 		return boardDAO.getBoard(brd_seq);
 	}
 	@Override
+	public List<BoardDTO> getReBoard(String brd_seq) {
+		return boardDAO.getReBoard(brd_seq);
+	}
+	@Override
 	public BoardDTO getBoardView_before(String brd_seq) {
 		return boardDAO.getBoardView_before(brd_seq);
 	}
@@ -107,7 +103,50 @@ public class BoardServiceImpl implements BoardService {
 	public BoardDTO getBoardView_after(String brd_seq) {
 		return boardDAO.getBoardView_after(brd_seq);
 	}
-	
+
+	@Override
+	public List<BoardDTO> getReply(int bd_seq) {
+		return boardDAO.getReply(bd_seq);
+	}
+
+	@Override
+	public void re_write(BoardDTO boardDTO) {
+		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
+		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
+		
+		boardDAO.re_write(boardDTO);
+		
+	}
+
+	@Override
+	public List<BoardDTO> getReBoard_before(String brd_seq) {
+		return boardDAO.getReBoard_before(brd_seq);
+	}
+
+	@Override
+	public List<BoardDTO> getReBoard_after(String brd_seq) {
+		return boardDAO.getReBoard_after(brd_seq);
+	}
+
+	@Override
+	public void reply_delete(String re_seq) {
+		boardDAO.reply_delete(re_seq);
+		
+	}
+
+	@Override
+	public BoardDTO getUser(String brd_seq) {
+		return boardDAO.getUser(brd_seq);
+	}
+
+
+	@Override
+	public void boardModify(BoardDTO boardDTO) {
+		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
+		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
+		boardDAO.boardModify(boardDTO);
+		
+	}
 	
 
 }

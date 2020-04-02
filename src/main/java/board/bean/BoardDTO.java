@@ -17,7 +17,15 @@ public class BoardDTO {
 	private int brd_hit;
 	private int brd_pseq;
 	private String brd_reContent;
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd HH:mm", timezone = "Asia/Seoul")
 	private Date brd_logtime;
+	
+	private int bd_seq;
+	private int re_seq;
+	private String re_writer;
+	private String re_content;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd HH:mm", timezone = "Asia/Seoul")
+	private Date re_logtime;
+	
 
 }

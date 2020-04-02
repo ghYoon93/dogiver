@@ -26,6 +26,7 @@ pageEncoding="UTF-8"%>
       src="/data/201101/IJ12941530138912/jquery-contained-sticky-scroll.js"
     ></script>
     <script src="../js/main.js"></script>
+      <script src="../js/admin_contact.js"></script>
   </head>
   <body>
     <!-- <div id="headerDiv"></div> -->
@@ -41,10 +42,30 @@ pageEncoding="UTF-8"%>
             <li><a href="../admin/admin_blood">헌혈견 관리</a></li>
             <li><a href="">상품 관리</a></li>
             <li><a href="">게시글 관리</a></li>
-            <li class="on"><a href="">문의 관리</a></li>
+            <li class="on"><a href="../admin/admin_contact">문의 관리</a></li>
           </ol>
         </div>
-        <div class="article"></div>
+        <div class="article">
+        <form id="admin_contactForm" method="post">
+		<div class="wrap">
+			<div class="container" style="width: 1000px; margin: 0 auto; margin-top: 150px;">
+				<table id="admin_contactTable" border="1" cellpadding="5" frame="hsides " rules="rows">
+					<tr height="70">
+						<th width="50" style="font-size: 15px; border: 1px solid black;">번호</th>
+						<th width="50" style="font-size: 15px; border: 1px solid black;">이름</th>
+						<th width="140" style="font-size: 15px; border: 1px solid black;">이메일</th>
+						<th width="150" style="font-size: 15px; border: 1px solid black;">핸드폰번호</th>
+						<th width="100" style="font-size: 15px; border: 1px solid black;">주제</th>
+						<th width="360" style="font-size: 15px; border: 1px solid black;">내용</th>
+						<th width="100" style="font-size: 15px; border: 1px solid black;">작성시간</th>
+						<th width="100" style="font-size: 15px; border: 1px solid black;">데이터 삭제</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</form>
+        
+        </div>
       </div>
     </div>
     <div id="footerDiv"></div>

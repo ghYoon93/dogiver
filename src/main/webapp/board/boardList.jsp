@@ -31,9 +31,8 @@
 						<th width="100" style="font-size: 15px;">글번호</th>
 						<th width="100" style="font-size: 15px;">글종류</th>
 						<th width="500" style="font-size: 15px;">제목</th>
-						<th width="150" style="font-size: 15px;">작성자</th>
+						<th width="150" style="font-size: 15px;">닉네임</th>
 						<th width="150" style="font-size: 15px;">작성일</th>
-						<th width="100" style="font-size: 15px;">조회수</th>
 					</tr>
 				</table>
 			</div>
@@ -45,7 +44,7 @@
 						<input type="hidden" name="pg" value="1">
 						<select name="searchOption" id="searchOption" >
 							<option value="brd_title">제목
-							<option value="brd_id">아이디
+							<option value="brd_nickname">닉네임
 							<option value="brd_category">종류
 							</option>
 						</select>
