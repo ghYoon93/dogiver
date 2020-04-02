@@ -11,6 +11,7 @@ window.onload = function() {
   $(window).on("scroll", function() {
     scrollController();
   });
+  $('#offA').click().off('click');
 };
 
 // 영역의 위치를 설정한 위치에서 부드럽게 고정시킴 - 시작

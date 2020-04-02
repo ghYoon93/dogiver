@@ -36,11 +36,13 @@ $(document).ready(function() {
 				})).append($('<td/>', {
 				}).append($('<a/>',{
 					text: items.email,
-					class: items.email+''
+					id: items.email+''
 				}))).append($('<td/>', {
 					text: items.name
 				})).append($('<td/>', {
 					text: items.nickName
+				})).append($('<td/>', {
+					text: items.role
 				})).appendTo($('#memberList'))
     		});
     		
@@ -48,9 +50,23 @@ $(document).ready(function() {
 			$('#memberPagingDiv').html(data.memberPaging.pagingHTML);
 			
 			$('#memberList a').click(function(){
+				$('#email').val('');
+				$('#name').val('');
+				$('#nickName').val('');
+				$('#pwd').val('');
+				$('#phone').val('');
+				$('#zipcode').val('');
+				$('#addr').val('');
+				$('#addr_Detail').val('');
+				$('#regist_Date').val('');
+				$('#drop_Date').val('');
+				$("input:checkbox[name='drop_Yn']").attr("checked", false);
+				$("input:checkbox[name='role']").attr("checked", false);
+				$("input:checkbox[name='email_Yn']").attr("checked", false);
+				
 				$('#look').slideToggle('fast');
 				
-				var id=$(this).attr('class');
+				var id=$(this).attr('id');
 				
 				$.each(data.list, function(index, items){
 					if(items.email+''==id){
@@ -64,18 +80,27 @@ $(document).ready(function() {
 						$('#addr_Detail').val(items.addr_Detail);
 						$('#regist_Date').val(items.regist_Date);
 						$('#drop_Date').val(items.drop_Date);
-						if(items.drop_Yn == 'N')
+						if(items.drop_Yn == 'N'){
 							$("input:checkbox[id='dropN']").prop("checked", true)
-						else
+							$("input:checkbox[id='dropY']").prop("checked", false)
+						}else{
 							$("input:checkbox[id='dropY']").prop("checked", true)
-						if(items.role == 'member')
+							$("input:checkbox[id='dropN']").prop("checked", false)
+						}
+						if(items.role == 'member'){
 							$("input:checkbox[id='roleM']").prop("checked", true)
-						else
+							$("input:checkbox[id='roleA']").prop("checked", false)
+						}else{
 							$("input:checkbox[id='roleA']").prop("checked", true)
-						if(items.email_Yn == 'N')
+							$("input:checkbox[id='roleM']").prop("checked", false)
+						}
+						if(items.email_Yn == 'N'){
 							$("input:checkbox[id='emailN']").prop("checked", true)
-						else
+							$("input:checkbox[id='emailY']").prop("checked", false)
+						}else{
 							$("input:checkbox[id='emailY']").prop("checked", true)
+							$("input:checkbox[id='emailN']").prop("checked", false)
+						}
 					}
 				});
 				

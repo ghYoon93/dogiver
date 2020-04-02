@@ -58,6 +58,7 @@
 										<th>이메일</th>
 										<th>이름</th>
 										<th>닉네임</th>
+										<th>권한</th>
 									</tr>
 								</thead>
 								<tbody id="memberList">
