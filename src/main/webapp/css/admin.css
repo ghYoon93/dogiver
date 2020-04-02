@@ -69,6 +69,7 @@
 #admin_dogiverPagingDiv{
 	width: 1100px;
 	text-align: center;
+	font-size: 12pt;
 }
 
 #admin_dogiverView{
@@ -307,6 +308,12 @@
 .adminGoodsView input {
 	width: 900px;
 	height: 50px;
+}
+
+#adminGoodsBtn input{
+	width: 100px;
+	height: 40px;
+	font-size: 14pt;
 }
 
 

@@ -64,15 +64,15 @@ public class AdminController {
 	
 	@RequestMapping(value = "adminDogiverModify", method = RequestMethod.POST)
 	@ResponseBody
-	public String adminDogiverModify(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_image) {
+	public String adminDogiverModify(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_img) {
 		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\dogiverImage";
-		String fileName = dog_image.getOriginalFilename();
+		String fileName = dog_img.getOriginalFilename();
 		File file = new File(filePath, fileName);
 		System.out.println(map);
 		if(!fileName.equals("")) {
 			//파일복사
 			try {
-				FileCopyUtils.copy(dog_image.getInputStream(), new FileOutputStream(file));
+				FileCopyUtils.copy(dog_img.getInputStream(), new FileOutputStream(file));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -90,15 +90,15 @@ public class AdminController {
 	
 	@RequestMapping(value = "dogiverInsert", method = RequestMethod.POST)
 	@ResponseBody
-	public String dogiverInsert(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_image) {
+	public String dogiverInsert(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_img) {
 		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\dogiverImage";
-		String fileName = dog_image.getOriginalFilename();
+		String fileName = dog_img.getOriginalFilename();
 		File file = new File(filePath, fileName);
 		
 		
 		//파일복사
 		try {
-			FileCopyUtils.copy(dog_image.getInputStream(), new FileOutputStream(file));
+			FileCopyUtils.copy(dog_img.getInputStream(), new FileOutputStream(file));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

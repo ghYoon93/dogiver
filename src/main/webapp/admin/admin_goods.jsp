@@ -81,22 +81,22 @@ pageEncoding="UTF-8"%>
         				<p>가격</p><input type="text" id="goods_price" name="goods_price">
         			</div>
         			<div class="adminGoodsViewDiv">
-        				<p>날짜</p><input type="text" id="goods_date" name="goods_date" readonly="readonly">
+        				<p>날짜</p><input type="text" id="goods_date" readonly="readonly">
         			</div>
         			<div class="adminGoodsViewDiv">
         				<p>수량</p><input type="text" id="goods_amt" name="goods_amt">
         			</div>
         			<div class="adminGoodsViewimg">
         				<p>썸네일</p>
-        				<input type="file" id="goods_thumbnail" name="goods_thumbnail">
+        				<input type="file" id="goods_thumbnail" name="goods_img">
         			</div>
         			<div class="adminGoodsViewimg">
         				<p>상세정보</p>
-        				<input type="file" id="goods_detail" name="goods_detail">
+        				<input type="file" id="goods_detail" name="goods_img2">
         			</div>
         		</form>
         		</div>
-        			<div>
+        			<div id="adminGoodsBtn">
         			<input type="button" value="수정하기" id="goodsModify">
         			<input type="button" value="비우기" id="re">
         			<input type="button" value="등록하기" id="goodsInsert">

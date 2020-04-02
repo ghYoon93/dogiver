@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,23 +27,43 @@ public class GoodsAdminController {
 	private GoodsService goodsService;
 	
 	@RequestMapping(value = "goodsInsert", method = RequestMethod.POST)
+	@ResponseBody
 	public String goodsInsert(@ModelAttribute GoodsDTO goodsDTO, 
-							  @RequestParam MultipartFile goods_thumbnail,
-							  @RequestParam MultipartFile goods_detail) {
-		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods";
-		String fileName = goods_thumbnail.getOriginalFilename();
-		String fileName2 = goods_detail.getOriginalFilename();
-		File file = new File(filePath, fileName);
-		File file2 = new File(filePath, fileName2);
-		try {
-			FileCopyUtils.copy(goods_thumbnail.getInputStream(), new FileOutputStream(file));
-			FileCopyUtils.copy(goods_detail.getInputStream(), new FileOutputStream(file2));
-		} catch (IOException e) {
-			e.printStackTrace();
+							  @RequestParam MultipartFile goods_img,
+							  @RequestParam MultipartFile goods_img2) {
+		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
+		
+		
+		
+		if (goods_img != null) {
+			String fileName = goods_img.getOriginalFilename();
+			File file = new File(filePath);
+			if(!file.exists()) {
+				file.mkdir();
+			}
+			try {
+				File f = new File(filePath, fileName);
+				FileCopyUtils.copy(goods_img.getInputStream(), new FileOutputStream(f));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			goodsDTO.setGoods_thumbnail(fileName);
+		}else {
+			goodsDTO.setGoods_thumbnail("");
 		}
-		goodsDTO.setGoods_thumbnail(fileName);
-		goodsDTO.setGoods_detail(fileName2);
-		System.out.println(goodsDTO);
+		
+		if (goods_img2 != null) {
+			String fileName2 = goods_img2.getOriginalFilename();
+			File file2 = new File(filePath, fileName2);
+			try {
+				FileCopyUtils.copy(goods_img2.getInputStream(), new FileOutputStream(file2));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			goodsDTO.setGoods_detail(fileName2);
+		}else {
+			goodsDTO.setGoods_detail("0");
+		}
 		
 		int su = goodsService.goodsInsert(goodsDTO);
 		if(su==1) {
@@ -54,7 +75,41 @@ public class GoodsAdminController {
 	}
 	
 	@RequestMapping(value = "goodsModify", method = RequestMethod.POST)
-	public ModelAndView goodsModify(@ModelAttribute GoodsDTO goodsDTO) {
+	public ModelAndView goodsModify(@ModelAttribute GoodsDTO goodsDTO,
+									@RequestParam MultipartFile goods_img,
+									@RequestParam MultipartFile goods_img2) {
+		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
+		
+		if (goods_img != null) {
+			String fileName = goods_img.getOriginalFilename();
+			File file = new File(filePath);
+			if(!file.exists()) {
+				file.mkdir();
+			}
+			try {
+				File f = new File(filePath, fileName);
+				FileCopyUtils.copy(goods_img.getInputStream(), new FileOutputStream(f));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			goodsDTO.setGoods_thumbnail(fileName);
+		}else {
+			goodsDTO.setGoods_thumbnail("");
+		}
+		
+		if (goods_img2 != null) {
+			String fileName2 = goods_img2.getOriginalFilename();
+			File file2 = new File(filePath, fileName2);
+			try {
+				FileCopyUtils.copy(goods_img2.getInputStream(), new FileOutputStream(file2));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			goodsDTO.setGoods_detail(fileName2);
+		}else {
+			goodsDTO.setGoods_detail("0");
+		}
+		
 		goodsDTO = goodsService.goodsModify(goodsDTO);
 		
 		ModelAndView mav = new ModelAndView();
