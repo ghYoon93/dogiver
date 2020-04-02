@@ -15,7 +15,9 @@ $('#boardFormBtn').click(function() {
 			data : {'brd_seq' : $('#brd_seq').val(),'re_content' : $('#re_content').val()},
 			success : function(data) {
 				alert('등록되었습니다.');
+				$('#re_content').val('');
 				$('.replyContent').remove();
+				
 				$.ajax({
 					type : 'post',
 					url : '/dogiver/board/getBoardView',
@@ -56,7 +58,7 @@ $('#boardFormBtn').click(function() {
 									
 							
 						});
-						if (data.memEmail == data.boardDTO.brd_email){
+						if ((data.memEmail == data.boardDTO.brd_email) || (data.role=='admin')){
 							$('#board_member_addBtn').show();}
 							else{
 							$('#board_member_addBtn').hide();
@@ -79,6 +81,7 @@ $(document).on('click', 'a', function(){
 		success : function(data) {
 			alert('삭제되었습니다.');
 			$('.replyContent').remove();
+			$('#re_content').val('');
 			$.ajax({
 				type : 'post',
 				url : '/dogiver/board/getBoardView',
@@ -123,7 +126,7 @@ $(document).on('click', 'a', function(){
 					});
 					
 					
-					if (data.memEmail == data.boardDTO.brd_email){
+					if ((data.memEmail == data.boardDTO.brd_email) || (data.role=='admin')){
 						$('#board_member_addBtn').show();}
 						else{
 						$('#board_member_addBtn').hide();
