@@ -40,8 +40,8 @@
 					<li class="on"><a href="../admin/admin">회원관리</a></li>
 					<li><a href="../admin/admin_blood">헌혈견 관리</a></li>
 					<li><a href="">상품 관리</a></li>
-					<li><a href="">게시글 관리</a></li>
-					<li><a href="">문의 관리</a></li>
+					<li><a href="../admin/admin_board">게시글 관리</a></li>
+					<li><a href="../admin/admin_contact">문의 관리</a></li>
 				</ol>
 			</div>
 			<div class="article">
