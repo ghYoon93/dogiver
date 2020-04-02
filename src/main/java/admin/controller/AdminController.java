@@ -43,6 +43,11 @@ public class AdminController {
 		return "/admin/admin_goods";
 	}
 	
+	@RequestMapping(value = "admin_contact", method = RequestMethod.GET)
+	public String admin_contact() {
+		return "/admin/admin_contact";
+	}
+	
 	
 	@RequestMapping(value = "getDogiver", method = RequestMethod.POST)
 	@ResponseBody

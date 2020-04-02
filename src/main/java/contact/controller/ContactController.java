@@ -27,9 +27,9 @@ public class ContactController {
 		return "/contact/contactForm";
 	}
 	
-	@RequestMapping(value="my_contact", method=RequestMethod.GET)
-	public String my_contact() {
-		return "/contact/my_contact";
+	@RequestMapping(value="mycontact", method=RequestMethod.GET)
+	public String mycontact() {
+		return "/my/mycontact";
 	}
 	
 	@RequestMapping(value="contactWrite", method=RequestMethod.POST)

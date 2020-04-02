@@ -56,6 +56,7 @@ public class BoardController {
 		mav.addObject("pg", pg);
 		mav.addObject("list", list);
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("role", session.getAttribute("role"));
 		mav.addObject("boardPaging", boardPaging);
 		mav.setViewName("jsonView");
 		return mav;
@@ -98,6 +99,7 @@ public class BoardController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
+		mav.addObject("role", session.getAttribute("role"));
 		mav.addObject("boardDTO", boardDTO);
 		mav.addObject("list", list);//리스트에는 댓글의 내용들이 들어있다.
 		mav.setViewName("jsonView");
@@ -110,6 +112,7 @@ public class BoardController {
 		List<BoardDTO> list = boardService.getReBoard_before(brd_seq);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("role", session.getAttribute("role"));
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
 		mav.addObject("boardDTO", boardDTO);
 		mav.addObject("list", list);
@@ -124,6 +127,7 @@ public class BoardController {
 		List<BoardDTO> list = boardService.getReBoard_after(brd_seq);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
+		mav.addObject("role", session.getAttribute("role"));
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
 		mav.addObject("boardDTO", boardDTO);
 		mav.addObject("list", list);
@@ -151,6 +155,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="boardDelete", method=RequestMethod.POST)
+	@ResponseBody
 	public void boardDelete(int brd_seq) {
 		boardService.delete(brd_seq);
 	}
