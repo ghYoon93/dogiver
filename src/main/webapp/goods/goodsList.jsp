@@ -77,11 +77,8 @@
             </a>
           </div>
         </div> -->
-
-
-
-
-
+			</div>
+		</div>
 				<!-- 장바구니 모달 -->
 				<div id="option-view" class="layer_option" style="display: none">
 					<div class="layer_option_cont">
@@ -117,8 +114,6 @@
 					</div>
 					<!-- //장바구니 모달 -->
 				</div>
-			</div>
-		</div>
 	</div>
 	<div id="footerDiv"></div>
 </body>
