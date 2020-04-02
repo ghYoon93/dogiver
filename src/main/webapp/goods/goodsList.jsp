@@ -27,6 +27,7 @@
 			<!-- 카테고리 -->
 			<div class="goods_category">
 				<ul>
+					<li value=""><a href="goodsList">전체</a></li>
 					<li value="101"><a href="#">장난감</a></li>
 					<li value="201"><a href="#">목줄/하네스</a></li>
 					<li value="301"><a href="#">패션/의류</a></li>
@@ -34,7 +35,7 @@
 			</div>
 			<div class="goods_top">
 				<ul>
-					<li class="list_qty"><span>100</span>개의 상품</li>
+					<li class="list_qty"><!-- <span>100</span>개의 상품 --></li>
 					<li class="right_box">
 						<div class="sort_box">
 							<select class="goods_sort" id="goods_sort">
