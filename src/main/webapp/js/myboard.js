@@ -7,7 +7,7 @@ $(document).ready(function() {
 			$.each(data.list, function(index, items){
 				$('<tr/>').append($('<td/>',{
 				}).append($('<a/>', {
-					href: '#',
+					href: '#myboardView',
 					id: items.brd_seq+"",
 					text: items.brd_title
 				}))).append($('<td/>',{
