@@ -98,7 +98,7 @@ pageEncoding="UTF-8"%>
 						</div>
 						<div id="donation_dateDiv" class="admin_dogiverViewDiv">
 							<label>최근 헌혈 날짜</label><br> <input type="text"
-								id="donation_date" name="donation_date">
+								id="donation_date" name="donation_date" placeholder="ex)2020.04.02">
 						</div>
 						<div id="nameDiv" class="admin_dogiverViewDiv">
 							<label>회원이름</label><br> <input type="text" id="name"
@@ -113,7 +113,7 @@ pageEncoding="UTF-8"%>
 								name="email">
 						</div>
 						<div id="dog_imageDiv">
-							<label>사진 파일(최대 5M)</label><br> <input type="file" name="dog_image"
+							<label>사진 파일(최대 5M)</label><br> <input type="file" name="dog_img"
 								id="dog_image">
 						</div>
 						<div id="descriptionDiv">

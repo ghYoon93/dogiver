@@ -4,6 +4,8 @@ import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 @Data
@@ -17,7 +19,7 @@ public class DogiverDTO {
 	private String description;
 	private int blood_cc;
 	private String dog_bloodtype;
-	private Date donation_date;
+	private String donation_date;
 	private String dog_image;
 	private String dog_breed;
 	private String email;
