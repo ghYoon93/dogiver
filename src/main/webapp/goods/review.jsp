@@ -22,10 +22,12 @@ pageEncoding="UTF-8"%>
         <th width="10%" style="text-align:center;">닉네임</th>
         <th width="25%" style="text-align:center;">날짜</th>
     </tr>
+        <tbody>
+        
+        </tbody>
 </table>
 
 </body>
 <script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../js/goodsDetail.js"></script>
 <script src="../js/goods_review.js"></script>
 </html>
