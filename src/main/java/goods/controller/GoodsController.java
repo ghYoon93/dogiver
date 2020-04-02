@@ -76,8 +76,9 @@ public class GoodsController {
 	
 	@RequestMapping(value="goods_lineUp", method=RequestMethod.POST)
 	@ResponseBody
-	public ModelAndView goods_lineUp(@RequestParam String lineUp){
-		List<GoodsDTO> list = goodsService.goods_lineUp(lineUp);
+	public ModelAndView goods_lineUp(@RequestParam Map<String, Integer> map){
+		System.out.println(map);
+		List<GoodsDTO> list = goodsService.goods_lineUp(map);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);

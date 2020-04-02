@@ -17,18 +17,20 @@
 		where category.category_code= #{category}
 	</select>
 	
-	<select id="goods_lineUp" parameterType="String" resultType="goods.bean.GoodsDTO">
-		select * from goods order by
-		<if test="lineUp == 'newly'">
+	<select id="goods_lineUp" parameterType="java.util.Map" resultType="goods.bean.GoodsDTO">
+		select * from category join goods
+		on category.category_code = goods.category_code
+		where category.category_code= #{category} order by
+		<if test="lineUp == 10">
 			goods_date
 		</if>
-		<if test="lineUp == 'popular'">
+		<if test="lineUp == 20">
 			goods_cum_sales desc
 		</if>
-		<if test="lineUp == 'hight_price'">
+		<if test="lineUp == 30">
 			goods_price desc
 		</if>
-		<if test="lineUp == 'low_price'">
+		<if test="lineUp == 40">
 			goods_price
 		</if>
 	</select>

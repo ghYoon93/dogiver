@@ -15,7 +15,7 @@ public interface GoodsService {
 
 	public List<GoodsDTO> getCategory(int category);
 
-	public List<GoodsDTO> goods_lineUp(String lineUp);
+	public List<GoodsDTO> goods_lineUp(Map<String, Integer> map);
 
 	public int qnaWrite(Map<String, String> map);
 
