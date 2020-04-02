@@ -38,11 +38,11 @@ $(document).ready(function(){
 		url: '/dogiver/goods/getGoodsReviewList',
 		data: 'goods_id='+$('#goods_id').val(),
 		dataType: 'json',
-		success: function(data){
+		success: function(data){ 	
+			//alert(JSON.stringify(data));
 			
-			var tag="";
+			var tag = "";
 			$.each(data.list, function(index, items){
-				//alert(JSON.stringify(data));
 				tag += '<tr>'
 			        	+ '<td class="reviewView" width="65%" style="cursor: pointer;" onclick="reviewViewWin('+ items.bo_seq +')">'+ items.text_content+'</td>'
 			        	+ '<td width="10%" style="text-align:center;">'+items.nickname+'</td>'
@@ -50,7 +50,7 @@ $(document).ready(function(){
 			         + '</tr>';
 			});//each
 			
-			$('.reviewList tbody').append(tag);
+			$('.reviewList').append(tag);
 		}
 	});
 });

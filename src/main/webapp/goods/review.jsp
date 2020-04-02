@@ -21,8 +21,10 @@ pageEncoding="UTF-8"%>
         <th width="65%">리뷰 제목</th>
         <th width="10%" style="text-align:center;">닉네임</th>
         <th width="25%" style="text-align:center;">날짜</th>
-        <tbody></tbody>
     </tr>
+        <tbody>
+        
+        </tbody>
 </table>
 
 </body>
