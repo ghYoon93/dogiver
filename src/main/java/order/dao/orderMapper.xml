@@ -83,6 +83,8 @@
     
     <select id="getStatus" parameterType="String" resultType="orderStatus">
         SELECT order_status, count(order_id) AS count 
-          FROM goods_order GROUP BY order_status
+          FROM goods_order  
+         WHERE order_email = #{memEmail}
+         GROUP BY order_status
     </select>
 </mapper>

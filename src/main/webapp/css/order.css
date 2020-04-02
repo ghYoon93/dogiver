@@ -661,3 +661,71 @@ body{font-family: "Noto Sans KR", sans-serif;}
 /* //장바구니 접근 제한 */
 
 
+/* 체크박스 */
+input[type="checkbox"] {
+  position: absolute;
+  left: -3000%;
+}
+input[type="checkbox"] + label {
+  height: 36px;
+  line-height: 36px;
+  font-size: 15px;
+}
+input[type="checkbox"] + label:before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 1px solid #666;
+  background-color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px 0 0;
+}
+input[type="checkbox"]:checked + label:before {
+  background: url(../image/checkbox.png) no-repeat #fff center;
+  border-color: #333;
+}
+/* //체크박스 */
+
+/* 주문 버튼 */
+.btn_order_box .btn_order_choice_buy {
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #f8585b;
+    color: #f8585b;
+    border-radius: 5px;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 0px;
+    cursor: pointer;
+}
+.btn_order_box .btn_order_whole_buy {
+    width: 200px;
+    background-color: #f8585b;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px;
+    cursor: pointer;
+    margin: 0px;
+}
+/* //주문 버튼 */
+ .order_table_type .important {
+    color: #ca3333;
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+ .order_table_type .btn_phone_setting {
+    margin: 10px 0 0 0;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #989898;
+}

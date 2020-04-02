@@ -31,7 +31,7 @@
       </div>
       <!-- //order_process -->
       <div class="cart_cont">
-        <form id="form-cart" name="formCart" method="post">
+        <form id="form-cart" name="formCart" method="get">
           <div class="cart_cont_list">
             <div class="order_table_type">
                 <table id=cart-Table>
@@ -51,7 +51,8 @@
                   </colgroup>
                   <thead>
                     <tr>
-                      <th><input type="checkbox" id="check-all"></th>
+                      <th>
+                        <input type="checkbox" id="check-all" /> <label for="check-all"></label></th>
                       <th>상품/옵션 정보</th>
                       <th>수량</th>
                       <th>상품금액</th>

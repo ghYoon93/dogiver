@@ -38,6 +38,8 @@
       <c:forEach var="checkGoods" items="${checkGoods}">
         <input type="hidden" name="checkGoods" value="${checkGoods }">
       </c:forEach>
+        <input type="hidden" id="goods_id" value="${goods_id }">
+        <input type="hidden" id="quantity" value="${quantity }">
       <div class="order_cont">
         <div class="cart_cont_list">
           <div class="order_cart_tit">
@@ -75,10 +77,10 @@
                 <div class="price_sum_list">
                   <dl>
                     <dt>
-                      총 <strong id="totalGoodsCnt"></strong> 개의 상품금액
+                      총 <strong id="totalGoodsCnt">0</strong> 개의 상품금액
                     </dt>
                     <dd>
-                      <strong id="totalGoodsPrice">31,900</strong>원
+                      <strong id="totalGoodsPrice">0</strong>원
                     </dd>
                   </dl>
                   <dl>
@@ -90,7 +92,7 @@
                   <dl>
                     <dt>배송비</dt>
                     <dd>
-                      <strong id="totalDeliveryCharge">2,500</strong>원
+                      <strong id="totalDeliveryCharge">0</strong>원
                     </dd>
                   </dl>
                   <dl>
@@ -102,7 +104,7 @@
                   <dl class="price_total">
                     <dt>합계</dt>
                     <dd>
-                      <strong id="totalSettlePrice">34,400</strong>원
+                      <strong id="totalSettlePrice">0</strong>원
                     </dd>
                   </dl>
                 </div>
@@ -112,9 +114,9 @@
             </div>
             <!-- //price_sum -->
             <div class="order_view_info">
-              <div class="order_info">
+              <%-- <div class="order_info" style="display: none">
                 <div class="order_zone_tit">
-                  <h4>주문자 정보</h4>
+                  <h4>배송지 정보</h4>
                 </div>
                 <div class="order_table_type">
                   <table class="table_left">
@@ -129,22 +131,9 @@
                           value="${memberDTO.name }" maxlength="20"></td>
                       </tr>
                       <tr>
-                        <th scope="row">받으실 곳<span class="important">(필수)</span></th>
+                        <th scope="row">주소</th>
                         <td class="member_address">
-                          <div class="address_postcode">
-                              <input type="text" name="orderZipcode"value="${memberDTO.zipcode }"
-                              readonly="readonly">
-                            <button type="button"
-                              class="btn_post_search">우편번호 검색</button>
-                          </div>
-                          <div class="address_input">
-                            <input type="text" name="orderAddress" value="${memberDTO.addr }"
-                              readonly="readonly"> <input
-                              type="text" name="orderAddressSub" value="${memberDTO.addr_Detail }">
-                            <button type="button"
-                              class="btn_post_setting">기본 배송지로
-                              설정</button>
-                          </div>
+                            [ ${memberDTO.zipcode } ] ${memberDTO.addr } ${memberDTO.addr_Detail }
                         </td>
                       </tr>
                       <tr>
@@ -154,8 +143,61 @@
                           maxlength="20"></td>
                       </tr>
                       <tr>
+                        <th scope="row">이메일</th>
+                        <td class="member_email">${memberDTO.email }
+                          <input type="hidden" name="partner_user_id" value="${memberDTO.email }">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div> --%>
+              <div class="delivery_info">
+                <div class="order_zone_tit">
+                  <h4>배송지 정보</h4>
+                </div>
+                <div class="order_table_type">
+                  <table class="table_left">
+                    <colgroup>
+                      <col style="width: 15%;">
+                      <col style="width: 85%;">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">주문하시는 분<span class="important">(필수)</span></th>
+                        <td><input type="text" id="orderName" name="orderName"
+                          value="${memberDTO.name }" maxlength="20"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">받으실 곳<span class="important">(필수)</span></th>
+                        <td class="member_address">
+                          <div class="address_postcode">
+                              <input type="text" id="zipcode" name="orderZipcode"value="${memberDTO.zipcode }"
+                              readonly="readonly">
+                            <button type="button"
+                              class="btn_post_search" onclick="sample2_execDaumPostcode()">우편번호 검색</button>
+                          </div>
+                          <div class="address_input">
+                            <input type="text" id="addr" name="orderAddress" value="${memberDTO.addr }"
+                              readonly="readonly"> <input
+                              type="text" id="addr_Detail" name="orderAddressSub" value="${memberDTO.addr_Detail }">
+                            <button type="button"
+                              class="btn_post_setting">회원정보에 반영</button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">전화번호<span class="important">(필수)</span></th>
+                        <td><input type="text" id="mobileNum"
+                          name="orderCellPhone" value="${memberDTO.phone }"
+                          maxlength="20">
+                          <button type="button"
+                              class="btn_phone_setting">회원정보에 반영</button>
+                          </td>
+                      </tr>
+                      <tr>
                         <th scope="row">이메일<span class="important">(필수)</span></th>
-                        <td class="member_email"><input type="text"
+                        <td class="member_email"><input id="member_email" type="text"
                           name="email" value="${memberDTO.email }" maxlength="20">
                           <input type="hidden" name="partner_user_id" value="${memberDTO.email }">
                           <select
@@ -234,12 +276,12 @@
                                 type="radio" name="payment"
                                 id="payment_kakao"> <label
                                 for="payment_kakao">카카오 페이</label>
-                                <input type="hidden" name="order_pay">
+                                <input type="hidden" id="order_pay" name="order_pay">
                             </div>
                             <div class="pay_noBook_box">
                               <ul>
                                 <li><strong>입금자명</strong> <input
-                                  type="text" class="form-control"
+                                  type="text" id="bankSender" class="form-control"
                                   name="bankSender"></li>
                                 <li><strong>입금은행</strong> <select
                                   id="inputState" class="form-control">
@@ -272,7 +314,7 @@
                       </div>
                     </div>
                     <div class="btn_center_box">
-                      <button class="btn_order_buy order-buy">
+                      <button type="button" class="btn_order_buy order-buy">
                         <em>결제하기</em>
                       </button>
                     </div>
@@ -292,9 +334,17 @@
     </div>
     <!-- //order_wrap -->
   </div>
+  <div id="layer"
+				style="display: none; position: absolute; overflow: hidden; z-index: 1; -webkit-overflow-scrolling: touch; border-radius:5px;">
+				<img src="http://t1.daumcdn.net/postcode/resource/images/close.png"
+					id="btnCloseLayer"
+					style="cursor: pointer; position: absolute; right: -3px; top: -3px; z-index: 1"
+					onclick="closeDaumPostcode()" alt="닫기 버튼">
+  </div>
   <!-- //wrap -->
   <div id="footerDiv"></div>
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script type="text/javascript" src="../js/main.js"></script>
   <script type="text/javascript" src="../js/order.js"></script>
 </body>
