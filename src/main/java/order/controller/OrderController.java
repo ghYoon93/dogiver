@@ -195,7 +195,7 @@ public class OrderController {
     public String myOrderList(HttpSession session, Model model) {
     	String memEmail = (String)session.getAttribute("memEmail");
     	if(memEmail == null ) {
-    		return "/login/login"; 
+    		return "redirect:/login/login"; 
     	}
     	List<OrderStatusDTO> list = orderService.getStatus(memEmail);
     	int status_wait = 0;
