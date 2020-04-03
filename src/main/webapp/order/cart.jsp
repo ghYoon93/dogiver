@@ -5,6 +5,9 @@
 
 <head>
   <meta charset="utf-8">  
+  <link rel="favicon" href="../image/favicon.ico" />
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="../css/reset.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/order.css">
@@ -110,7 +113,7 @@
           <span class="btn_left_box">
             <button type="button" class="btn_order_choice_del" onclick="gd_cart_process('cartDelete');">선택 상품
               삭제</button>
-            <button type="button" class="btn_order_shop_go_link" onclick="location.href='#'">쇼핑 계속하기</button>
+            <button type="button" class="btn_order_shop_go_link" onclick="location.href='../goods/goodsList'">쇼핑 계속하기</button>
           </span> <span class="btn_right_box">
             <button type="button" class="btn_order_choice_buy" onclick="gd_cart_process('orderSelect');">선택 상품
               주문</button>

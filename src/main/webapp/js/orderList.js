@@ -12,23 +12,29 @@ $(document).ready(function(){
     	  new Date(Date.parse(orderDate.replace(/-/g, '/')));
     	  let order_day_num = '';
     	  let orderId = items.order_id;
+    	  let order_status = items.order_status;
     	  console.log('orderId: '+orderId);
+    	  console.log(order_status)
     	  let orderAmount = 0;
     	  if(orderId != orderIdChk){
     		  orderIdChk = orderId;
     		  orderAmount = items.order_amount;
     		  console.log('orderAmount: '+orderAmount);
+    		  let orderCancelBtn =  '';
+    		  if(order_status != '주문취소') {
+    			  orderCancelBtn=  '<div class="btn_claim">'
+                                   + '<span class="btn_gray_list">'
+                                     + '<a href="#" class="btn_gray_small js_btn_order_cancel" data-order_id='+items.order_id+'>'
+                                       + '<span>주문취소</span>'
+                                     + '</a>'
+                                   + '</span>'
+                                 + '</div>';
+    		  }
     		  order_day_num='<td rowspan="'+orderAmount+'" class="order_day_num">'
                             + '<em>'+orderDate+'</em><br>'
                             + '<a href="'+'../my/orderView?order_id='+items.order_id+'" target="_blank"'
                                + 'class="order_num_link"><span>'+items.order_id+'</span></a>'
-                            + '<div class="btn_claim">'
-                              + '<span class="btn_gray_list">'
-                                + '<a href="#" class="btn_gray_small js_btn_order_cancel" data-order_id='+items.order_id+'>'
-                                  + '<span>주문취소</span>'
-                                + '</a>'
-                              + '</span>'
-                            + '</div>'
+                               + orderCancelBtn
                           + '</td>';  
     	  }
           tag += '<tr class="row_line">'

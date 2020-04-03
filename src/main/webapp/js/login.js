@@ -114,7 +114,9 @@ $(document).ready(function() {
 				success : function(data) {
 					if (data == "true") {
 						let target = document.referrer;
-						if(target == "http://localhost:8080/dogiver/logout/logout") target="http://localhost:8080/dogiver/main/index";
+						let loginUrl = "http://localhost:8080/dogiver/login/login";
+						let logoutUrl = "http://localhost:8080/dogiver/logout/logout";
+						if(target == loginUrl || target == logoutUrl) target="http://localhost:8080/dogiver/main/index";
 				        location.href = target;
 					} else {
 						$('.loginMessage').text('로그인 실패~ㅋ').show("slow").css("color","red");
