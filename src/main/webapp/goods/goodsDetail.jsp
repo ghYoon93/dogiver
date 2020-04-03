@@ -66,7 +66,7 @@
 		<nav class="navigationBar"> 
 			<ul> 
 				<li><a href="javascript:void(0)" onclick="getContentTab(1);">상세내용</a></li> 
-				<li><a href="javascript:void(0)" onclick="getContentTab(2);">상품문의</a></li> 
+			<!-- 	<li><a href="javascript:void(0)" onclick="getContentTab(2);">상품문의</a></li>  -->
 				<li><a href="javascript:void(0)" onclick="getContentTab(3);">상품후기</a></li> 
 				<li><a href="javascript:void(0)" onclick="getContentTab(4);">교환/환불/배송</a></li> 
 			</ul> 
