@@ -241,4 +241,9 @@ public class OrderController {
     	System.out.println("mavAdd");
     	return mav;
     }
+    
+    @RequestMapping(value="/order/cancelOrder", method=RequestMethod.POST)
+    public void cancelOrder(@RequestParam String order_id) {
+    	orderService.cancelOrder(order_id);
+    }
 }

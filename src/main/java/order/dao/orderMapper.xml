@@ -89,4 +89,10 @@
          WHERE order_email = #{memEmail}
          GROUP BY order_status
     </select>
+    <update id="cancelOrder" parameterType="String">
+        UPDATE goods_order
+               SET order_status='주문취소'
+         WHERE order_id = #{order_id}
+        
+    </update>
 </mapper>

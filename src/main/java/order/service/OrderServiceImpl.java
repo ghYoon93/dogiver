@@ -157,5 +157,9 @@ public class OrderServiceImpl implements OrderService {
 	public List<OrderStatusDTO> getStatus(String memEmail) {
 		return orderDAO.getStatus(memEmail);
 	}
+	@Override
+	public void cancelOrder(String order_id) {
+		orderDAO.cancelOrder(order_id);
+	}
 
 }

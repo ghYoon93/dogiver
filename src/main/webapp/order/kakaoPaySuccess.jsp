@@ -4,6 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="favicon" href="../image/favicon.ico" />
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 <title>Insert title here</title>
 </head>
 <body>
