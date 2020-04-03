@@ -768,3 +768,6 @@ input[type="checkbox"]:checked + label:before {
 .option_tit_box .namebox{
 	margin-left: 21px;
 }
+.pay_noBook_box{
+	display: none;
+}
