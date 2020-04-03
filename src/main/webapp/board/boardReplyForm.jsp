@@ -5,16 +5,12 @@ textarea:focus {
 	outline: none;
 }
 #contentDiv{
-width: 1100px; 
+width: 100%; 
 box-sizing: border-box;
  padding: 10px;"
 } 
 </style>
-<<<<<<< HEAD
-=======
 <div style="font-size:13px; font-weight:500; text-indent:20px;">댓글달기</div>
-
->>>>>>> css
 <form name="boardReplyForm" >
 	<input type="hidden" name="brd_seq" value="${brd_seq}"> 
 	<input type="hidden" name="pg" value="${pg }">
