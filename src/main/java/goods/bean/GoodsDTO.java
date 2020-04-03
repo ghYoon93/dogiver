@@ -22,5 +22,6 @@ public class GoodsDTO {
 	private int goods_amt;
 	private String sales_yn;
 	private String goods_detail;
+	private int goods_cum_sales;
 
 }

@@ -6,25 +6,26 @@ $(document).ready(function() {
 		success: function(data){
 			$.each(data.list, function(index, items){
 				$('<tr/>').append($('<td>',{
+					text: items.category_code 
+				})).append($('<td>',{
 					text: items.goods_id
 				})).append($('<td>',{
-					text: items.category_code
-				})).append($('<td>',{
 					
-				}).append($('<a/>',{
-					text: items.goods_name,
-					class: 'goodsView',
-					id: items.goods_id+""
-				}))).append($('<td>',{
+					}).append($('<a/>',{
+						text: items.goods_name,
+						class: 'goodsView',
+						id: items.goods_id+""
+					}))
+				).append($('<td>',{
 					text: items.goods_price
-				})).append($('<td>',{
-					text: items.goods_date
-				})).append($('<td>',{
-					text: items.goods_thumbnail
 				})).append($('<td>',{
 					text: items.goods_amt
 				})).append($('<td>',{
-					text: items.goods_detail
+					text: items.goods_cum_sales
+				})).append($('<td>',{
+					text: items.goods_date
+				})).append($('<td>',{
+					text: items.sales_yn
 				})).appendTo('#adminGoodsListTable')
 			});//each		
 		}//success
@@ -44,7 +45,6 @@ $(document).ready(function() {
 				$('#category_code').val(data.goodsDTO.category_code);
 				$('#goods_name').val(data.goodsDTO.goods_name);
 				$('#goods_price').val(data.goodsDTO.goods_price);
-				$('#goods_date').val(data.goodsDTO.goods_date);
 				$('#goods_amt').val(data.goodsDTO.goods_amt);
 				$('#goods_thumbnail').html(data.goodsDTO.goods_thumbnail);
 				$('#goods_detail').html(data.goodsDTO.goods_detail);
@@ -69,7 +69,7 @@ $(document).ready(function() {
 				$('#category_code').val(data.goodsDTO.category_code);
 				$('#goods_name').val(data.goodsDTO.goods_name);
 				$('#goods_price').val(data.goodsDTO.goods_price);
-				$('#goods_date').val(data.goodsDTO.goods_date);
+				//$('#goods_date').val(data.goodsDTO.goods_date);
 				$('#goods_amt').val(data.goodsDTO.goods_amt);
 				$('#goods_thumbnail').html(data.goodsDTO.goods_thumbnail);
 				$('#goods_detail').html(data.goodsDTO.goods_detail);
