@@ -31,6 +31,8 @@
 	</div>
 	<form id="boardWriteForm" name="boardwriteForm" method="post"
 		action="boardWrite">
+		<input type="hidden" id="role" value="${role }">
+		
 		<div class="wrap">
 			<div class="container"
 				style="width: 1100px; margin: 0 auto; margin-top: 150px;">
@@ -38,11 +40,11 @@
 					<div id="board_category_select">
 						<select id="board_select" name="brd_category"
 							style="font-size: 13px; height: 42px; text-align-last: center;">
-							<option label="글 종류" style="text-align: center;"></option>
-							<option label="가입" value="가입"></option>
-							<option label="고민" value="고민"></option>
-							<option label="자랑" value="자랑"></option>
-							<option label="헌혈" value="헌혈"></option>
+							<option label="글종류" style="text-align: center;"></option>
+							<option value="가입">가입</option>
+							<option value="고민">고민</option>
+							<option value="자랑">자랑</option>
+							<option value="헌혈">헌혈</option>
 						</select>
 					</div>
 				</div>
@@ -72,8 +74,12 @@
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
+	if($('#role').val()=='admin'){
+		$('#board_select').append("<option value='공지'>공지</option>")
+	}
+	//클릭이벤트 발생
 	$('#boardWrite_Btn').click(function() {
-
 		if ($('#board_select').val() == '') {
 			alert("plase selecet the Category");
 			$('#board_select').focus();
@@ -92,6 +98,8 @@
 			location.href = 'boardList';
 		}
 	});
+	
+});
 </script>
 
 <script type="text/javascript">

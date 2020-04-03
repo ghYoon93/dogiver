@@ -62,7 +62,7 @@ public class OrderController {
     public String cart(HttpSession session) {
     	String email = (String) session.getAttribute("memEmail");
     	String target = "/order/cart";
-    	if(email== null) target = "/login/login";
+    	if(email== null) target = "redirect:/login/login";
     	return target; //이동할 view의 이름 (.jsp)
     	
     }
