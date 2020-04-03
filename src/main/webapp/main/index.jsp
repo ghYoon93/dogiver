@@ -66,7 +66,7 @@
 <script>
 	$(".slider").slick({
 		autoplay : true,
-		autoplaySpeed : 2000,
+		autoplaySpeed : 3000,
 		dots : true
 	});
 </script>
