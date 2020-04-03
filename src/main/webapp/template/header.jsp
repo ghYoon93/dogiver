@@ -90,8 +90,7 @@
 
 					<li><a id="offA"href="#" onclick="return false">CONTACT</a>
 						<ul>
-							<li><a href="#">문의하기</a></li>
-							<!-- <li><a href="#">무엇?</a></li> -->
+							<li><a href="../contact/contactForm">문의하기</a></li>
 						</ul></li>
 				</ul>
 			</nav>

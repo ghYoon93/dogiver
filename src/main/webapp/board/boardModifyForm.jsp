@@ -73,7 +73,7 @@
 $(document).ready(function(){
 	
 	$('.fr-placeholder').text('');
-	$('.fr-view').html($('#content').val());
+	$('.fr-wrapper').html($('#content').val());
 	
 	var option = $('#category').val(); //헌혈
 	alert(option);
