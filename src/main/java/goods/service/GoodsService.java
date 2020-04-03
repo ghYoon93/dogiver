@@ -43,5 +43,7 @@ public interface GoodsService {
 
 	public GoodsDTO goodsModify(GoodsDTO goodsDTO);
 
+	public int getGoodsId(int category_code);
+
 
 }

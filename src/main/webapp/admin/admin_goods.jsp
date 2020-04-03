@@ -62,42 +62,49 @@ pageEncoding="UTF-8"%>
         			</table>
         		</div>
         		<div id="adminGoodsView">
-        		<form name="goodsForm" id="goodsForm">
-        			
-        			<div class="adminGoodsViewDiv">
-        				<p>카테고리</p>
-						<select id="category_code" name="category_code">
-							<option value="101">장난감</option>
-							<option value="201">목줄/하네스</option>
-							<option value="301">패션/의류</option>
-						</select>
-        			</div>
-        			<div class="adminGoodsViewDiv">
-        				<p>상품번호</p><input type="text" id="goods_id" name="goods_id">
-        			</div>
-        			<div class="adminGoodsViewDiv">
-        				<p>상품명</p><input type="text" id="goods_name" name="goods_name">
-        			</div>
-        			<div class="adminGoodsViewDiv">
-        				<p>가격(원)</p><input type="text" id="goods_price" name="goods_price">
-        			</div>
-        			<div class="adminGoodsViewDiv">
-        				<p>수량</p><input type="text" id="goods_amt" name="goods_amt">
-        			</div>
-        			<div class="adminGoodsViewDiv">
-        				<p>판매여부</p>
-        				<input type="checkbox" id="sales_yn" name="sales_yn" value="Y">
-        				<label for="YN">판매여부</label>
-        			</div>
-        			<div class="adminGoodsViewimg">
-        				<p>썸네일</p>
-        				<input type="file" id="goods_thumbnail" name="goods_img">
-        			</div>
-        			<div class="adminGoodsViewimg">
-        				<p>상세정보 이미지</p>
-        				<input type="file" id="goods_detail" name="goods_img2">
-        			</div>
-        		</form>
+	        		<form name="goodsForm" id="goodsForm">
+	        			<!-- <input type="hidden" name="goods_id" id="goods_id"> -->
+	        			<div class="adminGoodsViewDiv">
+	        				<p>카테고리</p>
+							<select id="category_code" name="category_code">
+								<option value="101">장난감</option>
+								<option value="201">목줄/하네스</option>
+								<option value="301">패션/의류</option>
+							</select>
+	        			</div>
+	        			<div class="adminGoodsViewDiv">
+	        				<p>상품번호</p><input type="text" id="goods_id" readonly>
+	        			</div>
+	        			<div class="adminGoodsViewDiv">
+	        				<p>상품명</p><input type="text" id="goods_name" name="goods_name">
+	        			</div>
+	        			<div class="adminGoodsViewDiv">
+	        				<p>가격(원)</p><input type="text" id="goods_price" name="goods_price">
+	        			</div>
+	        			<div class="adminGoodsViewDiv">
+	        				<p>수량</p><input type="text" id="goods_amt" name="goods_amt">
+	        			</div>
+	        			<!-- <div class="adminGoodsViewDiv">
+	        				<p>판매여부</p>
+	        				<input type="checkbox" id="sales_yn" name="sales_yn" value="Y">
+	        				<label for="YN">판매여부</label>
+	        			</div> -->
+	        			<div class="adminGoodsViewDiv">
+							<p><label for="sales_yn">판매여부</label></p>
+							<div class="form-sort" style="width:250px; line-height: 50px;"> 
+								<input type="checkbox" name="sales_yn" id="sales_y" value="Y" onclick="oneCheckBox(this)"/> <label for="sales_y" style="padding: 0 50px;">Y</label>
+								<input type="checkbox" name="sales_yn" id="sales_n" value="N" onclick="oneCheckBox(this)" checked="checked"/> <label for="sales_n">N</label>
+							</div>
+						</div>
+	        			<div class="adminGoodsViewimg">
+	        				<p>썸네일</p>
+	        				<input type="file" id="goods_thumbnail" name="goods_img">
+	        			</div>
+	        			<div class="adminGoodsViewimg">
+	        				<p>상세정보 이미지</p>
+	        				<input type="file" id="goods_detail" name="goods_img2">
+	        			</div>
+	        		</form>
         		</div>
         			<div id="adminGoodsBtn">
         			<input type="button" value="수정하기" id="goodsModify">

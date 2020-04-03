@@ -107,5 +107,10 @@ public class GoodsServiceImpl implements GoodsService {
 		goodsDAO.reviewDelete(Integer.parseInt(bo_seq));
 	}
 
+	@Override
+	public int getGoodsId(int category_code) {
+		return goodsDAO.getGoodsId(category_code);
+	}
+
 
 }

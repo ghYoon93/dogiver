@@ -42,5 +42,7 @@ public interface GoodsDAO {
 
 	public void reviewDelete(int bo_seq);
 
+	public int getGoodsId(int category_code);
+
 
 }

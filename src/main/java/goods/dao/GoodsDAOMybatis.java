@@ -109,4 +109,10 @@ public class GoodsDAOMybatis implements GoodsDAO {
 		sqlSession.delete("goodsSQL.reviewDelete", bo_seq);
 	}
 
+	@Override
+	public int getGoodsId(int category_code) {
+		System.out.println(category_code);
+		return sqlSession.selectOne("goodsSQL.getGoodsId", category_code);
+	}
+
 }

@@ -1,9 +1,11 @@
 $(document).ready(function() {
+	//리스트 뿌려주기
 	$.ajax({
 		type: 'post',
 		url: '/dogiver/goods/getGoodsList',
 		dataType: 'json',
 		success: function(data){
+			//alert(JSON.stringify(data));
 			$.each(data.list, function(index, items){
 				$('<tr/>').append($('<td>',{
 					text: items.category_code 
@@ -34,7 +36,7 @@ $(document).ready(function() {
 	//상세보기
 	$(document).on('click', '.goodsView', function(){
 		let goods_id = $(this).attr('id');
-		$('#goods_id').attr('readonly', 'readonly');
+//		$('#goods_id').attr('readonly', 'readonly');
 		$.ajax({
 			type: 'post',
 			url: '/dogiver/goods/getGoodsDetail',
@@ -56,6 +58,17 @@ $(document).ready(function() {
 	//수정하기
 	$(document).on('click', '#goodsModify', function(){
 		let formData = new FormData($('#goodsForm')[0]);
+		for (var key of formData.keys()) {
+
+			  console.log(key);
+
+			}
+
+			for (var value of formData.values()) {
+
+			  console.log(value);
+
+			}
 		$.ajax({
 			type: 'post',
 			enctype: 'multipart/form-data',
@@ -69,7 +82,6 @@ $(document).ready(function() {
 				$('#category_code').val(data.goodsDTO.category_code);
 				$('#goods_name').val(data.goodsDTO.goods_name);
 				$('#goods_price').val(data.goodsDTO.goods_price);
-				//$('#goods_date').val(data.goodsDTO.goods_date);
 				$('#goods_amt').val(data.goodsDTO.goods_amt);
 				$('#goods_thumbnail').html(data.goodsDTO.goods_thumbnail);
 				$('#goods_detail').html(data.goodsDTO.goods_detail);
@@ -84,6 +96,7 @@ $(document).ready(function() {
 	
 	//등록하기
 	$(document).on('click', '#goodsInsert', function(){
+		
 		let formData = new FormData($('#goodsForm')[0]);
 		$.ajax({
 			type: 'post',
@@ -106,7 +119,13 @@ $(document).ready(function() {
 			}
 		});
 	});
-	
-	
-	
 });
+
+//체크박스 하나만 선택하게
+function oneCheckBox(a){
+	var check = document.getElementsByName("sales_yn");
+	for(var i=0; i<check.length; i++){
+		if(check[i] != a)
+			check[i].checked = false;
+	}
+}

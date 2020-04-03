@@ -8,7 +8,7 @@
 	</select>
 	
 	<select id="getGoodsDetail" parameterType="int" resultType="goods.bean.GoodsDTO">
-		select * from goods where goods_id=#{goodsId}
+		select * from goods where goods_id=#{goods_id}
 	</select>
 	
 	<select id="getCategory" parameterType="int" resultType="goods.bean.GoodsDTO">
@@ -99,8 +99,8 @@
 	 </update>
 	 
 	<insert id="goodsInsert" parameterType="goods.bean.GoodsDTO">
-		insert into goods(goods_id, category_code, goods_name, goods_price, goods_date, goods_amt, goods_thumbnail, goods_detail)
-		values(#{goods_id},#{category_code},#{goods_name},#{goods_price},SYSDATE,#{goods_amt},#{goods_id}||'/'||#{goods_thumbnail},#{goods_id}||'/'||#{goods_detail}) 
+		insert into goods(goods_id, category_code, goods_name, goods_price, goods_date, goods_amt, sales_yn, goods_thumbnail, goods_detail)
+		values(#{goods_id},#{category_code},#{goods_name},#{goods_price},SYSDATE,#{goods_amt}, #{sales_yn},#{goods_id}||'/'||#{goods_thumbnail},#{goods_id}||'/'||#{goods_detail}) 
 	</insert>
 	
 	<update id="goodsModify" parameterType="goods.bean.GoodsDTO">
@@ -109,4 +109,9 @@
 	<delete id="reviewDelete" parameterType="int">
 		delete from goods_board where bo_seq=#{bo_seq}
 	</delete>
+	
+	<select id="getGoodsId" parameterType="int" resultType="int">
+		SELECT goods_id FROM (SELECT goods_id
+                        FROM goods WHERE goods_id LIKE #{category_code}||'%' ORDER BY goods_id DESC) WHERE rownum = 1
+	</select>
 </mapper>

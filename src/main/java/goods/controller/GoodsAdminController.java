@@ -31,6 +31,10 @@ public class GoodsAdminController {
 	public String goodsInsert(@ModelAttribute GoodsDTO goodsDTO, 
 							  @RequestParam MultipartFile goods_img,
 							  @RequestParam MultipartFile goods_img2) {
+		System.out.println(goodsDTO);
+		System.out.println(goodsDTO.getCategory_code());
+		int goods_id = goodsService.getGoodsId(goodsDTO.getCategory_code())+1;
+		goodsDTO.setGoods_id(goods_id);
 		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
 		
 		
@@ -64,7 +68,7 @@ public class GoodsAdminController {
 		}else {
 			goodsDTO.setGoods_detail("0");
 		}
-		
+		System.out.println(goodsDTO);
 		int su = goodsService.goodsInsert(goodsDTO);
 		if(su==1) {
 			return "success";
@@ -78,7 +82,9 @@ public class GoodsAdminController {
 	public ModelAndView goodsModify(@ModelAttribute GoodsDTO goodsDTO,
 									@RequestParam MultipartFile goods_img,
 									@RequestParam MultipartFile goods_img2) {
-		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
+		System.out.println("85"+goodsDTO);
+		System.out.println(goodsDTO.getGoods_id());
+		String filePath = "C:\\Users\\bitcamp\\Desktop\\DOgNOR\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
 		
 		if (goods_img != null) {
 			String fileName = goods_img.getOriginalFilename();
