@@ -449,6 +449,7 @@ header .header {
 .goods-card button {
 	background: #111;
 	color: #fff;
+	outline-style: none;
 }
 
 .comu-card {
@@ -486,6 +487,7 @@ header .header {
 	background: #111;
 	color: #fff;
 	border: none;
+	outline-style: none;
 }
 
 .button-center button:hover {
@@ -493,8 +495,10 @@ header .header {
 	background: #f1f1f1;
 	color: #666;
 }
-.blood-card  .button-center button{
+
+.blood-card  .button-center button {
 	margin-top: 280px;
+	outline-style: none;
 }
 
 .blood-card {
@@ -533,4 +537,37 @@ footer {
 	text-align: center;
 	left: 0;
 	bottom: 0;
+}
+
+.footer {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+.footer-nav {
+	float: right;
+}
+
+.footer-nav div {
+	display: inline-block;
+	width: 150px;
+	margin-top: 30px;
+	font-size: 14px;
+}
+
+.footer-nav div:hover {
+	color: #ff0000;
+}
+
+.footer img {
+	display: flex;
+}
+
+.footer div {
+	display: flex;
+	margin-left: 10px;
+}
+
+.teamDiv {
+	font-size: 15px;
 }

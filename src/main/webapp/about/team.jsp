@@ -43,7 +43,7 @@
 							<div class="container">
 								<h2>윤건희</h2>
 								<p class="title">PL</p>
-								<p>만나서 더러웠고ㅠ 다시는 만나지 말자</p>
+								<p>고생했다</p>
 								<p>gh.yoon93@gmail.com</p>
 								<p></p>
 							</div>
