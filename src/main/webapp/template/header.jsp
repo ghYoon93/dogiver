@@ -46,7 +46,7 @@
 		</c:if>
 		<c:if test="${role ne 'admin' }">
 			<div>
-				<a><img src="../image/shopping_bucket.png" alt="장바구니" /></a>
+				<a href="../order/cart"><img src="../image/shopping_bucket.png" alt="장바구니" /></a>
 			</div>
 		</c:if>
 	</div>

@@ -10,8 +10,6 @@ box-sizing: border-box;
  padding: 10px;"
 } 
 </style>
-<div>댓글달기</div>
-
 <form name="boardReplyForm" >
 	<input type="hidden" name="brd_seq" value="${brd_seq}"> 
 	<input type="hidden" name="pg" value="${pg }">

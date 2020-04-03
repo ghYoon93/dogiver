@@ -73,6 +73,6 @@ public class LoginController {
 	public String logout(HttpSession session) throws IOException {
 		System.out.println("여기는 logout");
 		session.invalidate();
-		return "redirect:index.jsp";
+		return "redirect:index";
 	}
 }

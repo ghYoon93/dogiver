@@ -67,7 +67,7 @@
 		</div>
 		<div id="other">
 			<label>상세설명</label><br>
-			<div id="discription"></div>
+			<div id="description"></div>
 		</div>
 	</div>
 	<div id="modalWrap">a</div>

@@ -5,8 +5,41 @@ $(document).ready(function(){
 		data : 'pg='+$('#pg').val(),
 		dataType : 'json',
 		success : function(data){
+			$.each(data.list, function(index, items){
+				if(items.brd_category=='공지'){
+				$('<tr/>',{
+					style:'background-color:#FFEBF0',
+				}).append($('<td/>',{
+					align : 'center',
+					style:'height:80px',
+					style:'font-size: 20px; font-weight:bold;',
+					colspan:'2',
+					text : items.brd_category
+				})).append($('<td/>',{
+						style:'font-size: 20px',
+						align : 'center'
+					}).append($('<a/>',{
+						style:'font-size: 20px',
+						href : '#',
+						style:'color:#ab2328',
+						text : items.brd_title,
+						class : 'titleA',
+						id : items.brd_seq+''
+					}))
+				).append($('<td/>',{
+					style:'font-size: 20px',
+					align : 'center',
+					text : items.brd_nickname
+				})).append($('<td/>',{
+					style:'font-size: 20px',
+					align : 'center',
+					text : items.brd_logtime
+				})).appendTo($('#boardListTable'));
+				}//if 
+			});// each
 			
 			$.each(data.list, function(index, items){
+				if(items.brd_category!='공지'){
 				$('<tr/>').append($('<td/>',{
 					align : 'center',
 					style:'height:80px',
@@ -36,17 +69,25 @@ $(document).ready(function(){
 					align : 'center',
 					text : items.brd_logtime
 				})).appendTo($('#boardListTable'));
-				
+				}//if 
 			});// each
+			
+			
+			
+			
+			
+			
+			
 			
 			// 페이징처리
 			$('#boardPagingDiv').html(data.boardPaging.pagingHTML);
 			
 			// 로그인 여부
 			$('#boardListTable').on('click', '.titleA', function(){
-				if(data.memEmail == null)
+				if(data.memEmail == null){
 					alert('먼저 로그인하세요');
-				else{
+				location.href="/dogiver/login/login"
+				}else{
 					let seq = $(this).attr('id');
 					let pg = data.pg;
 					location.href='/dogiver/board/boardView?brd_seq='+seq+'&pg='+pg;        

@@ -35,7 +35,9 @@
 			</div>
 			<div class="goods_top">
 				<ul>
-					<li class="list_qty"><!-- <span>100</span>개의 상품 --></li>
+					<li class="list_qty">
+						<!-- <span>100</span>개의 상품 -->
+					</li>
 					<li class="right_box">
 						<div class="sort_box">
 							<select class="goods_sort" id="goods_sort">
@@ -49,9 +51,8 @@
 				</ul>
 			</div>
 			<!-- 상품 컨테이너 -->
-
 			<div class="goods-frame">
-			<!-- 
+				<!-- 
 	        <div class="goods-boxs">
 	          <div class="goods-image">
 	            <a href="javascript:void(0)">
@@ -75,45 +76,44 @@
 	            </a>
 	          </div>
 	        </div> -->
-
-			<!-- 장바구니 모달 -->
-			<div id="option-view" class="layer_option" style="display: none">
-				<div class="layer_option_cont">
-					<h4>장바구니 옵션</h4>
-					<span onclick="" class="close" title="닫기">&times;</span>
-					<div class="option_layer_scroll">
-						<div class="option_tit_box">
-							<dl>
-								<dt>
-									<img />
-								</dt>
-								<dd>
-									<strong></strong>
-								</dd>
-
-								<dd>
-									<div class="count">
-										<button id="minus">-</button>
-										<input type="text" id="quantity" value="1" size="4" />
-										<button id="plus">+</button>
-									</div>
-									<strong id="tot_price" title="총합계금액"></strong>
-								</dd>
-
-								<dd style="text-align: center;">
-									<button class="cancel">취소</button>
-									<button id="confirm">확인</button>
-								</dd>
-							</dl>
-						</div>
-					</div>
-					<!-- //option_layer_scroll -->
-				</div>
-
-				<!-- //장바구니 모달 -->
-			</div>
 			</div>
 		</div>
+	</div>
+	<!-- 장바구니 모달 -->
+	<div id="option-view" class="layer_option" style="display: none">
+		<div class="layer_option_cont">
+			<h4>장바구니 옵션</h4>
+			<span onclick="" class="close" title="닫기">&times;</span>
+			<div class="option_layer_scroll">
+				<div class="option_tit_box">
+					<dl>
+						<dt>
+							<img />
+						</dt>
+						<dd>
+							<strong></strong>
+						</dd>
+
+						<dd>
+							<div class="count">
+								<button id="minus">-</button>
+								<input type="text" id="quantity" value="1" size="4" />
+								<button id="plus">+</button>
+							</div>
+							<strong id="tot_price" title="총합계금액"></strong>
+						</dd>
+
+						<dd style="text-align: center;">
+							<button class="cancel">취소</button>
+							<button id="confirm">확인</button>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<!-- //option_layer_scroll -->
+		</div>
+
+		<!-- //장바구니 모달 -->
 	</div>
 	<div id="footerDiv"></div>
 </body>
