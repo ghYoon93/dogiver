@@ -309,8 +309,8 @@
                       <div class="form_element">
                         <input type="checkbox" id="termAgree_orderCheck"
                           class="require"> <label
-                          for="termAgree_orderCheck" class="check_s"><em><b>(필수)</b>
-                            구매하실 상품의 결제정보를 확인하였으며, 구매진행에 동의합니다.</em></label>
+                          for="termAgree_orderCheck" class="check_s"><em>
+                            구매하실 상품의 결제정보를 확인하였으며, 구매진행에 동의합니다.<b>(필수)</b></em></label>
                       </div>
                     </div>
                     <div class="btn_center_box">
