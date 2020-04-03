@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/mypage.css" />
+     <link rel="stylesheet" href="../css/my_contact.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
       rel="stylesheet"
@@ -26,6 +27,7 @@
     ></script>
     <script src="../js/main.js"></script>
      <script src="../js/mycontact.js"></script>
+    
   </head>
   <body>
     <div id="headerDiv"></div>
@@ -49,11 +51,11 @@
 				<form id="myContactForm">
 				<table id="my_contactTable" border="1" cellpadding="5" frame="hsides " rules="rows" style="margin-top: 50px; margin-bottom: 50px;">
 					<tr height="70">
-						<th width="200" style="font-size: 15px; border: 1px solid black;">번호</th>
-						<th width="200" style="font-size: 15px; border: 1px solid black;">주제</th>
-						<th width="300" style="font-size: 15px; border: 1px solid black;">내용</th>
-						<th width="200" style="font-size: 15px; border: 1px solid black;">작성날짜</th>
-						<th width="200" style="font-size: 15px; border: 1px solid black;">삭제</th>
+						<th width="200" >번호</th>
+						<th width="200" >주제</th>
+						<th width="300" >내용</th>
+						<th width="200" >작성날짜</th>
+						<th width="200" >삭제</th>
 					</tr>
 				</table>
 			</form>

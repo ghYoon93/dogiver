@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.admin_container{
+	width: 1000px; 
+	margin: 0 auto; 
+	margin-top: 150px; 
+	height: 700px; 
+	overflow: auto;
+}
+#admin_contactTable_th1{
+	font-size: 15px; 
+	border: 1px solid black;
+}
+#admin_contactTable_th2{
+	font-size: 15px; 
+	border: 1px solid black;
+}
+#admin_contactTable_th3{
+	font-size: 15px; 
+	border: 1px solid black;
+}
+#admin_contactTable_th4{
+	font-size: 15px; 
+	border: 1px solid black;
+}
+#admin_contactTable_th5{
+	font-size: 15px; 
+	border: 1px solid black;
+}
+#admin_contactTable_th6{
+	font-size: 15px; 
+	border: 1px solid black;
+}
+#admin_contactTable_th7{
+	font-size: 15px; 
+	border: 1px solid black;
+}
+#admin_contactTable_th8{
+	font-size: 15px; 
+	border: 1px solid black;
+}

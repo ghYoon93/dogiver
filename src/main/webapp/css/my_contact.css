@@ -1,0 +1,5 @@
+@charset "UTF-8";
+#my_contactTable th{
+	font-size: 15px; 
+	border: 1px solid black;
+}

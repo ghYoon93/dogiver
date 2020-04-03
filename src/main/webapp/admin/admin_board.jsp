@@ -12,6 +12,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/admin.css" />
+     <link rel="stylesheet" href="../css/admin_board.css" />
     <link rel="stylesheet" href="../css/sign.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
@@ -48,16 +49,17 @@ pageEncoding="UTF-8"%>
         <div class="article">
         <form id="admin_boardForm" method="post">
 		<div class="wrap">
-			<div class="container" style="width: 1000px; height:700px; margin: 0 auto; margin-top: 150px; overflow: auto;">
+			<div class="board_container" >
 				<table id="admin_boardTable" border="1"  cellpadding="5" frame="hsides " rules="rows">
 					<tr height="70" style="background-color: #FFEBF0;">
-						<th width="50" style="font-size: 15px; border: 1px solid black;">번호</th>
-						<th width="50" style="font-size: 15px; border: 1px solid black;">종류</th>
-						<th width="100" style="font-size: 15px; border: 1px solid black;">닉네임</th>
-						<th width="200" style="font-size: 15px; border: 1px solid black;">이메일</th>
-						<th width="300" style="font-size: 15px; border: 1px solid black;">제목</th>
-						<th width="200" style="font-size: 15px; border: 1px solid black;">작성시간</th>
-						<th width="100" style="font-size: 15px; border: 1px solid black;">데이터 삭제</th>
+					
+						<th id="admin_boardTable_th1" width="50">번호</th>
+						<th id="admin_boardTable_th2" width="50">종류</th>
+						<th id="admin_boardTable_th3" width="100">닉네임</th>
+						<th id="admin_boardTable_th4" width="200">이메일</th>
+						<th id="admin_boardTable_th5" width="300">제목</th>
+						<th id="admin_boardTable_th6" width="200">작성시간</th>
+						<th id="admin_boardTable_th7" width="100">데이터 삭제</th>
 					</tr>
 				</table>
 			</div>
