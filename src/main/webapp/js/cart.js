@@ -75,7 +75,7 @@ function checkAll() {
 		let totalSettlePrice = total + deliveryCharge;
 		$('#totalGoodsCnt').html(cashFormat(checkedCnt));
 		$('#totalGoodsPrice').html(cashFormat(total));
-		$('#totalSettlePrice').html(cashFormat(total));
+		$('#totalSettlePrice').html(cashFormat(totalSettlePrice));
 		$('#totalDeliveryCharge').html(cashFormat(deliveryCharge));
 }
 function uncheckAll() {
@@ -115,7 +115,7 @@ $(document).on('click', 'input:checkbox[name=checkGoods]', function() {
 		let totalSettlePrice = total + deliveryCharge;
 		$('#totalGoodsCnt').html(cashFormat(checkedCnt));
 		$('#totalGoodsPrice').html(cashFormat(total));
-		$('#totalSettlePrice').html(cashFormat(total));
+		$('#totalSettlePrice').html(cashFormat(totalSettlePrice));
 		$('#totalDeliveryCharge').html(cashFormat(deliveryCharge));
 });
 
