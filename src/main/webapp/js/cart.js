@@ -112,6 +112,7 @@ $(document).on('click', 'input:checkbox[name=checkGoods]', function() {
 		}
 		let total = calcTot(checkedGoods);
 		let deliveryCharge = 2500;
+		if(checkedCnt == 0) deliveryCharge = 0;
 		let totalSettlePrice = total + deliveryCharge;
 		$('#totalGoodsCnt').html(cashFormat(checkedCnt));
 		$('#totalGoodsPrice').html(cashFormat(total));
@@ -145,10 +146,10 @@ $(document).on('click', '.btn_option_view', function() {
 		//
 		let cont = '<form action="updateCart" method="get">' 
 			         + '<dl>'
-	               + '<dt>'
+	               + '<dd class="imgbox">'
 	                 + '<input type="hidden" name="cart_id" value="'+cartId+'">' 
                    + '<img src="../image/goods/'+img+'" alt="'+name+'" title="'+name+'" class="middle">'
-                 + '</dt>'
+                 + '</dd>'
                  + '<dd>'
                    + '<strong>'+name+'</strong>'
                  + '</dd>'
@@ -158,9 +159,9 @@ $(document).on('click', '.btn_option_view', function() {
                      + '<input type="text" id="quantity" name="cnt" value="'+cnt+'" size="4" />'
                      + '<button type="button" id="plus">+</button>'
                    + '</div>'
-                   + '<strong id="tot_price" title="총합계금액">'+total_price+'</strong>'
+                   + '<strong id="tot_price" title="총합계금액">'+cashFormat(total_price)+'원	</strong>'
                  + '</dd>'
-                 + '<dd>'
+                 + '<dd class="btnbox">'
                    + '<button type="button" class="cancel">취소</button>'
                    + '<button type="submit" class="changeCnt">확인</button>'
                  + '</dd>'
@@ -178,7 +179,7 @@ $(document).on('click', '.btn_option_view', function() {
 	});
 	
 	$(document).on('click', '#minus', function(){
-		if($('#quantity').val()>=1){
+		if($('#quantity').val()>1){
 			$('#quantity').val(--cnt);
 			console.log($('#quantity').val());
 			calcPrice();
@@ -189,9 +190,13 @@ $(document).on('click', '.btn_option_view', function() {
 	$(document).on('change', '#quantity', calcPrice);
 	function calcPrice(){
 		cnt = $('#quantity').val();
+		if(cnt < 1){
+			alert('최소 변경 가능 수량은 1개입니다.');
+			$('#quantity').val(1);
+		}
 		let total_price = $('#quantity').val() * price;
 		console.log(total_price);
-		$('#tot_price').text(total_price);
+		$('#tot_price').text(cashFormat(total_price)+'원');
 	}
 	function closeModal(){
 		$('#option-view').hide();
@@ -209,8 +214,11 @@ function gd_cart_process(command){
 		return false;
 	}
 	if(command == 'cartDelete'){
-		form.attr('action','deleteCart');
-		form.submit();
+		let deleteCart = confirm('선택하신 '+count+'개의 상품을 삭제하시겠습니까?');
+		if(deleteCart){
+			form.attr('action','deleteCart');
+			form.submit();
+		}
 		
 	}else if(command == 'orderSelect'){
 		let orderGoods = confirm('선택하신 '+count+'개의 상품을 주문하시겠습니까?');
@@ -218,7 +226,6 @@ function gd_cart_process(command){
 			form.attr('action','order');
 			form.submit();
 		}
-		
 	}
 }
 function gd_order_all(){
@@ -229,7 +236,11 @@ function gd_order_all(){
 }
 function cashFormat(number){
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-};
+}
 function numberFormat(cash){
   return Number(cash.replace(/[^0-9]/g, ''));
-};
+}
+
+$(document).on('keyup','#quantity', function() {
+    $(this).val($(this).val().replace(/[^0-9]/g,""));
+});

@@ -111,7 +111,8 @@ public class GoodsBoardController {
 	public void reviewWrite(@ModelAttribute QnaDTO qnaDTO, @RequestParam("img[]") List<MultipartFile> list, HttpSession session) {
 	//public void reviewWrite(@RequestParam Map<String, Integer> map, @RequestParam("img[]") List<MultipartFile> list) {
 		
-		String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
+//		String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
+		String filePath = "\\Volumes\\D\\dogiver\\src\\main\\webapp\\image\\goods\\goods_board";
 		//String filePath = "C:\\Users\\bitcamp\\Desktop\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
 
 		for(MultipartFile img : list) {
@@ -187,7 +188,8 @@ public class GoodsBoardController {
 	@ResponseBody
 	public void reviewUpdate(@ModelAttribute QnaDTO qnaDTO, @RequestParam("img[]") List<MultipartFile> list, HttpSession session) {
 		
-		String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
+//		String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
+		String filePath = "VOLUME\\D\\dogiver\\src\\main\\webapp\\image\\goods_board";
 		//String filePath = "C:\\Users\\bitcamp\\Desktop\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
 
 		for(MultipartFile img : list) {

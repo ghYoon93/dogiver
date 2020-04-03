@@ -333,5 +333,10 @@ $(function() {
 		}
 	});
 });
-
+$('#payment_kakao').click(function(){
+	$('.pay_noBook_box').hide();
+});
+$('#payment_noBook').click(function(){
+	$('.pay_noBook_box').show();
+});
 

@@ -5,18 +5,19 @@ textarea:focus {
 	outline: none;
 }
 #contentDiv{
-width: 1100px; 
+width: 100%; 
 box-sizing: border-box;
  padding: 10px;"
 } 
 </style>
+<div style="font-size:13px; font-weight:500; text-indent:20px;">댓글달기</div>
 <form name="boardReplyForm" >
 	<input type="hidden" name="brd_seq" value="${brd_seq}"> 
 	<input type="hidden" name="pg" value="${pg }">
 	<%-- <input type="hidden" name="re_seq" value="${re_seq }"> --%>
 		
 
-	<div id="replyFormDiv" style="width: 1100px; min-height: 140px; border: 1px solid black; box-sizing: border-box; background-color: #f1eaea; padding-left: 200px; padding-top: 33px;">
+	<div id="replyFormDiv" style="width: 1100px; min-height: 140px; box-sizing: border-box; background-color: #f1eaea; padding-left: 200px; padding-top: 33px;">
 		<table>
 			<tr>
 				<td><textarea id="re_content" name="re_content" maxlength="55" 
