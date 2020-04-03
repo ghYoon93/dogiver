@@ -61,7 +61,7 @@
 
 					<div id="phoneText">
 						<input id="text_phone" name="phone" type="text"
-							placeholder="핸드폰 번호">
+							placeholder="핸드폰 번호 (-없이 입력)">
 					</div>
 
 					<div id="subjectText">
