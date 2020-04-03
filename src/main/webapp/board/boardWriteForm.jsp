@@ -31,7 +31,7 @@
 	</div>
 	<form id="boardWriteForm" name="boardwriteForm" method="post"
 		action="boardWrite">
-		<input type="hidden" id="role" value="${role }"}
+		<input type="hidden" id="role" value="${role }">
 		
 		<div class="wrap">
 			<div class="container"

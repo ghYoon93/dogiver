@@ -9,7 +9,7 @@ $(document).on('click', '.dogJoinBtn', function(){
 		$('#dogAgeDiv').empty();
 		$('#dogBreedDiv').empty();
 		$('#dogWeightDiv').empty();
-		var test = "^[0-9]$";
+		var test = "^[0-9]+$";
 		alert($('#dog_breed').val());
 		if($('#dog_name').val()==''){
 			$('#dogNameDiv').text("이름을 입력해주세요").css("color","red").css("font-size","10pt").css("font-weight", "bold");
