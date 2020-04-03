@@ -31,7 +31,8 @@ public class GoodsAdminController {
 	public String goodsInsert(@ModelAttribute GoodsDTO goodsDTO, 
 							  @RequestParam MultipartFile goods_img,
 							  @RequestParam MultipartFile goods_img2) {
-		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
+		String filePath = "\\VOLUME\\D\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
+//		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
 		
 		
 		
@@ -78,8 +79,7 @@ public class GoodsAdminController {
 	public ModelAndView goodsModify(@ModelAttribute GoodsDTO goodsDTO,
 									@RequestParam MultipartFile goods_img,
 									@RequestParam MultipartFile goods_img2) {
-		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
-		
+		String filePath = "\\Volumes\\D\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
 		if (goods_img != null) {
 			String fileName = goods_img.getOriginalFilename();
 			File file = new File(filePath);

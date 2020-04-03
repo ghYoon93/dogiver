@@ -56,25 +56,6 @@ $(document).ready(function() {
 	});
 });
 
-									$.each(data.list, function(index, items) {
-										if (data.memNickName != $(
-												'.' + items.re_writer).attr(
-												'class')) {
-											$('.' + items.re_writer).hide();
-										}
-
-									});
-									// 글 수정 삭제 보여주기
-									if ((data.memEmail == data.boardDTO.brd_email)
-											|| (data.role == 'admin')) {
-										$('#board_member_addBtn').show();
-									} else {
-										$('#board_member_addBtn').hide();
-									}
-								}
-							});
-				});
-
 // 글쓰기 버튼
 $('#writeBtn').click(function() {
 	location.href = 'http://localhost:8080/dogiver/board/boardWriteForm';
