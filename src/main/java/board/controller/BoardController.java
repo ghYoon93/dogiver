@@ -48,7 +48,7 @@ public class BoardController {
 			HttpSession session) {
 		List<BoardDTO> list = boardService.getBoardList(pg);
 		
-		//페이징 처리
+		//�럹�씠吏� 泥섎━
 		BoardPaging boardPaging = boardService.boardPaging(pg);
 		
 		ModelAndView mav = new ModelAndView();
@@ -62,24 +62,6 @@ public class BoardController {
 		return mav;
 	}
 	
-//	@RequestMapping(value="getBoardList", method=RequestMethod.POST)
-//	public ModelAndView getBoardList(
-//			@RequestParam(required=false, defaultValue="1") String pg,
-//			HttpSession session) {
-//		List<BoardDTO> list = boardService.getBoardList(pg);
-//		
-//		//페이징 처리
-//		BoardPaging boardPaging = boardService.boardPaging(pg);
-//		
-//		ModelAndView mav = new ModelAndView();
-//		
-//		mav.addObject("pg", pg);
-//		mav.addObject("list", list);
-//		mav.addObject("memEmail", session.getAttribute("memEmail"));
-//		mav.addObject("boardPaging", boardPaging);
-//		mav.setViewName("jsonView");
-//		return mav;
-//	}
 	
 	@RequestMapping(value="boardView", method=RequestMethod.GET)
 	public String boardList(@RequestParam String brd_seq,
@@ -101,14 +83,14 @@ public class BoardController {
 		mav.addObject("memNickName", session.getAttribute("memNickName"));
 		mav.addObject("role", session.getAttribute("role"));
 		mav.addObject("boardDTO", boardDTO);
-		mav.addObject("list", list);//리스트에는 댓글의 내용들이 들어있다.
+		mav.addObject("list", list);
 		mav.setViewName("jsonView");
 		return mav;
 	}
 	@RequestMapping(value="getBoardView_before", method=RequestMethod.POST)
 	public ModelAndView getBoardView_before( @RequestParam String brd_seq, 
 											HttpSession session) {
-		BoardDTO boardDTO = boardService.getBoardView_before(brd_seq);
+		BoardDTO boardDTO= boardService.getBoardView_before(brd_seq);
 		List<BoardDTO> list = boardService.getReBoard_before(brd_seq);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memEmail", session.getAttribute("memEmail"));
@@ -119,6 +101,7 @@ public class BoardController {
 		mav.setViewName("jsonView");
 		return mav;
 	}
+	
 	
 	@RequestMapping(value="getBoardView_after", method=RequestMethod.POST)
 	public ModelAndView getBoardView_after( @RequestParam String brd_seq, 
@@ -140,10 +123,10 @@ public class BoardController {
 	public ModelAndView getBoardSearch(@RequestParam Map<String, String> map,
 										HttpSession session) {
 		
-		//map안에는 pg,searchoption,keyword가 들어와 있따.
-		List<BoardDTO> list = boardService.getBoardSearch(map);//->서브시 ->마이바티스 ->멥퍼 다시 돌아옴 
+	
+		List<BoardDTO> list = boardService.getBoardSearch(map);
 		
-		//페이징 처리
+		
 		BoardPaging boardPaging = boardService.boardPaging(map);
 		
 		ModelAndView mav = new ModelAndView();
@@ -171,7 +154,7 @@ public class BoardController {
 	@ResponseBody
 	public void reply_delete(@RequestParam String re_seq) {
 		boardService.reply_delete(re_seq);
-		//System.out.println(re_seq);
+		System.out.println(re_seq);
 	}
 	
 	@RequestMapping(value = "boardModifyForm", method = RequestMethod.GET)

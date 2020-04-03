@@ -60,7 +60,7 @@ public class BoardDAOMybatis implements BoardDAO {
 
 	@Override
 	public BoardDTO getBoardView_before(String brd_seq) {
-		return sqlSession.selectOne("boardSQL.getBoardView_before", Integer.parseInt(brd_seq));
+		return sqlSession.selectOne("boardSQL.getBoardView_before",Integer.parseInt(brd_seq));
 	}
 
 	@Override
