@@ -113,7 +113,9 @@ $(document).ready(function() {
 				dataType: 'text',
 				success : function(data) {
 					if (data == "true") {
-				        location.reload();
+						let target = document.referrer;
+						if(target == "http://localhost:8080/dogiver/logout/logout") target="http://localhost:8080/dogiver/main/index";
+				        location.href = target;
 					} else {
 						$('.loginMessage').text('로그인 실패~ㅋ').show("slow").css("color","red");
 						setTimeout(function() {
