@@ -56,6 +56,7 @@ $(document).ready(function() {
 	});
 });
 
+
 // 글쓰기 버튼
 $('#writeBtn').click(function() {
 	location.href = 'http://localhost:8080/dogiver/board/boardWriteForm';
