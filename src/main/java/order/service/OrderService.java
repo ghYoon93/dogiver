@@ -36,6 +36,8 @@ public interface OrderService {
 
 	public List<OrderStatusDTO> getStatus(String memEmail);
 
+	public void cancelOrder(String order_id);
+
 
 
 }

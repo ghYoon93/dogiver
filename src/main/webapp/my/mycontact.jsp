@@ -39,17 +39,15 @@
           <ol>
             <li><a href="../my/mypage">내 정보</a></li>
             <li><a href="../blood/myblood">헌혈견</a></li>
-            <li><a href="">상품 </a></li>
+            <li><a href="../my/orderList">주문 조회 </a></li>
             <li><a href="../board/myboard">내 게시글 </a></li>
             <li class="on"><a href="../contact/mycontact">내 문의 </a></li>
           </ol>
         </div>
         <div class="article">
-        <div id="my-write" style="width: 1100px; margin: 0 auto;  margin-top:100px; margin-bottom: 80px; border: 1px solid red;">
-		<form id="myContactForm">
-			<div class="mycon-container"
-				style="width: 1100px; margin: 0 auto; text-align: center;">
-				<table id="my_contactTable" border="1" cellpadding="5" frame="hsides " rules="rows">
+			<div class="mycon-container" style="width: 1100x; text-align: center; ">
+				<form id="myContactForm">
+				<table id="my_contactTable" border="1" cellpadding="5" frame="hsides " rules="rows" style="margin-top: 50px; margin-bottom: 50px;">
 					<tr height="70">
 						<th width="200" style="font-size: 15px; border: 1px solid black;">번호</th>
 						<th width="200" style="font-size: 15px; border: 1px solid black;">주제</th>
@@ -58,9 +56,8 @@
 						<th width="200" style="font-size: 15px; border: 1px solid black;">삭제</th>
 					</tr>
 				</table>
-			</div>
-		</form>
-	</div>
+			</form>
+		</div>
         </div>
       </div>
     </div>

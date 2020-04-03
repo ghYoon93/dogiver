@@ -181,8 +181,8 @@
                             <input type="text" id="addr" name="orderAddress" value="${memberDTO.addr }"
                               readonly="readonly"> <input
                               type="text" id="addr_Detail" name="orderAddressSub" value="${memberDTO.addr_Detail }">
-                            <button type="button"
-                              class="btn_post_setting">회원정보에 반영</button>
+                            <!-- <button type="button"
+                              class="btn_post_setting">회원정보에 반영</button> -->
                           </div>
                         </td>
                       </tr>
@@ -191,8 +191,8 @@
                         <td><input type="text" id="mobileNum"
                           name="orderCellPhone" value="${memberDTO.phone }"
                           maxlength="20">
-                          <button type="button"
-                              class="btn_phone_setting">회원정보에 반영</button>
+                          <!-- <button type="button"
+                              class="btn_phone_setting">회원정보에 반영</button> -->
                           </td>
                       </tr>
                       <tr>

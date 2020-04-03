@@ -70,5 +70,9 @@ public class OrderDAOMyBatis implements OrderDAO {
 	public List<OrderStatusDTO> getStatus(String memEmail) {
 		return sqlSession.selectList("orderSQL.getStatus", memEmail);
 	}
+	@Override
+	public void cancelOrder(String order_id) {
+		sqlSession.update("orderSQL.cancelOrder", order_id);
+	}
 
 }

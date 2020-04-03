@@ -3,9 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/reset.css" />
-  <link rel="stylesheet" href="../css/style.css" />
+  <meta charset="UTF-8" />
+    <link rel="favicon" href="../image/favicon.ico" />
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my page</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/mypage.css" />
   <link rel="stylesheet" href="../css/order.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
     rel="stylesheet" />
@@ -15,10 +21,20 @@
 <body>
   <div id="headerDiv"></div>
   <div class="page-title">
-    <h2 class="h2">주문 조회</h2>
-  </div>
+      <h2>my page</h2>
+      <p>주문 조회</p>
+    </div>
     <div id="wrap">
       <div class="order_wrap">
+      <div class="my-nav">
+          <ol>
+            <li><a href="../my/mypage">내 정보</a></li>
+            <li><a href="../blood/myblood">헌혈견</a></li>
+            <li class="on"><a href="../my/orderList">주문 조회 </a></li>
+            <li><a href="../board/myboard">내 게시글 </a></li>
+            <li><a href="../contact/mycontact">내 문의 </a></li>
+          </ol>
+        </div>
         <div class="mypage_order_info">
           <div class="mypage_zone_tit">
             <h3>진행중인 주문/배송</h3>

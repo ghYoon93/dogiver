@@ -138,7 +138,7 @@ public class MemberController {
 	@RequestMapping(value = "/logout/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "../main/index";
+		return "redirect:../main/index";
 	}
 
 	@RequestMapping(value = "/my/mypage", method = RequestMethod.GET)
