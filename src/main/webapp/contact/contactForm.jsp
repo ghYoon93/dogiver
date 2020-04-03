@@ -9,8 +9,6 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
-
-
 </head>
 
 <body>
@@ -61,7 +59,7 @@
 
 					<div id="phoneText">
 						<input id="text_phone" name="phone" type="text"
-							placeholder="핸드폰 번호">
+							placeholder="핸드폰 번호 (-없이 입력)">
 					</div>
 
 					<div id="subjectText">

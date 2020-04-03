@@ -10,8 +10,7 @@
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
 <link rel="stylesheet" href="../css/board.css">
-<script
-	src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
+
 <style type="text/css">
 .fr-view {
 	height: 500px;
@@ -28,7 +27,6 @@
 		<p>여러분들의 이야기를 들려주세요</p>
 	</div>
 	<form id="modifyForm" name="modifyForm" method="post" action="boardModify">
-		<input type="hidden" id="boardDTO" name="boardDTO" value="${boardDTO }">
 		<input type="hidden" id="brd_seq" name="brd_seq" value="${brd_seq }">
 		<input type="hidden" id="category" name="category" value="${boardDTO.brd_category }">
 		<input type="hidden" id="content" name="content" value="${boardDTO.brd_content }">
@@ -75,15 +73,14 @@ $(document).ready(function(){
 	$('.fr-placeholder').text('');
 	$('.fr-view').html($('#content').val());
 	
-	var option = $('#category').val(); //헌혈
-	alert(option);
+	var option = $('#category').val(); //선택된 옵션
+	
 	$('#brd_category option').each(function() {
 			if($(this).val()==option){
 				$(this).prop('selected', true);
 				return false;
 			} 
 		 });  
-
 
 	$('#boardModifyBtn').click(function() {
 			if ($('#brd_category').val() == '') {
