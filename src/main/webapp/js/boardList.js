@@ -72,13 +72,6 @@ $(document).ready(function(){
 				}//if 
 			});// each
 			
-			
-			
-			
-			
-			
-			
-			
 			// 페이징처리
 			$('#boardPagingDiv').html(data.boardPaging.pagingHTML);
 			
@@ -122,7 +115,6 @@ $('#boardSearchBtn').click(function(event, str){
 			type : 'post',
 			url : '/dogiver/board/getBoardSearch',
 			data : $('#boardListForm').serialize(), // submit이나, serialize에는 항상
-													// name 속성만 전달된다.
 			dataType : 'json',
 			success : function(data){
 				$.each(data.list, function(index, items){

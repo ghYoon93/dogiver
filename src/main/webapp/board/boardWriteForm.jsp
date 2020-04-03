@@ -88,9 +88,9 @@ $(document).ready(function(){
 			alert("plase insert your Title");
 			$('#insert_text').focus();
 
-		} else if ($('.fr-view').text() == '') {
+		} else if ($('.fr-wrapper').text() == '') {
 			alert("plase insert your Content");
-			$('.fr-view').focus();
+			$('.fr-wrapper').focus();
 		} else {
 			$('#brd_content').val($('.fr-view').html());
 			$('#boardWriteForm').submit();
