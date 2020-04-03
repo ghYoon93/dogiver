@@ -16,7 +16,7 @@ pageEncoding="UTF-8"%>
 <c:if test="${memEmail != null }">
 <button id="review_btn" style="text-align:right; float:right; margin:30px 100px;" onclick="reviewWriteWin('${goods_id }')">상품후기 작성</button><br>
 </c:if>
-<table class="reviewList" id="reviewList" cellpadding="5" frame="hsides" rules="rows" valign="top" margin="0">
+<table class="reviewList" cellpadding="5" frame="hsides" rules="rows" valign="top" margin="0">
     <tr>
         <th width="65%">리뷰 제목</th>
         <th width="10%" style="text-align:center;">닉네임</th>

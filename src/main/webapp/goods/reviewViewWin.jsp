@@ -13,7 +13,7 @@
 	</div>
 	
 	<button class="cancle" onclick="window.close();">취소</button>
-<c:if test="${memEmail != null}">
+<c:if test="${memEmail != null }">
 	<button type="button" id="reviewWriteBtn" onclick="location.href='reviewUpdateWin?bo_seq=${bo_seq}'">수정</button>
 	<button type="button" id="reviewDeleteBtn">삭제</button>
 </c:if>
@@ -29,15 +29,12 @@ $(document).ready(function(){
 		data : 'bo_seq=${bo_seq}',
 		dataType : 'json',
 		success : function(data){
-			if(data.checkAcct == 'different'){
-				$('#reviewWriteBtn, #reviewDeleteBtn').hide();
-			}
+			
 			if(data.qnaDTO.image != null){
 				$('#image').attr('src', '../image/goods_board/'+data.qnaDTO.image);
 				$('.text_content').text(data.qnaDTO.text_content);
 				
 			}else{
-				$('.text_content').text(data.qnaDTO.text_content);
 				$('#image').hide();
 			}
 
