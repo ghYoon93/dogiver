@@ -293,8 +293,45 @@ function initLayerPosition() {
 /** 주소 * */
 
 
-$(document).on('click', '.btn_post_setting', function(){
-	
+//아이디 자동완성
+$(function() {
+	var hosts = [ "gmail.com", "naver.com", "nate.com", "hanmail.net" ];
+
+	$("#email").autocomplete({
+		autoFocus : true,
+		minLength : 1, // 1글자부터 작동
+		source : function setAutocompleteSource(request, response) {
+			var term = request.term
+			var atIndex = term.indexOf("@")
+			var name = term
+			var host = ""
+			var result = []
+			// 현재 입력한 문자열 추가
+			result.push(term)
+
+			if (atIndex > -1) {
+				name = term.slice(0, atIndex)
+				host = term.slice(atIndex + 1)
+			}
+
+			if (name) {
+				var findedHosts = hosts.filter(function(item) {
+					return item.indexOf(host) > -1;
+				})
+				var findedResults = findedHosts.map(function(host) {
+					return name + "@" + host;
+				});
+				result = result.concat(findedResults)
+				// 중복 제거: 사용자가 입력한 문자열과 자동완성된 문자열이 동일한 경우 제거
+				// 예: pcjpcj2@gmail.com 을 끝까지 입력한 상태에서
+				// 자동완성 문자열에 pcjpcj2@gmail.com이 두개 나올 수 있음
+				result = result.filter(function(element, position) {
+					return result.indexOf(element) === position
+				})
+			}
+			response(result);
+		}
+	});
 });
 
 

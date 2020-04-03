@@ -141,12 +141,6 @@
     </div>
     <!-- //order_wrap -->
   </div>
-  <div class="need_login">
-            <h3>장바구니 권한 안내</h3>
-            <p>로그인이 필요한 페이지입니다. 먼저 로그인을 하시고 이용해주세요.
-            <br>아직 회원이 아니시면 회원가입을 해주세요.</p>
-            <a href="../login/login">로그인</a> <a href="../sign_up/step1">회원가입</a>
-          </div>
   <!-- //wrap -->
   </div>
   <div id="footerDiv"></div>

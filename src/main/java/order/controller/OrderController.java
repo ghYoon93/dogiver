@@ -59,8 +59,11 @@ public class OrderController {
     	return "/order/order"; //이동할 view의 이름 (.jsp)
     }
     @RequestMapping(value="/order/cart", method=RequestMethod.GET)
-    public String cart() {
-    	return "/order/cart"; //이동할 view의 이름 (.jsp)
+    public String cart(HttpSession session) {
+    	String email = (String) session.getAttribute("memEmail");
+    	String target = "/order/cart";
+    	if(email== null) target = "/login/login";
+    	return target; //이동할 view의 이름 (.jsp)
     	
     }
     @RequestMapping(value="/order/getCart", method=RequestMethod.POST)
@@ -191,6 +194,9 @@ public class OrderController {
     @RequestMapping(value="/my/orderList")
     public String myOrderList(HttpSession session, Model model) {
     	String memEmail = (String)session.getAttribute("memEmail");
+    	if(memEmail == null ) {
+    		return "redirect:/login/login"; 
+    	}
     	List<OrderStatusDTO> list = orderService.getStatus(memEmail);
     	int status_wait = 0;
     	int status_paid = 0;
