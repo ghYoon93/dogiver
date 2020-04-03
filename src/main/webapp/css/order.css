@@ -758,6 +758,7 @@ input[type="checkbox"]:checked + label:before {
     width: 350px;
 }
 .option_tit_box .imgbox{
+    padding-top: 13px;
     text-align: center;
 }
 .option_tit_box .btnbox{
