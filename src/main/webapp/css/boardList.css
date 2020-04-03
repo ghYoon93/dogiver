@@ -1,8 +1,3 @@
-#boardListTable{
-	margin: 0 auto;
-	margin-top: 150px;
-}
-
 #subjectA:link {
 	color: black;
 	text-decoration: none;
@@ -35,40 +30,124 @@
 	cursor: pointer;
 }
 
-#boardListTable td {
-	height: 50px;
+#boardPagingDiv {
+	margin: 0 auto;
+	width: 1100px;
+	text-align: center;
+	margin-top: 20px;
+}
+#boardPagingDiv a{
+	font-size: 15px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	margin: 0 -10px 0;
+}
+.container {
+	width: 1100px;
+	margin: 0 auto;
+	margin-top: 100px;
+	border: 1px solid #e8e8e8;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+.board-head {
+	width: 100%;
+	padding: 15px 0 15px;
+	text-indent: 15px;
+	font-size: 17px;
+	font-weight: 600;
+	box-sizing: border-box;
+}
+
+#boardListTable {
+	margin: 0 auto;
+	/* padding: 10px; */
+	width: 100%;
+	border-collapse: collapse;
+	border-top: 2px solid #842328;
+	border-bottom: 2px solid #842328;
+}
+
+#boardListTable th, td {
+	padding: 10px;
+	border-top: 1px solid #ddd;
+	/* border-bottom: 1px solid #ddd; */
+	line-height: 1;
 }
 
 #boardListTable th {
-	border: 2px solid #ab2328;
+	font-size: 17px;
+	font-weight: 500;
+	color: #7f1c16;
+	background: #f8dde5;
+	text-align: center;
+	padding: 10px;
 }
 
-#boardPagingDiv{
-	margin: 0 auto; 
-	width: 1100px; 
-	text-align: center; 
+#boardListTable td {
+	font-size: 15px;
+	font-weight: 400;
+	padding: 10px;
+	text-align: center;
+}
+
+#boardListTable th:first-child, .table td:first-child {
+	border-left: 0;
+}
+
+#boardListTable th:last-child, .table td:last-child {
+	border-right: 0;
+}
+
+#boardListTable tr td:first-child {
+	text-align: center;
+}
+
+.table caption {
+	caption-side: bottom;
+	display: none;
+}
+#boardListTable tr td:nth-child( 3n+3 ){
+	text-align: left;
+}
+
+#boardOptionDiv {
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
 	margin-top: 30px;
+	margin-bottom: 30px;
 }
-
-#container{
-	width: 1100px; 
-	margin: 0 auto;
-	margin-top: 150px;
+#boardOptionDiv input,select{
+	height: 35px;
+	font-size: 15px;
+	 -webkit-appearance: none;
+	 outline-style: none;
+	 font-weight: 500;
 }
-#boardOptionDiv{
-	text-align:center;
-	margin: 0 auto;
-	width:1100px;
-	margin-top: 30px; 
-	
+#boardOptionDiv select{
+	width: 100px;
+	text-align-last:center; 
+	background: #fff;
+	height: 36px;
+	vertical-align: 1.1px;
 }
-
-#searchOption{
-width: 100px; 
-height: 40px; 
-text-align-last: center;
+#boardOptionDiv input[type=button]{
+	width: 100px;
+	border:1px solid #f2f2f2;
+	border-radius: 5px;
+	background: #f2f2f2;
 }
-
-
-
-
+#boardOptionDiv input[type=button]:last-child{
+	background: #dd3838;
+	color: #fff;
+}
+#boardOptionDiv input[type=text]{
+	width: 300px;
+	text-indent: 15px;
+	border-radius: 5px;
+	  -webkit-appearance: none;
+	border: 1px solid #f2f2f2;
+}

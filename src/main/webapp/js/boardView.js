@@ -1,55 +1,60 @@
 // 데이터 뿌려주기
-$(document)
-		.ready(
-				function() {
-					$
-							.ajax({
-								type : 'post',
-								url : '/dogiver/board/getBoardView',
-								data : 'brd_seq=' + $('#brd_seq').val(),
-								dataType : 'json',
-								success : function(data) {
-									$('#seqSpan').text(data.boardDTO.brd_seq);
-									$('#categorySpan').text(
-											data.boardDTO.brd_category);
-									$('#titleSpan').text(
-											data.boardDTO.brd_title);
-									$('#idSpan').text(
-											data.boardDTO.brd_nickname);
-									$('#dateSpan').text(
-											data.boardDTO.brd_logtime);
-									$('#contentSpan').html(
-											data.boardDTO.brd_content);
-									$('#brd_seq').val(data.boardDTO.brd_seq);
-									$('#re_seq').val(data.boardDTO.re_seq);
-
-									let tag = '';
-									$
-											.each(
-													data.list,
-													function(index, items) {
-														tag += '<table class="replyContent" border="1" style="width: 1080px;">'
-																+ '<tr><td height= "45" width="75" align="center">작성자</td>'
-																+ '<td width="70" align="center"><span id="writerSapn">'
-																+ items.re_writer
-																+ '</span></td>'
-																+ '<td width="70" align="center">작성일</td>'
-																+ '<td width="100" align="center"><span id="timeSapn">'
-																+ items.re_logtime
-																+ '</span></td>'
-																+ '<td width="480" align="right" style="padding-right: 20px;">'
-																+ '<a href="#" id='
-																+ items.re_seq
-																+ ' class='
-																+ items.re_writer
-																+ '>삭제</a></td>'
-																+ '</tr><tr><td colspan="6" height="65" style="padding: 10px;"><span id="timeSapn">'
-																+ items.re_content
-																+ '</span></td></tr>'
-																+ '</table>';
-
-													});
-									$('#contentDiv').append(tag);
+$(document).ready(function() {
+	$.ajax({
+		type : 'post',
+		url : '/dogiver/board/getBoardView',
+		data : 'brd_seq=' + $('#brd_seq').val(),
+		dataType : 'json',
+		success : function(data) {
+//			alert(data.role);
+			$('#seqSpan').text(data.boardDTO.brd_seq);
+			$('#categorySpan').text(data.boardDTO.brd_category);
+			$('#titleSpan').text(data.boardDTO.brd_title);
+			$('#idSpan').text(data.boardDTO.brd_nickname);
+			$('#dateSpan').text(data.boardDTO.brd_logtime);
+			$('#contentSpan').html(data.boardDTO.brd_content);
+			$('#brd_seq').val(data.boardDTO.brd_seq);
+			$('#re_seq').val(data.boardDTO.re_seq);
+			
+			let tag='';
+			$.each(data.list,function(index, items) {
+				tag += '<table class="replyContent" border="1" style="width: 1080px;">'
+					+ '<tr><td height= "45" width="75" align="center">작성자</td>'
+					+ '<td width="70" align="center"><span id="writerSapn">'
+					+ items.re_writer
+					+ '</span></td>'
+					+ '<td width="70" align="center">작성일</td>'
+					+ '<td width="100" align="center"><span id="timeSapn">'
+					+ items.re_logtime
+					+ '</span></td>'
+					+ '<td width="480" align="right" style="padding-right: 20px;">'
+					+'<a href="#" id='+items.re_seq+' class='+items.re_writer+'>삭제</a></td>'
+					+ '</tr><tr><td colspan="6" height="65" style="padding: 10px;"><span id="timeSapn">'
+					+ items.re_content
+					+ '</span></td></tr>'
+					+ '</table>';
+			
+			});
+			$('#contentDiv').append(tag);
+			//alert(data.memNickName); //현재 접속한 아이디 
+		
+			
+			$.each(data.list, function(index, items) {
+				if(data.memNickName != $('.'+items.re_writer).attr('class')){
+					$('.'+items.re_writer).hide();
+				}
+						
+				
+			});
+			//글 수정 삭제 보여주기
+			if ((data.memEmail == data.boardDTO.brd_email) || (data.role=='admin')){
+				$('#board_member_addBtn').show();}
+				else{
+				$('#board_member_addBtn').hide();
+				}
+		}
+	});
+});
 
 									$.each(data.list, function(index, items) {
 										if (data.memNickName != $(

@@ -41,32 +41,17 @@ $(document).ready(function(){
 			$.each(data.list, function(index, items){
 				if(items.brd_category!='공지'){
 				$('<tr/>').append($('<td/>',{
-					align : 'center',
-					style:'height:80px',
-					style:'font-size: 20px',
 					text : items.brd_seq
 				})).append($('<td/>',{
-					style:'font-size: 20px',
-					align : 'center',
 					text : items.brd_category
-				})).append($('<td/>',{
-						style:'font-size: 20px',
-						align : 'center'
-					}).append($('<a/>',{
-						style:'font-size: 20px',
-						href : '#',
-						style:'color:#ab2328',
+				})).append($('<td/>').append($('<a/>',{
 						text : items.brd_title,
 						class : 'titleA',
 						id : items.brd_seq+''
 					}))
 				).append($('<td/>',{
-					style:'font-size: 20px',
-					align : 'center',
 					text : items.brd_nickname
 				})).append($('<td/>',{
-					style:'font-size: 20px',
-					align : 'center',
 					text : items.brd_logtime
 				})).appendTo($('#boardListTable'));
 				}//if 
@@ -87,7 +72,7 @@ $(document).ready(function(){
 				}
 			});
 			
-			//삭제 기능
+			// 삭제 기능
 			$.each(data.list, function(index, items) {
 				if(data.memNickName != $('.'+items.re_writer).attr('class')){
 					$('.'+items.re_writer).hide();
@@ -164,7 +149,7 @@ $('#boardSearchBtn').click(function(event, str){
 					
 				});
 				
-				//삭제 기능
+				// 삭제 기능
 				$.each(data.list, function(index, items) {
 					if(data.memNickName != $('.'+items.re_writer).attr('class')){
 						$('.'+items.re_writer).hide();

@@ -23,17 +23,17 @@ public class BoardPaging {
 			endPage = totalP;
 
 		if (startPage > pageBlock)
-			pagingHTML.append("<a style=\"font-size:20px;\" id='paging' href='boardList?pg=" + (startPage - 1) + "'>이전</a> &emsp;&emsp; ");
+			pagingHTML.append("<a id='paging' href='boardList?pg=" + (startPage - 1) + "'>이전</a> &emsp;&emsp; ");
 
 		for (int i = startPage; i <= endPage; i++) {
 			if (i == currentPage)
-				pagingHTML.append("<a style=\"font-size:20px;\" id='currentPaging' href='boardList?pg=" + i + "'>" + i + "</a> &emsp;&emsp;");
+				pagingHTML.append("<a id='currentPaging' href='boardList?pg=" + i + "'>" + i + "</a> &emsp;&emsp;");
 			else
-				pagingHTML.append("<a style=\"font-size:20px;\" id='paging' href='boardList?pg=" + i + "'>" + i + "</a> &emsp;&emsp;");
+				pagingHTML.append("<a id='paging' href='boardList?pg=" + i + "'>" + i + "</a> &emsp;&emsp;");
 		}
 
 		if (endPage < totalP)
-			pagingHTML.append("<a style=\"font-size:20px;\" id='paging' href='boardList?pg=" + (endPage + 1) + "'>다음</a>");
+			pagingHTML.append("<a id='paging' href='boardList?pg=" + (endPage + 1) + "'>다음</a>");
 	}
 
 	public void makeSearchPagingHTML() {
