@@ -13,7 +13,6 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/admin.css" />
     <link rel="stylesheet" href="../css/sign.css" />
-    <link rel="stylesheet" href="../css/admin_contact.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
       rel="stylesheet"
@@ -49,17 +48,17 @@ pageEncoding="UTF-8"%>
         <div class="article">
         <form id="admin_contactForm" method="post">
 		<div class="wrap">
-			<div class="contact_container" >
+			<div class="container" style="width: 1000px; margin: 0 auto; margin-top: 150px; height: 700px; overflow: auto;">
 				<table id="admin_contactTable" border="1" cellpadding="5" frame="hsides " rules="rows">
 					<tr height="70" style="background-color: #FFEBF0;">
-						<th id="admin_contactTable_th1" >번호</th>
-						<th id="admin_contactTable_th2" width="50" >이름</th>
-						<th id="admin_contactTable_th3" width="140" >이메일</th>
-						<th id="admin_contactTable_th4" width="150" >핸드폰번호</th>
-						<th id="admin_contactTable_th5" width="100" >주제</th>
-						<th id="admin_contactTable_th6" width="360" >내용</th>
-						<th id="admin_contactTable_th7" width="100" >작성시간</th>
-						<th id="admin_contactTable_th8" width="100" >데이터 삭제</th>
+						<th width="50" style="font-size: 15px; border: 1px solid black;">번호</th>
+						<th width="50" style="font-size: 15px; border: 1px solid black;">이름</th>
+						<th width="140" style="font-size: 15px; border: 1px solid black;">이메일</th>
+						<th width="150" style="font-size: 15px; border: 1px solid black;">핸드폰번호</th>
+						<th width="100" style="font-size: 15px; border: 1px solid black;">주제</th>
+						<th width="360" style="font-size: 15px; border: 1px solid black;">내용</th>
+						<th width="100" style="font-size: 15px; border: 1px solid black;">작성시간</th>
+						<th width="100" style="font-size: 15px; border: 1px solid black;">데이터 삭제</th>
 					</tr>
 				</table>
 			</div>
