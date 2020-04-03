@@ -4,7 +4,6 @@ $(document).ready(function(){
 		url : '/dogiver/board/getBoardList',
 		dataType : 'json',
 		success : function(data){
-			alert('a');
 			$.each(data.list, function(index, items){
 				 $('<tr/>').append($('<td/>',{
 					style:'font-size: 15px; height:35px; border:1px solid black;',
@@ -77,7 +76,6 @@ $(document).ready(function(){
 	               url : '/dogiver/board/boardDelete',
 	               data : {'brd_seq':seq},
 	               success : function(data) {
-	            	   alert('성공');
 	            	   $('#admin_boardTable td').remove();
 	            	   $.ajax({
 	            			type : 'post',

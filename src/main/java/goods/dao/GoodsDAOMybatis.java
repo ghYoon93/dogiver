@@ -34,12 +34,14 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	}
 
 	@Override
-	public List<GoodsDTO> goods_lineUp(String lineUp) {
-		return sqlSession.selectList("goodsSQL.goods_lineUp", lineUp);
+	public List<GoodsDTO> goods_lineUp(Map<String, Integer> map) {
+		System.out.println(map);
+		return sqlSession.selectList("goodsSQL.goods_lineUp", map);
 	}
 
 	@Override
 	public int qnaWrite(Map<String, String> map) {
+		System.out.println(map);
 		return sqlSession.insert("goodsSQL.qnaWrite", map);
 	}
 

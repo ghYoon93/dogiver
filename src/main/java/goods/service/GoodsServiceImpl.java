@@ -34,8 +34,9 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 
 	@Override
-	public List<GoodsDTO> goods_lineUp(String lineUp) {
-		return goodsDAO.goods_lineUp(lineUp);
+	public List<GoodsDTO> goods_lineUp(Map<String, Integer> map) {
+		System.out.println(map);
+		return goodsDAO.goods_lineUp(map);
 	}
 
 	@Override

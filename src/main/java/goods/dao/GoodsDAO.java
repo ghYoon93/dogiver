@@ -15,7 +15,7 @@ public interface GoodsDAO {
 
 	public List<GoodsDTO> getCategory(int category);
 
-	public List<GoodsDTO> goods_lineUp(String lineUp);
+	public List<GoodsDTO> goods_lineUp(Map<String, Integer> map);
 
 	public int qnaWrite(Map<String, String> map);
 
@@ -26,7 +26,6 @@ public interface GoodsDAO {
 	public List<QnaDTO> getGoodsReviewList(int goods_id);
 
 	public void writeReply(Map<String, String> map);
-
 
 	public void updateAmt(OrderDetailDTO orderDetailDTO);
 	

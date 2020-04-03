@@ -41,10 +41,10 @@
 					<li class="right_box">
 						<div class="sort_box">
 							<select class="goods_sort" id="goods_sort">
-								<option value="newly">등록일순</option>
-								<option value="popular">판매순</option>
-								<option value="hight_price">높은 가격순</option>
-								<option value="low_price">낮은 가격순</option>
+								<option value="10">등록일순</option>
+								<option value="20">판매순</option>
+								<option value="30">높은 가격순</option>
+								<option value="40">낮은 가격순</option>
 							</select>
 						</div>
 					</li>

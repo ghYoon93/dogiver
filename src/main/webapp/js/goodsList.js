@@ -73,7 +73,7 @@ $(document).on('click', '.btn_detail_link, .goods-boxs a', function(){
 
 
 /****** 카테고리 정렬 ******/
-var category = "";
+let category = "";
 $('.goods_category li').click(function(){
 	category = $(this).attr('value');
 	$('.goods-boxs').remove(); //초기화
@@ -121,13 +121,16 @@ $('.goods_category li').click(function(){
 $('.goods_sort').change(function(){
 	//var lineUp = $('.goods_sort option:selected').val();
 	var lineUp = $('#goods_sort').val();
+	
 	$('.goods-boxs').remove(); //초기화
 	
 	var tag = "";
+	alert(category+" "+lineUp);
 	$.ajax({
 		type: 'post',
 		url: '/dogiver/goods/goods_lineUp',
-		data: 'lineUp='+lineUp,
+		data: {'category' : category,
+				'lineUp' : lineUp},		
 		dataType: 'json',
 		success: function(data){
 			$.each(data.list, function(index, items){
@@ -159,7 +162,6 @@ $('.goods_sort').change(function(){
 		
 	});
 });
-
 
 
 /****** 장바구니옵션 모달 ******/
