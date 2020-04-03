@@ -40,6 +40,7 @@ html {
 
 .title {
   color: grey;
+  font-size: 23px;
 }
 
 .button {
@@ -69,3 +70,42 @@ html {
   left: 66%;
   transform: translateX(-50%);
 }
+#ygh{
+	background: url("../image/team/ygh.png") no-repeat center #e55039;
+	width:333px;
+	height: 333px;
+	background-size: cover;
+}
+#jwb{
+	background: url("../image/team/jwb.png") no-repeat center #74b9ff;
+	width:333px;
+	height: 333px;
+	background-size: cover;
+}
+#kkw{
+	background: url("../image/team/kkw.png") no-repeat center #fab1a0;
+	width:333px;
+	height: 333px;
+	background-size: cover;
+}
+#syr{
+	background: url("../image/team/syr.png") no-repeat center #ffeaa7;
+	width:333px;
+	height: 333px;
+	background-size: cover;
+}
+#pjs{
+	background: url("../image/team/pjs.png") no-repeat center #78e08f;
+	width:333px;
+	height: 333px;
+	background-size: cover;
+}
+.team-content h2{
+	font-size: 29px;
+}
+.team-content p{
+	font-size: 19px;
+}
+.team-content p:last-child{
+	margin-bottom:20px;
+	}

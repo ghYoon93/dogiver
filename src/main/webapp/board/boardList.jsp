@@ -11,9 +11,6 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
-<style type="text/css">
-
-</style>
 </head>
 <body>
 	<div id="headerDiv"></div>
@@ -25,45 +22,41 @@
 		<div class="wrap">
 			<div class="container">
 				<input type="hidden" id="pg" value="${pg }">
-				<table id="boardListTable" border="1" cellpadding="5"
-					frame="hsides " rules="rows" style="color: #ab2328;">
-					<tr height="70">
-						<th width="100" style="font-size: 15px;">글번호</th>
-						<th width="100" style="font-size: 15px;">글종류</th>
-						<th width="500" style="font-size: 15px;">제목</th>
-						<th width="150" style="font-size: 15px;">닉네임</th>
-						<th width="150" style="font-size: 15px;">작성일</th>
+				<div class="board-head">자유게시판</div>
+				<table id="boardListTable">
+					<tr>
+						<th class="brd_no">글번호</th>
+						<th class="brd_category">글종류</th>
+						<th class="brd_title">제목</th>
+						<th class="nickName">닉네임</th>
+						<th class="brd_date">작성일</th>
 					</tr>
 				</table>
-			</div>
+
 
 				<div id="boardPagingDiv"></div>
 
 				<div id="boardOptionDiv">
-					
-						<input type="hidden" name="pg" value="1">
-						<select name="searchOption" id="searchOption" >
-							<option value="brd_title">제목
-							<option value="brd_nickname">닉네임
-							<option value="brd_category">종류
-							</option>
-						</select>
-					
-				
-						<!-- 검색어가 사라지지 않게 -->
-						<input type="text" name="keyword" id="keyword" value="${keyword }"
-							placeholder="검색어 입력" style="width: 390px; height: 36px; ">
-					
-					
-						<input type="button" id="boardSearchBtn" value="검색" 
-						style="width: 100px; height: 40px;">
-					
-				
-						<input type="button" id="boardWriteBtn" value="글쓰기" 
-						style="width: 100px; height: 40px;"  onclick="location.href='/dogiver/board/boardWriteForm'">
-					
+
+					<input type="hidden" name="pg" value="1"> <select
+						name="searchOption" id="searchOption">
+						<option value="brd_title">제목
+						<option value="brd_nickname">닉네임
+						<option value="brd_category">종류</option>
+					</select>
+
+
+					<!-- 검색어가 사라지지 않게 -->
+					<input type="text" name="keyword" id="keyword" value="${keyword }"
+						placeholder="검색어 입력"> 
+					<input type="button"
+						id="boardSearchBtn" value="검색">
+					<input type="button"
+						id="boardWriteBtn" value="글쓰기"
+						onclick="location.href='/dogiver/board/boardWriteForm'">
+
 				</div>
-			
+			</div>
 		</div>
 	</form>
 	<div id="footerDiv"></div>
@@ -73,18 +66,18 @@
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/boardList.js"></script>
 <script type="text/javascript">
-$('#keyword').keypress(function(event){
-    if ( event.which == 13 ) {
-        $('#boardSearchBtn').click();
-        return false;
-    }
-});
+	$('#keyword').keypress(function(event) {
+		if (event.which == 13) {
+			$('#boardSearchBtn').click();
+			return false;
+		}
+	});
 </script>
 <script type="text/javascript">
 	function boardSearch(pg) {
 		//location.href='getBoardSearch?pg='+pg+'&searchOption=${searchOption}'+'&keyword=${keyword}'
 		$('input[name=pg]').val(pg);
-		$('#boardSearchBtn').trigger('click','trigger');
+		$('#boardSearchBtn').trigger('click', 'trigger');
 	}
 </script>
 </html>

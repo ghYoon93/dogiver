@@ -6,7 +6,7 @@ $(document).ready(function() {
 		data : 'brd_seq=' + $('#brd_seq').val(),
 		dataType : 'json',
 		success : function(data) {
-			alert(data.role);
+//			alert(data.role);
 			$('#seqSpan').text(data.boardDTO.brd_seq);
 			$('#categorySpan').text(data.boardDTO.brd_category);
 			$('#titleSpan').text(data.boardDTO.brd_title);
