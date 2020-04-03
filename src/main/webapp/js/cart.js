@@ -112,6 +112,7 @@ $(document).on('click', 'input:checkbox[name=checkGoods]', function() {
 		}
 		let total = calcTot(checkedGoods);
 		let deliveryCharge = 2500;
+		if(checkedCnt == 0) deliveryCharge = 0;
 		let totalSettlePrice = total + deliveryCharge;
 		$('#totalGoodsCnt').html(cashFormat(checkedCnt));
 		$('#totalGoodsPrice').html(cashFormat(total));
