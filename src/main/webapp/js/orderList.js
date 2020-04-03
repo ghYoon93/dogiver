@@ -24,7 +24,7 @@ $(document).ready(function(){
                                + 'class="order_num_link"><span>'+items.order_id+'</span></a>'
                             + '<div class="btn_claim">'
                               + '<span class="btn_gray_list">'
-                                + '<a href="#" class="btn_gray_small js_btn_order_cancel">'
+                                + '<a href="#" class="btn_gray_small js_btn_order_cancel" data-order_id='+items.order_id+'>'
                                   + '<span>주문취소</span>'
                                 + '</a>'
                               + '</span>'
@@ -64,6 +64,18 @@ $(document).ready(function(){
 function numberFormat(inputNumber) {
 	return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-$('.btn_gray_small').on('click', function(){
-	alert('x');
+$(document).on('click','.js_btn_order_cancel', function(){
+	console.log(this.dataset.order_id);
+	let cancelOrder = confirm('주문 취소 처리를 하시겠습니까?');
+	if(cancelOrder){
+		$.ajax({
+			type: 'post',
+			url: '/dogiver/order/cancelOrder',
+			data: 'order_id='+this.dataset.order_id,
+			success: function(){
+				alert('주문이 정상적으로 취소되었습니다.');
+			}
+			
+		});
+	}
 });

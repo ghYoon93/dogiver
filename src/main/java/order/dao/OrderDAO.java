@@ -29,6 +29,8 @@ public interface OrderDAO {
 
 	public List<OrderStatusDTO> getStatus(String memEmail);
 
+	public void cancelOrder(String order_id);
+
 	
 
 	
