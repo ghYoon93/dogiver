@@ -50,7 +50,7 @@ $(document).ready(function() {
 						$('#name').val(items.name);
 						$('#phone').val(items.phone);
 						$('#email').val(items.email);
-						$('#dog_image').html(tiems.dog_image);
+						$('#dog_image').html(items.dog_image);
 						$('#description').val(items.description);
 					}
 				});//each				
