@@ -48,6 +48,12 @@ $(document).ready(function() {
 				$('#goods_name').val(data.goodsDTO.goods_name);
 				$('#goods_price').val(data.goodsDTO.goods_price);
 				$('#goods_amt').val(data.goodsDTO.goods_amt);
+				if(data.goodsDTO.sales_yn == y){
+					$('#sales_y').prop("checked", true);
+				}else if(data.goodsDTO.sales_yn == n){
+					$('#sales_n').prop("checked");
+				}
+				$('#inputsales_yn').val(data.goodsDTO.sales_yn);
 				$('#goods_thumbnail').html(data.goodsDTO.goods_thumbnail);
 				$('#goods_detail').html(data.goodsDTO.goods_detail);
 				
@@ -58,17 +64,7 @@ $(document).ready(function() {
 	//수정하기
 	$(document).on('click', '#goodsModify', function(){
 		let formData = new FormData($('#goodsForm')[0]);
-		for (var key of formData.keys()) {
-
-			  console.log(key);
-
-			}
-
-			for (var value of formData.values()) {
-
-			  console.log(value);
-
-			}
+		
 		$.ajax({
 			type: 'post',
 			enctype: 'multipart/form-data',
