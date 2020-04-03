@@ -44,35 +44,22 @@ public class GoodsBoardController {
 		return "/goods/qna";
 	}
 
-//	@RequestMapping(value="qnaWrite", method=RequestMethod.POST)
-//	public String qnaWrite(@RequestParam Map<String, String> map, Model model, HttpSession session) {
-//		Iterator<String> mapIter = map.keySet().iterator();
-//		 
-//		//map 출력
-//        while(mapIter.hasNext()){
-//            String key = mapIter.next();
-//            String value = map.get( key );
-// 
-//            System.out.println(key+" : "+value);
-//        }
-//		goodsService.qnaWrite(map);
-//		model.addAttribute("memEmail", session.getAttribute("memEmail"));
-//		model.addAttribute("goods_id", map.get("goods_id"));
-//		return "redirect:goodsDetail";
-//	}
-	
 	@RequestMapping(value="qnaWrite", method=RequestMethod.POST)
-	public ModelAndView qnaWrite(@RequestParam Map<String, String> map, HttpSession session){
-		System.out.println(map);
-		ModelAndView mav = new ModelAndView();
-		
+	public String qnaWrite(@RequestParam Map<String, String> map, Model model, HttpSession session) {
+		Iterator<String> mapIter = map.keySet().iterator();
+		 
+		//map 출력
+        while(mapIter.hasNext()){
+            String key = mapIter.next();
+            String value = map.get( key );
+ 
+            System.out.println(key+" : "+value);
+        }
 		goodsService.qnaWrite(map);
-		//mav.addObject("map", map);
-		//mav.addObject("memEmail", session.getAttribute("memEmail"));
-		
-		return mav;
+		model.addAttribute("memEmail", session.getAttribute("memEmail"));
+		model.addAttribute("goods_id", map.get("goods_id"));
+		return "redirect:goodsDetail";
 	}
-	
 
 	@RequestMapping(value="getGoodsQnaList", method=RequestMethod.POST)
 	@ResponseBody
@@ -168,9 +155,20 @@ public class GoodsBoardController {
 	
 	@RequestMapping(value="reviewView", method=RequestMethod.POST)
 	@ResponseBody
-	public ModelAndView reviewView(@RequestParam String bo_seq) {
+	public ModelAndView reviewView(@RequestParam String bo_seq, HttpSession session) {
+		String email = (String) session.getAttribute("memEmail");
 		QnaDTO qnaDTO = goodsService.reviewView(bo_seq);
+		System.out.println(qnaDTO);
+		
+		String checkAcct = null;
+		if(email.equals(qnaDTO.getEmail())) {
+			checkAcct = "same";
+		}else {
+			checkAcct = "different";
+		}
+		System.out.println(checkAcct);
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("checkAcct", checkAcct);
 		mav.addObject("qnaDTO", qnaDTO);
 		mav.setViewName("jsonView");
 		
