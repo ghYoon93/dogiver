@@ -4,7 +4,7 @@
 	
 <mapper namespace="goodsSQL">
 	<select id="getGoodsList" parameterType="int" resultType="goods.bean.GoodsDTO">
-		select * from goods order by goods_date
+		select * from goods order by goods_date desc
 	</select>
 	
 	<select id="getGoodsDetail" parameterType="int" resultType="goods.bean.GoodsDTO">
@@ -104,7 +104,7 @@
 	</insert>
 	
 	<update id="goodsModify" parameterType="goods.bean.GoodsDTO">
-		update goods set category_code=#{category_code}, goods_name=#{goods_name}, goods_price=#{goods_price}, goods_date=SYSDATE, goods_amt=#{goods_amt} where goods_id = #{goods_id}
+		update goods set category_code=#{category_code}, goods_name=#{goods_name}, goods_price=#{goods_price}, goods_date=SYSDATE, goods_amt=#{goods_amt}, sales_yn=#{sales_yn} where goods_id = #{goods_id}
 	</update>
 	<delete id="reviewDelete" parameterType="int">
 		delete from goods_board where bo_seq=#{bo_seq}

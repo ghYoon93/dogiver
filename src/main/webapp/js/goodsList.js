@@ -19,28 +19,30 @@ $(document).ready(function(){
 			$.each(data.list, function(index, items){
 				//$('#goods_name').text(items.goods_name);
 				//alert(items.goods_detail);
+				let goods_price = '<span id="goods_price">' + items.goods_price + '</span>원';
+				if(items.sales_yn =='N') goods_price = '<span id="goods_price">품절된 상품입니다.</span>';
 				
-				tag += '<div class="goods-boxs" >'
-				         + '<div class="goods-image" >'
-				           + '<a href="javascript:void(0)" id="'+items.goods_id+'">'
-				             + '<img class="image" src="../image/goods/'+ items.goods_thumbnail +'"/>'
-				           + '</a>'
-				           + '<div class="hover_bar">'
-				             + '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
-				               + '<img src="../image/shopping_bucket.png" />'
-				             + '</button>'
-				             + '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
-				               + '<img src="../image/search.png" />'
-				             + '</button>'
-				           + '</div>'
-				         + '</div>'
-				         + '<div class="goods-content">'
-				           + '<a href="javascript:void(0)" onclick="" >'
-				             + '<h1 id="goods_name">'+ items.goods_name + '</h1>'
-				             + '<span id="goods_price">' + items.goods_price + '</span>원'
-				           + '</a>'
-				         + '</div>'
-				      + '</div>';
+					tag += '<div class="goods-boxs" >'
+						+ '<div class="goods-image" >'
+						+ '<a href="javascript:void(0)" id="'+items.goods_id+'">'
+						+ '<img class="image" src="../image/goods/'+ items.goods_thumbnail +'"/>'
+						+ '</a>'
+						+ '<div class="hover_bar">'
+						+ '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
+						+ '<img src="../image/shopping_bucket.png" />'
+						+ '</button>'
+						+ '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
+						+ '<img src="../image/search.png" />'
+						+ '</button>'
+						+ '</div>'
+						+ '</div>'
+						+ '<div class="goods-content">'
+						+ '<a href="javascript:void(0)" onclick="" >'
+						+ '<h1 id="goods_name">'+ items.goods_name + '</h1>'
+						+ goods_price 
+						+ '</a>'
+						+ '</div>'
+						+ '</div>';
 				
 				
 				//$('.goods-boxs a').attr('id', items.goods_id);
@@ -67,7 +69,7 @@ $(document).ready(function(){
 
 //버튼 클릭시 해당상품 상세 페이지로 이동
 $(document).on('click', '.btn_detail_link, .goods-boxs a', function(){
-	var id = $(this).attr('id');
+	var id = $(this).attr('id');	
 	location.href="goodsDetail?goods_id="+id;
 });
 

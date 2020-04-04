@@ -73,7 +73,7 @@ pageEncoding="UTF-8"%>
 							</select>
 	        			</div>
 	        			<div class="adminGoodsViewDiv">
-	        				<p>상품번호</p><input type="text" id="goods_id" readonly>
+	        				<p>상품번호</p><input type="text" name="goods_id" id="goods_id" readonly>
 	        			</div>
 	        			<div class="adminGoodsViewDiv">
 	        				<p>상품명</p><input type="text" id="goods_name" name="goods_name">

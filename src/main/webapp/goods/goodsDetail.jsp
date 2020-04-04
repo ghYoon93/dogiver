@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 	<link
 	      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	      rel="stylesheet"
@@ -66,7 +68,7 @@
 		<nav class="navigationBar"> 
 			<ul> 
 				<li><a href="javascript:void(0)" onclick="getContentTab(1);">상세내용</a></li> 
-			<!-- 	<li><a href="javascript:void(0)" onclick="getContentTab(2);">상품문의</a></li>  -->
+				<li><a href="javascript:void(0)" onclick="getContentTab(2);">상품문의</a></li>  
 				<li><a href="javascript:void(0)" onclick="getContentTab(3);">상품후기</a></li> 
 				<li><a href="javascript:void(0)" onclick="getContentTab(4);">교환/환불/배송</a></li> 
 			</ul> 

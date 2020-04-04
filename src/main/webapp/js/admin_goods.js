@@ -48,10 +48,12 @@ $(document).ready(function() {
 				$('#goods_name').val(data.goodsDTO.goods_name);
 				$('#goods_price').val(data.goodsDTO.goods_price);
 				$('#goods_amt').val(data.goodsDTO.goods_amt);
-				if(data.goodsDTO.sales_yn == y){
-					$('#sales_y').prop("checked", true);
-				}else if(data.goodsDTO.sales_yn == n){
-					$('#sales_n').prop("checked");
+				if(data.goodsDTO.sales_yn == 'Y'){
+					$('#sales_y').attr('checked', true);
+					$('#sales_n').attr('checked', false);
+				}else if(data.goodsDTO.sales_yn == 'N'){
+					$('#sales_y').attr('checked', false);
+					$('#sales_n').attr('checked', true);
 				}
 				$('#inputsales_yn').val(data.goodsDTO.sales_yn);
 				$('#goods_thumbnail').html(data.goodsDTO.goods_thumbnail);
@@ -81,6 +83,13 @@ $(document).ready(function() {
 				$('#goods_amt').val(data.goodsDTO.goods_amt);
 				$('#goods_thumbnail').html(data.goodsDTO.goods_thumbnail);
 				$('#goods_detail').html(data.goodsDTO.goods_detail);
+				if(data.goodsDTO.sales_yn == 'Y'){
+					$('#sales_y').attr('checked', true);
+					$('#sales_n').attr('checked', false);
+				}else if(data.goodsDTO.sales_yn == 'N'){
+					$('#sales_y').attr('checked', false);
+					$('#sales_n').attr('checked', true);
+				}
 			}		
 		});
 	});

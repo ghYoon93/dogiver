@@ -55,7 +55,7 @@ public class GoodsController {
 	@ResponseBody
 	public ModelAndView getGoodsDetail(@RequestParam String goods_id){
 		GoodsDTO goodsDTO = goodsService.getGoodsDetail(goods_id);
-		System.out.println(goodsDTO);
+		System.out.println("getGoodsDetail: "+goodsDTO);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("goodsDTO", goodsDTO);
