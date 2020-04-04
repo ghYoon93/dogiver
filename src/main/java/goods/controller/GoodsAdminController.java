@@ -38,9 +38,6 @@ public class GoodsAdminController {
 		goodsDTO.setGoods_id(goods_id);
 		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
 
-		
-		
-		
 		if (goods_img != null) {
 			String fileName = goods_img.getOriginalFilename();
 			File file = new File(filePath);
