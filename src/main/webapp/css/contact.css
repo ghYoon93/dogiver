@@ -85,6 +85,7 @@ input:focus {
 }
 
 #contact_infoDiv {
+	border-radius: 30px;
 	font-weight:bold;
 	position: relative;
 	top: 13px;
@@ -96,9 +97,13 @@ input:focus {
 }
 
 #contact_imgDiv {
+	
+    background-color: #4f5230;
+    height: 517px;
 	position: relative;
 	top: -100px;
 	z-index: 0;
+	border-radius:30px;
 }
 
 #contact_visitor {
@@ -111,98 +116,108 @@ input:focus {
 }
 
 #nameText {
-	background-color: rgba(70, 70, 70, 1);
+	border-radius: 5px;
+	background-color: #ec1d0d;
 	color: white;
 	maxlength: 100px;
 	width: 256px;
-	height: 37px;
+	height: 45px;
 }
 
 #emailText {
+	border-radius: 5px;
 	margin-top: 10px;
-	background-color: rgba(70, 70, 70, 1);
+	background-color: #ec1d0d;
 	color: white;
 	maxlength: 100px;
 	width: 256px;
-	height: 37px;
-	background-color: rgba(70, 70, 70, 1);
+	height: 45px;
 }
 
 #phoneText {
+	border-radius: 5px;
 	margin-top: 10px;
-	background-color: rgba(70, 70, 70, 1);
+	background-color: #ec1d0d;
 	color: white;
 	maxlength: 100px;
 	width: 256px;
-	height: 37px;
+	height: 45px;
 }
 
 #subjectText {
+	border-radius: 5px;
 	margin-top: 10px;
-	background-color: rgba(70, 70, 70, 1);
+	background-color: #ec1d0d;
 	color: white;
 	maxlength: 100px;
 	width: 256px;
-	height: 37px;
+	height: 45px;
 }
 
 
 #textarea {
-	margin-top: 10px;
-	background-color: rgba(70, 70, 70, 1);
-	color: white;
-	padding-right: 10px;
-	resize: none;
-	width: 246px;
-	height: 149px;
+	border-radius: 5px;
+    margin-top: 10px;
+    background-color: #ff0000;
+    color: white;
+    padding-right: 10px;
+    resize: none;
+    width: 244px;
+    height: 155px;
 }
 
 #contact_textarea {
+	border-radius: 5px;
 	padding-left: 24px;
 	color: white;
-	background-color: rgba(70, 70, 70, 1);
+	background-color: #1d1d13;
 	border: none;
 	width: 230px;
 	height: 145px;
 }
 
 #text_name {
+	border-radius: 5px;
 	padding-left: 24px;
 	color: white;
-	background-color: rgba(70, 70, 70, 1);
+	background-color: #1d1d13;
 	border: none;
 	width: 232px;
 	height: 35px;
 }
 
 #text_email {
+	border-radius: 5px;
 	padding-left: 24px;
 	color: white;
-	background-color: rgba(70, 70, 70, 1);
+	background-color: #1d1d13;
 	border: none;
 	width: 232px;
 	height: 35px;
 }
 
 #text_subject {
+	border-radius: 5px;
 	padding-left: 24px;
 	color: white;
-	background-color: rgba(70, 70, 70, 1);
+	background-color: #1d1d13;
 	border: none;
 	width: 232px;
 	height: 35px;
 }
 
 #text_phone {
+	border-radius: 5px;
 	padding-left: 24px;
 	color: white;
-	background-color: rgba(70, 70, 70, 1);
+	background-color: #1d1d13;
 	border: none;
 	width: 232px;
 	height: 35px;
 }
 
 #buttonDiv {
+	
 	margin-top: 10px;
 	cursor: pointer;
 	height: 34px;
@@ -211,4 +226,12 @@ input:focus {
 	text-align: center;
 	display: inline-block;
 	cursor: pointer;
+}
+#contact_button{
+    width: 100px;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 5px;
+    background-color: black;
+    color:white;
 }

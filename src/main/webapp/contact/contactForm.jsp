@@ -43,7 +43,7 @@
 			</div>
 			<!--이미지 DIV  -->
 			<div id="contact_imgDiv">
-				<img id="contact_img" src="../image/dog3.jpg">
+				<img id="contact_img" src="../image/dog3.jpg" style=" border-radius: 30px;">
 			</div>
 			<form id="contactForm" method="post">
 				<div id="contact_visitor">
@@ -73,8 +73,7 @@
 					</div>
 
 					<div id="buttonDiv">
-						<input type="button" id="contact_button" style="cursor: pointer"
-							value="Submit">
+						<input type="button" id="contact_button" value="Submit">
 					</div>
 				</div>
 			</form>

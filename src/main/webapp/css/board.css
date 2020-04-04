@@ -6,17 +6,25 @@
 	height: 40px;
 	margin-bottom: 20px;
 }
+#board_select{
+	border-radius: 5px; 
+	font-size: 13px; 
+	height: 42px; 
+	text-align-last: center;
+}
 #board_category_select{
 	text-align:center;
 	display: inline-block;
 	width: 200px;
 	height: 40px;
+	border
 	
 }
 .board_title{
 	border-bottom: 20px;
 }
 #insert_text{
+	border-radius: 5px;
 	float:left;
 	width:820px;
 	height:36px;
@@ -32,4 +40,13 @@
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+#boardWrite_Btn{
+	border: none;
+	font-size: 18px;
+    background: #dd3838;
+    color: #fff;
+    border-radius: 5px;
+    width: 100px;
+    height: 43px;
 }

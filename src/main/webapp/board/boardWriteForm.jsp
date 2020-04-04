@@ -40,9 +40,8 @@
 				style="width: 1100px; margin: 0 auto; margin-top: 150px;">
 				<div class="board_category">
 					<div id="board_category_select">
-						<select id="board_select" name="brd_category"
-							style="font-size: 13px; height: 42px; text-align-last: center;">
-							<option label="글종류" style="text-align: center;"></option>
+						<select id="board_select" name="brd_category">
+							<option label="글종류" style="text-align: center; "></option>
 							<option value="가입">가입</option>
 							<option value="고민">고민</option>
 							<option value="자랑">자랑</option>

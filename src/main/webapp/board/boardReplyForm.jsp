@@ -7,10 +7,11 @@ textarea:focus {
 #contentDiv{
 width: 100%; 
 box-sizing: border-box;
- padding: 10px;"
+padding: 10px;
+border:none; !important
 } 
 </style>
-<div style="font-size:13px; font-weight:500; text-indent:20px;">댓글달기</div>
+<div style="font-size:15px; font-weight:500; text-indent:20px;">댓글달기</div>
 <form name="boardReplyForm" >
 	<input type="hidden" name="brd_seq" value="${brd_seq}"> 
 	<input type="hidden" name="pg" value="${pg }">
@@ -21,7 +22,7 @@ box-sizing: border-box;
 		<table>
 			<tr>
 				<td><textarea id="re_content" name="re_content" maxlength="55" 
-						style="width: 750px; resize: none;"></textarea></td>
+						style="width: 750px; resize: none; border-color: darkred;"></textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">

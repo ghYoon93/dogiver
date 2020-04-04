@@ -153,7 +153,18 @@
 	text-align: center;
 	margin-top: 20px;
 	width: 100%;
+	
 }
+#boardFormBtn{
+	width: 70px;
+    border-radius: 5px;
+    size: -5;
+    height: 28px;
+    margin-top: 10px;
+    
+}
+
+
 
 #board_button input[type=button] {
 	-webkit-appearance: none;

@@ -1,0 +1,30 @@
+ .comment{
+ box-sizing: border-box;
+ padding: 15px;
+ border-color: wheat;
+ border-radius: 5px;
+ border-bottom: 2px solid #842328;
+ }   
+#comment-writer{
+	width: 80px;
+    text-align: center;
+	font-size: 15px;
+	 border-radius: 5px;
+	display: inline-block;
+	background-color: #f1e0e0;
+}
+#comment-logtime{
+	display: inline-block;
+    margin-left: 49px;
+    width: 850px;
+}
+#comment-content{
+	margin-top: 15px;
+	margin-bottom:20px;
+}
+.delete_btn{
+	float: right;
+    background-color:#f1e0e0;
+    border-radius: 5px;
+    font-size: 15px;
+}

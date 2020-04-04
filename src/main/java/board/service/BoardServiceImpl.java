@@ -63,7 +63,7 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public BoardPaging boardPaging(String pg) {
-		int totalA = boardDAO.getBoardTotalA();//珥앷��닔
+		int totalA = boardDAO.getBoardTotalA();//�룯�빓占쏙옙�땾
 		
 		boardPaging.setCurrentPage(Integer.parseInt(pg));
 		boardPaging.setPageBlock(5);
@@ -76,7 +76,7 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public BoardPaging boardPaging(Map<String, String> map) {
 		
-		int totalA = boardDAO.getBoardSearchTotalA(map);//珥앷��닔
+		int totalA = boardDAO.getBoardSearchTotalA(map);//�룯�빓占쏙옙�땾
 		
 		boardPaging.setCurrentPage(Integer.parseInt(map.get("pg")));
 		boardPaging.setPageBlock(5);
