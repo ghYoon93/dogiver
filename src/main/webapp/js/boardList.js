@@ -12,7 +12,7 @@ $(document).ready(function(){
 				}).append($('<td/>',{
 					align : 'center',
 					style:'height:80px',
-					style:'font-size: 20px; font-weight:bold;',
+					style:'font-size: 20px; font-weight:bold; color: red;',
 					colspan:'2',
 					text : items.brd_category
 				})).append($('<td/>',{
@@ -50,6 +50,7 @@ $(document).ready(function(){
 						id : items.brd_seq+''
 					}))
 				).append($('<td/>',{
+					align : 'center',
 					text : items.brd_nickname
 				})).append($('<td/>',{
 					text : items.brd_logtime

@@ -110,7 +110,7 @@
 	display: none;
 }
 #boardListTable tr td:nth-child( 3n+3 ){
-	text-align: left;
+	text-align: center;
 }
 
 #boardOptionDiv {
@@ -155,3 +155,4 @@
 .titleA{
 	cursor: pointer;
 }
+
