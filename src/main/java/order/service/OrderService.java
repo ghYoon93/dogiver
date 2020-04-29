@@ -38,6 +38,8 @@ public interface OrderService {
 
 	public void cancelOrder(String order_id);
 
+	public int chkOrder(Map<String, String> map);
+
 
 
 }

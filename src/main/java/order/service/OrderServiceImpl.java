@@ -161,5 +161,9 @@ public class OrderServiceImpl implements OrderService {
 	public void cancelOrder(String order_id) {
 		orderDAO.cancelOrder(order_id);
 	}
+	@Override
+	public int chkOrder(Map<String, String> map) {
+		return orderDAO.chkOrder(map);
+	}
 
 }
