@@ -303,6 +303,7 @@ body{font-family: "Noto Sans KR", sans-serif;}
   margin-left: 18px;
   padding: 0 5px 13px 5px;
   border-bottom: 1px solid #dadada;
+  line-height: 3;
 }
 .option_tit_box dd strong {
   display: block;
@@ -315,7 +316,7 @@ body{font-family: "Noto Sans KR", sans-serif;}
 }
 .option_tit_box #tot_price {
   display: inline-block;
-  margin: 20px 10px 20px 200px;
+  margin: 20px 10px 20px 140px;
 }
 
 .option_tit_box .count {
@@ -739,7 +740,7 @@ input[type="checkbox"]:checked + label:before {
 .option_tit_box .changeCnt{
     padding: 1.5% 4.5%;
     margin: 0 0 0 5px;
-    border: 1px solid #ffc71d;
+    border: 1px solid #f8585b;
     border-radius: 5px;
     color: #fff;
     background-color: #f8585b;
@@ -763,6 +764,7 @@ input[type="checkbox"]:checked + label:before {
 }
 .option_tit_box .btnbox{
     text-align: center;
+    vertical-align: middle;
 }
 
 .option_tit_box .namebox{
@@ -771,3 +773,26 @@ input[type="checkbox"]:checked + label:before {
 .pay_noBook_box{
 	display: none;
 }
+
+#minus, #plus{
+	width: 40px;
+    height: 33px;
+    font-size: 23px;
+    line-height: 1;
+    font-weight: 500;
+    vertical-align: -2px;
+    border-radius: 5px;
+    border: none;
+    background: #f2f2f2;
+    margin: 0 7px 0;
+}
+#quantity{
+	width: 40px;
+    height: 31px;
+    font-size: 17px;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    text-align: center;
+}
+
