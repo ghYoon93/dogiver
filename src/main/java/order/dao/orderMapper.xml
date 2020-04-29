@@ -95,4 +95,10 @@
          WHERE order_id = #{order_id}
         
     </update>
+    <select id="chkOrder" parameterType="java.util.Map" resultType="int">
+        SELECT COUNT(*) 
+          FROM order_detail od 
+               LEFT JOIN goods_order go ON od.order_id = go.order_id 
+         WHERE go.email = #{email} AND od.goods_id=#{goods_id} AND go.order_status='결제완료'
+    </select>
 </mapper>

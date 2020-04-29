@@ -74,5 +74,9 @@ public class OrderDAOMyBatis implements OrderDAO {
 	public void cancelOrder(String order_id) {
 		sqlSession.update("orderSQL.cancelOrder", order_id);
 	}
+	@Override
+	public int chkOrder(Map<String, String> map) {
+		return sqlSession.selectOne("orderSQL.chkOrder",map);
+	}
 
 }

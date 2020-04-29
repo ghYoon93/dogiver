@@ -44,7 +44,7 @@
 	
 	<update id="change" parameterType="member.bean.MemberDTO">
 		update member set
-		name=#{name}, nickname=#{nickName}, pwd=#{pwd}, phone=#{phone},
+		name=#{name}, nickname=#{nickName}, phone=#{phone},
 		zipcode=#{zipcode},addr=#{addr}, addr_detail=#{addr_Detail},
 		role=#{role},email_Yn=#{email_Yn}
 		 where email = #{email}

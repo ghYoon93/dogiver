@@ -10,7 +10,7 @@
 	<!-- 명예의 전당 -->
 	<select id="getDogiver" resultType="dogiver">
 		select dog_name, dog_age, dog_weight, dog_breed, dog_image, blood_cc, description, donation_date, dog_id, dog_bloodtype 
-		from apply_dogiver join dogiver using(dog_id)
+		from apply_dogiver join dogiver using(dog_id) ORDER BY dog_id DESC
 	</select>
 	
 	<!-- 마이페이지 헌혈견 -->

@@ -53,7 +53,7 @@
 	
  	<insert id="writeReply" parameterType="java.util.Map"> 
 		insert into goods_board(email, goods_id, category_code, title, reply, board_date, bo_seq, re_seq)
-		values('uri927@naver.com', #{goods_id}, 'REPLY', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
+		values(#{email}, #{goods_id}, 'REPLY', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
 	</insert>
 	
 	<select id="replyList" parameterType="int" resultType="goods.bean.QnaDTO">
