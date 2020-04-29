@@ -246,4 +246,12 @@ public class OrderController {
     public void cancelOrder(@RequestParam String order_id) {
     	orderService.cancelOrder(order_id);
     }
+    @RequestMapping(value="/order/chkOrder", method=RequestMethod.POST)
+    public @ResponseBody int chkOrder(@RequestParam String goods_id, HttpSession session) {
+    	String memEmail = (String)session.getAttribute("memEmail");
+    	Map<String, String> map = new HashMap<String, String>();
+    	map.put("email", memEmail);
+    	map.put("goods_id", goods_id);
+    	return orderService.chkOrder(map);
+    }
 }

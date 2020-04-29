@@ -76,7 +76,9 @@ public class GoodsBoardController {
 	
 	@RequestMapping(value="writeReply", method=RequestMethod.POST)
 	@ResponseBody
-	public String writeReply(@RequestBody Map<String, String> map){
+	public String writeReply(@RequestBody Map<String, String> map, HttpSession session){
+		String email = (String)session.getAttribute("memEmail");
+		map.put("email", email);
 		goodsService.writeReply(map);
 		System.out.println(map.get("goods_id"));
 		return "/goods/qnaWrite";
@@ -112,7 +114,8 @@ public class GoodsBoardController {
 	//public void reviewWrite(@RequestParam Map<String, Integer> map, @RequestParam("img[]") List<MultipartFile> list) {
 		
 //		String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
-		String filePath = "\\Volumes\\D\\dogiver\\src\\main\\webapp\\image\\goods\\goods_board";
+//		String filePath = "\\Volumes\\D\\dogiver\\src\\main\\webapp\\image\\goods\\goods_board";
+		String filePath = "C:\\Users\\grand\\OneDrive\\바탕 화면\\웹프로젝트\\dogiver\\src\\main\\webapp\\image\\goods\\goods_board";
 		//String filePath = "C:\\Users\\bitcamp\\Desktop\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
 
 		for(MultipartFile img : list) {
@@ -189,7 +192,8 @@ public class GoodsBoardController {
 	public void reviewUpdate(@ModelAttribute QnaDTO qnaDTO, @RequestParam("img[]") List<MultipartFile> list, HttpSession session) {
 		
 //		String filePath = "C:\\dev\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
-		String filePath = "VOLUME\\D\\dogiver\\src\\main\\webapp\\image\\goods_board";
+//		String filePath = "VOLUME\\D\\dogiver\\src\\main\\webapp\\image\\goods_board";
+		String filePath = "C:\\Users\\grand\\OneDrive\\바탕 화면\\웹프로젝트\\dogiver\\src\\main\\webapp\\image\\goods\\goods_board";
 		//String filePath = "C:\\Users\\bitcamp\\Desktop\\DOgNOR\\src\\main\\webapp\\image\\goods_board";
 
 		for(MultipartFile img : list) {

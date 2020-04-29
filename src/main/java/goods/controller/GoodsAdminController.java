@@ -36,8 +36,9 @@ public class GoodsAdminController {
 		System.out.println(goodsDTO.getCategory_code());
 		int goods_id = goodsService.getGoodsId(goodsDTO.getCategory_code())+1;
 		goodsDTO.setGoods_id(goods_id);
-		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
-
+//		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
+//		String filePath = "C:\\Users\\bitcamp\\Desktop\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
+		String filePath = "C:\\Users\\grand\\OneDrive\\바탕 화면\\웹프로젝트\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
 		if (goods_img != null) {
 			String fileName = goods_img.getOriginalFilename();
 			File file = new File(filePath);
@@ -84,8 +85,8 @@ public class GoodsAdminController {
 
 		System.out.println("85"+goodsDTO);
 		System.out.println(goodsDTO.getGoods_id());
-		String filePath = "C:\\Users\\bitcamp\\Desktop\\DOgNOR\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
-		
+//		String filePath = "C:\\Users\\bitcamp\\Desktop\\DOgNOR\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
+		String filePath = "C:\\Users\\grand\\OneDrive\\바탕 화면\\웹프로젝트\\dogiver\\src\\main\\webapp\\image\\goods\\"+goodsDTO.getGoods_id();
 
 		if (goods_img != null) {
 			String fileName = goods_img.getOriginalFilename();

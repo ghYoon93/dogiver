@@ -72,7 +72,9 @@ public class AdminController {
 	@RequestMapping(value = "adminDogiverModify", method = RequestMethod.POST)
 	@ResponseBody
 	public String adminDogiverModify(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_img) {
-		String filePath = "\\Volumes\\D\\dogiver\\src\\main\\webapp\\dogiverImage";
+//		String filePath = "\\Volumes\\D\\dogiver\\src\\main\\webapp\\dogiverImage";
+		String filePath = "C:\\Users\\grand\\OneDrive\\바탕 화면\\웹프로젝트\\dogiver\\src\\main\\webapp\\dogiverImage";
+		
 		String fileName = dog_img.getOriginalFilename();
 		File file = new File(filePath, fileName);
 		System.out.println(map);
@@ -98,7 +100,8 @@ public class AdminController {
 	@RequestMapping(value = "dogiverInsert", method = RequestMethod.POST)
 	@ResponseBody
 	public String dogiverInsert(@RequestParam Map<String, String> map, @RequestParam MultipartFile dog_img) {
-		String filePath = "\\Volumes\\D\\dogiver\\src\\main\\webapp\\dogiverImage";
+//		String filePath = "\\Volumes\\D\\dogiver\\src\\main\\webapp\\dogiverImage";
+		String filePath = "C:\\Users\\grand\\OneDrive\\바탕 화면\\웹프로젝트\\dogiver\\src\\main\\webapp\\dogiverImage";
 		String fileName = dog_img.getOriginalFilename();
 		File file = new File(filePath, fileName);
 		
