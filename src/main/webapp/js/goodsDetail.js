@@ -202,7 +202,19 @@ function numberFormat(inputNumber) {
 
 //상품후기 창 띄우기
 function reviewWriteWin(goods_id){
-	window.open('/dogiver/goods/reviewWriteWin?goods_id='+goods_id, '', 'width=700 height=400 scrollbars=yes');
+	$.ajax({
+		type : 'POST',
+		url : "../order/chkOrder",
+		data : "goods_id=" + $('#goods_id').val(),
+		success : function(data) {
+			if (data == 0) {
+				alert('상품을 구매한 회원만 작성 가능합니다');
+			} else {
+				window.open('/dogiver/goods/reviewWriteWin?goods_id='+goods_id, '', 'width=700 height=400 scrollbars=yes');
+			}
+		}
+	});
+	
 }
 
 

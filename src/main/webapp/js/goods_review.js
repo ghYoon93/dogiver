@@ -25,7 +25,7 @@ $('#reviewWriteBtn').click(function(){
 			url: '/dogiver/goods/reviewWrite',
 			data: formData,
 			success: function(){
-				alert('리뷰 등록 완료!');
+//				alert('리뷰 등록 완료');
 				//$('#reviewList tr:gt(0)', opener.document).remove();
 
 				

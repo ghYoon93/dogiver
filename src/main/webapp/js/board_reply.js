@@ -17,7 +17,7 @@ $('#boardFormBtn').click(function() {
 				're_content' : $('#re_content').val()
 			},
 			success : function(data) {
-				alert('등록되었습니다.');
+//				alert('댓글이 등록되었습니다.');
 				$('#re_content').val('');
 				$('.comment').remove();
 

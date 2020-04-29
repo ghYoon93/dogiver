@@ -31,6 +31,7 @@ $('#btn_1').click(function() {
 			}
 		});
 	} else if ($("#chk1-1").is(":checked") == false) {
+		alert('필수 약관에 동의해주세요');
 		$('#chkModal').css('display', 'block');
 		window.onclick = function(event) {
 			if (event.target == document.getElementById('chkModal')) {

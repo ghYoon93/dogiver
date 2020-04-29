@@ -65,6 +65,7 @@ $(document).ready(function() {
 	
 	//수정하기
 	$(document).on('click', '#goodsModify', function(){
+		alert('상품 정보가 수정되었습니다.');
 		let formData = new FormData($('#goodsForm')[0]);
 		
 		$.ajax({

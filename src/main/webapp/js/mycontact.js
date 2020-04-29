@@ -4,7 +4,7 @@ $(document).ready(function() {
 			url : '/dogiver/contact/getInfo',
 			dataType : 'json',
 			success : function(data) {
-				alert('a');
+//				alert('a');
 				$('#my_contactTable td').remove();
 				$.each(data.list, function(index, items) {
 					$('<tr/>').append($('<td/>', {
@@ -39,18 +39,20 @@ $(document).ready(function() {
 		
 		 $(document).on('click', '.delete', function(){
 			let seq = $(this).attr('id');
+			if(confirm('정말로 삭제하시겠습니까?')){
+			
 			 $.ajax({
 	               type : 'post',
 	               url : '/dogiver/contact/my_contect_delete',
 	               data : {'seq':seq},
 	               success : function(data) {
-	            	   alert('삭제완료');
+	            	   alert('삭제 완료');
 	            	   $.ajax({ 
 	           			type : 'POST',
 	           			url : '/dogiver/contact/getInfo',
 	           			dataType : 'json',
 	           			success : function(data) {
-	           				alert('a');
+//	           				alert('a');
 	           				$('#my_contactTable td').remove();
 	           				$.each(data.list, function(index, items) {
 	           					$('<tr/>').append($('<td/>', {
@@ -81,6 +83,7 @@ $(document).ready(function() {
 	           			}
 	           		});
 	               }
-			 }); 	  
+			 });	
+			}
 		 });   	    
 	});

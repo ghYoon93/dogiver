@@ -19,7 +19,7 @@ $(document).ready(function(){
 					+ '<td width="25%" style="text-align:center;">'+ items.board_date +'</td>'
 					+ '</tr>'
 					+ '<tr class="replyText">'
-					+ '<td colspan="2"><textarea class="reply_content" rows="3" cols="110" ></textarea>'
+					+ '<td colspan="3"><textarea class="reply_content" rows="3" cols="110" ></textarea>'
 					+ '<button type="button" class="replyBtn" style="">댓글 작성</button></td>'
 					+ '</tr>';
 				
@@ -33,6 +33,7 @@ $(document).ready(function(){
 		}
 	
 	});
+	
 });
 
 //상품QNA 작성
@@ -59,9 +60,11 @@ $('.qnaList').on('click', '.qna_content', function(){
 });
 
 $('.qnaList').on('click', '.replyBtn', function(){
-
-	var bo_seq =$(this).parent().parent().prev().find('#bo_seq').val();
-	alert(bo_seq); //
+	var bo_tr = $(this).parent().parent().prev().find('#bo_seq');
+	var bo_seq =bo_tr.val();
+//	var bo_seq =$(this).parent().parent().prev().find('#bo_seq').val();
+	console.log($(this).prev().val());
+//	alert(bo_seq); //
 	//alert($(this).parent().parent().prev().find('#bo_seq').val());
 	$.ajax({
 		type: 'post',
@@ -69,7 +72,8 @@ $('.qnaList').on('click', '.replyBtn', function(){
 		contentType: 'application/json;charset=UTF-8',
 		data: JSON.stringify({'goods_id': $('#goods_id').val(),
 								'bo_seq': $(this).parent().parent().prev().find('#bo_seq').val(),	 
-								'reply': $('.replyText .reply_content').val()}),
+//								'reply': $('.replyText .reply_content').val()}),
+								'reply': $(this).prev().val()}),
 		success: function(){
 			alert(	'댓글 작성 완료하였습니다.');
 			//location.reload();
@@ -85,20 +89,24 @@ $('.qnaList').on('click', '.replyBtn', function(){
 				success: function(data){
 					//alert(JSON.stringify(data));
 					$.each(data.list, function(index, items){
-						alert(items.bo_seq);//283
-						//if(items.bo_seq == ){	
+//						alert(items.bo_seq);//283
+						//if(items.bo_seq == ){
+						if(items.bo_seq == bo_seq){
+						
 							tag += '<tr class="replyTr">'
 								+ '<td class="replyTd" style="padding-left: 50px;">'+ items.reply +'</td>'
 								+ '<td class="replyTd2" width="10%" style="text-align:center;">'+items.nickname+'</td>'
 								+ '</tr>';
+						}
 						//}
 					});//each
-					
-					$('.replyText').before(tag);
+					bo_tr.parent().after(tag);
+//					$('.replyText').before(tag);
 					$('.reply_content').val('');
 					
 					//$('.qnaList .qna_content').trigger('click');
-					$('.replyTr').not($(this).parent().parent().prev().find('.replyTd, .replyTd2')).hide();
+//					$('.replyTr').not($(this).parent().parent().prev().find('.replyTd, .replyTd2')).hide();
+					/*$('.replyTr').show($(this).parent().parent().prev().find('.replyTd, .replyTd2')).hide();*/
 					//$('.replyText').hide();
 				}
 			});

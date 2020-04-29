@@ -10,7 +10,7 @@ $(document).on('click', '.dogJoinBtn', function(){
 		$('#dogBreedDiv').empty();
 		$('#dogWeightDiv').empty();
 		var test = "^[0-9]+$";
-		alert($('#dog_breed').val());
+		/*alert($('#dog_breed').val());*/
 		if($('#dog_name').val()==''){
 			$('#dogNameDiv').text("이름을 입력해주세요").css("color","red").css("font-size","10pt").css("font-weight", "bold");
 			
@@ -37,7 +37,7 @@ $(document).on('click', '.dogJoinBtn', function(){
 				dataType: 'text',
 				success: function(data){
 					if(data=='1'){
-						alert('등록완료')
+						alert('등록 완료')
 						location.href='/dogiver/blood/dogJoin';
 					}else{
 						alert('다시 등록해주세요')

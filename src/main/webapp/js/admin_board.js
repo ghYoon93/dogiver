@@ -70,12 +70,15 @@ $(document).ready(function(){
 			//삭제 버튼
 			$(document).on('click', '.deleteBtn', function(){
 				let seq= $(this).attr('id');
-				alert(seq);
+				/*alert(seq);*/
+				var del = confirm('정말로 삭제하시겠습니까?');
+				if(del){
 			 $.ajax({
 	               type : 'post',
 	               url : '/dogiver/board/boardDelete',
 	               data : {'brd_seq':seq},
 	               success : function(data) {
+	            	   alert('게시글이 삭제되었습니다.');
 	            	   $('#admin_boardTable td').remove();
 	            	   $.ajax({
 	            			type : 'post',
@@ -139,7 +142,8 @@ $(document).ready(function(){
 	            			}
 	            	   });
 	               }
-			}); 
+			});
+		}
 		});
 			
 		}

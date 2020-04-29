@@ -24,3 +24,7 @@ function scrollController() {
     $("header").removeClass("sticky");
   }
 }
+$('.goAbout').click(function(){
+	location.href = '../about/about';
+});
+

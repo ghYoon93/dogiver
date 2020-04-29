@@ -47,13 +47,14 @@ $(document).ready(function(){
 			
 			$(document).on('click', '.deleteBtn', function(){
 				let seq= $(this).attr('id');
-				alert(seq);
+				let del = confirm('정말로 삭제하시겠습니까?');
+				if(del){
 				 $.ajax({
 		               type : 'post',
 		               url : '/dogiver/contact/admin_contect_delete',
 		               data : {'seq':seq},
 		               success : function(data) {
-		            	   alert('성공');
+		            	   alert('문의가 삭제되었습니다.');
 		            	   $('#admin_contactTable td').remove();
 		            	   $.ajax({
 		            			type : 'post',
@@ -104,7 +105,8 @@ $(document).ready(function(){
 		            	   });
 		            	   
 		               }
-				}); 
+				});
+				}
 			});
 		}
 	});

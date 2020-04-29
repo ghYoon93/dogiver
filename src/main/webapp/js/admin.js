@@ -117,7 +117,7 @@ $(document).ready(function() {
     			url: '../admin/change',
     			data: $('#look form').serialize(),
     			success: function(data){
-    				alert(data);
+    				/*alert(data);*/
     				location.reload();
     			},
     			error: function(data){

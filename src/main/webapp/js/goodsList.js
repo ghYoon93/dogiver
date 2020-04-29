@@ -19,8 +19,10 @@ $(document).ready(function(){
 			$.each(data.list, function(index, items){
 				//$('#goods_name').text(items.goods_name);
 				//alert(items.goods_detail);
-				let goods_price = '<span id="goods_price">' + items.goods_price + '</span>원';
-				if(items.sales_yn =='N') goods_price = '<span id="goods_price">품절된 상품입니다.</span>';
+				console.log(items.sales_yn);
+				let goods_price='<span id="goods_price">' + items.goods_price + '</span>원';
+				if(items.sales_yn=='N') goods_price = '<span id="goods_price">판매가 일시 중지된 상품입니다.</span>';
+				if(items.goods_amt ==0) goods_price = '<span id="goods_price">품절된 상품입니다.</span>';
 				
 					tag += '<div class="goods-boxs" >'
 						+ '<div class="goods-image" >'
@@ -39,7 +41,7 @@ $(document).ready(function(){
 						+ '<div class="goods-content">'
 						+ '<a href="javascript:void(0)" onclick="" >'
 						+ '<h1 id="goods_name">'+ items.goods_name + '</h1>'
-						+ goods_price 
+						+ numberFormat(goods_price) 
 						+ '</a>'
 						+ '</div>'
 						+ '</div>';
@@ -108,7 +110,7 @@ $('.goods_category li').click(function(){
 				         + '<div class="goods-content">'
 				           + '<a href="javascript:void(0)" onclick="" >'
 				             + '<h1 id="goods_name">'+ items.goods_name + '</h1>'
-				             + '<span id="goods_price">' + items.goods_price + '</span>원'
+				             + '<span id="goods_price">' + numberFormat(items.goods_price) + '</span>원'
 				           + '</a>'
 				         + '</div>'
 				      + '</div>';
@@ -127,7 +129,7 @@ $('.goods_sort').change(function(){
 	$('.goods-boxs').remove(); //초기화
 	
 	var tag = "";
-	alert(category+" "+lineUp);
+	/*alert(category+" "+lineUp);*/
 	$.ajax({
 		type: 'post',
 		url: '/dogiver/goods/goods_lineUp',
@@ -154,7 +156,7 @@ $('.goods_sort').change(function(){
 				         + '<div class="goods-content">'
 				           + '<a href="javascript:void(0)" onclick="" >'
 				             + '<h1 id="goods_name">'+ items.goods_name + '</h1>'
-				             + '<span id="goods_price">' + items.goods_price + '</span>원'
+				             + '<span id="goods_price">' + numberFormat(items.goods_price) + '</span>원'
 				           + '</a>'
 				         + '</div>'
 				      + '</div>';
