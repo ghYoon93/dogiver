@@ -5,8 +5,11 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>상품 후기</title>
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="../css/reset.css" />
+
 </head>
 <body>
 <h3 style="text-align: left;">상품후기</h3>

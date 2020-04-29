@@ -4,6 +4,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
+<title>로그인</title>
 <link rel="favicon" href="../image/favicon.ico" />
 <link rel="shortcut icon" href="../image/favicon.ico"
 	type="image/x-icon" />
@@ -11,13 +12,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-signin-client_id"
 	content="YOUR_CLIENT_ID.apps.googleusercontent.com" />
-<title>로그인</title>
-<link
-	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
-	rel="stylesheet" />
 <link rel="stylesheet" href="../css/reset.css" />
 <link rel="stylesheet" href="../css/login.css" />
 <link rel="stylesheet" href="../css/sign.css" />
+<link
+	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+	rel="stylesheet" />
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">

@@ -3,15 +3,16 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<title>GOODS</title>
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
 <link rel="stylesheet" href="../css/reset.css" />
 <link rel="stylesheet" href="../css/style.css" />
 <link rel="stylesheet" href="../css/goods.css" />
-
+<link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
@@ -88,9 +89,9 @@
 			<div class="option_layer_scroll">
 				<div class="option_tit_box">
 					<dl>
-						<dt>
-							<img />
-						</dt>
+						<dd class="imgbox">
+							<img class="middle" />
+						</dd>
 						<dd>
 							<strong></strong>
 						</dd>
@@ -104,7 +105,7 @@
 							<strong id="tot_price" title="총합계금액"></strong>
 						</dd>
 
-						<dd style="text-align: center;">
+						<dd class="btnbox">
 							<button class="cancel">취소</button>
 							<button id="confirm">확인</button>
 						</dd>

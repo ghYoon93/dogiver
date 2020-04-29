@@ -43,7 +43,7 @@
 			<div class="blood-card">
 				<h3>헌혈견</h3>
 				<span>2020년에 설립된 dogiver는 반려견 헌혈 문화를 알리고 헌혈견 인식 재고 서비스를 제공하는 유일한 웹사이트 입니다.</span></br></br>
-				<div class="button-center"><button type="button">더 알아보기</button></div>
+				<div class="button-center"><button type="button" class="goAbout">더 알아보기</button></div>
 			</div>
 			<div>
 				<div class="goods-card">

@@ -127,7 +127,7 @@
       <div id="option-view" class="layer_option" style="display: none">
 
         <div class="layer_option_cont">
-          <h4>옵션선택</h4>
+          <h4>장바구니 옵션</h4>
           <span onclick="" class="close" title="닫기">&times;</span>
           <form name="updateCartFrm" action="updateCart">
           <div class="option_layer_scroll">

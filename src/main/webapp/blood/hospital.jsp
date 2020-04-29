@@ -23,6 +23,9 @@
       href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
       rel="stylesheet"
     />
+    <link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=clbhwdl70e"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script
