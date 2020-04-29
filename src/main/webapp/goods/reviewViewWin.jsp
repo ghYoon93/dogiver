@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+<head>
+<link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+</head>
 <strong>리뷰 </strong>
 
 <form id="reviewViewForm" name="" enctype="multipart/form-data" method="post" >
@@ -46,16 +50,19 @@ $(document).ready(function(){
 });
 
 $('#reviewDeleteBtn').click(function(){
+	var del = confirm('정말로 삭제하시겠습니까?');
+	if(del){
 	$.ajax({
 		type: 'post',
 		url: '/dogiver/goods/reviewDelete',
 		data: 'bo_seq=${bo_seq}',
 		success: function(){
-			alert('삭제되었습니다.');
+			alert('후기가 삭제되었습니다.');
 			window.close();
 
 		}
 	});
+	}
 });
 
 </script>

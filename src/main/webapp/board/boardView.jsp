@@ -8,7 +8,9 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
-
+<link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 
 <div id="headerDiv"></div>
 <div class="page-title">

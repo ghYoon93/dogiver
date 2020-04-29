@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
+<head>
+<link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+</head>
 <strong>리뷰 작성</strong>
 <span class="writeArea">0/500</span><br>
 

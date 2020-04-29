@@ -11,6 +11,9 @@ padding: 10px;
 border:none; !important
 } 
 </style>
+<link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 <div style="font-size:15px; font-weight:500; text-indent:20px;">댓글달기</div>
 <form name="boardReplyForm" >
 	<input type="hidden" name="brd_seq" value="${brd_seq}"> 

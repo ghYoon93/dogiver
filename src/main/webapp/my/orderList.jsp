@@ -8,14 +8,13 @@
     <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my page</title>
+    <title>주문 조회</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/mypage.css" />
   <link rel="stylesheet" href="../css/order.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
     rel="stylesheet" />
-  <title>주문 조회</title>
 </head>
 
 <body>

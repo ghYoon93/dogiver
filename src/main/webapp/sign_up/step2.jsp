@@ -10,6 +10,10 @@ pageEncoding="UTF-8"%>
       href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
       rel="stylesheet"
     />
+    <link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico"
+  type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/sign.css" />
@@ -24,7 +28,7 @@ pageEncoding="UTF-8"%>
 
     <div class="page-title">
       <h2>회원가입</h2>
-      <p>회원이 되셔서 Dogner를 이용하세요</p>
+      <p>회원이 되셔서 dogiver를 이용하세요</p>
     </div>
     <div id="wrap">
       <section class="sign_up">

@@ -117,10 +117,10 @@
 									<label for="nickName">닉네임:</label> 
 									<input type="text" class="form-control" id="nickName" name="nickName" >
 								</div>
-								<div class="form-group">
+								<!-- <div class="form-group" >
 									<label for="pwd">비밀번호:</label> 
 									<input type="text" class="form-control" id="pwd" name="pwd" >
-								</div>
+								</div> -->
 								<div class="form-group">
 									<label for="phone">전화번호:</label> 
 									<input type="text" class="form-control" id="phone" name="phone" >

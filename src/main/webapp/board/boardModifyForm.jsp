@@ -10,7 +10,9 @@
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
 <link rel="stylesheet" href="../css/board.css">
-
+<link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 <style type="text/css">
 .fr-view {
 	height: 500px;
@@ -84,15 +86,15 @@ $(document).ready(function(){
 
 	$('#boardModifyBtn').click(function() {
 			if ($('#brd_category').val() == '') {
-				alert("plase selecet the Category");
+				alert("카테고리를 정해주세요.");
 				$('#brd_category').focus();
 	
 			} else if ($('#insert_text').val() == '') {
-				alert("plase insert your Title");
+				alert("제목을 입력해주세요.");
 				$('#insert_text').focus();
 	
 			} else if ($('.fr-view').text() == '') {
-				alert("plase insert your Content");
+				alert("내용을 입력해주세요.");
 				$('.fr-view').focus();
 			} else {
 				$('#brd_content').val($('.fr-view').html());

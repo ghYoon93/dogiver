@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<head>
+<link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+</head>
 <strong>리뷰 수정</strong>
 <span class="writeArea">0/500</span><br>
 <form id="reviewWriteForm" name="" enctype="multipart/form-data" method="post" >
@@ -27,7 +31,7 @@ $(document).ready(function(){
 		data: 'bo_seq=${bo_seq }',
 		dataType: 'json',
 		success: function(data){
-			alert(JSON.stringify(data));
+			/* alert(JSON.stringify(data)); */
 			$('.text_content').val(data.qnaDTO.text_content);
 
 		}
@@ -35,7 +39,7 @@ $(document).ready(function(){
 });
 
 $('#reviewUpdateBtn').click(function(){
-	alert("qbtn");
+	/* alert("qbtn"); */
 	$('.reviewTextDiv').empty();
 	
 	if($('.text_content').val()==''){

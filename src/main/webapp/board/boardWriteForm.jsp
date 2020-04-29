@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>글 작성</title>
 
 <link rel="stylesheet" href="../css/reset.css" />
 <link rel="stylesheet" href="../css/style.css" />
@@ -12,6 +12,9 @@
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
 <link rel="stylesheet" href="../css/board.css">
+<link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 <script
 	src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
 <style type="text/css">
@@ -82,15 +85,18 @@ $(document).ready(function(){
 	//클릭이벤트 발생
 	$('#boardWrite_Btn').click(function() {
 		if ($('#board_select').val() == '') {
-			alert("plase selecet the Category");
+			//alert("plase selecet the Category");
+			alert("카테고리를 선택해주세요");
 			$('#board_select').focus();
 
 		} else if ($('#insert_text').val() == '') {
-			alert("plase insert your Title");
+			//alert("plase insert your Title");
+			alert("제목을 입력해주세요");
 			$('#insert_text').focus();
 
 		} else if ($('.fr-wrapper').text() == '') {
-			alert("plase insert your Content");
+			//alert("plase insert your Content");
+			alert("내용을 입력해주세요");
 			$('.fr-wrapper').focus();
 		} else {
 			$('#brd_content').val($('.fr-view').html());

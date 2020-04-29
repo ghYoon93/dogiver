@@ -13,6 +13,10 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/sign.css" />
+    <link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico"
+  type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
     <script
       type="text/javascript"
       src="http://code.jquery.com/jquery-3.4.1.min.js"
@@ -23,7 +27,7 @@ pageEncoding="UTF-8"%>
     <div id="headerDiv"></div>
     <div class="page-title">
       <h2>회원가입</h2>
-      <p>회원이 되셔서 Dogner를 이용하세요</p>
+      <p>회원이 되셔서 dogiver를 이용하세요</p>
     </div>
     <div id="wrap">
       <section class="sign_up">

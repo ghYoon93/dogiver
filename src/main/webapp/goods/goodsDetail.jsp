@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>GOODS</title>
 
 <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 	<link
@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="../css/style.css" />	
 	<link rel="stylesheet" href="../css/reset.css" />
 	<link rel="stylesheet" href="../css/goodsDetail.css" />
+  <link rel="favicon" href="../image/favicon.ico" />
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
 </head>
 <body>
 
