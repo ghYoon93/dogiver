@@ -1,4 +1,4 @@
-package blood.bean;
+package com.spare.dogiver.web.dto;
 
 import java.util.Date;
 

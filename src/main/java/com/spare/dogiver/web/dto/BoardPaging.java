@@ -1,4 +1,4 @@
-package board.bean;
+package com.spare.dogiver.web.dto;
 
 import org.springframework.stereotype.Component;
 
