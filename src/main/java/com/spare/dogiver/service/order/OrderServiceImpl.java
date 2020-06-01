@@ -15,13 +15,14 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import order.bean.CartDTO;
-import order.bean.KakaoPayApprovalDTO;
-import order.bean.KakaoPayReadyDTO;
-import order.bean.OrderDTO;
-import order.bean.OrderDetailDTO;
-import order.bean.OrderListDTO;
-import order.bean.OrderStatusDTO;
+import com.spare.dogiver.web.dto.CartDTO;
+import com.spare.dogiver.web.dto.KakaoPayApprovalDTO;
+import com.spare.dogiver.web.dto.KakaoPayReadyDTO;
+import com.spare.dogiver.web.dto.OrderDTO;
+import com.spare.dogiver.web.dto.OrderDetailDTO;
+import com.spare.dogiver.web.dto.OrderListDTO;
+import com.spare.dogiver.web.dto.OrderStatusDTO;
+
 import order.dao.OrderDAO;
 @Service
 public class OrderServiceImpl implements OrderService {

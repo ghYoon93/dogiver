@@ -1,4 +1,4 @@
-package order.bean;
+package com.spare.dogiver.web.dto;
 
 import lombok.Data;
 
