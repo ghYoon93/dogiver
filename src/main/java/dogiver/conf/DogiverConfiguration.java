@@ -32,7 +32,7 @@ public class DogiverConfiguration {
 		
 		sqlSessionFactoryBean.setDataSource(dataSource());
 		sqlSessionFactoryBean.setConfigLocation(pmrpr.getResource("classpath:dogiver/mybatis-config.xml"));
-		sqlSessionFactoryBean.setMapperLocations(pmrpr.getResources("classpath:*/dao/*Mapper.xml"));
+		sqlSessionFactoryBean.setMapperLocations(pmrpr.getResources("classpath:com/spare/dogiver/mapper/*Mapper.xml"));
 		
 		return sqlSessionFactoryBean.getObject();
 	}
