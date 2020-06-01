@@ -1,4 +1,4 @@
-package board.controller;
+package com.spare.dogiver.web;
 
 import java.util.List;
 import java.util.Map;

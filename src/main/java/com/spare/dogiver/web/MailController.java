@@ -1,4 +1,4 @@
-package mail.controller;
+package com.spare.dogiver.web;
 
 import javax.servlet.http.HttpSession;
 

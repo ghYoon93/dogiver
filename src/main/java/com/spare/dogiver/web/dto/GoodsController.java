@@ -1,4 +1,4 @@
-package goods.controller;
+package com.spare.dogiver.web.dto;
 
 import java.util.List;
 import java.util.Map;

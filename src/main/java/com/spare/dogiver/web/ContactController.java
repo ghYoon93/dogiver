@@ -1,4 +1,4 @@
-package contact.controller;
+package com.spare.dogiver.web;
 
 import java.util.List;
 

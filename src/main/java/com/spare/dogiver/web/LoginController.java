@@ -1,4 +1,4 @@
-package auth.naver;
+package com.spare.dogiver.web;
 
 import java.io.IOException;
 import javax.servlet.http.HttpSession;
@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.github.scribejava.core.model.OAuth2AccessToken;
+
+import auth.naver.NaverLoginBO;
 
 /**
  * Handles requests for the application home page.

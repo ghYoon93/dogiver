@@ -1,4 +1,4 @@
-package goods.controller;
+package com.spare.dogiver.web.dto;
 
 import java.io.File;
 import java.io.FileOutputStream;
