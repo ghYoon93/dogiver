@@ -1,4 +1,4 @@
-package contact.service;
+package com.spare.dogiver.service.contact;
 
 import java.util.List;
 

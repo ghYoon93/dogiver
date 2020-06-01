@@ -1,4 +1,4 @@
-package member.service;
+package com.spare.dogiver.service.member;
 
 import java.util.HashMap;
 import java.util.List;

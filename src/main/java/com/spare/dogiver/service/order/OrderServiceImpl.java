@@ -1,4 +1,4 @@
-package order.service;
+package com.spare.dogiver.service.order;
 
 import java.net.URI;
 import java.net.URISyntaxException;

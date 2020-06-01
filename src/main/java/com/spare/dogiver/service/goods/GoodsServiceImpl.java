@@ -1,4 +1,4 @@
-package goods.service;
+package com.spare.dogiver.service.goods;
 
 import java.util.List;
 import java.util.Map;
