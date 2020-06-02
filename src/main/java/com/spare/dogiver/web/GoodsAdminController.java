@@ -1,4 +1,4 @@
-package com.spare.dogiver.web.dto;
+package com.spare.dogiver.web;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import goods.bean.GoodsDTO;
-import goods.service.GoodsService;
+import com.spare.dogiver.service.goods.GoodsService;
+import com.spare.dogiver.web.dto.GoodsDTO;
 
 @Controller
 @RequestMapping("goods")

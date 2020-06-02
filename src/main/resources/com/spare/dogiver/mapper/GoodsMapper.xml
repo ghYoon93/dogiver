@@ -3,21 +3,21 @@
 
 	
 <mapper namespace="goodsSQL">
-	<select id="getGoodsList" parameterType="int" resultType="goods.bean.GoodsDTO">
+	<select id="getGoodsList" parameterType="int" resultType="goods">
 		select * from goods order by goods_date desc
 	</select>
 	
-	<select id="getGoodsDetail" parameterType="int" resultType="goods.bean.GoodsDTO">
+	<select id="getGoodsDetail" parameterType="int" resultType="goods">
 		select * from goods where goods_id=#{goods_id}
 	</select>
 	
-	<select id="getCategory" parameterType="int" resultType="goods.bean.GoodsDTO">
+	<select id="getCategory" parameterType="int" resultType="goods">
 		select * from category join goods
 		on category.category_code = goods.category_code
 		where category.category_code= #{category}
 	</select>
 	
-	<select id="goods_lineUp" parameterType="java.util.Map" resultType="goods.bean.GoodsDTO">
+	<select id="goods_lineUp" parameterType="java.util.Map" resultType="goods">
 		select * from category join goods
 		on category.category_code = goods.category_code
 		where category.category_code= #{category} order by
@@ -41,7 +41,7 @@
 		values(goods_board_bo_seq.nextval, #{memEmail}, #{goods_id}, 'QNA', 'test', #{text_content}, SYSDATE)
 	</insert>
 	
-	<select id="getGoodsQnaList" parameterType="int" resultType="goods.bean.QnaDTO">
+	<select id="getGoodsQnaList" parameterType="int" resultType="qna">
 		SELECT * 
 		  FROM goods_board
                JOIN member
@@ -56,7 +56,7 @@
 		values(#{email}, #{goods_id}, 'REPLY', 'test', #{reply}, SYSDATE, #{bo_seq}, goods_board_bo_seq.nextval)
 	</insert>
 	
-	<select id="replyList" parameterType="int" resultType="goods.bean.QnaDTO">
+	<select id="replyList" parameterType="int" resultType="qna">
 		SELECT *
 		  FROM goods_board
 		  	   JOIN member
@@ -66,12 +66,12 @@
 	</select>
 	
 	<!-- 상품리뷰 -->
- 	<insert id="reviewWrite" parameterType="goods.bean.QnaDTO">
+ 	<insert id="reviewWrite" parameterType="qna">
 		insert into goods_board(email, goods_id, category_code, title, text_content, image, board_date, bo_seq)
 		values(#{email}, #{goods_id}, 'REVIEW', 'test', #{text_content}, #{image}, SYSDATE, goods_board_bo_seq.nextval) 
 	</insert> 
 	
-	<select id="getGoodsReviewList" parameterType="int" resultType="goods.bean.QnaDTO">
+	<select id="getGoodsReviewList" parameterType="int" resultType="qna">
 		SELECT * 
 		  FROM goods_board
                JOIN member
@@ -80,15 +80,15 @@
 		       AND category_code='REVIEW' ORDER BY board_date DESC
 	</select>
 	
-	<select id="reviewView" parameterType="int" resultType="goods.bean.QnaDTO">
+	<select id="reviewView" parameterType="int" resultType="qna">
 		select * from goods_board where bo_seq=#{bo_seq} AND category_code='REVIEW'
 	</select>
 	
-	<select id="reviewUpdateWin" parameterType="int" resultType="goods.bean.QnaDTO">
+	<select id="reviewUpdateWin" parameterType="int" resultType="qna">
 		select * from goods_board where bo_seq=#{bo_seq} AND category_code='REVIEW'
 	</select>
 	
-	<insert id="reviewUpdate" parameterType="goods.bean.QnaDTO">
+	<insert id="reviewUpdate" parameterType="qna">
 		update goods_board set text_content=#{text_content}, image=#{image} where bo_seq=#{bo_seq} 
 	</insert>
 	<update id="updateAmt" parameterType="orderDetail">
@@ -98,12 +98,12 @@
 		 WHERE goods_id = #{order_goods_id}
 	 </update>
 	 
-	<insert id="goodsInsert" parameterType="goods.bean.GoodsDTO">
+	<insert id="goodsInsert" parameterType="goods">
 		insert into goods(goods_id, category_code, goods_name, goods_price, goods_date, goods_amt, sales_yn, goods_thumbnail, goods_detail)
 		values(#{goods_id},#{category_code},#{goods_name},#{goods_price},SYSDATE,#{goods_amt}, #{sales_yn},#{goods_id}||'/'||#{goods_thumbnail},#{goods_id}||'/'||#{goods_detail}) 
 	</insert>
 	
-	<update id="goodsModify" parameterType="goods.bean.GoodsDTO">
+	<update id="goodsModify" parameterType="goods">
 		update goods set category_code=#{category_code}, goods_name=#{goods_name}, goods_price=#{goods_price}, goods_date=SYSDATE, goods_amt=#{goods_amt}, sales_yn=#{sales_yn} where goods_id = #{goods_id}
 	</update>
 	<delete id="reviewDelete" parameterType="int">

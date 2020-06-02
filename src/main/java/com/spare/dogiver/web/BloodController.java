@@ -1,4 +1,4 @@
-package blood.controller;
+package com.spare.dogiver.web;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import blood.bean.DogJoinDTO;
-import blood.bean.DogiverDTO;
-import blood.service.BloodService;
+import com.spare.dogiver.service.blood.BloodService;
+import com.spare.dogiver.web.dto.DogJoinDTO;
+import com.spare.dogiver.web.dto.DogiverDTO;
 
 @Controller
 @RequestMapping("blood")

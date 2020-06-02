@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import member.bean.MemberDTO;
-import member.bean.MemberPaging;
-import member.service.MemberService;
+import com.spare.dogiver.domain.MemberPaging;
+import com.spare.dogiver.service.member.MemberService;
+import com.spare.dogiver.web.dto.MemberDTO;
 
 @Controller
 public class MemberController {

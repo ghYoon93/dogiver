@@ -1,4 +1,4 @@
-package blood.service;
+package com.spare.dogiver.service.blood;
 
 import java.util.List;
 import java.util.Map;
@@ -6,9 +6,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import blood.bean.DogJoinDTO;
-import blood.bean.DogiverDTO;
-import blood.dao.BloodDAO;
+import com.spare.dogiver.persistence.blood.BloodDAO;
+import com.spare.dogiver.web.dto.DogJoinDTO;
+import com.spare.dogiver.web.dto.DogiverDTO;
 
 @Service("BloodService")
 public class BloodServiceImpl implements BloodService {

@@ -1,10 +1,10 @@
-package admin.service;
+package com.spare.dogiver.service.admin;
 
 import java.util.List;
 import java.util.Map;
 
-import admin.bean.Admin_dogiverPaging;
-import blood.bean.DogiverDTO;
+import com.spare.dogiver.domain.Admin_dogiverPaging;
+import com.spare.dogiver.web.dto.DogiverDTO;
 
 public interface AdminService {
 

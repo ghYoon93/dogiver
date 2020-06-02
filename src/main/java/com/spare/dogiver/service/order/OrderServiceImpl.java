@@ -15,6 +15,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import com.spare.dogiver.persistence.order.OrderDAO;
 import com.spare.dogiver.web.dto.CartDTO;
 import com.spare.dogiver.web.dto.KakaoPayApprovalDTO;
 import com.spare.dogiver.web.dto.KakaoPayReadyDTO;
@@ -22,8 +23,6 @@ import com.spare.dogiver.web.dto.OrderDTO;
 import com.spare.dogiver.web.dto.OrderDetailDTO;
 import com.spare.dogiver.web.dto.OrderListDTO;
 import com.spare.dogiver.web.dto.OrderStatusDTO;
-
-import order.dao.OrderDAO;
 @Service
 public class OrderServiceImpl implements OrderService {
 	@Autowired

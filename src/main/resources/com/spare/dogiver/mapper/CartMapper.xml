@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CartSql">
+  <resultMap id="cartResultMap" type="cart.domain.Cart">
+    <result property="cartId" column="cart_id" />
+    <result property="email" column="email"/>
+    <result property="goodsId" column="goods_id"/>
+    <result property="cartCnt" column="cart_cnt"/>
+  </resultMap>
+  
+  <insert id="save" parameterType="Cart">
+    INSERT INTO cart(email, goods_id, cart_cnt) VALUES(#{email}, #{goodsId}, #{cartCnt})
+  </insert>
+  <select id="findAllDesc" resultMap="cartResultMap">
+    SELECT * FROM cart ORDER BY cart_id DESC
+  </select>
+  
+  <select id="findAllByEmailDesc" parameterType="String" resultMap="cartResultMap">
+    SELECT * FROM cart WHERE email = #{email} ORDER BY cart_id DESC
+  </select>
+  
+  <select id="findById" parameterType="long" resultMap="cartResultMap">
+    SELECT * FROM cart WHERE cart_id = #{cartId}
+  </select>
+  
+  <update id="update" parameterType="Cart">
+    UPDATE cart SET cart_cnt = #{cartCnt} WHERE cart_id = #{cartId} 
+  </update>
+  
+  <delete id="delete" parameterType="long">
+    DELETE FROM cart WHERE cartId = #{cartId}
+  </delete>
+</mapper>

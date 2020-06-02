@@ -1,9 +1,17 @@
-package cart.dao;
+package com.spare.dogiver.persistence.cart;
 
-import cart.dto.CartSaveRequestDto;
+import java.util.List;
+
+import com.spare.dogiver.domain.Cart;
+import com.spare.dogiver.web.dto.CartSaveRequestDto;
+import com.spare.dogiver.web.dto.CartUpdateRequestDto;
 
 public interface CartDao {
 
-	public Long save(CartSaveRequestDto requestDto);
-
+	public Cart save(Cart cart);
+	public List<Cart> findAllDesc();
+	public List<Cart> findAllByEmailDesc();
+	public Cart findById(Long cartId);
+	public Long update(CartUpdateRequestDto requestDto);
+	
 }

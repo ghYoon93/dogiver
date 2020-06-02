@@ -1,4 +1,4 @@
-package goods.dao;
+package com.spare.dogiver.persistence.goods;
 
 import java.util.List;
 import java.util.Map;
@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import goods.bean.GoodsDTO;
-import goods.bean.QnaDTO;
-import order.bean.OrderDetailDTO;
+import com.spare.dogiver.web.dto.GoodsDTO;
+import com.spare.dogiver.web.dto.OrderDetailDTO;
+import com.spare.dogiver.web.dto.QnaDTO;
 
 @Repository
 @Transactional

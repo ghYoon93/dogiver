@@ -1,4 +1,4 @@
-package com.spare.dogiver.web.dto;
+package com.spare.dogiver.web;
 
 import java.util.List;
 import java.util.Map;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import goods.bean.GoodsDTO;
-import goods.service.GoodsService;
+import com.spare.dogiver.service.goods.GoodsService;
+import com.spare.dogiver.web.dto.GoodsDTO;
 
 @Controller
 @RequestMapping(value="goods")

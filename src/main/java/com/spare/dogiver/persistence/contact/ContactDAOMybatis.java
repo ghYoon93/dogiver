@@ -1,4 +1,4 @@
-package contact.dao;
+package com.spare.dogiver.persistence.contact;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import board.bean.BoardDTO;
-import contact.bean.ContactDTO;
+import com.spare.dogiver.web.dto.BoardDTO;
+import com.spare.dogiver.web.dto.ContactDTO;
 
 @Repository
 @Transactional

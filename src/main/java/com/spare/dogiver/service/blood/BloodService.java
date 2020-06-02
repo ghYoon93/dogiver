@@ -1,10 +1,10 @@
-package blood.service;
+package com.spare.dogiver.service.blood;
 
 import java.util.List;
 import java.util.Map;
 
-import blood.bean.DogJoinDTO;
-import blood.bean.DogiverDTO;
+import com.spare.dogiver.web.dto.DogJoinDTO;
+import com.spare.dogiver.web.dto.DogiverDTO;
 
 public interface BloodService {
 

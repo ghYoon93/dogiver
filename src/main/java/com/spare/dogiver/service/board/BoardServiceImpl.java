@@ -1,4 +1,4 @@
-package board.service;
+package com.spare.dogiver.service.board;
 
 import java.util.HashMap;
 import java.util.List;
@@ -9,9 +9,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import board.bean.BoardDTO;
-import board.bean.BoardPaging;
-import board.dao.BoardDAO;
+import com.spare.dogiver.domain.BoardPaging;
+import com.spare.dogiver.persistence.board.BoardDAO;
+import com.spare.dogiver.web.dto.BoardDTO;
 
 @Service
 public class BoardServiceImpl implements BoardService {

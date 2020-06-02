@@ -1,4 +1,4 @@
-package blood.dao;
+package com.spare.dogiver.persistence.blood;
 
 import java.util.List;
 import java.util.Map;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import blood.bean.DogJoinDTO;
-import blood.bean.DogiverDTO;
+import com.spare.dogiver.web.dto.DogJoinDTO;
+import com.spare.dogiver.web.dto.DogiverDTO;
 
 @Repository("BloodDAO")
 @Transactional

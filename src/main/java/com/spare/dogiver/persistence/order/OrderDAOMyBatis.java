@@ -1,4 +1,4 @@
-package order.dao;
+package com.spare.dogiver.persistence.order;
 
 import java.util.List;
 import java.util.Map;

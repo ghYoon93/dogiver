@@ -1,8 +1,8 @@
-package contact.dao;
+package com.spare.dogiver.persistence.contact;
 
 import java.util.List;
 
-import contact.bean.ContactDTO;
+import com.spare.dogiver.web.dto.ContactDTO;
 
 public interface ContactDAO {
 

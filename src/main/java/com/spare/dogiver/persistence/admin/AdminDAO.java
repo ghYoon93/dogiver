@@ -1,9 +1,9 @@
-package admin.dao;
+package com.spare.dogiver.persistence.admin;
 
 import java.util.List;
 import java.util.Map;
 
-import blood.bean.DogiverDTO;
+import com.spare.dogiver.web.dto.DogiverDTO;
 
 public interface AdminDAO {
 

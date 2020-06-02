@@ -1,10 +1,10 @@
-package board.service;
+package com.spare.dogiver.service.board;
 
 import java.util.List;
 import java.util.Map;
 
-import board.bean.BoardDTO;
-import board.bean.BoardPaging;
+import com.spare.dogiver.domain.BoardPaging;
+import com.spare.dogiver.web.dto.BoardDTO;
 
 public interface BoardService {
 

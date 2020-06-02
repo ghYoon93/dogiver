@@ -19,16 +19,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import goods.service.GoodsService;
-import member.bean.MemberDTO;
-import member.service.MemberService;
-import order.bean.CartDTO;
-import order.bean.KakaoPayApprovalDTO;
-import order.bean.OrderDTO;
-import order.bean.OrderDetailDTO;
-import order.bean.OrderListDTO;
-import order.bean.OrderStatusDTO;
-import order.service.OrderService;
+import com.spare.dogiver.service.goods.GoodsService;
+import com.spare.dogiver.service.member.MemberService;
+import com.spare.dogiver.service.order.OrderService;
+import com.spare.dogiver.web.dto.CartDTO;
+import com.spare.dogiver.web.dto.KakaoPayApprovalDTO;
+import com.spare.dogiver.web.dto.MemberDTO;
+import com.spare.dogiver.web.dto.OrderDTO;
+import com.spare.dogiver.web.dto.OrderDetailDTO;
+import com.spare.dogiver.web.dto.OrderListDTO;
+import com.spare.dogiver.web.dto.OrderStatusDTO;
 
 @Controller
 public class OrderController {

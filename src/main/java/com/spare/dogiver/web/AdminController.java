@@ -1,4 +1,4 @@
-package admin.controller;
+package com.spare.dogiver.web;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import admin.bean.Admin_dogiverPaging;
-import admin.service.AdminService;
-import blood.bean.DogiverDTO;
+import com.spare.dogiver.domain.Admin_dogiverPaging;
+import com.spare.dogiver.service.admin.AdminService;
+import com.spare.dogiver.web.dto.DogiverDTO;
 
 @Controller
 @RequestMapping("admin")

@@ -1,4 +1,4 @@
-package about.controller;
+package com.spare.dogiver.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

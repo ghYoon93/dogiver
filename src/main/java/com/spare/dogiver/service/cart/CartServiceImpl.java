@@ -5,10 +5,11 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cart.dao.CartDao;
-import cart.domain.Cart;
-import cart.dto.CartSaveRequestDto;
-import cart.dto.CartUpdateRequestDto;
+import com.spare.dogiver.domain.Cart;
+import com.spare.dogiver.persistence.cart.CartDao;
+import com.spare.dogiver.web.dto.CartSaveRequestDto;
+import com.spare.dogiver.web.dto.CartUpdateRequestDto;
+
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

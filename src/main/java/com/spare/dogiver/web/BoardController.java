@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import board.bean.BoardDTO;
-import board.bean.BoardPaging;
-import board.service.BoardService;
+import com.spare.dogiver.domain.BoardPaging;
+import com.spare.dogiver.service.board.BoardService;
+import com.spare.dogiver.web.dto.BoardDTO;
 
 @Controller
 @RequestMapping(value = "board")

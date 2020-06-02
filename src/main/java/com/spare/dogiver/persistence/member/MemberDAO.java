@@ -1,9 +1,9 @@
-package member.dao;
+package com.spare.dogiver.persistence.member;
 
 import java.util.List;
 import java.util.Map;
 
-import member.bean.MemberDTO;
+import com.spare.dogiver.web.dto.MemberDTO;
 
 public interface MemberDAO {
 

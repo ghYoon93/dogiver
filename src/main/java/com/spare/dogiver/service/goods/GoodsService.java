@@ -3,9 +3,9 @@ package com.spare.dogiver.service.goods;
 import java.util.List;
 import java.util.Map;
 
-import goods.bean.GoodsDTO;
-import goods.bean.QnaDTO;
-import order.bean.OrderDetailDTO;
+import com.spare.dogiver.web.dto.GoodsDTO;
+import com.spare.dogiver.web.dto.OrderDetailDTO;
+import com.spare.dogiver.web.dto.QnaDTO;
 
 public interface GoodsService {
 

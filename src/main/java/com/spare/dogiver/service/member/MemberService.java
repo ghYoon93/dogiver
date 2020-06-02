@@ -2,8 +2,8 @@ package com.spare.dogiver.service.member;
 
 import java.util.List;
 
-import member.bean.MemberDTO;
-import member.bean.MemberPaging;
+import com.spare.dogiver.domain.MemberPaging;
+import com.spare.dogiver.web.dto.MemberDTO;
 
 public interface MemberService {
 

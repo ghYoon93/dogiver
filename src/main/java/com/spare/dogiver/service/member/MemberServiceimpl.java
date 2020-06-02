@@ -7,9 +7,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import member.bean.MemberDTO;
-import member.bean.MemberPaging;
-import member.dao.MemberDAO;
+import com.spare.dogiver.domain.MemberPaging;
+import com.spare.dogiver.persistence.member.MemberDAO;
+import com.spare.dogiver.web.dto.MemberDTO;
 
 @Service("memberService")
 public class MemberServiceimpl implements MemberService {

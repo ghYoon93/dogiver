@@ -3,18 +3,18 @@
 <mapper namespace="boardSQL">
 	<!-- 글쓰기 -->
 
-	<insert id="boardWrite" parameterType="board.bean.BoardDTO">
+	<insert id="boardWrite" parameterType="board">
 		insert into board (brd_email, brd_nickname,brd_seq, brd_category, brd_title, brd_content,
 		brd_logtime) values(#{brd_email}, #{brd_nickname}, brd_seq.nextval, #{brd_category}, #{brd_title},
 		#{brd_content}, SYSDATE)
 		</insert>
 	
-	<insert id="re_write" parameterType="board.bean.BoardDTO">
+	<insert id="re_write" parameterType="board">
 		insert into brd_reply (bd_seq, re_seq, re_writer, re_content,re_logtime) values(#{brd_seq} ,re_seq.nextval,#{brd_nickname},#{re_content},SYSDATE) 
 	</insert>
 
 	<select id="getBoardList" parameterType="java.util.Map"
-		resultType="board.bean.BoardDTO">
+		resultType="board">
 		<![CDATA[
 		select * from
 		(select rownum rn, tt.* from
@@ -29,30 +29,30 @@
 	</select>
 
 	<select id="getBoard" parameterType="int"
-		resultType="board.bean.BoardDTO">
+		resultType="board">
 		select * from board where brd_seq=#{brd_seq}
 	</select>
 	
 	<select id="getReBoard" parameterType="int"
-		resultType="board.bean.BoardDTO">
+		resultType="board">
 		select * from brd_reply where bd_seq=#{bd_seq}
 	</select>
 	
-	<select id="getUser" parameterType="int" resultType="board.bean.BoardDTO">
+	<select id="getUser" parameterType="int" resultType="board">
 		select * from board where brd_seq=#{brd_seq}
 	</select>
 	
 	
 	
 	<select id="getReBoard_before" parameterType="int"
-		resultType="board.bean.BoardDTO">
+		resultType="board">
 		<![CDATA[
 		select * from brd_reply where bd_seq=(select max(brd_seq) from (select brd_seq from board where brd_seq < #{brd_seq}))
 		]]>
 	</select>
 	
 	<select id="getReBoard_after" parameterType="int"
-		resultType="board.bean.BoardDTO">
+		resultType="board">
 		<![CDATA[
 		select * from brd_reply where bd_seq=(select min(brd_seq) from (select brd_seq from board where brd_seq > #{brd_seq})) 
 		]]>
@@ -65,19 +65,19 @@
 		'%'||#{keyword}||'%'
 	</select>
 	
-	<select parameterType="int" id="getBoardView_before" resultType="board.bean.BoardDTO">
+	<select parameterType="int" id="getBoardView_before" resultType="board">
 		<![CDATA[
 		select * from board where brd_seq=(select max(brd_seq) from (select brd_seq from board where brd_seq < #{brd_seq}))
 		]]>
 	</select>
 	
-	<select parameterType="int" id="getBoardView_after" resultType="board.bean.BoardDTO">
+	<select parameterType="int" id="getBoardView_after" resultType="board">
 		<![CDATA[
 		select * from board where brd_seq=(select min(brd_seq) from (select brd_seq from board where brd_seq > #{brd_seq}))
 		]]>
 	</select>
 
-	<select id="getBoardSearch" parameterType="java.util.Map" resultType="board.bean.BoardDTO">
+	<select id="getBoardSearch" parameterType="java.util.Map" resultType="board">
 		<![CDATA[
 		select * from (select rownum rn, tt.* from (select * from board where ${searchOption} like '%'||#{keyword}||'%' order by brd_seq desc)tt) where rn>=#{startNum} and rn<=#{endNum} 
 		]]>
@@ -90,17 +90,17 @@
 		 DELETE FROM brd_reply WHERE re_seq = #{re_seq}
 	</delete>
 	
-	<update id="boardModify" parameterType="board.bean.BoardDTO">
+	<update id="boardModify" parameterType="board">
 		update board set brd_category=#{brd_category}, brd_title=#{brd_title}, brd_content=#{brd_content}, brd_logtime=SYSDATE where brd_seq=#{brd_seq}
 	</update>
 
 	
 	<!-- 마이페이지 내글 -->
-	<select id="getMyboard" parameterType="String" resultType="board.bean.BoardDTO">
+	<select id="getMyboard" parameterType="String" resultType="board">
 		select * from board where brd_nickname = #{nickName}
 	</select>
 	<!-- 마이페이지 내댓글 -->
-	<select id="getMyreply" parameterType="String" resultType="board.bean.BoardDTO">
+	<select id="getMyreply" parameterType="String" resultType="board">
 		select * from brd_reply where re_writer = #{nickName}
 	</select>
 

@@ -6,10 +6,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import goods.bean.GoodsDTO;
-import goods.bean.QnaDTO;
-import goods.dao.GoodsDAO;
-import order.bean.OrderDetailDTO;
+import com.spare.dogiver.persistence.goods.GoodsDAO;
+import com.spare.dogiver.web.dto.GoodsDTO;
+import com.spare.dogiver.web.dto.OrderDetailDTO;
+import com.spare.dogiver.web.dto.QnaDTO;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {

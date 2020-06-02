@@ -1,6 +1,7 @@
 package com.spare.dogiver.web.dto;
 
-import cart.domain.Cart;
+import com.spare.dogiver.domain.Cart;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

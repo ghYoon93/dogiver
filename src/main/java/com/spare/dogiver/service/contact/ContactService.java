@@ -2,7 +2,7 @@ package com.spare.dogiver.service.contact;
 
 import java.util.List;
 
-import contact.bean.ContactDTO;
+import com.spare.dogiver.web.dto.ContactDTO;
 
 public interface ContactService {
 

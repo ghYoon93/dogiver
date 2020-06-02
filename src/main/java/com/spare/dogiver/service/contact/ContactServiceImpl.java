@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import board.bean.BoardDTO;
-import contact.bean.ContactDTO;
-import contact.dao.ContactDAO;
+import com.spare.dogiver.persistence.contact.ContactDAO;
+import com.spare.dogiver.web.dto.BoardDTO;
+import com.spare.dogiver.web.dto.ContactDTO;
 
 
 @Service

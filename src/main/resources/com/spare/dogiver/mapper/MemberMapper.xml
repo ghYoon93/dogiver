@@ -3,25 +3,25 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberSQL">
 	<select id="checkEmail" parameterType="String"
-		resultType="member.bean.MemberDTO">
+		resultType="member">
 		select * from member where
 		email=#{email}
 	</select>
 
 	<select id="checkNickName" parameterType="String"
-		resultType="member.bean.MemberDTO">
+		resultType="member">
 		select * from member where
 		nickname=#{nickName}
 	</select>
 
-	<insert id="sign" parameterType="member.bean.MemberDTO">
+	<insert id="sign" parameterType="member">
 		insert into member
 		(email,name,nickname,pwd,phone,zipcode,addr,addr_detail,seq,email_yn)
 		values
 		(#{email},#{name},#{nickName},#{pwd},#{phone},#{zipcode},#{addr},#{addr_Detail},seq_member.nextval,#{email_Yn})
 	</insert>
 
-	<update id="modi" parameterType="member.bean.MemberDTO">
+	<update id="modi" parameterType="member">
 		update member set
 		nickname=#{nickName}, pwd=#{pwd}, phone=#{phone},
 		zipcode=#{zipcode},addr=#{addr}, addr_detail=#{addr_Detail} where
@@ -29,7 +29,7 @@
 	</update>
 
 	<select id="getMemberList" parameterType="java.util.Map"
-		resultType="member.bean.MemberDTO">
+		resultType="member">
 		<![CDATA[ 
 		select * from 
 		(select rownum rn, tt.* from 
@@ -42,7 +42,7 @@
 		select count(*) from member
 	</select>
 	
-	<update id="change" parameterType="member.bean.MemberDTO">
+	<update id="change" parameterType="member">
 		update member set
 		name=#{name}, nickname=#{nickName}, phone=#{phone},
 		zipcode=#{zipcode},addr=#{addr}, addr_detail=#{addr_Detail},
@@ -50,7 +50,7 @@
 		 where email = #{email}
 	</update>
 	
-	<delete id="drop" parameterType="member.bean.MemberDTO">
+	<delete id="drop" parameterType="member">
 		delete from member where email= #{email}
 	</delete>
 </mapper>
