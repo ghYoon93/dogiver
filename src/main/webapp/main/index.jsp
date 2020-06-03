@@ -4,14 +4,14 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico"
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico"
 	type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>DOGIVER</title>
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
 <link rel="stylesheet" type="text/css"
 	href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <link rel="stylesheet"
@@ -23,7 +23,7 @@
 	src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript"
 	src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="../js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 </head>
 <body>
 	<div id="headerDiv"></div>
@@ -50,7 +50,7 @@
 					<h3>GOODS</h3>
 					<span>자살용 밧줄이 아닙니다.</span></br>
 					<span> "tug" 입니다!</span>
-					<!-- <img alt="장난감" src="../image/goods/1010001/thumbnail.jpg"> -->
+					<!-- <img alt="장난감" src="${pageContext.request.contextPath}/resources/img/goods/1010001/thumbnail.jpg"> -->
 					<div class="button-center"><button type="button">사러가기</button></div>
 				</div>
 				<div class="comu-card">

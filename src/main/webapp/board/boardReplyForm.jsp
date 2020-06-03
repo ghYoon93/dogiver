@@ -11,9 +11,9 @@ padding: 10px;
 border:none; !important
 } 
 </style>
-<link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 <div style="font-size:15px; font-weight:500; text-indent:20px;">댓글달기</div>
 <form name="boardReplyForm" >
 	<input type="hidden" name="brd_seq" value="${brd_seq}"> 
@@ -38,4 +38,4 @@ border:none; !important
 	<div id="contentDiv"></div>
 
 
-<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>

@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>실황 및 현황</title>
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/bloodNow.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bloodNow.css" />
 <link rel="stylesheet" type="text/css"
 	href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <link rel="stylesheet"
@@ -19,11 +19,11 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript"
 	src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
-<script type="text/javascript" src="../js/bloodNow.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bloodNow.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 </head>
 
 <body>
@@ -36,12 +36,12 @@
 		<div class="container">
 			<p id="first-content">당신의 개가 다쳤을때, 수혈받는 피는 어디에서 오는 것일까요?</p>
 			<div class="dog-blood-conteant" id="content1">
-				<img alt="아픈강아지1" src="../image/blooddog1.jpg">
-				<img alt="아픈강아지2" src="../image/blooddog2.jpg">
-				<img alt="아픈강아지3" src="../image/blooddog3.jpg">
-				<img alt="아픈강아지4" src="../image/blooddog4.jpg">
-				<img alt="아픈강아지5" src="../image/blooddog5.jpg">
-				<img alt="아픈강아지6" src="../image/blooddog6.jpg"><br>
+				<img alt="아픈강아지1" src="${pageContext.request.contextPath}/resources/img/blooddog1.jpg">
+				<img alt="아픈강아지2" src="${pageContext.request.contextPath}/resources/img/blooddog2.jpg">
+				<img alt="아픈강아지3" src="${pageContext.request.contextPath}/resources/img/blooddog3.jpg">
+				<img alt="아픈강아지4" src="${pageContext.request.contextPath}/resources/img/blooddog4.jpg">
+				<img alt="아픈강아지5" src="${pageContext.request.contextPath}/resources/img/blooddog5.jpg">
+				<img alt="아픈강아지6" src="${pageContext.request.contextPath}/resources/img/blooddog6.jpg"><br>
 				<span><strong>공혈견,</strong> 피를 뽑기위한 사육</span>
 				<p>뉴스에서 보도될 정도로 공혈견 300여 마리 집단 사육, 불량 식기, 상주 수의사 부재 등 공혈견의 비위생적인
 					사육이나, 채혈 기준을 초과하여 채혈하는 비윤리적인 사육 경우가 다수입니다.</p>
@@ -55,7 +55,7 @@
 					<strong>공혈견의 존재 자체가 비윤리적인 사회문제입니다.</strong>
 			</div>
 			<div class="dog-blood-conteant" id="content2">
-			<img alt="헌혈하는강아지" src="../image/blooddog7.jpg"><br>
+			<img alt="헌혈하는강아지" src="${pageContext.request.contextPath}/resources/img/blooddog7.jpg"><br>
 				<span>한번 헌혈로 4마리의 생명을 살릴 수 있습니다.</span>
 					<p>반려견 보호자들의 자발적인 참여로 주기적으로 헌혈을 하는 개들을<strong>'헌혈견'</strong>이라고 합니다.</p>
 					<p>국내 대형견은 10만 마리 정도로 추정되며</p> 
@@ -63,7 +63,7 @@
 			</div>
 			
 			<div class="dog-blood-conteant" id="content3">
-				<img alt="행복한 강아지" src="../image/happy-dog.jpg"><br>
+				<img alt="행복한 강아지" src="${pageContext.request.contextPath}/resources/img/happy-dog.jpg"><br>
 				<span><strong>지금,</strong>위기에 처한 공혈견을 도와주세요.</span>
 				<p>헌혈견의 조건은 생각보다 간단합니다.</p>
 				<p>그저 2~8살 사이에 25Kg 이상의 건강한 반려견이라면 누구나 가능합니다.</p>

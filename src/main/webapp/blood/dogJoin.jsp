@@ -7,8 +7,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>헌혈견 등록</title>
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/dogJoin.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/dogJoin.css">
 <link rel="stylesheet" type="text/css"
 	href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <link rel="stylesheet"
@@ -16,14 +16,14 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
-<link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript"
 	src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script type="text/javascript" src="../js/dogJoin.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/dogJoin.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 </head>
 
 <body>

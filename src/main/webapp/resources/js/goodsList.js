@@ -27,14 +27,14 @@ $(document).ready(function(){
 					tag += '<div class="goods-boxs" >'
 						+ '<div class="goods-image" >'
 						+ '<a href="javascript:void(0)" id="'+items.goods_id+'">'
-						+ '<img class="image" src="../image/goods/'+ items.goods_thumbnail +'"/>'
+						+ '<img class="image" src="${pageContext.request.contextPath}/resources/img/goods/'+ items.goods_thumbnail +'"/>'
 						+ '</a>'
 						+ '<div class="hover_bar">'
 						+ '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
-						+ '<img src="../image/shopping_bucket.png" />'
+						+ '<img src="${pageContext.request.contextPath}/resources/img/shopping_bucket.png" />'
 						+ '</button>'
 						+ '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
-						+ '<img src="../image/search.png" />'
+						+ '<img src="${pageContext.request.contextPath}/resources/img/search.png" />'
 						+ '</button>'
 						+ '</div>'
 						+ '</div>'
@@ -96,14 +96,14 @@ $('.goods_category li').click(function(){
 				tag += '<div class="goods-boxs" >'
 				         + '<div class="goods-image" >'
 				           + '<a href="javascript:void(0)" id="'+items.goods_id+'">'
-				             + '<img class="image" src="../image/goods/'+ items.goods_thumbnail +'"/>'
+				             + '<img class="image" src="${pageContext.request.contextPath}/resources/img/goods/'+ items.goods_thumbnail +'"/>'
 				           + '</a>'
 				           + '<div class="hover_bar">'
 				             + '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
-				               + '<img src="../image/shopping_bucket.png" />'
+				               + '<img src="${pageContext.request.contextPath}/resources/img/shopping_bucket.png" />'
 				             + '</button>'
 				             + '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
-				               + '<img src="../image/search.png" />'
+				               + '<img src="${pageContext.request.contextPath}/resources/img/search.png" />'
 				             + '</button>'
 				           + '</div>'
 				         + '</div>'
@@ -142,14 +142,14 @@ $('.goods_sort').change(function(){
 				tag += '<div class="goods-boxs" >'
 				         + '<div class="goods-image" >'
 				           + '<a href="javascript:void(0)" id="'+items.goods_id+'">'
-				             + '<img class="image" src="../image/goods/'+ items.goods_thumbnail +'"/>'
+				             + '<img class="image" src="${pageContext.request.contextPath}/resources/img/goods/'+ items.goods_thumbnail +'"/>'
 				           + '</a>'
 				           + '<div class="hover_bar">'
 				             + '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
-				               + '<img src="../image/shopping_bucket.png" />'
+				               + '<img src="${pageContext.request.contextPath}/resources/img/shopping_bucket.png" />'
 				             + '</button>'
 				             + '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
-				               + '<img src="../image/search.png" />'
+				               + '<img src="${pageContext.request.contextPath}/resources/img/search.png" />'
 				             + '</button>'
 				           + '</div>'
 				         + '</div>'
@@ -183,7 +183,7 @@ $(document).on('click', '.btn_basket_cart', function(){
 	console.log(img);
 	console.log(name);
 	
-	$('#option-view img').attr('src', '../image/goods/'+img);
+	$('#option-view img').attr('src', '${pageContext.request.contextPath}/resources/img/goods/'+img);
 	$('#option-view strong').text(name);
 	$('#tot_price').text(total).append(' 원');
 	

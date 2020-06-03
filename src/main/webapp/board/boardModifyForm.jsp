@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
-<link rel="stylesheet" href="../css/board.css">
-<link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/board.css">
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 <style type="text/css">
 .fr-view {
 	height: 500px;
@@ -67,8 +67,8 @@
 	<div id="footerDiv"></div>
 </body>
 
-<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	

@@ -10,16 +10,16 @@
       href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
       rel="stylesheet"
     />
-<link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico"
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico"
   type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />    
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/sign.css" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />    
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/sign.css" />
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 
 </head>
 <body>
@@ -463,5 +463,5 @@
 
 	<div id="footerDiv"></div>
 </body>
-<script type="text/javascript" src="../js/sign_up.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/sign_up.js"></script>
 </html>

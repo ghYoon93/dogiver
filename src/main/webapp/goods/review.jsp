@@ -6,9 +6,9 @@ pageEncoding="UTF-8"%>
 <head>
 <meta charset="UTF-8">
 <title>상품 후기</title>
-<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="../css/reset.css" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
 
 </head>
 <body>
@@ -31,6 +31,6 @@ pageEncoding="UTF-8"%>
 </table>
 
 </body>
-<script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../js/goods_review.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/goods_review.js"></script>
 </html>

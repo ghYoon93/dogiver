@@ -5,13 +5,13 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<link rel="favicon" href="../image/favicon.ico" />
-    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
 </head>
 <body>
 	<a href="#content" class="skip">본문바로가기</a>
@@ -34,19 +34,19 @@
 			</div>
 			<div id="my-page">
 				<a href="../my/mypage">MY<img alt="my-page"
-					src="../image/user_icon.svg"></a>
+					src="${pageContext.request.contextPath}/resources/img/user_icon.svg"></a>
 			</div>
 
 		</c:if>
 		<c:if test="${role eq 'admin' }">
 			<div id="admin-page">
 				<a href="../admin/admin">관리자<img alt="admin-page"
-					src="../image/admin_icon.svg"></a>
+					src="${pageContext.request.contextPath}/resources/img/admin_icon.svg"></a>
 			</div>
 		</c:if>
 		<c:if test="${role ne 'admin' }">
 			<div>
-				<a href="../order/cart"><img src="../image/shopping_bucket.png" alt="장바구니" /></a>
+				<a href="../order/cart"><img src="${pageContext.request.contextPath}/resources/img/shopping_bucket.png" alt="장바구니" /></a>
 			</div>
 		</c:if>
 	</div>
@@ -57,7 +57,7 @@
 			<!-- 헤더 -->
 			<h1>도그너</h1>
 			<!-- 로고 -->
-			<a href="../main/index"><img src="../image/dogiver-logo.png"
+			<a href="../main/index"><img src="${pageContext.request.contextPath}/resources/img/dogiver-logo.png"
 				alt="로고이미지" /></a>
 
 			<!-- 헤더 메뉴 -->
@@ -102,5 +102,5 @@
 </body>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 </html>

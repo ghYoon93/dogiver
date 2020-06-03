@@ -36,7 +36,7 @@ li {
   transform: translate(-50%, -50%);
   width: 19px;
   height: 19px;
-  background: url("../image/icon1.png") no-repeat #fff;
+  background: url("${pageContext.request.contextPath}/resources/img/icon1.png") no-repeat #fff;
 }
 .step li:last-child::after {
   display: none;
@@ -130,7 +130,7 @@ li {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url(../image/icon_noti.png);
+  background: url(${pageContext.request.contextPath}/resources/img/icon_noti.png);
   vertical-align: -3px;
 }
 .agree {
@@ -189,7 +189,7 @@ input[type="checkbox"] + label:before {
   margin: 0 10px 0 0;
 }
 input[type="checkbox"]:checked + label:before {
-  background: url(../image/checkbox.png) no-repeat #fff center;
+  background: url(${pageContext.request.contextPath}/resources/img/checkbox.png) no-repeat #fff center;
   border-color: #333;
 }
 .btn_1 {

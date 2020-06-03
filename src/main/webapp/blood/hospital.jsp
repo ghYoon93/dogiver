@@ -8,8 +8,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<title>동물병원</title>
-	<link rel="stylesheet" href="../css/style.css" />
-	<link rel="stylesheet" href="../css/hospital.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/hospital.css">
 	<link
 		rel="stylesheet"
 		type="text/css"
@@ -23,17 +23,17 @@
       href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
       rel="stylesheet"
     />
-    <link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=clbhwdl70e"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script
 		type="text/javascript"
 		src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
 	></script>
-	<script type="text/javascript" src="../js/hospital.js"></script>
-	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/hospital.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 </head>
 
 <body>

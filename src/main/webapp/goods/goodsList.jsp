@@ -7,12 +7,12 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/goods.css" />
-<link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/goods.css" />
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
@@ -58,14 +58,14 @@
 	        <div class="goods-boxs">
 	          <div class="goods-image">
 	            <a href="javascript:void(0)">
-	              <img class="image" src="../image/aa.jpg" />
+	              <img class="image" src="${pageContext.request.contextPath}/resources/img/aa.jpg" />
 	            </a>
 	            <div class="hover_bar">
 	              <button type="button" class="btn_basket_cart" href="#">
-	                <img src="../image/shopping_bucket.png" />
+	                <img src="${pageContext.request.contextPath}/resources/img/shopping_bucket.png" />
 	              </button>
 	              <button type="button" class="btn_detail_link">
-	                <img src="../image/search.png" />
+	                <img src="${pageContext.request.contextPath}/resources/img/search.png" />
 	              </button>
 	            </div>
 	          </div>
@@ -119,8 +119,8 @@
 	</div>
 	<div id="footerDiv"></div>
 </body>
-<script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/goodsList.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/goodsList.js"></script>
 
 </html>

@@ -35,5 +35,5 @@ pageEncoding="UTF-8"%>
   </tbody>
 </table>
 
-<script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../js/goods_qna.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/goods_qna.js"></script>

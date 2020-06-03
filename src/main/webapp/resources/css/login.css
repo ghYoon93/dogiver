@@ -71,12 +71,12 @@ input[type="checkbox"] + label:before {
   border-radius: 5px;
 }
 input[type="checkbox"]:checked + label:before {
-  background: url(../image/checkbox.png) no-repeat #fff center;
+  background: url(${pageContext.request.contextPath}/resources/img/checkbox.png) no-repeat #fff center;
   border-color: #333;
 }
 
 .login > li input[type="checkbox"]:checked + label:before {
-  background: url(../image/checkbox.png) no-repeat #fff center;
+  background: url(${pageContext.request.contextPath}/resources/img/checkbox.png) no-repeat #fff center;
   border-color: #333;
 }
 .login div ul {
@@ -95,7 +95,7 @@ input[type="checkbox"]:checked + label:before {
   text-decoration: none;
 }
 #login_btn {
-  background: url(../image/dogiver-login.png) no-repeat;
+  background: url(${pageContext.request.contextPath}/resources/img/dogiver-login.png) no-repeat;
   width: 100%;
   height: 56px;
   cursor: pointer;
@@ -106,7 +106,7 @@ input[type="checkbox"]:checked + label:before {
   outline-style: none;
 }
 #my-signin2 {
-  background: url(../image/login_google.png) no-repeat;
+  background: url(${pageContext.request.contextPath}/resources/img/login_google.png) no-repeat;
   width: 100%;
   height: 56px;
   cursor: pointer;
@@ -116,7 +116,7 @@ input[type="checkbox"]:checked + label:before {
   outline-style: none;
 }
 #naverIdLogin {
-  background: url(../image/login_naver.png) no-repeat;
+  background: url(${pageContext.request.contextPath}/resources/img/login_naver.png) no-repeat;
   width: 100%;
   height: 56px;
   cursor: pointer;
@@ -126,7 +126,7 @@ input[type="checkbox"]:checked + label:before {
   outline-style: none;
 }
 #kakao-login {
-  background: url(../image/login_kakao.png) no-repeat;
+  background: url(${pageContext.request.contextPath}/resources/img/login_kakao.png) no-repeat;
   width: 100%;
   height: 56px;
   cursor: pointer;

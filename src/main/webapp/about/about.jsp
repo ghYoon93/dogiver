@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8" />
 <title>ABOUT US</title>
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/about.css" />
-<link rel="favicon" href="../image/favicon.ico" />
-    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/about.css" />
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
@@ -18,8 +18,8 @@
 	href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/about.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/about.js"></script>
 </head>
 <body>
 	<div id="headerDiv"></div>
@@ -68,7 +68,7 @@
 
 					<p>우리는 광범위한 연구와 증거 때문에 우리가하는 일만 할 수 있습니다.</p>
 
-					<p>우리는 우리가하는 일에 관심을 갖지만 우리를 계속 근거로 삼 으려는 생각에 이유를 적용합니다. 논리와
+					<p>우리는 우리가하는 일에 관심을 갖지만 우리를 계속 근거로 삼으려는 생각에 이유를 적용합니다. 논리와
 						솔루션을 문제에 적용합니다.</p>
 					<p>실용적인 솔루션이없는 경우 대체 솔루션 또는 다른 방법을 찾기 위해 노력할 것입니다.</p>
 				</div>
@@ -81,5 +81,5 @@
 	<div id="footerDiv"></div>
 </body>
 <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="../js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 </html>

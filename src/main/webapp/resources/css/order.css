@@ -681,7 +681,7 @@ input[type="checkbox"] + label:before {
   margin: 0 10px 0 0;
 }
 input[type="checkbox"]:checked + label:before {
-  background: url(../image/checkbox.png) no-repeat #fff center;
+  background: url(${pageContext.request.contextPath}/resources/img/checkbox.png) no-repeat #fff center;
   border-color: #333;
 }
 /* //체크박스 */

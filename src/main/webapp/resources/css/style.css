@@ -234,7 +234,7 @@ header .header {
 	margin-top: 100px;
 	height: 300px;
 	text-align: center;
-	background: url(../image/black-and-white-short-coated-dogs-3628100.jpg)
+	background: url(${pageContext.request.contextPath}/resources/img/black-and-white-short-coated-dogs-3628100.jpg)
 		no-repeat;
 	opacity: 0.7;
 	width: 100%;
@@ -290,7 +290,7 @@ header .header {
 }
 
 #slide-img-1 {
-	background: url("../image/puppy-sleeping-in-a-pet-bowl-3198004.jpg")
+	background: url("${pageContext.request.contextPath}/resources/img/puppy-sleeping-in-a-pet-bowl-3198004.jpg")
 		no-repeat center center;
 	max-width: 100%;
 	max-height: 100%;
@@ -305,7 +305,7 @@ header .header {
 }
 
 #slide-img-2 {
-	background: url("../image/slide-image-4.jpg") no-repeat center center;
+	background: url("${pageContext.request.contextPath}/resources/img/slide-image-4.jpg") no-repeat center center;
 	max-width: 100%;
 	max-height: 100%;
 	min-width: 1100px;
@@ -320,7 +320,7 @@ header .header {
 
 #slide-img-3 {
 	background:
-		url("../image/brown-short-coated-dog-on-white-background-3487734.jpg")
+		url("${pageContext.request.contextPath}/resources/img/brown-short-coated-dog-on-white-background-3487734.jpg")
 		no-repeat center center;
 	max-width: 100%;
 	max-height: 100%;
@@ -422,7 +422,7 @@ header .header {
 	background: #ffe3e4;
 	border-radius: 5px;
 	padding: 30px 30px 30px 15px;
-	background: url("../image/goods/1010001/main-tug.png") no-repeat #f2f2f2
+	background: url("${pageContext.request.contextPath}/resources/img/goods/1010001/main-tug.png") no-repeat #f2f2f2
 		top;
 }
 
@@ -456,7 +456,7 @@ header .header {
 	height: 235px;
 	border-radius: 5px;
 	padding: 30px 60px 30px 15px;
-	background: url("../image/talk-dog.png") no-repeat bottom #fae9ff;
+	background: url("${pageContext.request.contextPath}/resources/img/talk-dog.png") no-repeat bottom #fae9ff;
 }
 
 .comu-card h3 {
@@ -503,7 +503,7 @@ header .header {
 
 .blood-card {
 	width: 600px;
-	background: url("../image/main-blood.png") no-repeat bottom #f0d7d6;
+	background: url("${pageContext.request.contextPath}/resources/img/main-blood.png") no-repeat bottom #f0d7d6;
 	height: 530px;
 	padding: 30px 15px 30px 20px;
 	border-radius: 5px;

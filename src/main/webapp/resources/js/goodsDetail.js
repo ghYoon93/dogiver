@@ -47,7 +47,7 @@ $(document).ready(function(){
 		success: function(data){
 			//alert(JSON.stringify(data));
 
-			tag += '<div class="overview-image"><img src="../image/goods/'+ data.goodsDTO.goods_thumbnail +'"></div>'
+			tag += '<div class="overview-image"><img src="${pageContext.request.contextPath}/resources/img/goods/'+ data.goodsDTO.goods_thumbnail +'"></div>'
 					+ '<div class="overview-content">'
 						+'<h1 id="goods_name" >'+ data.goodsDTO.goods_name +'</h1>'			
 						+'<div>'
@@ -78,7 +78,7 @@ $(document).ready(function(){
 						+'</div>'
 					+'</div>';
 			
-			detail_image = '<img src="../image/goods/'+ data.goodsDTO.goods_detail +'" >'; 
+			detail_image = '<img src="${pageContext.request.contextPath}/resources/img/goods/'+ data.goodsDTO.goods_detail +'" >'; 
 			
 			$('.overview').append(tag);
 			$('.discription div').append(detail_image).css('text-align', 'center');

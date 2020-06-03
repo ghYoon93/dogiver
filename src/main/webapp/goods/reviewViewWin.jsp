@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
-<link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 </head>
 <strong>리뷰 </strong>
 
@@ -24,7 +24,7 @@
 	<!-- <button type="button" id="reviewWriteBtn">등록</button> -->
 </form>
 
-<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	$.ajax({
@@ -37,7 +37,7 @@ $(document).ready(function(){
 				$('#reviewWriteBtn, #reviewDeleteBtn').hide();
 			}
 			if(data.qnaDTO.image != null){
-				$('#image').attr('src', '../image/goods_board/'+data.qnaDTO.image);
+				$('#image').attr('src', '${pageContext.request.contextPath}/resources/img/goods_board/'+data.qnaDTO.image);
 				$('.text_content').text(data.qnaDTO.text_content);
 				
 			}else{

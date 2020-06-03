@@ -4,23 +4,23 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico"
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico"
 	type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>my page</title>
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/mypage.css" />
-<link rel="stylesheet" href="../css/sign.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/mypage.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/sign.css" />
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="../js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 </head>
 <body>
 	<div id="headerDiv"></div>
@@ -120,5 +120,5 @@
 	</div>
 	<div id="footerDiv"></div>
 </body>
-<script type="text/javascript" src="../js/mypage.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/mypage.js"></script>
 </html>

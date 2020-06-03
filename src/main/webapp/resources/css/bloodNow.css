@@ -13,7 +13,7 @@
 	font-size: 30px;
 	margin: 20px;
 	color:#f2f2f2;
-	background: url("../image/hurt-dog.jpg") no-repeat center center;
+	background: url("${pageContext.request.contextPath}/resources/img/hurt-dog.jpg") no-repeat center center;
 	opacity: 0.7;
 	height: 300px;
 	-webkit-background-size: cover;

@@ -5,12 +5,12 @@
 
 <head>
   <meta charset="utf-8">  
-  <link rel="favicon" href="../image/favicon.ico" />
-    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="../css/reset.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/order.css">
+  <link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/order.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
     rel="stylesheet" />
   <title>장바구니</title>
@@ -147,10 +147,10 @@
   <!-- //wrap -->
   </div>
   <div id="footerDiv"></div>
-  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="../js/main.js"></script>
-  <script type="text/javascript" src="../js/cart.js"></script>
-  <script type="text/javascript" src="../js/quantityOption.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/cart.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/quantityOption.js"></script>
 </body>
 
 </html>

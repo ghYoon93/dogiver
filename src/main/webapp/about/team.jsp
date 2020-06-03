@@ -6,13 +6,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ABOUT US</title>
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/about.css" />
-<link rel="stylesheet" href="../css/team.css" />
-<link rel="favicon" href="../image/favicon.ico" />
-    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/about.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/team.css" />
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
@@ -20,8 +20,8 @@
 	href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/about.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/about.js"></script>
 </head>
 <body>
 	<div id="headerDiv"></div>

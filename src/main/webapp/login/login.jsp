@@ -5,16 +5,16 @@
 <head>
 <meta charset="UTF-8" />
 <title>로그인</title>
-<link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico"
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico"
 	type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-signin-client_id"
 	content="YOUR_CLIENT_ID.apps.googleusercontent.com" />
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/login.css" />
-<link rel="stylesheet" href="../css/sign.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/login.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/sign.css" />
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
@@ -26,12 +26,12 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
-<script type="text/javascript" src="../js/login.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/login.js"></script>
 </head>
 <body>
 	<section class="login">
 		<!-- 로고 -->
-		<a href="../main/index"> <img src="../image/dogiver-logo.png"
+		<a href="../main/index"> <img src="${pageContext.request.contextPath}/resources/img/dogiver-logo.png"
 			alt="로고이미지" />
 		</a>
 		<h2>로그인</h2>

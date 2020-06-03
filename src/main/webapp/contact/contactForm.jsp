@@ -3,15 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/contact.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/contact.css" />
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet" />
-<link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 <title>문의하기</title>
 </head>
 
@@ -47,7 +47,7 @@
 			</div>
 			<!--이미지 DIV  -->
 			<div id="contact_imgDiv">
-				<img id="contact_img" src="../image/dog3.jpg" style=" border-radius: 30px;">
+				<img id="contact_img" src="${pageContext.request.contextPath}/resources/img/dog3.jpg" style=" border-radius: 30px;">
 			</div>
 			<form id="contactForm" method="post">
 				<div id="contact_visitor">
@@ -85,9 +85,9 @@
 	</div>
 	<div id="footerDiv"></div>
 </body>
-<script type="text/javascript" src="../js/jquery-3.4.1.min.js"
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"
 	charset="URF-8"></script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/contact.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/contact.js"></script>
 </html>
 

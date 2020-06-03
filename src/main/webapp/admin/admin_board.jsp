@@ -4,15 +4,15 @@ pageEncoding="UTF-8"%>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <link rel="favicon" href="../image/favicon.ico" />
-    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>admin</title>
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/admin.css" />
-    <link rel="stylesheet" href="../css/sign.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/sign.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
       rel="stylesheet"
@@ -25,8 +25,8 @@ pageEncoding="UTF-8"%>
       type="text/javascript"
       src="/data/201101/IJ12941530138912/jquery-contained-sticky-scroll.js"
     ></script>
-    <script src="../js/main.js"></script>
-     <script src="../js/admin_board.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+     <script src="${pageContext.request.contextPath}/resources/js/admin_board.js"></script>
   </head>
   <body>
     <div id="headerDiv"></div>

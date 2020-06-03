@@ -6,17 +6,17 @@
 <meta charset="UTF-8">
 <title>GOODS</title>
 
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 	<link
 	      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	      rel="stylesheet"
 	/>
-    <link rel="stylesheet" href="../css/style.css" />	
-	<link rel="stylesheet" href="../css/reset.css" />
-	<link rel="stylesheet" href="../css/goodsDetail.css" />
-  <link rel="favicon" href="../image/favicon.ico" />
-<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/goodsDetail.css" />
+  <link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
 
@@ -34,7 +34,7 @@
 <div class="wrap">
     <div id="section">
 	<div class="overview">
-<!-- 		<div class="overview-image"><img src="../image/aa.jpg">  </div>
+<!-- 		<div class="overview-image"><img src="${pageContext.request.contextPath}/resources/img/aa.jpg">  </div>
 		<div class="overview-content">
 			<h1 id="goods_name" >SET구성(헌혈견 목걸이+헌혈견 팔찌+헌혈견 귀걸이)</h1>			
 			<div>
@@ -85,8 +85,8 @@
 </div>
 <div id="footerDiv"></div>
 </body>
-<script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/goodsDetail.js"></script>
-<!-- <script src="../js/goods_qna.js"></script>-->
+<script src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/goodsDetail.js"></script>
+<!-- <script src="${pageContext.request.contextPath}/resources/js/goods_qna.js"></script>-->
 </html>
