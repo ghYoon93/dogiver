@@ -2,8 +2,8 @@ package com.spare.dogiver.domain;
 
 import java.util.Date;
 
+
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.spare.dogiver.service.goods.GoodsService;
 
 import lombok.Builder;
 import lombok.Getter;

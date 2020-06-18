@@ -1,16 +1,18 @@
 $(document).ready(function() {
+	console.log("dogiver.js");
 	$.ajax({
 		type: 'post',
 		url: '/dogiver/blood/getDogiver',
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		dataType: 'json',
 		success: function(data){
+			console.log("success");
 			$.each(data.list, function(index, items){
 				$('<dd/>').append($('<div/>',{
 					class: 'dognorImg',
 					id: items.dog_id+""
 				}).append($('<img/>',{
-					src: '../dogiverImage/'+items.dog_image
+					src: '../resources/img/dogiverImage/'+items.dog_image
 				}))).append($('<div/>',{
 					class: 'dognorContent',
 					text: items.dog_name
@@ -45,7 +47,11 @@ $(document).ready(function() {
 				}
 			});
 			
-		}// success
+		}, // success
+		error: function(request, status, error) {
+			alert(request.status+" "+request.responseText+" " +error);
+		}
+		
 	});// ajax
 	
 	/*

@@ -6,8 +6,8 @@ window.onload = function() {
   }, 100);
   scrollController();
 
-  $("#headerDiv").load("../template/header.jsp");
-  $("#footerDiv").load("../template/footer.html");
+  $("#headerDiv").load("../resources/template/header.jsp");
+  $("#footerDiv").load("../resources/template/footer.html");
   $(window).on("scroll", function() {
     scrollController();
   });

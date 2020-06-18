@@ -16,6 +16,9 @@ import com.spare.dogiver.service.blood.BloodService;
 import com.spare.dogiver.web.dto.DogJoinDTO;
 import com.spare.dogiver.web.dto.DogiverDTO;
 
+import lombok.extern.log4j.Log4j;
+
+@Log4j
 @Controller
 @RequestMapping("blood")
 public class BloodController {
@@ -52,8 +55,9 @@ public class BloodController {
 	
 	@RequestMapping(value = "getDogiver", method = RequestMethod.POST)
 	public ModelAndView getDogiver() {
+		System.out.println("getDogiver");
 		List<DogiverDTO> list = bloodService.getDogiver();
-		
+		System.out.println(list.get(1));
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
 		mav.setViewName("jsonView");

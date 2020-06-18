@@ -71,31 +71,31 @@ html {
   transform: translateX(-50%);
 }
 #ygh{
-	background: url("${pageContext.request.contextPath}/resources/img/team/ygh.png") no-repeat center #e55039;
+	background: url("../img/team/ygh.png") no-repeat center #e55039;
 	width:333px;
 	height: 333px;
 	background-size: cover;
 }
 #jwb{
-	background: url("${pageContext.request.contextPath}/resources/img/team/jwb.png") no-repeat center #74b9ff;
+	background: url("../img/team/jwb.png") no-repeat center #74b9ff;
 	width:333px;
 	height: 333px;
 	background-size: cover;
 }
 #kkw{
-	background: url("${pageContext.request.contextPath}/resources/img/team/kkw.png") no-repeat center #fab1a0;
+	background: url("../img/team/kkw.png") no-repeat center #fab1a0;
 	width:333px;
 	height: 333px;
 	background-size: cover;
 }
 #syr{
-	background: url("${pageContext.request.contextPath}/resources/img/team/syr.png") no-repeat center #ffeaa7;
+	background: url("../img/team/syr.png") no-repeat center #ffeaa7;
 	width:333px;
 	height: 333px;
 	background-size: cover;
 }
 #pjs{
-	background: url("${pageContext.request.contextPath}/resources/img/team/pjs.png") no-repeat center #78e08f;
+	background: url("../img/team/pjs.png") no-repeat center #78e08f;
 	width:333px;
 	height: 333px;
 	background-size: cover;

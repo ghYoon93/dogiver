@@ -58,7 +58,7 @@
 .about-content {
   margin: 20px 0 150px;
   padding: 15px;
-  background: url("${pageContext.request.contextPath}/resources/img/about-dog.png") no-repeat bottom right;
+  background: url("../img/about-dog.png") no-repeat bottom right;
   opacity: 0.8;
 }
 .about-content h3 {
