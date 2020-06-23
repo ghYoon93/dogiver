@@ -9,14 +9,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
-import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -28,13 +22,9 @@ public class DataSourceConfig {
     public DataSource dataSource() {
     	HikariConfig hikariConfig = new HikariConfig();
     	String driverClassName = "net.sf.log4jdbc.sql.jdbcapi.DriverSpy";
-    	String jdbcUrl = "jdbc:log4jdbc:h2:~/dogiver;DB_CLOSE_DELAY=-1;";
-    	String username = "sa";
-    	String password = "";
-//    	String driverClassName = "oracle.jdbc.driver.OracleDriver";
-//    	String jdbcUrl = "jdbc:log4jdbc:oracle:thin:@dogiver.cnlfhnhpcnuu.ap-northeast-2.rds.amazonaws.com:1521:orcl";
-//    	String username = "dogiver";
-//    	String password = "dogiver0406!";
+    	String jdbcUrl = "jdbc:log4jdbc:oracle:thin:@dogiver.cnlfhnhpcnuu.ap-northeast-2.rds.amazonaws.com:1521:orcl";
+    	String username = "dogiver";
+    	String password = "dogiver0406!";
     	
     	hikariConfig.setDriverClassName(driverClassName);
     	hikariConfig.setJdbcUrl(jdbcUrl);
@@ -42,12 +32,6 @@ public class DataSourceConfig {
         hikariConfig.setPassword(password);
         
         HikariDataSource dataSource = new HikariDataSource(hikariConfig);
-        Resource schema = new ClassPathResource("sql/db-schema.sql");
-//      Resource testData = new ClassPathResource("sql/db-test-data.sql");
-        ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-        populator.addScript(schema);
-//      populator.addScript(testData);
-        DatabasePopulatorUtils.execute(populator, dataSource);
         return dataSource;
     }
 	/*
