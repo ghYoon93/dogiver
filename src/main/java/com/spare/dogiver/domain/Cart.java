@@ -15,10 +15,9 @@ public class Cart {
 	private long cartId;
 	private String email;
 	private long goodsId;
+	
 	private long cartCnt;
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd")
 	private Date createdDate;
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd")
 	private Date modifedDate;
 	
 	@Builder

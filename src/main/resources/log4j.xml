@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="dogiver">
+	<logger name="com.spare.dogiver">
 		<level value="info" />
 	</logger>
 	

@@ -5,6 +5,8 @@ import java.io.IOException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.View;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -22,14 +24,23 @@ public class ServletConfig implements WebMvcConfigurer{
 		InternalResourceViewResolver bean = new InternalResourceViewResolver();
 		bean.setViewClass(JstlView.class);
 		bean.setSuffix(".jsp");
-		registry.viewResolver(bean);
 		
+		
+		registry.viewResolver(bean);
 	}
 	@Bean(name = "beanNameViewResolver")
-	public BeanNameViewResolver getBeanNameViewResolverResolver() {
+	public ViewResolver getBeanNameViewResolverResolver() {
 		BeanNameViewResolver resolver = new BeanNameViewResolver();
 		resolver.setOrder(0);
 		return resolver;
+	}
+	
+	@Bean(name = "jsonView")
+	public View getJsonView() {
+		MappingJackson2JsonView view = new MappingJackson2JsonView();
+		view.setContentType("text/html;charset=UTF-8");
+		
+		return view;
 	}
 	
 	@Override
