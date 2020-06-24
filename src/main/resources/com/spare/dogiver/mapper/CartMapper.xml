@@ -2,17 +2,41 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="CartSql">
+<mapper namespace="CartMapper">
   <resultMap id="cartResultMap" type="com.spare.dogiver.domain.Cart">
-    <result property="cartId" column="cart_id" />
-    <result property="email" column="email"/>
-    <result property="goodsId" column="goods_id"/>
-    <result property="cartCnt" column="cart_cnt"/>
+    <id property="cartId" column="cart_id" />
+    <id property="member.email" column="email"/>
+    <id property="goods.goodsId" column="goods_id"/>
+    <id property="cartCnt" column="cart_cnt"/>
+    
+    <!-- <association property="goods" 
+                 column="goods_id" 
+                 javaType="com.spare.dogiver.domain.Goods" 
+                 select="selectGoods" />
+    <association property="member" 
+                 column="email"
+                 javaType="com.spare.dogiver.domain.Member"
+                 select="selectMember">
+    </association> -->
+    
   </resultMap>
   
   <insert id="save" parameterType="Cart">
-    INSERT INTO cart(email, goods_id, cart_cnt) VALUES(#{email}, #{goodsId}, #{cartCnt})
+    INSERT INTO cart(cart_id, email, goods_id, cart_cnt) 
+                VALUES(seq_cart.nextval, #{member.email}, #{goods.goodsId}, #{cartCnt})
   </insert>
+  
+  <select id="findAll" resultMap="cartResultMap">
+    SELECT * FROM cart
+  </select>
+  
+  <select id = "selectGoods" parameterType="long" resultType="com.spare.dogiver.domain.Goods">
+    SELECT * FROM goods WHERE goods_id = #{goodsId}
+  </select>
+  <select id = "selectMember" parameterType="String" resultType="com.spare.dogiver.domain.Member">
+    SELECT * FROM member WHERE email = #{email}
+  </select>
+  
   <select id="findAllDesc" resultMap="cartResultMap">
     SELECT * FROM cart ORDER BY cart_id DESC
   </select>

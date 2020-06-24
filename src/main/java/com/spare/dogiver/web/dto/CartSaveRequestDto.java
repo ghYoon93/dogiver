@@ -1,6 +1,8 @@
 package com.spare.dogiver.web.dto;
 
 import com.spare.dogiver.domain.Cart;
+import com.spare.dogiver.domain.Goods;
+import com.spare.dogiver.domain.Member;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -10,20 +12,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CartSaveRequestDto {
     private int goodsId;
-    private String email;
+    
+    private Member member;
+    private Goods goods;
+    
     private int cartCnt;
     
     @Builder
-    public CartSaveRequestDto(int goodsId, String email, int cartCnt) {
-    	this.goodsId = goodsId;
-    	this.email  = email;
+    public CartSaveRequestDto(Member member, Goods goods, int cartCnt) {
+    	this.member  = member;
+    	this.goods = goods;
     	this.cartCnt = cartCnt;
     }
     
     public Cart toEntity() {
     	return Cart.builder()
-    			.goodsId(goodsId)
-    			.email(email)
+    			.member(member)
+    			.goods(goods)
     			.cartCnt(cartCnt)
     			.build();
     			

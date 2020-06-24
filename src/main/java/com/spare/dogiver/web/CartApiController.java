@@ -19,15 +19,15 @@ public class CartApiController {
 	@Autowired
 	private final CartService cartService;
 	
-	@PostMapping("/cart")
+	@PostMapping("/api/v1/cart")
 	public Long save(@RequestBody CartSaveRequestDto requestDto) {
 		return cartService.save(requestDto);
 	}
 	
-	@PutMapping("/cart/{id}")
-	public Long update(@PathVariable Long id,
+	@PutMapping("/api/v1/cart/{cartId}")
+	public Long update(@PathVariable Long cartId,
 			@RequestBody CartUpdateRequestDto requestDto) {
-		return 0L;
+		return cartService.update(cartId, requestDto);
 //		return CartService.update(id, requestDto);
 	}
 }
