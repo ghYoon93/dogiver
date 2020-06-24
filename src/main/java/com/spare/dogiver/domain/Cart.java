@@ -3,7 +3,7 @@ package com.spare.dogiver.domain;
 import java.util.Date;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 import lombok.Builder;
 import lombok.Getter;
@@ -13,17 +13,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Cart {
 	private long cartId;
-	private String email;
-	private long goodsId;
+	
+	private Member member;
+	private Goods goods;
 	
 	private long cartCnt;
+	
 	private Date createdDate;
 	private Date modifedDate;
 	
 	@Builder
-	public Cart(String email, long goodsId, long cartCnt) {
-		this.email = email;
-		this.goodsId = goodsId;
+	public Cart(Member member, Goods goods, long cartCnt) {
+		this.member = member;
+		this.goods = goods;
 		this.cartCnt = cartCnt;
 	}
 	
