@@ -40,10 +40,10 @@ public class DataSourceConfig {
         
         HikariDataSource dataSource = new HikariDataSource(hikariConfig);
         Resource schema = new ClassPathResource("sql/db-schema.sql");
-//      Resource testData = new ClassPathResource("sql/db-test-data.sql");
+      Resource testData = new ClassPathResource("sql/db-test-data.sql");
         ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
         populator.addScript(schema);
-//      populator.addScript(testData);
+      populator.addScript(testData);
         DatabasePopulatorUtils.execute(populator, dataSource);
         return dataSource;
     }
