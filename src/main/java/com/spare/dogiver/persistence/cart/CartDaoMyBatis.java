@@ -17,12 +17,16 @@ public class CartDaoMyBatis implements CartDao {
 	private final SqlSession sqlSession;
 	@Override
 	public Cart save(Cart cart) {
-		long cartId = sqlSession.insert("CartSql.save", cart); 
-		return sqlSession.selectOne("CartSql.findById", cartId);
+		long cartId = sqlSession.insert("CartMapper.save", cart); 
+		return sqlSession.selectOne("CartMapper.findById", cartId);
+	}
+	@Override
+	public List<Cart> findAll() {
+		return sqlSession.selectList("CartMapper.findAll");
 	}
 	@Override
 	public List<Cart> findAllDesc() {
-		return sqlSession.selectList("CartSql.findAllDesc");
+		return sqlSession.selectList("CartMapper.findAllDesc");
 	}
 	@Override
 	public List<Cart> findAllByEmailDesc() {
@@ -31,11 +35,12 @@ public class CartDaoMyBatis implements CartDao {
 	}
 	@Override
 	public Cart findById(Long cartId) {
-		return sqlSession.selectOne("CartSql.findById", cartId);
+		return sqlSession.selectOne("CartMapper.findById", cartId);
 	}
 	@Override
-	public Long update(CartUpdateRequestDto requestDto) {
-		return (long)sqlSession.update("CartSql.update", requestDto);
+	public Long update(long cartId, CartUpdateRequestDto requestDto) {
+		sqlSession.update("CartMapper.update", requestDto);
+		return cartId;
 	}
 	
 	
