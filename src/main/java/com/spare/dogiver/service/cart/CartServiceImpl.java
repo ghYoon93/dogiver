@@ -32,7 +32,10 @@ public class CartServiceImpl implements CartService {
 	@Transactional
 	@Override
 	public Long update(long cartId, CartUpdateRequestDto requestDto) {
-		return cartDao.update(cartId, requestDto);
+		Cart cart = cartDao.findById(cartId);
+		cart.update(requestDto.getCartCnt());
+		cartDao.update(cart);
+		return cartId;
 	}
 
 	@Override

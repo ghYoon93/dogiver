@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -28,7 +29,7 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	@Inject
-	private BCryptPasswordEncoder bcryptPasswordEncoder;
+	private PasswordEncoder bcryptPasswordEncoder;
 
 	@RequestMapping(value = "/sign_up/step1", method = RequestMethod.GET)
 	public String step1(Model model) {

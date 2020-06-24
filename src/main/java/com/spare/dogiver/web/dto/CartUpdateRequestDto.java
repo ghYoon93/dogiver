@@ -1,5 +1,7 @@
 package com.spare.dogiver.web.dto;
 
+import com.spare.dogiver.domain.Cart;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,5 +13,11 @@ public class CartUpdateRequestDto {
     @Builder
     public CartUpdateRequestDto(int cartCnt) {
     	this.cartCnt = cartCnt;
+    }
+    
+    public Cart toEntity() {
+    	return Cart.builder()
+    			.cartCnt(cartCnt)
+    			.build();		
     }
 }

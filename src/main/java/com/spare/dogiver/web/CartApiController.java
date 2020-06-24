@@ -28,6 +28,5 @@ public class CartApiController {
 	public Long update(@PathVariable Long cartId,
 			@RequestBody CartUpdateRequestDto requestDto) {
 		return cartService.update(cartId, requestDto);
-//		return CartService.update(id, requestDto);
 	}
 }

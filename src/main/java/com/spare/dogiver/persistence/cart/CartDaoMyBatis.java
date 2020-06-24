@@ -38,9 +38,8 @@ public class CartDaoMyBatis implements CartDao {
 		return sqlSession.selectOne("CartMapper.findById", cartId);
 	}
 	@Override
-	public Long update(long cartId, CartUpdateRequestDto requestDto) {
-		sqlSession.update("CartMapper.update", requestDto);
-		return cartId;
+	public void update(Cart cart) {
+		sqlSession.update("CartMapper.update", cart);
 	}
 	
 	

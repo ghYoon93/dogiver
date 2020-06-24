@@ -30,7 +30,6 @@ public class CartSaveRequestDto {
     			.member(member)
     			.goods(goods)
     			.cartCnt(cartCnt)
-    			.build();
-    			
+    			.build();			
     }
 }
