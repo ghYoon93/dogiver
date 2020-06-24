@@ -10,6 +10,6 @@ public interface CartService {
 	public Long save(CartSaveRequestDto requestDto);
 	public List<Cart> findAllDesc();
 	public List<Cart> findAllByEmailDesc(String email);
-	public Cart findById(Long cartId);
-	public Long update(CartUpdateRequestDto requestDto);
+	public Cart findById(long cartId);
+	public Long update(long cartId, CartUpdateRequestDto requestDto);
 }

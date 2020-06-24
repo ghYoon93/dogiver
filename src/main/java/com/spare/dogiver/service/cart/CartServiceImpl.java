@@ -31,8 +31,8 @@ public class CartServiceImpl implements CartService {
     
 	@Transactional
 	@Override
-	public Long update(CartUpdateRequestDto requestDto) {
-		return cartDao.update(requestDto);
+	public Long update(long cartId, CartUpdateRequestDto requestDto) {
+		return cartDao.update(cartId, requestDto);
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public Cart findById(Long cartId) {
+	public Cart findById(long cartId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
