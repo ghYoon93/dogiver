@@ -1,12 +1,14 @@
 package com.spare.dogiver.service.cart;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spare.dogiver.domain.Cart;
 import com.spare.dogiver.persistence.cart.CartDao;
+import com.spare.dogiver.web.dto.CartListResponseDto;
 import com.spare.dogiver.web.dto.CartSaveRequestDto;
 import com.spare.dogiver.web.dto.CartUpdateRequestDto;
 
@@ -37,11 +39,13 @@ public class CartServiceImpl implements CartService {
 		cartDao.update(cart);
 		return cartId;
 	}
-
+    
+	@Transactional(readOnly = true)
 	@Override
-	public List<Cart> findAllByEmailDesc(String email) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CartListResponseDto> findAllByEmailDesc(String email) {
+		return cartDao.findAllByEmailDesc(email).stream()
+				.map(CartListResponseDto::new)
+				.collect(Collectors.toList());
 	}
 
 	@Override

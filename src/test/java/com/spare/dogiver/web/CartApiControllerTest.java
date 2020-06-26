@@ -46,6 +46,19 @@ public class CartApiControllerTest {
     	this.mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
     }
     
+    @Test
+    public void Cart_목록() throws Exception {
+    	// given
+    	String email = "gh.yoon93@gmail.com";
+    	String goodsName = "핸드메이드 강아지 로프 장난감";
+    	// when
+    	List<Cart> cartList = cartDao.findAllByEmailDesc(email);
+    	String expectedGoodsName = cartList.get(0).getGoods().getGoodsName();
+    	
+    	// then
+    	assertThat(goodsName).isEqualTo(expectedGoodsName);
+    }
+    
     @Ignore
     @Test
     public void Cart_등록() throws Exception {
@@ -79,7 +92,7 @@ public class CartApiControllerTest {
 	    assertThat(all.get(0).getGoods().getGoodsId()).isEqualTo(goodsId);
     }
     
-    
+    @Ignore
     @Test
     public void Cart_수정() throws Exception{
     	// given

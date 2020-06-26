@@ -9,7 +9,7 @@ public interface CartDao {
 	public Cart save(Cart cart);
 	public List<Cart> findAll();
 	public List<Cart> findAllDesc();
-	public List<Cart> findAllByEmailDesc();
+	public List<Cart> findAllByEmailDesc(String email);
 	public Cart findById(Long cartId);
 	public void update(Cart cart);
 	

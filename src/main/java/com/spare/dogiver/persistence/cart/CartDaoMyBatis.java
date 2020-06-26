@@ -15,24 +15,28 @@ import lombok.RequiredArgsConstructor;
 @Repository
 public class CartDaoMyBatis implements CartDao {
 	private final SqlSession sqlSession;
+	
 	@Override
 	public Cart save(Cart cart) {
 		long cartId = sqlSession.insert("CartMapper.save", cart); 
 		return sqlSession.selectOne("CartMapper.findById", cartId);
 	}
+	
 	@Override
 	public List<Cart> findAll() {
 		return sqlSession.selectList("CartMapper.findAll");
 	}
+	
 	@Override
 	public List<Cart> findAllDesc() {
-		return sqlSession.selectList("CartMapper.findAllDesc");
-	}
-	@Override
-	public List<Cart> findAllByEmailDesc() {
-		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public List<Cart> findAllByEmailDesc(String email) {
+		return sqlSession.selectList("CartMapper.findAllByEmailDesc", email);
+	}
+	
 	@Override
 	public Cart findById(Long cartId) {
 		return sqlSession.selectOne("CartMapper.findById", cartId);
