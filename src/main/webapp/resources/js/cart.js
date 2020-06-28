@@ -1,8 +1,10 @@
 /*
 페이지 이동 시 상품 선택 초기 값은 전체 선택
  */
+const tbody = $('#cart-table tbody');
 $(document).ready(function() {
-					$.ajax({
+
+					/*$.ajax({
 							type : 'POST',
 							url : '/dogiver/order/getCart',
 							dataType : 'json',
@@ -60,9 +62,64 @@ $(document).ready(function() {
 								}
 								} // success
 						}); // ajax
+*/
+	
 
-			});
-
+	showList();
+});
+function showList() {
+	cartService.getList(function(list){
+		console.log(list[0].cartId);
+		console.log(list[0].goods.goodsId);
+		var html = [], h = -1;
+		for(var cart, i = -1; cart = list[++i];){
+			html[++h] = '<tr>';
+			html[++h] = '<td class="td_check">';
+			html[++h] = '<label for="'+cart.cartId+'">';
+			html[++h] = '<input type="checkbox" id="'+cart.cartId+'" name="checkGoods" value="'+cart.cartId+'">';
+			html[++h] = '</td>';
+			html[++h] = '<td class="td_left">';
+			html[++h] = '<div class="cart_goods_cont">'; 
+			html[++h] =  '<span class="cart_goods_image">';
+			html[++h] =  '<a href="'+cart.goods.goodsId+'">';
+			html[++h] = '<img src="../resources/img/goods/'+cart.goods.goodsThumbnail+'" class="middle" alt="${cart.goods.goodsName }" title="'+cart.goods.goodsName+'">';
+		    html[++h] = '</a>';
+		    html[++h] = '</span>';
+		    html[++h] = '<div class="cart_goods_info">';
+		    html[++h] = '<em><a href="../goods/goodsDetail?goods_id='+cart.goods.goodsId+'">'+cart.goods.goodsName+'</a></em>';
+		    html[++h] = '</div>';
+		    html[++h] = '</div>';
+		    html[++h] = '</td>';
+		    html[++h] = '<td class=td_order_amount>';
+		    html[++h] = '<div class="cart_goods_num">';
+            html[++h] = '<strong>'+cart.cartCnt+'</strong><font>개</font>';
+            html[++h] = '<div class="btn_option">';
+            html[++h] = '<button type="button" class="btn_option_view"';
+            html[++h] = 'data-cartId="'+cart.cartId+'"';
+            html[++h] = 'data-id="'+cart.goods.goodsId+'"';
+            html[++h] = 'data-img="'+cart.goods.goodsThumbnail+'"';
+            html[++h] = 'data-name='+cart.goods.goodsName+'"';
+            html[++h] = 'data-cnt='+cart.cartCnt+'"';
+            html[++h] = 'data-price='+cart.goods.goodsPrice+'"';
+            html[++h] = 'data-total_price='+cart.totalPrice+'">';
+            html[++h] = '수량 변경</button>';
+            html[++h] = '</div>';
+            html[++h] = '</div>';
+            html[++h] = '</td>';
+            html[++h] = '<td><strong>'+ cashFormat(cart.goods.goodsPrice)+'원</strong></td>';
+            html[++h] = '<td><strong>'+ cashFormat(cart.totalPrice)+'원</strong></td>';
+            html[++h] = '</tr>';
+		}
+		console.log(h);
+		console.log(i);
+		console.log(html[0]);
+		console.log(html[1]);
+		console.log(html[2]);
+	    tbody.html(html.join(' '));
+	    console.log(tbody);
+		
+	});
+}
 function checkAll() {
 		$('#check-all').prop('checked', true);
 		$('input[name=checkGoods]').prop('checked', true);
@@ -244,3 +301,29 @@ function numberFormat(cash){
 $(document).on('keyup','#quantity', function() {
     $(this).val($(this).val().replace(/[^0-9]/g,""));
 });
+
+
+
+var cartService = (function(){
+	
+	
+	function getList(callback, error) {
+		
+		$.getJSON("/api/v1/cart", function(list){
+			callback(list);
+			
+		}).fail(function(xhr, status, err){
+			
+			if(error) {
+				error();
+			}
+			
+		});
+		
+	}
+	
+	return {
+		getList : getList
+	}
+})();
+

@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">  
   <link rel="favicon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" />
-    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/order.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/order.css"/>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
     rel="stylesheet" />
   <title>장바구니</title>
@@ -37,7 +39,7 @@
         <form id="form-cart" name="formCart" method="get">
           <div class="cart_cont_list">
             <div class="order_table_type">
-                <table id=cart-Table>
+                <table id=cart-table>
                   <colgroup>
                     <col style="width: 3%">
                     <!-- 체크박스 -->

@@ -15,6 +15,7 @@ public class Cart {
 	private Goods goods;
 	
 	private int cartCnt;
+	private int totalPrice;
 	
 	private Date createdDate;
 	private Date modifedDate;
@@ -28,5 +29,10 @@ public class Cart {
 	
 	public void update(int cartCnt) {
 		this.cartCnt = cartCnt;
+	}
+	
+	public int getTotalPrice() {
+		this.totalPrice = this.cartCnt * this.goods.getGoodsPrice(); 
+		return this.totalPrice; 
 	}
 }

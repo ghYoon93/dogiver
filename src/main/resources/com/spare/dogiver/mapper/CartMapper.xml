@@ -38,6 +38,7 @@
     SELECT /*+INDEX_DESC(cart pk_cart)*/
            C.cart_id as cart_id 
          , C.cart_cnt as cart_cnt
+         ,G.goods_id as goods_id
          , G.goods_name as goods_name
          , G.goods_price as goods_price
          , G.goods_thumbnail as goods_thumbnail

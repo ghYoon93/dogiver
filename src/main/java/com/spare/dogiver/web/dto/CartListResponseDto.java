@@ -14,12 +14,14 @@ public class CartListResponseDto {
     private Goods goods;
     
     private int cartCnt;
+    private int totalPrice;
     
     public CartListResponseDto(Cart entity) {
     	this.cartId = entity.getCartId();
     	this.member = entity.getMember();
     	this.goods = entity.getGoods();
     	this.cartCnt = entity.getCartCnt();
+    	this.totalPrice = entity.getTotalPrice();
     }
     
     
