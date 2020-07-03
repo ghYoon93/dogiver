@@ -46,7 +46,7 @@
 		</c:if>
 		<c:if test="${role ne 'admin' }">
 			<div>
-				<a href="../order/cart"><img src="${pageContext.request.contextPath}/resources/img/shopping_bucket.png" alt="장바구니" /></a>
+				<a href="${pageContext.request.contextPath}/cart"><img src="${pageContext.request.contextPath}/resources/img/shopping_bucket.png" alt="장바구니" /></a>
 			</div>
 		</c:if>
 	</div>
@@ -84,7 +84,7 @@
 					<li><a id="offA" href="#" onclick="return false">GOODS</a>
 						<ul>
 							<li><a href="../goods/goodsList">GOODS</a></li>
-							<li><a href="../order/cart">장바구니</a></li>
+							<li><a href="${pageContext.request.contextPath}/cart">장바구니</a></li>
 							<li><a href="../my/orderList">주문조회</a></li>
 						</ul></li>
 
