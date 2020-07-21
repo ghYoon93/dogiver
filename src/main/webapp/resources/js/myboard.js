@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$.ajax({
 		type: 'post',
-		url: '/dogiver/board/getMyboard',
+		url: '/board/getMyboard',
 		dataType: 'json',
 		success: function(data){
 			$.each(data.list, function(index, items){
@@ -20,7 +20,7 @@ $(document).ready(function() {
 	
 	$.ajax({
 		type: 'post',
-		url: '/dogiver/board/getMyreply',
+		url: '/board/getMyreply',
 		dataType: 'json',
 		success: function(data){
 			$.each(data.list, function(index, items){
@@ -37,7 +37,7 @@ $(document).ready(function() {
 		let brd_seq = $(this).attr('id');
 		$.ajax({
 			type: 'post',
-			url: '/dogiver/board/getMyboardView',
+			url: '/board/getMyboardView',
 			data: {'brd_seq': brd_seq},
 			dataType: 'json',
 			success: function(data){

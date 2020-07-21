@@ -43,7 +43,7 @@ $(document).ready(function(){
                    + '<div class="pick_add_cont">'
                      + '<span class="pick_add_img">'
                        + '<a href="../goods/goodsDetail?goods_id='+items.goods_id+'">'
-                         + '<img src="${pageContext.request.contextPath}/resources/img/goods/'+items.goods_thumbnail+'" width="50"'
+                         + '<img src="/resources/img/goods/'+items.goods_thumbnail+'" width="50"'
                               + 'alt="'+items.goods_name+'"'
                               + 'title="'+items.goods_name+'" class="middle">'
                        + '</a>'
@@ -76,7 +76,7 @@ $(document).on('click','.js_btn_order_cancel', function(){
 	if(cancelOrder){
 		$.ajax({
 			type: 'post',
-			url: '/dogiver/order/cancelOrder',
+			url: '/order/cancelOrder',
 			data: 'order_id='+this.dataset.order_id,
 			success: function(){
 				alert('주문이 정상적으로 취소되었습니다.');

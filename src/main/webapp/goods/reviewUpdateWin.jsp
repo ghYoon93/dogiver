@@ -27,7 +27,7 @@ $(document).ready(function(){
 
 	$.ajax({
 		type: 'post',
-		url: '/dogiver/goods/reviewView',
+		url: '/goods/reviewView',
 		data: 'bo_seq=${bo_seq }',
 		dataType: 'json',
 		success: function(data){
@@ -53,7 +53,7 @@ $('#reviewUpdateBtn').click(function(){
 			enctype: 'multipart/form-data',
 			processData: false,
 			contentType: false,
-			url: '/dogiver/goods/reviewUpdate',
+			url: '/goods/reviewUpdate',
 			data: formData,
 			success: function(){
 				alert('리뷰 수정 완료!');

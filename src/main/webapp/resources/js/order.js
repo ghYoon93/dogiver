@@ -57,7 +57,7 @@ $(document).ready(function(){
                        + '<div class="cart_goods_cont">'
                          + '<span class="cart_goods_image">'
                            +' <a href="#">'
-                             + '<img src="${pageContext.request.contextPath}/resources/img/goods/'+items.goods_thumbnail+'"'
+                             + '<img src="/resources/img/goods/'+items.goods_thumbnail+'"'
                              + 'class="middle" alt="'+ items.goods_name+ '" title="'+ items.goods_name+ '">'
                            + '</a>'
                          + '</span>'

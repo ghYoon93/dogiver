@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$.ajax({
 		type : 'post',
-		url : '/dogiver/board/getBoardList',
+		url : '/board/getBoardList',
 		dataType : 'json',
 		success : function(data){
 			$.each(data.list, function(index, items){
@@ -82,7 +82,7 @@ $(document).ready(function(){
 	            	   $('#admin_boardTable td').remove();
 	            	   $.ajax({
 	            			type : 'post',
-	            			url : '/dogiver/board/getBoardList',
+	            			url : '/board/getBoardList',
 	            			dataType : 'json',
 	            			success : function(data){
 	            				$.each(data.list, function(index, items){

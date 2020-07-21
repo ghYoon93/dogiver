@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$.ajax({
 		type : 'post',
-		url : '/dogiver/board/getBoardList',
+		url : '/board/getBoardList',
 		data : 'pg='+$('#pg').val(),
 		dataType : 'json',
 		success : function(data){

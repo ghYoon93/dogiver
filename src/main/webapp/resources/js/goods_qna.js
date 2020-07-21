@@ -5,7 +5,7 @@ $(document).ready(function(){
 	var tag="";
 	$.ajax({
 		type:'post',
-		url: '/dogiver/goods/getGoodsQnaList',
+		url: '/goods/getGoodsQnaList',
 		data: 'goods_id='+$('input[name=goods_id]').val(),
 		dataType: 'json',
 		success: function(data){
@@ -68,7 +68,7 @@ $('.qnaList').on('click', '.replyBtn', function(){
 	//alert($(this).parent().parent().prev().find('#bo_seq').val());
 	$.ajax({
 		type: 'post',
-		url: '/dogiver/goods/writeReply',
+		url: '/goods/writeReply',
 		contentType: 'application/json;charset=UTF-8',
 		data: JSON.stringify({'goods_id': $('#goods_id').val(),
 								'bo_seq': $(this).parent().parent().prev().find('#bo_seq').val(),	 
@@ -82,7 +82,7 @@ $('.qnaList').on('click', '.replyBtn', function(){
 			var tag="";
 			$.ajax({
 				type: 'post',
-				url: '/dogiver/goods/replyList',
+				url: '/goods/replyList',
 				//data: 'bo_seq='+$('#bo_seq').val(),
 				data: 'goods_id='+$('#goods_id').val(),
 				dataType: 'json',

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$.ajax({
 		type: 'post',
-		url: '/dogiver/admin/getDogiver',
+		url: '/admin/getDogiver',
 		data: 'pg='+$('#pg').val(),
 		dataType: 'json',
 		success: function(data){
@@ -64,7 +64,7 @@ $(document).ready(function() {
 					enctype: "multipart/form-data",
 					processData: false,//데이터를 컨텐트 타입에 맞게 변환 여부
 					contentType: false,//요청 컨텐트 타입
-					url: '/dogiver/admin/adminDogiverModify',
+					url: '/admin/adminDogiverModify',
 					data: formData,
 					dataType: 'text',
 					success: function(data){
@@ -91,7 +91,7 @@ $(document).ready(function() {
 						enctype: "multipart/form-data",
 						processData: false,//데이터를 컨텐트 타입에 맞게 변환 여부
 						contentType: false,//요청 컨텐트 타입
-						url: '/dogiver/admin/dogiverInsert',
+						url: '/admin/dogiverInsert',
 						data: formData,
 						dataType: 'text',
 						success: function(data){

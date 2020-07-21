@@ -2,7 +2,7 @@ $(document).ready(function() {
 	//리스트 뿌려주기
 	$.ajax({
 		type: 'post',
-		url: '/dogiver/goods/getGoodsList',
+		url: '/goods/getGoodsList',
 		dataType: 'json',
 		success: function(data){
 			//alert(JSON.stringify(data));
@@ -39,7 +39,7 @@ $(document).ready(function() {
 //		$('#goods_id').attr('readonly', 'readonly');
 		$.ajax({
 			type: 'post',
-			url: '/dogiver/goods/getGoodsDetail',
+			url: '/goods/getGoodsDetail',
 			data: {'goods_id': goods_id},
 			dataType: 'json',
 			success: function(data){
@@ -73,7 +73,7 @@ $(document).ready(function() {
 			enctype: 'multipart/form-data',
 			processData: false,
 			contentType: false,
-			url: '/dogiver/goods/goodsModify',
+			url: '/goods/goodsModify',
 			data: formData,
 			dataType: 'json',
 			success: function(data){
@@ -109,7 +109,7 @@ $(document).ready(function() {
 			enctype: 'multipart/form-data',
 			processData: false,
 			contentType: false,
-			url: '/dogiver/goods/goodsInsert',
+			url: '/goods/goodsInsert',
 			data: formData,
 			dataType: 'text',
 			success: function(data){

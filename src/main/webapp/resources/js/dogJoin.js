@@ -32,7 +32,7 @@ $(document).on('click', '.dogJoinBtn', function(){
 		}else{
 			$.ajax({
 				type:'post',
-				url: '/dogiver/blood/dogInsert',
+				url: '/blood/dogInsert',
 				data: $('#dogJoinForm').serialize(),
 				dataType: 'text',
 				success: function(data){

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$.ajax({
 		type: 'post',
-		url: '/dogiver/blood/getMyblood',
+		url: '/blood/getMyblood',
 		dataType: 'json',
 		success: function(data){
 			//alert(JSON.stringify(data.dogJoinDTO));

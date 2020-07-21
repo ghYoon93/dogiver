@@ -22,7 +22,7 @@ $('#reviewWriteBtn').click(function(){
 			enctype: 'multipart/form-data',
 			processData: false,
 			contentType: false,
-			url: '/dogiver/goods/reviewWrite',
+			url: '/goods/reviewWrite',
 			data: formData,
 			success: function(){
 //				alert('리뷰 등록 완료');
@@ -31,7 +31,7 @@ $('#reviewWriteBtn').click(function(){
 				
 				$.ajax({	
 					type: 'post',
-					url: '/dogiver/goods/getGoodsReviewList',
+					url: '/goods/getGoodsReviewList',
 					data: 'goods_id='+$('#goods_id').val(),
 					dataType: 'json',
 					contentType: "application/x-www-form-urlencoded; charset=UTF-8",
@@ -64,7 +64,7 @@ $('#reviewWriteBtn').click(function(){
 $(document).ready(function(){
 	$.ajax({	
 		type: 'post',
-		url: '/dogiver/goods/getGoodsReviewList',
+		url: '/goods/getGoodsReviewList',
 		data: 'goods_id='+$('#goods_id').val(),
 		dataType: 'json',
 		success: function(data){ 	

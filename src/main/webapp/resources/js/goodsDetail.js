@@ -41,13 +41,13 @@ $(document).ready(function(){
 	var tag="";
 	$.ajax({	
 		type: 'post',
-		url: '/dogiver/goods/getGoodsDetail',
+		url: '/goods/getGoodsDetail',
 		data: 'goods_id='+$('#goods_id').val(),
 		dataType: 'json',
 		success: function(data){
 			//alert(JSON.stringify(data));
 
-			tag += '<div class="overview-image"><img src="${pageContext.request.contextPath}/resources/img/goods/'+ data.goodsDTO.goods_thumbnail +'"></div>'
+			tag += '<div class="overview-image"><img src="/resources/img/goods/'+ data.goodsDTO.goods_thumbnail +'"></div>'
 					+ '<div class="overview-content">'
 						+'<h1 id="goods_name" >'+ data.goodsDTO.goods_name +'</h1>'			
 						+'<div>'
@@ -78,7 +78,7 @@ $(document).ready(function(){
 						+'</div>'
 					+'</div>';
 			
-			detail_image = '<img src="${pageContext.request.contextPath}/resources/img/goods/'+ data.goodsDTO.goods_detail +'" >'; 
+			detail_image = '<img src="/resources/img/goods/'+ data.goodsDTO.goods_detail +'" >'; 
 			
 			$('.overview').append(tag);
 			$('.discription div').append(detail_image).css('text-align', 'center');
@@ -135,7 +135,7 @@ $(document).on('click','#btn-cart', function(){
 	let amt = $('#quantity').val();
 	$.ajax({
 		type: 'get',
-		url: '/dogiver/order/addCart',
+		url: '/order/addCart',
 		data: 'goods_id='+goods_id+'&cart_cnt='+amt,
 		dataType: 'text',
 		success: function(data){

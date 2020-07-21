@@ -54,7 +54,7 @@ $('#reviewDeleteBtn').click(function(){
 	if(del){
 	$.ajax({
 		type: 'post',
-		url: '/dogiver/goods/reviewDelete',
+		url: '/goods/reviewDelete',
 		data: 'bo_seq=${bo_seq}',
 		success: function(){
 			alert('후기가 삭제되었습니다.');

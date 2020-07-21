@@ -2,7 +2,7 @@ $(document).ready(function() {
 	console.log("dogiver.js");
 	$.ajax({
 		type: 'post',
-		url: '/dogiver/blood/getDogiver',
+		url: '/blood/getDogiver',
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		dataType: 'json',
 		success: function(data){

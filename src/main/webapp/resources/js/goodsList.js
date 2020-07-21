@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 	$.ajax({
 		type: 'post',
-		url: '/dogiver/goods/getGoodsList',
+		url: '/goods/getGoodsList',
 		data: 'pg='+$('#pg').val(),
 		dataType: 'json',
 		success: function(data){
@@ -27,14 +27,14 @@ $(document).ready(function(){
 					tag += '<div class="goods-boxs" >'
 						+ '<div class="goods-image" >'
 						+ '<a href="javascript:void(0)" id="'+items.goods_id+'">'
-						+ '<img class="image" src="${pageContext.request.contextPath}/resources/img/goods/'+ items.goods_thumbnail +'"/>'
+						+ '<img class="image" src="/resources/img/goods/'+ items.goods_thumbnail +'"/>'
 						+ '</a>'
 						+ '<div class="hover_bar">'
 						+ '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
-						+ '<img src="${pageContext.request.contextPath}/resources/img/shopping_bucket.png" />'
+						+ '<img src="/resources/img/shopping_bucket.png" />'
 						+ '</button>'
 						+ '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
-						+ '<img src="${pageContext.request.contextPath}/resources/img/search.png" />'
+						+ '<img src="/resources/img/search.png" />'
 						+ '</button>'
 						+ '</div>'
 						+ '</div>'
@@ -85,7 +85,7 @@ $('.goods_category li').click(function(){
 	var tag = "";
 	$.ajax({		
 		type: 'post',
-		url: '/dogiver/goods/getCategory',
+		url: '/goods/getCategory',
 		data: 'category='+category,
 		dataType: 'json',
 		success:function(data){
@@ -96,14 +96,14 @@ $('.goods_category li').click(function(){
 				tag += '<div class="goods-boxs" >'
 				         + '<div class="goods-image" >'
 				           + '<a href="javascript:void(0)" id="'+items.goods_id+'">'
-				             + '<img class="image" src="${pageContext.request.contextPath}/resources/img/goods/'+ items.goods_thumbnail +'"/>'
+				             + '<img class="image" src="/resources/img/goods/'+ items.goods_thumbnail +'"/>'
 				           + '</a>'
 				           + '<div class="hover_bar">'
 				             + '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
-				               + '<img src="${pageContext.request.contextPath}/resources/img/shopping_bucket.png" />'
+				               + '<img src="/resources/img/shopping_bucket.png" />'
 				             + '</button>'
 				             + '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
-				               + '<img src="${pageContext.request.contextPath}/resources/img/search.png" />'
+				               + '<img src="/resources/img/search.png" />'
 				             + '</button>'
 				           + '</div>'
 				         + '</div>'
@@ -132,7 +132,7 @@ $('.goods_sort').change(function(){
 	/*alert(category+" "+lineUp);*/
 	$.ajax({
 		type: 'post',
-		url: '/dogiver/goods/goods_lineUp',
+		url: '/goods/goods_lineUp',
 		data: {'category' : category,
 				'lineUp' : lineUp},		
 		dataType: 'json',
@@ -142,14 +142,14 @@ $('.goods_sort').change(function(){
 				tag += '<div class="goods-boxs" >'
 				         + '<div class="goods-image" >'
 				           + '<a href="javascript:void(0)" id="'+items.goods_id+'">'
-				             + '<img class="image" src="${pageContext.request.contextPath}/resources/img/goods/'+ items.goods_thumbnail +'"/>'
+				             + '<img class="image" src="/resources/img/goods/'+ items.goods_thumbnail +'"/>'
 				           + '</a>'
 				           + '<div class="hover_bar">'
 				             + '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
-				               + '<img src="${pageContext.request.contextPath}/resources/img/shopping_bucket.png" />'
+				               + '<img src="/resources/img/shopping_bucket.png" />'
 				             + '</button>'
 				             + '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
-				               + '<img src="${pageContext.request.contextPath}/resources/img/search.png" />'
+				               + '<img src="/resources/img/search.png" />'
 				             + '</button>'
 				           + '</div>'
 				         + '</div>'
@@ -183,7 +183,7 @@ $(document).on('click', '.btn_basket_cart', function(){
 	console.log(img);
 	console.log(name);
 	
-	$('#option-view img').attr('src', '${pageContext.request.contextPath}/resources/img/goods/'+img);
+	$('#option-view img').attr('src', '/resources/img/goods/'+img);
 	$('#option-view strong').text(name);
 	$('#tot_price').text(total).append(' 원');
 	
@@ -194,7 +194,7 @@ $(document).on('click', '.btn_basket_cart', function(){
 		console.log('amt:'+amt);
 		$.ajax({
 			type: 'get',
-			url: '/dogiver/order/addCart',
+			url: '/order/addCart',
 			data: 'goods_id='+goods_id+'&cart_cnt='+amt,
 			dataType: 'text',
 			success: function(data){
