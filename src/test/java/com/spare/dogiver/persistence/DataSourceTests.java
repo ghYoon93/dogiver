@@ -24,7 +24,7 @@ public class DataSourceTests {
 	private DataSource dataSource;
 	
 	@Test
-	public void 커넥션_테스트() {
+	public void testConnection() {
 		try(Connection con = dataSource.getConnection()) {
     		log.info(con);
     	}catch(Exception e) {
