@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.spare.dogiver.domain.Member;
 import com.spare.dogiver.web.dto.MemberDTO;
 
 @Repository("memberDAO")
@@ -34,6 +35,10 @@ public class MemberDAOMybatis implements MemberDAO {
 	@Override
 	public MemberDTO getMember(String email) {
 		return sqlSession.selectOne("memberSQL.checkEmail",email);
+	}
+	@Override
+	public Member find(String email) {
+		return sqlSession.selectOne("memberSQL.find",email);
 	}
 
 	@Override

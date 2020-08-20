@@ -3,6 +3,7 @@ package com.spare.dogiver.persistence.member;
 import java.util.List;
 import java.util.Map;
 
+import com.spare.dogiver.domain.Member;
 import com.spare.dogiver.web.dto.MemberDTO;
 
 public interface MemberDAO {
@@ -14,6 +15,8 @@ public interface MemberDAO {
 	public int sign(MemberDTO memberDTO);
 
 	public MemberDTO getMember(String email);
+	
+	public Member find(String email);
 
 	public int modi(MemberDTO memberDTO);
 

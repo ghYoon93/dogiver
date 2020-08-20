@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spare.dogiver.domain.Member;
 import com.spare.dogiver.domain.MemberPaging;
 import com.spare.dogiver.persistence.member.MemberDAO;
 import com.spare.dogiver.web.dto.MemberDTO;
@@ -49,6 +50,10 @@ public class MemberServiceimpl implements MemberService {
 			return "fail";
 	}
 
+	@Override
+	public Member find(String email) {
+		return memberDAO.find(email);
+	}
 	@Override
 	public MemberDTO getMember(String email) {
 		return memberDAO.getMember(email);

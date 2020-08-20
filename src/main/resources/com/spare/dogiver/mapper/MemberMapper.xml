@@ -7,6 +7,11 @@
 		select * from member where
 		email=#{email}
 	</select>
+	<select id="find" parameterType="String"
+		resultType="com.spare.dogiver.domain.Member">
+		select * from member where
+		email=#{email}
+	</select>
 
 	<select id="checkNickName" parameterType="String"
 		resultType="member">

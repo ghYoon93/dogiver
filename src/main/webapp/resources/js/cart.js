@@ -69,14 +69,12 @@ $(document).ready(function() {
 });
 function showList() {
 	cartService.getList(function(list){
-		console.log(list[0].cartId);
-		console.log(list[0].goods.goodsId);
 		var html = [], h = -1;
 		for(var cart, i = -1; cart = list[++i];){
 			html[++h] = '<tr>';
 			html[++h] = '<td class="td_check">';
-			html[++h] = '<label for="'+cart.cartId+'">';
 			html[++h] = '<input type="checkbox" id="'+cart.cartId+'" name="checkGoods" value="'+cart.cartId+'">';
+			html[++h] = '<label for="'+cart.cartId+'">';
 			html[++h] = '</td>';
 			html[++h] = '<td class="td_left">';
 			html[++h] = '<div class="cart_goods_cont">'; 
@@ -98,10 +96,10 @@ function showList() {
             html[++h] = 'data-cartId="'+cart.cartId+'"';
             html[++h] = 'data-id="'+cart.goods.goodsId+'"';
             html[++h] = 'data-img="'+cart.goods.goodsThumbnail+'"';
-            html[++h] = 'data-name='+cart.goods.goodsName+'"';
-            html[++h] = 'data-cnt='+cart.cartCnt+'"';
-            html[++h] = 'data-price='+cart.goods.goodsPrice+'"';
-            html[++h] = 'data-total_price='+cart.totalPrice+'">';
+            html[++h] = 'data-name="'+cart.goods.goodsName+'"';
+            html[++h] = 'data-cnt="'+cart.cartCnt+'"';
+            html[++h] = 'data-price="'+cart.goods.goodsPrice+'"';
+            html[++h] = 'data-total_price="'+cart.totalPrice+'">';
             html[++h] = '수량 변경</button>';
             html[++h] = '</div>';
             html[++h] = '</div>';
@@ -198,6 +196,7 @@ $(document).on('click', '.btn_option_view', function() {
 		let price = Number(goods.dataset.price);
 		let total_price = Number(goods.dataset.total_price);
 		console.log(total_price);
+		
 		let box = $('#option-view .option_tit_box');
 		box.empty();
 		//
@@ -205,7 +204,7 @@ $(document).on('click', '.btn_option_view', function() {
 			         + '<dl>'
 	               + '<dd class="imgbox">'
 	                 + '<input type="hidden" name="cart_id" value="'+cartId+'">' 
-                   + '<img src="${pageContext.request.contextPath}/resources/img/goods/'+img+'" alt="'+name+'" title="'+name+'" class="middle">'
+                   + '<img src="/resources/img/goods/'+img+'" alt="'+name+'" title="'+name+'" class="middle">'
                  + '</dd>'
                  + '<dd>'
                    + '<strong>'+name+'</strong>'
@@ -303,27 +302,4 @@ $(document).on('keyup','#quantity', function() {
 });
 
 
-
-var cartService = (function(){
-	
-	
-	function getList(callback, error) {
-		
-		$.getJSON("/api/v1/cart", function(list){
-			callback(list);
-			
-		}).fail(function(xhr, status, err){
-			
-			if(error) {
-				error();
-			}
-			
-		});
-		
-	}
-	
-	return {
-		getList : getList
-	}
-})();
 

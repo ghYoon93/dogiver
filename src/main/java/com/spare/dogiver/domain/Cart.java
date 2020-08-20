@@ -9,14 +9,11 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class Cart {
-	private long cartId;
 	
+	private long cartId;
 	private Member member;
 	private Goods goods;
-	
 	private int cartCnt;
-	private int totalPrice;
-	
 	private Date createdDate;
 	private Date modifedDate;
 	
@@ -32,7 +29,10 @@ public class Cart {
 	}
 	
 	public int getTotalPrice() {
-		this.totalPrice = this.cartCnt * this.goods.getGoodsPrice(); 
-		return this.totalPrice; 
+		return this.cartCnt * this.goods.getGoodsPrice(); 
+	}
+	
+	public boolean hasCartId() {
+		return this.cartId != 0L ? true : false;
 	}
 }

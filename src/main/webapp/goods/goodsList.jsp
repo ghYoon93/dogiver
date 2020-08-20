@@ -121,6 +121,7 @@
 </body>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/cartService.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/goodsList.js"></script>
 
 </html>

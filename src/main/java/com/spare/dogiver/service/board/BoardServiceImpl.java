@@ -17,15 +17,16 @@ import com.spare.dogiver.web.dto.BoardDTO;
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardDAO boardDAO;
-	@Autowired
-	private HttpSession session;
+//	@Autowired
+//	private HttpSession session;
 	@Autowired
 	private BoardPaging boardPaging;
 
 	@Override
 	public void boardWrite(BoardDTO boardDTO) {
-		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
-		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
+//		HttpSession session = new HttpSessi;
+//		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
+//		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
 		boardDAO.boardWrite(boardDTO);
 	}
 	
@@ -112,8 +113,8 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void re_write(BoardDTO boardDTO) {
-		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
-		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
+//		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
+//		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
 		
 		boardDAO.re_write(boardDTO);
 		
@@ -143,8 +144,8 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void boardModify(BoardDTO boardDTO) {
-		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
-		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
+//		boardDTO.setBrd_email((String) session.getAttribute("memEmail"));
+//		boardDTO.setBrd_nickname((String) session.getAttribute("memNickName"));
 		boardDAO.boardModify(boardDTO);
 		
 	}
