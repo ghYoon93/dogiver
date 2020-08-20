@@ -17,19 +17,22 @@ public class CartDaoMyBatis implements CartDao {
 	private final SqlSession sqlSession;
 	
 	@Override
-	public Cart save(Cart cart) {
-		long cartId = sqlSession.insert("CartMapper.save", cart); 
-		return sqlSession.selectOne("CartMapper.findById", cartId);
+	public Long save(Cart cart) {
+		
+		sqlSession.insert("CartMapper.save", cart);
+		return cart.getCartId();
+		
 	}
 	
 	@Override
 	public List<Cart> findAll() {
+		
 		return sqlSession.selectList("CartMapper.findAll");
 	}
 	
 	@Override
 	public List<Cart> findAllDesc() {
-		return null;
+		return sqlSession.selectList("CartMapper.findAllDesc");
 	}
 	
 	@Override
@@ -39,11 +42,29 @@ public class CartDaoMyBatis implements CartDao {
 	
 	@Override
 	public Cart findById(Long cartId) {
-		return sqlSession.selectOne("CartMapper.findById", cartId);
+		return sqlSession.selectOne("CartMapper.find", cartId);
 	}
 	@Override
-	public void update(Cart cart) {
+	public Long update(Cart cart) {
 		sqlSession.update("CartMapper.update", cart);
+		return cart.getCartId();
+	}
+
+	@Override
+	public void deleteAll() {
+		sqlSession.delete("CartMapper.deleteAll");
+	}
+
+	public void delete(long cartId) {
+		sqlSession.delete("CartMapper.delete", cartId);
+		
+	}
+
+	@Override
+	public Cart findByEmailAndGoodsId(Cart cart) {
+		Cart result = sqlSession.selectOne("CartMapper.findByEmailAndGoodsId", cart);
+		if(result == null) return cart;
+		return result;
 	}
 	
 	

@@ -1,6 +1,7 @@
 package com.spare.dogiver.web;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -39,7 +40,7 @@ public class CartApiControllerTest {
 	
 	@Autowired
 	private CartDao cartDao;
-    
+	
     private MockMvc mockMvc;
     @Before
     public void setUp() {
@@ -52,11 +53,38 @@ public class CartApiControllerTest {
     	String email = "gh.yoon93@gmail.com";
     	String goodsName = "핸드메이드 강아지 로프 장난감";
     	// when
-    	List<Cart> cartList = cartDao.findAllByEmailDesc(email);
-    	String expectedGoodsName = cartList.get(0).getGoods().getGoodsName();
+    	List<Cart> carts = cartDao.findAllByEmailDesc(email);
+    	String expectedGoodsName = carts.get(0).getGoods().getGoodsName();
     	
     	// then
     	assertThat(goodsName).isEqualTo(expectedGoodsName);
+    }
+    
+    @Test
+    public void Cart_물품() throws Exception {
+    	// given
+		Member member = Member.builder().email("gh.yoon93@gmail.com").build();
+		Goods goods = Goods.builder().goodsId(1010001).build();
+		int cartCnt = 3;
+		
+		Cart cart = Cart.builder()
+				.member(member)
+				.goods(goods)
+				.cartCnt(cartCnt).build();
+		
+		long cartId = cartDao.save(cart);
+		
+    	String email = "gh.yoon93@gmail.com";
+    	String url= "/api/v1/cart/"+cartId;
+    	
+    	// when
+        mockMvc.perform(get(url)
+        .contentType(MediaType.APPLICATION_JSON_UTF8))
+        .andExpect(status().isOk());
+        
+    	// then
+        List<Cart> all = cartDao.findAll();
+        assertThat(all.get(0).getCartCnt()).isEqualTo(cartCnt);
     }
     
     @Ignore
@@ -72,7 +100,6 @@ public class CartApiControllerTest {
 	    int cartCnt = 3;
 	    
 	    CartSaveRequestDto requestDto = CartSaveRequestDto.builder()
-	    		.member(member)
 	    		.goods(goods)
 	    		.cartCnt(cartCnt)
 	    		.build();
@@ -104,10 +131,12 @@ public class CartApiControllerTest {
 	    
 	    int cartCnt = 3;
 	    
-    	Cart savedCart = cartDao.save(Cart.builder()
+	    long cartId =  cartDao.save(Cart.builder()
     			.member(member)
     			.goods(goods)
     			.cartCnt(cartCnt).build());
+
+    	Cart savedCart = cartDao.findById(cartId);
     	
     	long updateCartId = savedCart.getCartId();
     	int expectedCartCnt = 4;

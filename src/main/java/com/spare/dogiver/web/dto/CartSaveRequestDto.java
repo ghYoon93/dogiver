@@ -13,19 +13,17 @@ import lombok.NoArgsConstructor;
 public class CartSaveRequestDto {
     private int goodsId;
     
-    private Member member;
     private Goods goods;
     
     private int cartCnt;
     
     @Builder
-    public CartSaveRequestDto(Member member, Goods goods, int cartCnt) {
-    	this.member  = member;
+    public CartSaveRequestDto(Goods goods, int cartCnt) {
     	this.goods = goods;
     	this.cartCnt = cartCnt;
     }
     
-    public Cart toEntity() {
+    public Cart toEntity(Member member) {
     	return Cart.builder()
     			.member(member)
     			.goods(goods)

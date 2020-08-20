@@ -127,18 +127,34 @@
       <!-- //cart_cont_list -->
         </form>
       <div id="option-view" class="layer_option" style="display: none">
-
         <div class="layer_option_cont">
           <h4>장바구니 옵션</h4>
           <span onclick="" class="close" title="닫기">&times;</span>
-          <form name="updateCartFrm" action="updateCart">
           <div class="option_layer_scroll">
             <div class="option_tit_box">
+              <dl>
+                <dd class="imgbox">
+                  <input type="hidden" name="cart_id" value="">
+                  <img src="" alt="" title="" class="middle">
+                </dd>
+                <dd><strong>goodsName</strong></dd>
+                <dd>
+                  <div class="count">
+                    <button type="button" id="minus">-</button>
+                    <input type="text" id="quantity" name="cnt" value="" size="4">
+                    <button type="button" id="plus">+</button>
+                  </div>
+                  <strong id="tot_price" title="총합계금액"></strong>
+                </dd>
+                <dd class="btnbox">
+                  <button type="button" class="cancel">취소</button>
+                  <button type="submit" class="changeCnt">확인</button>
+                </dd>
+              </dl>
             </div>
             <!-- //option_tit_box -->
           </div>
           <!-- //option_layer_scroll -->
-          </form>
         </div>
         <!-- //layer_option_cont -->
       </div>
@@ -151,6 +167,7 @@
   <div id="footerDiv"></div>
   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/cartService.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/cart.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/quantityOption.js"></script>
 </body>

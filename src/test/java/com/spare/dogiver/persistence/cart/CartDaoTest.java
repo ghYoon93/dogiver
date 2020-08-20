@@ -9,12 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spare.dogiver.domain.Cart;
 import com.spare.dogiver.domain.Goods;
 import com.spare.dogiver.domain.Member;
 
+import lombok.extern.log4j.Log4j;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { com.spare.dogiver.config.RootConfig.class })
 public class CartDaoTest {
@@ -56,7 +60,7 @@ public class CartDaoTest {
 	}
 
 	@Test
-	public void testSave() { 
+	public void testSave() throws Exception { 
 		// given 
 		String email = "gh.yoon93@gmail.com";
 		Member member = Member.builder().email(email).build();
@@ -70,7 +74,11 @@ public class CartDaoTest {
 				.member(member)
 				.goods(goods)
 				.cartCnt(cartCnt).build());
-
+		String mapper = new ObjectMapper().writeValueAsString(Cart.builder()
+				.member(member)
+				.goods(goods)
+				.cartCnt(cartCnt).build()); 
+		log.info("asdasdasd"+mapper);
 		assertThat(cartId).isNotNull();
 
 	}
@@ -146,5 +154,26 @@ public class CartDaoTest {
 		List<Cart> carts = cartDao.findAll();
 		
 		assertThat(carts).isEmpty();
+	}
+	
+	@Test
+	public void testFindByEmailAndGoodsId() {
+		// given
+		String email = "gh.yoon93@gmail.com";
+		Member member = Member.builder().email(email).build();
+
+		long goodsId = 1010001;
+		Goods goods = Goods.builder().goodsId(goodsId).build();
+		Cart cart = Cart.builder()
+				.cartCnt(3)
+				.goods(goods)
+				.member(member).build();
+		long cartId = cartDao.save(cart);
+		
+		// when
+		Cart existedCart = cartDao.findByEmailAndGoodsId(cart);
+		assertThat(cart.getCartId()).isEqualTo(cartId);
+		assertThat(existedCart.getCartId()).isEqualTo(cartId);
+		
 	}
 }

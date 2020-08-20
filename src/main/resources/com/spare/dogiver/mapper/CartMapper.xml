@@ -22,8 +22,12 @@
   </resultMap>
   
   <insert id="save" parameterType="Cart">
+    <selectKey keyProperty="cartId" resultType="long" order="BEFORE">
+     SELECT seq_cart.nextval FROM dual 
+     </selectKey>
     INSERT INTO cart(cart_id, email, goods_id, cart_cnt) 
-                VALUES(seq_cart.nextval, #{member.email}, #{goods.goodsId}, #{cartCnt})
+                VALUES(#{cartId}, #{member.email}, #{goods.goodsId}, #{cartCnt})
+
   </insert>
   
   <select id="findAll" resultMap="Cart">
@@ -38,24 +42,32 @@
     SELECT /*+INDEX_DESC(cart pk_cart)*/
            C.cart_id as cart_id 
          , C.cart_cnt as cart_cnt
-         ,G.goods_id as goods_id
+         , G.goods_id as goods_id
          , G.goods_name as goods_name
          , G.goods_price as goods_price
          , G.goods_thumbnail as goods_thumbnail
-      FROM Cart as C
+      FROM Cart C
            INNER JOIN goods G ON C.goods_id = G.goods_id
      WHERE C.email = #{email}
   </select>
   
-  <select id="findById" parameterType="long" resultMap="Cart">
+  <select id="find" parameterType="long" resultMap="Cart">
     SELECT * FROM cart WHERE cart_id = #{cartId}
   </select>
   
+  <select id="findByEmailAndGoodsId" parameterType="Cart" resultMap="Cart">
+    SELECT * FROM cart WHERE goods_id = #{goods.goodsId} AND email = #{member.email}
+  </select>
+  
   <update id="update" parameterType="Cart">
-    UPDATE cart SET cart_cnt = #{cartCnt} WHERE cart_id = #{cartId} 
+    UPDATE cart SET cart_cnt = #{cartCnt}, modified_date = SYSDATE WHERE cart_id = #{cartId} 
   </update>
   
+  <delete id="deleteAll">
+    DELETE FROM cart
+  </delete>
+  
   <delete id="delete" parameterType="long">
-    DELETE FROM cart WHERE cartId = #{cartId}
+    DELETE FROM cart WHERE cart_id = #{cartId}
   </delete>
 </mapper>
