@@ -137,7 +137,7 @@
                   <input type="hidden" name="cart_id" value="">
                   <img src="" alt="" title="" class="middle">
                 </dd>
-                <dd><strong>goodsName</strong></dd>
+                <dd><strong class="goods_name">goodsName</strong></dd>
                 <dd>
                   <div class="count">
                     <button type="button" id="minus">-</button>
@@ -148,7 +148,7 @@
                 </dd>
                 <dd class="btnbox">
                   <button type="button" class="cancel">취소</button>
-                  <button type="submit" class="changeCnt">확인</button>
+                  <button type="button" class="changeCnt">확인</button>
                 </dd>
               </dl>
             </div>
