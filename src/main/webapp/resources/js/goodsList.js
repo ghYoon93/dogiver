@@ -191,44 +191,29 @@ $(document).on('click', '.btn_basket_cart', function(){
 	
 	amt = $('#quantity').val();
 	price = total.replace(/[^0-9]/g, '');
+	
 	$('#confirm').on('click', function(){
-		console.log('id:'+id);
-		console.log('amt:'+amt);
+
 		let cart = {
 				goods:{goodsId: goods_id},
 				cartCnt:amt
 		};
 		
-		/*$.ajax({
-			type: 'get',
-			url: '/order/addCart',
-			data: 'goods_id='+goods_id+'&cart_cnt='+amt,
-			dataType: 'text',
-			success: function(data){
-				let msg = '상품을 장바구니에 담았습니다.\n확인하시겠습니까?';
-				if(data == 'exist'){
-					msg = '동일한 상품이 장바구니에 존재합니다.\n확인하시겠습니까?';
-				}
-				let result = confirm(msg);
-			    if(result){
-			    	location.href='../order/cart';
-			    }
-			    closeModal();
-			}
-		}); // ajax
-		*/
 		cartService.add(cart, function(cartId) {
+			
 			let msg = '상품을 장바구니에 담았습니다.\n확인하시겠습니까?';
 			if(cartId == 0) {
 				msg = '동일한 상품이 장바구니에 존재합니다.\n확인하시겠습니까?';
 			}
 			let result = confirm(msg);
+			
 			if(result) {
 				location.href='../cart';
 			}
+			
 			closeModal();
 		});
-	});//장바구니 추가
+	}); //장바구니 추가
 
 });
   
