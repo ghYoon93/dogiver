@@ -5,10 +5,9 @@ $(document).ready(function() {
 	let body = $('body');
 	let tbody = $('#cart-table tbody');
 	showList();
-	
+
 	function showList() {	
 		cartService.getList(function(list){
-			
 			let html = [];
 			let h = -1;
 			for(let cart, i = -1; cart = list[++i];){
@@ -56,7 +55,7 @@ $(document).ready(function() {
 		
 	} // showList()
 	
-	$(document).on('click','input:checkbox[name=checkGoods]', function() {
+  $(document).on('click','input:checkbox[name=checkGoods]', function() {
 		let goodsCnt = $('input:checkbox[name=checkGoods]').length;
 		let checkedGoods = $('input:checkbox[name=checkGoods]:checked');
 		let checkedCnt = checkedGoods.length;
@@ -129,108 +128,85 @@ $(document).ready(function() {
 	
 	
 	
-/** 수량 변경 **/
-    $(document).on('click','.btn_option_view', function(e) {
-    	let optionView = $('#option-view');
-    	
-	    let goods = this;
-	    let cartId = Number(goods.dataset.cartid);
-	    let goodsPrice;
-	    let quantity;
-	    
-	    let optionViewInputCartId = optionView.find("input[name='cart_id']");
-	    let optionViewImg = optionView.find('img');
-	    let optionViewStrongGoodsName = optionView.find('.goods_name');
-	    let optionViewInputQuantity = optionView.find('#quantity');
-	    let optionViewStrongTotalPrice = optionView.find('#tot_price');
-		
-		cartService.get(cartId, function(cart) {
-			goodsPrice = cart.goods.goodsPrice;
-			quantity = cart.cartCnt;
-			optionViewInputCartId.val(cart.cartId);
-			optionViewImg.attr({
-				src : '/resources/img/goods/'+cart.goods.goodsThumbnail,
-				alt : cart.goods.goodsName,
-				title : cart.goods.goodsName,
-				
+  /** 수량 변경 **/
+	$(document).on('click','.btn_option_view', function(e) {
+		let optionView = $('#option-view');
+		let optionViewInputQuantity = optionView.find('#quantity');
+		let optionViewStrongTotalPrice = optionView.find('#tot_price');
+	
+	  cartService.get(Number(this.dataset.cartid), function(cart) {
+		  this.cart = cart;
+		  optionView.find("input[name='cart_id']").val(cart.cartId);
+		  optionView.find('img').attr({
+			  src : '/resources/img/goods/'+cart.goods.goodsThumbnail,
+			  alt : cart.goods.goodsName,
+			  title : cart.goods.goodsName,
 			});
-			optionViewStrongGoodsName.text(cart.goods.goodsName);
-			optionViewInputQuantity.val(quantity);
-			optionViewStrongTotalPrice.text(cashFormat(cart.totalPrice)+'원');
+		  optionView.find('.goods_name').text(cart.goods.goodsName);
+		  optionViewInputQuantity.val(cart.cartCnt);
+		  optionViewStrongTotalPrice.text(cashFormat(cart.totalPrice)+'원');
+	});
+	
+	optionView.show();
+	body.css('overflow', 'hidden');
+		
+	$('.close').on('click', function(e){
+		closeModal();
+	});
+		
+	optionViewInputQuantity.on('change', function(e){
+		cart.cartCnt = optionViewInputQuantity.val();
+		checkCartCnt();
+		calcTot();
 		});
 		
-	    optionView.show();
-	    body.css('overflow', 'hidden');
-	    
-	    $('.close').on('click', function(e) {
-	    	optionView.hide();
-	    	body.css('overflow', 'auto');
-	    });
-	    
-	    optionViewInputQuantity.on('change', function(e){
-	    	quantity = optionViewInputQuantity.val();
-	    	if(quantity < 1){
-				quantity = 1;
-				optionViewInputQuantity.val(quantity);
-			}
-			let totalPrice = quantity * goodsPrice;
-			optionViewStrongTotalPrice.text(cashFormat(totalPrice)+'원');
-	    });
-	    
-	    $('#minus').off().on('click', function(e){
-	    	quantity--;
-			if(quantity < 1){
-				quantity = 1;
-			}
-			optionViewInputQuantity.val(quantity);
-			let totalPrice = quantity * goodsPrice;
-			optionViewStrongTotalPrice.text(cashFormat(totalPrice)+'원');
+		$('#minus').off().on('click', function(e){
+			cart.cartCnt--;
+			checkCartCnt();
+		  calcTot();
 //				calcPrice();
-		}); // minus event
-	    
-	    $('#plus').off().on('click', function(e) {
-	    	quantity++;
-	    	optionViewInputQuantity.val(quantity);
-	    	let totalPrice = quantity * goodsPrice;
-			optionViewStrongTotalPrice.text(cashFormat(totalPrice)+'원');
-	    }); // plus event
-	    
-	    $('.cancel').on('click', function(e) {
-	    	optionView.hide();
-	    	body.css('overflow', 'auto');
-	    }); // cancel event
-	    
-	    $('.changeCnt').on('click', function(e) {
-	    	let cart = {
-	    			cartId: cartId,
-	    			cartCnt: quantity
-	    	}
-	    	cartService.update(cart, function(result) {
-	    		optionView.hide();
-	    		body.css('overflow', 'auto');
-	    		showList();
-	    	});
-	    }) // changeCnt event
+	  }); // minus event
+		
+		$('#plus').off().on('click', function(e) {
+			cart.cartCnt++;
+			checkCartCnt();
+		  calcTot();
+		}); // plus event
+		
+		$('.cancel').on('click', function(e){
+			closeModal();
+		}); // cancel event
+		
+		$('.changeCnt').on('click', function(e) {
+			cartService.update(cart, function(result) {
+				closeModal();
+				showList();
+			});
+		}) // changeCnt event
+		
+		function closeModal() {
+			optionView.hide();
+			body.css('overflow','auto');
+		};
 
-	    
-	
-	
-});	
-//$(document).on('change', '#quantity', calcPrice);
-//	
-//function calcPrice(){
-//	let cnt = $('#quantity').val();
-//	if(cnt < 1){
-//		alert('최소 변경 가능 수량은 1개입니다.');
-//		$('#quantity').val(1);
-//	}
-//	let total_price = $('#quantity').val() * goodsPrice;
-//	$('#tot_price').text(cashFormat(total_price)+'원');
-//}
-function closeModal(){
-	$('#option-view').hide();
-	$('body').css('overflow', 'auto');
-};
+		function checkCartCnt() {
+			if(cart.cartCnt < 1) {
+				cart.cartCnt = 1;
+			}
+			optionViewInputQuantity.val(cart.cartCnt);
+		};
+		
+		function calcTot() {
+      let totalPrice = cart.cartCnt * cart.goods.goodsPrice;
+		  optionViewStrongTotalPrice.text(cashFormat(totalPrice)+'원');
+		};
+		
+		
+		
+		
+
+
+});
 	
 	/** 장바구니 선택 프로세스 **/
 	function gd_cart_process(command){
