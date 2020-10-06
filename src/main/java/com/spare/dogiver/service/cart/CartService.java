@@ -12,7 +12,8 @@ public interface CartService {
 	public Long save(String email, CartSaveRequestDto requestDto);
 	public List<Cart> findAllDesc();
 	public List<CartListResponseDto> findAllByEmailDesc(String email);
-	public CartResponseDto findById(long cartId);
+	public CartResponseDto findById(Long cartId);
 	public Long update(long cartId, CartUpdateRequestDto requestDto);
 	public void delete(long cartId);
+	public void deleteByIdIn(List<Long> cartIds);
 }

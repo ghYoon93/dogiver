@@ -22,13 +22,21 @@ let cartService = (function(){
 	}
 	
 	function getList(callback, error) {
-		$.getJSON("/api/v1/cart", function(list){
-			callback(list);
-		}).fail(function(xhr, status, err){
-			if(error) {
-				error();
-			}
-		});
+	  $.ajax({
+      type : 'GET',
+      url : '/api/v1/cart',
+      contentType : "application/json; charset=utf-8",
+      success : function(result, status, xhr) {
+        if(callback) {
+          callback(result);
+        }
+      },
+      error : function(xhr, status, err) {
+        if(error) {
+          error(err);
+        }
+      }
+    });
 	}
 	
 	function get(cartId, callback, error) {
@@ -49,13 +57,13 @@ let cartService = (function(){
 			url : '/api/v1/cart/'+cart.cartId,
 			data : JSON.stringify(cart),
 			contentType : "application/json; charset=UTF-8",
+			async : false,
 			success : function(result, status, xhr) {	
 				if(callback) {
 					callback(result);
 				}
 			},
 			error : function(xhr, status, er) {
-				
 				if(error) {
 					error(er);
 				}
@@ -63,10 +71,31 @@ let cartService = (function(){
 		});
 	}
 	
+	function remove(cartIds, callback, error) {
+	  $.ajax({
+      type : 'DELETE',
+      url : '/api/v1/cart/',
+      data : JSON.stringify(cartIds),
+      contentType : "application/json; charset=UTF-8",
+      success : function(result, status, xhr) { 
+        if(callback) {
+          callback(result);
+        }
+      },
+      error : function(xhr, status, er) {
+        
+        if(error) {
+          error(er);
+        }
+      }
+    });
+	}
+	
 	return {
 		getList : getList
 	  , add: add
 	  , get: get
 	  , update: update
+	  , remove: remove
 	}
 })();

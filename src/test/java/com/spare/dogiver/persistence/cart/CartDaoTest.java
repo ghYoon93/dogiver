@@ -1,7 +1,9 @@
 package com.spare.dogiver.persistence.cart;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.assertj.core.internal.Lists;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -174,6 +176,37 @@ public class CartDaoTest {
 		Cart existedCart = cartDao.findByEmailAndGoodsId(cart);
 		assertThat(cart.getCartId()).isEqualTo(cartId);
 		assertThat(existedCart.getCartId()).isEqualTo(cartId);
+		
+	}
+	
+	@Test
+	public void testDeleteCarts() {
+		// given
+		List<Long> cartIds = new ArrayList<Long>();
+		String email = "gh.yoon93@gmail.com";
+		Member member = Member.builder().email(email).build();
+
+		long goodsId = 1010001;
+		Goods goods = Goods.builder().goodsId(goodsId).build();
+		Cart cart = Cart.builder()
+				.cartCnt(3)
+				.goods(goods)
+				.member(member).build();
+//		cartIds.add(cartDao.save(cart));
+		cartDao.save(cart);
+		
+		goodsId = 1010002;
+		goods = Goods.builder().goodsId(goodsId).build();
+		cart = Cart.builder()
+				.cartCnt(3)
+				.goods(goods)
+				.member(member).build();
+		cartIds.add(cartDao.save(cart));
+		
+		
+		//  when
+		cartDao.deleteByIdIn(cartIds);
+		assertThat(cartDao.findAll().size()).isEqualTo(0);
 		
 	}
 }

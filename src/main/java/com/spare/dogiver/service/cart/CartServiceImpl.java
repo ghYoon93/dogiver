@@ -67,16 +67,20 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public CartResponseDto findById(long cartId) {
-		
+	public CartResponseDto findById(Long cartId) {
 		Cart cart = cartDao.findById(cartId);
 		return new CartResponseDto(cart);
 	}
 
 	@Override
 	public void delete(long cartId) {
-		
 		cartDao.delete(cartId);
+	}
+
+	@Override
+	public void deleteByIdIn(List<Long> cartIds) {
+		cartDao.deleteByIdIn(cartIds);
+		
 	}
 
 }

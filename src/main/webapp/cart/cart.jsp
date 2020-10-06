@@ -16,6 +16,8 @@
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
     rel="stylesheet" />
   <title>장바구니</title>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 </head>
 
 <body>
@@ -58,14 +60,47 @@
                     <tr>
                       <th>
                         <input type="checkbox" id="check-all" /> <label for="check-all"></label></th>
-                      <th>상품/옵션 정보</th>
-                      <th>수량</th>
+                      <th>상품/옵션 정보<input type="checkbox" name="test" id="testA"></th>
+                      <th>수량<input type="checkbox"name="test2"></th>
                       <th>상품금액</th>
                       <th>합계금액</th>
                       <th>배송비</th>
                     </tr>
                   </thead>
                   <tbody>
+                    <tr>
+                      <td class="td_check">
+                        <input type="checkbox" id="" name="goods" value="">
+                        <label for=""></label>
+                      </td>
+                      <td class="td_left">
+                        <div class="cart_goods_cont">
+                          <span class="cart_goods_image">
+                            <a href="">
+                              <img src="" class="middle" alt="" title="">
+                            </a>
+                          </span>
+                          <div class="cart_goods_info">
+                            <em><a href=""></a></em>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="td_order_amount">
+                        <div class="cart_goods_num">
+                          <strong></strong>
+                          <font></font>
+                          <div class="btn_option">
+                            <button type="button" class="btn_option_view" data-cartid="" data-id="" data-img="" data-name=" 강아지 로프 장난감" data-cnt="" data-price="" data-total_price="">수량 변경</button>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <strong></strong>
+                      </td>
+                      <td>
+                        <strong></strong>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
             </div>
@@ -108,18 +143,20 @@
             <!-- //price_sum_list -->
           </div>
           <!-- //price_sum_count -->
-          
         </div>
         <!-- //price_sum -->
         <div class="btn_order_box">
           <span class="btn_left_box">
-            <button type="button" class="btn_order_choice_del" onclick="gd_cart_process('cartDelete');">선택 상품
-              삭제</button>
-            <button type="button" class="btn_order_shop_go_link" onclick="location.href='../goods/goodsList'">쇼핑 계속하기</button>
-          </span> <span class="btn_right_box">
-            <button type="button" class="btn_order_choice_buy" onclick="gd_cart_process('orderSelect');">선택 상품
-              주문</button>
-            <button type="button" class="btn_order_whole_buy" onclick="gd_order_all();">전체 상품 주문</button>
+            <button type="button" id="btnDelete" class="btn_order_choice_del">선택 상품 삭제</button>
+            <!-- <button type="button" id="btn" class="btn_order_choice_del" onclick="gd_cart_process('cartDelete');">선택 상품 삭제</button> -->
+            <button type="button" id="btnLinkShopping"class="btn_order_shop_go_link">쇼핑 계속하기</button>
+            <!-- <button type="button" class="btn_order_shop_go_link" onclick="location.href='../goods/goodsList'">쇼핑 계속하기</button> -->
+          </span> 
+          <span class="btn_right_box">
+            <button type="button" id="btnOrderSelected"class="btn_order_choice_buy">선택 상품 주문</button>
+            <!-- <button type="button" class="btn_order_choice_buy" onclick="gd_cart_process('orderSelect');">선택 상품 주문</button> -->
+            <button type="button" id="btnOrderWhole"class="btn_order_whole_buy">전체 상품 주문</button>
+            <!-- <button type="button" class="btn_order_whole_buy" onclick="gd_order_all();">전체 상품 주문</button> -->
           </span>
         </div>
         <!-- //btn_order_box -->
@@ -165,11 +202,9 @@
   <!-- //wrap -->
   </div>
   <div id="footerDiv"></div>
-  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/cartService.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/cart.js"></script>
-  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/quantityOption.js"></script>
+  <%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/quantityOption.js"></script> --%>
 </body>
 
 </html>

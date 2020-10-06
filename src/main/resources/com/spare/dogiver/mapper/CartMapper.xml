@@ -49,10 +49,20 @@
       FROM Cart C
            INNER JOIN goods G ON C.goods_id = G.goods_id
      WHERE C.email = #{email}
+     ORDER BY cart_id DESC;
   </select>
   
   <select id="find" parameterType="long" resultMap="Cart">
-    SELECT * FROM cart WHERE cart_id = #{cartId}
+    SELECT /*+INDEX_DESC(cart pk_cart)*/
+           C.cart_id as cart_id 
+         , C.cart_cnt as cart_cnt
+         , G.goods_id as goods_id
+         , G.goods_name as goods_name
+         , G.goods_price as goods_price
+         , G.goods_thumbnail as goods_thumbnail
+      FROM Cart C
+           INNER JOIN goods G ON C.goods_id = G.goods_id
+     WHERE C.cart_id = #{cartId}
   </select>
   
   <select id="findByEmailAndGoodsId" parameterType="Cart" resultMap="Cart">
@@ -68,6 +78,13 @@
   </delete>
   
   <delete id="delete" parameterType="long">
-    DELETE FROM cart WHERE cart_id = #{cartId}
+    DELETE FROM cart WHERE cart_id = #{cartId};
+  </delete>
+  
+  <delete id="deleteByIdIn" parameterType="long">
+    DELETE FROM cart WHERE cart_id IN 
+    <foreach collection="list" item="cartId" index="index" separator="," open="(" close=")">
+      #{cartId.value}
+    </foreach>
   </delete>
 </mapper>

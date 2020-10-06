@@ -57,7 +57,7 @@
 			<!-- 헤더 -->
 			<h1>도그너</h1>
 			<!-- 로고 -->
-			<a href="../main/index"><img src="${pageContext.request.contextPath}/resources/img/dogiver-logo.png"
+			<a href="/"><img src="${pageContext.request.contextPath}/resources/img/dogiver-logo.png"
 				alt="로고이미지" /></a>
 
 			<!-- 헤더 메뉴 -->
@@ -100,7 +100,7 @@
 		<!-- //헤더 -->
 	</header>
 </body>
-<script type="text/javascript"
+<%-- <script type="text/javascript"
 	src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script> --%>
 </html>

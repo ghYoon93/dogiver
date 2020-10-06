@@ -13,7 +13,8 @@ public interface CartDao {
 	public Cart findById(Long cartId);
 	public Long update(Cart cart);
 	public void deleteAll();
-	public void delete(long cartId);
+	public void delete(Long cartId);
+	public void deleteByIdIn(List<Long> cartIds);
 	public Cart findByEmailAndGoodsId(Cart cart);
 	
 }

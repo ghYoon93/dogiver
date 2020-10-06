@@ -55,7 +55,7 @@ public class CartDaoMyBatis implements CartDao {
 		sqlSession.delete("CartMapper.deleteAll");
 	}
 
-	public void delete(long cartId) {
+	public void delete(Long cartId) {
 		sqlSession.delete("CartMapper.delete", cartId);
 		
 	}
@@ -65,6 +65,12 @@ public class CartDaoMyBatis implements CartDao {
 		Cart result = sqlSession.selectOne("CartMapper.findByEmailAndGoodsId", cart);
 		if(result == null) return cart;
 		return result;
+	}
+
+	@Override
+	public void deleteByIdIn(List<Long> cartIds) {
+		sqlSession.delete("CartMapper.deleteByIdIn", cartIds);
+		
 	}
 	
 	
