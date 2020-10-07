@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.spare.dogiver.domain.Goods;
 import com.spare.dogiver.web.dto.GoodsDTO;
 import com.spare.dogiver.web.dto.OrderDetailDTO;
 import com.spare.dogiver.web.dto.QnaDTO;
@@ -113,6 +114,11 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	public int getGoodsId(int category_code) {
 		System.out.println(category_code);
 		return sqlSession.selectOne("goodsSQL.getGoodsId", category_code);
+	}
+
+	@Override
+	public Goods findGoodsById(long goodsId) {
+		return sqlSession.selectOne("goodsSQL.findGoodsById", goodsId);
 	}
 
 }

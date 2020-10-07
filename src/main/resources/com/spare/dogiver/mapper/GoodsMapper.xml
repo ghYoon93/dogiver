@@ -3,6 +3,14 @@
 
 	
 <mapper namespace="goodsSQL">
+
+	<resultMap id="Goods" type="com.spare.dogiver.domain.Goods">
+      <id property="goodsId" column="goods_id"/>
+      <result property="goodsName" column="goods_name"/>
+      <result property="goodsPrice" column="goods_price"/>
+      <result property="goodsThumbnail" column="goods_thumbnail"/>
+  </resultMap>
+
 	<select id="getGoodsList" parameterType="int" resultType="goods">
 		select * from goods order by goods_date desc
 	</select>
@@ -113,5 +121,9 @@
 	<select id="getGoodsId" parameterType="int" resultType="int">
 		SELECT goods_id FROM (SELECT goods_id
                         FROM goods WHERE goods_id LIKE #{category_code}||'%' ORDER BY goods_id DESC) WHERE rownum = 1
+	</select>
+	
+	<select id="findGoodsById" parameterType="long" resultMap="Goods">
+	    SELECT * FROM goods where goods_id = #{goodsId}
 	</select>
 </mapper>

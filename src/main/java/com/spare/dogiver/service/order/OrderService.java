@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.spare.dogiver.web.dto.CartDTO;
+import com.spare.dogiver.web.dto.CheckoutRequestDto;
+import com.spare.dogiver.web.dto.CheckoutResponseDto;
 import com.spare.dogiver.web.dto.KakaoPayApprovalDTO;
 import com.spare.dogiver.web.dto.OrderDTO;
 import com.spare.dogiver.web.dto.OrderDetailDTO;
@@ -39,6 +41,8 @@ public interface OrderService {
 	public void cancelOrder(String order_id);
 
 	public int chkOrder(Map<String, String> map);
+
+	public CheckoutResponseDto getCheckout(String email, CheckoutRequestDto request);
 
 
 

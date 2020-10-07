@@ -3,6 +3,7 @@ package com.spare.dogiver.persistence.goods;
 import java.util.List;
 import java.util.Map;
 
+import com.spare.dogiver.domain.Goods;
 import com.spare.dogiver.web.dto.GoodsDTO;
 import com.spare.dogiver.web.dto.OrderDetailDTO;
 import com.spare.dogiver.web.dto.QnaDTO;
@@ -43,6 +44,8 @@ public interface GoodsDAO {
 	public void reviewDelete(int bo_seq);
 
 	public int getGoodsId(int category_code);
+	
+	public Goods findGoodsById(long goodsId);
 
 
 }

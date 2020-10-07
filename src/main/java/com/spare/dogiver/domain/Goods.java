@@ -23,12 +23,13 @@ public class Goods {
     
     @Builder
     public Goods(long goodsId, long categoryCode, long goods, 
-    		int goodsPrice, String goodsThumbnail, String goodsDetail,
+    		int goodsPrice, String goodsName, String goodsThumbnail, String goodsDetail,
     		int goodsAmt, String salesYn) {
     	this.goodsId = goodsId;
     	this.categoryCode = categoryCode;
     	this.goodsPrice = goodsPrice;
     	this.goodsThumbnail = goodsThumbnail;
+    	this.goodsName = goodsName;
     	this.goodsDetail = goodsDetail;
     	this.goodsAmt = goodsAmt;
     	this.salesYn = salesYn;

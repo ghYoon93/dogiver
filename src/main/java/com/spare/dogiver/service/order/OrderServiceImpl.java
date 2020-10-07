@@ -15,21 +15,35 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import com.spare.dogiver.domain.Goods;
+import com.spare.dogiver.domain.Member;
+import com.spare.dogiver.persistence.goods.GoodsDAO;
+import com.spare.dogiver.persistence.member.MemberDAO;
 import com.spare.dogiver.persistence.order.OrderDAO;
 import com.spare.dogiver.web.dto.CartDTO;
+import com.spare.dogiver.web.dto.CheckoutRequestDto;
+import com.spare.dogiver.web.dto.CheckoutResponseDto;
 import com.spare.dogiver.web.dto.KakaoPayApprovalDTO;
 import com.spare.dogiver.web.dto.KakaoPayReadyDTO;
 import com.spare.dogiver.web.dto.OrderDTO;
 import com.spare.dogiver.web.dto.OrderDetailDTO;
 import com.spare.dogiver.web.dto.OrderListDTO;
 import com.spare.dogiver.web.dto.OrderStatusDTO;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Service
 public class OrderServiceImpl implements OrderService {
+	private final MemberDAO memberDao;
+	private final GoodsDAO goodsDao;
+	
 	@Autowired
 	private OrderDAO orderDAO;
 	private OrderDTO orderDTO;
 	private KakaoPayReadyDTO kakaoPayReadyDTO;
 	private KakaoPayApprovalDTO kakaoPayApprovalDTO;
+	
 	@Override
 	public void insertCart(Map<String, String> map) {
 		orderDAO.insertCart(map);
@@ -164,6 +178,13 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public int chkOrder(Map<String, String> map) {
 		return orderDAO.chkOrder(map);
+	}
+	@Override
+	public CheckoutResponseDto getCheckout(String email, CheckoutRequestDto request) {
+		Member member = memberDao.find(email);
+		Goods goods = goodsDao.findGoodsById(request.getGoodsId());
+		CheckoutResponseDto response = new CheckoutResponseDto(goods, member, request.getQuantity()); 
+		return response;
 	}
 
 }
