@@ -7,7 +7,7 @@ import com.spare.dogiver.domain.Member;
 import lombok.Getter;
 
 @Getter
-public class CartListResponseDto {
+public class CartsResponseDto {
     
 	private long cartId;
 	private Member member;
@@ -15,7 +15,7 @@ public class CartListResponseDto {
     private int cartCnt;
     private int totalPrice;
     
-    public CartListResponseDto(Cart entity) {
+    public CartsResponseDto(Cart entity) {
     	this.cartId = entity.getCartId();
     	this.member = entity.getMember();
     	this.goods = entity.getGoods();
