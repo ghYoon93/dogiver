@@ -20,7 +20,7 @@ public class CartDaoMyBatis implements CartDao {
 	public Long save(Cart cart) {
 		
 		sqlSession.insert("CartMapper.save", cart);
-		return cart.getCartId();
+		return cart.getId();
 		
 	}
 	
@@ -35,10 +35,10 @@ public class CartDaoMyBatis implements CartDao {
 		return sqlSession.selectList("CartMapper.findAllDesc");
 	}
 	
-	@Override
-	public List<Cart> findAllByEmailDesc(String email) {
-		return sqlSession.selectList("CartMapper.findAllByEmailDesc", email);
-	}
+//	@Override
+//	public List<Cart> findAllByEmailDesc(String email) {
+//		return sqlSession.selectList("CartMapper.findAllByEmailDesc", email);
+//	}
 	
 	@Override
 	public Cart findById(Long cartId) {
@@ -47,7 +47,7 @@ public class CartDaoMyBatis implements CartDao {
 	@Override
 	public Long update(Cart cart) {
 		sqlSession.update("CartMapper.update", cart);
-		return cart.getCartId();
+		return cart.getId();
 	}
 
 	@Override
@@ -66,14 +66,14 @@ public class CartDaoMyBatis implements CartDao {
 		if(result == null) return cart;
 		return result;
 	}
+	@Override
+	public Cart findByEmail(String email) {
+		return sqlSession.selectOne("CartMapper.findByEmail", email);
+	}
 
 	@Override
 	public void deleteByIdIn(List<Long> cartIds) {
 		sqlSession.delete("CartMapper.deleteByIdIn", cartIds);
 		
 	}
-	
-	
-	
-
 }

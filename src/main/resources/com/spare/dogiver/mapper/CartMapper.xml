@@ -15,10 +15,12 @@
   </resultMap>
   
   <resultMap id="Cart" type="com.spare.dogiver.domain.Cart">
-    <id property="cartId" column="cart_id" />
+    <id property="id" column="id" />
+    <result property="cartId" column="cart_id"/>
+    <result property="email" column="email"/>
     <result property="cartCnt" column="cart_cnt"/>
-    <association property="goods" resultMap="Goods" />
-    <association property="member" resultMap="Member"/>
+    <!-- <association property="goods" resultMap="Goods" />
+    <association property="member" resultMap="Member"/> -->
   </resultMap>
   
   <insert id="save" parameterType="Cart">
@@ -67,6 +69,10 @@
   
   <select id="findByEmailAndGoodsId" parameterType="Cart" resultMap="Cart">
     SELECT * FROM cart WHERE goods_id = #{goods.goodsId} AND email = #{member.email}
+  </select>
+  
+  <select id="findByEmail" parameterType="String" resultMap="Cart">
+    SELECT * FROM cart WHERE email = #{email}
   </select>
   
   <update id="update" parameterType="Cart">
