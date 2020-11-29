@@ -1,26 +1,25 @@
 package com.spare.dogiver.web.dto;
 
-import com.spare.dogiver.domain.Cart;
+import com.spare.dogiver.domain.CartItem;
 import com.spare.dogiver.domain.Goods;
-import com.spare.dogiver.domain.Member;
 
 import lombok.Getter;
 
 @Getter
 public class CartResponseDto {
-    private long cartId;
-    
-    private Member member;
-    private Goods goods;
-    
+    private Long id;
+    private Long goodsId;
+    private String goodsName;
+    private String thumbnail;
+    private int goodsPrice;
     private int cartCnt;
     private int totalPrice;
     
-    public CartResponseDto(Cart entity) {
-    	this.cartId = entity.getCartId();
-    	this.member = entity.getMember();
-    	this.goods = entity.getGoods();
-    	this.cartCnt = entity.getCartCnt();
-    	this.totalPrice = entity.getTotalPrice();
+    public CartResponseDto(CartItem cartItem, Goods goods) {
+    	this.id = cartItem.getId();
+    	this.cartCnt = cartItem.getCartCnt();
+    	this.goodsId = goods.getGoodsId();
+    	this.goodsName = goods.getGoodsName();
+    	this.goodsPrice = goods.getGoodsPrice();
     }
 }
