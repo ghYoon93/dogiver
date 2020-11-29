@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class Goods {
-    private long goodsId;
-    private long categoryCode;
+    private Long goodsId;
+    private Long categoryCode;
     
     private String goodsName;
     private int goodsPrice;
@@ -22,7 +22,7 @@ public class Goods {
     private Date goodsDate;
     
     @Builder
-    public Goods(long goodsId, long categoryCode, long goods, 
+    public Goods(Long goodsId, Long categoryCode, Long goods, 
     		int goodsPrice, String goodsName, String goodsThumbnail, String goodsDetail,
     		int goodsAmt, String salesYn) {
     	this.goodsId = goodsId;
