@@ -215,10 +215,8 @@ DROP SEQUENCE IF EXISTS seq_cart;
 
 CREATE TABLE cart 
   ( 
-     cart_id       NUMBER NOT NULL, 
+     id       NUMBER NOT NULL, 
      email         VARCHAR2(50) NOT NULL, 
-     goods_id      NUMBER(20, 0) NOT NULL, 
-     cart_cnt      NUMBER(20, 0) NOT NULL, 
      created_date  DATE DEFAULT SYSDATE, 
      modified_date DATE DEFAULT SYSDATE 
   ); 
@@ -228,25 +226,63 @@ CREATE SEQUENCE seq_cart;
 --  DDL for Index PK_CART
 -------------------------------------------------------- 
 CREATE UNIQUE INDEX "PK_CART" 
-  ON CART (cart_id); 
+  ON CART (id); 
 
 -------------------------------------------------------- 
 --  Constraints for Table CART 
 -------------------------------------------------------- 
 
 ALTER TABLE cart 
-  ADD CONSTRAINT PK_CART PRIMARY KEY (cart_id);
+  ADD CONSTRAINT PK_CART PRIMARY KEY (id);
 
 -------------------------------------------------------- 
 --  Ref Constraints for Table CART 
 -------------------------------------------------------- 
 ALTER TABLE cart 
-  ADD CONSTRAINT FK_CART_GOODS FOREIGN KEY (goods_id) REFERENCES goods ( 
-  goods_id); 
-
-ALTER TABLE cart 
   ADD CONSTRAINT FK_CART_MEMBER FOREIGN KEY (email) REFERENCES member ( 
   email); 
+
+-------------------------------------------------------- 
+--  DDL for Table CART_ITEM
+-------------------------------------------------------- 
+DROP TABLE IF EXISTS cart_item;
+DROP SEQUENCE IF EXISTS seq_cart_item;
+
+CREATE TABLE cart_item
+  ( 
+     id            NUMBER NOT NULL, 
+     goods_id      NUMBER(20, 0) NOT NULL,
+     cart_id       NUMBER(20, 0) NOT NULL,
+     cart_cnt      NUMBER(20, 0) NOT NULL, 
+     created_date  DATE DEFAULT SYSDATE, 
+     modified_date DATE DEFAULT SYSDATE 
+  ); 
+CREATE SEQUENCE seq_cart_item;
+
+-------------------------------------------------------- 
+--  DDL for Index PK_CART_ITEM
+-------------------------------------------------------- 
+CREATE UNIQUE INDEX "PK_CART_ITEM" 
+  ON CART_ITEM (id); 
+
+-------------------------------------------------------- 
+--  Constraints for Table CART_ITEM
+-------------------------------------------------------- 
+
+ALTER TABLE cart_item 
+  ADD CONSTRAINT PK_CART_ITEM PRIMARY KEY (id);
+
+-------------------------------------------------------- 
+--  Ref Constraints for Table CART_ITEM 
+-------------------------------------------------------- 
+ALTER TABLE cart_item 
+  ADD CONSTRAINT FK_CART_ITEM_GOODS FOREIGN KEY (goods_id) REFERENCES goods ( 
+  goods_id); 
+
+ALTER TABLE cart_item 
+  ADD CONSTRAINT FK_CART_ITEM_CART FOREIGN KEY (cart_id) REFERENCES cart ( 
+  id); 
+
 
 -------------------------------------------------------- 
 --  DDL for Table GOODS_ORDER 
