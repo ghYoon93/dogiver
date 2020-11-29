@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spare.dogiver.service.cart.CartService;
-import com.spare.dogiver.web.dto.CartListResponseDto;
+import com.spare.dogiver.web.dto.CartsResponseDto;
 import com.spare.dogiver.web.dto.CartResponseDto;
 import com.spare.dogiver.web.dto.CartSaveRequestDto;
 import com.spare.dogiver.web.dto.CartUpdateRequestDto;
@@ -30,10 +30,10 @@ public class CartApiController {
 	private final CartService cartService;
 	
 	@GetMapping("/api/v1/cart")
-	public ResponseEntity<List<CartListResponseDto>> getList(HttpSession session){
+	public ResponseEntity<List<CartsResponseDto>> getList(HttpSession session){
 		String email = (String)session.getAttribute("memEmail");
 		
-		return new ResponseEntity<>(cartService.findAllByEmailDesc(email), HttpStatus.OK);
+		return new ResponseEntity<>(cartService.getCart(email), HttpStatus.OK);
 	}
 	@PostMapping("/api/v1/cart")
 	public Long save(@RequestBody CartSaveRequestDto requestDto, HttpSession session) {
