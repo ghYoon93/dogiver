@@ -22,7 +22,7 @@ function getContentTab(index){
 		url='review?goods_id='+$('#goods_id').val();
 	}
 	else if(index==4){
-		url=$('.discription div').load('../webapp/etc/delivery_info.html').css('text-align', 'left');
+		url=$('.discription div').load('../static/delivery_info.html').css('text-align', 'left');
 	}
 
 	$.get(url, null, function(result){
