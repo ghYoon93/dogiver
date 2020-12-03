@@ -53,8 +53,6 @@ import com.spare.dogiver.web.dto.CartSaveRequestDto;
 import com.spare.dogiver.web.dto.CartUpdateRequestDto;
 
 @RunWith(MockitoJUnitRunner.class)
-//@RunWith(SpringRunner.class)
-//@ContextConfiguration(classes = {RootConfig.class, ServletConfig.class})
 @WebAppConfiguration
 public class CartApiControllerTest {
 	@InjectMocks
@@ -84,12 +82,12 @@ public class CartApiControllerTest {
     	
     	CartItem cartItem = CartItem.builder()
     			.id(1L)
-    			.cartCnt(3)
+    			.quantity(3)
     			.build();
     	
-    	Goods goods = Goods.builder().goodsId(1010001L).goodsPrice(2000).build();
+    	Goods goods = Goods.builder().id(1010001L).goodsPrice(2000).build();
     	
-    	cart.add(new CartResponseDto(cartItem, goods));
+    	cart.add(new CartResponseDto(cartItem));
     	
     	BDDMockito.given(cartService.getCart(email)).willReturn(cart);
     	

@@ -16,11 +16,8 @@ public class CartsResponseDto {
     private int totalPrice;
     
     public CartsResponseDto(Cart entity) {
-    	this.cartId = entity.getCartId();
-    	this.member = entity.getMember();
-    	this.goods = entity.getGoods();
+    	this.cartId = entity.getId();
     	this.cartCnt = entity.getCartCnt();
-    	this.totalPrice = entity.getTotalPrice();
     }
     
     

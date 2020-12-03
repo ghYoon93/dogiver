@@ -2,6 +2,8 @@ package com.spare.dogiver.domain;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,30 +11,32 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class Goods {
-    private Long goodsId;
-    private Long categoryCode;
-    
-    private String goodsName;
-    private int goodsPrice;
-    private String goodsThumbnail;
-    private String goodsDetail;
-    private int goodsAmt;
-    private String salesYn;
-    private int goodsCumSales;
-    private Date goodsDate;
+    private Long id;
+	private int categoryCode;
+	private String name;
+	private int price;
+	private String thumbnail;
+	private String detail;
+	private int quantity;
+	private String onSale;
+	private int cumulativeSales;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy.MM.dd HH:mm", timezone = "Asia/Seoul")
+	private Date created_date;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy.MM.dd HH:mm", timezone = "Asia/Seoul")
+	private Date modified_date;
     
     @Builder
-    public Goods(Long goodsId, Long categoryCode, Long goods, 
-    		int goodsPrice, String goodsName, String goodsThumbnail, String goodsDetail,
-    		int goodsAmt, String salesYn) {
-    	this.goodsId = goodsId;
+    public Goods(Long id, int categoryCode,
+    		int goodsPrice, String name, String thumbnail, int price, String detail,
+    		int quantity, String onSale) {
+    	this.id = id;
     	this.categoryCode = categoryCode;
-    	this.goodsPrice = goodsPrice;
-    	this.goodsThumbnail = goodsThumbnail;
-    	this.goodsName = goodsName;
-    	this.goodsDetail = goodsDetail;
-    	this.goodsAmt = goodsAmt;
-    	this.salesYn = salesYn;
+    	this.price = price;
+    	this.thumbnail = thumbnail;
+    	this.name = name;
+    	this.detail = detail;
+    	this.quantity = quantity;
+    	this.onSale = onSale;
     }
     
 }

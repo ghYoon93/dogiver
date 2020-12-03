@@ -25,8 +25,8 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	}
 
 	@Override
-	public GoodsDTO getGoodsDetail(int goods_id) {
-		return sqlSession.selectOne("goodsSQL.getGoodsDetail", goods_id);
+	public GoodsDTO getGoodsDetail(Long id) {
+		return sqlSession.selectOne("goodsSQL.getGoodsDetail", id);
 	}
 
 	@Override
@@ -47,8 +47,8 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	}
 
 	@Override
-	public List<QnaDTO> getGoodsQnaList(int goods_id) {
-		return sqlSession.selectList("goodsSQL.getGoodsQnaList", goods_id);
+	public List<QnaDTO> getGoodsQnaList(Long id) {
+		return sqlSession.selectList("goodsSQL.getGoodsQnaList", id);
 	}
 
 	@Override
@@ -57,8 +57,8 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	}
 
 	@Override
-	public List<QnaDTO> getGoodsReviewList(int goods_id) {
-		return sqlSession.selectList("goodsSQL.getGoodsReviewList", goods_id);
+	public List<QnaDTO> getGoodsReviewList(Long id) {
+		return sqlSession.selectList("goodsSQL.getGoodsReviewList", id);
 	}
 
 	@Override
@@ -80,7 +80,7 @@ public class GoodsDAOMybatis implements GoodsDAO {
 		int su = sqlSession.update("goodsSQL.goodsModify", goodsDTO);
 		
 		if(su==1) {
-			return sqlSession.selectOne("goodsSQL.getGoodsDetail", goodsDTO.getGoods_id());
+			return sqlSession.selectOne("goodsSQL.getGoodsDetail", goodsDTO.getId());
 		}else {
 			return goodsDTO;
 		}
@@ -117,8 +117,8 @@ public class GoodsDAOMybatis implements GoodsDAO {
 	}
 
 	@Override
-	public Goods findGoodsById(long goodsId) {
-		return sqlSession.selectOne("goodsSQL.findGoodsById", goodsId);
+	public Goods findGoodsById(Long id) {
+		return sqlSession.selectOne("goodsSQL.findGoodsById", id);
 	}
 
 }

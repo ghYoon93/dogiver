@@ -22,10 +22,11 @@
 
 <body>
   <div id="headerDiv"></div>
-  <!-- 페이지타이틀 -->
+  <!-- 페이지타이틀 -->  
     <div class="page-title">
       <h2 class="h2">장바구니</h2>
     </div>
+    
     <!-- //페이지타이틀 -->
   <div id="wrap">
     <div class="order_wrap">
@@ -60,7 +61,7 @@
                     <tr>
                       <th>
                         <input type="checkbox" id="check-all" /> <label for="check-all"></label></th>
-                      <th>상품/옵션 정보<input type="checkbox" name="test" id="testA"></th>
+                      <th>상품/옵션 정보</th>
                       <th>수량<input type="checkbox"name="test2"></th>
                       <th>상품금액</th>
                       <th>합계금액</th>
@@ -124,7 +125,7 @@
               <dl>
                 <dt>배송비</dt>
                 <dd>
-                  <strong id="totalDeliveryCharge">0</strong>원
+                  <strong id="totalDeliveryCharge">00</strong>원
                 </dd>
               </dl>
               <dl>

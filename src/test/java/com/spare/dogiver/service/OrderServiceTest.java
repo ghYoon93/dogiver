@@ -34,7 +34,7 @@ public class OrderServiceTest {
 		
 		
 		CheckoutResponseDto response = orderService.getCheckout(email, request);
-		assertThat(response.getGoods().getGoodsName()).isEqualTo("asd");
+		assertThat(response.getGoods().getName()).isEqualTo("asd");
 	}
 
 }

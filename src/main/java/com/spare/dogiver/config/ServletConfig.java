@@ -25,7 +25,6 @@ public class ServletConfig implements WebMvcConfigurer{
 		bean.setViewClass(JstlView.class);
 		bean.setSuffix(".jsp");
 		
-		
 		registry.viewResolver(bean);
 	}
 	@Bean(name = "beanNameViewResolver")

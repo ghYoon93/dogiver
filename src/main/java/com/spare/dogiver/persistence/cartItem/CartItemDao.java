@@ -5,5 +5,7 @@ import java.util.List;
 import com.spare.dogiver.domain.CartItem;
 
 public interface CartItemDao {
-    List<CartItem> findAllByCartId(Long cartId);
+//    List<CartItem> findAllByCartId(Long cartId);
+
+	List<CartItem> findAllByCartIdDesc(long cartId);
 }

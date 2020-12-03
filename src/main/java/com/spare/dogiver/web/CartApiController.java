@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spare.dogiver.service.cart.CartService;
+import com.spare.dogiver.service.cart.CartServiceImpl;
 import com.spare.dogiver.web.dto.CartsResponseDto;
 import com.spare.dogiver.web.dto.CartResponseDto;
 import com.spare.dogiver.web.dto.CartSaveRequestDto;
@@ -26,34 +27,36 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @RestController
 public class CartApiController {
-	@Autowired
 	private final CartService cartService;
 	
 	@GetMapping("/api/v1/cart")
-	public ResponseEntity<List<CartsResponseDto>> getList(HttpSession session){
+	public ResponseEntity<List<CartResponseDto>> getList(HttpSession session){
 		String email = (String)session.getAttribute("memEmail");
-		
-		return new ResponseEntity<>(cartService.getCart(email), HttpStatus.OK);
+		List<CartResponseDto> cart = cartService.getCart(email);
+		return new ResponseEntity<>(cart, HttpStatus.OK);
 	}
+	
 	@PostMapping("/api/v1/cart")
 	public Long save(@RequestBody CartSaveRequestDto requestDto, HttpSession session) {
 		String email = (String)session.getAttribute("memEmail");
-		return cartService.save(email, requestDto);
+		
+//		return cartService.save(email, requestDto);
+		return null;
 	}
-	
-	@GetMapping("/api/v1/cart/{cartId}")
-	public CartResponseDto findBytId(@PathVariable Long cartId) {
-		return cartService.findById(cartId);
-	}
-	
-	@PutMapping("/api/v1/cart/{cartId}")
-	public Long update(@PathVariable Long cartId,
-			@RequestBody CartUpdateRequestDto requestDto) {
-		return cartService.update(cartId, requestDto);
-	}
-	
-	@DeleteMapping("/api/v1/cart")
-	public void delete(@RequestBody List<Long> cartIds) {
-		cartService.deleteByIdIn(cartIds);
-	}
+//	
+//	@GetMapping("/api/v1/cart/{cartId}")
+//	public CartResponseDto findBytId(@PathVariable Long cartId) {
+//		return cartService.findById(cartId);
+//	}
+//	
+//	@PutMapping("/api/v1/cart/{cartId}")
+//	public Long update(@PathVariable Long cartId,
+//			@RequestBody CartUpdateRequestDto requestDto) {
+//		return cartService.update(cartId, requestDto);
+//	}
+//	
+//	@DeleteMapping("/api/v1/cart")
+//	public void delete(@RequestBody List<Long> cartIds) {
+//		cartService.deleteByIdIn(cartIds);
+//	}
 }

@@ -45,39 +45,44 @@ public class CartServiceTest {
 		MockitoAnnotations.initMocks(this);
 		mockCartDao();
 		mockCartItemDao();
-		mockGoodsDao();
 		cartDao.deleteAll();
-		cartService = new CartServiceImpl(cartDao,cartItemDao, goodsDao);
+		cartService = new CartServiceImpl(cartDao,cartItemDao);
 	}
 	
 	private void mockCartDao() {
 		String email = "gh.yoon93@gmail.com";
 		Cart cart = Cart.builder().id(101L).email(email).build();
+		List<CartItem> cartItems = new ArrayList();
+		Goods goods = Goods.builder()
+				.id(1010001L)
+				.thumbnail("1010001/thumbnail.jpg")
+				.name("핸드메이드 강아지 로프 장난감")
+				.price(3000)
+				.build();
+		CartItem cartItem = CartItem.builder().id(1001L).quantity(3).goods(goods).build();
+		cartItems.add(cartItem);
+		cart.setCartItems(cartItems);
 		given(cartDao.findByEmail(email)).willReturn(cart);
 	}
 	
 	private void mockCartItemDao() {
 		List<CartItem> cartItems = new ArrayList();
-		CartItem cartItem = CartItem.builder().id(1001L).cartCnt(3).goodsId(1010001L).build();
-		cartItems.add(cartItem);
-		given(cartItemDao.findAllByCartId(101L)).willReturn(cartItems);
-	}
-	
-	private void mockGoodsDao() {
 		Goods goods = Goods.builder()
-				.goodsId(1010001L)
-				.goodsThumbnail("1010001/thumbnail.jpg")
-				.goodsName("핸드메이드 강아지 로프 장난감")
-				.goodsPrice(3000)
+				.id(1010001L)
+				.thumbnail("1010001/thumbnail.jpg")
+				.name("핸드메이드 강아지 로프 장난감")
+				.price(3000)
 				.build();
-		given(goodsDao.findGoodsById(1010001L)).willReturn(goods);
+		CartItem cartItem = CartItem.builder().id(1001L).quantity(3).goods(goods).build();
+		cartItems.add(cartItem);
+		given(cartItemDao.findAllByCartIdDesc(101L)).willReturn(cartItems);
 	}
 	
 	@Test
 	public void getCart() {
 		List<CartResponseDto> cart = cartService.getCart("gh.yoon93@gmail.com");
 		CartResponseDto dto = cart.get(0);
-		assertThat(dto.getCartCnt()).isEqualTo(3);
+		assertThat(dto.getQuantity()).isEqualTo(3);
 		assertThat(dto.getGoodsName()).isEqualTo("핸드메이드 강아지 로프 장난감");
 		
 		

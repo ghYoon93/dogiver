@@ -1,6 +1,8 @@
 package com.spare.dogiver.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -9,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class Cart {
-	
+
 	private Long id;
 //	private Member member;
 //	private Goods goods;
@@ -17,6 +19,8 @@ public class Cart {
 	private int cartCnt;
 	private Date createdDate;
 	private Date modifedDate;
+	
+	List<CartItem> cartItems;
 	
 	@Builder
 	public Cart(Long id, String email) {
@@ -37,6 +41,10 @@ public class Cart {
 //	public int getTotalPrice() {
 //		return this.cartCnt * this.goods.getGoodsPrice(); 
 //	}
+	
+	public void setCartItems(List<CartItem> cartItems) {
+		this.cartItems = cartItems;
+	}
 	
 	public boolean hasCartId() {
 		return this.id != 0L ? true : false;

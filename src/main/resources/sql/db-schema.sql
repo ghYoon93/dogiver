@@ -135,16 +135,17 @@ DROP TABLE IF EXISTS goods;
 
 CREATE TABLE goods 
   ( 
-     goods_id        NUMBER NOT NULL, 
-     category_code   NUMBER(20, 0) NOT NULL, 
-     goods_name      VARCHAR2(100) NOT NULL, 
-     goods_price     NUMBER NOT NULL, 
-     goods_date      DATE DEFAULT SYSDATE, 
-     goods_thumbnail VARCHAR2(200), 
-     goods_amt       NUMBER, 
-     sales_yn        VARCHAR2(1) DEFAULT 'Y', 
-     goods_detail    VARCHAR2(200) NOT NULL, 
-     goods_cum_sales NUMBER 
+     id               NUMBER NOT NULL, 
+     category_code    NUMBER(20, 0) NOT NULL, 
+     name             VARCHAR2(100) NOT NULL, 
+     price            NUMBER NOT NULL, 
+     thumbnail        VARCHAR2(200), 
+     detail           VARCHAR2(200) NOT NULL, 
+     quantity         NUMBER, 
+     cumulative_sales NUMBER,
+     on_sale          VARCHAR2(1) DEFAULT 'Y', 
+     created_date     DATE DEFAULT SYSDATE, 
+     modified_date    DATE DEFAULT SYSDATE
   ); 
 
 
@@ -152,16 +153,16 @@ CREATE TABLE goods
 --  Constraints for Table GOODS 
 -------------------------------------------------------- 
 ALTER TABLE goods 
-  ADD CONSTRAINT PK_GOODS PRIMARY KEY (goods_id); 
+  ADD CONSTRAINT PK_GOODS PRIMARY KEY (id); 
 
 ALTER TABLE goods 
-  ADD CONSTRAINT CHECK_SALES_Y_N CHECK (sales_yn IN('Y', 'N')); 
+  ADD CONSTRAINT CHECK_ON_SALE CHECK (on_sale IN('Y', 'N')); 
 
 -------------------------------------------------------- 
 --  Ref Constraints for Table GOODS 
 -------------------------------------------------------- 
 ALTER TABLE goods 
-  ADD CONSTRAINT FK_GOODSCATEGORY FOREIGN KEY (category_code) REFERENCES 
+  ADD CONSTRAINT FK_GOODS_CATEGORY FOREIGN KEY (category_code) REFERENCES 
   category (category_code); 
 
   
@@ -203,7 +204,7 @@ ALTER TABLE goods_board
 
 ALTER TABLE goods_board 
   ADD CONSTRAINT FK_GOODSID FOREIGN KEY (goods_id) REFERENCES goods ( 
-  goods_id); 
+  id); 
 
 
 
@@ -216,7 +217,7 @@ DROP SEQUENCE IF EXISTS seq_cart;
 CREATE TABLE cart 
   ( 
      id       NUMBER NOT NULL, 
-     email         VARCHAR2(50) NOT NULL, 
+     member_email         VARCHAR2(50) NOT NULL, 
      created_date  DATE DEFAULT SYSDATE, 
      modified_date DATE DEFAULT SYSDATE 
   ); 
@@ -239,7 +240,7 @@ ALTER TABLE cart
 --  Ref Constraints for Table CART 
 -------------------------------------------------------- 
 ALTER TABLE cart 
-  ADD CONSTRAINT FK_CART_MEMBER FOREIGN KEY (email) REFERENCES member ( 
+  ADD CONSTRAINT FK_CART_MEMBER FOREIGN KEY (member_email) REFERENCES member ( 
   email); 
 
 -------------------------------------------------------- 
@@ -253,7 +254,7 @@ CREATE TABLE cart_item
      id            NUMBER NOT NULL, 
      goods_id      NUMBER(20, 0) NOT NULL,
      cart_id       NUMBER(20, 0) NOT NULL,
-     cart_cnt      NUMBER(20, 0) NOT NULL, 
+     quantity     NUMBER(20, 0) NOT NULL, 
      created_date  DATE DEFAULT SYSDATE, 
      modified_date DATE DEFAULT SYSDATE 
   ); 
@@ -277,7 +278,7 @@ ALTER TABLE cart_item
 -------------------------------------------------------- 
 ALTER TABLE cart_item 
   ADD CONSTRAINT FK_CART_ITEM_GOODS FOREIGN KEY (goods_id) REFERENCES goods ( 
-  goods_id); 
+  id); 
 
 ALTER TABLE cart_item 
   ADD CONSTRAINT FK_CART_ITEM_CART FOREIGN KEY (cart_id) REFERENCES cart ( 
@@ -444,7 +445,7 @@ ALTER TABLE order_detail
 -------------------------------------------------------- 
 ALTER TABLE order_detail 
   ADD CONSTRAINT FK_DETAIL_GOODS_ID FOREIGN KEY (goods_id) REFERENCES 
-  goods (goods_id); 
+  goods (id); 
 
 ALTER TABLE order_detail 
   ADD CONSTRAINT FK_DETAIL_ORDER_ID FOREIGN KEY (order_id) REFERENCES 

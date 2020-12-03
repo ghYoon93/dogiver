@@ -71,12 +71,12 @@ public class IndexControllerTest {
     	
     	CartItem cartItem = CartItem.builder()
     			.id(1L)
-    			.cartCnt(3)
+    			.quantity(3)
     			.build();
     	
-    	Goods goods = Goods.builder().goodsId(1010001L).goodsPrice(2000).build();
+    	Goods goods = Goods.builder().id(1010001L).goodsPrice(2000).build();
     	
-    	CartResponseDto dto = new CartResponseDto(cartItem, goods);
+    	CartResponseDto dto = new CartResponseDto(cartItem);
     	
     	List<CartResponseDto> cart = new ArrayList();
     	cart.add(dto);

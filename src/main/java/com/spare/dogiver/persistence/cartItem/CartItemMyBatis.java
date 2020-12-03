@@ -14,9 +14,14 @@ import lombok.RequiredArgsConstructor;
 public class CartItemMyBatis implements CartItemDao {
 	private final SqlSession sqlSession;
 
+//	@Override
+//	public List<CartItem> findAllByCartId(Long cartId) {
+//		return sqlSession.selectList("CartItemMapper.findAllByCartId", cartId);
+//	}
+
 	@Override
-	public List<CartItem> findAllByCartId(Long cartId) {
-		return sqlSession.selectList("CartItemMapper.findAllByCartId", cartId);
+	public List<CartItem> findAllByCartIdDesc(long cartId) {
+		return sqlSession.selectList("CartItemMapper.findAllByCartIdDesc", cartId);
 	}
 
 }

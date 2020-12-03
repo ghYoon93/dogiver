@@ -10,10 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.spare.dogiver.service.cart.CartService;
-import com.spare.dogiver.service.cart.CartServiceImpl;
 import com.spare.dogiver.service.order.OrderService;
-import com.spare.dogiver.service.order.OrderServiceImpl;
 import com.spare.dogiver.web.dto.CartResponseDto;
 import com.spare.dogiver.web.dto.CheckoutRequestDto;
 
@@ -22,7 +19,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
-	private final CartService cartService;
 	private final OrderService orderSerivce;
 	
     @GetMapping("/")
@@ -32,8 +28,6 @@ public class IndexController {
     
     @GetMapping("/cart")
     public String cart(Model model, HttpSession session) {
-    	String email = (String)session.getAttribute("memEmail");
-    	model.addAttribute("cart", cartService.getCart(email));
     	return "/cart/cart";
     }
     

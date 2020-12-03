@@ -21,29 +21,29 @@ $(document).ready(function(){
 			$.each(data.list, function(index, items){
 				//$('#goods_name').text(items.goods_name);
 				//alert(items.goods_detail);
-				console.log(items.sales_yn);
-				let goods_price='<span id="goods_price">' + items.goods_price + '</span>원';
-				if(items.sales_yn=='N') goods_price = '<span id="goods_price">판매가 일시 중지된 상품입니다.</span>';
-				if(items.goods_amt ==0) goods_price = '<span id="goods_price">품절된 상품입니다.</span>';
+				console.log(items.on_sale);
+				let goods_price='<span id="goods_price">' + items.price + '</span>원';
+				if(items.on_sale=='N') price = '<span id="goods_price">판매가 일시 중지된 상품입니다.</span>';
+				if(items.quantity ==0) price = '<span id="goods_price">품절된 상품입니다.</span>';
 				
 					tag += '<div class="goods-boxs" >'
 						+ '<div class="goods-image" >'
-						+ '<a href="javascript:void(0)" id="'+items.goods_id+'">'
-						+ '<img class="image" src="/resources/img/goods/'+ items.goods_thumbnail +'"/>'
+						+ '<a href="javascript:void(0)" id="'+items.id+'">'
+						+ '<img class="image" src="/resources/img/goods/'+ items.thumbnail +'"/>'
 						+ '</a>'
 						+ '<div class="hover_bar">'
 						+ '<button type="button" class="btn_basket_cart" id="'+index+'" href="#">'
 						+ '<img src="/resources/img/shopping_bucket.png" />'
 						+ '</button>'
-						+ '<button type="button" class="btn_detail_link" id="'+items.goods_id+'">'
+						+ '<button type="button" class="btn_detail_link" id="'+items.id+'">'
 						+ '<img src="/resources/img/search.png" />'
 						+ '</button>'
 						+ '</div>'
 						+ '</div>'
 						+ '<div class="goods-content">'
 						+ '<a href="javascript:void(0)" onclick="" >'
-						+ '<h1 id="goods_name">'+ items.goods_name + '</h1>'
-						+ numberFormat(goods_price) 
+						+ '<h1 id="goods_name">'+ items.name + '</h1>'
+						+ numberFormat(price) 
 						+ '</a>'
 						+ '</div>'
 						+ '</div>';
@@ -55,10 +55,10 @@ $(document).ready(function(){
 				
 
 				idx.push(index);
-				g_id.push(items.goods_id);
-				g_price.push(items.goods_price);
-				g_img.push(items.goods_thumbnail);
-				g_name.push(items.goods_name);
+				g_id.push(items.id);
+				g_price.push(items.price);
+				g_img.push(items.thumbnail);
+				g_name.push(items.name);
 				
 //				alert(idx[index]);
 //				alert(price[index]);

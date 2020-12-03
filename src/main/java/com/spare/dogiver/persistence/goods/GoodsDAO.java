@@ -12,7 +12,7 @@ public interface GoodsDAO {
 
 	public List<GoodsDTO> getGoodsList(int pg);
 
-	public GoodsDTO getGoodsDetail(int goods_id);
+	public GoodsDTO getGoodsDetail(Long id);
 
 	public List<GoodsDTO> getCategory(int category);
 
@@ -20,11 +20,11 @@ public interface GoodsDAO {
 
 	public int qnaWrite(Map<String, String> map);
 
-	public List<QnaDTO> getGoodsQnaList(int goods_id);
+	public List<QnaDTO> getGoodsQnaList(Long id);
 
 	public void reviewWrite(QnaDTO qnaDTO);
 
-	public List<QnaDTO> getGoodsReviewList(int goods_id);
+	public List<QnaDTO> getGoodsReviewList(Long id);
 
 	public void writeReply(Map<String, String> map);
 
@@ -45,7 +45,7 @@ public interface GoodsDAO {
 
 	public int getGoodsId(int category_code);
 	
-	public Goods findGoodsById(long goodsId);
+	public Goods findGoodsById(Long id);
 
 
 }

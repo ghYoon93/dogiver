@@ -20,7 +20,7 @@ jQuery(document).ready(function(){
 
   /* DOM method */
   function calcTot() {
-    jQuery('#tot_price').text(cashFormat(cart.cartCnt * cart.goods.goodsPrice)+'원');
+    jQuery('#tot_price').text(cashFormat(cart.cartCnt * cart.goodsPrice)+'원');
   }
 
   function closeModal() {
@@ -44,12 +44,12 @@ jQuery(document).ready(function(){
         html[++h] = '<td class="td_left">';
         html[++h] = '<div class="cart_goods_cont">'; 
         html[++h] =  '<span class="cart_goods_image">';
-        html[++h] =  '<a href="'+cart.goods.goodsId+'">';
-        html[++h] = '<img src="../resources/img/goods/'+cart.goods.goodsThumbnail+'" class="middle" alt="'+cart.goods.goodsName +'" title="'+cart.goods.goodsName+'">';
+        html[++h] =  '<a href="'+cart.goodsId+'">';
+        html[++h] = '<img src="../resources/img/goods/'+cart.goodsThumbnail+'" class="middle" alt="'+cart.goodsName +'" title="'+cart.goodsName+'">';
         html[++h] = '</a>';
         html[++h] = '</span>';
         html[++h] = '<div class="cart_goods_info">';
-        html[++h] = '<em><a href="../goods/goodsDetail?goods_id='+cart.goods.goodsId+'">'+cart.goods.goodsName+'</a></em>';
+        html[++h] = '<em><a href="../goods/goodsDetail?goods_id='+cart.goodsId+'">'+cart.goodsName+'</a></em>';
         html[++h] = '</div>';
         html[++h] = '</div>';
         html[++h] = '</td>';
@@ -59,17 +59,17 @@ jQuery(document).ready(function(){
         html[++h] = '<div class="btn_option">';
         html[++h] = '<button type="button" class="btn_option_view"';
         html[++h] = 'data-cartId="'+cart.cartId+'"';
-        html[++h] = 'data-id="'+cart.goods.goodsId+'"';
-        html[++h] = 'data-img="'+cart.goods.goodsThumbnail+'"';
-        html[++h] = 'data-name="'+cart.goods.goodsName+'"';
+        html[++h] = 'data-id="'+cart.goodsId+'"';
+        html[++h] = 'data-img="'+cart.goodsThumbnail+'"';
+        html[++h] = 'data-name="'+cart.goodsName+'"';
         html[++h] = 'data-cnt="'+cart.cartCnt+'"';
-        html[++h] = 'data-price="'+cart.goods.goodsPrice+'"';
+        html[++h] = 'data-price="'+cart.goodsPrice+'"';
         html[++h] = 'data-total_price="'+cart.totalPrice+'">';
         html[++h] = '수량 변경</button>';
         html[++h] = '</div>';
         html[++h] = '</div>';
         html[++h] = '</td>';
-        html[++h] = '<td><strong>'+ cashFormat(cart.goods.goodsPrice)+'원</strong></td>';
+        html[++h] = '<td><strong>'+ cashFormat(cart.goodsPrice)+'원</strong></td>';
         html[++h] = '<td><strong>'+ cashFormat(cart.totalPrice)+'원</strong></td>';
         html[++h] = '</tr>';
       }
@@ -121,11 +121,11 @@ jQuery(document).ready(function(){
       cart = result;
       jQuery('#option-view').find('input:checkbox[name="cart_id"]').val(cart.cartId);
       jQuery('#option-view').find('img').attr({
-        src : '/resources/img/goods/'+cart.goods.goodsThumbnail,
-        alt : cart.goods.goodsName,
-        title : cart.goods.goodsName
+        src : '/resources/img/goods/'+cart.goodsThumbnail,
+        alt : cart.goodsName,
+        title : cart.goodsName
       });
-      jQuery('#option-view').find('.goods_name').text(cart.goods.goodsName);
+      jQuery('#option-view').find('.goods_name').text(cart.goodsName);
       jQuery('#quantity').val(cart.cartCnt);
       jQuery('#tot_price').text(cashFormat(cart.totalPrice)+'원');
     });
@@ -177,7 +177,7 @@ jQuery(document).ready(function(){
 			alert('cartService.delete');
 			let checkGoods = jQuery('input[name=goods]:checked');
 			let cartIds = [];
-			checkGoods.each(function(e) {
+			checkeach(function(e) {
 			  cartIds.push(parseInt(this.value));
 			});
 			cartService.remove(cartIds, function(e){

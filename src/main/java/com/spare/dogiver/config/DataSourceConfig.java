@@ -19,6 +19,9 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
@@ -45,7 +48,6 @@ public class DataSourceConfig {
 	private final Environment env;
 	
     @Bean
-    @Profile("dev")
     public DataSource dataSource() {
     	
     	HikariConfig hikariConfig = new HikariConfig();
@@ -55,11 +57,11 @@ public class DataSourceConfig {
         hikariConfig.setPassword(password);
         
         HikariDataSource dataSource = new HikariDataSource(hikariConfig);
-        
-        if(getProfile().equals("dev")) getSchema(dataSource);
-        
+        if(getProfile().equals("test")) getSchema(dataSource);
         return dataSource;
     }
+	
+	
     
     @Bean
     public SqlSessionFactory sqlSessionFactory() throws Exception {

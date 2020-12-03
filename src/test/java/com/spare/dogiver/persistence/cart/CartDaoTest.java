@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spare.dogiver.domain.Cart;
+import com.spare.dogiver.domain.CartItem;
 import com.spare.dogiver.domain.Goods;
 import com.spare.dogiver.domain.Member;
 
@@ -37,6 +38,8 @@ public class CartDaoTest {
 		String email = "gh.yoon93@gmail.com";
 		
 		Cart cart = cartDao.findByEmail(email);
+		List<CartItem> cartItems = cart.getCartItems();
+		assertThat(cartItems.size()).isEqualTo(2);
 		assertThat(cart.getId()).isEqualTo(3L);
 	}
 

@@ -12,16 +12,18 @@ import lombok.Data;
 @Data
 @Component
 public class GoodsDTO {
-	private int goods_id;
-	private int category_code;
-	private String goods_name;
-	private int goods_price;
+	private int id;
+	private int categoryCode;
+	private String name;
+	private int price;
+	private String thumbnail;
+	private String detail;
+	private int quantity;
+	private int cumulativeSales;
+	private String onSale;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy.MM.dd HH:mm", timezone = "Asia/Seoul")
-	private Date goods_date;
-	private String goods_thumbnail;
-	private int goods_amt;
-	private String sales_yn;
-	private String goods_detail;
-	private int goods_cum_sales;
+	private Date createdDate;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy.MM.dd HH:mm", timezone = "Asia/Seoul")
+	private Date modifiedDate;
 
 }

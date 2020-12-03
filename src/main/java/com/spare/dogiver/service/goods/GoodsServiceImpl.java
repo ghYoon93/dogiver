@@ -25,7 +25,7 @@ public class GoodsServiceImpl implements GoodsService {
 
 	@Override
 	public GoodsDTO getGoodsDetail(String goods_id) {
-		return goodsDAO.getGoodsDetail(Integer.parseInt(goods_id));
+		return goodsDAO.getGoodsDetail(Long.parseLong(goods_id));
 	}
 
 	@Override
@@ -48,7 +48,9 @@ public class GoodsServiceImpl implements GoodsService {
 	@Override
 	public List<QnaDTO> getGoodsQnaList(String goods_id) {
 		System.out.println("serviceImpl:"+goods_id);
-		return goodsDAO.getGoodsQnaList(Integer.parseInt(goods_id));
+		Long id = Long.parseLong(goods_id);
+		System.out.println("serviceImpl:"+id.getClass().getName());
+		return goodsDAO.getGoodsQnaList(id);
 	}
 
 	@Override
@@ -59,7 +61,7 @@ public class GoodsServiceImpl implements GoodsService {
 	@Override
 	public List<QnaDTO> getGoodsReviewList(String goods_id) {
 		System.out.println(goods_id);
-		return goodsDAO.getGoodsReviewList(Integer.parseInt(goods_id));
+		return goodsDAO.getGoodsReviewList(Long.parseLong(goods_id));
 	}
 
 	@Override

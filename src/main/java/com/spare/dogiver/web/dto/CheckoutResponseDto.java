@@ -13,10 +13,10 @@ public class CheckoutResponseDto {
 	
 	public CheckoutResponseDto(Goods goods, Member member, int quantity) {
 		this.goods = Goods.builder()
-				.goodsId(goods.getGoodsId())
-				.goodsThumbnail(goods.getGoodsThumbnail())
-				.goodsName(goods.getGoodsName())
-				.goodsPrice(goods.getGoodsPrice())
+				.id(goods.getId())
+				.thumbnail(goods.getThumbnail())
+				.name(goods.getName())
+				.price(goods.getPrice())
 				.build();
 		
 		this.member = Member.builder()

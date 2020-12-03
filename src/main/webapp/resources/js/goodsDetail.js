@@ -22,7 +22,7 @@ function getContentTab(index){
 		url='review?goods_id='+$('#goods_id').val();
 	}
 	else if(index==4){
-		url=$('.discription div').load('../etc/delivery_info.html').css('text-align', 'left');
+		url=$('.discription div').load('../webapp/etc/delivery_info.html').css('text-align', 'left');
 	}
 
 	$.get(url, null, function(result){
@@ -47,12 +47,12 @@ $(document).ready(function(){
 		success: function(data){
 			//alert(JSON.stringify(data));
 
-			tag += '<div class="overview-image"><img src="/resources/img/goods/'+ data.goodsDTO.goods_thumbnail +'"></div>'
+			tag += '<div class="overview-image"><img src="/resources/img/goods/'+ data.goodsDTO.thumbnail +'"></div>'
 					+ '<div class="overview-content">'
-						+'<h1 id="goods_name" >'+ data.goodsDTO.goods_name +'</h1>'			
+						+'<h1 id="goods_name" >'+ data.goodsDTO.name +'</h1>'			
 						+'<div>'
 							+'<span>판매가</span>'
-							+'<span id="goods_price">'+ data.goodsDTO.goods_price +'</span>'	
+							+'<span id="goods_price">'+ data.goodsDTO.price +'</span>'	
 						+'</div>'
 						
 						+'<div class="delivery-fee" style="margin:20px 0; text-align: right">'
@@ -61,7 +61,7 @@ $(document).ready(function(){
 						+'</div>'
 						
 						+'<div class="option-wrap">'
-							+'<span class="goods-name">'+ data.goodsDTO.goods_name +'<br><br></span>'
+							+'<span class="goods-name">'+ data.goodsDTO.name +'<br><br></span>'
 							+'<div class="amount-wrap">'
 								+'<div class="count">'
 									+'<button id="minus">-</button>'
@@ -78,13 +78,13 @@ $(document).ready(function(){
 						+'</div>'
 					+'</div>';
 			
-			detail_image = '<img src="/resources/img/goods/'+ data.goodsDTO.goods_detail +'" >'; 
+			detail_image = '<img src="/resources/img/goods/'+ data.goodsDTO.detail +'" >'; 
 			
 			$('.overview').append(tag);
 			$('.discription div').append(detail_image).css('text-align', 'center');
 			
 			
-			price = data.goodsDTO.goods_price;
+			price = data.goodsDTO.price;
 			amt = $('#quantity').val();
 			
 			let num = numberFormat(price);
@@ -138,8 +138,8 @@ $(document).on('click','#btn-cart', function(){
 	let amt = $('#quantity').val();
 	
 	let cart = {
-			goods: {goodsId: goods_id},
-			cartCnt : amt
+			goods: {id: goods_id},
+			quantity : amt
 	};
 	
 	cartService.add(cart, function(cartId) {

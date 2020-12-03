@@ -25,9 +25,6 @@ public class CartSaveRequestDto {
     
     public Cart toEntity(Member member) {
     	return Cart.builder()
-    			.member(member)
-    			.goods(goods)
-    			.cartCnt(cartCnt)
     			.build();			
     }
 }

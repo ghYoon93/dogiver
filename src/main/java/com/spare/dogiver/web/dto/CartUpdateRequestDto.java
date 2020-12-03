@@ -17,7 +17,6 @@ public class CartUpdateRequestDto {
     
     public Cart toEntity() {
     	return Cart.builder()
-    			.cartCnt(cartCnt)
     			.build();		
     }
 }

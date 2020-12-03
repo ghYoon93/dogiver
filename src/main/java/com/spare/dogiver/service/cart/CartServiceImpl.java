@@ -24,31 +24,28 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
 
-@Log4j
 @RequiredArgsConstructor
 @Service
 public class CartServiceImpl implements CartService {
 	
 	private final CartDao cartDao;
 	private final CartItemDao cartItemDao;
-	private final GoodsDAO goodsDao;
 //	private final MemberDAO memberDao;
 	
 	@Transactional(readOnly = true)
 	@Override
 	public List<CartResponseDto> getCart(String email) {
-		List<CartResponseDto> cart = new ArrayList();
 		// email에 해당하는 cartId 구해오기
-		Long cartId = cartDao.findByEmail(email).getCartId();
-		// cartId에 해당하는 cartItem들 구해오기
-		List<CartItem> cartItems = cartItemDao.findAllByCartId(cartId);
-		// cartItem의 goodsId에 해당하는 Goods 구해오기
-		for(CartItem cartItem : cartItems) {
-			Long goodsId = cartItem.getGoodsId();
-			Goods goods = goodsDao.findGoodsById(goodsId);
-			cart.add(new CartResponseDto(cartItem, goods));
-		}
-		return cart;
+		Cart cart = cartDao.findByEmail(email);
+		
+		return cart.getCartItems()
+				.stream()
+				.map(CartResponseDto::new)
+				.collect(Collectors.toList());
+//		return cartItemDao.findAllByCartIdDesc(cartId)
+//				.stream()
+//				.map(CartResponseDto::new)
+//				.collect(Collectors.toList());
 	}
 	
 //	@Transactional

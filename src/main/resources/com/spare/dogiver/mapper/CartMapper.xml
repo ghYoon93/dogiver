@@ -7,23 +7,48 @@
     <id property="email" column="email"/>
   </resultMap>
   
-  <resultMap id="Goods" type="com.spare.dogiver.domain.Goods">
-    <id property="goodsId" column="goods_id"/>
-    <result property="goodsName" column="goods_name"/>
-    <result property="goodsPrice" column="goods_price"/>
-    <result property="goodsThumbnail" column="goods_thumbnail"/>
+  <resultMap id="GoodsResultMap" type="com.spare.dogiver.domain.Goods">
+    <id property="id" column="goods_id"/>
+    <result property="categoryCode" column="category_code"/>
+    <result property="name" column="name"/>
+    <result property="price" column="price"/>
+    <result property="thumbnail" column="thumbnail"/>
+    <result property="detail" column="detail"/>
+    <result property="amount" column="amount"/>
+    <result property="cumulativeSales" column="cumulative_sales"/>
+    <result property="onSale" column="on_sale"/>
   </resultMap>
   
-  <resultMap id="Cart" type="com.spare.dogiver.domain.Cart">
+  <resultMap id="CartItemResultMap" type="com.spare.dogiver.domain.CartItem">
+    <id property="id" column="id"/>
+  </resultMap>
+  
+	
+  <resultMap id="detailedCartResultMap" type="Cart">
     <id property="id" column="id" />
-    <result property="cartId" column="cart_id"/>
-    <result property="email" column="email"/>
-    <result property="cartCnt" column="cart_cnt"/>
-    <!-- <association property="goods" resultMap="Goods" />
-    <association property="member" resultMap="Member"/> -->
+    <result property="memberEmail" column="member_email"/>
+    <collection property="cartItems" ofType="com.spare.dogiver.domain.CartItem">
+       <id property="id" column="cart_item_id"/>
+       <result property="quantity" column="quantity"/>
+       <association property="goods" resultMap="GoodsResultMap"/>
+    </collection><!-- <association property="member" resultMap="Member"/> -->
   </resultMap>
   
-  <insert id="save" parameterType="Cart">
+  <select id="findByEmail" parameterType="String" resultMap="detailedCartResultMap">
+    SELECT /*+INDEX_DESC(cart pk_cart)*/
+           c.id as id
+         , c_i.id as cart_item_id
+         , c_i.quantity as quantity
+         , c_i.goods_id as goods_id
+         , g.thumbnail as thumbnail
+         , g.price as price
+      FROM cart c
+           INNER JOIN cart_item c_i ON c.id = c_i.cart_id
+           INNER JOIN goods g ON c_i.goods_id = g.id
+     WHERE member_email = #{email}
+  </select>
+  
+  <!-- <insert id="save" parameterType="Cart">
     <selectKey keyProperty="cartId" resultType="long" order="BEFORE">
      SELECT seq_cart.nextval FROM dual 
      </selectKey>
@@ -71,9 +96,7 @@
     SELECT * FROM cart WHERE goods_id = #{goods.goodsId} AND email = #{member.email}
   </select>
   
-  <select id="findByEmail" parameterType="String" resultMap="Cart">
-    SELECT * FROM cart WHERE email = #{email}
-  </select>
+  
   
   <update id="update" parameterType="Cart">
     UPDATE cart SET cart_cnt = #{cartCnt}, modified_date = SYSDATE WHERE cart_id = #{cartId} 
@@ -92,5 +115,5 @@
     <foreach collection="list" item="cartId" index="index" separator="," open="(" close=")">
       #{cartId.value}
     </foreach>
-  </delete>
+  </delete> -->
 </mapper>
