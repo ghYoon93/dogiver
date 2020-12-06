@@ -9,16 +9,19 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.spare.dogiver.domain.CartItem;
+import com.spare.dogiver.web.dto.CartItemSaveRequestDto;
 
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = { com.spare.dogiver.config.RootConfig.class })
-public class CartItemDaoTest {
+@Transactional
+public class CartItemDaoTests {
 	@Autowired
-	private CartItemMyBatis cartItemDao;
+	private CartItemDaoMyBatis cartItemDao;
 	
 	
 	@Test
@@ -27,6 +30,16 @@ public class CartItemDaoTest {
 		List<CartItem> cartItems = cartItemDao.findAllByCartIdDesc(cartId);
 		CartItem cartItem = cartItems.get(0);
 		assertThat(cartItem.getGoods().getId()).isEqualTo(1010001L);
+	}
+	
+	@Test
+	public void save() {
+		CartItemSaveRequestDto cartItemSaveRequestDto = CartItemSaveRequestDto.builder()
+				.goodsId(1010001L)
+				.quantity(3)
+				.build();
+		CartItem saved = cartItemDao.save(cartItemSaveRequestDto.toEntity(3L));
+		assertThat(saved.getId()).isEqualTo(3L);
 	}
 
 }

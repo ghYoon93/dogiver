@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Repository
-public class CartItemMyBatis implements CartItemDao {
+public class CartItemDaoMyBatis implements CartItemDao {
 	private final SqlSession sqlSession;
 
 //	@Override
@@ -22,6 +22,12 @@ public class CartItemMyBatis implements CartItemDao {
 	@Override
 	public List<CartItem> findAllByCartIdDesc(long cartId) {
 		return sqlSession.selectList("CartItemMapper.findAllByCartIdDesc", cartId);
+	}
+	
+	@Override
+	public CartItem save(CartItem cartItem) {
+		sqlSession.insert("CartItemMapper.save", cartItem);
+		return cartItem;
 	}
 
 }

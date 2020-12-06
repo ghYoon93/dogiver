@@ -1,17 +1,17 @@
 jQuery(document).ready(function(){
   /* variable */
-  let carts;
-  let cart;
+  let cartItems;
+  let cartItem;
   let totalPrice;
   let totalCount;
   let deliveryCharge;
 
   /* utility method */
   function checkCartCnt() {
-    if(cart.cartCnt < 1) {
-      cart.cartCnt = 1;
+    if(cartItem.quantity < 1) {
+      cartItem.quantity = 1;
     }
-    jQuery('#quantity').val(cart.cartCnt);
+    jQuery('#quantity').val(cartItem.quantity);
   }
 
   function cashFormat(number) {
@@ -20,7 +20,7 @@ jQuery(document).ready(function(){
 
   /* DOM method */
   function calcTot() {
-    jQuery('#tot_price').text(cashFormat(cart.cartCnt * cart.goodsPrice)+'원');
+    jQuery('#tot_price').text(cashFormat(cartItem.quantity * cartItem.price)+'원');
   }
 
   function closeModal() {
@@ -32,45 +32,45 @@ jQuery(document).ready(function(){
     totalPrice = 0;
     totalCount = 0;
     cartService.getList(function(list) {
-      carts = list;
+      cartItems = list;
       let html = [];
       let h = -1;
-      for(let cart, i = -1; cart = carts[++i];){
+      for(let cartItem, i = -1; cartItem = cartItems[++i];){
         html[++h] = '<tr>';
         html[++h] = '<td class="td_check">';
-        html[++h] = '<input type="checkbox" id="'+cart.cartId+'" name="goods" value="'+cart.cartId+'">';
-        html[++h] = '<label for="'+cart.cartId+'"/>';
+        html[++h] = '<input type="checkbox" id="'+cartItem.id+'" name="goods" value="'+cartItem.id+'">';
+        html[++h] = '<label for="'+cartItem.id+'"/>';
         html[++h] = '</td>';
         html[++h] = '<td class="td_left">';
         html[++h] = '<div class="cart_goods_cont">'; 
         html[++h] =  '<span class="cart_goods_image">';
-        html[++h] =  '<a href="'+cart.goodsId+'">';
-        html[++h] = '<img src="../resources/img/goods/'+cart.goodsThumbnail+'" class="middle" alt="'+cart.goodsName +'" title="'+cart.goodsName+'">';
+        html[++h] =  '<a href="'+cartItem.goodsId+'">';
+        html[++h] = '<img src="../resources/img/goods/'+cartItem.thumbnail+'" class="middle" alt="'+cartItem.name +'" title="'+cartItem.name+'">';
         html[++h] = '</a>';
         html[++h] = '</span>';
         html[++h] = '<div class="cart_goods_info">';
-        html[++h] = '<em><a href="../goods/goodsDetail?goods_id='+cart.goodsId+'">'+cart.goodsName+'</a></em>';
+        html[++h] = '<em><a href="../goods/goodsDetail?goods_id='+cartItem.goodsId+'">'+cartItem.name+'</a></em>';
         html[++h] = '</div>';
         html[++h] = '</div>';
         html[++h] = '</td>';
         html[++h] = '<td class=td_order_amount>';
         html[++h] = '<div class="cart_goods_num">';
-        html[++h] = '<strong>'+cashFormat(cart.cartCnt)+'</strong><font>개</font>';
+        html[++h] = '<strong>'+cashFormat(cartItem.quantity)+'</strong><font>개</font>';
         html[++h] = '<div class="btn_option">';
         html[++h] = '<button type="button" class="btn_option_view"';
-        html[++h] = 'data-cartId="'+cart.cartId+'"';
-        html[++h] = 'data-id="'+cart.goodsId+'"';
-        html[++h] = 'data-img="'+cart.goodsThumbnail+'"';
-        html[++h] = 'data-name="'+cart.goodsName+'"';
-        html[++h] = 'data-cnt="'+cart.cartCnt+'"';
-        html[++h] = 'data-price="'+cart.goodsPrice+'"';
-        html[++h] = 'data-total_price="'+cart.totalPrice+'">';
+        html[++h] = 'data-cartId="'+cartItem.id+'"';
+        html[++h] = 'data-id="'+cartItem.goodsId+'"';
+        html[++h] = 'data-img="'+cartItem.thumbnail+'"';
+        html[++h] = 'data-name="'+cartItem.name+'"';
+        html[++h] = 'data-cnt="'+cartItem.quantity+'"';
+        html[++h] = 'data-price="'+cartItem.price+'"';
+        html[++h] = 'data-total_price="'+cartItem.totalPrice+'">';
         html[++h] = '수량 변경</button>';
         html[++h] = '</div>';
         html[++h] = '</div>';
         html[++h] = '</td>';
-        html[++h] = '<td><strong>'+ cashFormat(cart.goodsPrice)+'원</strong></td>';
-        html[++h] = '<td><strong>'+ cashFormat(cart.totalPrice)+'원</strong></td>';
+        html[++h] = '<td><strong>'+ cashFormat(cartItem.price)+'원</strong></td>';
+        html[++h] = '<td><strong>'+ cashFormat(cartItem.totalPrice)+'원</strong></td>';
         html[++h] = '</tr>';
       }
       jQuery('#cart-table tbody').html(html.join(' '));
@@ -94,18 +94,18 @@ jQuery(document).ready(function(){
 
   jQuery(document).on('change', 'input:checkbox[name="goods"]', function() {
     let idx = jQuery('input:checkbox[name = "goods"]').index(this);
-    cart = carts[idx];
+    cartItem = cartItems[idx];
   
     if(this.checked) {
-      totalPrice += parseInt(cart.totalPrice);
+      totalPrice += parseInt(cartItem.totalPrice);
       totalCount++;
       deliveryCharge = 2500;
 
-      if(totalCount == carts.length) {
+      if(totalCount == cartItems.length) {
         jQuery('#check-all').prop('checked', true);
       }
     }else {
-      totalPrice -= parseInt(cart.totalPrice);
+      totalPrice -= parseInt(cartItem.totalPrice);
       totalCount--;
       jQuery('#check-all').prop('checked', false);
 
@@ -119,15 +119,15 @@ jQuery(document).ready(function(){
   jQuery(document).on('click','.btn_option_view', function(e) {
     cartService.get(parseInt(this.dataset.cartid), function(result) {
       cart = result;
-      jQuery('#option-view').find('input:checkbox[name="cart_id"]').val(cart.cartId);
+      jQuery('#option-view').find('input:checkbox[name="cart_id"]').val(cartItem.id);
       jQuery('#option-view').find('img').attr({
-        src : '/resources/img/goods/'+cart.goodsThumbnail,
-        alt : cart.goodsName,
-        title : cart.goodsName
+        src : '/resources/img/goods/'+cartItem.thumbnail,
+        alt : cartItem.name,
+        title : cartItem.name
       });
-      jQuery('#option-view').find('.goods_name').text(cart.goodsName);
-      jQuery('#quantity').val(cart.cartCnt);
-      jQuery('#tot_price').text(cashFormat(cart.totalPrice)+'원');
+      jQuery('#option-view').find('.goods_name').text(cartItem.name);
+      jQuery('#quantity').val(cartItem.quantity);
+      jQuery('#tot_price').text(cashFormat(cartItem.totalPrice)+'원');
     });
 
     jQuery('#option-view').show();
@@ -139,19 +139,19 @@ jQuery(document).ready(function(){
   });
 
   jQuery('#quantity').on('change', function(e){
-    cart.cartCnt = jQuery(this).val();
+    cartItem.quantity = jQuery(this).val();
     checkCartCnt();
     calcTot();
     });
 
   jQuery('#minus').on('click', function(e){
-    cart.cartCnt--;
+    cartItem.quantity--;
     checkCartCnt();
     calcTot();
   });
 
   jQuery('#plus').on('click', function(e) {
-    cart.cartCnt++;
+    cartItem.quantity++;
     checkCartCnt();
     calcTot();
   });
@@ -161,7 +161,7 @@ jQuery(document).ready(function(){
   });
 
   jQuery('.changeCnt').click(function(e) {
-    cartService.update(cart);
+    cartService.update(cartItem);
     closeModal();
     showList();
   });

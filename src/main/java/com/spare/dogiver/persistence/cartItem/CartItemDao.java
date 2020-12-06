@@ -8,4 +8,6 @@ public interface CartItemDao {
 //    List<CartItem> findAllByCartId(Long cartId);
 
 	List<CartItem> findAllByCartIdDesc(long cartId);
+
+	CartItem save(CartItem cartItem);
 }

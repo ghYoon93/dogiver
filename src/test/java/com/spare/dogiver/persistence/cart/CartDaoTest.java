@@ -37,7 +37,7 @@ public class CartDaoTest {
 	public void findByEmail() {
 		String email = "gh.yoon93@gmail.com";
 		
-		Cart cart = cartDao.findByEmail(email);
+		Cart cart = cartDao.findByEmail(email).orElse(null);
 		List<CartItem> cartItems = cart.getCartItems();
 		assertThat(cartItems.size()).isEqualTo(2);
 		assertThat(cart.getId()).isEqualTo(3L);

@@ -2,6 +2,7 @@ package com.spare.dogiver.service.cart;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
@@ -36,16 +37,12 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public List<CartResponseDto> getCart(String email) {
 		// email에 해당하는 cartId 구해오기
-		Cart cart = cartDao.findByEmail(email);
-		
+		// orElse는 값이 있던 없던 무조건 실행 -> orElseGet
+		Cart cart = cartDao.findByEmail(email).orElseGet(()->cartDao.save(Cart.builder().email(email).build()));
 		return cart.getCartItems()
 				.stream()
 				.map(CartResponseDto::new)
 				.collect(Collectors.toList());
-//		return cartItemDao.findAllByCartIdDesc(cartId)
-//				.stream()
-//				.map(CartResponseDto::new)
-//				.collect(Collectors.toList());
 	}
 	
 //	@Transactional

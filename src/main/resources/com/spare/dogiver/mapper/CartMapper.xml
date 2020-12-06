@@ -40,6 +40,7 @@
          , c_i.id as cart_item_id
          , c_i.quantity as quantity
          , c_i.goods_id as goods_id
+         , g.name as name
          , g.thumbnail as thumbnail
          , g.price as price
       FROM cart c
@@ -48,15 +49,19 @@
      WHERE member_email = #{email}
   </select>
   
-  <!-- <insert id="save" parameterType="Cart">
-    <selectKey keyProperty="cartId" resultType="long" order="BEFORE">
+  <insert id="save" parameterType="com.spare.dogiver.domain.Cart">
+    <selectKey keyProperty="id" resultType="Long" order="BEFORE">
      SELECT seq_cart.nextval FROM dual 
      </selectKey>
-    INSERT INTO cart(cart_id, email, goods_id, cart_cnt) 
-                VALUES(#{cartId}, #{member.email}, #{goods.goodsId}, #{cartCnt})
+    INSERT INTO cart(id, member_email) 
+                VALUES(#{id}, #{email})
 
   </insert>
   
+  <select id="findById" parameterType="Long" resultType="com.spare.dogiver.domain.Cart">
+      SELECT * FROM cart WHERE id = #{id};
+  </select>
+  <!-- 
   <select id="findAll" resultMap="Cart">
     SELECT * FROM cart
   </select>

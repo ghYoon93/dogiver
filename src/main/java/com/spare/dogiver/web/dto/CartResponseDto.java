@@ -9,9 +9,9 @@ import lombok.Getter;
 public class CartResponseDto {
     private Long id;
     private Long goodsId;
-    private String goodsName;
-    private String goodsThumbnail;
-    private int goodsPrice;
+    private String name;
+    private String thumbnail;
+    private int price;
     private int quantity;
     private int totalPrice;
     
@@ -19,10 +19,10 @@ public class CartResponseDto {
     	this.id = cartItem.getId();
     	this.quantity = cartItem.getQuantity();
     	this.goodsId = cartItem.getGoods().getId();
-    	this.goodsThumbnail = cartItem.getGoods().getThumbnail();
-    	this.goodsName = cartItem.getGoods().getName();
-    	this.goodsPrice = cartItem.getGoods().getPrice();
-    	this.totalPrice = quantity * goodsPrice;
+    	this.thumbnail = cartItem.getGoods().getThumbnail();
+    	this.name = cartItem.getGoods().getName();
+    	this.price = cartItem.getGoods().getPrice();
+    	this.totalPrice = quantity * price;
     }    
 }
 

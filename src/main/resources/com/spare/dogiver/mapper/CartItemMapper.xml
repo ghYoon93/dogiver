@@ -5,16 +5,16 @@
 <mapper namespace="CartItemMapper">
 
   <resultMap id="Goods" type="com.spare.dogiver.domain.Goods">
-    <id property="goodsId" column="goods_id"/>
-    <result property="goodsName" column="goods_name"/>
-    <result property="goodsPrice" column="goods_price"/>
-    <result property="goodsThumbnail" column="goods_thumbnail"/>
+    <id property="id" column="goods_id"/>
+    <result property="name" column="goods_name"/>
+    <result property="price" column="goods_price"/>
+    <result property="thumbnail" column="goods_thumbnail"/>
   </resultMap>
   
   <resultMap id="CartItem" type="com.spare.dogiver.domain.CartItem">
     <id property="id" column="id" />
     <result property="cartId" column="cart_id"/>
-    <result property="cartCnt" column="cart_cnt"/>
+    <result property="quantity" column="quantity"/>
     <association property="goods" resultMap="Goods"/>    
   </resultMap>
   
@@ -22,14 +22,22 @@
   <select id="findAllByCartIdDesc" parameterType="Long" resultMap="CartItem">
     SELECT /*+INDEX_DESC(cart pk_cart_item)*/
            c_i.id as id
-         , c_i.cart_cnt as cart_cnt
-         , g.goods_thumbnail as goods_thumbnail
-         , g.goods_id as goods_id
-         , g.goods_name as goods_name
-         , g.goods_price as goods_price
+         , c_i.quantity as quantity
+         , g.thumbnail as goods_thumbnail
+         , g.id as goods_id
+         , g.name as goods_name
+         , g.price as goods_price
       FROM cart_item c_i
-           INNER JOIN goods g on c_i.goods_id = g.goods_id
+           INNER JOIN goods g on c_i.goods_id = g.id
      WHERE c_i.cart_id = #{cartId}
   </select>
+  
+  <insert id="save" parameterType="com.spare.dogiver.domain.CartItem">
+    <selectKey keyProperty="id" resultType="Long" order="BEFORE">
+    SELECT seq_cart_item.nextval FROM dual 
+    </selectKey>
+    INSERT INTO cart_item(id, cart_id, goods_id, quantity) 
+                VALUES(#{id}, #{cartId}, #{goods.id}, #{quantity})
+  </insert>
   
 </mapper>

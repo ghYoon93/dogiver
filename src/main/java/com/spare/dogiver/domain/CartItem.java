@@ -17,8 +17,9 @@ public class CartItem {
 	private Date modifedDate;
 	
 	@Builder
-	public CartItem(Long id, Goods goods, int quantity) {
+	public CartItem(Long id, Long cartId, Goods goods, int quantity) {
 		this.id = id;
+		this.cartId = cartId;
 		this.goods = goods;
 		this.quantity = quantity;
 	}

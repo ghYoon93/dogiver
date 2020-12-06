@@ -12,5 +12,5 @@ Insert into cart (id, member_email) VALUES(3, 'gh.yoon93@gmail.com');
 --INSERT INTO cart(cart_id, email, goods_id, cart_cnt) 
 --                VALUES(seq_cart.nextval, 'gh.yoon93@gmail.com', 1010001, 3);
 
-Insert into cart_item(id, goods_id, cart_id, quantity) VALUES(1, 1010001, 3, 4);
-Insert into cart_item(id, goods_id, cart_id, quantity) VALUES(2, 1010002, 3, 10);
+Insert into cart_item(id, goods_id, cart_id, quantity) VALUES(seq_cart_item.nextval, 1010001, 3, 4);
+Insert into cart_item(id, goods_id, cart_id, quantity) VALUES(seq_cart_item.nextval, 1010002, 3, 10);

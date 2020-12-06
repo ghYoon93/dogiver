@@ -3,6 +3,7 @@ package com.spare.dogiver.domain;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -20,27 +21,18 @@ public class Cart {
 	private Date createdDate;
 	private Date modifedDate;
 	
-	List<CartItem> cartItems;
+	List<CartItem> cartItems = new ArrayList<CartItem>();
 	
 	@Builder
 	public Cart(Long id, String email) {
 		this.id = id;
 		this.email = email;
 	}
-//	@Builder
-//	public Cart(Member member, Goods goods, int cartCnt) {
-//		this.member = member;
-//		this.goods = goods;
-//		this.cartCnt = cartCnt;
-//	}
 	
 	public void update(int cartCnt) {
 		this.cartCnt = cartCnt;
 	}
 	
-//	public int getTotalPrice() {
-//		return this.cartCnt * this.goods.getGoodsPrice(); 
-//	}
 	
 	public void setCartItems(List<CartItem> cartItems) {
 		this.cartItems = cartItems;
@@ -48,5 +40,10 @@ public class Cart {
 	
 	public boolean hasCartId() {
 		return this.id != 0L ? true : false;
+	}
+	public Optional<CartItem> getCartItem(Long goodsId) {
+		return cartItems.stream()
+				.filter(cartItem -> cartItem.getGoods().getId().equals(goodsId))
+				.findFirst();
 	}
 }

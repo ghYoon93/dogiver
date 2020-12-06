@@ -1,6 +1,7 @@
 package com.spare.dogiver.persistence.cart;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -17,10 +18,10 @@ public class CartDaoMyBatis implements CartDao {
 	private final SqlSession sqlSession;
 	
 	@Override
-	public Long save(Cart cart) {
+	public Cart save(Cart cart) {
 		
-		sqlSession.insert("CartMapper.save", cart);
-		return cart.getId();
+		Long id = (long) sqlSession.insert("CartMapper.save", cart);
+		return sqlSession.selectOne("CartMapper.findById", id);
 		
 	}
 	
@@ -67,8 +68,10 @@ public class CartDaoMyBatis implements CartDao {
 		return result;
 	}
 	@Override
-	public Cart findByEmail(String email) {
-		return sqlSession.selectOne("CartMapper.findByEmail", email);
+	public Optional<Cart> findByEmail(String email) {
+		Cart cart = sqlSession.selectOne("CartMapper.findByEmail", email);
+		return Optional.of(cart);
+		
 	}
 
 	@Override

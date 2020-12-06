@@ -134,18 +134,18 @@ $(document).on('click','#btn-order', function(){
 /*장바구니 추가하기*/
 $(document).on('click','#btn-cart', function(){
 	
-	let goods_id = $('#goods_id').val();
-	let amt = $('#quantity').val();
+	let goodsId = $('#goods_id').val();
+	let quantity = $('#quantity').val();
 	
-	let cart = {
-			goods: {id: goods_id},
-			quantity : amt
+	let cartItem = {
+			"goodsId":goodsId,
+			"quantity":quantity
 	};
 	
-	cartService.add(cart, function(cartId) {
+	cartItemService.add(cartItem, function(id) {
 		
 		let msg = '상품을 장바구니에 담았습니다.\n확인하시겠습니까?';
-		if(cartId == 0) {
+		if(id == 0) {
 			msg = '동일한 상품이 장바구니에 존재합니다.\n확인하시겠습니까?';
 		}
 		let result = confirm(msg);

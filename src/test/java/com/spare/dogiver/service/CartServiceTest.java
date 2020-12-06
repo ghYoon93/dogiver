@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -62,7 +63,7 @@ public class CartServiceTest {
 		CartItem cartItem = CartItem.builder().id(1001L).quantity(3).goods(goods).build();
 		cartItems.add(cartItem);
 		cart.setCartItems(cartItems);
-		given(cartDao.findByEmail(email)).willReturn(cart);
+		given(cartDao.findByEmail(email)).willReturn(Optional.of(cart));
 	}
 	
 	private void mockCartItemDao() {
@@ -83,7 +84,7 @@ public class CartServiceTest {
 		List<CartResponseDto> cart = cartService.getCart("gh.yoon93@gmail.com");
 		CartResponseDto dto = cart.get(0);
 		assertThat(dto.getQuantity()).isEqualTo(3);
-		assertThat(dto.getGoodsName()).isEqualTo("핸드메이드 강아지 로프 장난감");
+		assertThat(dto.getName()).isEqualTo("핸드메이드 강아지 로프 장난감");
 		
 		
 	}
