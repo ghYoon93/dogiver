@@ -11,8 +11,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.spare.dogiver.order.service.OrderService;
-import com.spare.dogiver.web.dto.CheckoutRequestDto;
-import com.spare.dogiver.web.dto.CheckoutResponseDto;
+import com.spare.dogiver.order.dto.CheckoutRequestDto;
+import com.spare.dogiver.order.dto.CheckoutResponseDto;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { com.spare.dogiver.config.RootConfig.class })
