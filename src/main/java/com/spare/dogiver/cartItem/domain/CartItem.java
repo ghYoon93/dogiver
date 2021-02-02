@@ -1,6 +1,8 @@
-package com.spare.dogiver.domain;
+package com.spare.dogiver.cartItem.domain;
 
 import java.util.Date;
+
+import com.spare.dogiver.domain.Goods;
 
 import lombok.Builder;
 import lombok.Getter;

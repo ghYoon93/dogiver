@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spare.dogiver.cart.domain.Cart;
-import com.spare.dogiver.domain.CartItem;
+import com.spare.dogiver.cartItem.domain.CartItem;
 import com.spare.dogiver.domain.Goods;
 import com.spare.dogiver.domain.Member;
 

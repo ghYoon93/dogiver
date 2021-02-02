@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import com.spare.dogiver.cart.domain.Cart;
-import com.spare.dogiver.domain.CartItem;
 
 public interface CartDao {
 	public Cart save(Cart cart);

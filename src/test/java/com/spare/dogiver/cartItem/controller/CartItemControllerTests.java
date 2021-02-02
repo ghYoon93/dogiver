@@ -1,4 +1,4 @@
-package com.spare.dogiver.web;
+package com.spare.dogiver.cartItem.controller;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -27,8 +27,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spare.dogiver.config.RootConfig;
 import com.spare.dogiver.config.ServletConfig;
-import com.spare.dogiver.service.cartItem.CartItemService;
-import com.spare.dogiver.cart.dto.CartItemSaveRequestDto;
+import com.spare.dogiver.cartItem.service.CartItemService;
+import com.spare.dogiver.cartItem.dto.CartItemSaveRequestDto;
 
 
 

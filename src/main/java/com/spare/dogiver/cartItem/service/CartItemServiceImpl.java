@@ -1,12 +1,12 @@
-package com.spare.dogiver.service.cartItem;
+package com.spare.dogiver.cartItem.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.spare.dogiver.domain.Cart;
-import com.spare.dogiver.persistence.cart.CartDao;
-import com.spare.dogiver.persistence.cartItem.CartItemDao;
-import com.spare.dogiver.web.dto.CartItemSaveRequestDto;
+import com.spare.dogiver.cart.domain.Cart;
+import com.spare.dogiver.cart.dao.CartDao;
+import com.spare.dogiver.cartItem.dao.CartItemDao;
+import com.spare.dogiver.cartItem.dto.CartItemSaveRequestDto;
 
 import lombok.RequiredArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.spare.dogiver.service.cartItem;
+package com.spare.dogiver.cartItem.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
@@ -18,11 +18,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.spare.dogiver.cart.domain.Cart;
-import com.spare.dogiver.domain.CartItem;
+import com.spare.dogiver.cartItem.domain.CartItem;
 import com.spare.dogiver.cart.dao.CartDao;
-import com.spare.dogiver.persistence.cartItem.CartItemDao;
+import com.spare.dogiver.cartItem.dao.CartItemDao;
 import com.spare.dogiver.cart.service.CartServiceImpl;
-import com.spare.dogiver.cart.dto.CartItemSaveRequestDto;
+import com.spare.dogiver.cartItem.dto.CartItemSaveRequestDto;
 
 public class CartItemServiceImplTests {
     private CartItemService cartItemService;

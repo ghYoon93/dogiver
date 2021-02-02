@@ -1,4 +1,4 @@
-package com.spare.dogiver.persistence.cartItem;
+package com.spare.dogiver.cartItem.dao;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -11,8 +11,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.spare.dogiver.domain.CartItem;
-import com.spare.dogiver.cart.dto.CartItemSaveRequestDto;
+import com.spare.dogiver.cartItem.domain.CartItem;
+import com.spare.dogiver.cartItem.dto.CartItemSaveRequestDto;
 
 import lombok.extern.log4j.Log4j;
 
