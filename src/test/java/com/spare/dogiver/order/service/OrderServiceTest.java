@@ -1,4 +1,4 @@
-package com.spare.dogiver.service;
+package com.spare.dogiver.order.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.spare.dogiver.service.order.OrderService;
+import com.spare.dogiver.order.service.OrderService;
 import com.spare.dogiver.web.dto.CheckoutRequestDto;
 import com.spare.dogiver.web.dto.CheckoutResponseDto;
 

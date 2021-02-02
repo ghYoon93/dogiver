@@ -1,4 +1,4 @@
-package com.spare.dogiver.web.dto;
+package com.spare.dogiver.order.dto;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;

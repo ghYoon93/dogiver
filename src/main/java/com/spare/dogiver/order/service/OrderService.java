@@ -1,16 +1,16 @@
-package com.spare.dogiver.service.order;
+package com.spare.dogiver.order.service;
 
 import java.util.List;
 import java.util.Map;
 
-import com.spare.dogiver.web.dto.CartDTO;
-import com.spare.dogiver.web.dto.CheckoutRequestDto;
-import com.spare.dogiver.web.dto.CheckoutResponseDto;
-import com.spare.dogiver.web.dto.KakaoPayApprovalDTO;
-import com.spare.dogiver.web.dto.OrderDTO;
-import com.spare.dogiver.web.dto.OrderDetailDTO;
-import com.spare.dogiver.web.dto.OrderListDTO;
-import com.spare.dogiver.web.dto.OrderStatusDTO;
+import com.spare.dogiver.cart.dto.CartDTO;
+import com.spare.dogiver.order.dto.CheckoutRequestDto;
+import com.spare.dogiver.order.dto.CheckoutResponseDto;
+import com.spare.dogiver.order.dto.KakaoPayApprovalDTO;
+import com.spare.dogiver.order.dto.OrderDTO;
+import com.spare.dogiver.order.dto.OrderDetailDTO;
+import com.spare.dogiver.order.dto.OrderListDTO;
+import com.spare.dogiver.order.dto.OrderStatusDTO;
 
 public interface OrderService {
 

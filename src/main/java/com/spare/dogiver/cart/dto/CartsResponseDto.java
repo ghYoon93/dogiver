@@ -2,7 +2,7 @@ package com.spare.dogiver.cart.dto;
 
 import com.spare.dogiver.cart.domain.Cart;
 import com.spare.dogiver.domain.Goods;
-import com.spare.dogiver.domain.Member;
+import com.spare.dogiver.member.domain.Member;
 
 import lombok.Getter;
 

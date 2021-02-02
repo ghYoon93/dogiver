@@ -1,4 +1,4 @@
-package com.spare.dogiver.web;
+package com.spare.dogiver.order.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,15 +19,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spare.dogiver.service.goods.GoodsService;
-import com.spare.dogiver.service.member.MemberService;
-import com.spare.dogiver.service.order.OrderService;
-import com.spare.dogiver.web.dto.CartDTO;
-import com.spare.dogiver.web.dto.KakaoPayApprovalDTO;
-import com.spare.dogiver.web.dto.MemberDTO;
-import com.spare.dogiver.web.dto.OrderDTO;
-import com.spare.dogiver.web.dto.OrderDetailDTO;
-import com.spare.dogiver.web.dto.OrderListDTO;
-import com.spare.dogiver.web.dto.OrderStatusDTO;
+import com.spare.dogiver.member.service.MemberService;
+import com.spare.dogiver.order.service.OrderService;
+import com.spare.dogiver.cart.dto.CartDTO;
+import com.spare.dogiver.order.dto.KakaoPayApprovalDTO;
+import com.spare.dogiver.member.dto.MemberDTO;
+import com.spare.dogiver.order.dto.OrderDTO;
+import com.spare.dogiver.order.dto.OrderDetailDTO;
+import com.spare.dogiver.order.dto.OrderListDTO;
+import com.spare.dogiver.order.dto.OrderStatusDTO;
 
 @Controller
 public class OrderController {

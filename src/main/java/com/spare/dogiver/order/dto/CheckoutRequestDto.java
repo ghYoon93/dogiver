@@ -1,4 +1,4 @@
-package com.spare.dogiver.web.dto;
+package com.spare.dogiver.order.dto;
 
 import lombok.Builder;
 import lombok.Getter;
