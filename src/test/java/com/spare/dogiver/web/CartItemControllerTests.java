@@ -28,7 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spare.dogiver.config.RootConfig;
 import com.spare.dogiver.config.ServletConfig;
 import com.spare.dogiver.service.cartItem.CartItemService;
-import com.spare.dogiver.web.dto.CartItemSaveRequestDto;
+import com.spare.dogiver.cart.dto.CartItemSaveRequestDto;
 
 
 

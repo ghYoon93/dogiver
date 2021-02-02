@@ -1,4 +1,4 @@
-package com.spare.dogiver.web;
+package com.spare.dogiver.cart.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
@@ -41,16 +41,16 @@ import org.springframework.web.context.WebApplicationContext;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spare.dogiver.config.RootConfig;
 import com.spare.dogiver.config.ServletConfig;
-import com.spare.dogiver.domain.Cart;
+import com.spare.dogiver.cart.domain.Cart;
 import com.spare.dogiver.domain.CartItem;
 import com.spare.dogiver.domain.Goods;
 import com.spare.dogiver.domain.Member;
-import com.spare.dogiver.persistence.cart.CartDao;
-import com.spare.dogiver.service.cart.CartService;
-import com.spare.dogiver.service.cart.CartServiceImpl;
-import com.spare.dogiver.web.dto.CartResponseDto;
-import com.spare.dogiver.web.dto.CartSaveRequestDto;
-import com.spare.dogiver.web.dto.CartUpdateRequestDto;
+import com.spare.dogiver.cart.dao.CartDao;
+import com.spare.dogiver.cart.service.CartService;
+import com.spare.dogiver.cart.service.CartServiceImpl;
+import com.spare.dogiver.cart.dto.CartResponseDto;
+import com.spare.dogiver.cart.dto.CartSaveRequestDto;
+import com.spare.dogiver.cart.dto.CartUpdateRequestDto;
 
 @RunWith(MockitoJUnitRunner.class)
 @WebAppConfiguration
