@@ -1,4 +1,4 @@
-package com.spare.dogiver.service.cart;
+package com.spare.dogiver.cart.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,18 +8,18 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.spare.dogiver.domain.Cart;
-import com.spare.dogiver.domain.CartItem;
+import com.spare.dogiver.cart.domain.Cart;
+import com.spare.dogiver.cartItem.domain.CartItem;
 import com.spare.dogiver.domain.Goods;
-import com.spare.dogiver.domain.Member;
-import com.spare.dogiver.persistence.cart.CartDao;
-import com.spare.dogiver.persistence.cartItem.CartItemDao;
+import com.spare.dogiver.member.domain.Member;
+import com.spare.dogiver.cart.dao.CartDao;
+import com.spare.dogiver.cartItem.dao.CartItemDao;
 import com.spare.dogiver.persistence.goods.GoodsDAO;
-import com.spare.dogiver.persistence.member.MemberDAO;
-import com.spare.dogiver.web.dto.CartsResponseDto;
-import com.spare.dogiver.web.dto.CartResponseDto;
-import com.spare.dogiver.web.dto.CartSaveRequestDto;
-import com.spare.dogiver.web.dto.CartUpdateRequestDto;
+import com.spare.dogiver.member.dao.MemberDAO;
+import com.spare.dogiver.cart.dto.CartsResponseDto;
+import com.spare.dogiver.cart.dto.CartResponseDto;
+import com.spare.dogiver.cart.dto.CartSaveRequestDto;
+import com.spare.dogiver.cart.dto.CartUpdateRequestDto;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -89,10 +89,10 @@ public class CartServiceImpl implements CartService {
 //		cartDao.delete(cartId);
 //	}
 //
-//	@Override
-//	public void deleteByIdIn(List<Long> cartIds) {
-//		cartDao.deleteByIdIn(cartIds);
-//		
-//	}
+	@Override
+	public void deleteByIdIn(List<Long> cartIds) {
+		cartDao.deleteByIdIn(cartIds);
+		
+	}
 
 }

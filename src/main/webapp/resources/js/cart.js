@@ -167,19 +167,19 @@ jQuery(document).ready(function(){
   });
 
   jQuery('#btnDelete').on('click', function(e) {
-		let count = jQuery('input[name=goods]:checked').length;
+		const checkGoods = jQuery('input[name=goods]:checked');
+		const count = checkGoods.length;
 		if (count == 0) {
 			alert('선택하신 상품이 없습니다. 상품을 선택해주세요.');
 			return false;
 		}
 
 		if(confirm('선택하신 '+count+'개의 상품을 삭제하시겠습니까?')) {
-			alert('cartService.delete');
-			let checkGoods = jQuery('input[name=goods]:checked');
 			let cartIds = [];
-			checkeach(function(e) {
-			  cartIds.push(parseInt(this.value));
+			checkGoods.each(function() {
+				cartIds.push(this.value);
 			});
+			console.log(cartIds);
 			cartService.remove(cartIds, function(e){
 			  showList();
 			});
