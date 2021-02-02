@@ -1,9 +1,9 @@
-package com.spare.dogiver.persistence.cart;
+package com.spare.dogiver.cart.dao;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.spare.dogiver.domain.Cart;
+import com.spare.dogiver.cart.domain.Cart;
 import com.spare.dogiver.domain.CartItem;
 
 public interface CartDao {

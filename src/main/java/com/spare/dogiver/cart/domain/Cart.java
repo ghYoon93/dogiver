@@ -1,9 +1,11 @@
-package com.spare.dogiver.domain;
+package com.spare.dogiver.cart.domain;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
+import com.spare.dogiver.domain.CartItem;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -17,12 +17,12 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.spare.dogiver.domain.Cart;
+import com.spare.dogiver.cart.domain.Cart;
 import com.spare.dogiver.domain.CartItem;
-import com.spare.dogiver.persistence.cart.CartDao;
+import com.spare.dogiver.cart.dao.CartDao;
 import com.spare.dogiver.persistence.cartItem.CartItemDao;
-import com.spare.dogiver.service.cart.CartServiceImpl;
-import com.spare.dogiver.web.dto.CartItemSaveRequestDto;
+import com.spare.dogiver.cart.service.CartServiceImpl;
+import com.spare.dogiver.cart.dto.CartItemSaveRequestDto;
 
 public class CartItemServiceImplTests {
     private CartItemService cartItemService;

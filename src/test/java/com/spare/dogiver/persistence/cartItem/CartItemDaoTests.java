@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spare.dogiver.domain.CartItem;
-import com.spare.dogiver.web.dto.CartItemSaveRequestDto;
+import com.spare.dogiver.cart.dto.CartItemSaveRequestDto;
 
 import lombok.extern.log4j.Log4j;
 
