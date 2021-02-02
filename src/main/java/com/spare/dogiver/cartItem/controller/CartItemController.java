@@ -1,4 +1,4 @@
-package com.spare.dogiver.web;
+package com.spare.dogiver.cartItem.controller;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spare.dogiver.service.cartItem.CartItemService;
-import com.spare.dogiver.web.dto.CartItemSaveRequestDto;
-import com.spare.dogiver.web.dto.CartSaveRequestDto;
+import com.spare.dogiver.cartItem.service.CartItemService;
+import com.spare.dogiver.cartItem.dto.CartItemSaveRequestDto;
 
 import lombok.RequiredArgsConstructor;
 

@@ -42,7 +42,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spare.dogiver.config.RootConfig;
 import com.spare.dogiver.config.ServletConfig;
 import com.spare.dogiver.cart.domain.Cart;
-import com.spare.dogiver.domain.CartItem;
+import com.spare.dogiver.cartItem.domain.CartItem;
 import com.spare.dogiver.domain.Goods;
 import com.spare.dogiver.domain.Member;
 import com.spare.dogiver.cart.dao.CartDao;

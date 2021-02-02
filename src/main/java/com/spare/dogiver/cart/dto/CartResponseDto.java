@@ -1,7 +1,6 @@
 package com.spare.dogiver.cart.dto;
 
-import com.spare.dogiver.domain.CartItem;
-import com.spare.dogiver.domain.Goods;
+import com.spare.dogiver.cartItem.domain.CartItem;
 
 import lombok.Getter;
 

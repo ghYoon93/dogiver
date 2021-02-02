@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import com.spare.dogiver.domain.CartItem;
+import com.spare.dogiver.cartItem.domain.CartItem;
 
 import lombok.Builder;
 import lombok.Getter;

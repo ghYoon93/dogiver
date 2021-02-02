@@ -1,29 +1,38 @@
-package com.spare.dogiver.persistence.order;
+package com.spare.dogiver.order.service;
 
 import java.util.List;
 import java.util.Map;
 
-import com.spare.dogiver.web.dto.CartDTO;
+import com.spare.dogiver.cart.dto.CartDTO;
+import com.spare.dogiver.web.dto.CheckoutRequestDto;
+import com.spare.dogiver.web.dto.CheckoutResponseDto;
 import com.spare.dogiver.web.dto.KakaoPayApprovalDTO;
-import com.spare.dogiver.web.dto.OrderDTO;
-import com.spare.dogiver.web.dto.OrderDetailDTO;
-import com.spare.dogiver.web.dto.OrderListDTO;
-import com.spare.dogiver.web.dto.OrderStatusDTO;
+import com.spare.dogiver.order.dto.OrderDTO;
+import com.spare.dogiver.order.dto.OrderDetailDTO;
+import com.spare.dogiver.order.dto.OrderListDTO;
+import com.spare.dogiver.order.dto.OrderStatusDTO;
 
-public interface OrderDAO {
+public interface OrderService {
 
 	public List<CartDTO> getCart(String memEmail);
-	
+
 	public void insertCart(Map<String, String> map);
+	
 	public void updateCart(Map<String, String> map);
+
 	public void deleteCart(Map<String, String[]> map);
+
 	public CartDTO searchCart(Map<String, String> map);
 
 	public List<CartDTO> getOrderList(Map<String, String[]> map);
 
-	public void insertOrder(OrderDTO orderDTO);
+	public String kakaoPayReady(OrderDTO orderDTO);
+
+	public KakaoPayApprovalDTO kakaoPayInfo(String pg_token);
 
 	public void insertOrderDetail(OrderDetailDTO orderDetailDTO);
+
+	public void insertOrder(OrderDTO orderDTO);
 
 	public List<OrderListDTO> getMyOrder(String memEmail);
 
@@ -33,14 +42,8 @@ public interface OrderDAO {
 
 	public int chkOrder(Map<String, String> map);
 
-	
-
-	
+	public CheckoutResponseDto getCheckout(String email, CheckoutRequestDto request);
 
 
-
-
-
-	
 
 }

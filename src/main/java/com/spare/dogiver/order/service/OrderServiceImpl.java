@@ -1,4 +1,4 @@
-package com.spare.dogiver.service.order;
+package com.spare.dogiver.order.service;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -19,16 +19,16 @@ import com.spare.dogiver.domain.Goods;
 import com.spare.dogiver.domain.Member;
 import com.spare.dogiver.persistence.goods.GoodsDAO;
 import com.spare.dogiver.persistence.member.MemberDAO;
-import com.spare.dogiver.persistence.order.OrderDAO;
-import com.spare.dogiver.web.dto.CartDTO;
+import com.spare.dogiver.order.dao.OrderDAO;
+import com.spare.dogiver.cart.dto.CartDTO;
 import com.spare.dogiver.web.dto.CheckoutRequestDto;
 import com.spare.dogiver.web.dto.CheckoutResponseDto;
 import com.spare.dogiver.web.dto.KakaoPayApprovalDTO;
 import com.spare.dogiver.web.dto.KakaoPayReadyDTO;
-import com.spare.dogiver.web.dto.OrderDTO;
-import com.spare.dogiver.web.dto.OrderDetailDTO;
-import com.spare.dogiver.web.dto.OrderListDTO;
-import com.spare.dogiver.web.dto.OrderStatusDTO;
+import com.spare.dogiver.order.dto.OrderDTO;
+import com.spare.dogiver.order.dto.OrderDetailDTO;
+import com.spare.dogiver.order.dto.OrderListDTO;
+import com.spare.dogiver.order.dto.OrderStatusDTO;
 
 import lombok.RequiredArgsConstructor;
 
