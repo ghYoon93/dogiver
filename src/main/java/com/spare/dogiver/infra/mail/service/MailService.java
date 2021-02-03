@@ -1,4 +1,4 @@
-package com.spare.dogiver.service.mail;
+package com.spare.dogiver.infra.mail.service;
 
 import javax.servlet.http.HttpSession;
 
