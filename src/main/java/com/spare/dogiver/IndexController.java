@@ -1,4 +1,4 @@
-package com.spare.dogiver.web;
+package com.spare.dogiver;
 
 
 import java.util.List;
@@ -23,6 +23,7 @@ public class IndexController {
 	
     @GetMapping("/")
     public String index() {
+    	System.out.println("dd");
     	return "index";
     }
     

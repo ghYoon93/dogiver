@@ -1,4 +1,4 @@
-package com.spare.dogiver.config;
+package com.spare.dogiver.global.config;
 
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.spare.dogiver.web"})
+@ComponentScan(basePackages = {"com.spare.dogiver.**.controller"})
 public class ServletConfig implements WebMvcConfigurer{
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {

@@ -4,7 +4,7 @@
 	
 <mapper namespace="goodsSQL">
 
-	<resultMap id="Goods" type="com.spare.dogiver.domain.Goods">
+	<resultMap id="Goods" type="com.spare.dogiver.goods.domain.Goods">
       <id property="id" column="id"/>
       <result property="name" column="goods_name"/>
       <result property="price" column="price"/>

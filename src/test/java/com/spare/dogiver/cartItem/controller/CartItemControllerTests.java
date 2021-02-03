@@ -25,8 +25,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.spare.dogiver.config.RootConfig;
-import com.spare.dogiver.config.ServletConfig;
+import com.spare.dogiver.global.config.RootConfig;
+import com.spare.dogiver.global.config.ServletConfig;
 import com.spare.dogiver.cartItem.service.CartItemService;
 import com.spare.dogiver.cartItem.dto.CartItemSaveRequestDto;
 

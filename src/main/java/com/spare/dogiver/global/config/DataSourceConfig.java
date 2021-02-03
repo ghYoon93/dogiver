@@ -1,4 +1,4 @@
-package com.spare.dogiver.config;
+package com.spare.dogiver.global.config;
 
 import java.util.List;
 import java.util.Arrays;

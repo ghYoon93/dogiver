@@ -39,8 +39,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.spare.dogiver.config.RootConfig;
-import com.spare.dogiver.config.ServletConfig;
+import com.spare.dogiver.global.config.RootConfig;
+import com.spare.dogiver.global.config.ServletConfig;
 import com.spare.dogiver.cart.domain.Cart;
 import com.spare.dogiver.cartItem.domain.CartItem;
 import com.spare.dogiver.goods.domain.Goods;

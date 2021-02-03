@@ -8,7 +8,7 @@
 		email=#{email}
 	</select>
 	<select id="find" parameterType="String"
-		resultType="com.spare.dogiver.domain.Member">
+		resultType="com.spare.dogiver.member.domain.Member">
 		select * from member where
 		email=#{email}
 	</select>

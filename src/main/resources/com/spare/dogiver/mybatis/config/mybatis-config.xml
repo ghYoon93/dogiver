@@ -4,17 +4,17 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.spare.dogiver.web.dto.DogJoinDTO" alias="dogJoin"/>
-		<typeAlias type="com.spare.dogiver.web.dto.DogiverDTO" alias="dogiver"/>
-        <typeAlias type="com.spare.dogiver.domain.Cart" alias="cart"/>
-        <typeAlias type="com.spare.dogiver.web.dto.OrderDTO" alias="order"/>
-        <typeAlias type="com.spare.dogiver.web.dto.OrderDetailDTO" alias="orderDetail"/>
-        <typeAlias type="com.spare.dogiver.web.dto.OrderListDTO" alias="orderList"/>
-        <typeAlias type="com.spare.dogiver.web.dto.OrderStatusDTO" alias="orderStatus"/>
-        <typeAlias type="com.spare.dogiver.web.dto.BoardDTO" alias="board"/>
-        <typeAlias type="com.spare.dogiver.web.dto.ContactDTO" alias="contact"/>
-        <typeAlias type="com.spare.dogiver.web.dto.GoodsDTO" alias="goods"/>
-        <typeAlias type="com.spare.dogiver.web.dto.QnaDTO" alias="qna"/>
-        <typeAlias type="com.spare.dogiver.web.dto.MemberDTO" alias="member"/>
+		<typeAlias type="com.spare.dogiver.blood.dto.DogJoinDTO" alias="dogJoin"/>
+		<typeAlias type="com.spare.dogiver.blood.dto.DogiverDTO" alias="dogiver"/>
+        <typeAlias type="com.spare.dogiver.cart.domain.Cart" alias="cart"/>
+        <typeAlias type="com.spare.dogiver.order.dto.OrderDTO" alias="order"/>
+        <typeAlias type="com.spare.dogiver.order.dto.OrderDetailDTO" alias="orderDetail"/>
+        <typeAlias type="com.spare.dogiver.order.dto.OrderListDTO" alias="orderList"/>
+        <typeAlias type="com.spare.dogiver.order.dto.OrderStatusDTO" alias="orderStatus"/>
+        <typeAlias type="com.spare.dogiver.board.dto.BoardDTO" alias="board"/>
+        <typeAlias type="com.spare.dogiver.contact.dto.ContactDTO" alias="contact"/>
+        <typeAlias type="com.spare.dogiver.goods.dto.GoodsDTO" alias="goods"/>
+        <typeAlias type="com.spare.dogiver.goods.dto.QnaDTO" alias="qna"/>
+        <typeAlias type="com.spare.dogiver.member.dto.MemberDTO" alias="member"/>
     </typeAliases>
 </configuration>

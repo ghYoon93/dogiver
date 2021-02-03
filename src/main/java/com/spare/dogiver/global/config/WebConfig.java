@@ -1,4 +1,4 @@
-package com.spare.dogiver.config;
+package com.spare.dogiver.global.config;
 
 import javax.servlet.Filter;
 import javax.servlet.ServletContext;

@@ -4,14 +4,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="CartItemMapper">
 
-  <resultMap id="Goods" type="com.spare.dogiver.domain.Goods">
+  <resultMap id="Goods" type="com.spare.dogiver.goods.domain.Goods">
     <id property="id" column="goods_id"/>
     <result property="name" column="goods_name"/>
     <result property="price" column="goods_price"/>
     <result property="thumbnail" column="goods_thumbnail"/>
   </resultMap>
   
-  <resultMap id="CartItem" type="com.spare.dogiver.domain.CartItem">
+  <resultMap id="CartItem" type="com.spare.dogiver.cartItem.domain.CartItem">
     <id property="id" column="id" />
     <result property="cartId" column="cart_id"/>
     <result property="quantity" column="quantity"/>
@@ -32,7 +32,7 @@
      WHERE c_i.cart_id = #{cartId}
   </select>
   
-  <insert id="save" parameterType="com.spare.dogiver.domain.CartItem">
+  <insert id="save" parameterType="com.spare.dogiver.cartItem.domain.CartItem">
     <selectKey keyProperty="id" resultType="Long" order="BEFORE">
     SELECT seq_cart_item.nextval FROM dual 
     </selectKey>

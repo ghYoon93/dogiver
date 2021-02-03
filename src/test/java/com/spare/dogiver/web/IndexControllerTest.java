@@ -27,11 +27,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import com.spare.dogiver.config.RootConfig;
-import com.spare.dogiver.config.ServletConfig;
+import com.spare.dogiver.global.config.RootConfig;
+import com.spare.dogiver.global.config.ServletConfig;
 import com.spare.dogiver.cartItem.domain.CartItem;
 import com.spare.dogiver.goods.domain.Goods;
 import com.spare.dogiver.cart.service.CartServiceImpl;
+import com.spare.dogiver.IndexController;
 import com.spare.dogiver.cart.dto.CartResponseDto;
 
 @RunWith(MockitoJUnitRunner.class)

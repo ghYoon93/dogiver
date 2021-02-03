@@ -17,7 +17,7 @@ import com.spare.dogiver.cartItem.dto.CartItemSaveRequestDto;
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = { com.spare.dogiver.config.RootConfig.class })
+@ContextConfiguration(classes = { com.spare.dogiver.global.config.RootConfig.class })
 @Transactional
 public class CartItemDaoTests {
 	@Autowired

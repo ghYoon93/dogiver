@@ -23,7 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { com.spare.dogiver.config.RootConfig.class })
+@ContextConfiguration(classes = { com.spare.dogiver.global.config.RootConfig.class })
 public class CartDaoTest {
 	@Autowired
 	private CartDaoMyBatis cartDao;

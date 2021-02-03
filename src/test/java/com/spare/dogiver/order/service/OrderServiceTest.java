@@ -15,7 +15,7 @@ import com.spare.dogiver.order.dto.CheckoutRequestDto;
 import com.spare.dogiver.order.dto.CheckoutResponseDto;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { com.spare.dogiver.config.RootConfig.class })
+@ContextConfiguration(classes = { com.spare.dogiver.global.config.RootConfig.class })
 public class OrderServiceTest {
     @Autowired
     private OrderService orderService;

@@ -26,7 +26,7 @@ import static org.mockito.BDDMockito.given;
 
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = { com.spare.dogiver.config.RootConfig.class })
+@ContextConfiguration(classes = { com.spare.dogiver.global.config.RootConfig.class })
 public class CartServiceTest {
 	private CartService cartService;
 	
