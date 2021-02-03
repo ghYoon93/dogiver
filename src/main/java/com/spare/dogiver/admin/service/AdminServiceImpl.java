@@ -1,4 +1,4 @@
-package com.spare.dogiver.service.admin;
+package com.spare.dogiver.admin.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,8 +7,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spare.dogiver.domain.Admin_dogiverPaging;
-import com.spare.dogiver.persistence.admin.AdminDAO;
+import com.spare.dogiver.admin.domain.Admin_dogiverPaging;
+import com.spare.dogiver.admin.dao.AdminDAO;
 import com.spare.dogiver.blood.dto.DogiverDTO;
 
 @Service("AdminService")

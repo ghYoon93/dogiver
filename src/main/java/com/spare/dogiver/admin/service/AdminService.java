@@ -1,9 +1,9 @@
-package com.spare.dogiver.service.admin;
+package com.spare.dogiver.admin.service;
 
 import java.util.List;
 import java.util.Map;
 
-import com.spare.dogiver.domain.Admin_dogiverPaging;
+import com.spare.dogiver.admin.domain.Admin_dogiverPaging;
 import com.spare.dogiver.blood.dto.DogiverDTO;
 
 public interface AdminService {

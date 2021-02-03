@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spare.dogiver.domain.BoardPaging;
+import com.spare.dogiver.board.domain.BoardPaging;
 import com.spare.dogiver.board.dao.BoardDAO;
 import com.spare.dogiver.board.dto.BoardDTO;
 

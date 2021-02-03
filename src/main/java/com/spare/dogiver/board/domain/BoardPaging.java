@@ -1,4 +1,4 @@
-package com.spare.dogiver.domain;
+package com.spare.dogiver.board.domain;
 
 import org.springframework.stereotype.Component;
 

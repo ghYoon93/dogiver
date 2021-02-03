@@ -1,4 +1,4 @@
-package com.spare.dogiver.persistence.admin;
+package com.spare.dogiver.admin.dao;
 
 import java.util.List;
 import java.util.Map;
