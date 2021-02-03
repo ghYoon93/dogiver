@@ -1,4 +1,4 @@
-package com.spare.dogiver.web;
+package com.spare.dogiver.blood.controller;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spare.dogiver.service.blood.BloodService;
-import com.spare.dogiver.web.dto.DogJoinDTO;
-import com.spare.dogiver.web.dto.DogiverDTO;
+import com.spare.dogiver.blood.service.BloodService;
+import com.spare.dogiver.blood.dto.DogJoinDTO;
+import com.spare.dogiver.blood.dto.DogiverDTO;
 
 import lombok.extern.log4j.Log4j;
 

@@ -21,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spare.dogiver.domain.Admin_dogiverPaging;
 import com.spare.dogiver.service.admin.AdminService;
-import com.spare.dogiver.web.dto.DogiverDTO;
+import com.spare.dogiver.blood.dto.DogiverDTO;
 
 @Controller
 @RequestMapping("admin")

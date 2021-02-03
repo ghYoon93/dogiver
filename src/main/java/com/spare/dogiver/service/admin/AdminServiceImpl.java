@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.spare.dogiver.domain.Admin_dogiverPaging;
 import com.spare.dogiver.persistence.admin.AdminDAO;
-import com.spare.dogiver.web.dto.DogiverDTO;
+import com.spare.dogiver.blood.dto.DogiverDTO;
 
 @Service("AdminService")
 public class AdminServiceImpl implements AdminService {
