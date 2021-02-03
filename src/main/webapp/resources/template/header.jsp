@@ -65,8 +65,8 @@
 				<ul class="header-menu">
 					<li><a id="offA" href="#" onclick="return false">ABOUT</a>
 						<ul>
-							<li><a href="../about/about">ABOUT US</a></li>
-							<li><a href="../about/team">TEAM</a></li>
+							<li><a href="../about/about.html">ABOUT US</a></li>
+							<li><a href="../about/team.html">TEAM</a></li>
 						</ul></li>
 
 					<li><a href="#" onclick="return false">헌혈견</a>
