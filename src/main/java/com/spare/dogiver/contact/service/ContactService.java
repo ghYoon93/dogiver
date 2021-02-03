@@ -1,12 +1,12 @@
-package com.spare.dogiver.persistence.contact;
+package com.spare.dogiver.contact.service;
 
 import java.util.List;
 
-import com.spare.dogiver.web.dto.ContactDTO;
+import com.spare.dogiver.contact.dto.ContactDTO;
 
-public interface ContactDAO {
+public interface ContactService {
 
-	int contactWrite(ContactDTO contactDTO);
+	int contactWrite(ContactDTO contctDTO);
 
 	public List<ContactDTO> contactList();
 
@@ -17,5 +17,6 @@ public interface ContactDAO {
 	public List<ContactDTO> getInfo(String email);
 
 	public void my_contect_delete(String seq);
+
 
 }

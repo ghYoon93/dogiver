@@ -1,4 +1,4 @@
-package com.spare.dogiver.web;
+package com.spare.dogiver.contact.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spare.dogiver.service.contact.ContactService;
-import com.spare.dogiver.web.dto.ContactDTO;
+import com.spare.dogiver.contact.service.ContactService;
+import com.spare.dogiver.contact.dto.ContactDTO;
 
 @Controller
 @RequestMapping(value="contact")

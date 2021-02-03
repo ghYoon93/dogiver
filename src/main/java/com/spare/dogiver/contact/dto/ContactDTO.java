@@ -1,4 +1,4 @@
-package com.spare.dogiver.web.dto;
+package com.spare.dogiver.contact.dto;
 
 import java.util.Date;
 

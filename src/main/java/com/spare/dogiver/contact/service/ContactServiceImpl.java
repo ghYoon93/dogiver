@@ -1,12 +1,12 @@
-package com.spare.dogiver.service.contact;
+package com.spare.dogiver.contact.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spare.dogiver.persistence.contact.ContactDAO;
-import com.spare.dogiver.web.dto.ContactDTO;
+import com.spare.dogiver.contact.dao.ContactDAO;
+import com.spare.dogiver.contact.dto.ContactDTO;
 
 
 @Service
