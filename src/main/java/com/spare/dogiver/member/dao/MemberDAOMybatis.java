@@ -1,4 +1,4 @@
-package com.spare.dogiver.persistence.member;
+package com.spare.dogiver.member.dao;
 
 import java.util.List;
 import java.util.Map;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.spare.dogiver.domain.Member;
-import com.spare.dogiver.web.dto.MemberDTO;
+import com.spare.dogiver.member.domain.Member;
+import com.spare.dogiver.member.dto.MemberDTO;
 
 @Repository("memberDAO")
 @Transactional

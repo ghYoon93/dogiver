@@ -1,4 +1,4 @@
-package com.spare.dogiver.web.dto;
+package com.spare.dogiver.member.dto;
 
 import lombok.Data;
 

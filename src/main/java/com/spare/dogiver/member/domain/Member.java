@@ -1,4 +1,4 @@
-package com.spare.dogiver.domain;
+package com.spare.dogiver.member.domain;
 
 import lombok.Builder;
 import lombok.Getter;

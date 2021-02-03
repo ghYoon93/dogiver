@@ -1,10 +1,10 @@
-package com.spare.dogiver.service.member;
+package com.spare.dogiver.member.service;
 
 import java.util.List;
 
-import com.spare.dogiver.domain.Member;
-import com.spare.dogiver.domain.MemberPaging;
-import com.spare.dogiver.web.dto.MemberDTO;
+import com.spare.dogiver.member.domain.Member;
+import com.spare.dogiver.member.domain.MemberPaging;
+import com.spare.dogiver.member.dto.MemberDTO;
 
 public interface MemberService {
 

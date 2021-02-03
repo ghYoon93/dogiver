@@ -1,4 +1,4 @@
-package com.spare.dogiver.service.member;
+package com.spare.dogiver.member.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,13 +7,13 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spare.dogiver.domain.Member;
-import com.spare.dogiver.domain.MemberPaging;
-import com.spare.dogiver.persistence.member.MemberDAO;
-import com.spare.dogiver.web.dto.MemberDTO;
+import com.spare.dogiver.member.domain.Member;
+import com.spare.dogiver.member.domain.MemberPaging;
+import com.spare.dogiver.member.dao.MemberDAO;
+import com.spare.dogiver.member.dto.MemberDTO;
 
 @Service("memberService")
-public class MemberServiceimpl implements MemberService {
+public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
 	@Autowired

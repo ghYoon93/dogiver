@@ -1,10 +1,11 @@
-package com.spare.dogiver.persistence.member;
+package com.spare.dogiver.member.dao;
 
 import java.util.List;
 import java.util.Map;
 
-import com.spare.dogiver.domain.Member;
-import com.spare.dogiver.web.dto.MemberDTO;
+import com.spare.dogiver.member.domain.Member;
+import com.spare.dogiver.member.dto.MemberDTO;
+
 
 public interface MemberDAO {
 
