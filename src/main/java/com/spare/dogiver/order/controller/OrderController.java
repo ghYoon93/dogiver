@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spare.dogiver.service.goods.GoodsService;
+import com.spare.dogiver.goods.service.GoodsService;
 import com.spare.dogiver.member.service.MemberService;
 import com.spare.dogiver.order.service.OrderService;
 import com.spare.dogiver.cart.dto.CartDTO;

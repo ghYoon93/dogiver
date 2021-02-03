@@ -15,9 +15,9 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import com.spare.dogiver.domain.Goods;
+import com.spare.dogiver.goods.domain.Goods;
 import com.spare.dogiver.member.domain.Member;
-import com.spare.dogiver.persistence.goods.GoodsDAO;
+import com.spare.dogiver.goods.dao.GoodsDAO;
 import com.spare.dogiver.member.dao.MemberDAO;
 import com.spare.dogiver.order.dao.OrderDAO;
 import com.spare.dogiver.cart.dto.CartDTO;

@@ -1,4 +1,4 @@
-package com.spare.dogiver.service.goods;
+package com.spare.dogiver.goods.service;
 
 import java.util.List;
 import java.util.Map;
@@ -6,10 +6,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spare.dogiver.persistence.goods.GoodsDAO;
-import com.spare.dogiver.web.dto.GoodsDTO;
-import com.spare.dogiver.web.dto.OrderDetailDTO;
-import com.spare.dogiver.web.dto.QnaDTO;
+import com.spare.dogiver.goods.dao.GoodsDAO;
+import com.spare.dogiver.goods.dto.GoodsDTO;
+import com.spare.dogiver.order.dto.OrderDetailDTO;
+import com.spare.dogiver.goods.dto.QnaDTO;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {

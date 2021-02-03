@@ -10,9 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.spare.dogiver.service.order.OrderService;
-import com.spare.dogiver.web.dto.CartResponseDto;
-import com.spare.dogiver.web.dto.CheckoutRequestDto;
+import com.spare.dogiver.order.service.OrderService;
+import com.spare.dogiver.cart.dto.CartResponseDto;
+import com.spare.dogiver.order.dto.CheckoutRequestDto;
 
 import lombok.RequiredArgsConstructor;
 

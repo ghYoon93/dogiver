@@ -1,4 +1,4 @@
-package com.spare.dogiver.web;
+package com.spare.dogiver.goods.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -24,8 +24,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spare.dogiver.service.goods.GoodsService;
-import com.spare.dogiver.web.dto.QnaDTO;
+import com.spare.dogiver.goods.service.GoodsService;
+import com.spare.dogiver.goods.dto.QnaDTO;
 
 @Controller
 @RequestMapping(value="goods")

@@ -1,11 +1,11 @@
-package com.spare.dogiver.service.goods;
+package com.spare.dogiver.goods.service;
 
 import java.util.List;
 import java.util.Map;
 
-import com.spare.dogiver.web.dto.GoodsDTO;
-import com.spare.dogiver.web.dto.OrderDetailDTO;
-import com.spare.dogiver.web.dto.QnaDTO;
+import com.spare.dogiver.goods.dto.GoodsDTO;
+import com.spare.dogiver.order.dto.OrderDetailDTO;
+import com.spare.dogiver.goods.dto.QnaDTO;
 
 public interface GoodsService {
 

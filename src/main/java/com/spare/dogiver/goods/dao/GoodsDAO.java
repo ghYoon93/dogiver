@@ -1,12 +1,12 @@
-package com.spare.dogiver.persistence.goods;
+package com.spare.dogiver.goods.dao;
 
 import java.util.List;
 import java.util.Map;
 
-import com.spare.dogiver.domain.Goods;
-import com.spare.dogiver.web.dto.GoodsDTO;
-import com.spare.dogiver.web.dto.OrderDetailDTO;
-import com.spare.dogiver.web.dto.QnaDTO;
+import com.spare.dogiver.goods.domain.Goods;
+import com.spare.dogiver.goods.dto.GoodsDTO;
+import com.spare.dogiver.order.dto.OrderDetailDTO;
+import com.spare.dogiver.goods.dto.QnaDTO;
 
 public interface GoodsDAO {
 

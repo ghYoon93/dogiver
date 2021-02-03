@@ -10,11 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.spare.dogiver.cart.domain.Cart;
 import com.spare.dogiver.cartItem.domain.CartItem;
-import com.spare.dogiver.domain.Goods;
+import com.spare.dogiver.goods.domain.Goods;
 import com.spare.dogiver.member.domain.Member;
 import com.spare.dogiver.cart.dao.CartDao;
 import com.spare.dogiver.cartItem.dao.CartItemDao;
-import com.spare.dogiver.persistence.goods.GoodsDAO;
+import com.spare.dogiver.goods.dao.GoodsDAO;
 import com.spare.dogiver.member.dao.MemberDAO;
 import com.spare.dogiver.cart.dto.CartsResponseDto;
 import com.spare.dogiver.cart.dto.CartResponseDto;
@@ -31,7 +31,7 @@ public class CartServiceImpl implements CartService {
 	
 	private final CartDao cartDao;
 	private final CartItemDao cartItemDao;
-//	private final MemberDAO memberDao;
+	private final MemberDAO memberDao;
 	
 	@Transactional(readOnly = true)
 	@Override
@@ -45,50 +45,51 @@ public class CartServiceImpl implements CartService {
 				.collect(Collectors.toList());
 	}
 	
-//	@Transactional
-//	@Override
-//	public Long save(String email, CartSaveRequestDto requestDto) {
-//		Member member = memberDao.find(email);
-//		Cart cart = cartDao.findByEmailAndGoodsId(requestDto.toEntity(member)); 
-//		
-//		if(cart.hasCartId()) {
-//			return 0L;
-//		}
-//		
+	@Transactional
+	@Override
+	public Long save(String email, CartSaveRequestDto requestDto) {
+		Member member = memberDao.find(email);
+		Cart cart = cartDao.findByEmailAndGoodsId(requestDto.toEntity(member)); 
+		
+		if(cart.hasCartId()) {
+			return 0L;
+		}
+		
 //		log.info("장바구니에 담는 물품: "+ requestDto);
 //		return cartDao.save(cart);
-//	}
-//    
-//	@Transactional
-//	@Override
-//	public List<Cart> findAllDesc() {
+		return null;
+	}
+    
+	@Transactional
+	@Override
+	public List<Cart> findAllDesc() {
 //		log.info("전체 물품 조회");
-//		return cartDao.findAllDesc();
-//	}
-//    
-//	@Transactional
-//	@Override
-//	public Long update(long cartId, CartUpdateRequestDto requestDto) {
-//		Cart cart = cartDao.findById(cartId);
-//		cart.update(requestDto.getCartCnt());
-//		cartDao.update(cart);
-//		return cartId;
-//	}
-//    
+		return cartDao.findAllDesc();
+	}
+    
+	@Transactional
+	@Override
+	public Long update(long cartId, CartUpdateRequestDto requestDto) {
+		Cart cart = cartDao.findById(cartId);
+		cart.update(requestDto.getCartCnt());
+		cartDao.update(cart);
+		return cartId;
+	}
+    
 	
-//
-//	@Override
-//	public CartResponseDto findById(Long cartId) {
-//		Cart cart = cartDao.findById(cartId);
-////		return new CartResponseDto(cart);
-//		return null;
-//	}
-//
-//	@Override
-//	public void delete(long cartId) {
-//		cartDao.delete(cartId);
-//	}
-//
+
+	@Override
+	public CartResponseDto findById(Long cartId) {
+		Cart cart = cartDao.findById(cartId);
+//		return new CartResponseDto(cart);
+		return null;
+	}
+
+	@Override
+	public void delete(long cartId) {
+		cartDao.delete(cartId);
+	}
+
 	@Override
 	public void deleteByIdIn(List<Long> cartIds) {
 		cartDao.deleteByIdIn(cartIds);

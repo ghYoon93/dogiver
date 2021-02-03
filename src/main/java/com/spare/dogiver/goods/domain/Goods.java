@@ -1,4 +1,4 @@
-package com.spare.dogiver.domain;
+package com.spare.dogiver.goods.domain;
 
 import java.util.Date;
 

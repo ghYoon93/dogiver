@@ -29,10 +29,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.spare.dogiver.config.RootConfig;
 import com.spare.dogiver.config.ServletConfig;
-import com.spare.dogiver.domain.CartItem;
-import com.spare.dogiver.domain.Goods;
-import com.spare.dogiver.service.cart.CartServiceImpl;
-import com.spare.dogiver.web.dto.CartResponseDto;
+import com.spare.dogiver.cartItem.domain.CartItem;
+import com.spare.dogiver.goods.domain.Goods;
+import com.spare.dogiver.cart.service.CartServiceImpl;
+import com.spare.dogiver.cart.dto.CartResponseDto;
 
 @RunWith(MockitoJUnitRunner.class)
 //@RunWith(SpringRunner.class)

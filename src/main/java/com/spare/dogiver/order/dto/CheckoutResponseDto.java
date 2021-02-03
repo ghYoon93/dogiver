@@ -1,6 +1,6 @@
 package com.spare.dogiver.order.dto;
 
-import com.spare.dogiver.domain.Goods;
+import com.spare.dogiver.goods.domain.Goods;
 import com.spare.dogiver.member.domain.Member;
 
 import lombok.Getter;

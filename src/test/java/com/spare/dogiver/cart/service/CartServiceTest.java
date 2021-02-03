@@ -16,10 +16,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.spare.dogiver.cart.domain.Cart;
 import com.spare.dogiver.cartItem.domain.CartItem;
-import com.spare.dogiver.domain.Goods;
+import com.spare.dogiver.goods.domain.Goods;
 import com.spare.dogiver.cart.dao.CartDao;
 import com.spare.dogiver.cartItem.dao.CartItemDao;
-import com.spare.dogiver.persistence.goods.GoodsDAO;
+import com.spare.dogiver.goods.dao.GoodsDAO;
 import com.spare.dogiver.cart.dto.CartResponseDto;
 
 import static org.mockito.BDDMockito.given;
@@ -45,7 +45,7 @@ public class CartServiceTest {
 		mockCartDao();
 		mockCartItemDao();
 		cartDao.deleteAll();
-		cartService = new CartServiceImpl(cartDao,cartItemDao);
+//		cartService = new CartServiceImpl(cartDao,cartItemDao);
 	}
 	
 	private void mockCartDao() {
