@@ -1,4 +1,4 @@
-package com.spare.dogiver.web;
+package com.spare.dogiver.board.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spare.dogiver.domain.BoardPaging;
-import com.spare.dogiver.service.board.BoardService;
-import com.spare.dogiver.web.dto.BoardDTO;
+import com.spare.dogiver.board.service.BoardService;
+import com.spare.dogiver.board.dto.BoardDTO;
 
 @Controller
 @RequestMapping(value = "board")

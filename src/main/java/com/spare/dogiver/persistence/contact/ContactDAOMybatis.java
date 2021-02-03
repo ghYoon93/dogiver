@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.spare.dogiver.web.dto.BoardDTO;
 import com.spare.dogiver.web.dto.ContactDTO;
 
 @Repository

@@ -1,4 +1,4 @@
-package com.spare.dogiver.persistence.board;
+package com.spare.dogiver.board.dao;
 
 import java.util.List;
 import java.util.Map;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.spare.dogiver.web.dto.BoardDTO;
+import com.spare.dogiver.board.dto.BoardDTO;
 
 
 @Repository
