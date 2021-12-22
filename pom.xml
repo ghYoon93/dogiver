@@ -139,7 +139,6 @@
 					<artifactId>jmxri</artifactId>
 				</exclusion>
 			</exclusions>
-			<scope>runtime</scope>
 		</dependency>
 
 		<!-- @Inject -->
@@ -304,8 +303,15 @@
         <dependency>
             <groupId>org.mockito</groupId>
         	<artifactId>mockito-core</artifactId>
-        	<version>1.10.19</version>
-    	</dependency>	
+        	<version>2.21.0</version>
+    	</dependency>
+    	<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.19.0</version>
+            <scope>test</scope>
+        </dependency>	
 	</dependencies>
 	
 	<build>

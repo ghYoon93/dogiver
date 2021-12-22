@@ -6,51 +6,28 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hamcrest.Matchers;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.mock.web.MockHttpSession;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.spare.dogiver.global.config.RootConfig;
-import com.spare.dogiver.global.config.ServletConfig;
-import com.spare.dogiver.cart.domain.Cart;
+import com.spare.dogiver.cart.dto.CartResponseDto;
+import com.spare.dogiver.cart.service.CartService;
 import com.spare.dogiver.cartItem.domain.CartItem;
 import com.spare.dogiver.goods.domain.Goods;
-import com.spare.dogiver.member.domain.Member;
-import com.spare.dogiver.cart.dao.CartDao;
-import com.spare.dogiver.cart.service.CartService;
-import com.spare.dogiver.cart.service.CartServiceImpl;
-import com.spare.dogiver.cart.dto.CartResponseDto;
-import com.spare.dogiver.cart.dto.CartSaveRequestDto;
-import com.spare.dogiver.cart.dto.CartUpdateRequestDto;
 
 @RunWith(MockitoJUnitRunner.class)
 @WebAppConfiguration

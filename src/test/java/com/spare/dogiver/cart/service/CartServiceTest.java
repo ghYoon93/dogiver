@@ -1,6 +1,7 @@
 package com.spare.dogiver.cart.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.BDDMockito.given;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,15 +15,13 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.spare.dogiver.cart.domain.Cart;
-import com.spare.dogiver.cartItem.domain.CartItem;
-import com.spare.dogiver.goods.domain.Goods;
 import com.spare.dogiver.cart.dao.CartDao;
-import com.spare.dogiver.cartItem.dao.CartItemDao;
-import com.spare.dogiver.goods.dao.GoodsDAO;
+import com.spare.dogiver.cart.domain.Cart;
 import com.spare.dogiver.cart.dto.CartResponseDto;
-
-import static org.mockito.BDDMockito.given;
+import com.spare.dogiver.cartItem.dao.CartItemDao;
+import com.spare.dogiver.cartItem.domain.CartItem;
+import com.spare.dogiver.goods.dao.GoodsDAO;
+import com.spare.dogiver.goods.domain.Goods;
 
 
 @RunWith(SpringRunner.class)
